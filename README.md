@@ -11,7 +11,13 @@ Primeira implementação das fichas do sistema UmD10+, com destino ao **FoundryV
 - Arrastar conteúdos de Item/compêndio para a ficha cria cópias; a origem fica registrada.
 - Botão para criar um compêndio do mundo com seis modelos iniciais. São modelos editáveis, não o catálogo integral do livro.
 
-## Instalar no servidor
+## Instalar pela interface, sem acessar os arquivos do servidor
+
+Em **Sistemas de Jogo → Instalar Sistema**, o Foundry aceita uma URL de manifesto e baixa o pacote automaticamente. Para este sistema, o arquivo é `system.json`. O JSON e o ZIP precisam estar acessíveis ao servidor por HTTPS.
+
+O repositório atual é privado. Os arquivos foram preparados, mas ainda não existe uma URL pública de instalação. Consulte o [guia de instalação por manifesto](docs/instalacao-manifesto.md) para publicar a distribuição. O acesso ao GitHub privado no navegador não é transferido ao instalador.
+
+## Instalação manual no servidor
 
 1. Extraia o ZIP `gods-battle-ss-0.1.0.zip`. Ele contém a pasta `gods-battle-ss`.
 2. Com o servidor Foundry parado, envie essa pasta para `<pasta de dados>/Data/systems/gods-battle-ss/`. `system.json` deve ficar diretamente nessa pasta, sem uma pasta intermediária.
@@ -22,7 +28,7 @@ Primeira implementação das fichas do sistema UmD10+, com destino ao **FoundryV
 
 Se a hospedagem usa um painel gerenciado, use o gerenciador de arquivos ou o método de instalação manual oferecido pelo provedor. O caminho é a pasta de **dados do Foundry**, não a pasta dos executáveis. Não houve instalação ou alteração do seu servidor por esta tarefa.
 
-O repositório é privado. URLs privadas do GitHub normalmente exigem autenticação e não funcionam como manifesto público para o instalador do Foundry. Nesta etapa use o ZIP/manual; nenhuma credencial deve ser colocada em `system.json`. Uma URL de instalação automática será definida quando houver um endereço de distribuição adequado.
+Nenhuma credencial deve ser colocada em `system.json`.
 
 ## Convenções atuais
 
@@ -42,7 +48,7 @@ Bestas, legiões, monstros e deuses não possuem fichas especializadas nesta ver
 
 Node 22+ e Python 3. Instale as dependências com `npm ci`; rode `npm test`, `npm run check` e `npm run build`. As dependências são apenas de desenvolvimento; o sistema instalado usa as bibliotecas do próprio Foundry.
 
-`npm run check` compila os templates com Handlebars e cria `dist/preview.html`. `npm run build` gera um ZIP apenas com os arquivos necessários à instalação. Os testes de regras e fichas usam um contrato mínimo da API, não um servidor Foundry real.
+`npm run check` compila os templates com Handlebars e cria `dist/preview.html`. `npm run build` gera um ZIP apenas com os arquivos necessários à instalação e o manifesto externo. `python tools/package.py --release` prepara as URLs de uma release sem publicá-la. Os testes de regras e fichas usam um contrato mínimo da API, não um servidor Foundry real.
 
 API utilizada: [ActorSheetV2 v13](https://foundryvtt.com/api/v13/classes/foundry.applications.sheets.ActorSheetV2.html), [ItemSheetV2](https://foundryvtt.com/api/v13/classes/foundry.applications.sheets.ItemSheetV2.html), [modelos de dados](https://foundryvtt.com/article/system-data-models/) e [compêndios](https://foundryvtt.com/article/compendium/).
 
