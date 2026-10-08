@@ -1,0 +1,13 @@
+<div class="battle-chat"><span class="eyebrow">Técnica · {{effectLabel}}</span><h3>{{name}}</h3>
+<p>Asterismo ({{attributeLabel}}): {{#each results}}<span class="die">{{this}}</span> {{/each}} · modificador {{modifier}}</p>
+<p>Maior {{highest}} + {{tens}} × 2 − {{ones}} × 2 + {{modifier}}.</p>
+<div class="chat-result"><strong>{{total}}</strong><span>{{outcome}}<br>Dificuldade {{difficulty}}</span></div>
+<p>{{cost}} CE gastas{{#if payment.unlimited}} · armadura com CE ilimitada{{else}}: {{payment.fromCurrent}} atual + {{payment.fromExtra}} extra{{#if payment.overload}} + {{payment.overload}} acima do limite (−{{payment.lifeDamage}} PV){{/if}}{{/if}}.</p>
+{{#if success}}<p>Poder Cósmico: <strong>{{powerCosmic}}</strong>.</p>
+{{#if isDamage}}<p>ND {{damageLevel}} · dano corporal <strong>{{damage}}</strong> · dano à armadura <strong>{{armorDamage}}</strong> (antes da resistência).</p>{{else}}<p>Controle / sustentação: confira a duração e os efeitos descritos na técnica.</p>{{/if}}
+{{#if critical}}<p>Sucesso crítico.{{#if isDamage}} +1 ND já incluído no cálculo de dano.{{/if}} Confira os efeitos especiais.</p>{{/if}}
+<button type="button" data-action="resistTechnique">Resistir com o cavaleiro selecionado</button>
+{{else}}<p>A técnica falhou; não causa dano nem efeitos.</p>{{/if}}
+{{#if nextPenalty}}<p>Falha crítica: −10 no próximo teste de Asterismo.</p>{{/if}}
+{{#if description}}<p class="technique-description">{{description}}</p>{{/if}}
+<p class="note">Danos, ações, alcance, duração e efeitos especiais são conferidos e aplicados manualmente.</p></div>

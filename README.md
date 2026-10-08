@@ -1,8 +1,8 @@
 # Saint Seiya — A Batalha dos Deuses para FoundryVTT
 
-Primeira implementação das fichas do sistema UmD10+, com destino ao **FoundryVTT 13 build 350**. Versão **0.1.1, em desenvolvimento**. Os testes locais não substituem a validação no Foundry; `compatibility.verified` será preenchido após essa validação.
+Fichas e ativação de técnicas do sistema UmD10+, com destino ao **FoundryVTT 13 build 350**. Versão **0.2.0, em desenvolvimento**. A criação de personagens na versão 0.1.1 foi confirmada pelo usuário no servidor; a nova automação ainda precisa ser validada dentro do Foundry.
 
-A versão 0.1.1 corrige o erro `skills ... can't be blank` ao criar um cavaleiro: a opção “Automático” das perícias passa a aceitar explicitamente o valor vazio. Para atualizar, encerre o mundo e use **Sistemas de Jogo → Atualizar**; depois inicie o mundo e recarregue a página.
+A versão 0.2.0 acrescenta ativação de técnicas com gasto de CE, penalidade de Asterismo e resistência pelo chat. Mantém a correção da criação de cavaleiros. Para atualizar, encerre o mundo e use **Sistemas de Jogo → Atualizar**; depois inicie o mundo e recarregue a página.
 
 ## O que já existe
 
@@ -12,6 +12,7 @@ A versão 0.1.1 corrige o erro `skills ... can't be blank` ao criar um cavaleiro
 - Equipamento de uma armadura por vez, com PA e CE derivados; PV da armadura independentes.
 - Arrastar conteúdos de Item/compêndio para a ficha cria cópias; a origem fica registrada.
 - Botão para criar um compêndio do mundo com seis modelos iniciais. São modelos editáveis, não o catálogo integral do livro.
+- Ativação de técnicas: CE extra/reservada, elevação, queima de PV confirmada, teste de Asterismo e cálculo de dano no chat. Resistência com token próprio selecionado. Consulte o [guia de técnicas](docs/tecnicas.md).
 
 ## Instalar pela interface, sem acessar os arquivos do servidor
 
@@ -27,7 +28,7 @@ Consulte o [guia de instalação por manifesto](docs/instalacao-manifesto.md). C
 
 ## Instalação manual no servidor
 
-1. Extraia o ZIP `gods-battle-ss-0.1.1.zip`. Ele contém a pasta `gods-battle-ss`.
+1. Extraia o ZIP `gods-battle-ss-0.2.0.zip`. Ele contém a pasta `gods-battle-ss`.
 2. Com o servidor Foundry parado, envie essa pasta para `<pasta de dados>/Data/systems/gods-battle-ss/`. `system.json` deve ficar diretamente nessa pasta, sem uma pasta intermediária.
 3. Reinicie o Foundry e crie um **mundo de teste** escolhendo “Saint Seiya — A Batalha dos Deuses”.
 4. Crie um Actor do tipo **Cavaleiro**. Edite o nome, atributos, estilo e recursos. As alterações são salvas ao editar os campos.
@@ -48,7 +49,7 @@ Nenhuma credencial deve ser colocada em `system.json`.
 
 ## Limites desta entrega
 
-Ainda não automatiza ataque contra defesa, aplicação de dano, custos de técnicas, pré-requisitos de aquisição, efeitos de estados/virtudes, descanso, promoção, compra de perícias ou recuperação de armaduras. A ficha oferece campos para registrar essas regras. Big Bangs e incrementos de uma técnica ficam descritos na cópia; compor técnicas a partir de referências estruturadas é um próximo marco.
+Ainda não automatiza ataque contra defesa, aplicação de dano ao defensor/armadura, pré-requisitos de aquisição, efeitos de estados/virtudes, descanso, promoção, compra de perícias ou recuperação de armaduras. Custos por turno de sustentação são manuais. A ficha oferece campos para registrar essas regras. Big Bangs e incrementos de uma técnica ficam descritos na cópia; compor técnicas a partir de referências estruturadas é um próximo marco.
 
 Bestas, legiões, monstros e deuses não possuem fichas especializadas nesta versão. O cavaleiro guarda o UUID de seu companheiro e os registros de legião/discípulos.
 

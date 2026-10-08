@@ -1,4 +1,5 @@
 import {ATTRIBUTES, SKILLS, FIGHTING, STYLES, STATUS, STAGES, NATURES, ARMORS, CONDITIONS} from "./config.mjs";
+import {EFFECT_KINDS} from "./technique-rules.mjs";
 const {NumberField, StringField, BooleanField, SchemaField} = foundry.data.fields;
 const num = (initial = 0, min = 0, max) => new NumberField({required: true, nullable: false, initial, integer: true, min, ...(max === undefined ? {} : {max})});
 // Listas como "Automático" usam "" como escolha válida; blank deve ser explícito.
@@ -21,7 +22,7 @@ export class KnightData extends foundry.abstract.TypeDataModel {
       resources: schema({health: resource(21), cosmo: resource(1), maximum: schema({value: num(0, 0, 20), max: num(20, 20, 20)}),
         cosmoExtra: num(), cosmoReserved: num(), cosmoOverload: num(), determination: schema({value: num(1), max: num(1), objective: text()}), pride: schema({value: num(), max: num(), objective: text()})}),
       combat: schema({levelBonus: num(0, -100), attackBonus: num(0, -100), defenseBonus: num(0, -100), protectionBonus: num(0, -100), powerBonus: num(0, -100),
-        resistanceBonus: num(0, -100), initiativeBonus: num(0, -100), domainBonus: num(0, -100), attention: num(0, -5, 5), attackLevel: num(3), damageBonus: num(), woundCategory: num(0, 0, 3),
+        resistanceBonus: num(0, -100), initiativeBonus: num(0, -100), domainBonus: num(0, -100), attention: num(0, -5, 5), attackLevel: num(3), damageBonus: num(), woundCategory: num(0, 0, 3), asterismPenalty: num(0, -100, 0),
         levelModifier: num(), attack: num(), defense: num(), protection: num(), cosmicPower: num(), initiative: num(), passiveEvasion: num(), passiveDuel: num(), intuition: num(),
         domain: new NumberField({initial: 4.5}), resistances: schema({vig: num(), vel: num(), sen: num(), cos: num()})}),
       movement: schema({walk: new NumberField({initial: 6}), run: new NumberField({initial: 18}), jump: new NumberField({initial: 3}), lift: num(10), break: num(5)}),
@@ -41,7 +42,7 @@ export class ContentData extends foundry.abstract.TypeDataModel {
       equipped: flag(), class: text("bronze", ARMORS), version: num(1, 1, 5), constellation: text(), affinity: num(0, 0, 20), state: text("active"),
       health: resource(30), protectionBonus: num(0, -100), cosmoBonus: num(0, -100), accessories: text(),
       armor: schema({hp: num(30), pa: num(3), ce: num(3), minimum: num(1), unlimited: flag()}),
-      nature: text("physical", NATURES), classification: text("bronze"), power: num(10), damageLevel: num(1), cost: num(2), costExtra: num(), range: new NumberField({initial: 3, min: 0}),
+      nature: text("physical", NATURES), classification: text("bronze"), effectKind: text("damage", EFFECT_KINDS), power: num(10), damageLevel: num(2, 1), cost: num(2), costExtra: num(), range: new NumberField({initial: 3, min: 0}),
       duration: text("Instantânea"), resistance: text(), bigbangs: text(), increments: text(), category: text(), level: num(1, 1), action: text(), combination: text(),
       uses: schema({value: num(), max: num(), reset: text("dia")}), rank: num(1, 1, 10), active: flag(), notes: text()
     };

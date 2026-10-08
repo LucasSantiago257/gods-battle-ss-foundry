@@ -1,22 +1,54 @@
 {
   "id": "gods-battle-ss",
   "title": "Saint Seiya — A Batalha dos Deuses",
-  "description": "Sistema UmD10+ para fichas de cavaleiros, técnicas, armaduras e artefatos. Primeira versão em desenvolvimento para Foundry 13.350.",
-  "version": "0.1.1",
-  "compatibility": {"minimum": "13", "maximum": "13"},
-  "authors": [{"name": "Lucas Santiago", "url": "https://github.com/LucasSantiago257"}],
+  "description": "Sistema UmD10+ com fichas de cavaleiros, compêndios editáveis e ativação de técnicas para Foundry 13.350.",
+  "version": "0.2.0",
+  "compatibility": {
+    "minimum": "13",
+    "maximum": "13"
+  },
+  "authors": [
+    {
+      "name": "Lucas Santiago",
+      "url": "https://github.com/LucasSantiago257"
+    }
+  ],
   "url": "https://github.com/LucasSantiago257/gods-battle-ss-foundry",
   "manifest": "https://github.com/LucasSantiago257/gods-battle-ss-foundry/releases/latest/download/system.json",
-  "download": "https://github.com/LucasSantiago257/gods-battle-ss-foundry/releases/download/v0.1.1/gods-battle-ss-0.1.1.zip",
-  "esmodules": ["module/main.mjs"],
-  "styles": ["styles/sheets.css"],
-  "languages": [{"lang": "pt-BR", "name": "Português (Brasil)", "path": "lang/pt-BR.json"}],
+  "download": "https://github.com/LucasSantiago257/gods-battle-ss-foundry/releases/download/v0.2.0/gods-battle-ss-0.2.0.zip",
+  "esmodules": [
+    "module/main.mjs"
+  ],
+  "styles": [
+    "styles/sheets.css"
+  ],
+  "languages": [
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    }
+  ],
   "documentTypes": {
-    "Actor": {"knight": {}},
-    "Item": {"armor": {}, "technique": {}, "virtue": {}, "ability": {}, "bigbang": {}, "increment": {}, "artifact": {}, "divineCosmo": {}}
+    "Actor": {
+      "knight": {}
+    },
+    "Item": {
+      "armor": {},
+      "technique": {},
+      "virtue": {},
+      "ability": {},
+      "bigbang": {},
+      "increment": {},
+      "artifact": {},
+      "divineCosmo": {}
+    }
   },
   "initiative": "@combat.initiative",
-  "grid": {"distance": 1.5, "units": "m"},
+  "grid": {
+    "distance": 1.5,
+    "units": "m"
+  },
   "primaryTokenAttribute": "resources.health",
   "secondaryTokenAttribute": "resources.cosmo"
 }
