@@ -1,10 +1,11 @@
 import {SYSTEM_ID, NATURES} from "./config.mjs";
-import {techniqueParameters, techniqueOutcome, cosmoPayment, EFFECT_KINDS, techniqueReadiness} from "./technique-rules.mjs";
-import {evaluatePool, prepareRollMessage, rollTest} from "./rolls.mjs";
+import {techniqueParameters,cosmoPayment,techniqueReadiness} from "./technique-rules.mjs";
+import {rollTest} from "./rolls.mjs";
 import {activationFormOptions,installTechniquePreview} from "./technique-ui.mjs";
+import {activationState,submitTechniqueActivation,techniqueRollMode,pendingTechnique} from "./technique-activation.mjs";
+import {primaryGM,assertNoTechniqueInterruption} from "./master-queue.mjs";
 
 const active = new WeakSet();
-const activationState=(actor,item)=>JSON.stringify({actor:actor.system.toObject?actor.system.toObject(false):actor.system,item:item.system.toObject?item.system.toObject():item.system,name:item.name});
 export function techniqueTarget(targets=game.user.targets??[]) {
  const marked=[...targets];if(marked.length>1)throw Error("Marque somente um alvo; técnicas em área exigem resolução própria.");
  if(marked.length&&!marked[0].actor)throw Error("O alvo marcado não tem ficha.");
@@ -12,14 +13,15 @@ export function techniqueTarget(targets=game.user.targets??[]) {
  return marked[0]?.actor??null;
 }
 export async function useTechnique(actor, item) {
-  if (!actor?.isOwner || item?.parent !== actor || item.type !== "technique") return;
+  if (!actor?.isOwner || !item?.isOwner || item?.parent !== actor || item.type !== "technique") return;
   const reason = techniqueReadiness(item);
   if (reason) return ui.notifications.warn(reason);
   if (active.has(actor)) return ui.notifications.warn("Já existe uma ativação em andamento para este cavaleiro.");
   active.add(actor);
-  let paid = false;
   try {
-    const target=techniqueTarget(),baseline=activationState(actor,item);
+    if(!primaryGM()?.active)throw Error("É necessário um mestre ativo para processar a ativação.");
+    assertNoTechniqueInterruption(actor);if(pendingTechnique(actor))throw Error("Já existe uma solicitação desta ficha aguardando processamento. Confira o chat antes de repetir.");
+    const target=techniqueTarget(),baseline=activationState(actor,item),rollMode=techniqueRollMode();
     const content = await foundry.applications.handlebars.renderTemplate(`systems/${SYSTEM_ID}/templates/technique-dialog.hbs`, {
       name: item.name, cost: item.system.cost + item.system.costExtra, current: actor.system.resources.cosmo.value,
       extra: actor.system.resources.cosmoExtra, reserve: actor.system.resources.cosmoReserved,
@@ -34,38 +36,23 @@ export async function useTechnique(actor, item) {
     if(activationState(actor,item)!==baseline)throw Error("A ficha ou técnica mudou durante a prévia. Abra a ativação novamente.");
     const changed = techniqueReadiness(item);
     if (changed) throw Error(changed);
-    const technique = item.system.toObject ? item.system.toObject() : {...item.system};
-    const name = item.name;
-    const parameters = techniqueParameters(actor.system, technique, answer);
-    let payment = cosmoPayment(actor.system, parameters.cost, answer);
+    const options={extra:0,elevate:0,condense:0,bonus:0,advantage:0,useExtra:true,allowOverload:false,...answer};
+    const parameters = techniqueParameters(actor.system, item.system, options);
+    let payment = cosmoPayment(actor.system, parameters.cost, options);
     if (payment.lifeDamage) {
       const confirmed = await foundry.applications.api.DialogV2.confirm({window: {title: "Queimar além do limite do corpo"},
         content: `<p>Esta ativação ultrapassa a CE disponível em <strong>${payment.overload}</strong>. O excesso acumulado será ${actor.system.resources.cosmoOverload + payment.overload} CE e custará <strong>${payment.lifeDamage} PV</strong>.</p><p>Confirmar a queima e a rolagem?</p>`});
       if (!confirmed) return;
       // Se os recursos mudaram durante a confirmação, não cobre um valor diferente do autorizado.
-      const refreshed = cosmoPayment(actor.system, parameters.cost, answer);
+      const refreshed = cosmoPayment(actor.system, parameters.cost, options);
       if (JSON.stringify(refreshed) !== JSON.stringify(payment)) throw Error("Os recursos mudaram durante a confirmação. Abra a ativação novamente.");
       payment = refreshed;
     }
     if (!actor.isOwner || item.parent !== actor || !actor.items.get(item.id)) return;
-    const {result, messageRoll} = await evaluatePool(parameters.dice, parameters.modifier);
-    if(activationState(actor,item)!==baseline)throw Error("A ficha ou técnica mudou durante a rolagem. Abra a ativação novamente; nenhum recurso foi gasto.");
-    const outcome = techniqueOutcome(actor.system, technique, parameters, result.total);
-    const attack = {name, nature: technique.nature, effectKind: parameters.effectKind,
-      powerCosmic: parameters.powerCosmic, damage: outcome.damage, armorDamage: outcome.armorDamage,attackerUuid:actor.uuid,
-      ...(target?{targetUuid:target.uuid,targetName:target.name}: {})};
-    const {updates: _updates, ...paymentSummary} = payment;
-    const message = await prepareRollMessage(actor, messageRoll, {name, ...result, ...parameters, ...outcome, payment,
-      effectLabel: EFFECT_KINDS[parameters.effectKind], description: technique.description, isDamage: parameters.effectKind === "damage",targetName:target?.name,power:parameters.power,userLevel:actor.system.profile.level,damageBonus:actor.system.combat.damageBonus+(actor.system.combat.techniqueDamageBonus??0)},
-      {template: "technique-chat", flags: {technique: {itemUuid: item.uuid, ...parameters, ...outcome, payment: paymentSummary},
-        ...(outcome.success ? {attack} : {})}});
-    if (activationState(actor,item)!==baseline||JSON.stringify(cosmoPayment(actor.system, parameters.cost, answer)) !== JSON.stringify(payment)) throw Error("A ficha ou técnica mudou durante a ativação. Abra a ativação novamente.");
-    await actor.update({...payment.updates, "system.combat.asterismPenalty": outcome.nextPenalty});
-    paid = true;
-    return await ChatMessage.create(message);
+    return await submitTechniqueActivation(actor,item,{baseline,options,payment,target,rollMode});
   } catch (error) {
     console.error(`${SYSTEM_ID}: ativação`, error);
-    ui.notifications.error(paid ? "Os recursos foram gastos, mas o cartão não foi publicado. Confira a ficha antes de repetir." : error.message);
+    ui.notifications.error(error.message);
   } finally {active.delete(actor);}
 }
 

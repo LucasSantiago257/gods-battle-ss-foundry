@@ -1,4 +1,4 @@
-# Ativar técnicas e resistir — 0.11.0
+# Ativar técnicas e resistir — 0.13.0
 
 **Configurar** na lista de técnicas (ou **Configurar técnica para combate** na cópia) reúne natureza, classe, efeito, custo completo, alcance e modo de dano. Confira a descrição e marque a revisão. A configuração altera somente esta cópia; conserva notas, proveniência e parâmetros manuais quando o modo automático é escolhido. Cancelar não grava.
 
@@ -22,7 +22,7 @@ O cartão apresenta dano completo na falha; metade do dano corporal e nenhum dan
 
 **A resistência calcula o dano; aplicar exige confirmação.** O proprietário do defensor ou mestre pode usar **Aplicar dano**, conferir o corpo e a armadura e justificar ajustes. Um mestre ativo processa a solicitação, registra os valores e impede aplicação duplicada. A última aplicação pode ser desfeita enquanto os recursos corresponderem ao registro; consulte [combate](combate.md). Confira proteções, Big Bangs e exceções antes de confirmar. Alcance, ações, aprendizado, estados, duração, sustentação por turno e recuperação são manuais. Controle/sustentação não recebe dano corporal genérico. As mensagens seguem a visibilidade de rolagens do Foundry.
 
-A ativação impede cliques duplicados no mesmo cliente e verifica mudanças na ficha/técnica durante a prévia e rolagem antes de salvar. Se os dados mudarem, reabra a ativação para conferir os novos valores. Evite ativar simultaneamente o mesmo cavaleiro em clientes diferentes; o pagamento de CE ainda não usa a fila central do mestre. Se o chat falhar depois do desconto, a notificação informa que os recursos já foram gastos; confira a ficha antes de repetir.
+A ativação exige mestre conectado: o jogador confere a prévia e envia uma solicitação privada. O mestre processa pagamento/rolagem na mesma fila usada por dano e evolução e atualiza o mesmo cartão com a visibilidade do solicitante. Confirmações concorrentes sobre a ficha anterior não cobram novamente. Interrupções têm registro na aba Combate; recuperar publicação conserva o resultado e não repete a cobrança. Confira antes de repetir e veja ativacoes.md. Edição direta e macros ficam fora dessa coordenação; validação real entre clientes ainda está pendente.
 
 ## Importar técnicas do livro (0.5.0)
 
@@ -33,3 +33,4 @@ Consultar Big Bangs relacionados abre referências gerais sem modificar a cópia
 ## Composição personalizada
 
 Técnicas → Adicionar abre o construtor com rascunho persistente, classe, primordial, componentes e graduações. Slots, custo, dificuldade e parâmetros genéricos são calculados; requisitos e efeitos especiais exigem revisão. Veja tecnicas-personalizadas.md. A CE fixa já inclui os tipos de incrementos selecionados: em Condensar, conte apenas virtudes adicionais ainda não incluídas.
+

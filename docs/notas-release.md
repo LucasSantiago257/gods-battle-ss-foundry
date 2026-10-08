@@ -1,4 +1,6 @@
-Versão **0.12.0** para FoundryVTT 13 build 350.
+Versão **0.13.0** para FoundryVTT 13 build 350.
+
+0.13.0 centraliza pagamento/rolagem de técnicas no mestre ativo, na fila compartilhada com dano e evolução. O jogador confere a prévia e autoriza valores; a solicitação privada é atualizada com o resultado no mesmo cartão. Verifica propriedade, autoria, estado da ficha/técnica/alvo e pagamento; repetição/concorrência não cobra dados antigos novamente, incluindo CE ilimitada. Registra pagamento e mantém resultado para recuperar publicação sem repetir cobrança ou rolagem. Histórico na aba Combate com recuperação e liberação após reparo manual justificado. Modos público/privado/cego/self preservam o solicitante. Catálogos, cópias e regras de cálculo permanecem; exige mestre conectado. Ver ativacoes.md e validacao-foundry.md. Ações/turnos e efeitos específicos continuam próximos desafios.
 
 0.12.0 acrescenta o construtor de técnicas personalizadas na ficha: classe/nível, natureza, primordial, seleção de Big Bangs e incrementos do compêndio, graduações e escolhas. Rascunho persistente, slots/custos/dificuldade e prévia de dano, conferência de requisitos/exceções e confirmação com histórico na cópia. Apoiar ocupa slot sem CE; incrementos custam por tipo e respeitam sua graduação máxima, incluindo Controle Cósmico único. Recursos atuais, notas, IDs e catálogos preservados. Efeitos especiais/confirmatórios, primordiais mistos e Cosmo Residual continuam manuais. Veja tecnicas-personalizadas.md e proximos-desafios.md.
 

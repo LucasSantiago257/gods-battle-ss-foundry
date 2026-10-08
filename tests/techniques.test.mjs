@@ -7,6 +7,7 @@ import {useTechnique, resistanceActor, renderTechniqueChat,techniqueTarget,resis
 import {techniqueSetupUpdates,setupTechnique} from "../module/technique-setup.mjs";
 import {installTechniquePreview} from "../module/technique-ui.mjs";
 import {rollTest} from "../module/rolls.mjs";
+import {executeTechniqueRequest,notifyTechniqueResponse} from "../module/technique-activation.mjs";
 
 const system = () => {const s = knight(); s.skills.asterism.value = 2; s.resources.cosmo.value = 10; return prepareKnight(s);};
 test("Asterismo usa natureza da técnica e respeita associação manual", () => {
@@ -82,7 +83,8 @@ test("resistência preserva limites críticos, armadura a zero e dano sem armadu
 
 function runtime({answer = {}, faces = [10, 10], confirm = true, updateFail = false, chatFail = false} = {}) {
   const sent = [], updates = [], notices = [], renders = []; let evaluations = 0;
-  globalThis.ui = {notifications: {warn: text => notices.push(text), error: text => notices.push(text)}};
+  globalThis.ui = {notifications: {warn: text => notices.push(text), error: text => notices.push(text),info:()=>{}}};
+  const owner={id:"owner",isGM:false},gm={id:"gm",isGM:true,active:true};game.user=owner;game.users={activeGM:gm,get:id=>id===gm.id?gm:id===owner.id?owner:null};const messages=new Map();game.messages={get:id=>messages.get(id),get contents(){return [...messages.values()];}};
   game.settings.get = scope => scope === "core" ? "gmroll" : "rank";
   foundry.applications.api.DialogV2 = {wait: async () => answer && ({extra: 0, elevate: 0, bonus: 0, advantage: 0, useExtra: true, allowOverload: false, ...answer}), confirm: async () => confirm};
   foundry.applications.handlebars = {renderTemplate: async (path, context) => {renders.push({path, context}); return "cartão";}};
@@ -92,18 +94,25 @@ function runtime({answer = {}, faces = [10, 10], confirm = true, updateFail = fa
       if (this.formula.includes("d10")) {evaluations++; this.dice = [{results: faces.map(result => ({result}))}]; this.terms = [{number: Math.max(...faces)}];}
       else this.terms = [{number: Number(this.formula)}]; return this;
     }
-    static fromTerms(t) {return {total: t[0].number + (t[1].operator === "+" ? 1 : -1) * t[2].number};}
+    static fromTerms(t) {const total=t[0].number + (t[1].operator === "+" ? 1 : -1) * t[2].number;return {total,toJSON:()=>({total})};}
+    static fromData(data){return {...data,toJSON:()=>structuredClone(data)};}
   };
   foundry.dice = {terms: {OperatorTerm: class {constructor(data) {Object.assign(this, data);}}}};
-  globalThis.ChatMessage = {getSpeaker: () => ({}), applyRollMode: (message, mode) => {message.rollMode = mode;}, create: async message => {if (chatFail) throw Error("Falha simulada no chat"); sent.push(message); return message;}};
-  const actor = {isOwner: true, type: "knight", system: system(), update: async data => {
-    if (updateFail) throw Error("Falha simulada ao salvar"); updates.push(data);
-    for (const [key, value] of Object.entries(data)) {
-      const parts = key.split("."); let cursor = actor; for (const p of parts.slice(0,-1)) cursor = cursor[p]; cursor[parts.at(-1)] = value;
-    }
+  globalThis.ChatMessage = {getSpeaker: () => ({}), applyRollMode: (message, mode) => {message.rollMode = mode;}, create: async data => {
+    if(!data.flags?.["gods-battle-ss"]?.techniqueRequest){sent.push(data);return data;}
+    const message={...structuredClone(data),id:`request${messages.size+1}`,author:owner,update:async patch=>{
+      if(chatFail&&patch.rolls)throw Error("Falha simulada no chat");apply(message,{...patch,...(patch.rolls?{rolls:patch.rolls.map(roll=>roll.toJSON())}:{})});if(patch.rolls)sent.push(message);
+    }};messages.set(message.id,message);game.user=gm;try{await executeTechniqueRequest(message,owner.id);}finally{game.user=owner;notifyTechniqueResponse(message);}return message;
   }};
-  const item = {id: "tech", uuid: "Actor.test.Item.tech", type: "technique", name: "Teste", system: content(), parent: actor};
+  const apply=(object,data)=>{for(const[key,value]of Object.entries(data)){const parts=key.split(".");let cursor=object;for(const p of parts.slice(0,-1))cursor=cursor[p]??={};const last=parts.at(-1);if(last.startsWith("-="))delete cursor[last.slice(2)];else if(value&&typeof value==="object"&&!Array.isArray(value)&&cursor[last]&&typeof cursor[last]==="object")merge(cursor[last],value);else cursor[last]=structuredClone(value);}};
+  const merge=(to,from)=>{for(const[k,v]of Object.entries(from)){if(v&&typeof v==="object"&&!Array.isArray(v)&&to[k]&&typeof to[k]==="object")merge(to[k],v);else to[k]=structuredClone(v);}};
+  const actor = {uuid:"Actor.test",flags:{},isOwner: true, type: "knight", system: system(),testUserPermission:user=>user.isGM||user.id===owner.id,update: async data => {
+    if (updateFail) throw Error("Falha simulada ao salvar");if(Object.keys(data).some(key=>key.startsWith("system.")))updates.push(data);
+    apply(actor,data);
+  }};
+  const item = {id: "tech", uuid: "Actor.test.Item.tech",isOwner:true,type: "technique", name: "Teste", system: content(), parent: actor};
   actor.items = {get: id => id === item.id ? item : null, contents: [item]};
+  globalThis.fromUuid=async uuid=>uuid===actor.uuid?actor:null;
   return {actor, item, sent, updates, notices, renders, evaluations: () => evaluations};
 }
 test("ativação cobra uma vez, envia mesmo total e respeita privacidade", async () => {
@@ -246,6 +255,7 @@ test("prévia responde a elevação/condensação e pagamento, sem tocar recurso
 });
 test("alvo marcado vincula cartão e resistência mesmo com outro token controlado",async()=>{
  const r=runtime(),target={uuid:"Actor.defender",name:"Defensor",type:"knight",isOwner:true};game.user.targets=new Set([{actor:target}]);
+ globalThis.fromUuid=async uuid=>uuid===target.uuid?target:uuid===r.actor.uuid?r.actor:null;
  await useTechnique(r.actor,r.item);assert.equal(r.sent[0].flags["gods-battle-ss"].attack.targetUuid,target.uuid);
  globalThis.fromUuid=async uuid=>uuid===target.uuid?target:null;
  assert.equal(await resistanceForAttack({targetUuid:target.uuid},[{actor:r.actor}],r.actor),target);
