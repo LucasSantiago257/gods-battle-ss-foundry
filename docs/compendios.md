@@ -11,10 +11,9 @@ O pacote instala **oito compêndios nativos, com 700 Items**. Não é necessári
 | Poderes e Habilidades Divinas | 34 | 17 poderes/características e 17 habilidades comuns de divindades (pp. 674–685). |
 | Cosmos Divinos | 14 | Catálogo das pp. 483–496, com pré-requisitos, bônus, efeitos e três níveis de refino de cada Cosmo. |
 | Sentidos e Auras | 49 | 38 auras básicas/divinas (pp. 456–458), quatro estágios do 6º Sentido, cinco do 7º e referências do 8º e 9º (pp. 474–480). |
+| Big Bangs e Incrementos | 59 | Quatro Big Bangs primordiais e 43 extras (pp. 224–230); 12 incrementos, com benefícios por graduação (pp. 217–220). |
 
 Os seis estilos são Santo, Sábio, Guardião, Artista, Asgardiano e Domador de Bestas (pp. 58–124). As especializações adicionais são Protetor, Assassino e Telecinético (pp. 125–138). As evoluções são Aesir, Cavaleiros de Ouro, Juízes do Inferno, Generais Marinas, Dríades e Berserkers (pp. 551–586). Cada lista inclui todos os níveis nomeados nessa seção do livro.
-
-| Big Bangs e Incrementos | 59 | Quatro Big Bangs primordiais e 43 extras (pp. 224–230); 12 incrementos, com benefícios por graduação (pp. 217–220). |
 
 ## Usar na ficha
 
