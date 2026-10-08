@@ -23,6 +23,7 @@
       <details class="calculation-ledger"><summary>Como os valores são calculados</summary>{{#each calculations}}<p><strong>{{label}}</strong>: {{text}}<br><small>Referência: {{page}}</small></p>{{/each}}</details>
     </section>
     <section class="tab {{tabs.combat.cssClass}}" data-group="primary" data-tab="combat">
+      {{#if isGM}}<div class="form-grid"><button type="button" data-action="openTestActors">Abrir fichas de teste</button><button type="button" data-action="importTestActors">Importar grupo de teste</button></div><p class="note">Santo, Guardião e Sábia prontos para exercitar o combate. O grupo é criado em uma pasta própria; repetir preserva as cópias existentes.</p>{{/if}}
       <button type="button" data-action="attackTarget" {{#unless editable}}disabled{{/unless}}>Atacar alvo selecionado</button><p class="note">Marque um cavaleiro como alvo. O defensor resolve sua defesa pelo cartão; depois confirma a aplicação de dano.</p>
       <div class="stat-strip combat-totals">{{#each totals}}<div><span>{{label}}</span><strong>{{value}}</strong></div>{{/each}}</div>
       <h3>Resistências</h3><p class="note">{{resistancePolicy}}</p><div class="resistance-strip">{{#each resistances}}<button type="button" data-action="rollTest" data-kind="resistance" data-key="{{key}}" {{#unless @root.editable}}disabled{{/unless}}>{{label}} · +{{value}} <i class="fa-solid fa-dice"></i></button>{{/each}}</div>
@@ -68,5 +69,5 @@
       <h3>História</h3>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=biography}}
     </section>
   </div>
-  <footer class="sheet-footer">Alterações salvas ao editar · Fichas 0.9.1</footer>
+  <footer class="sheet-footer">Alterações salvas ao editar · Fichas 0.9.2</footer>
 </div>

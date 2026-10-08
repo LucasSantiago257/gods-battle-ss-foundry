@@ -1,4 +1,4 @@
-# Compêndios do livro — versão 0.9.1
+# Compêndios do livro — versão 0.9.2
 
 O pacote instala **nove compêndios nativos, com 866 Items**. Não é necessário executar uma macro nem criar o compêndio de modelos para acessar o livro. Os catálogos aparecem na aba Compêndios do Foundry e quatro deles têm atalhos na aba Poderes; Sentidos e Auras tem atalho em História e evolução; Técnicas e Big Bangs/Incrementos têm atalhos em Técnicas.
 
@@ -18,7 +18,9 @@ Os seis estilos são Santo, Sábio, Guardião, Artista, Asgardiano e Domador de 
 
 ## Usar na ficha
 
-1. Atualize o sistema com o mundo encerrado, confirme **0.9.1** e reinicie o mundo.
+Além dos nove catálogos do livro, o sistema inclui **Fichas de teste — Combate**, um compêndio de Atores com três personagens fictícios prontos para exercício. Consulte [fichas de teste](fichas-teste.md); ele não altera a cobertura dos 866 Items do livro.
+
+1. Atualize o sistema com o mundo encerrado, confirme **0.9.2** e reinicie o mundo.
 2. Abra o cavaleiro, acesse **Poderes** e clique no catálogo desejado. Criaturas e poderes de divindades estão também na aba Compêndios.
 3. Pesquise pelo nome ou navegue pelas pastas de origem. Abra o item para conferir a regra e a página. A seção Descrição desta cópia mostra o texto completo; Outras ocorrências no livro permite comparar os contextos de uma combinação.
 4. Arraste o item para a ficha. Uma **cópia independente** é criada; o UUID do documento de origem fica registrado. Edite requisitos, notas, graduação e usos dessa cópia conforme a campanha.

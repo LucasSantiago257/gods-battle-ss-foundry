@@ -39,7 +39,7 @@ if manifest.get("packs"):
     if not report_path.exists():
         parser.error("Compile os compêndios com npm run packs antes de gerar o ZIP.")
     report = json.loads(report_path.read_text(encoding="utf-8"))
-    inputs = [root / p for p in ("system.json", "module/catalog.mjs", "tools/catalog.mjs", "tools/build-packs.mjs")]
+    inputs = [root / p for p in ("system.json", "module/catalog.mjs", "module/combat-examples.mjs", "tools/catalog.mjs", "tools/build-packs.mjs")]
     inputs.extend((root / "data/catalog").glob("*.json"))
     fingerprint = hashlib.sha256()
     for file in sorted(inputs, key=lambda p: p.relative_to(root).as_posix()):

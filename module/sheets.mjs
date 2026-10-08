@@ -10,6 +10,7 @@ import {attackTarget} from "./combat.mjs";
 import {CREATION_STEPS,creationReview} from "./creation-rules.mjs";
 import {beginCreation,chooseCreationItem,applyInitialStyle,finishCreation} from "./creation.mjs";
 import {recoverDamageOperation} from "./damage.mjs";
+import {openTestActors,importTestActors} from "./combat-examples.mjs";
 
 export function field(name, label, value, choices, type = "number", hint = "") {
   return {name, label, value, hint, isSelect: !!choices, isCheckbox: type === "checkbox", isTextarea: type === "textarea", isNumber: type === "number", type,
@@ -25,7 +26,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
     form: {submitOnChange: true, closeOnSubmit: false},
     actions: {rollTest: KnightSheet.rollAction, createItem: KnightSheet.createItem, editItem: KnightSheet.editItem,
       deleteItem: KnightSheet.deleteItem, equipArmor: KnightSheet.equipArmor, useItem: KnightSheet.useItem, useTechnique: KnightSheet.activateTechnique, attackTarget:KnightSheet.attackTarget,
-      beginCreation:KnightSheet.beginCreation,guideStep:KnightSheet.guideStep,chooseCreationItem:KnightSheet.chooseCreationItem,applyInitialStyle:KnightSheet.applyInitialStyle,finishCreation:KnightSheet.finishCreation,recoverDamage:KnightSheet.recoverDamage,openCatalog: KnightSheet.openCatalog, seedCompendium: KnightSheet.seedCompendium}
+      beginCreation:KnightSheet.beginCreation,guideStep:KnightSheet.guideStep,chooseCreationItem:KnightSheet.chooseCreationItem,applyInitialStyle:KnightSheet.applyInitialStyle,finishCreation:KnightSheet.finishCreation,recoverDamage:KnightSheet.recoverDamage,openCatalog: KnightSheet.openCatalog, seedCompendium: KnightSheet.seedCompendium,openTestActors:KnightSheet.openTestActors,importTestActors:KnightSheet.importTestActors}
   };
   static PARTS = {sheet: {template: `systems/${SYSTEM_ID}/templates/knight.hbs`, scrollable: [".sheet-body"]}};
   static TABS = {primary: {initial: "overview", tabs: [
@@ -111,6 +112,8 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
   }
   static async rollAction(_event, target) { await rollTest(this.actor, target.dataset.kind, target.dataset.key); }
   static async attackTarget() {if(this.isEditable) await attackTarget(this.actor);}
+  static async openTestActors() {return openTestActors();}
+  static async importTestActors() {return importTestActors();}
   static async beginCreation() {if(this.isEditable) await beginCreation(this.actor);}
   static async guideStep(_event,target) {if(!this.isEditable)return;const step=Number(target.dataset.step);if(!CREATION_STEPS[step-1])return;await this.actor.update({"system.creationGuide.step":step});this.changeTab(CREATION_STEPS[step-1].tab,"primary");}
   static async chooseCreationItem(_event,target) {if(this.isEditable)try{await chooseCreationItem(this.actor,target.dataset.slot);}catch(error){ui.notifications.error(error.message);}}

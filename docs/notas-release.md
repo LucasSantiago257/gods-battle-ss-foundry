@@ -1,4 +1,6 @@
-Versão **0.9.1** para FoundryVTT 13 build 350.
+Versão **0.9.2** para FoundryVTT 13 build 350.
+
+A revisão 0.9.2 acrescenta o compêndio de Atores **Fichas de teste — Combate**: Santo, Guardião e Sábia com recursos, armadura e técnicas prontos. Atalhos na aba Combate abrem o catálogo e importam o grupo em pasta própria, preservando fichas já presentes. Não cria fichas ou tokens ao iniciar o mundo. Veja fichas-teste.md.
 
 A revisão 0.9.1 atualiza os guias de compêndios e técnicas para descrever os efeitos derivados e a aplicação confirmada de dano. Mantém as regras e funcionalidades da 0.9.0.
 
