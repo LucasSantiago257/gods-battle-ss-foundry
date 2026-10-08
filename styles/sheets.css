@@ -1,0 +1,70 @@
+.gods-battle { --battle-bg: #111c31; --battle-panel: #1b2941; --battle-gold: #e4c582; --battle-text: #f2eee4; --battle-muted: #b4c0d1; --battle-line: #43526b; color: var(--battle-text); }
+.gods-battle .window-content {padding: 0; background: var(--battle-bg); color: var(--battle-text); overflow: hidden;}
+.gods-battle .battle-layout {display: flex; flex-direction: column; height: 100%; min-height: 0; background: var(--battle-bg); font-family: "Segoe UI", sans-serif;}
+.gods-battle fieldset {margin: 0; border: 0; padding: 0; min-width: 0;}
+.gods-battle input, .gods-battle select, .gods-battle textarea {color: var(--battle-text); background: #0c1528; border: 1px solid var(--battle-line); border-radius: 5px; padding: 6px 9px; width: 100%; height: 34px; font: inherit;}
+.gods-battle textarea {height: auto; resize: vertical; min-height: 70px;}
+.gods-battle option {background: #111c31; color: #f2eee4;}
+.gods-battle input:focus, .gods-battle select:focus, .gods-battle textarea:focus {outline: 2px solid var(--battle-gold); outline-offset: 1px;}
+.gods-battle button {background: #243651; border: 1px solid var(--battle-line); color: var(--battle-text); border-radius: 5px; padding: 5px 10px; font: inherit; cursor: pointer; height: auto; min-height: 30px; box-shadow: none;}
+.gods-battle button:hover {background: #344967; border-color: var(--battle-gold);}
+.gods-battle button:disabled, .gods-battle input:disabled {opacity: .65; cursor: default;}
+.gods-battle .battle-header {display: flex; align-items: center; gap: 18px; padding: 22px 24px 18px; background: linear-gradient(115deg, #1e304f, #111c31 80%); border-bottom: 1px solid #675c43; flex-shrink: 0;}
+.gods-battle .portrait {width: 72px; height: 72px; object-fit: cover; border: 1px solid var(--battle-gold); border-radius: 10px;}
+.gods-battle .identity {flex: 1; min-width: 0;}
+.gods-battle .eyebrow {display: block; color: var(--battle-gold); font-size: 11px; letter-spacing: 2px; font-weight: 700;}
+.gods-battle .actor-name {font-family: Georgia, serif; font-size: 26px; height: 42px; padding-left: 0; background: transparent; border-color: transparent;}
+.gods-battle .edition, .gods-battle small {display: block; color: var(--battle-muted); font-size: 11px; line-height: 1.5;}
+.gods-battle .level-seal {text-align: center; border: 1px solid #756544; padding: 8px 16px; border-radius: 9px; color: var(--battle-gold);}
+.gods-battle .level-seal span {display: block; font-size: 9px; letter-spacing: 1.5px;}
+.gods-battle .level-seal strong {font: 30px Georgia, serif;}
+.gods-battle .resource-strip {display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 24px; flex-shrink: 0;}
+.gods-battle .resource {border-radius: 7px; background: var(--battle-panel); padding: 10px 14px; border-left: 3px solid #d98087;}
+.gods-battle .resource.cosmo {border-color: #83b7ef;}.gods-battle .resource.maximum {border-color: var(--battle-gold);}
+.gods-battle .resource > span {font-size: 10px; letter-spacing: 1.2px; font-weight: 700; color: var(--battle-muted);}
+.gods-battle .resource > div {display: flex; align-items: center; gap: 8px;}
+.gods-battle .resource input {width: 85px; background: transparent; border: 0; font-size: 25px; height: 35px; padding: 0;}
+.gods-battle .battle-tabs {display: flex; margin: 0 24px; gap: 3px; flex-wrap: wrap; border-bottom: 1px solid var(--battle-line); flex-shrink: 0;}
+.gods-battle .battle-tabs button {border: 0; background: transparent; font-size: 12px; padding: 8px 10px; border-radius: 4px 4px 0 0;}
+.gods-battle .battle-tabs button.active {background: #2a3d5d; color: var(--battle-gold); box-shadow: inset 0 -2px var(--battle-gold);}
+.gods-battle .sheet-body, .gods-battle .content-body {overflow: auto; flex: 1; min-height: 0; padding: 20px 24px; scrollbar-color: #63728b #111c31;}
+.gods-battle .tab {display: none;}.gods-battle .tab.active {display: block;}
+.gods-battle h3 {color: var(--battle-gold); font: 18px Georgia, serif; border: 0; margin: 22px 0 12px;}
+.gods-battle .attributes {display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px;}
+.gods-battle .attribute-card {background: var(--battle-panel); padding: 11px; border: 1px solid var(--battle-line); border-radius: 8px; text-align: center;}
+.gods-battle .attribute-card > button {width: 100%; border: 0; padding: 0; background: transparent; color: var(--battle-gold); font-size: 13px;}
+.gods-battle .attribute-card > input {background: transparent; border: 0; font: 32px Georgia, serif; height: 42px; text-align: center;}
+.gods-battle .attribute-card > span {display: block; font-size: 11px; color: var(--battle-muted);}
+.gods-battle .attribute-card label {display: flex; align-items: center; gap: 6px; font-size: 10px; color: var(--battle-muted); margin-top: 8px;}
+.gods-battle .attribute-card label input {height: 26px; text-align: center;}
+.gods-battle .note {font-size: 11px; line-height: 1.6; color: var(--battle-muted); border-left: 2px solid #716448; padding-left: 10px; margin: 16px 0;}
+.gods-battle .stat-strip {display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 8px; margin: 14px 0;}
+.gods-battle .stat-strip > div {padding: 10px; background: var(--battle-panel); border-radius: 6px;}
+.gods-battle .stat-strip span {display: block; font-size: 11px; color: var(--battle-muted);}
+.gods-battle .stat-strip strong {display: block; font-size: 20px; margin-top: 5px;}
+.gods-battle .combat-totals {grid-template-columns: repeat(5, 1fr);}
+.gods-battle .field-grid {display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px;}
+.gods-battle .field {display: flex; flex-direction: column; gap: 5px; min-width: 0; font-size: 12px;}
+.gods-battle .field > span {color: var(--battle-muted);}.gods-battle .field.wide {grid-column: 1 / -1;}
+.gods-battle .check-field {flex-direction: row; align-items: center; justify-content: space-between; background: var(--battle-panel); padding: 8px; border-radius: 5px;}
+.gods-battle .check-field input {width: 18px; height: 18px; accent-color: var(--battle-gold);}
+.gods-battle .resistance-strip {display: flex; gap: 10px; flex-wrap: wrap;}.gods-battle .resistance-strip button {flex: 1; min-width: 130px;}
+.gods-battle .skills-table {width: 100%; border-collapse: collapse; background: transparent; margin: 0; font-size: 12px;}
+.gods-battle .skills-table th {padding: 10px; text-align: left; color: var(--battle-gold); background: var(--battle-panel);}
+.gods-battle .skills-table td {padding: 6px; border-bottom: 1px solid #33435c;}
+.gods-battle .skills-table tr:nth-child(even) {background: #17243a;}
+.gods-battle .skills-table td:first-child {width: 36%;}.gods-battle .skills-table td:nth-child(2), .gods-battle .skills-table td:nth-child(4) {width: 65px;}
+.gods-battle .skills-table button {background: transparent; border: 0; font-size: 12px; text-align: left; padding: 4px;}
+.gods-battle .section-heading {display: flex; justify-content: space-between; align-items: center; margin-top: 18px;}.gods-battle .section-heading h3 {margin: 0;}
+.gods-battle .item-list {padding: 0; list-style: none; margin: 12px 0 20px;}
+.gods-battle .item-row {display: flex; gap: 12px; align-items: center; padding: 12px; background: var(--battle-panel); border: 1px solid #33435c; border-radius: 6px; margin-bottom: 7px;}
+.gods-battle .item-row img {border: 0; border-radius: 5px;}.gods-battle .item-name {flex: 1; min-width: 0;}
+.gods-battle .text-button {border: 0; background: transparent; padding: 0; text-align: left; color: var(--battle-gold);}
+.gods-battle .item-controls {display: flex; align-items: center; gap: 6px; font-size: 11px; flex-wrap: wrap;}
+.gods-battle .icon-button {min-width: 30px;}.gods-battle .equipped {border-color: var(--battle-gold); color: var(--battle-gold);}
+.gods-battle .empty-list {padding: 22px; border: 1px dashed #536079; border-radius: 6px; text-align: center; color: var(--battle-muted); font-size: 12px;}
+.gods-battle .sheet-footer {flex-shrink: 0; padding: 9px 24px; font-size: 10px; color: var(--battle-muted); border-top: 1px solid var(--battle-line);}
+.gods-battle .content-body .field-grid {grid-template-columns: repeat(2, minmax(0, 1fr));}
+.battle-chat .eyebrow {font-size: 10px; letter-spacing: 1px;}.battle-chat .die {display: inline-block; padding: 4px 7px; border: 1px solid #777; border-radius: 4px;}
+.battle-chat .chat-result {display: flex; align-items: center; gap: 12px;}.battle-chat .chat-result > strong {font-size: 30px;}
+@media (max-width: 700px) {.gods-battle .field-grid {grid-template-columns: repeat(2, minmax(0, 1fr));}.gods-battle .attributes {gap: 5px;}.gods-battle .attribute-card {padding: 7px;}.gods-battle .combat-totals {grid-template-columns: repeat(3, 1fr);}.gods-battle .battle-header {padding: 15px;}.gods-battle .resource-strip {margin: 12px 15px;}.gods-battle .sheet-body {padding: 16px;}}

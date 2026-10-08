@@ -1,0 +1,6 @@
+{
+  "TYPES": {
+    "Actor": {"knight": "Cavaleiro"},
+    "Item": {"armor": "Armadura", "technique": "Técnica", "virtue": "Virtude", "ability": "Habilidade / Dádiva", "bigbang": "Big Bang", "increment": "Incremento", "artifact": "Artefato", "divineCosmo": "Cosmo Divino"}
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "gods-battle-ss",
+  "title": "Saint Seiya — A Batalha dos Deuses",
+  "description": "Sistema UmD10+ para fichas de cavaleiros, técnicas, armaduras e artefatos. Primeira versão em desenvolvimento para Foundry 13.350.",
+  "version": "0.1.0",
+  "compatibility": {"minimum": "13", "maximum": "13"},
+  "authors": [{"name": "Lucas Santiago", "url": "https://github.com/LucasSantiago257"}],
+  "url": "https://github.com/LucasSantiago257/gods-battle-ss-foundry",
+  "esmodules": ["module/main.mjs"],
+  "styles": ["styles/sheets.css"],
+  "languages": [{"lang": "pt-BR", "name": "Português (Brasil)", "path": "lang/pt-BR.json"}],
+  "documentTypes": {
+    "Actor": {"knight": {}},
+    "Item": {"armor": {}, "technique": {}, "virtue": {}, "ability": {}, "bigbang": {}, "increment": {}, "artifact": {}, "divineCosmo": {}}
+  },
+  "initiative": "@combat.initiative",
+  "grid": {"distance": 1.5, "units": "m"},
+  "primaryTokenAttribute": "resources.health",
+  "secondaryTokenAttribute": "resources.cosmo"
+}
