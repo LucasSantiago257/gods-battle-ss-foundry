@@ -38,6 +38,15 @@ Dano ao defensor, efeitos, requisitos e sentidos são conferidos manualmente con
 
 Estes passos requerem o Foundry real; os testes automatizados não os substituem.
 
+## Cálculos e efeitos pessoais 0.6–0.7
+
+1. Abra uma ficha antiga: automação deve permanecer desativada, sem mudanças de PV atuais, ajustes ou itens. Duplicá-la deve preservar essa escolha.
+2. Crie um Santo, Vigor 3: máximo 23 no nível 1 e 36 no nível 2. Máximo manual 77 deve prevalecer. PV −2,5 devem persistir.
+3. Com automação habilitada, importe Vitalidade: máximo ganha 20 + 2 por nível. Reabra/recarregue; o benefício não deve duplicar. Desative/remova e confira a reversão sem alterar PV atuais.
+4. Importe Combo duas vezes: +4 ações. Importe Aumento de Atributo e escolha dois pontos em Força; base preservada, graduação efetiva +2. Remover reverte.
+5. Importe Dançarino de Sábio em um Santo nível 1: aquisição permitida, efeito pendente. Confira a pendência e aceite a exceção na cópia para testar o bônus. Compare duas habilidades do mesmo tipo; memória deve mostrar a supressão.
+6. Importe Armadura Poderosa: máximo da armadura dobra sem curar; máximo manual prevalece. Importe Gigante e a habilidade natural Gigante: bônus de PV não duplica.
+
 ## Auditoria 0.3.1
 
 1. Abra Sentidos e Auras pelo atalho de História e evolução. Confira 38 Auras e 11 referências de Sentidos. Importar uma delas cria Item sem modificar os campos Sentido, estágio e Aura.

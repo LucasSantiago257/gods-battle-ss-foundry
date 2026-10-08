@@ -5,6 +5,7 @@ import {useTechnique} from "./techniques.mjs";
 import {EFFECT_KINDS, techniqueReadiness} from "./technique-rules.mjs";
 import {ABILITY_KINDS, openCatalog} from "./catalog.mjs";
 import {calculationSummary} from "./calculations.mjs";
+import {evaluatePassives, passiveDefinition, passiveWarnings} from "./passives.mjs";
 
 export function field(name, label, value, choices, type = "number", hint = "") {
   return {name, label, value, hint, isSelect: !!choices, isCheckbox: type === "checkbox", isTextarea: type === "textarea", isNumber: type === "number", type,
@@ -57,6 +58,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
     return Object.assign(context, {
       actor: this.actor, system: s, editable: this.isEditable, isGM: game.user.isGM, tabs: this._prepareTabs("primary"), groups,
       calculations: calculationSummary(s, game.settings.get(SYSTEM_ID, "resistanceMode")),
+      passiveLedger: evaluatePassives(s,this.actor.items.contents).ledger,
       resistancePolicy: game.settings.get(SYSTEM_ID, "resistanceMode") === "rank" ? "Graduação + modificador de nível (provisório)" : "Modificador do atributo + modificador de nível",
       attributes: Object.entries(ATTRIBUTES).map(([key, label]) => ({key, label, ...s.attributes[key]})),
       overview: [f("profile.level", "Nível", s.profile.level), f("profile.style", "Estilo", s.profile.style, STYLES), f("profile.status", "Status do cavaleiro", s.profile.status, STATUS), f("profile.nature", "Natureza do Cosmo", s.profile.nature, NATURES),
@@ -146,12 +148,19 @@ export class ContentSheet extends foundry.applications.api.HandlebarsApplication
     if (["ability", "divineCosmo", "virtue", "bigbang", "increment", "technique"].includes(this.item.type)) fields.push(t("costText", "Custo / consumo descrito"));
     fields.push(nf("system.uses.value", "Usos atuais", s.uses.value), nf("system.uses.max", "Usos máximos (0: sem contador)", s.uses.max), tf("system.uses.reset", "Recarga", s.uses.reset), area("system.description", "Descrição e efeitos", s.description), area("system.notes", "Notas desta cópia", s.notes));
     const source = this.item.flags?.[SYSTEM_ID]?.source;
+    const definition = passiveDefinition(this.item);
+    if (definition) {
+      fields.unshift(field("system.rulesEnabled", "Aplicar os efeitos conferidos desta cópia", s.rulesEnabled, null, "checkbox"), field("system.rulesAccepted", "Aceitar exceção aos pré-requisitos após conferência", s.rulesAccepted, null, "checkbox"), nf("system.acquisitionLevel", "Nível em que foi adquirido", s.acquisitionLevel));
+      if (definition.requiresActive) fields.unshift(field("system.active", "Melhoria ativa (conferi a ação necessária)",s.active,null,"checkbox"));
+      if (definition.rules.some(r=>r.target.startsWith("choice"))) fields.unshift(field("system.attributeChoice1","Primeiro ponto de atributo",s.attributeChoice1,{"":"Selecionar",...ATTRIBUTES}),field("system.attributeChoice2","Segundo ponto de atributo",s.attributeChoice2,{"":"Selecionar",...ATTRIBUTES}));
+    }
     if (this.item.type === "technique" && source?.reference?.reviewRequired && !source.reference.manualOnly) fields.unshift(field("system.techniqueReviewed", "Revisei natureza, efeito, custo, Poder, ND, alcance e regras desta cópia", s.techniqueReviewed, null, "checkbox"));
     const bookReference = source ? {description: s.description, pages: s.page, author: source.author, license: source.license,
       references: Array.isArray(source.references) ? source.references.filter(r => /^Compendium\.gods-battle-ss\.componentes-tecnicas\.Item\.[a-f0-9]{16}$/.test(r.uuid)) : [],
       occurrences: Array.isArray(source.occurrences) ? source.occurrences.map(o => ({name: o.name, category: o.category, pages: Array.isArray(o.pages) ? o.pages.join(", ") : "", text: o.text})) : []} : null;
     return Object.assign(context, {item: this.item, editable: this.isEditable, fields, typeLabel: ITEM_TYPES[this.item.type], armor: this.item.type === "armor" ? s.armor : null,
-      technique: this.item.type === "technique" ? {cost: s.cost + s.costExtra, difficulty: 10 + s.cost + s.costExtra, damage: s.power * s.damageLevel, reviewMessage: techniqueReadiness(this.item), canActivate: this.isEditable && this.item.parent?.type === "knight" && !techniqueReadiness(this.item)} : null, origin: s.originUuid, bookReference});
+      technique: this.item.type === "technique" ? {cost: s.cost + s.costExtra, difficulty: 10 + s.cost + s.costExtra, damage: s.power * s.damageLevel, reviewMessage: techniqueReadiness(this.item), canActivate: this.isEditable && this.item.parent?.type === "knight" && !techniqueReadiness(this.item)} : null, origin: s.originUuid, bookReference,
+      ruleReference: definition ? {...definition, statusLabel: {automated:"Automatizada",partial:"Parcialmente automatizada",manual:"Aplicação manual"}[definition.status], warnings: this.item.parent?.type === "knight" ? passiveWarnings(this.item.parent.system,this.item) : []} : null});
   }
   static async activateTechnique() {if (this.isEditable) await useTechnique(this.item.parent, this.item);}
   static async openReference(_event, target) {
