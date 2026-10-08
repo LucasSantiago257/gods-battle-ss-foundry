@@ -6,6 +6,8 @@
   "compatibility": {"minimum": "13", "maximum": "13"},
   "authors": [{"name": "Lucas Santiago", "url": "https://github.com/LucasSantiago257"}],
   "url": "https://github.com/LucasSantiago257/gods-battle-ss-foundry",
+  "manifest": "https://github.com/LucasSantiago257/gods-battle-ss-foundry/releases/latest/download/system.json",
+  "download": "https://github.com/LucasSantiago257/gods-battle-ss-foundry/releases/download/v0.1.0/gods-battle-ss-0.1.0.zip",
   "esmodules": ["module/main.mjs"],
   "styles": ["styles/sheets.css"],
   "languages": [{"lang": "pt-BR", "name": "Português (Brasil)", "path": "lang/pt-BR.json"}],

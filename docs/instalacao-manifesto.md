@@ -6,11 +6,15 @@ Este projeto é um **sistema de jogo**. Seu manifesto é `system.json`. É poss�
 
 O servidor precisa conseguir baixar o JSON e o ZIP por HTTPS, sem depender da sessão do navegador ou do acesso do desenvolvedor ao GitHub. Um arquivo local, um artefato privado do Actions ou uma release privada/em rascunho não atendem a essa condição. Não coloque tokens no manifesto.
 
-Opções: tornar o repositório público e publicar a release; ou manter o repositório privado e hospedar apenas o manifesto e o ZIP em um endereço público. O ZIP contém o código executável do sistema, mesmo na segunda opção. A mudança de visibilidade ou publicação pública deve ser autorizada pelo proprietário.
+O proprietário autorizou a distribuição e tornou o repositório público. O manifesto está em:
+
+```text
+https://github.com/LucasSantiago257/gods-battle-ss-foundry/releases/latest/download/system.json
+```
 
 `python tools/package.py --release` gera `dist/system.json` e o ZIP com URLs de uma release no repositório atual. Isso **prepara**, mas não publica a distribuição. O manifesto dentro do ZIP é igual ao arquivo externo. Antes da publicação, os links gerados ainda não funcionam para instalação.
 
-O workflow manual **Preparar release para instalação por manifesto**, executado em `main`, verifica o projeto e cria somente um rascunho com os dois arquivos. Após definir a visibilidade, o proprietário poderá revisar e publicar a release. Uma versão já existente não será sobrescrita. Para atualizar, incremente `version` em `system.json` antes de gerar a próxima release.
+O workflow **Publicar sistema para instalação por manifesto** verifica o projeto e publica o manifesto e o ZIP. Ele roda quando `system.json` é alterado em `main`, ou quando é acionado manualmente em `main`. Uma versão já existente não será sobrescrita. Para atualizar, incremente `version` e ajuste o endereço `download` em `system.json`; integrar essa mudança em `main` publicará a nova versão após os testes passarem.
 
 Outra hospedagem pode ser usada com:
 

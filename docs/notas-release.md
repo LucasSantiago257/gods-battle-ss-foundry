@@ -2,4 +2,6 @@ Primeira versão das fichas para FoundryVTT 13 build 350: cavaleiros, armaduras,
 
 Em desenvolvimento. A execução dentro do Foundry ainda precisa de validação. Consulte o README e o roteiro de testes incluídos no pacote; crie um mundo de teste.
 
-Quando esta release estiver publicada em um repositório público, use o link do arquivo `system.json` em **Sistemas de Jogo → Instalar Sistema → URL do Manifesto**. Releases privadas ou em rascunho não oferecem uma URL pública para esse instalador.
+Para instalar, use esta URL em **Sistemas de Jogo → Instalar Sistema → URL do Manifesto**:
+
+https://github.com/LucasSantiago257/gods-battle-ss-foundry/releases/latest/download/system.json
