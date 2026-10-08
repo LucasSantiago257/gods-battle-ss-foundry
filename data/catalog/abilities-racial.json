@@ -1,0 +1,119 @@
+[
+  {
+    "_id": "3693dfd624e27fec",
+    "name": "Clarividência — Muvianos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "As Habilidades de muvianos em geral é desconhecida, mas os membros do tal clã - atualmente formado por descendentes híbridos de muvianos e humanos comuns - possuem poderes e manipulações de Cosmo  únicas, assim como vitalidade aparentemente sobre - humana. Alaguyns desenvolvem diversas Habilidade s paranormais sem precisar de grande maestria do Cosmo , como a Psicocinese  (Habilidade de mover objetos com o poder da mente) igual a Virtude , o teleporte ou teletransporte (Habilidade de locomover -se instantaneamente de um local a outro) igual a Técnica , clarividência (Habilidade de obter conhecimento de evento, ser ou objeto, sem a utilização de quaisquer canais sensoriais humanos conhecidos, utilizando a Perícia  Utilização do Cosmo), a telepatia  (Habilidade de comunicar-se diretamente com a mente de um indivíduo), a criação e manipulação de cristais (uma matéria que muda de estado físico conforme a vontade do usuário), a manipulação do pó de estrelas (que pode ser usada tanto na alquimia quanto em combate) e outras Habilidades. Com uma boa maestria de Cos mo, humanos comuns podem obter a maioria destas Habilidade s, mas o esforço necessário para tal é indefinidamente maior. Certos muvianos excedem as capacidades de outros, como Atla  (em sua capacidade avançada de teleporte) e Mu de Áries (em sua maestria da manipulação de cristais). Os humanos Asterion de Cães de Caça e Yudo de Cães de Caça Negro demonstraram uma Habilidade mental que nenhum membro conhecido do clã demonstrou dominar, a leitura de mentes.",
+      "page": "615, 616",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Referência racial do clã de alquimistas (pp. 615–616). O livro também admite aprendizado por humanos com maestria de Cosmo; requisitos e efeitos não quantificados dependem do mestre. A descrição preserva o contexto, sem conceder os outros poderes mencionados.",
+      "category": "Natural — Muvianos (raças)",
+      "level": 1,
+      "abilityKind": "natural",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "racial:muvianos:clarividência",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            615,
+            616
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "1ed4f3f8421ebe80",
+    "name": "Criação e Manipulação de Cristais — Muvianos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "As Habilidades de muvianos em geral é desconhecida, mas os membros do tal clã - atualmente formado por descendentes híbridos de muvianos e humanos comuns - possuem poderes e manipulações de Cosmo  únicas, assim como vitalidade aparentemente sobre - humana. Alaguyns desenvolvem diversas Habilidade s paranormais sem precisar de grande maestria do Cosmo , como a Psicocinese  (Habilidade de mover objetos com o poder da mente) igual a Virtude , o teleporte ou teletransporte (Habilidade de locomover -se instantaneamente de um local a outro) igual a Técnica , clarividência (Habilidade de obter conhecimento de evento, ser ou objeto, sem a utilização de quaisquer canais sensoriais humanos conhecidos, utilizando a Perícia  Utilização do Cosmo), a telepatia  (Habilidade de comunicar-se diretamente com a mente de um indivíduo), a criação e manipulação de cristais (uma matéria que muda de estado físico conforme a vontade do usuário), a manipulação do pó de estrelas (que pode ser usada tanto na alquimia quanto em combate) e outras Habilidades. Com uma boa maestria de Cos mo, humanos comuns podem obter a maioria destas Habilidade s, mas o esforço necessário para tal é indefinidamente maior. Certos muvianos excedem as capacidades de outros, como Atla  (em sua capacidade avançada de teleporte) e Mu de Áries (em sua maestria da manipulação de cristais). Os humanos Asterion de Cães de Caça e Yudo de Cães de Caça Negro demonstraram uma Habilidade mental que nenhum membro conhecido do clã demonstrou dominar, a leitura de mentes.",
+      "page": "615, 616",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Referência racial do clã de alquimistas (pp. 615–616). O livro também admite aprendizado por humanos com maestria de Cosmo; requisitos e efeitos não quantificados dependem do mestre. A descrição preserva o contexto, sem conceder os outros poderes mencionados.",
+      "category": "Natural — Muvianos (raças)",
+      "level": 1,
+      "abilityKind": "natural",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "racial:muvianos:criação e manipulação de cristais",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            615,
+            616
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "051d27be655ec46a",
+    "name": "Manipulação do Pó de Estrelas — Muvianos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "As Habilidades de muvianos em geral é desconhecida, mas os membros do tal clã - atualmente formado por descendentes híbridos de muvianos e humanos comuns - possuem poderes e manipulações de Cosmo  únicas, assim como vitalidade aparentemente sobre - humana. Alaguyns desenvolvem diversas Habilidade s paranormais sem precisar de grande maestria do Cosmo , como a Psicocinese  (Habilidade de mover objetos com o poder da mente) igual a Virtude , o teleporte ou teletransporte (Habilidade de locomover -se instantaneamente de um local a outro) igual a Técnica , clarividência (Habilidade de obter conhecimento de evento, ser ou objeto, sem a utilização de quaisquer canais sensoriais humanos conhecidos, utilizando a Perícia  Utilização do Cosmo), a telepatia  (Habilidade de comunicar-se diretamente com a mente de um indivíduo), a criação e manipulação de cristais (uma matéria que muda de estado físico conforme a vontade do usuário), a manipulação do pó de estrelas (que pode ser usada tanto na alquimia quanto em combate) e outras Habilidades. Com uma boa maestria de Cos mo, humanos comuns podem obter a maioria destas Habilidade s, mas o esforço necessário para tal é indefinidamente maior. Certos muvianos excedem as capacidades de outros, como Atla  (em sua capacidade avançada de teleporte) e Mu de Áries (em sua maestria da manipulação de cristais). Os humanos Asterion de Cães de Caça e Yudo de Cães de Caça Negro demonstraram uma Habilidade mental que nenhum membro conhecido do clã demonstrou dominar, a leitura de mentes.",
+      "page": "615, 616",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Referência racial do clã de alquimistas (pp. 615–616). O livro também admite aprendizado por humanos com maestria de Cosmo; requisitos e efeitos não quantificados dependem do mestre. A descrição preserva o contexto, sem conceder os outros poderes mencionados.",
+      "category": "Natural — Muvianos (raças)",
+      "level": 1,
+      "abilityKind": "natural",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "racial:muvianos:manipulação do pó de estrelas",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            615,
+            616
+          ]
+        }
+      }
+    }
+  }
+]

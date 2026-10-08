@@ -25,6 +25,14 @@ test("drop externo preserva UUID da origem e entra sem equipar", async () => {
   const sheet = new KnightSheet(actor); await sheet._onDropItem({}, {type: "armor", uuid: "Compendium.world.armors.Item.abc"});
   assert.deepEqual(update, {"system.originUuid": "Compendium.world.armors.Item.abc", "system.equipped": false});
 });
+test("leitura do Item usa descrição da cópia e preserva ocorrências originais para observadores", async () => {
+ const item={type:"ability", isOwner:false, system:{...content(), description:"Regra editada nesta cópia", page:"122, 465"},
+  flags:{"gods-battle-ss":{source:{author:"Dhoko de Libra", license:"CC BY-NC-SA 4.0", occurrences:[{name:"Visão Aérea", category:"Domador de Bestas", pages:[122], text:"Regra original"}]}}}};
+ const before=JSON.stringify(item);const context=await new ContentSheet(item)._prepareContext({});
+ assert.equal(context.editable,false);assert.equal(context.bookReference.description,item.system.description);
+ assert.equal(context.bookReference.occurrences[0].text,"Regra original");assert.equal(context.bookReference.occurrences[0].pages,"122");
+ assert.equal(JSON.stringify(item),before);
+});
 test("drop na própria ficha deixa ordenação com a classe nativa", async () => {
   let updates = 0; const actor = {isOwner: true, acceptDrop: async () => ({update: async () => updates++})};
   await new KnightSheet(actor)._onDropItem({}, {type: "armor", parent: actor}); assert.equal(updates, 0);

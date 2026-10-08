@@ -143,8 +143,11 @@ export class ContentSheet extends foundry.applications.api.HandlebarsApplication
     if (this.item.type === "ability") fields.push(field("system.abilityKind", "Tipo", s.abilityKind, ABILITY_KINDS));
     if (["ability", "divineCosmo", "virtue"].includes(this.item.type)) fields.push(t("costText", "Custo / consumo descrito"));
     fields.push(nf("system.uses.value", "Usos atuais", s.uses.value), nf("system.uses.max", "Usos máximos (0: sem contador)", s.uses.max), tf("system.uses.reset", "Recarga", s.uses.reset), area("system.description", "Descrição e efeitos", s.description), area("system.notes", "Notas desta cópia", s.notes));
+    const source = this.item.flags?.[SYSTEM_ID]?.source;
+    const bookReference = source ? {description: s.description, pages: s.page, author: source.author, license: source.license,
+      occurrences: Array.isArray(source.occurrences) ? source.occurrences.map(o => ({name: o.name, category: o.category, pages: Array.isArray(o.pages) ? o.pages.join(", ") : "", text: o.text})) : []} : null;
     return Object.assign(context, {item: this.item, editable: this.isEditable, fields, typeLabel: ITEM_TYPES[this.item.type], armor: this.item.type === "armor" ? s.armor : null,
-      technique: this.item.type === "technique" ? {cost: s.cost + s.costExtra, difficulty: 10 + s.cost + s.costExtra, damage: s.power * s.damageLevel, canActivate: this.isEditable && this.item.parent?.type === "knight"} : null, origin: s.originUuid});
+      technique: this.item.type === "technique" ? {cost: s.cost + s.costExtra, difficulty: 10 + s.cost + s.costExtra, damage: s.power * s.damageLevel, canActivate: this.isEditable && this.item.parent?.type === "knight"} : null, origin: s.originUuid, bookReference});
   }
   static async activateTechnique() {if (this.isEditable) await useTechnique(this.item.parent, this.item);}
 }

@@ -2,7 +2,7 @@
   "id": "gods-battle-ss",
   "title": "Saint Seiya — A Batalha dos Deuses",
   "description": "Sistema UmD10+ com fichas de cavaleiros, técnicas e compêndios do livro para Foundry 13.350.",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "compatibility": {
     "minimum": "13",
     "maximum": "13"
@@ -15,7 +15,7 @@
   ],
   "url": "https://github.com/LucasSantiago257/gods-battle-ss-foundry",
   "manifest": "https://github.com/LucasSantiago257/gods-battle-ss-foundry/releases/latest/download/system.json",
-  "download": "https://github.com/LucasSantiago257/gods-battle-ss-foundry/releases/download/v0.3.0/gods-battle-ss-0.3.0.zip",
+  "download": "https://github.com/LucasSantiago257/gods-battle-ss-foundry/releases/download/v0.3.1/gods-battle-ss-0.3.1.zip",
   "esmodules": [
     "module/main.mjs"
   ],
@@ -91,6 +91,13 @@
       "name": "cosmos-divinos",
       "label": "Cosmos Divinos — A Batalha dos Deuses",
       "path": "packs/cosmos-divinos",
+      "type": "Item",
+      "system": "gods-battle-ss"
+    },
+    {
+      "name": "sentidos-auras",
+      "label": "Sentidos e Auras — A Batalha dos Deuses",
+      "path": "packs/sentidos-auras",
       "type": "Item",
       "system": "gods-battle-ss"
     }

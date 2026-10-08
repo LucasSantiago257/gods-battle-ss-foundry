@@ -1,0 +1,1446 @@
+[
+  {
+    "_id": "a3b43ef3680bb983",
+    "name": "Imponência de Áries",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A sensação produzida é de imponência e poder avassalador, gerando reverência e admiração.",
+      "page": "456",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:imponência de áries",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            456
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "0d955fa01b09ab09",
+    "name": "Tranquilidade de Touro",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Cria uma presença imponente, emana um cosmo que parece envolver seus aliados em uma sensação de calma e tranquilidade.",
+      "page": "456",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:tranquilidade de touro",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            456
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "c30c41efd024efa3",
+    "name": "Duplicidade de Gêmeos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Um cosmo sinistro criando uma sensação de medo e desespero.",
+      "page": "456",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:duplicidade de gêmeos",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            456
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "c8432b2879725e8b",
+    "name": "Opressão de Câncer",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Cria uma atmosfera sinistra e opressiva ao seu redor. Emanar o cosmo que provoca uma sensação de arrepio e inquietude, gerando desconforto.",
+      "page": "456",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:opressão de câncer",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            456
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f30f389b3bbdd065",
+    "name": "Poderoso Leão",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Ele pode emanar um cosmo que cria uma presença poderosa e imponente, gerando sensações de energia e poder intenso.",
+      "page": "456",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:poderoso leão",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            456
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "611ac1f5aaa9561f",
+    "name": "Luz de Virgem",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Conhecido por seu cosmo sereno e iluminado. Sua intensidade de emanação de cosmo pode causar reverência e admiração.",
+      "page": "456",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:luz de virgem",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            456
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ec33867049dc47af",
+    "name": "Calmaria de Libra",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Ele pode emanar um cosmo que transmite uma sensação de calma e tranquilidade, criando uma atmosfera de serenidade ao seu redor.",
+      "page": "456",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:calmaria de libra",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            456
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8220b3565c69e1c3",
+    "name": "Implacável Escorpião",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Conhecido por seu cosmo intenso e implacável. Sua emanação de cosmo provoca medo e reverência.",
+      "page": "456",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:implacável escorpião",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            456
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5aa1c2482bfd240d",
+    "name": "Poderoso Sagitário",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Conhecido por seu cosmo poderoso e expansivo. Sua emanação cria uma presença majestosa que pode inspirar admiração e respeito.",
+      "page": "456",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:poderoso sagitário",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            456
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "9a732d092a58f3b7",
+    "name": "Determinação de Capricórnio",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Cosmo implacável e determinado. Sua emanação de cosmo cria uma atmosfera tensa e desafiadora, gerando uma sensação de coragem.",
+      "page": "456",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:determinação de capricórnio",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            456
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "2a1674faeb803749",
+    "name": "Gélido Aquário",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Conhecido por um cosmo frio e impiedoso. Sua emanação de cosmo cria uma aura gélida que pode congelar o ambiente ao seu redor. Ele pode emanar um cosmo que provoca uma sensação de frieza e distância, gerando medo e apreensão.",
+      "page": "456",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:gélido aquário",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            456
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "6cb1182ee4b696a9",
+    "name": "Encanto de Peixes",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Conhecido por seu cosmo sedutor e encantador. Sua emanação de cosmo transmite uma sensação de beleza e fascínio.",
+      "page": "456",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:encanto de peixes",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            456
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "fcc7ba67bf1864f3",
+    "name": "Cosmo Incandescente",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cosmo emana uma sensação de calor intenso e chamas ardentes, revelando sua capacidade única de manipular o fogo.",
+      "page": "456",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo incandescente",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            456
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "1594fc367f7890c3",
+    "name": "Cosmo Sombrio do Wyvern",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cosmo emana uma sensação sombria e malévola, refletindo sua natureza do submundo e sua conexão com as trevas.",
+      "page": "456",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo sombrio do wyvern",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            456
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3fec64afed1dedaa",
+    "name": "Cosmo Corruptor de Griffon",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cosmo emana uma sensação de corrupção e destruição, revelando seu desejo de disseminar o caos e a ruína por onde passa.",
+      "page": "456",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo corruptor de griffon",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            456
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "2f1affd1b42194ab",
+    "name": "Cosmo Enraivecido Garuda",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cosmo emana uma sensação de fúria e raiva, representando sua natureza sádica e sua vontade implacável de infligir dor aos outros.",
+      "page": "457",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo enraivecido garuda",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            457
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e16eb82fd19ec25d",
+    "name": "Cosmo Assombrador Balron",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cosmo emana uma sensação assombradora e sinistra, emanando terror.",
+      "page": "457",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo assombrador balron",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            457
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "c13fbcef88dfdce1",
+    "name": "Cosmo Caótico de Esfinge",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cosmo emana uma sensação de caos e desordem, representando sua natureza imprevisível e sua busca por destruição e aniquilação.",
+      "page": "457",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo caótico de esfinge",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            457
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8eafb3706627a6cd",
+    "name": "Cosmo Desafiador Minotauro",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cosmo emana uma sensação desafiadora e provocadora, revelando sua personalidade agressiva e seu desejo de enfrentar fortes adversários.",
+      "page": "457",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo desafiador minotauro",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            457
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "cda0b2cd7605ad87",
+    "name": "Cosmo Enlouquecedor Banshee",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cosmo emana uma sensação enlouquecedora e perturbadora.",
+      "page": "457",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo enlouquecedor banshee",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            457
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "158d362af954af23",
+    "name": "Cosmo Devastador Verme",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cosmo emana uma sensação de devastação e destruição, revelando sua capacidade em corroer a vida e a energia de seus oponentes.",
+      "page": "457",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo devastador verme",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            457
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "15ebbbf284e5e465",
+    "name": "Cosmo Imponente de Peixes",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cosmo emana uma imponência e majestade inigualáveis, refletindo sua beleza e poder como um Cavaleiro.",
+      "page": "457",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo imponente de peixes",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            457
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "9da1f1b420622c1e",
+    "name": "Cosmo Revigorante de Pégaso",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cosmo emana uma energia revigorante e inspiradora, representando sua determinação e coragem em proteger seus amigos e lutar pela justiça.",
+      "page": "457",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo revigorante de pégaso",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            457
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "89668ba31549077f",
+    "name": "Cosmo do Dragão",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cosmo emana uma sensação de estabilidade, equilíbrio e proteção, emanando uma aura serena e confiável.",
+      "page": "457",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo do dragão",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            457
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5ba9df95bf1cb133",
+    "name": "Cosmo de Cisne",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cosmo emana uma Sensação de frio intenso, causando uma sensação de rigidez e lentidão nos inimigos, e uma sensação de frescor e pureza nos aliados.",
+      "page": "457",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo de cisne",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            457
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "da7d9daa6d107f48",
+    "name": "Cosmo de Andrômeda",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cosmo emana uma sensação de compaixão, empatia e serenidade, emanando uma aura suave e reconfortante.",
+      "page": "457",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo de andrômeda",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            457
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "9229638fa8b78a67",
+    "name": "Cosmo de Fênix",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sensação de calor intenso, coragem e determinação, emanando uma aura ardente e imponente.",
+      "page": "457",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo de fênix",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            457
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "7de94bd144d9cbe3",
+    "name": "Cosmo Vingativo Touro",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cosmo emana uma sensação de vingança e determinação, representando sua busca por justiça e sua determinação em derrotar aqueles que ameaçam seus amigos.",
+      "page": "457",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo vingativo touro",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            457
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f1e080cc31c6603d",
+    "name": "Cosmo Radiante de Leão",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cosmo emana um brilho radiante e nobre, representando sua lealdade inabalável e sua devoção em proteger aqueles que são importantes.",
+      "page": "457",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo radiante de leão",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            457
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "259bf1a5c80f0258",
+    "name": "Cosmo Sereno de Áries",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cosmo emana uma serenidade e calma inabaláveis, representando sua dedicação ao equilíbrio e à justiça, e sua capacidade de se manter centrado em meio à adversidade.",
+      "page": "457",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo sereno de áries",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            457
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "65709435fd549ce9",
+    "name": "Cosmo Tempestuoso de Câncer",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cosmo emana uma tempestade de energia intensa e agressiva, revelando sua natureza implacável em batalha e sua determinação em superar seus inimigos.",
+      "page": "458",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura básica",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo tempestuoso de câncer",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            458
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f2224c658802f673",
+    "name": "Cosmo Sereno de Atena",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Atena é conhecida por seu cosmo divino e benevolente. Sua intensidade de emanação de cosmo é Transcendental , irradiando uma aura poderosa e purificadora que pode trazer esperança e proteção aos seus aliados. Seu cosmo pode criar efeitos de cura, regeneração e aumento de resistência em seus aliados, além de gerar uma sensação de paz e serenidade.",
+      "page": "458",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura divina",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo sereno de atena",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            458
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "74bc411f40cbcd66",
+    "name": "Cosmo Majestoso de Poseidon",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Poseidon é conhecido por seu cosmo imponente e majestoso. Sua intensidade de emanação de cosmo é alta, gerando uma presença dominante e imponente. Seu cosmo pode criar efeitos de controle sobre os elementos aquáticos, como ondas, tempestades e tsunamis, além de gerar uma sensação de imensidão e poder do oceano.",
+      "page": "458",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura divina",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo majestoso de poseidon",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            458
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "41f5f9eb4f2713a3",
+    "name": "Cosmo Maligno de Hades",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Hades é conhecido por seu cosmo sombrio e aterrorizante. Sua intensidade de emanação de cosmo é Transcendental , emanando uma aura maligna e opressiva. Seu cosmo pode criar efeitos de destruição, morte e corrupção, além de gerar uma sensação de medo, desespero e escuridão.",
+      "page": "458",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura divina",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo maligno de hades",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            458
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "814a9405c79e099a",
+    "name": "Cosmo Guerreiro de Ares",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Ares é conhecido por seu cosmo violento e agressivo. Sua intensidade de emanação de cosmo é Transcendental , emanando uma aura de fúria e destruição. Seu cosmo pode criar efeitos de aumento de força, velocidade e resistência, além de gerar uma sensação de caos, batalha e desordem",
+      "page": "458",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura divina",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo guerreiro de ares",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            458
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "930793ec1a590c84",
+    "name": "Cosmo Imortal de Odin",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cosmo de Odin é eterno e transcendental, capaz de manipular o tempo, criar ilusões poderosas, e emitir uma aura de sabedoria e conhecimento ancestral.",
+      "page": "458",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura divina",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo imortal de odin",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            458
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b2a75f25cea860a3",
+    "name": "Cosmo Sombrio de Éris",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cosmo de Éris é insidioso e corrompedor, capaz de semear discórdia, manipular as emoções dos outros, criar ilusões enganosas, e gerar uma aura sombria que enlouquece os que a cercam. Sua intensidade de emanação de cosmo é Transcendental",
+      "page": "458",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura divina",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo sombrio de éris",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            458
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "0690e94b36eae6b9",
+    "name": "Cosmo Divino de Zeus",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Zeus é conhecido como o deus supremo do Olimpo e possui um cosmo divino e poderoso. Sua intensidade de emanação de cosmo é Transcendental , irradiando uma aura majestosa e imponente. Seu cosmo pode criar efeitos de controle sobre os elementos naturais, como raios, tempestades e trovões, além de gerar uma sensação de poder e autoridade.",
+      "page": "458",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Característica de emanação de Cosmo (pp. 455–458). Descrição para interpretação; não concede automaticamente cura, dano, resistência ou controle.",
+      "category": "Aura divina",
+      "level": 1,
+      "abilityKind": "aura",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aura:cosmo divino de zeus",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            458
+          ]
+        }
+      }
+    }
+  }
+]

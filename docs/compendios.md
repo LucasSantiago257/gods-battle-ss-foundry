@@ -1,23 +1,24 @@
-# Compêndios do livro — versão 0.3.0
+# Compêndios do livro — versão 0.3.1
 
-O pacote instala **seis compêndios nativos, com 589 Items**. Não é necessário executar uma macro nem criar o compêndio de modelos para acessar o livro. Os catálogos aparecem na aba Compêndios do Foundry e quatro deles têm atalhos na aba Poderes da ficha.
+O pacote instala **sete compêndios nativos, com 641 Items**. Não é necessário executar uma macro nem criar o compêndio de modelos para acessar o livro. Os catálogos aparecem na aba Compêndios do Foundry e quatro deles têm atalhos na aba Poderes; Sentidos e Auras tem atalho em História e evolução da ficha.
 
 | Compêndio | Entradas | Cobertura |
 | --- | ---: | --- |
 | Virtudes | 129 | 128 títulos das categorias Geral, Combate e Técnica (pp. 161–183), mais o exemplo explícito Cosmo de Gelo (p. 164). |
-| Habilidades e Dádivas | 226 | Seis estilos: níveis 1–20 e seis Melhorias; três especializações adicionais e suas dádivas; seis evoluções: níveis 21–30; 16 habilidades naturais descritas nas virtudes. |
+| Habilidades e Dádivas | 229 | Seis estilos: níveis 1–20 e seis Melhorias; três especializações adicionais e suas dádivas; seis evoluções: níveis 21–30; 16 habilidades naturais descritas nas virtudes e três poderes raciais adicionais dos Muvianos (pp. 615–616). |
 | Combinações de Cosmo | 98 | 80 entradas do índice (pp. 460–470), 13 combinações fora dele e cinco variações de título encontradas no texto. |
 | Habilidades de Criaturas | 88 | Poderes nomeados nos blocos de criaturas (pp. 618–659), separados por criatura, incluindo os poderes de Hypnos. |
 | Poderes e Habilidades Divinas | 34 | 17 poderes/características e 17 habilidades comuns de divindades (pp. 674–685). |
 | Cosmos Divinos | 14 | Catálogo das pp. 483–496, com pré-requisitos, bônus, efeitos e três níveis de refino de cada Cosmo. |
+| Sentidos e Auras | 49 | 38 auras básicas/divinas (pp. 456–458), quatro estágios do 6º Sentido, cinco do 7º e referências do 8º e 9º (pp. 474–480). |
 
 Os seis estilos são Santo, Sábio, Guardião, Artista, Asgardiano e Domador de Bestas (pp. 58–124). As especializações adicionais são Protetor, Assassino e Telecinético (pp. 125–138). As evoluções são Aesir, Cavaleiros de Ouro, Juízes do Inferno, Generais Marinas, Dríades e Berserkers (pp. 551–586). Cada lista inclui todos os níveis nomeados nessa seção do livro.
 
 ## Usar na ficha
 
-1. Atualize o sistema com o mundo encerrado, confirme **0.3.0** e reinicie o mundo.
+1. Atualize o sistema com o mundo encerrado, confirme **0.3.1** e reinicie o mundo.
 2. Abra o cavaleiro, acesse **Poderes** e clique no catálogo desejado. Criaturas e poderes de divindades estão também na aba Compêndios.
-3. Pesquise pelo nome ou navegue pelas pastas de origem. Abra o item para conferir a regra e a página.
+3. Pesquise pelo nome ou navegue pelas pastas de origem. Abra o item para conferir a regra e a página. A seção Descrição desta cópia mostra o texto completo; Outras ocorrências no livro permite comparar os contextos de uma combinação.
 4. Arraste o item para a ficha. Uma **cópia independente** é criada; o UUID do documento de origem fica registrado. Edite requisitos, notas, graduação e usos dessa cópia conforme a campanha.
 
 Se os jogadores não puderem visualizar um catálogo, o mestre pode configurar a permissão de observação do compêndio no Foundry. As permissões do mundo são respeitadas.
@@ -35,7 +36,13 @@ Atualizações do sistema atualizam os catálogos de origem; cópias já importa
 - Variações de título fora do índice ficam identificadas por suas referências, sem presumir equivalência de todas as condições. Alguns nomes com erro de grafia foram corrigidos com nota contendo o título original.
 - Quando o bloco da criatura lista somente o nome de um poder, a entrada identifica a referência. Por exemplo, Barreira Divina de Hypnos remete à seção de poderes divinos; nenhum efeito foi inventado para preencher o espaço.
 
-O catálogo cobre as listas e poderes nomeados acima. As quantidades de “espaços de habilidades” dos monstros nem sempre coincidem com as descrições presentes no livro; não foram criadas habilidades ausentes. Auras, tabelas gerais dos Sentidos, ações básicas de combate e listas de técnicas, Big Bangs, incrementos e artefatos são outras categorias de regras, ainda fora deste catálogo. A auditoria de referências distribuídas pelo restante do livro continua.
+O catálogo cobre as listas e poderes nomeados acima. As quantidades de “espaços de habilidades” dos monstros nem sempre coincidem com as descrições presentes no livro; não foram criadas habilidades ausentes. Auras e estágios dos Sentidos são referências importáveis; sua importação não altera os campos Sentido, estágio, Aura ou bônus do cavaleiro. Ações básicas de combate e listas de técnicas, Big Bangs, incrementos e artefatos são outras categorias de regras, ainda fora deste catálogo. A auditoria de referências distribuídas pelo restante do livro continua.
+
+## Ocorrências com condições diferentes
+
+A auditoria colacionou 88 ocorrências dos estilos, virtudes, Cosmos Divinos e catálogo de técnicas, referentes a 71 entradas do índice de combinações. O índice permanece como descrição principal; os trechos originais, seus contextos e páginas ficam preservados nos metadados e na seção **Outras ocorrências no livro** da ficha do Item. A lista de páginas inclui o índice e as ocorrências.
+
+Por exemplo, Olho de Fogo menciona a Virtude Sensitivo no índice (p. 465), enquanto a ocorrência em Visão Aérea menciona Fotógrafo de Cosmo (p. 122). As condições não foram unificadas nem somadas; a escolha de interpretação continua com o mestre. Os títulos que não constam do índice permanecem em suas entradas adicionais/variantes.
 
 ## Verificação e origem
 
