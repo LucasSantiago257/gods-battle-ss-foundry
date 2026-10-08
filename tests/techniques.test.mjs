@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {knight, content} from "./foundry-stub.mjs";
 import {prepareKnight} from "../module/rules.mjs";
-import {techniqueParameters, techniqueOutcome, cosmoPayment, resistancePreview} from "../module/technique-rules.mjs";
+import {techniqueParameters, techniqueOutcome, cosmoPayment, resistancePreview, techniqueReadiness} from "../module/technique-rules.mjs";
 import {useTechnique, resistanceActor, renderTechniqueChat} from "../module/techniques.mjs";
 import {rollTest} from "../module/rolls.mjs";
 
@@ -109,6 +109,31 @@ test("ativação cobra uma vez, envia mesmo total e respeita privacidade", async
   assert.equal(r.evaluations(), 1); assert.equal(r.updates.length, 1); assert.equal(r.actor.system.resources.cosmo.value, 8);
   assert.equal(r.sent[0].rollMode, "gmroll"); assert.equal(r.sent[0].rolls[0].total, r.renders.at(-1).context.total);
   assert.ok(r.sent[0].flags["gods-battle-ss"].attack);
+});
+test("técnica importada exige revisão e parâmetros válidos antes de abrir ativação", async () => {
+ const r=runtime();
+ r.item.flags={"gods-battle-ss":{source:{reference:{reviewRequired:true}}}};
+ r.item.system={...r.item.system,power:0,damageLevel:0,cost:0};
+ await useTechnique(r.actor,r.item);
+ assert.equal(r.renders.length,0); assert.equal(r.evaluations(),0); assert.equal(r.updates.length,0);
+ assert.match(r.notices[0],/marque a revisão/);
+ r.item.system.techniqueReviewed=true;
+ assert.match(techniqueReadiness(r.item),/custo total/);
+ r.item.system.cost=2;assert.match(techniqueReadiness(r.item),/Poder e Nível/);
+ r.item.system.power=10;r.item.system.damageLevel=2;r.item.system.nature="";
+ assert.match(techniqueReadiness(r.item),/natureza/);
+ r.item.system.nature="mental";assert.equal(techniqueReadiness(r.item),null);
+ await useTechnique(r.actor,r.item);assert.equal(r.evaluations(),1);assert.equal(r.updates.length,1);
+ r.item.flags["gods-battle-ss"].source.reference.manualOnly=true;
+ await useTechnique(r.actor,r.item);assert.equal(r.updates.length,1);assert.match(r.notices.at(-1),/cooperativa/);
+});
+test("controle admite parâmetros de dano pendentes; efeito manual nunca usa rolagem genérica", () => {
+ const t={...content(),effectKind:"control",damageLevel:0,power:0};
+ const p=techniqueParameters(system(),t);
+ assert.equal(techniqueOutcome(system(),t,p,p.difficulty).damage,0);
+ t.effectKind="manual";assert.throws(()=>techniqueParameters(system(),t),/aplicação manual/);
+ assert.match(techniqueReadiness({system:t}),/aplicação manual/);
+ assert.equal(techniqueReadiness({system:content()}),null);
 });
 test("falha crítica gasta CE e aplica −10; próxima ativação consome penalidade", async () => {
   const r = runtime({faces: [1, 1]}); await useTechnique(r.actor, r.item);

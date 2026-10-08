@@ -2919,7 +2919,7 @@
     "img": "systems/gods-battle-ss/assets/cosmos.svg",
     "system": {
       "description": "A Virtude Alquimista, Golpe Letal ou Muviano (Habilidade Natural Ferreiro Paranormal) combinada com a Técnica OHM [MENTAIS OU ILUSÓRIAS], Braços de Urso [FÍSICO], Prisão [FÍSICO], Réquiem de Cordas [FÍSICO], Rosa Piranha [FÍSICO], Marionete Cósmica [FÍSICO][MANIPULAÇÃO DE COSMO], Cabelos Dourados da Morte [FÍSICO][MANIPULAÇÃO DE COSMO], Fios Sedosos [MANIPULAÇÃO DE COSMO], Revolução Estelar [MANIPULAÇÃO DE COSMO], Cólera dos 100 Dragões [MANIPULAÇÃO DE COSMO], Lanças de Gelo da Lotus Branca [CONTROLE DA NATUREZA], Presas Douradas do Dragão [CONTROLE DA NATUREZA], Coroa de Fogo [CONTROLE DA NATUREZA], Tempestade Giratória das 100 Lanças de Gelo [CONTROLE DA NATUREZA] eleva 1 Nível de Dano na Armadura.",
-      "page": "246, 247, 257, 258, 261, 262, 274, 275, 276, 277, 289, 290, 291, 305, 306, 325, 326, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 467",
+      "page": "246, 247, 257, 258, 261, 262, 274, 275, 276, 277, 289, 290, 291, 305, 306, 325, 326, 331, 332, 333, 352, 353, 360, 362, 363, 364, 365, 467",
       "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
       "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
       "category": "Cosmo especial — Técnicas",
@@ -2965,39 +2965,13 @@
             331,
             332,
             333,
-            334,
-            335,
-            336,
-            337,
-            338,
-            339,
-            340,
-            341,
-            342,
-            343,
-            344,
-            345,
-            346,
-            347,
-            348,
-            349,
-            350,
-            351,
             352,
             353,
-            354,
-            355,
-            356,
-            357,
-            358,
-            359,
             360,
-            361,
             362,
             363,
             364,
             365,
-            366,
             467
           ],
           "indexPages": [
@@ -3011,10 +2985,10 @@
                 246,
                 247
               ],
-              "text": "A Virtude Alquimista, Golpe Letal ou Muviano (Habilidade Natural Ferreiro Paranormal) combinada com esta Técnica eleva 1 Nível de Dano na Armadura."
+              "text": "A Virtude Alquimista, Golpe Letal ou Muviano (Habilidade Natural Ferreiro Paranormal) combinada com esta Técnica eleva 1\n\nNível de Dano na Armadura."
             },
             {
-              "name": "Enforcamento Do Urso",
+              "name": "Enforcamento do Urso",
               "category": "Técnica Bronze",
               "pages": [
                 257,
@@ -3032,7 +3006,7 @@
               "text": "A Virtude Alquimista, Golpe Letal ou Muviano (Habilidade Natural Ferreiro Paranormal) combinada com esta Técnica eleva 1 Nível de Dano na Armadura."
             },
             {
-              "name": "Réquiem De Cordas",
+              "name": "Réquiem de Cordas",
               "category": "Técnica Prata",
               "pages": [
                 274,
@@ -3059,7 +3033,7 @@
               "text": "A Virtude Alquimista, Golpe Letal ou Muviano (Habilidade Natural Ferreiro Paranormal) combinada com esta Técnica eleva 1 Nível de Dano na Armadura."
             },
             {
-              "name": "Cabelos Dourados Da Morte",
+              "name": "Cabelos Dourados da Morte — Ouro / Físicos",
               "category": "Técnica Ouro",
               "pages": [
                 291
@@ -3085,219 +3059,49 @@
               "text": "A Virtude Alquimista, Golpe Letal ou Muviano (Habilidade Natural Ferreiro Paranormal) combinada com esta Técnica eleva 1 Nível de Dano na Armadura."
             },
             {
-              "name": "Cólera Dos 100 Dragões",
+              "name": "Cólera dos 100 Dragões",
               "category": "Técnica Ouro",
               "pages": [
                 331,
                 332,
-                333,
-                334,
-                335,
-                336,
-                337,
-                338,
-                339,
-                340,
-                341,
-                342,
-                343,
-                344,
-                345,
-                346,
-                347,
-                348,
-                349,
-                350,
-                351,
-                352,
-                353,
-                354,
-                355,
-                356,
-                357,
-                358,
-                359,
-                360,
-                361,
-                362,
-                363,
-                364,
-                365,
-                366
+                333
               ],
-              "text": "A Virtude Alquimista, Golpe Letal ou Muviano (Habilidade Natural Ferreiro Paranormal) combinada com esta Técnica eleva 1 Nível de Dano na Armadura. CONTROLE DA NATUREZA\n\nTécnicas especializadas em controlar a natureza e conectar seu Cosmo  com a vida , tornando-se um com a própria natureza e o verdadeiro Cosmo. Categoria: Glaciais de L uta, Chamas de L uta, Marciais de P ressão Eólica e Cósmicas de Luta. Atributo Chave: Velocidade Resistência: Velocidade Área: Raio\n\nVELOCIDADE (Ar) [BRONZE] [CONTROLE DA NATUREZA] Descrição: O Cavaleiro traça gestos que lembram os raios em uma constelação. Sua Cosmo Energia se manifesta como uma aura de raios brilhantes que o envolve. Ele usa o cosmo para acelerar a uma velocidade incrível, movendo -se como um relâmpago. A paisagem ao redor treme à medida que ele dispara através do campo de batalha. Seus inimigos mal conseguem acompanhá- lo, tornando -se alvos indefesos. Os efeitos dessa técnica são sentidos por todo o campo de batalha, com os sons dos trovões e a visão de relâmpagos que se estendem enquanto o Cavaleiro se desloca a uma velocidade fenomenal. Big Bang Movendo: Usar essa técnica exige uma ação de movimento  parcial e não todas as Ações de Ataque. Big Bang Apoiar: A Classe da Técnica evolui com a Status do Personagem sem a necessidade de ser comprada novamente em uma classe superior. Big Bang Relâmpago: O Cavaleiro eleva sua classificação de Velocidade para Velocidade Massivamente Superada ++ Natureza de Cosmo: Controle da Natureza. Efeito: Movendo, Apoiar, Relâmpago. Custo: 3. Duração: 1 + 1.\n\nCIRCULO DE GELO (KALITSO) (Ar) [BRONZE] [CONTROLE DA NATUREZA] Descrição: O Cavaleiro concentra seu cosmo nas mãos e as posiciona em forma de círculo, traçando a silhueta da constelação. Ele abre as mãos e dispara um feixe de cosmo energia que voa em direção ao inimigo, emitindo um som cristalino, e o envolve. O inimigo fica preso dentro de um círculo de gelo, incapaz de se mover ou reagir. Big Bang Paralisia: A Técnica deixa o alvo paralisado (Ver Sistemas Estado Paralisado). Natureza de Cosmo: Controle da Natureza. Efeito: Controle, Paralisia [*]. Pré-requisito: Velocidade + 5, Utilização do Cosmo 1. Custo: 3. Duração: 1 + 1\n\nTROVÃO AURORA (Ar) [BRONZE] [CONTROLE DA NATUREZA] Descrição: O Cavaleiro concentra seu cosmo nas mãos e as levanta para o céu, traçando a silhueta da sua constelação. Ele então abaixa as mãos e dispara de suas palmas ondas de cristais congelantes de grande impacto, cujos trancos chegam a jogar seu corpo para trás, fazendo o barulho de uma explosão. Os cristais voam em direção ao inimigo, emitindo um brilho azulado, e o atingem em  vários pontos vitais. O inimigo fica preso dentro de uma chuva de cristais, incapaz de se mover ou reagir. Os cristais se fragmentam, causando uma enorme devastação na paisagem ao redor. Big Bang Novamente: O usuário da Técnica tem 10, 20, 30 + Nível% de chance de causar um novo impacto causando:  Bronze: 15, Prata: 30, Ouro: 50 de dano. Big Bang Apoiar: A Classe da Técnica evolui com a Status do Personagem sem a necessidade de ser comprada novamente em uma classe superior. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Novamente. Custo: 3. Duração: Instantânea.\n\nPÓ DE DIAMANTE (Ar) [BRONZE] [CONTROLE DA NATUREZA] Descrição: O cavaleiro concentra seu cosmo no punho direito e traça com ele o desenho da constelação no ar, ativando seu poder. Ele vê as estrelas de sua constelação brilharem em seu punho, formando uma imagem de pura Cosmo Energia. Ele então dispara sua técnica, lançando uma rajada de cristais de gelo que atinge o inimigo de frente, congelando- o e/ou paralisando-o. O impacto da técnica cria uma onda de frio que congela a paisagem ao redor, deixando tudo coberto de gelo. O oponente fica preso em um bloco de gelo, incapaz de se mover ou reagir. Seu corpo sofre danos internos causados pelo frio extremo, que pode levar à morte. Big Bang Congelar: A Técnica tem 5, 10, 15 + Nível% de chance de congelar o alvo. Alvos congelados, ficam paralisados (Ver Sistemas Estado Paralisado) . Big Bang Zero Absoluto : O Zero absoluto é a temperatura na qual toda a atividade de átomos é impossível, portanto, nada se move, é o limite extremo. Em um combate entre dois cavaleiros do frio, a vitória caberá ao que se aproximar mais desse limite! Frio 1 (Nível de Dano 1 5): O ar gélido do Cavaleiro atinge -150º C. Nesta temperatura  as Armaduras da Categoria de Bronze congelam. Frio 2 (Nível de Dano 20 ): O ar gélido do Cavaleiro atinge -200º C. Nesta temperatura  as Armaduras da Categoria de Prata congelam. Próximo Zero Absoluto (Nível de Dano 2 5): O ar gélido do Cavaleiro atinge - 273º C. Nesta temperatura as Armaduras da Categoria de Bronze e Prata quebram. mas as Armaduras de ouro não congelam antes dos - 273, 15 °C, portanto você precisaria baixar a temperatura até o zero absoluto para congelar uma Armadura da Categoria Ouro. Especial: Uma Armadura congelada perde sua Proteção de Armadura. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Congelar, Zero Absoluto. Custo: 4. Duração: Instantânea ou 1 + 1.\n\nAVE FÊNIX (Ar) [BRONZE] [CONTROLE DA NATUREZA] Descrição: O cavaleiro eleva seu Cosmo ao máximo e estende seus braços, formando a constelação de Fênix no ar. Ele vê as estrelas de sua constelação se alinharem em suas mãos, criando uma imagem de uma fênix de cosmo energia. Ele então libera sua técnica, fazendo com que as asas da fênix se abram e provoquem uma ventania que arremessa longe tudo ao seu redor. O efeito da técnica é devastador, destruindo a paisagem e atingindo os inimigos com força. Os oponentes são lançados para longe, sofrendo danos graves em seus corpos e armaduras. Big Bang Novamente: O usuário da Técnica tem 1 0, 20, 30 + Nível % de chance de arremessar o alvor novamente causando:  Bronze: 15, Prata: 30, Ouro: 50 de dano. Big Bang Apoiar: A Classe da Técnica evolui com a Status do Personagem sem a necessidade de ser comprada novamente em uma classe superior. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Novamente, Apoiar. Custo: 3. Duração: Instantânea.\n\nEXTERMÍNIO DE ÓRION (Ar) [BRONZE] [CONTROLE DA NATUREZA] Descrição: O cavaleiro ergue seu dedo indicador para atrair descargas elétricas do céu, e sente seu cosmo se elevar. Ele traça com o  dedo a sua constelação no ar, ativando seu poder. Ele vê as estrelas de sua constelação se iluminarem em seu dedo, formando uma imagem de sua constelação  de cosmo energia. Ele então abre seus braços e acumula energia trovejante, absorvendo os raios vindos do céu para carregar seu poder. Uma projeção de sua aura surge em suas costas, trovejando com fúria. Ele então fecha os braços em direção ao adversário, lançando trovões em forma de uma poderosa rajada. O efeito da técnica é impressionante, criando uma explosão de luz e som que atordoa os inimigos. O oponente é atingido pelos trovões, sofrendo danos severos em seu corpo e armadura. Especial: O Personagem pode fazer outras ações, exceto outra Técnica enquanto acumular poder. Big Bang Apoiar: A Classe da Técnica evolui com a Status do Personagem sem a necessidade de ser comprada novamente em uma classe superior. Big Bang Estocar: O usuário consegue, ao se concentrar, acumular dano e liberá-lo de uma vez. O Personagem eleva 1 Nível de Dano/turno concentrado e pode acumular no máximo: Estocar Bronze: Nível de Dano 5. Estocar Prata: Nível de Dano 10. Estocar Ouro: Nível de Dano 20. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Apoiar, Estocar. Custo: 3. Duração: Instantânea.\n\nEXPLOSÃO ELÉTRICA (Ar) [BRONZE] [CONTROLE DA NATUREZA] Descrição: O cavaleiro eleva seu cosmo no peito e traça a sua constelação no ar, ativando seu poder. Ele vê as estrelas de sua constelação se conectarem em seu peito, formando uma imagem de cosmo energia. Ele então libera sua técnica, criando pequenas bolas elétricas que se movem em torno do inimigo, cercando -o. O oponente tenta  escapar, mas as bolas elétricas o seguem e se aproximam cada vez mais. O cavaleiro então fecha os olhos e faz um gesto com as mãos, fazendo com que as bolas elétricas explodam no seu inimigo. O efeito da técnica é surpreendente, criando uma explosão de luz e choque que abala os inimigos. O oponente é atingido pelas explosões, sofrendo danos intensos em seu corpo e armadura. Big Bang Certeiro: A Técnica causa dano extra. O usuário da Técnica faz um teste de confirmação, se o resultado for 10 ele trespassa o inimigo ( ver a Manobra de Combate Duelo). Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Certeiro. Custo: 3. Duração: Instantânea.\n\nUNIDADE DA NATUREZA (Terra) [BRONZE] [CONTROLE DA NATUREZA] Descrição: O cavaleiro eleva seu cosmo no coração e traça a sua constelação no ar, ativando seu poder. Ele vê as estrelas de sua constelação se harmonizarem em seu coração, formando uma imagem de pura Cosmo Energia. Ele então libera sua técnica, fazendo despertar o espírito guardião da natureza e ter pleno domínio no controle de toda flora. Ele faz com que as árvores usem suas raízes e as vinhas da floresta para atacar seu inimigo, envolvendo-o e apertando-o. O efeito da técnica é impressionante, criando uma cena de caos e beleza na floresta. O oponente é atingido pelas plantas, sofrendo danos físicos. Big Bang Certeiro : A Técnica causa danos extra. O usuário da Técnica faz um teste de confirmação e se o resultado for igual ou maior que 8 (Ouro) , 9 (Prata) ou 10 (Bronze) ele trespassa o inimigo (ver a Manobra de Combate Duelo ). Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Certeiro. Custo: 3. Duração: Instantânea.\n\nRAIO DE FOGO (Fogo) [BRONZE] [CONTROLE DA NATUREZA] Descrição: O cavaleiro eleva seu cosmo acima da cabeça e traça a constelação no ar, ativando seu poder. Ele vê as estrelas de sua constelação se inflamarem acima de sua cabeça, formando uma imagem de  cosmo energia. Ele então libera sua técnica, lançando uma rajada de fogo incandescente que atinge o inimigo. O efeito da técnica é espetacular, criando uma chama de cor vermelha e dourada que queima tudo em seu caminho. O oponente é atingido pelo fogo, sof rendo danos irreparáveis em seu corpo e armadura. Ele grita de agonia e cai no chão, carbonizado. Big Bang Novamente: O usuário da Técnica tem 1 0, 20, 30 + Nível % de chance de outra rajada acertar o inimigo novamente causando:  Bronze: 15, Prata: 30, Ouro: 50 de dano. Big Bang Apoiar: A Classe da Técnica evolui com a Status do Personagem sem a necessidade de ser comprada novamente em uma classe superior. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Novamente, Apoiar. Custo: 3. Duração: Instantânea.\n\nCOROA SOLAR (Fogo) [BRONZE] [CONTROLE DA NATUREZA] Descrição: O cavaleiro eleva seu cosmo no peito e traça as estrelas de sua constelação no ar, ativando seu poder. Ele vê as estrelas de sua constelação se incendiarem em seu peito, formando uma imagem de uma fogueira de cosmo energia. Ele então libera sua técnica, concentrando as chamas em um único ponto, criando uma gigantesca esfera de chamas, fazendo lembrar muito um sol negro. Ele dispara essa esfera em direção ao inimigo, que tenta se esquivar, mas é tarde demais. Ao atingi-lo, a esfera explode, causando um impacto destruidor no alvo e consequentemente como a explosão a propagação das chamas é inevitável. O oponente fica preso em meio a um inferno de chamas negras, que queimam sua carne e sua alma. Big Bang Atordoar: A Técnica atordoa o alvo (Ver Sistema Atordoado). O usuário tem 20 + Nível% de chance de atordoar. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Atordoar. Custo: 3. Duração: Instantânea.\n\nVENTOS DE FURACÃO (Ar) [BRONZE] [CONTROLE DA NATUREZA] Descrição: O cavaleiro eleva seu cosmo no braço e traça a sua constelação no ar, ativando seu poder. Ele vê as estrelas de sua constelação se agitarem em seu braço, formando uma imagem de pura Cosmo Energia. Ele então libera sua técnica, criando ventos na direção do inimigo com tanta intensidade que cria um furacão, jogando o inimigo para longe. O efeito da técnica é incrível, criando uma tempestade de vento e água que arrasta tudo em seu caminho. O oponente é atingido pelo furacão, sofrendo danos brutais em seu corpo e armadura. Big Bang Novamente: O usuário da Técnica tem 10, 20, 30 + Nível% de chance de atacar novamente causando:  Bronze: 15, Prata: 30, Ouro: 50 de dano. Big Bang Apoiar: A Classe da Técnica evolui com a Status do Personagem sem a necessidade de ser comprada novamente em uma classe superior. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Apoiar, Novamente. Custo: 4. Duração: Instantânea.\n\nBARREIRA DE AR (Ar) [BRONZE] [CONTROLE DA NATUREZA][FÍSICO] Descrição: O cavaleiro eleva seu cosmo nas palmas e traça com elas a sua constelação no ar, ativando seu poder. Ele vê as estrelas de sua constelação se equilibrarem em suas palmas. Ele então libera sua técnica, lançando uma energia pelas palmas. Rotacionando as, criando uma pressão de ar que o protege dos ataques inimigos. O efeito da técnica é impressionante, criando uma barreira de ar que repele os golpes do oponente. Especial: Enquanto estiver ativa a concentração do Personagem é total e a sua movimentação/ deslocamento é zero. Especial:  Guardiões não conseguem animar armas e se concentrar nessa Técnica  ao mesmo tempo, assim como, Artistas não conseguem atuar. Especial: Quando ativa anula dano de Habilidade/Dádiva de mesmo nível ou inferior (Bronze/Bronze, Prata/Prata e Ouro/Ouro). Exceto para cavaleiros de estágios diferentes e Habilidades de Monstros Mitológicos. Big Bang Guardar: Protege o alvo aumentando suas Ações de Defesa. Bronze:  +10 Ações de Defesa +1/turno imóvel. Prata:    +15 Ações de Defesa +1/turno imóvel. Ouro: +20 Ações de Defesa +1/turno imóvel. Big Bang Apoiar: A Classe da Técnica evolui com a Status do Personagem sem a necessidade de ser comprada novamente em uma classe superior. Natureza de Cosmo: Controle da Natureza. Efeito: Guardar, Apoiar. Custo: 2, 3, 4. Duração: 1 + 1, 2, 3.\n\nESCUDO DE GELO (Água) [BRONZE] [CONTROLE DA NATUREZA] Descrição: O cavaleiro eleva seu cosmo na mão e traça com ela a sua constelação no ar, ativando seu poder. Ele vê as estrelas de sua constelação se cristalizarem em sua mão, formando uma imagem de cosmo energia. Ele então libera sua técnica, manipulando o gelo a fim de criar um escudo cuja resistência nem vários cavaleiros de ouro conseguiriam destruir. O efeito da técnica é impressionante, criando uma muralha de gelo que protege o cavaleiro dos ataques inimigos. O oponente se surpreende, vendo que s eus ataques são ineficazes contra o escudo de gelo. Especial: Enquanto estiver ativa a concentração do Personagem é total e a sua movimentação/ deslocamento é zero. Especial:  Guardiões não conseguem animar armas e se concentrar nessa Técnica ao mesmo tempo, assim como, Artistas não conseguem atuar. Especial: Quando ativa anula dano de Habilidade/Dádiva de mesmo nível ou inferior (Bronze/Bronze, Prata/Prata e Ouro/Ouro). Exceto para cavaleiros de estágios diferentes e Habilidades de Monstros Mitológicos. Big Bang Guardar: Protege o alvo aumentando suas Ações de Defesa. Bronze:  +10 Ações de Defesa +1/turno imóvel. Prata:    +15 Ações de Defesa +1/turno imóvel. Ouro:    +20 Ações de Defesa +1/turno imóvel. Big Bang Apoiar: A Classe da Técnica evolui com a Status do Personagem sem a necessidade de ser comprada novamente em uma classe superior. Natureza de Cosmo: Controle da Natureza. Efeito: Guardar, Apoiar. Custo: 2, 3, 4. Duração: 1 + 1, 2, 3.\n\nAURORA BOREAL (água) [PRATA] [CONTROLE DA NATUREZA] Descrição: O cavaleiro eleva seu cosmo nas mãos e traça com elas a sua constelação no ar, ativando seu poder. Ele vê as estrelas de sua constelação se alinharem em suas mãos, formando uma aura de frio . Ele então libera sua técnica, unindo as duas mãos e com os braços para frente, lançando ondas congelantes de grande impacto, fazendo aparecer a linda aurora boreal. O efeito da técnica é maravilhoso, criando uma paisagem de cores e luzes que encanta os olhos. O oponente é atingido pelas ondas congelantes, sofrendo danos profundos em seu corpo e armadura. Ele sente seu sangue e s eu cosmo congelarem, perdendo a vitalidade. Big Bang Zero Absoluto: O Zero absoluto é a temperatura na qual toda a atividade de átomos é impossível, portanto, nada se move, é o limite extremo. Em um combate entre dois cavaleiros do frio, a vitória caberá ao que se aproximar mais desse limite! Frio 1 (Nível de Dano 15): O ar gélido do Cavaleiro atinge - 150º C. Nesta temperatura  as Armaduras da Categoria de Bronze congelam. Frio 2 (Nível de Dano 20): O ar gélido do Cavaleiro atinge -200º C. Nesta temperatura  as Armaduras da Categoria de Prata congelam. Próximo Zero Absoluto (Nível de Dano 25): O ar gélido do Cavaleiro atinge -273º C. Nesta temperatura  as Armaduras da Categoria de Bronze e Prata quebram. mas as Armaduras de ouro não congelam antes dos -273, 15 °C, portanto você precisaria baixar a temperatura até o zero absoluto para congelar uma Armadura da Categoria Ouro. Especial: Uma Armadura congelada perde sua Proteção de Armadura. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Zero Absoluto. Custo: 4. Duração: Instantânea.\n\nRAJADA DE PÓ DE DIAMANTE (Ar) [PRATA] [CONTROLE DA NATUREZA] Descrição: O cavaleiro eleva seu cosmo e traça o asterismo de sua constelação, ativando seu poder. Ele vê as estrelas de sua constelação se dividirem em vários cristais de gelo que tomam conta do campo de batalha . Ele então libera sua técnica, concentrando o ar frio do pó de diamantes em uma rajada condensada, aumentando sua efetividade. Ele usa os diversos cristais de gelo para refletir a rajada por todo o campo de batalha, acertando o adversário mais de uma vez ou acertando múltiplos adversários. O efeito da técnica é magnífico, criando uma chuva de gelo que perfura e c ongela os inimigos. O oponente é atingido pelo pó de diamantes, sofrendo danos cortantes e congelantes em seu corpo e armadura. Big Bang Alargar:  A Técnica abrange um Domínio maior alargando seu efeito. Área: Domínio do usuário. Big Bang Congelar: A Técnica tem 10, 15 + Nível% de chance de congelar o alvo. Alvos congelados, ficam paralisados (Ver Sistemas Estado Paralisado) . Big Bang Apoiar: A Classe da Técnica evolui com a Status do Personagem sem a necessidade de ser comprada novamente em uma classe superior. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Apoiar, Alargar, Congelar. Pré-requisito: Velocidade 4, Combate 2 e Utilização do Cosmo 2. Custo: 5. Duração: Instantânea.\n\nASAS DE VENTO (Ar) [PRATA] [CONTROLE DA NATUREZA] Descrição: O cavaleiro eleva seu cosmo e traça a sua constelação, ativando seu poder. Ele vê as estrelas de sua constelação se alinharem  sobre sua cabeça, formando uma imagem de pura Cosmo Energia. Ele então libera sua técnica, após agarrar o seu oponente, ou somente atirá-lo às alturas, sem mesmo precisar tocá-lo. Ele marca um ‘X’ no chão a fim de delimitar e ‘forçar’ o local da queda do inimigo. Ele observa o inimigo cair em alta velocidade, sem poder se defender. O efeito da técnica é brutal, criando um impacto violento no chão que faz tremer a terra. O oponente é atingido pela técnica, sofrendo danos irreversíveis em seu corpo e armadura. Ele fica inconsciente ou morto no chão, marcado pelo ‘X’ do cavaleiro. Big Bang Esgotar: O Personagem pode queimar Cosmo Energia para aumentar o dano. O Cavaleiro queima 2 pontos de Cosmo Energia para lançar mais ataques. A cada 2 Pontos de Cosmo queimado o Nível de Dano da Técnica aumenta 1 Graduação. Big Bang Atordoar: A Técnica atordoa o alvo (Ver Sistema Atordoado ). O usuário tem 20 + Nível% de chance de atordoar. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Atordoar, Esgotar. Custo: 5. Duração: Instantânea.\n\nTROVÃO CELESTIAL (Ar) [PRATA] [CONTROLE DA NATUREZA] Descrição: O cavaleiro eleva seu cosmo e traça o asterismo de su a constelação, ativando seu poder. Ele vê as estrelas de sua constelação se iluminarem em sua frente , formando uma aura de cosmo energia. Ele então libera sua técnica, criando seis esferas que o cercam, enquanto ele se posiciona para o ataque. Ele as rotaciona e, em seguida, as dispara contra o adversário. O impacto provoca uma enorme explosão que danifica tanto seu oponente quanto o campo de batalha. O oponente é atingido pelas seis esferas, sofrendo danos múltiplos em seu corpo e armadura Big Bang Novamente: O usuário da Técnica tem 20, 30 + Nível% de chance de uma esfera explodir novamente causando:  Prata: 30, Ouro: 50 de dano. Big Bang Apoiar: A Classe da Técnica evolui com a Status do Personagem sem a necessidade de ser comprada novamente em uma classe superior. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Novamente, Apoiar. Custo: 4. Duração: Instantânea.\n\nRELÂMPAGO DE PLASMA (Ar) [PRATA] [CONTROLE DA NATUREZA] Descrição: O cavaleiro eleva seu cosmo nos punhos e traça com eles a constelação no ar, ativando seu poder. Ele vê as estrelas de sua constelação se energizarem em seus punhos. Ele então libera sua técnica, conseguindo emitir uma poderosa onda de energia que funciona como uma rajada de eletricidade que se transforma em vári os traços de energia de seus punhos durante um golpe, aumentando seu impacto na velocidade da luz. O efeito da técnica é fantástico, criando uma faísca de luz e som que rasga o ar. O oponente é atingido pela eletricidade, sofrendo danos elétricos e cinéticos em seu corpo e armadura. Big Bang Certeiro: A Técnica causa dano extra. O usuário da Técnica faz um teste de confirmação, se o resultado for igual ou maior que 9 ele trespassa o inimigo ( ver a Manobra de Combate Duelo). Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Certeiro. Custo: 4. Duração: Instantânea.\n\nTROVÃO ATÔMICO (Ar) [PRATA] [CONTROLE DA NATUREZA] Descrição: O cavaleiro eleva seu cosmo na mão e traça com ela a sua constelação, ativando seu poder. Ele vê as estrelas de sua constelação se brilharem em sua mão, formando uma aura de cosmo energia. Ele então libera sua técnica, concentrando uma grande energia em uma das mãos e a disparando contra o adversário na forma de uma rajada reluzente (semelhante a um trovão). Essa é formada de centenas de outras finas rajadas que golpeiam o inimigo várias vezes. O efeito da técnica é deslumbrante, criando uma claridade de luz e som que cega e ensurdece os inimigos. O oponente é atingido pela rajada reluzente, sofrendo danos elétricos e perfurantes em seu corpo e armadura. Big Bang Esgotar: O Personagem pode queimar Cosmo Energia para aumentar o dano. O Cavaleiro queima 2 pontos de Cosmo Energia para lançar mais ataques. A cada 2 Pontos de Cosmo queimado o Nível de Dano da Técnica aumenta 1 Graduação.. Big Bang Novamente: O usuário da Técnica tem 20, 30 + Nível% de chance de uma esfera explodir novamente causando: Prata: 30, Ouro: 50 de dano. Big Bang Apoiar: A Classe da Técnica evolui com a Status do Personagem sem a necessidade de ser comprada novamente em uma classe superior. Natureza de Cosmo : Controle da Natureza. Efeito: Dano, Esgotar, Novamente, Apoiar. Custo: 5. Duração: Instantânea.\n\nEXPLOSÃO DA COROA SOLAR (Fogo) [PRATA] [CONTROLE DA NATUREZA][FÍSICO] Descrição: O cavaleiro eleva seu cosmo, ativando seu poder. Ele vê as estrelas de sua constelação, formando asas de cosmo energia. Ele então libera sua técnica, indo de encontro ao oponente. Aproveitando -se de sua incrível velocidade, abre as asas lançando várias esferas negras de chamas com grande poder de destruição no adversário com o objetivo de distraí-lo, ao mesmo tempo em que o cavaleiro se movimenta em direção a ele. A imagem que se vê então é a d e um raio flamejante, indo de encontro ao oponente junto com as esferas disparadas. Ao se aproximar, aplica em seu adversário um poderoso soco, geralmente de baixo para cima, descarregando toda a energia cósmica e chamas negras usadas nesse golpe. O efeito da técnica é assombroso, criando uma explosão de fogo e sombra que devasta os inimigos. O oponente é atingido pela técnica, sofrendo danos queimantes e esmagadores em seu corpo e armadura. Big Bang Relâmpago: O Cavaleiro eleva 1 o nível da sua iniciativa na tabela de velocidade.\n\nBig Bang Certeiro: A Técnica causa dano extra. O usuário da Técnica faz um teste de confirmação, se o resultado for igual ou maior que 9 ele trespassa o inimigo ( ver a Manobra de Combate Duelo). Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Certeiro, Relâmpago. Pré-requisitos: Velocidade 4, Esportes 3. Custo: 5. Duração: Instantânea.\n\nELEVAÇÃO DAS TREVAS (Fogo) [PRATA] [CONTROLE DA NATUREZA] Descrição: O cavaleiro eleva seu cosmo no peito e traça o asterismo de sua constelação no ar, ativando seu poder. Ele vê as estrelas de sua constelação se aquecerem em seu peito, formando uma imagem de um Sol  de cosmo energia. Ele então libera sua técnica, concentrando o seu cosmo, cria um enorme sol negro que desprende um calor intenso e eleva a temperatura alcançando um grau similar ao dos desertos. Esse golpe tira toda a água do corpo do oponente, matando -o por desidratação. Além disso, a temperatura do golpe é alta o suficiente para desidratar aqueles que se encontram próximo s. O calor faz que o corpo da pessoa fique difícil de se movimentar, para que ele não saia da área que o sol reluz. O efeito da técnica é terrível, criando uma cena de morte e desolação no campo de batalha. O oponente é atingido pelo sol negro, sofrendo danos desidratantes e queimantes em seu corpo e armadura. Big Bang Atordoar: A Técnica atordoa o alvo (Ver Sistema Atordoado). O usuário tem 20 + Nível% de chance de atordoar. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Atordoar. Custo: 4. Duração: Instantânea.\n\nHÉRCULES RELUZENTE (Fogo) [PRATA] [CONTROLE DA NATUREZA] Descrição: O cavaleiro concentra  seu cosmo nas pernas e traça o asterismo de sua constelação no ar, ativando seu poder. Ele vê as estrelas de sua constelação se inflamarem em suas pernas, formando uma imagem de pura Cosmo Energia. Ele então libera sua técnica, saltando contra o inimigo e caindo sobre ele, descarregando toda a fúria do fogo desse golpe. O fogo toma a forma de um demônio, que envolve e devora o inimigo. O efeito da técnica é assustador, criando uma chama de cor vermelha e negra que consome tudo em seu caminho. O oponente é atingido pelo demônio de fogo, sofrendo danos queimantes em seu corpo e armadura. Big Bang Novamente: O usuário da Técnica tem 20, 30 + Nível% de chance de uma esfera explodir novamente causando:  Prata: 30, Ouro: 50 de dano. Big Bang Apoiar: A Classe da Técnica evolui com a Status do Personagem sem a necessidade de ser comprada novamente em uma classe superior. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Apoiar, Novamente. Custo: 4. Duração: Instantânea.\n\nCHAMAS DIABÓLICAS (Fogo) [PRATA] [CONTROLE DA NATUREZA] Descrição: O cavaleiro eleva seu cosmo nas mãos e traça com elas a sua constelação no ar, ativando seu poder. Ele vê as estrelas de sua constelação se inflamarem em suas mãos, formando a imagem de sua constelação. Ele então libera sua técnica, criando várias bolas de fogo que atingem o inimigo. O efeito da técnica é espetacular, criando uma chuva de fogo que queima tudo em seu caminho. O oponente é atingido pelas bolas de fogo, sofrendo danos irreparáveis em seu corpo e armadura. Natureza de Cosmo: Controle da Natureza. Efeito: Dano. Custo: 3. Duração: Instantânea.\n\nTURBILHÃO DE FOGO (Fogo) [PRATA] [CONTROLE DA NATUREZA] Descrição: O cavaleiro eleva seu cosmo no peito e traça o asterismo de sua  constelação, ativando seu poder. Ele vê as estrelas de sua constelação se incendiarem em seu peito, formando um a aura de cosmo energia. Ele então libera sua técnica, transformando seu cosmo em um poderoso furacão de fogo que sai ao seu redor em uma imensa explosão, destruindo tudo em sua direção. O efeito da técnica é impressionante, criando uma tempestade de fogo e vento que arrasa os inimigos. O oponente é atingido pelo furacão de fogo, sofrendo danos irreversíveis em seu corpo e armadura. Natureza de Cosmo: Controle da Natureza. Efeito: Dano. Custo: 3. Duração: Instantânea.\n\nCHAMAS DE BABEL (Fogo) [PRATA] [CONTROLE DA NATUREZA] Descrição: O cavaleiro eleva seu cosmo nos braços e traça com eles a sua constelação no ar, ativando seu poder. Ele vê as estrelas de sua constelação se aquecerem em seus braços, formando uma imagem de um animal de cosmo energia. Ele então libera sua técnica, usando a fricção do ar sobre seus braços para criar uma grande tempestade de fogo que cobre seu corpo. Em seguida, com seus punhos, ele propulsiona a tempestade que adquire a forma de um gigantesco pilar flamejante, forte o suficiente para destruir e queimar o oponente por completo. O efeito da técnica é impressionante, criando uma coluna de fogo e vento que rasga o céu. O oponente é atingido pela tempestade de fogo, sofrendo danos irreparáveis em seu corpo e armadura. Big Bang Brasas: O uso da Técnica deixa o alvo queimando até a sua duração. Bronze: 5 de dano/turno, Prata: 10 de dano/turno, Ouro: 15 de dano/turno. Big Bang Apoiar:  A Classe da Técnica evolui com a Status do Personagem sem a necessidade de ser comprada novamente em uma classe superior. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Brasas, Apoiar. Custo: 4. Duração: 1 + 2, 3."
+              "text": "A Virtude Alquimista, Golpe Letal ou Muviano (Habilidade Natural Ferreiro Paranormal) combinada com esta Técnica eleva 1 Nível de Dano na Armadura."
             },
             {
-              "name": "Cólera Dos 100 Dragões",
-              "category": "Técnica Ouro",
+              "name": "Lanças de Gelo da Lótus Branca (Água)",
+              "category": "Técnica Prata",
               "pages": [
-                331,
-                332,
-                333,
-                334,
-                335,
-                336,
-                337,
-                338,
-                339,
-                340,
-                341,
-                342,
-                343,
-                344,
-                345,
-                346,
-                347,
-                348,
-                349,
-                350,
-                351,
                 352,
-                353,
-                354,
-                355,
-                356,
-                357,
-                358,
-                359,
-                360,
-                361,
-                362,
-                363,
-                364,
-                365,
-                366
+                353
               ],
-              "text": "A Virtude Alquimista, Golpe Letal ou Muviano (Habilidade Natural Ferreiro Paranormal) combinada com esta Técnica eleva 1 Nível de Dano na Armadura.\n\nFORÇA EXPLOSIVA DE KAITOS (Água) [PRATA] [CONTROLE DA NATUREZA][FÍSICO] Descrição: O cavaleiro eleva seu cosmo no braço e traça com ele a sua constelação no ar, ativando seu poder. Ele vê as estrelas de sua constelação se intensificarem em seu braço, formando uma imagem de um animal de cosmo energia. Ele então libera sua técnica, agarrando o oponente pelo pulso e o arremessando com violência para cima. Em seguida, o oponente é tomado por uma grande força cósmica circular, que quando usado perto das águas a força delas se une ao golpe e impede o oponente de escapar. Depois, quando o oponente cai em sua direção, o cavaleiro desfere um soco forte em sua cabeça. O poder do golpe é similar à força de uma grande baleia. O efeito da técnica é impressionante, criando uma onda de água e cosmo que esmaga os inimigos. O oponente é atingido pela técni ca, sofrendo danos esmagadores em seu corpo e armadura.\n\nBig Bang Apoiar: A Classe da Técnica evolui com a Status do Personagem sem a necessidade de ser comprada novamente em uma classe superior. Big Bang Certeiro: A Técnica causa dano extra. O usuário da Técnica faz um teste de confirmação, se o resultado for igual ou maior que 9 ele trespassa o inimigo (ver a Manobra de Combate Duelo ). Big Bang Atordoar: A Técnica atordoa o alvo (Ver Sistema Atordoado ). O usuário tem 20 + Nível% de chance de atordoar. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Atordoar, Certeiro, Apoiar. Custo: 5. Duração: Instantânea.\n\nEXECUÇÃO AURORA (Ar) [OURO] [CONTROLE DA NATUREZA] Descrição: O cavaleiro, cercado por uma aura azulada, ergue os braços acima da cabeça, formando a silhueta de uma ânfora. Ele concentra seu cosmo e sente a conexão com as estrelas de sua constelação, que brilham intensamente no céu. Ele então libera uma onda de frio extremo, que congela o ar e cria cristais de gelo. A onda avança em direção ao seu oponente, que tenta se defender, mas é atingido em cheio pela técnica. O impacto é tão forte que cria uma explosão de gelo, que destrói parte da paisagem ao redor. O oponent e cai no chão, coberto por uma camada de gelo que racha sua armadura e fere seu corpo. Ele sente que sua vida está se esvaindo, pois sua temperatura interna chegou ao zero absoluto. Especial: A Técnica reduz a Proteção da Armadura do Alvo que perde 1 + Graduação do Atributo Velocidade do Usuário. Especial: Essa Técnica anula a qualquer imunidade/proteção a frio ou ar. Big Bang Congelar: A Técnica tem 15 + Nível% de chance de congelar o alvo. Alvos congelados, ficam paralisados (Ver Sistemas Estado Paralisado) . Big Bang Cumulativo: Cada vez que a Técnica é usada e o inimigo não obter sucesso no Teste de Resistência seus efeitos se acumulam. Big Bang Zero Absoluto : O Zero absoluto é a temperatura na qual toda a atividade de átomos é impossível, portanto, nada se move, é o limite extremo. Em um combate entre dois cavaleiros do frio, a vitória caberá ao que se aproximar mais desse limite! Frio 1 (Nível de Dano 15): O ar gélido do Cavaleiro atinge - 150º C. Nesta temperatura  as Armaduras da C ategoria de Bronze congelam. Frio 2 (Nível de Dano 20): O ar gélido do Cavaleiro atinge -200º C. Nesta temperatura  as Armaduras da Categoria de Prata congelam. Próximo Zero Absoluto (Nível de Dano 25): O ar gélido do Cavaleiro atinge -273º C. Nesta temperatura  as Armaduras da Categoria de Bronze e Prata quebram. mas as Armaduras de ouro não congelam antes dos -273, 15 °C, portanto você precisaria baixar a temperatura até o zero absoluto para congelar uma Armadura da Categoria Ouro. Especial: Uma Armadura congelada perde sua Proteção de Armadura. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Anular Proteção [*], Congelar, Cumulativo , Zero Absoluto. Pré-requisito: Velocidade 5, Utilização do Cosmo 3, Armaduras 2, Técnica Pó de diamante. Custo: 8. Duração: 1 + 3.\n\nANIQUILAÇÃO AURORA (Ar) [OURO] [CONTROLE DA NATUREZA] Descrição: O cavaleiro, envolvido por uma aura vermelha, faz seu cosmo explodir, liberando uma luz intensa que ilumina o céu. Ele sente a conexão com as estrelas de sua constelação, que se alinham em uma formação especial. Ele então lança uma aurora vermelha de frio imensurável, que excede o zero absoluto e extingue toda a vida. A aurora avança em direção ao seu oponente, que não consegue escapar nem se proteger. O impacto é tão devastador que cria uma onda de choque, que arrasa parte da paisagem ao redor. O oponente é envolvido pela aurora vermelha, que congela seu corpo e sua alma. Especial: A Técnica reduz a Proteção da Armadura do Alvo que perde 3  + Graduação do Atributo Velocidade do Usuário. Especial: Essa Técnica anula a qualquer imunidade/proteção a frio ou ar. Especial: Tudo em seu Domínio tem chance de ficar congelado, exceto quem ele não queira. Big Bang Finalizador:  A Técnica é capaz de matar o alvo em uma ação. O usuário da Técnica faz um teste de confirmação , se o resultado for igual ou maior a 8, atordoa o alvo (ver Sistema atordoado). Se a jogada se confirmar o usuário faz outra jogada, se o resultado for igual a 10, aplica o Estado de Morte Morto. Finalizador (1d10): 9. O alvo fica congelado e explode em pedaços de cristais. Recebendo ½ do dano a Técnica. 10. O alvo fica congelado pela eternidade causando o Estado de Morte Morto. Ninguém pode derreter o gelo. Big Bang Congelar: A Técnica tem 30 + Nível% de chance de congelar o  alvo. Alvos congelados, ficam paralisados (Ver Sistemas Estado Paralisado). Big Bang Alargar: A Técnica abrange um Domínio maior alargando seu efeito. Área: Domínio do usuário metros. Big Bang Zero Absoluto: O Zero absoluto é a temperatura na qual toda a atividade de átomos é impossível, portanto, nada se move, é o limite extremo. Em um combate entre dois cavaleiros do frio, a vitória caberá ao que se aproximar mais desse limite! Frio 1 (Nível de Dano 15): O ar gélido do Cavaleiro atinge - 150º C. Nesta temperatura  as Armaduras da Categoria de Bronze congelam. Frio 2 (Nível de Dano 20): O ar gélido do Cavaleiro atinge -200º C. Nesta temperatura  as Armaduras da Categoria de Prata congelam. Próximo Zero Absoluto (Nível de Dano 25): O ar gélido do Cavaleiro atinge -273º C. Nesta temperatura  as Armaduras da Categoria de Bronze e Prata quebram. mas as Armaduras de ouro não congelam antes dos -273, 15 °C, portanto você precisaria baixar a temperatura até o zero absoluto para congelar uma Armadura da Categoria Ouro. Especial: Uma Armadura congelada perde sua Proteção de Armadura. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Alargar, Anular Proteção [*], Congelar, Finalizador, Zero Absoluto. Pré-requisito: Memória Aquário, Cosmo  5, Utilização do Cosmo 4, Técnica Execução aurora. Custo: 9. Duração: Instantânea.\n\nGELO ETERNO / ATAÚDE DE GELO (Água) [OURO] [CONTROLE DA NATUREZA] Descrição: Como o próprio nome já diz o Personagem cria um ataúde de gelo que nunca se descongela. Deixando o inimigo ou um ente querido congelado para sempre. A única forma de acabar com o gelo é produzir um Cosmo mais frio ou superior ao do Cavaleiro que o criou – nada o atinge de fora para dentro. Big Bang Cosmo Residual:  Após a duração normal da Técnica o usuário pode sustentar seu efeito sem estar no local, infundindo seu Cosmo no alvo. O alvo deve estar sob o efeito da Técnica ou dentro das especificações exigidas em sua descrição. No turno seguinte, ou no decorrer da Duração da Técnica, para depositar sua Cosmo Energia no alvo ou objeto, o usuário faz um segundo teste de Asterismo (Ação de Cosmo + Ação de Movimento Parcial) e contabiliza o excesso do resultado da Asterismo  e acrescenta-o como Modificador Positivo ao Poder Cósmico. Este é o valor fixo do Cosmo Residual que o alvo deve superar para se libertar do efeito. O efeito continua enquanto o alvo não obter sucesso no Teste de Resistência. Um novo Teste de Resistência poderá ser realizado diariamente ou de acordo com as espec ificações de cada Técnica. Vale lembrar que o novo Teste permite testes seguidos por falha, “tentando de novo”. A cada novo teste, após o primeiro, o alvo recebe +1 de Modificador Positivo Cumulativo no Teste de Resistência para se libertar por dia. Quando o Jogador conseguir igualar ou superar a Cosmo Residual, ele consegue se libertar. Big Bang Parar Coração: Se o Personagem  falhar no Teste de resistência seus pontos de vida caem para 0 (ilusoriamente) ficando em Estado de Morte Estável. Essa Técnica não pode ser usada em combate. Depois de preso, se a vítima continuar viva, faz um Teste de resistência para tentar evitar o pior, mas mesmo resistindo, a Técnica não cessa e o jogador deverá fazer o Teste de resistência novamente a cada dia.  Quando o alvo conseguir superar o usuário da Técnica, quebra o gelo de dentro para fora. Caso a vítima não consiga sair ela pode queimar 1 ponto de Cosmo Energia/dia (que não recupera) para mantê-la viva em um estado inanimado para tentar novamente escapar. Se a Cosmo Energia do alvo acabar e ele não conseguir sair, entra em Estado de Morte Iminente. Especial: Ao criar um Ataúde o Personagem armazena 1 ponto permanente de Cosmo Energia (que volta, caso o ataúde se quebre) deixando seu Cosmo residual que impede que o gelo seja quebrado. Para quebrar o ataúde pelo lado de fora é necessário superar o valor do Cosmo Residual. A cada turno o ataúde tem +2 cumulativo de modificador contra o atacante. Natureza de Cosmo: Controle da Natureza. Efeito: Cosmo Residual [*], Parar Coração. Pré-requisito: Velocidade 5, Utilização do Cosmo 5, Técnica Execução Aurora. Custo: 5. Duração: Variável.\n\nPRESAS RELÂMPAGO (Ar) [OURO] [CONTROLE DA NATUREZA] Descrição: Aiolia usa seu punho para perfurar o solo, projetando nele seu Cosmo  elétrico, o que causa a elevação de diversos pilares de eletricidade, atingindo inimigos a seu redor. Golpe existente somente no Episódio G. Big Bang Novamente: O usuário da Técnica tem 30 + Nível% de chance de subir outro pilar causando 50 de dano. Big Bang Esgotar: O Personagem pode queimar Cosmo Energia para aumentar o dano. O Cavaleiro queima 2 pontos de Cosmo Energia para lançar mais ataques. A cada 2 Pontos de Cosmo queimado o Nível de Dano da Técnica aumenta 1 Graduação. Big Bang Alargar: A Técnica abrange um Domínio maior alargando seu efeito. Área: Domínio do usuário metros. Big Bang Domínio Deslocado: O usuário da Técnica sai do centro do Domínio podendo projetar a área do seu Domínio para: sua frente, costas, lado direito, lado esquerdo, cima e baixo. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Novamente, Esgotar, Alargar, Domínio Deslocado. Pré-requisito: Velocidade 5, Combate 2 e Utilização do Cosmo 2. Custo: 8. Duração: Instantânea.\n\nROSAS FLAMEJANTES (Fogo) [OURO] [CONTROLE DA NATUREZA] Descrição: O Cavaleiro, em harmonia com sua constelação, inicia uma dança cósmica, criando um redemoinho de rosas em volta dele. Essas rosas absorvem a cosmo energia do universo e se transformam em chamas intensas. Em um movimento fluído, ele atira essas chamas em seu oponente, queimando sua armadura e corpo, causando danos severos. A paisagem ao redor treme com a energia liberada, enquanto o inimigo é consumido pelas chamas e sua armadura é reduzida a cinzas. Big Bang Novamente: O usuário da Técnica tem 30 + Nível% de chance de subir outro pilar causando 50 de dano. Big Bang Esgotar: O Personagem pode queimar Cosmo Energia para aumentar o dano. O Cavaleiro queima 2 pontos de Cosmo Energia para lançar mais ataques. A cada 2 Pontos de Cosmo queimado o Nível de Dano da Técnica aumenta 1 Graduação. Big Bang Alargar: A Técnica abrange um Domínio maior alargando seu efeito. Área: Domínio do usuário metros. Big Bang Quebrar Armadura: O foco dessa Técnica é despedaçar Armaduras. Dessa forma, causando danos também nas vestimentas do alvo. Instantânea: Eleva 1 Nível de Dano na Armadura. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Novamente, Esgotar, Alargar, Quebrar Armadura. Pré-requisito: Velocidade 5, Combate 2 e Utilização do Cosmo 2. Custo: 8. Duração: Instantânea.\n\nRUGIDO REAL (Ar) [OURO] [CONTROLE DA NATUREZA][MANIPULAÇÃO DE COSMO] Descrição: Micenas concentra seu Cosmo  na palma na mão direita e cria uma pequena esfera de energia, que explode e se expande rapidamente em toda a extensão do ataque. O golpe cria um canal esverdeado tubular ao redor do alvo, prendendo-o e impossibilitando-o de escapar. Então, o verdadeiro poder ofensivo da Técnica se revela: uma rajada de energia chocante aparece na forma de um rugido de um leão, que eletrocuta e ensurdece o alvo. O golpe tem duas formas de ataque: a rajada elétrica de Cosmo de Trovão e o rugido que  é amplificado pelo canal tubular criado pela Técnica  retirando a resistência do alvo. O Cavaleiro faz um Teste de Utilização do Cosmo e o resultado informa quanto o inimigo perderá de resistência. Big Bang Enfraquecer: A Técnica diminui a Resistência do alvo. O inimigo recebe a Graduação do Atributo Velocidade do usuário como Modificador Negativo nos testes de Resistência contra o Poder Cósmico do Usuário. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Enfraquecer [*]. Pré-requisito: Utilização do Cosmo 3, Acadêmicos 2. Custo: 4. Duração: 1 + 3.\n\nPRESAS DOURADAS DO DRAGÃO (Terra) [OURO] [CONTROLE DA NATUREZA] Descrição: Genbu concentra seu Cosmo  em seu punho, criando uma esfera de energia luminosa e soca seu oponente, criando uma explosão de Cosmo  esmagando-o contra o chão, deixando uma grande cratera no local e causando grandes danos ao adversário. Este golpe é tão potente que pode até mesmo danificar as Armaduras de Ouro. Big Bang Quebrar Armadura: O foco dessa Técnica é despedaçar Armaduras. Dessa forma, causando danos também nas vestimentas do alvo. Instantânea: Eleva 1 Nível de Dano na Armadura. Big Bang  Certeiro: A Técnica causa dano extra. O usuário da Técnica faz um teste de confirmação, se o resultado for igual ou maior que 8 ele trespassa o inimigo ( ver a Manobra de Combate Duelo). Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Quebrar Armadura, Certeiro. Custo: 6. Duração: Instantânea."
+              "text": "A Virtude Alquimista, Golpe Letal ou Muviano (Habilidade Natural Ferreiro Paranormal) combinada com esta Técnica eleva 1 Nível de Dano na Armadura."
             },
             {
-              "name": "Cólera Dos 100 Dragões",
+              "name": "Presas Douradas do Dragão (Terra)",
               "category": "Técnica Ouro",
               "pages": [
-                331,
-                332,
-                333,
-                334,
-                335,
-                336,
-                337,
-                338,
-                339,
-                340,
-                341,
-                342,
-                343,
-                344,
-                345,
-                346,
-                347,
-                348,
-                349,
-                350,
-                351,
-                352,
-                353,
-                354,
-                355,
-                356,
-                357,
-                358,
-                359,
-                360,
-                361,
-                362,
-                363,
-                364,
-                365,
-                366
+                360
               ],
-              "text": "A Virtude Alquimista, Golpe Letal ou Muviano (Habilidade Natural Ferreiro Paranormal) combinada com esta Técnica eleva 1 Nível de Dano na Armadura.\n\nCÁPSULA DO PODER (Ar) [OURO] [CONTROLE DA NATUREZA] Descrição: O cavaleiro concentra seu cosmo em seu punho direito e o ergue para o céu, traçando a forma de sua constelação com um rastro de luz azulada. Ele sente a conexão com as estrelas de sua constelação, que brilham intensamente no firmamento. Ele então abaixa seu punho e aponta para o inimigo, liberando uma poderosa onda de cosmo que se transforma em uma cápsula de relâmpagos que envolve o adversário. O inimigo grita de dor, sentindo seu corpo ser eletrocutado e queimado pela energia elétrica. O cavaleiro então fecha sua mão, fazendo a cápsula explodir e lançar o inimigo longe, deixando um rastro de fumaça e faíscas. A paisagem ao redor fica devastada, com árvores caídas, pedras rachadas e o solo carbonizado. Big Bang Novamente: O usuário da Técnica tem 30 + Nível % de chance de cair um relâmpago causando 50 de dano. Big Bang Esgotar: O Personagem pode queimar Cosmo Energia para aumentar o dano. O Cavaleiro queima 2 pontos de Cosmo Energia para lançar mais ataques. A cada 2 Pontos de Cosmo queimado o Nível de Dano da Técnica aumenta 1 Graduação. Big Bang Pulverizar: A Técnica aplica ao alvo o Estado de Morte Pulverizado . Personagens que tiverem seus pontos de vida superados por uma Técnica e o valor excedido for igual ou maior que 50% dos pontos de vida totais do alvo, este é pulverizado, restando apenas o pó da Armadura Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Novamente, Esgotar, Pulverizar. Custo: 7. Duração: Instantânea.\n\nCOROA DE FOGO (Fogo) [OURO] [CONTROLE DA NATUREZA] Descrição: O cavaleiro levanta os braços, concentrando seu cosmo nos punhos. Ele sente a conexão com as estrelas de sua constelação, que formam um sol brilhante no céu entre seus punhos. Ele então dispara uma gigantesca nebulosa em chamas, parecida com a Nebulosa de Quilha, em direção ao inimigo. Enquanto o cavaleiro concentra a energia, ele cria uma aura flamejante em forma de barreira para evitar que o inimigo anule o ataque. A nebulos a se choca contra o oponente de forma devastadora, não só causando graves queimaduras, mas também explodindo o interior dele. Após o primeiro ataque, ela explode novamente nas costas do alvo, destruindo a armadura dele. Big Bang Quebrar Armadura: O foco dessa Técnica é despedaçar Armaduras. Dessa forma, causando danos também nas vestimentas do alvo. Instantânea: Eleva 1 Nível de Dano na Armadura. Big Bang Finalizador:  A Técnica é capaz de matar o alvo em uma ação. O usuário da Técnica faz um teste de confirmação , se o resultado for igual ou maior a 8, atordoa o alvo (ver Sistema atordoado). Se a jogada se confirmar o usuário faz outra jogada, se o resultado for igual a 10, aplica o Estado de Morte Morto. Finalizador (1d10): 8. A bola de fogo destrói a Armadura do alvo. 9. A bola de fogo trespassa o alvo causando o Estado de Morte Iminente. 10. A bola de fogo explode dentro alvo queimando -o até sobrar um corpo inerte e carbonizado causando o Estado de Morte Morto. Big Bang Pulverizar: A Técnica aplica ao alvo o Estado de Morte Pulverizado. Personagens que tiverem seus pontos de vida superados por uma Técnica e o valor excedido for igual ou maior que 50% dos pontos de vida totais do alvo, este é pulverizado, restando apenas o pó da Armadura. Big Bang Brasas: O uso da Técnica deixa o alvo queimando até a sua duração. Ouro: 15 de dano/turno. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Quebrar a Armadura, Pulverizar, Finalizador, Brasas. Custo: 8. Duração: Instantânea, 1 + 3. Pré-requisito: Velocidade 5, Combate 3 e Utilização do Cosmo 5."
+              "text": "A Virtude Alquimista, Golpe Letal ou Muviano (Habilidade Natural Ferreiro Paranormal) combinada com esta Técnica eleva 1 Nível de Dano na Armadura."
             },
             {
-              "name": "Cólera Dos 100 Dragões",
+              "name": "Coroa de Fogo (Fogo)",
               "category": "Técnica Ouro",
               "pages": [
-                331,
-                332,
-                333,
-                334,
-                335,
-                336,
-                337,
-                338,
-                339,
-                340,
-                341,
-                342,
-                343,
-                344,
-                345,
-                346,
-                347,
-                348,
-                349,
-                350,
-                351,
-                352,
-                353,
-                354,
-                355,
-                356,
-                357,
-                358,
-                359,
-                360,
-                361,
                 362,
-                363,
-                364,
-                365,
-                366
+                363
               ],
-              "text": "A Virtude Alquimista, Golpe Letal ou Muviano (Habilidade Natural Ferreiro Paranormal) combinada com esta Técnica eleva 1 Nível de Dano na Armadura.\n\nCRUCIFICAÇÃO ANKH (Fogo) [OURO] [CONTROLE DA NATUREZA] Descrição: O cavaleiro estende seus braços, concentrando seu cosmo nas palmas das mãos. Ele sente a conexão com as estrelas de sua constelação, que formam uma cruz negra no céu. Ele então dispara chamas negras contra seu adversário, que tenta se esquivar, mas é atingido pelos feixes que atravessam sua pele e sua armadura. O inimigo se contorce de dor, sentindo seu sangue ferver e sua carne se desfazer. O cavaleiro então fecha seus punhos, fazendo as chamas se enrolarem em torno do adversário, prendendo -o na cruz de fogo. O cavaleiro pode deixá-lo queimar lentamente ou atacá -lo como bem entender. A paisagem ao redor fica sombria, com o solo escurecido, o ar abafado e o cheiro de morte. Big Bang Sustentad a:  Após a duração normal da Técnica o usuário pode sustentar seu efeito. Os Cavaleiros fazem Testes Resistidos da Manobra de Combate Duelo de Cosmo e a Técnica continua ativa enquanto o usuário vencer o duelo. Big Bang Paralisia: A Técnica deixa o alvo paralisado (Ver Sistemas Estado Paralisado ). Big Bang Brasas: O uso da Técnica deixa o alvo queimando até a sua duração. Ouro: 15 de dano/turno. Big Bang Brasas: O uso da Técnica deixa o alvo queimando até a sua duração. Ouro: 15 de dano/turno. Natureza de Cosmo: Controle da Natureza. Efeito: Sustentada, Paralisia [*], Brasas. Pré-requisito: Velocidade 5, Combate 3 e Utilização do Cosmo 3. Custo: 6. Duração: 1 + 3, Variável.\n\nERUPÇÃO NEGRA (Terra) [OURO] [CONTROLE DA NATUREZA] Descrição: O cavaleiro junta as mãos, concentrando seu cosmo no centro de seu peito. Ele sente a conexão com as estrelas de sua constelação, que formam um a imagem de puro cosmo no céu. Ele então abre as mãos, liberando uma poderosa onda de cosmo que se transforma em magma e lava das profundezas da terra. O solo se abre e o fogo escorre pelos arredores. O cavaleiro então levanta as mãos, fazendo o magma e a lava se elevarem e se juntarem em uma imensa bola de fogo. O cavaleiro então fecha as mãos, fazendo a bola de fogo explodir e engolir o adversário. A paisagem ao redor fica arrasada, com o solo derretido, o ar quente e o cheiro de enxofre. Natureza de Cosmo: Controle da Natureza. Efeito: Dano. Custo: 4. Duração: Instantânea.\n\nMÁXIMA ALTITUDE (Terra) [OURO] [CONTROLE DA NATUREZA] Descrição: Através do Cosmo o Cavaleiro pode “jogar” um inimigo a alturas inimagináveis; e ao chegar na altura desejada o Cavaleiro  manipula a gravidade fazendo o inimigo atingir o chão parecendo um cometa. Natureza de Cosmo: Controle da Natureza. Efeito: Dano. Custo: 3. Duração: Instantânea.\n\nTEMPESTADE GIRATÓRIA DAS CEM LANÇAS DE GELO (Água) [OURO] [CONTROLE DA NATUREZA] Descrição: O cavaleiro cruza os braços, concentrando seu cosmo nas pontas dos dedos. Ele sente a conexão com as estrelas de sua constelação, expandindo uma aura fria . Ele então abre os braços, criando centenas de lanças de gelo que se projetam em direção ao inimigo. O inimigo é surpreendido por um redemoinho de ar que o envolve e o corta com as afiadas lanças de gelo. O inimigo tem seu corpo ser perfurado e congelado pela energia gélida. O cavaleiro então fecha os braços, fazendo as lanças de gelo se quebrarem e caírem sobre o adversário. A paisagem ao redor fica coberta de neve, com o vento frio. Big Bang Esgotar: O Personagem pode queimar Cosmo Energia para aumentar o dano. O Cavaleiro queima 2 pontos de Cosmo Energia para lançar mais ataques. A cada 2 Pontos de Cosmo queimado o Nível de Dano da Técnica aumenta 1 Graduação. Big Bang Congelar:  A Técnica tem 1 5 + Nível% de chance de congelar o alvo. Alvos congelados, ficam paralisados (Ver Sistemas Estado Paralisado) . Big Bang Pulverizar: A Técnica aplica ao alvo o Estado de Morte Pulverizado . Personagens que tiverem seus pontos de vida superados por uma Técnica e o valor excedido for igual ou maior que 30% dos pontos de vida totais do alvo, este é pulverizado, restando apenas o pó da Armadura. Big Bang Quebrar Armadura: O foco dessa Técnica é despedaçar Armaduras. Dessa forma, causando danos também nas vestimentas do alvo. Instantânea: Eleva 1 Nível de Dano na Armadura. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Congelar, Esgotar, Quebrar Armadura, Pulverizar. Pré-requisito: Velocidade 5, Combate 3, Esportes 2 e Utilização do Cosmo 3. Custo: 8. Duração: Instantânea."
+              "text": "A Virtude Alquimista, Golpe Letal ou Muviano (Habilidade Natural Ferreiro Paranormal) combinada com esta Técnica eleva 1 Nível de Dano na Armadura."
             },
             {
-              "name": "Cólera Dos 100 Dragões",
+              "name": "Tempestade Giratória das Cem Lanças de Gelo (Água)",
               "category": "Técnica Ouro",
               "pages": [
-                331,
-                332,
-                333,
-                334,
-                335,
-                336,
-                337,
-                338,
-                339,
-                340,
-                341,
-                342,
-                343,
-                344,
-                345,
-                346,
-                347,
-                348,
-                349,
-                350,
-                351,
-                352,
-                353,
-                354,
-                355,
-                356,
-                357,
-                358,
-                359,
-                360,
-                361,
-                362,
-                363,
                 364,
-                365,
-                366
+                365
               ],
-              "text": "A Virtude Alquimista, Golpe Letal ou Muviano (Habilidade Natural Ferreiro Paranormal) combinada com esta Técnica eleva 1 Nível de Dano na Armadura.\n\nTORRENTE ASCENDENTE (Ar) [OURO] [CONTROLE DA NATUREZA] Descrição: O cavaleiro coloca as mãos na frente do peito, concentrando seu cosmo nas palmas das mãos. Ele sente a conexão com as estrelas de sua constelação, que formam uma corrente de água no céu. Ele então empurra as mãos para frente, liberando uma poderosa onda de  choque que se transforma em uma corrente aquática que atinge o inimigo. O inimigo é arremessado para o alto, sentindo seu corpo ser esmagado pela pressão dos punhos e da água. O cavaleiro então salta atrás do inimigo, dando-lhe um golpe final que o faz cair em queda livre. A paisagem ao redor fica inundada, com o solo encharcado, o ar úmido e o cheiro de mar. Big Bang Atordoar: A Técnica atordoa o alvo (Ver Sistema Atordoado). O usuário tem 20 + Nível% de chance de atordoar. Big Bang Certeiro: A Técnica causa dano extra. O usuário da Técnica faz um teste de confirmação e se o resultado for igual ou maior que 8 (Ouro) , 9 (Prata) ou 10 (Bronze) ele trespassa o inimigo ( ver a Manobra de Combate Duelo). Big Bang Quebrar Armadura: O foco dessa Técnica é despedaçar Armaduras. Dessa forma, causando danos também nas vestimentas do alvo. Instantânea: Eleva 1 Nível de Dano na Armadura. Natureza de Cosmo : Controle da Natureza. Efeito: Dano, Atordoar, Certeiro, Quebrar Armadura. Custo: 6. Duração: Instantânea."
+              "text": "A Virtude Alquimista, Golpe Letal ou Muviano (Habilidade Natural Ferreiro Paranormal) combinada com esta Técnica eleva 1 Nível de Dano na Armadura."
             }
           ]
         }
@@ -3711,7 +3515,7 @@
           ],
           "occurrences": [
             {
-              "name": "Flecha Das Sombras",
+              "name": "Flecha das Sombras",
               "category": "Técnica Prata",
               "pages": [
                 308,
@@ -3879,23 +3683,23 @@
           ],
           "occurrences": [
             {
-              "name": "Melodia Dos Espíritos",
+              "name": "Melodia dos Espíritos",
               "category": "Técnica Bronze",
               "pages": [
                 297,
                 298,
                 299
               ],
-              "text": "A Virtude Sekishiki combinada com esta Técnica permite ao personagem invocar as Fadas Infernais. As Fadas ou Borboletas Infernais:  São os animais de estimação de Myu de Papillon, na Saga de Hades, sendo usadas como espiãs para espionar o Mundo dos Vivos. Sistema: O Usuário consegue ver e ouvir o que o alvo marcado está fazendo e falando. Marcar um alvo é uma Ação Livre, bastando o alvo está dentro do domínio do Usuário. Dificuldade para ser percebida:  O alvo tem direito a um TAP Percepção Extrassensorial por dia, contra a Intuição do Usuário da Técnica + Modificador de Circunstância Atento. As borboletas estão sempre atentas, evitando serem percebidas. São capazes de detectar movimentos de um alvo Marcado, inclusive, telecinéticos, visto que elas se dirigiram para onde Mu de Áries se teleportou, antes mesmo de ele aparecer. Área: Conseguem marcar e espionar 1 único alvo não importa distância funcionando, inclusive, no mundo dos mortos. Duração: Variável. Custo: 1 Cosmo Energia Permanente, enquanto a Fada Infernal estiver ativa. Especial: A Virtude Sekishiki e a Habilidade Zona percebem e podem destruir as fadas infernais automaticamente, bastando entrar o Domínio do Cavaleiro. Especial: A Virtude Fotógrafo de Cosmo permite o Usuário marcar 2 alvos ao mesmo tempo."
+              "text": "A Virtude Sekishiki combinada com esta Técnica permite ao personagem invocar as Fadas Infernais. As Fadas ou Borboletas Infernais:  São os animais de estimação de Myu de Papillon, na Saga de Hades, sendo usadas como espiãs para espionar o Mundo dos Vivos.\n\nSistema: O Usuário consegue ver e ouvir o que o alvo marcado está fazendo e falando. Marcar um alvo é uma Ação Livre, bastando o alvo está dentro do domínio do Usuário. Dificuldade para ser percebida:  O alvo tem direito a um TAP Percepção Extrassensorial por dia, contra a Intuição do Usuário da Técnica + Modificador de Circunstância Atento. As borboletas estão sempre atentas, evitando serem percebidas. São capazes de detectar movimentos de um alvo Marcado, inclusive, telecinéticos, visto que elas se dirigiram para onde Mu de Áries se teleportou, antes mesmo de ele aparecer. Área: Conseguem marcar e espionar 1 único alvo não importa distância funcionando, inclusive, no mundo dos mortos."
             },
             {
-              "name": "Encontro Com Fadas",
+              "name": "Encontro com Fadas",
               "category": "Técnica Prata",
               "pages": [
                 304,
                 305
               ],
-              "text": "A Virtude Sekishiki combinada com esta Técnica permite ao personagem invocar as Fadas Infernais. As Fadas ou Borboletas Infernais:  São os animais de estimação de Myu de Papillon, na Saga de Hades, sendo usadas como espiãs para espionar o Mundo dos Vivos. Sistema: O Usuário consegue ver e ouvir o que o alvo marcado está fazendo e falando. Marcar um alvo é uma Ação Livre, bastando o alvo está dentro do domínio do Usuário. Dificuldade para ser percebida:  O alvo tem direito a um TAP Percepção Extrassensorial por dia, contra a Intuição do Usuário da Técnica + Modificador de Circunstância Atento. As borboletas estão sempre atentas, evitando serem percebidas. São capazes de detectar movimentos de um alvo Marcado, inclusive, telecinéticos, visto que elas se dirigiram para onde Mu de Áries se teleportou, antes mesmo de ele aparecer. Área: Conseguem marcar e espionar 1 único alvo não importa distância funcionando, inclusive, no mundo dos mortos. Duração: Variável. Custo: 1 Cosmo Energia Permanente, enquanto a Fada Infernal estiver ativa. Especial: A Virtude Sekishiki e a Habilidade Zona percebem e podem destruir as fadas infernais automaticamente, bastando entrar o Domínio do Cavaleiro. Especial: A Virtude Fotógrafo de Cosmo permite o Usuário marcar 2 alvos ao mesmo tempo."
+              "text": "A Virtude Sekishiki combinada com esta Técnica permite ao personagem invocar as Fadas Infernais. As Fadas ou Borboletas Infernais:  São os animais de estimação de Myu de Papillon, na Saga de Hades, sendo usadas como espiãs para espionar o Mundo dos Vivos.\n\nSistema: O Usuário consegue ver e ouvir o que o alvo marcado está fazendo e falando. Marcar um alvo é uma Ação Livre, bastando o alvo está dentro do domínio do Usuário. Dificuldade para ser percebida:  O alvo tem direito a um TAP Percepção Extrassensorial por dia, contra a Intuição do Usuário da Técnica + Modificador de Circunstância Atento. As borboletas estão sempre atentas, evitando serem percebidas. São capazes de detectar movimentos de um alvo Marcado, inclusive, telecinéticos, visto que elas se dirigiram para onde Mu de Áries se teleportou, antes mesmo de ele aparecer. Área: Conseguem marcar e espionar 1 único alvo não importa distância funcionando, inclusive, no mundo dos mortos."
             }
           ]
         }
@@ -4207,7 +4011,7 @@
           ],
           "occurrences": [
             {
-              "name": "Flecha Da Justiça",
+              "name": "Flecha da Justiça",
               "category": "Técnica Ouro",
               "pages": [
                 313,
@@ -4370,7 +4174,7 @@
           ],
           "occurrences": [
             {
-              "name": "Parede De Cristal Superior",
+              "name": "Parede de Cristal Superior",
               "category": "Técnica Ouro",
               "pages": [
                 326,
@@ -4502,7 +4306,7 @@
     "img": "systems/gods-battle-ss/assets/cosmos.svg",
     "system": {
       "description": "A Virtude Cosmo de Fogo combinada com a Técnica Chamas de Babel [CONTROLE DA NATUREZA] aumenta o dano da Brasas em +5.",
-      "page": "331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 470",
+      "page": "349, 350, 470",
       "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
       "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
       "category": "Cosmo especial — Técnicas",
@@ -4528,42 +4332,8 @@
           "author": "Dhoko de Libra",
           "license": "CC BY-NC-SA 4.0",
           "pages": [
-            331,
-            332,
-            333,
-            334,
-            335,
-            336,
-            337,
-            338,
-            339,
-            340,
-            341,
-            342,
-            343,
-            344,
-            345,
-            346,
-            347,
-            348,
             349,
             350,
-            351,
-            352,
-            353,
-            354,
-            355,
-            356,
-            357,
-            358,
-            359,
-            360,
-            361,
-            362,
-            363,
-            364,
-            365,
-            366,
             470
           ],
           "indexPages": [
@@ -4571,47 +4341,13 @@
           ],
           "occurrences": [
             {
-              "name": "Cólera Dos 100 Dragões",
-              "category": "Técnica Ouro",
+              "name": "Chamas de Babel (Fogo)",
+              "category": "Técnica Prata",
               "pages": [
-                331,
-                332,
-                333,
-                334,
-                335,
-                336,
-                337,
-                338,
-                339,
-                340,
-                341,
-                342,
-                343,
-                344,
-                345,
-                346,
-                347,
-                348,
                 349,
-                350,
-                351,
-                352,
-                353,
-                354,
-                355,
-                356,
-                357,
-                358,
-                359,
-                360,
-                361,
-                362,
-                363,
-                364,
-                365,
-                366
+                350
               ],
-              "text": "A Virtude Cosmo de Fogo combinada com essa Técnica aumenta o dano da Brasas em +5.\n\nVENDAVAL DO DRAGÃO (Ar) [PRATA] [CONTROLE DA NATUREZA] Descrição: O cavaleiro eleva seu cosmo nos punhos e traça com eles a sua constelação no ar, ativando seu poder. Ele vê as estrelas de sua constelação se eletrizarem em seus punhos, formando uma imagem de um dragão de cosmo energia. Ele então libera sua técnica, concentrando todo seu poder em seus punhos rodeados de poderosos relâmpagos. Em seguida, ele dispara duas gigantescas esferas de energias que são poderosos vendavais, disparados por seus punhos. Quando o cavaleiro lança o ataque, cria- se uma espécie de cápsula formada pelos ventos intensos dos tornados e pela sua cosmo energia que imobiliza seu oponente. Na sequência, os vendavais assumem a forma de cabeças de dragões, chocando-se contra o adversário, e destruindo-o por completo. Big Bang Certeiro: A Técnica causa dano extra. O usuário da Técnica faz um teste de confirmação, se o resultado for igual ou maior que 9 ele trespassa o inimigo ( ver a Manobra de Combate Duelo). Big Bang Esgotar: O Personagem pode queimar Cosmo Energia para aumentar o dano. O Cavaleiro queima 2 pontos de Cosmo Energia para lançar mais ataques. A cada 2 Pontos de Cosmo queimado o Nível de Dano da Técnica aumenta 1 Graduação. Big Bang Ceifar: Essa Técnica inibe uma Habilidade ou Dádiva. Anula: Técnicas que aumenta as ações de defesa. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Certeiro, Esgotar, Ceifar. Custo: 6. Duração: Instantânea.\n\nEBONY VORTEX (Ar) [PRATA] [CONTROLE DA NATUREZA] Descrição: O cavaleiro eleva seu cosmo nos braços e traça com eles a sua constelação no ar, ativando seu poder. Ele vê as estrelas de sua constelação se agitarem em seus braços, formando uma imagem de sua constelação de cosmo energia. Ele então libera sua técnica, criando um turbilhão que captura o inimigo, aplicando uma variação brusca de pressão e fortes rajadas de vento. A variação de pressão faz o sangue entrar em ebulição, enquanto as rajadas cortam o inimigo até a morte. O efeito da técnica é impressionante, criando uma espiral de vento e sangue que assusta os inimigos. O oponente é atingido pel o turbilhão, sofrendo danos irreversíveis em seu corpo e armadura. Natureza de Cosmo: Controle da Natureza. Efeito: Dano. Custo: 3. Duração: Instantânea.\n\nFURACÃO DAS TREVAS (Ar) [PRATA] [CONTROLE DA NATUREZA] Descrição: O cavaleiro eleva seu cosmo no dedo indicador  e traça com ele a sua constelação no ar, ativando seu poder. Ele vê as estrelas de sua constelação se iluminarem em seu suas costas, formando uma imagem de pura cosmo energia. Ele então libera sua técnica, estendendo seu braço e apontando seu dedo, disparando um raio de energia que se transforma em um gigantesco turbilhão de ar e se projeta como uma onda expansiva. O efeito da técnica é impressionante, criando uma ventania de luz e som que varre os inimigos. O oponente é lançado para longe, ferido e atordoado. Natureza de Cosmo: Controle da Natureza. Efeito: Dano. Custo: 3. Duração: Instantânea.\n\nPODER SUPREMO DE HÉRCULES (Ar) [PRATA] [CONTROLE DA NATUREZA][FÍSICO] Descrição: O cavaleiro eleva seu cosmo nos punhos e traça com eles a sua constelação no ar, ativando seu poder. Ele vê as estrelas de sua constelação se agitarem em seus punhos, formando uma imagem de pura cosmo energia. Ele então libera sua técnica, concentrando o cosmo em seus punhos, e em seguida numa incrível velocidade, propulsiona uma gigantesca tempestade de ventos, que arremessa o oponente a vários metros de altura. O efeito da técnica é impressionante, criando uma rajada de vento e som que varre os inimigos. O oponente é atingido pela tempestade de ventos, sofrendo danos em seu corpo e armadura. Big Bang Apoiar: A Classe da Técnica evolui com a Status do Personagem sem a necessidade de ser comprada novamente em uma classe superior. Big Bang Certeiro: A Técnica causa dano extra. O usuário da Técnica faz um teste de confirmação, se o resultado for igual ou maior que 9 ele trespassa o inimigo (ver a Manobra de Combate Duelo). Big Bang Atordoar: A Técnica atordoa o alvo (Ver Sistema Atordoado). O usuário tem 20 + Nível% de chance de atordoar. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Certeiro, Atordoar, Apoiar. Custo: 5. Duração: Instantânea.\n\nLANÇAS DE GELO DA LÓTUS BRANCA (Água) [PRATA] [CONTROLE DA NATUREZA] Descrição: O cavaleiro eleva seu cosmo e traça o asterismo de sua constelação no ar, ativando seu poder. Ele vê as estrelas de sua constelação se cristalizarem em sua cabeça, formando uma imagem de pura  cosmo energia. Ele então libera sua técnica, detendo as mãos sobre a cabeça, apontando para os seus inimigos com as palmas das mãos abertas. Reunindo o cosmo necessário, ele joga as mãos para baixo, e ao cruzá- los, sua energia é solidificada em várias lan ças sólidas de gelo, que são fortes o suficiente para perfurar até mesmo uma armadura de ouro. O efeito da técnica é impressionante, criando uma chuva de gelo e som que perfura e congela os inimigos. O oponente é atingido pelas lanças de gelo, sofrendo danos cortantes e congelantes em seu corpo e armadura. Big Bang Quebrar Armadura:  O foco dessa Técnica é despedaçar Armaduras. Dessa forma, causando danos também nas vestimentas do alvo. Instantânea: Eleva 1 Nível de Dano na Armadura. Big Bang Apoiar: A Classe da Técnica evolui com a Status do Personagem sem a necessidade de ser comprada novamente em uma classe superior. Big Bang Zero Absoluto: O Zero absoluto é a temperatura na qual toda a atividade de átomos é impossível, portanto, nada se move, é o limite extremo. Em um combate entre dois cavaleiros do frio, a vitória caberá ao que se aproximar mais desse limite! Frio 1 (Nível de Dano 15): O ar gélido do Cavaleiro atinge - 150º C. Nesta temperatura  as Armaduras da Categoria de Bronze congelam. Frio 2 (Nível de Dano 20): O ar gélido do Cavaleiro atinge -200º C. Nesta temperatura  as Armaduras da Categoria de Prata congelam. Próximo Zero Absoluto (Nível de Dano 25): O ar gélido do Cavaleiro atinge -273º C. Nesta temperatura  as Armaduras da Categoria de Bronze e Prata quebram. mas as Armaduras de ouro não congelam antes dos -273, 15 °C, portanto você precisaria baixar a temperatura até o zero absoluto para congelar uma Armadura da Categoria Ouro. Especial: Uma Armadura congelada perde sua Proteção de Armadura. Natureza de Cosmo: Controle da Natureza. Efeito: Dano, Quebrar Armadura, Apoiar, Zero Absoluto. Custo: 5. Duração: Instantânea."
+              "text": "A Virtude Cosmo de Fogo combinada com essa Técnica aumenta o dano da Brasas em +5."
             }
           ]
         }

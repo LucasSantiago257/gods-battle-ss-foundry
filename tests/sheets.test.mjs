@@ -37,6 +37,17 @@ test("drop na própria ficha deixa ordenação com a classe nativa", async () =>
   let updates = 0; const actor = {isOwner: true, acceptDrop: async () => ({update: async () => updates++})};
   await new KnightSheet(actor)._onDropItem({}, {type: "armor", parent: actor}); assert.equal(updates, 0);
 });
+test("referência de componente respeita permissão e não admite UUID fora do catálogo", async () => {
+ let resolved=0,opened=0,visible=false;
+ let packVisible=false;
+ globalThis.ui={notifications:{warn:()=>{}}};game.packs=new Map([["gods-battle-ss.componentes-tecnicas",{testUserPermission:()=>packVisible}]]);
+ globalThis.fromUuid=async()=>{resolved++;return {testUserPermission:()=>visible,sheet:{render:()=>opened++}};};
+ const target={dataset:{uuid:"Compendium.gods-battle-ss.componentes-tecnicas.Item.0123456789abcdef"}};
+ await ContentSheet.openReference({},target);assert.equal(resolved,0);
+ packVisible=true;await ContentSheet.openReference({},target);assert.equal(resolved,1);assert.equal(opened,0);
+ visible=true;await ContentSheet.openReference({},target);assert.equal(opened,1);
+ target.dataset.uuid="Actor.other.Item.private";await ContentSheet.openReference({},target);assert.equal(resolved,2);
+});
 test("ficha sem edição não aceita drop", async () => {
   let created = false; const actor = {isOwner: false, acceptDrop: () => {created = true;}};
   await new KnightSheet(actor)._onDropItem({}, {type: "armor"}); assert.equal(created, false);

@@ -6,7 +6,7 @@
       <img src="{{img}}" alt="" width="40" height="40">
       <div class="item-name"><button type="button" class="text-button" data-action="editItem">{{name}}</button><small>{{subtitle}}</small>{{#if origin}}<small title="{{origin}}">Importado de compêndio / documento</small>{{/if}}</div>
       <div class="item-controls">
-      {{#if isTechnique}}{{#if @root.editable}}<button type="button" data-action="useTechnique">Ativar</button>{{/if}}{{/if}}
+      {{#if isTechnique}}{{#if @root.editable}}{{#if needsReview}}<button type="button" data-action="editItem">Conferir</button>{{else}}<button type="button" data-action="useTechnique">Ativar</button>{{/if}}{{/if}}{{/if}}
       {{#if hasUses}}<span>{{uses.value}} / {{uses.max}} usos</span>{{#if @root.editable}}<button type="button" data-action="useItem" title="Gastar um uso">Usar</button>{{/if}}{{/if}}
       {{#if isArmor}}{{#if @root.editable}}<button type="button" data-action="equipArmor" class="{{#if equipped}}equipped{{/if}}">{{#if equipped}}Remover{{else}}Equipar{{/if}}</button>{{else}}{{#if equipped}}<span>Equipada</span>{{/if}}{{/if}}{{/if}}
       {{#if @root.editable}}<button type="button" class="icon-button" data-action="deleteItem" aria-label="Remover {{name}}"><i class="fa-solid fa-trash"></i></button>{{/if}}
