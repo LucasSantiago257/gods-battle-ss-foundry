@@ -1,4 +1,6 @@
-Versão **0.9.0** para FoundryVTT 13 build 350.
+Versão **0.9.1** para FoundryVTT 13 build 350.
+
+A revisão 0.9.1 atualiza os guias de compêndios e técnicas para descrever os efeitos derivados e a aplicação confirmada de dano. Mantém as regras e funcionalidades da 0.9.0.
 
 - Cálculos explicados, PV com incremento a partir do nível 2 e bônus de atributos divinos.
 - Efeitos pessoais: 13 entradas automatizadas, 12 parciais e 333 manuais, com cobertura e pendências explícitas. Remover/desativar reverte bônus sem reescrever a base.

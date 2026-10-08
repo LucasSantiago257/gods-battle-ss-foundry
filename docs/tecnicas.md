@@ -1,4 +1,4 @@
-# Ativar técnicas e resistir — 0.2.0
+# Ativar técnicas e resistir — 0.9.1
 
 Na aba **Técnicas**, crie ou arraste uma técnica e abra sua ficha. Confira natureza, classe, Big Bang primordial (dano, controle ou sustentada), Poder, ND e custo publicado. Esse custo já deve conter os Big Bangs; não haverá uma segunda soma automática. Os modelos novos de Bronze usam ND 2, Poder 10 e custo 2 (páginas 198–202). Cópias e compêndios existentes preservam seus valores; ajuste o ND antigo manualmente se necessário.
 
@@ -14,7 +14,7 @@ Selecione apenas o token do defensor e clique em **Resistir com o cavaleiro sele
 
 O cartão apresenta dano completo na falha; metade do dano corporal e nenhum dano à armadura no sucesso; zero em sucesso crítico; dano corporal dobrado na falha crítica. Sem armadura viva equipada, dobra novamente o dano corporal. Armadura com PV 0 ainda é viva; com PV negativos ou estado Morta deixa de proteger. Metades são exibidas sem arredondamento imposto. O cartão indica efeitos resistidos ou duração dobrada na falha crítica.
 
-**O cartão não altera PV do defensor ou da armadura.** Confira proteções, Big Bangs e exceções antes de aplicar manualmente. Alcance, ações, aprendizado, estados, duração, sustentação por turno e recuperação são manuais. Controle/sustentação não recebe dano corporal genérico. As mensagens seguem a visibilidade de rolagens do Foundry.
+**A resistência calcula o dano; aplicar exige confirmação.** O proprietário do defensor ou mestre pode usar **Aplicar dano**, conferir o corpo e a armadura e justificar ajustes. Um mestre ativo processa a solicitação, registra os valores e impede aplicação duplicada. A última aplicação pode ser desfeita enquanto os recursos corresponderem ao registro; consulte [combate](combate.md). Confira proteções, Big Bangs e exceções antes de confirmar. Alcance, ações, aprendizado, estados, duração, sustentação por turno e recuperação são manuais. Controle/sustentação não recebe dano corporal genérico. As mensagens seguem a visibilidade de rolagens do Foundry.
 
 A ativação impede cliques duplicados no mesmo cliente e verifica mudanças de recursos antes de salvar. Evite ativar simultaneamente o mesmo cavaleiro em clientes diferentes. Se o chat falhar depois do desconto, a notificação informa que os recursos já foram gastos; confira a ficha antes de repetir.
 
