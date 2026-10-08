@@ -13,6 +13,7 @@ import {CREATION_STEPS,creationReview} from "./creation-rules.mjs";
 import {beginCreation,chooseCreationItem,applyInitialStyle,finishCreation} from "./creation.mjs";
 import {recoverDamageOperation} from "./damage.mjs";
 import {recoverTechniqueOperation,reviewTechniqueOperation} from "./technique-activation.mjs";
+import {actionSheetContext,toggleActionControl,consumeAction,adjustActions,recoverAction,reviewAction} from "./actions.mjs";
 import {openTestActors,importTestActors} from "./combat-examples.mjs";
 import {beginLevelUp,levelUpContext,chooseLevelItem,discardLevelDraft,requestLevelUp,clearInterruptedLevel} from "./level-up.mjs";
 
@@ -29,7 +30,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
     classes: ["gods-battle", "knight-sheet"], tag: "form", position: {width: 920, height: 800},
     form: {submitOnChange: true, closeOnSubmit: false},
     actions: {rollTest: KnightSheet.rollAction, createItem: KnightSheet.createItem, editItem: KnightSheet.editItem,
-      deleteItem: KnightSheet.deleteItem, equipArmor: KnightSheet.equipArmor, useItem: KnightSheet.useItem, useTechnique: KnightSheet.activateTechnique, setupTechnique:KnightSheet.setupTechnique,attackTarget:KnightSheet.attackTarget,recoverTechnique:KnightSheet.recoverTechnique,reviewTechnique:KnightSheet.reviewTechnique,
+      deleteItem: KnightSheet.deleteItem, equipArmor: KnightSheet.equipArmor, useItem: KnightSheet.useItem, useTechnique: KnightSheet.activateTechnique, setupTechnique:KnightSheet.setupTechnique,attackTarget:KnightSheet.attackTarget,recoverTechnique:KnightSheet.recoverTechnique,reviewTechnique:KnightSheet.reviewTechnique,toggleActions:KnightSheet.toggleActions,consumeAction:KnightSheet.consumeAction,adjustActions:KnightSheet.adjustActions,recoverAction:KnightSheet.recoverAction,reviewAction:KnightSheet.reviewAction,
       beginCreation:KnightSheet.beginCreation,guideStep:KnightSheet.guideStep,chooseCreationItem:KnightSheet.chooseCreationItem,applyInitialStyle:KnightSheet.applyInitialStyle,finishCreation:KnightSheet.finishCreation,recoverDamage:KnightSheet.recoverDamage,openCatalog: KnightSheet.openCatalog, seedCompendium: KnightSheet.seedCompendium,openTestActors:KnightSheet.openTestActors,importTestActors:KnightSheet.importTestActors,beginLevelUp:KnightSheet.beginLevelUp,chooseLevelItem:KnightSheet.chooseLevelItem,discardLevelDraft:KnightSheet.discardLevelDraft,requestLevelUp:KnightSheet.requestLevelUp,clearInterruptedLevel:KnightSheet.clearInterruptedLevel}
   };
   static PARTS = {sheet: {template: `systems/${SYSTEM_ID}/templates/knight.hbs`, scrollable: [".sheet-body"]}};
@@ -67,6 +68,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
       origin: item.system.originUuid} );
     const techniqueLedger=Object.entries(this.actor.flags?.[SYSTEM_ID]?.techniqueOperations??{}).map(([key,r])=>{const published=r.cardPublished||game.messages?.get?.(r.requestId)?.flags?.[SYSTEM_ID]?.techniqueResponse?.status==="published";return {key,...r,statusLabel:{prepared:"Interrompida · conferir pagamento",paid:published?"Paga e publicada":"Paga · conferir cartão",failed:"Encerrada sem pagamento",reviewed:"Encerrada após revisão manual"}[r.status]??r.status,canRecover:game.user.isGM&&(r.status==="prepared"||r.status==="paid"&&!published)};}).toSorted((a,b)=>b.time-a.time).slice(0,20);
     return Object.assign(context, {
+      actionControl:actionSheetContext(this.actor),actionLedger:Object.entries(this.actor.flags?.[SYSTEM_ID]?.actionOperations??{}).map(([key,r])=>({key,...r,canRecover:game.user.isGM&&(r.status==="prepared"||r.status==="paid"&&!r.published&&game.messages?.get?.(r.requestId)?.flags?.[SYSTEM_ID]?.actionResponse?.status!=="published"),statusLabel:{prepared:"Interrompida · conferir",paid:"Gasto registrado",failed:"Encerrada sem gasto",reviewed:"Revisada manualmente"}[r.status]??r.status})).toSorted((a,b)=>b.time-a.time).slice(0,20),actionAdjustments:Object.values(this.actor.flags?.[SYSTEM_ID]?.actionAdjustments??{}).toSorted((a,b)=>b.time-a.time).slice(0,20),
       actor: this.actor, system: s, editable: this.isEditable, isGM: game.user.isGM, tabs: this._prepareTabs("primary"), groups,
       levelGuide:await levelUpContext(this.actor),canLevelUp:this.isEditable&&s.creationGuide.status!=="draft"&&s.profile.level<30,
       interruptedLevel:this.actor.flags?.[SYSTEM_ID]?.levelOperation?.status==="prepared",
@@ -123,6 +125,11 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
   }
   static async rollAction(_event, target) { await rollTest(this.actor, target.dataset.kind, target.dataset.key); }
   static async attackTarget() {if(this.isEditable) await attackTarget(this.actor);}
+  static async toggleActions() {try{await toggleActionControl();}catch(error){ui.notifications.error(error.message);}}
+  static async consumeAction(_event,target) {if(this.isEditable)try{await consumeAction(this.actor,target.dataset.pool);}catch(error){ui.notifications.error(error.message);}}
+  static async adjustActions() {try{await adjustActions(this.actor);}catch(error){ui.notifications.error(error.message);}}
+  static async recoverAction(_event,target) {try{await recoverAction(this.actor,target.dataset.operation);}catch(error){ui.notifications.error(error.message);}}
+  static async reviewAction(_event,target) {try{await reviewAction(this.actor,target.dataset.operation);}catch(error){ui.notifications.error(error.message);}}
   static async openTestActors() {return openTestActors();}
   static async importTestActors() {return importTestActors();}
   static async beginLevelUp() {if(this.isEditable)await beginLevelUp(this.actor);}

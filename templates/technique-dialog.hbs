@@ -1,6 +1,7 @@
 <p><strong>{{name}}</strong> · custo base {{cost}} CE.</p>
 <p>{{#if targetName}}Alvo desta ativação: <strong>{{targetName}}</strong>.{{else}}Sem alvo marcado; escolha o defensor pelo cartão após rolar.{{/if}}</p>
 <p>{{#if unlimited}}CE ilimitada pela armadura.{{else}}CE atual {{current}}, reservada {{reserve}}, extra {{extra}}.{{/if}}</p>
+{{#if actions.enabled}}<p>Rodada {{actions.context.round}} · ataque {{actions.remaining.attack}} / {{actions.maxima.attack}}, defesa {{actions.remaining.defense}} / {{actions.maxima.defense}}. Uma técnica exige a reserva inteira, ainda intacta, mesmo se falhar.</p><label>Reserva usada pela técnica<select name="actionPool"><option value="attack">Todas as ações de ataque</option><option value="defense">Todas as ações de defesa</option></select></label>{{else}}<p>Sem controle de ações ativo: a técnica não consome reservas de combate.</p>{{/if}}
 {{#if penalty}}<p>Penalidade de Asterismo pendente: {{penalty}} (consumida neste teste).</p>{{/if}}
 <div class="form-group"><label>CE adicional desta ativação</label><input name="extra" type="number" min="0" step="1" value="0"></div>
 <div class="form-group"><label>Elevar Cosmo (+1 CE por elevação)</label><input name="elevate" type="number" min="0" step="1" value="0"></div>

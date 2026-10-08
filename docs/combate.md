@@ -15,3 +15,7 @@ Controle, sustentação, duração, condições, efeitos em área e movimentaç�
 ## Pagamento de técnicas 0.13.0
 
 Pagamento/rolagem de técnicas agora compartilha a fila do mestre ativo com dano e evolução. A solicitação do jogador vira o cartão final, preservando autoria e visibilidade. Confirmações sobre um estado anterior são recusadas; pagamento interrompido exige conferência e bloqueia alterações automatizadas conflitantes. Histórico/recuperação na aba Combate não repete cobrança ou rolagem. Edição direta/macros ficam fora da fila. Ver ativacoes.md e validar dois clientes no servidor antes de considerar este fluxo verificado.
+
+## Ações por rodada 0.14.0
+
+Controle habilitado por encontro em Combate → Ativar controle de ações. Ataque/defesa escolhem quantidade disponível e gastam pela fila do mestre; técnicas escolhem reserva inteira de ataque ou defesa, paga junto com CE/PV. Trocar a vez não repõe; trocar a rodada abre reservas novas sem mudar recursos. Movimento/Reação têm registro separado. O histórico permite recuperar o mesmo resultado e o mestre pode ajustar com justificativa. Ver acoes.md para convenção de turno coletivo, interrupções, tokens e limites.

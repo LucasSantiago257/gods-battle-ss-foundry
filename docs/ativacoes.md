@@ -30,3 +30,5 @@ Ver [o roteiro do Foundry](validacao-foundry.md). Testes locais verificam concor
 APIs oficiais utilizadas: [ChatMessage e applyRollMode](https://foundryvtt.com/api/v13/classes/foundry.documents.ChatMessage.html), [Roll.toJSON/fromData](https://foundryvtt.com/api/v13/classes/foundry.dice.Roll.html). Fórmulas e referências do livro continuam no [guia de técnicas](tecnicas.md); esta entrega altera coordenação/persistência, sem acrescentar regras de jogo.
 
 Ao duplicar/exportar uma ficha que contenha registro interrompido, a recuperação não altera o cartão da original. O mestre deve conferir e encerrar manualmente somente o registro da cópia antes de novas ativações; seus recursos são preservados.
+
+Desde0.14.0, em encontro com controle habilitado, a técnica paga também toda a reserva intacta escolhida de ataque ou defesa, na mesma gravação do Actor. Falha também consome. O registro inclui reserva/quantidade/rodada; recuperação não repete esse gasto. Fora de encontro habilitado não há consumo de ações. Ver acoes.md.

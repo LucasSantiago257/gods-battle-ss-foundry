@@ -131,3 +131,23 @@ Para executar este roteiro com dados prontos, use o grupo de [fichas de teste da
 8. Ensaiar recuperação em cópia do mundo: estado anterior encerra sem gasto; posterior completo reconhece pagamento sem cobrar; valores divergentes recusam restauração. Após reparo manual, liberar exige conferência e justificativa, sem alterar recursos nem criar resultado. Cancelar mantém registro. Confirmar permissões do mestre responsável.
 9. Reabrir mundo e atualizar0.13.0 sobre fichas existentes: notas/origem/IDs/recursos/compêndios preservados. Conferir aplicação de dano pelo cartão atualizado e desfazer no defensor. Este roteiro depende do Foundry real; testes locais não equivalem à sua execução.
 
+
+
+## Ações e rodadas 0.14.0 — validação pendente
+
+Use mestre e dois jogadores em mundo de teste13.350, com cópia preservada das fichas.
+
+1. Crie/abra encontro no rastreador, adicione tokens e inicie. Na aba Combate, habilite o controle como mestre; confirme que PV/CE/armadura e cópias não mudam.
+2. Confira reservas com os máximos da ficha. Ataque escolhendo menos ações que o máximo; confira o modificador/cartão, gasto e defesa intacta. Cancelar não consome.
+3. Defenda pelo cartão fora da vez do defensor. Repita o clique: não deve haver outra defesa paga do mesmo ataque. Confira o vínculo para aplicação de dano.
+4. Troque a vez de combatente: reservas permanecem. Avance a rodada: todas são repostas, sem alterar PV/CE/excesso. Voltar a rodada abre um novo ciclo; não desfaz gastos anteriores.
+5. Ative técnica com ataque inteiro e confirme gasto junto com CE. Falha também paga. Reserva parcialmente gasta deve impedir essa escolha; defesa intacta deve continuar possível. Alterar ficha/rodada durante diálogo exige reabrir.
+6. Registre Movimento/Reação com descrição: apenas uma por ciclo, sem CE ou efeito automático. Teste reação fora da vez. Confira ajustes justificados do mestre e cancelamento.
+7. Com Combate6+ e automação avançada ligada, confira ações extras uma vez e memória de cálculo. Desligar mantém a parcela manual; confira ajustes antigos para evitar duplicação.
+8. Teste dois proprietários solicitando gasto sobre a mesma reserva e cliques repetidos: não consumir estado antigo duas vezes. Teste mestre ausente/secundário e usuário observador.
+9. Teste público/privado/cego/self: autor e visibilidade corretos, sem Roll/resultado no histórico do Actor. Cartão privado/cego não permite defesa de quem não o vê.
+10. Teste fichas/tokens vinculados e não vinculados, entrada tardia, remoção e encerramento. Mesma ficha em dois combatentes/encontros habilitados deve exigir resolução da ambiguidade.
+11. Em ambiente de teste, simule interrupção/reconexão/troca de GM e falha de publicação: recuperar mesmo resultado sem consumir/rolar outra vez. Operação preparada bloqueia gastos/dano/evolução até revisão. Ajustes posteriores devem ser conservados.
+12. Copie ficha com registro interrompido: recuperar não deve tocar original. Encerrar após revisão deve liberar só a cópia. Ataques de outra rodada exigem resolução manual; concluir defesas antes de avançar.
+
+Iniciativa/simultaneidade, alcance, movimento parcial/total, manobras e efeitos próprios de poderes permanecem conferidos; não registrar automação integral como validada.
