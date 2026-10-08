@@ -15,7 +15,7 @@ export class KnightData extends foundry.abstract.TypeDataModel {
   static migrateData(source) {super.migrateData(source); return migrateKnightSource(source);}
   static defineSchema() {
     return {
-      schemaVersion: num(2, 1), automation: schema({enabled: flag(), healthBonus: num(), resistanceBonus: num(), techniqueND: num(), physicalDamage: num(), testSen: num(), resistanceCos: num(), resistanceSen: num()}),
+      schemaVersion: num(3, 1), automation: schema({enabled: new BooleanField({initial:true}), healthBonus: num(), resistanceBonus: num(), techniqueND: num(), physicalDamage: num(), testSen: num(), resistanceCos: num(), resistanceSen: num()}),
       profile: schema({level: num(1, 1, 100), style: text("saint", STYLES), status: text("bronze", STATUS), nature: text("physical", NATURES), specialization: text(),
         nationality: text(), age: text(), height: text(), weight: text(), appearance: text(), essence: text("Bom"), personality: text(), sign: text(), quality: text(), flaw: text(),
         sanctuary: text(), deity: text(), master: text(), trainingPlace: text(), biography: text(), companionUuid: text()}),
@@ -30,6 +30,7 @@ export class KnightData extends foundry.abstract.TypeDataModel {
         domain: new NumberField({initial: 4.5}), physicalDamageBonus: num(), techniqueDamageBonus: num(), divineSpeed: num(), resistances: schema({vig: num(), vel: num(), sen: num(), cos: num()})}),
       movement: schema({walk: new NumberField({initial: 6}), run: new NumberField({initial: 18}), jump: new NumberField({initial: 3}), lift: num(10), break: num(5)}),
       creation: schema({training: num(8), total: num(5), budget: num(14), virtueBudget: num(2), skillBudget: num(9)}),
+      creationGuide: schema({status:text("draft",{"":"Edição normal",draft:"Rascunho",complete:"Concluída"}),step:num(1,1,6),styleApplied:text("",{"":"Ainda não aplicado",...STYLES}),extraSkill:text("",{"":"Selecionar",...SKILLS}),fightChoice:text("punch",{punch:"Soco",kick:"Chute"}),acceptExceptions:flag(),exceptionReason:text(),initializeResources:new BooleanField({initial:true})}),
       conditions: schema(Object.fromEntries(Object.keys(CONDITIONS).map(k => [k, flag()]))),
       sense: schema({ordinal: num(6, 6, 9), stage: text("awakened", STAGES), levelBonus: num(), domainBonus: num(), initiative: num(2), speedSuperated: flag(), aura: text(), characteristics: text()}),
       progression: schema({xp: num(), missions: num(), combats: num(), legend: num(0, 0, 5), refinements: num(), godComplex: num(0, 0, 5), skillSpent: num(), trainingAdjust: num(0, -100),

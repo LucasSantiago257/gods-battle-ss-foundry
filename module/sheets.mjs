@@ -7,6 +7,9 @@ import {ABILITY_KINDS, openCatalog} from "./catalog.mjs";
 import {calculationSummary} from "./calculations.mjs";
 import {evaluatePassives, passiveDefinition, passiveWarnings} from "./passives.mjs";
 import {attackTarget} from "./combat.mjs";
+import {CREATION_STEPS,creationReview} from "./creation-rules.mjs";
+import {beginCreation,chooseCreationItem,applyInitialStyle,finishCreation} from "./creation.mjs";
+import {recoverDamageOperation} from "./damage.mjs";
 
 export function field(name, label, value, choices, type = "number", hint = "") {
   return {name, label, value, hint, isSelect: !!choices, isCheckbox: type === "checkbox", isTextarea: type === "textarea", isNumber: type === "number", type,
@@ -21,7 +24,8 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
     classes: ["gods-battle", "knight-sheet"], tag: "form", position: {width: 920, height: 800},
     form: {submitOnChange: true, closeOnSubmit: false},
     actions: {rollTest: KnightSheet.rollAction, createItem: KnightSheet.createItem, editItem: KnightSheet.editItem,
-      deleteItem: KnightSheet.deleteItem, equipArmor: KnightSheet.equipArmor, useItem: KnightSheet.useItem, useTechnique: KnightSheet.activateTechnique, attackTarget:KnightSheet.attackTarget, openCatalog: KnightSheet.openCatalog, seedCompendium: KnightSheet.seedCompendium}
+      deleteItem: KnightSheet.deleteItem, equipArmor: KnightSheet.equipArmor, useItem: KnightSheet.useItem, useTechnique: KnightSheet.activateTechnique, attackTarget:KnightSheet.attackTarget,
+      beginCreation:KnightSheet.beginCreation,guideStep:KnightSheet.guideStep,chooseCreationItem:KnightSheet.chooseCreationItem,applyInitialStyle:KnightSheet.applyInitialStyle,finishCreation:KnightSheet.finishCreation,recoverDamage:KnightSheet.recoverDamage,openCatalog: KnightSheet.openCatalog, seedCompendium: KnightSheet.seedCompendium}
   };
   static PARTS = {sheet: {template: `systems/${SYSTEM_ID}/templates/knight.hbs`, scrollable: [".sheet-body"]}};
   static TABS = {primary: {initial: "overview", tabs: [
@@ -60,6 +64,10 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
       actor: this.actor, system: s, editable: this.isEditable, isGM: game.user.isGM, tabs: this._prepareTabs("primary"), groups,
       calculations: calculationSummary(s, game.settings.get(SYSTEM_ID, "resistanceMode")),
       passiveLedger: evaluatePassives(s,this.actor.items.contents).ledger,
+      damageLedger:Object.entries(this.actor.flags?.[SYSTEM_ID]?.damageOperations??{}).map(([key,r])=>({key,...r,statusLabel:{applied:"Aplicado",undone:"Desfeito",prepared:"Interrompido",repair:"Revisão necessária",failed:"Não aplicado"}[r.status]??r.status,canRecover:game.user.isGM&&["prepared","repair"].includes(r.status)})).toSorted((a,b)=>b.time-a.time).slice(0,20),
+      creationGuide: s.creationGuide.status==="draft" ? {...creationReview(s,this.actor.items.contents,this.actor.name),step:s.creationGuide.step,current:CREATION_STEPS[s.creationGuide.step-1],steps:CREATION_STEPS.map((step,index)=>({...step,index:index+1,active:index+1===s.creationGuide.step})),
+        fields:[field("system.creationGuide.extraSkill","Perícia livre do estilo",s.creationGuide.extraSkill,{"":"Selecionar",...Object.fromEntries(Object.entries(SKILLS).map(([key,def])=>[key,def.label]))}),field("system.creationGuide.fightChoice","Santo / Asgardiano: luta inicial",s.creationGuide.fightChoice,{punch:"Soco",kick:"Chute"}),field("system.creationGuide.acceptExceptions","Aceitar pendências como exceções da campanha",s.creationGuide.acceptExceptions,null,"checkbox"),tf("system.creationGuide.exceptionReason","Justificativa das exceções",s.creationGuide.exceptionReason),field("system.creationGuide.initializeResources","Preencher PV e CE atuais ao concluir",s.creationGuide.initializeResources,null,"checkbox")]} : null,
+      canBeginCreation:this.isEditable && s.profile.level===1 && s.creationGuide.status==="",
       resistancePolicy: game.settings.get(SYSTEM_ID, "resistanceMode") === "rank" ? "Graduação + modificador de nível (provisório)" : "Modificador do atributo + modificador de nível",
       attributes: Object.entries(ATTRIBUTES).map(([key, label]) => ({key, label, ...s.attributes[key]})),
       overview: [f("profile.level", "Nível", s.profile.level), f("profile.style", "Estilo", s.profile.style, STYLES), f("profile.status", "Status do cavaleiro", s.profile.status, STATUS), f("profile.nature", "Natureza do Cosmo", s.profile.nature, NATURES),
@@ -103,6 +111,12 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
   }
   static async rollAction(_event, target) { await rollTest(this.actor, target.dataset.kind, target.dataset.key); }
   static async attackTarget() {if(this.isEditable) await attackTarget(this.actor);}
+  static async beginCreation() {if(this.isEditable) await beginCreation(this.actor);}
+  static async guideStep(_event,target) {if(!this.isEditable)return;const step=Number(target.dataset.step);if(!CREATION_STEPS[step-1])return;await this.actor.update({"system.creationGuide.step":step});this.changeTab(CREATION_STEPS[step-1].tab,"primary");}
+  static async chooseCreationItem(_event,target) {if(this.isEditable)try{await chooseCreationItem(this.actor,target.dataset.slot);}catch(error){ui.notifications.error(error.message);}}
+  static async applyInitialStyle() {if(this.isEditable)try{await applyInitialStyle(this.actor);}catch(error){ui.notifications.error(error.message);}}
+  static async finishCreation() {if(this.isEditable)try{await finishCreation(this.actor);}catch(error){ui.notifications.error(error.message);}}
+  static async recoverDamage(_event,target) {if(this.isEditable&&game.user.isGM)try{await recoverDamageOperation(this.actor,target.dataset.operation);}catch(error){ui.notifications.error(error.message);}}
   static async activateTechnique(_event, target) {
     if (!this.isEditable) return;
     await useTechnique(this.actor, this.actor.items.get(target.closest("[data-item-id]").dataset.itemId));

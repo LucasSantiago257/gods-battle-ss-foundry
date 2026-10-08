@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {knight,content} from "./foundry-stub.mjs";
-import {prepareKnight} from "../module/rules.mjs";
+import {prepareKnight,testParameters} from "../module/rules.mjs";
 import {evaluatePassives,passiveWarnings} from "../module/passives.mjs";
 import {BOOK_RULES} from "../module/book-rules.mjs";
 function item(key,id=key,overrides={}) {return {id,name:BOOK_RULES[key].name,type:key.startsWith("virtue:")?"virtue":"ability",flags:{"gods-battle-ss":{source:{key}}},system:{...content(),...overrides}};}
@@ -43,4 +43,9 @@ test("armadura poderosa recalcula máximo, preservando PV correntes e máximo ma
  const s=knight();s.automation.enabled=true;const a={type:'armor',system:content()};a.system.health.value=7;
  const v=item('virtue:GERAL:ARMADURA PODEROSA');prepareKnight(s,[a,v]);prepareKnight(s,[a,v]);assert.equal(a.system.health.max,60);assert.equal(a.system.health.value,7);
  a.system.health.manualMax=88;prepareKnight(s,[a,v]);assert.equal(a.system.health.max,88);
+});
+test("virtude de resistência contra técnicas não altera outros testes de resistência",()=>{
+ const s=knight();s.automation.enabled=true;prepareKnight(s,[item('virtue:GERAL:VIGOR CÓSMICO')]);
+ assert.equal(testParameters(s,'resistance','cos').modifier,2);assert.equal(testParameters(s,'resistance','cos','rank',{technique:true}).modifier,7);
+ assert.equal(testParameters(s,'resistance','vig','rank',{technique:true}).modifier,2);
 });

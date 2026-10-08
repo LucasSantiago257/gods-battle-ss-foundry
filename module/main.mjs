@@ -8,6 +8,7 @@ import {openCatalog} from "./catalog.mjs";
 import {evaluatePassives} from "./passives.mjs";
 import {attackTarget} from "./combat.mjs";
 import {renderCombatChat,enqueueDamageRequest,notifyDamageResponse,resumeDamageRequests} from "./damage.mjs";
+import {beginCreation} from "./creation.mjs";
 
 Hooks.once("init", async () => {
   game.settings.register(SYSTEM_ID, "resistanceMode", {name: "Resistência: parcela do atributo", hint: "Provisório: a fórmula das páginas 207/434 usa graduação; o exemplo usa modificador. A escolha vale para todo o mundo.",
@@ -20,12 +21,13 @@ Hooks.once("init", async () => {
   registry.registerSheet(Actor, SYSTEM_ID, KnightSheet, {types: ["knight"], makeDefault: true, label: "Ficha de Cavaleiro"});
   registry.registerSheet(Item, SYSTEM_ID, ContentSheet, {types: Object.keys(ITEM_TYPES), makeDefault: true, label: "Conteúdo — A Batalha dos Deuses"});
   await foundry.applications.handlebars.loadTemplates([`systems/${SYSTEM_ID}/templates/fields.hbs`, `systems/${SYSTEM_ID}/templates/items.hbs`]);
-  game.godsBattle = {createStarterCompendium, openCatalog, explainPassives: actor => evaluatePassives(actor.system,actor.items.contents),attackTarget};
+  game.godsBattle = {createStarterCompendium, openCatalog, explainPassives: actor => evaluatePassives(actor.system,actor.items.contents),attackTarget,beginCreation};
 });
 
 Hooks.on("preCreateActor", (actor, data = {}) => {
   if (actor.type !== "knight") return;
-  actor.updateSource({"system.schemaVersion": 2, "system.automation.enabled": data.system?.automation?.enabled ?? !data.system?.schemaVersion, "prototypeToken.actorLink": true, "prototypeToken.bar1.attribute": "resources.health", "prototypeToken.bar2.attribute": "resources.cosmo"});
+  actor.updateSource({"system.schemaVersion": 3, "system.automation.enabled": data.system?.automation?.enabled ?? !data.system?.schemaVersion, "prototypeToken.actorLink": true, "prototypeToken.bar1.attribute": "resources.health", "prototypeToken.bar2.attribute": "resources.cosmo"});
+  if(!data.system?.schemaVersion && !data.system?.creationGuide) actor.updateSource({"system.creationGuide.status":"draft","system.creationGuide.initializeResources":true});
 });
 Hooks.on("renderChatMessageHTML", renderTechniqueChat);
 Hooks.on("renderChatMessageHTML",renderCombatChat);

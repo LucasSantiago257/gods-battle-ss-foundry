@@ -62,6 +62,12 @@ Estes passos requerem o Foundry real; os testes automatizados não os substituem
 
 ## Catálogo de técnicas 0.5.0
 
+1. Abra Técnicas do livro e confira 166 entradas em cinco pastas. Compare Execução Aurora (Ar) e Aniquilação Aurora (Ar); os textos e páginas devem ser separados.
+2. Arraste uma técnica de dano: a ficha mostra Conferir. Tentar ativação programática antes da revisão não deve abrir diálogo, rolar nem gastar CE. Configure natureza, custo, Poder e ND, marque a revisão e ative normalmente.
+3. Apenas marcar a revisão com Poder/ND 0 ou custo 0 deve continuar bloqueando. Veneno começa com natureza vazia e custo textual; escolher a natureza e configurar o custo é obrigatório.
+4. Escudo Entrópico mantém aplicação manual e custos 2/3/4 descritos. Exclamação de Athena permanece manual, sem botão de ativação genérica.
+5. Abra Big Bangs relacionados como observador autorizado; restrinja as permissões do pack e confirme que o link não abre o documento. Cópias editadas e técnicas antigas mantêm seus dados e funcionamento.
+
 ## Combate 0.8.0
 
 1. Com mestre e dois jogadores conectados, marque um alvo e role ataque/defesa. Confira acertos e fórmula de dano. Cancelar não cria rolagem nem altera recursos.
@@ -70,8 +76,13 @@ Estes passos requerem o Foundry real; os testes automatizados não os substituem
 4. Desfaça a última aplicação e confira ambos os recursos. Após editar PV ou aplicar outro dano, a operação anterior deve recusar desfazer.
 5. Confira rolagens privadas/cegas. Sem mestre ativo, nenhum recurso muda. Reabra o mundo para conferir journal e solicitações pendentes.
 
-1. Abra Técnicas do livro e confira 166 entradas em cinco pastas. Compare Execução Aurora (Ar) e Aniquilação Aurora (Ar); os textos e páginas devem ser separados.
-2. Arraste uma técnica de dano: a ficha mostra Conferir. Tentar ativação programática antes da revisão não deve abrir diálogo, rolar nem gastar CE. Configure natureza, custo, Poder e ND, marque a revisão e ative normalmente.
-3. Apenas marcar a revisão com Poder/ND 0 ou custo 0 deve continuar bloqueando. Veneno começa com natureza vazia e custo textual; escolher a natureza e configurar o custo é obrigatório.
-4. Escudo Entrópico mantém aplicação manual e custos 2/3/4 descritos. Exclamação de Athena permanece manual, sem botão de ativação genérica.
-5. Abra Big Bangs relacionados como observador autorizado; restrinja as permissões do pack e confirme que o link não abre o documento. Cópias editadas e técnicas antigas mantêm seus dados e funcionamento.
+
+## Criação assistida 0.9.0
+
+1. Crie um cavaleiro: rascunho e automação habilitados. Abra uma ficha antiga/duplicação: edição normal e opções preservadas.
+2. Aplique o estilo duas vezes; apenas um ponto é concedido. Campos de luta já preenchidos permanecem intactos.
+3. Distribua oito pontos, escolha virtudes e configure Aumento de Atributo: graduação básica e efetiva devem ficar separadas.
+4. Escolha do catálogo e repita: cópia editada e notas preservadas, sem duplicação. Arrastar continua funcionando.
+5. Exceda orçamento/limites: revisão aponta pendências. Concluir requer corrigir ou marcar exceção com justificativa. Cancelar mantém recursos e rascunho.
+6. Feche/reabra e recarregue entre etapas. Conclua com preenchimento de recursos desligado e confira PV/CE anteriores. Com preenchimento ligado, somente recursos do cavaleiro são preenchidos; armadura não é curada.
+7. Repetir conclusão não concede benefícios nem importa itens. Teste como proprietário e observador.

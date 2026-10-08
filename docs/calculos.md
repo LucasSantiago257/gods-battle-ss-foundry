@@ -4,7 +4,7 @@ PV = base do estilo + incremento × (nível − 1) + Vigor × nível + bônus. E
 
 Atributos acima de cinco concedem, por graduação excedente: Força +1 de dano físico; Vigor +10 PV; Cosmo +15 de dano de técnicas; Sentidos +1 de resistência; Velocidade +1 registro de velocidade superada (p. 159). A aplicação depende da opção Automatizar bônus conferidos. Os bônus manuais permanecem separados.
 
-Personagens novos usam a automação. Personagens antigos e suas duplicações a conservam desativada até revisão dos lançamentos manuais. A migração de source para versão 2 é idempotente e não altera PV atuais, CE, ajustes, máximos manuais ou itens. Recalcular não cura. PV atuais aceitam frações para resistências que dividem dano ímpar.
+Personagens novos usam a automação. Personagens anteriores à automação e suas duplicações a conservam desativada até revisão dos lançamentos manuais; escolhas já salvas são mantidas. A migração atual de source para versão 3 é idempotente e não altera PV atuais, CE, ajustes, máximos manuais ou itens, nem inicia assistente nas fichas existentes. Recalcular não cura. PV atuais aceitam frações para resistências que dividem dano ímpar.
 
 Domínio segue a fórmula da p. 388, com bônus de estágio informado separadamente. Resistência mantém a configuração existente: graduação (fórmula das pp. 207/434) ou modificador (exemplo da p. 207). Não há troca silenciosa de interpretação. Crescimento de ações/CE depois do nível 20 e bônus dos sentidos continuam manuais.
 

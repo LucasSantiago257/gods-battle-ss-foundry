@@ -95,6 +95,23 @@ export async function resumeDamageRequests() {
   if(primaryGM()?.id!==game.user.id) return;
   for(const message of game.messages.contents) if(message.flags?.[SYSTEM_ID]?.damageRequest && !message.flags?.[SYSTEM_ID]?.damageResponse) await enqueueDamageRequest(message,{},message.author?.id??message.user?.id);
 }
+export async function recoverDamageOperation(actor,key) {
+  if(!game.user.isGM || primaryGM()?.id!==game.user.id)throw Error('A recuperação deve ser feita pelo mestre responsável pelas aplicações.');
+  queue=queue.catch(()=>{}).then(async()=>{
+    const r=actor.flags?.[SYSTEM_ID]?.damageOperations?.[key];
+    if(!r || !['prepared','repair'].includes(r.status))throw Error('Não há operação interrompida para recuperar.');
+    const from=r.direction==='undo'?'after':'before',to=r.direction==='undo'?'before':'after',armor=r.armorId?actor.items.get(r.armorId):null;
+    if(r.armorId&&!armor)throw Error('Armadura do registro não está na ficha.');
+    if(!await foundry.applications.api.DialogV2.confirm({window:{title:'Conferir operação interrompida'},content:'<p>Recuperar somente se os valores atuais coincidirem com o registro? Se houver alterações posteriores, ajuste os recursos manualmente antes de liberar a operação.</p>'}))return;
+    if(snapshotMatches(actor,r,to)) {
+      await actor.update({[`flags.${SYSTEM_ID}.damageOperations.${key}.status`]:r.direction==='undo'?'undone':'applied',[`flags.${SYSTEM_ID}.damageLast`]:r.direction==='undo'?r.previousKey:key});return;
+    }
+    if(actor.system.resources.health.value!==r[from].health || armor&&! [r[from].armor,r[to].armor].includes(armor.system.health.value))throw Error('Recursos diferentes do registro: preserve as alterações e confira manualmente.');
+    if(armor&&armor.system.health.value!==r[from].armor)await armor.update({'system.health.value':r[from].armor});
+    await actor.update({[`flags.${SYSTEM_ID}.damageOperations.${key}.status`]:r.direction==='undo'?'applied':'failed'});
+  });
+  return queue;
+}
 export function renderCombatChat(message,html) {
   for(const [action,callback] of [["defendAttack",()=>defendAttack(message)],["applyDamage",()=>requestDamage(message,"apply")],["undoDamage",()=>requestDamage(message,"undo")]]) {
     const button=html.querySelector(`[data-action="${action}"]`);if(!button)continue;
