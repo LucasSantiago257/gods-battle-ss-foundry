@@ -1,6 +1,9 @@
 import {SYSTEM_ID,FIGHTING} from "./config.mjs";
 import {evaluatePool,prepareRollMessage} from "./rolls.mjs";
 import {physicalDamage} from "./combat-rules.mjs";
+import {actionView,actionHash} from "./action-rules.mjs";
+import {submitCombatAction,combatActionState} from "./actions.mjs";
+import {assertNoTechniqueInterruption} from "./master-queue.mjs";
 const escaped = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const busy=new WeakSet();
 export async function attackTarget(actor) {
@@ -10,9 +13,14 @@ export async function attackTarget(actor) {
   const target=targets[0].actor;
   busy.add(actor);
   try {
+    assertNoTechniqueInterruption(actor);const view=actionView(actor),baseline=combatActionState(actor);
+    if(view.enabled&&view.remaining.attack<1)throw Error("Nenhuma ação de ataque disponível nesta rodada.");
     const choices=Object.entries(FIGHTING).filter(([key])=>key!=="defense").map(([key,label])=>`<option value="${key}">${label} (${actor.system.fighting[key]})</option>`).join("");
-    const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Ataque contra defensor"},content:`<p>Alvo: ${escaped(target.name)}</p><label>Habilidade de luta<select name="kind">${choices}</select></label><label>Modificador situacional<input type="number" name="bonus" value="0"></label><p>Ações e efeitos especiais são conferidos manualmente.</p>`,buttons:[{action:"roll",label:"Rolar ataque",default:true,callback:(_e,b)=>({kind:b.form.elements.kind.value,bonus:Number(b.form.elements.bonus.value)})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
+    const actions=view.enabled?`<label>Ações de ataque a usar (${view.remaining.attack} disponíveis)<input name="amount" type="number" min="1" max="${view.remaining.attack}" value="${view.remaining.attack}"></label><p>Confirmar consome a quantidade escolhida e usa esse valor na fórmula, além dos dados e modificador de nível.</p>`:"<p>Fora de encontro com controle ativo: não gasta reservas; usa o total de ações da ficha na fórmula.</p>";
+    const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Ataque contra defensor"},content:`<p>Alvo: ${escaped(target.name)}</p><label>Habilidade de luta<select name="kind">${choices}</select></label><label>Modificador situacional<input type="number" name="bonus" value="0"></label>${actions}`,buttons:[{action:"roll",label:view.enabled?"Confirmar ações e rolar":"Rolar ataque",default:true,callback:(_e,b)=>({kind:b.form.elements.kind.value,bonus:Number(b.form.elements.bonus.value),amount:Number(b.form.elements.amount?.value??0)})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
     if (!answer) return;
+    if(combatActionState(actor)!==baseline)throw Error("Ficha, rodada ou ações mudaram. Abra o ataque novamente.");
+    if(view.enabled)return await submitCombatAction(actor,{kind:"attack",fighting:answer.kind,bonus:answer.bonus,amount:answer.amount,targetUuid:target.uuid},baseline);
     const dice=actor.system.fighting[answer.kind];
     if (!FIGHTING[answer.kind] || answer.kind==="defense" || !Number.isInteger(dice) || dice<1 || dice>5 || !Number.isFinite(answer.bonus)) throw Error("Escolha uma habilidade de luta com graduação entre 1 e 5.");
     const {result,messageRoll}=await evaluatePool(dice,actor.system.combat.attack+actor.system.combat.levelModifier+answer.bonus);
@@ -29,12 +37,17 @@ export async function defendAttack(message) {
   if (busy.has(actor)) return;
   busy.add(actor);
   try {
+    assertNoTechniqueInterruption(actor);const view=actionView(actor),baseline=combatActionState(actor),fightHash=actionHash(fight);
+    if(view.enabled&&view.remaining.defense<1)throw Error("Nenhuma ação de defesa disponível nesta rodada.");
     const grade=actor.system.fighting.defense;
     if (grade<1) throw Error("Configure a graduação de Esquiva/Bloqueio antes de defender.");
-    const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Defender ataque"},content:'<label>Modificador situacional<input type="number" name="bonus" value="0"></label>',buttons:[{action:"roll",label:"Rolar defesa",default:true,callback:(_e,b)=>Number(b.form.elements.bonus.value)},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
+    const content='<label>Modificador situacional<input type="number" name="bonus" value="0"></label>'+(view.enabled?`<label>Ações de defesa a usar (${view.remaining.defense} disponíveis)<input name="amount" type="number" min="1" max="${view.remaining.defense}" value="${view.remaining.defense}"></label><p>Defender é permitido fora da sua vez. Confirmar consome a quantidade escolhida.</p>`:"<p>Sem controle ativo: usa o total da ficha sem gastar reservas.</p>");
+    const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Defender ataque"},content,buttons:[{action:"roll",label:view.enabled?"Confirmar ações e rolar":"Rolar defesa",default:true,callback:(_e,b)=>({bonus:Number(b.form.elements.bonus.value),amount:Number(b.form.elements.amount?.value??0)})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
     if (answer===null || answer===undefined) return;
-    if (!Number.isFinite(answer)) throw Error("Modificador inválido.");
-    const {result,messageRoll}=await evaluatePool(grade,actor.system.combat.defense+actor.system.combat.levelModifier+answer);
+    if(combatActionState(actor)!==baseline||actionHash(message.flags?.[SYSTEM_ID]?.fight)!==fightHash)throw Error("Ficha, ataque, rodada ou ações mudaram. Abra a defesa novamente.");
+    if(view.enabled)return await submitCombatAction(actor,{kind:"defend",rootId:message.id,fightHash,bonus:answer.bonus,amount:answer.amount},baseline);
+    if (!Number.isFinite(answer.bonus)) throw Error("Modificador inválido.");
+    const {result,messageRoll}=await evaluatePool(grade,actor.system.combat.defense+actor.system.combat.levelModifier+answer.bonus);
     const outcome=physicalDamage(fight.attack,result.total,{...fight,protection:actor.system.combat.protection});
     const resolvedDamage={actorUuid:actor.uuid,rootMessageId:message.id,body:outcome.damage,armor:0,armorId:null};
     const data=await prepareRollMessage(actor,messageRoll,{label:actor.name,kind:"Defesa",...result,outcome,resolvedDamage},{template:"combat-chat",flags:{resolvedDamage}});

@@ -3,6 +3,7 @@ import {techniqueParameters,techniqueOutcome,cosmoPayment,techniqueReadiness,EFF
 import {evaluatePool,prepareRollMessage} from "./rolls.mjs";
 import {levelSignature} from "./level-rules.mjs";
 import {primaryGM,isPrimaryGM,runMasterOperation,assertNoTechniqueInterruption} from "./master-queue.mjs";
+import {actionSignature,rawActionUsage,techniqueActionPlan} from "./action-rules.mjs";
 const flags=doc=>doc?.flags?.[SYSTEM_ID]??{};
 const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const hash=value=>levelSignature({},[{_id:"activation",value}]);
@@ -10,9 +11,9 @@ const author=message=>message.author?.id??message.user?.id;
 const validActor=uuid=>typeof uuid==="string"&&uuid.length<=256&&/^(Actor|Scene)\.[a-zA-Z0-9.]+$/.test(uuid);
 const modes=new Set(["publicroll","gmroll","blindroll","selfroll"]);
 export const techniqueRollMode=()=>{const mode=game.settings.get("core","rollMode");if(!modes.has(mode))throw Error("Visibilidade de rolagem inválida.");return mode;};
-export const activationState=(actor,item)=>hash({actorUuid:actor.uuid,system:actor.system.toObject?actor.system.toObject(false):actor.system,itemId:item.id,name:item.name,item:item.system.toObject?item.system.toObject():item.system,review:flags(item).source?.reference,draft:flags(item).techniqueDraft,last:flags(actor).techniqueLast??null});
-export function paymentSnapshot(actor) {const r=actor.system.resources;return {health:r.health.value,current:r.cosmo.value,extra:r.cosmoExtra,reserved:r.cosmoReserved,overload:r.cosmoOverload,unlimited:r.cosmo.unlimited,penalty:actor.system.combat.asterismPenalty,last:flags(actor).techniqueLast??null};}
-const matches=(actor,snapshot)=>hash(paymentSnapshot(actor))===hash(snapshot);
+export const activationState=(actor,item)=>hash({actorUuid:actor.uuid,system:actor.system.toObject?actor.system.toObject(false):actor.system,itemId:item.id,name:item.name,item:item.system.toObject?item.system.toObject():item.system,review:flags(item).source?.reference,draft:flags(item).techniqueDraft,last:flags(actor).techniqueLast??null,actions:actionSignature(actor)});
+export function paymentSnapshot(actor) {const r=actor.system.resources;return {health:r.health.value,current:r.cosmo.value,extra:r.cosmoExtra,reserved:r.cosmoReserved,overload:r.cosmoOverload,unlimited:r.cosmo.unlimited,penalty:actor.system.combat.asterismPenalty,last:flags(actor).techniqueLast??null,actions:rawActionUsage(actor)};}
+const matches=(actor,snapshot)=>{const current=paymentSnapshot(actor);if(!Object.hasOwn(snapshot,"actions"))delete current.actions;return hash(current)===hash(snapshot);};
 function available(actor) {
  assertNoTechniqueInterruption(actor);
  if(flags(actor).levelOperation?.status==="prepared"||Object.values(flags(actor).damageOperations??{}).some(r=>["prepared","repair"].includes(r.status)))throw Error("Há operação de evolução/dano interrompida. O mestre precisa conferi-la antes de ativar técnicas.");
@@ -72,18 +73,19 @@ export async function executeTechniqueRequest(message,userId) {
   if(baseline!==request.baseline)throw Error("A ficha ou técnica mudou desde a confirmação. Abra uma nova ativação.");
   validateCurrent(message,request,requester,actor,item,baseline,signature);
   const options=request.options;if(!options||typeof options.useExtra!=="boolean"||typeof options.allowOverload!=="boolean")throw Error("Opções de pagamento inválidas.");
+  const actionPlan=techniqueActionPlan(actor,options,message.id);
   const technique=item.system.toObject?item.system.toObject():structuredClone(item.system),parameters=techniqueParameters(actor.system,technique,options),payment=cosmoPayment(actor.system,parameters.cost,options);
   if(hash(payment)!==hash(request.expectedPayment))throw Error("O pagamento mudou; confirme os valores novamente.");
   let target=null;if(request.targetUuid){if(!validActor(request.targetUuid))throw Error("Alvo inválido.");target=await fromUuid(request.targetUuid);if(target?.type!=="knight"||target.uuid!==request.targetUuid)throw Error("O alvo não está mais disponível.");}
   validateCurrent(message,request,requester,actor,item,baseline,signature);
   const before=paymentSnapshot(actor);
-  record={status:"prepared",actorUuid:actor.uuid,requestId:message.id,userId,name:item.name,itemUuid:item.uuid,baseline,requestSignature:signature,before,payment:Object.fromEntries(Object.entries(payment).filter(([key])=>key!=="updates")),time:Date.now(),rollMode:request.rollMode};
+  record={status:"prepared",actorUuid:actor.uuid,requestId:message.id,userId,name:item.name,itemUuid:item.uuid,baseline,requestSignature:signature,before,payment:Object.fromEntries(Object.entries(payment).filter(([key])=>key!=="updates")),time:Date.now(),rollMode:request.rollMode,actionCost:actionPlan.cost,actionPool:options.actionPool??null,actionContext:actionPlan.view.context};
   await actor.update({[`flags.${SYSTEM_ID}.techniqueOperations.${message.id}`]:record});
   validateCurrent(message,request,requester,actor,item,baseline,signature);
   const {result,messageRoll}=await evaluatePool(parameters.dice,parameters.modifier);
   validateCurrent(message,request,requester,actor,item,baseline,signature);
   const outcome=techniqueOutcome(actor.system,technique,parameters,result.total),attack={name:item.name,nature:technique.nature,effectKind:parameters.effectKind,powerCosmic:parameters.powerCosmic,damage:outcome.damage,armorDamage:outcome.armorDamage,attackerUuid:actor.uuid,...(target?{targetUuid:target.uuid,targetName:target.name}:{})};
-  const card=await prepareRollMessage(actor,messageRoll,{name:item.name,...result,...parameters,...outcome,payment,effectLabel:EFFECT_KINDS[parameters.effectKind],description:technique.description,isDamage:parameters.effectKind==="damage",targetName:target?.name,power:parameters.power,userLevel:actor.system.profile.level,damageBonus:actor.system.combat.damageBonus+(actor.system.combat.techniqueDamageBonus??0)},
+  const card=await prepareRollMessage(actor,messageRoll,{name:item.name,...result,...parameters,...outcome,payment,actions:actionPlan.cost?{cost:actionPlan.cost,pool:options.actionPool==="attack"?"Ataque":"Defesa",round:actionPlan.view.context.round}:null,effectLabel:EFFECT_KINDS[parameters.effectKind],description:technique.description,isDamage:parameters.effectKind==="damage",targetName:target?.name,power:parameters.power,userLevel:actor.system.profile.level,damageBonus:actor.system.combat.damageBonus+(actor.system.combat.techniqueDamageBonus??0)},
    {template:"technique-chat",rollMode:request.rollMode,flags:{technique:{itemUuid:item.uuid,...parameters,...outcome,payment:record.payment},...(outcome.success?{attack}:{})}});
   // Self roll acompanha o solicitante, não o cliente mestre que executou o teste.
   if(request.rollMode==="selfroll")card.whisper=[userId];
@@ -92,13 +94,13 @@ export async function executeTechniqueRequest(message,userId) {
   validateCurrent(message,request,requester,actor,item,baseline,signature);
   await message.update({[`flags.${SYSTEM_ID}.techniquePrepared`]:prepared});
   validateCurrent(message,request,requester,actor,item,baseline,signature);
-  const after={...before,current:payment.updates["system.resources.cosmo.value"]??before.current,extra:payment.updates["system.resources.cosmoExtra"]??before.extra,overload:payment.updates["system.resources.cosmoOverload"]??before.overload,health:payment.updates["system.resources.health.value"]??before.health,penalty:outcome.nextPenalty,last:message.id};
+  const after={...before,current:payment.updates["system.resources.cosmo.value"]??before.current,extra:payment.updates["system.resources.cosmoExtra"]??before.extra,overload:payment.updates["system.resources.cosmoOverload"]??before.overload,health:payment.updates["system.resources.health.value"]??before.health,penalty:outcome.nextPenalty,last:message.id,actions:actionPlan.after};
   record={...record,after,preparedSignature:hash(prepared)};
   await actor.update({[`flags.${SYSTEM_ID}.techniqueOperations.${message.id}`]:record});
   validateCurrent(message,request,requester,actor,item,baseline,signature);
   if(request.targetUuid){const current=await fromUuid(request.targetUuid);if(current?.type!=="knight"||current.uuid!==request.targetUuid)throw Error("O alvo mudou ou não está mais disponível.");validateCurrent(message,request,requester,actor,item,baseline,signature);}
   if(!matches(actor,before)||hash(flags(message).techniquePrepared)!==record.preparedSignature)throw Error("Recursos ou cartão mudaram antes do pagamento. Confira o registro.");
-  await actor.update({...payment.updates,"system.combat.asterismPenalty":outcome.nextPenalty,[`flags.${SYSTEM_ID}.techniqueLast`]:message.id,[`flags.${SYSTEM_ID}.techniqueOperations.${message.id}`]:{...record,status:"paid"}});
+  await actor.update({...payment.updates,...actionPlan.updates,"system.combat.asterismPenalty":outcome.nextPenalty,[`flags.${SYSTEM_ID}.techniqueLast`]:message.id,[`flags.${SYSTEM_ID}.techniqueOperations.${message.id}`]:{...record,status:"paid"}});
   record=flags(actor).techniqueOperations[message.id];
   await publishStored(message,actor,record);
  }catch(error){

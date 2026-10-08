@@ -4,10 +4,10 @@
 
 1. Cálculos: PV cresce a partir do nível 2, contribuição de Vigor separada, bônus divinos, memória de cálculo e máximos manuais preservados. Resistência mantém duas interpretações configuráveis.
 2. Efeitos pessoais: motor de contribuições derivadas e cobertura das 358 entradas; 13 automatizadas, 12 parciais, 333 manuais. Pré-requisitos geram aviso e suspensão de efeitos, com exceção explícita. Fichas anteriores mantêm adesão manual.
-3. Combate: ataque/defesa comuns, dano confirmado, fila por mestre ativo, journal, desfazer e recuperação explícita de operações interrompidas. Críticos específicos de luta, consumo de ações, manobras avançadas e condições permanecem manuais.
+3. Combate: ataque/defesa comuns, dano confirmado, fila por mestre ativo, journal, desfazer e recuperação explícita de operações interrompidas. Críticos específicos de luta, manobras avançadas e condições permanecem manuais. Consumo básico de ações foi entregue em0.14.0.
 4. Criação: assistente de nível 1 em seis etapas, rascunho persistente, benefício do estilo uma vez, importação sem substituir cópias, orçamentos, limites e registro de exceções. Schema 3 conserva fichas anteriores em edição normal.
 
-Validação local: 144 testes, round-trip de 866 Items e três Atores com itens embutidos, templates/JavaScript e empacotamento. A prévia de fichas é conferida no Edge. Esses testes usam um contrato mínimo da API; execução no servidor Foundry 13.350 continua pendente. Ver roteiro validacao-foundry.md.
+Validação local: 173 testes, round-trip de 866 Items e três Atores com itens embutidos, templates/JavaScript e empacotamento. A prévia de fichas é conferida no Edge. Esses testes usam um contrato mínimo da API; execução no servidor Foundry 13.350 continua pendente. Ver roteiro validacao-foundry.md.
 
 0.9.2 inclui fichas de exercício de combate e importação preservando cópias existentes; instruções em fichas-teste.md.
 
@@ -29,6 +29,8 @@ Preservar IDs/proveniência dos compêndios e todas as cópias editadas do mundo
 0.12.0 entrega composição personalizada com rascunho, seleção de componentes, graduações, slots/custos, revisão e histórico. Ver tecnicas-personalizadas.md. O mapa atualizado e priorizado está em proximos-desafios.md: ações/turnos, efeitos de componentes, distância/condições e sustentação/duelos. Pagamento central foi entregue em0.13.0, sujeito à validação real.
 
 
-0.13.0 entrega pagamento central de técnicas, fila compartilhada com dano/evolução, resultado persistente na solicitação, deduplicação e recuperação sem nova cobrança/rolagem. Ver ativacoes.md. Próxima prioridade de implementação: ações e turnos; validar concorrência/privacidade/reconexão no Foundry real.
+0.13.0 entrega pagamento central de técnicas, fila compartilhada com dano/evolução, resultado persistente na solicitação, deduplicação e recuperação sem nova cobrança/rolagem. Ver ativacoes.md. Ações básicas/rodadas entregues em0.14.0; validar concorrência/privacidade/reconexão no Foundry real.
 
 
+
+0.14.0 entrega reservas por rodada, quantidades confirmadas no ataque/defesa, gasto inteiro na técnica junto com CE, Movimento/Reação registrados, ajustes justificados e recuperação idempotente. Convenção explícita: rodada=turno coletivo; vez não repõe e não bloqueia defesa/reação. Ver acoes.md. Próximo marco: primeiro grupo de Big Bangs/incrementos com efeitos executáveis inequívocos; iniciar por auditoria das regras e cobertura. Iniciativa/simultaneidade, manobras, movimento parcial/total, medição, condições e efeitos de reação ainda manuais.

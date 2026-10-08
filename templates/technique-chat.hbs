@@ -4,6 +4,7 @@
 <p>Maior {{highest}} + {{tens}} × 2 − {{ones}} × 2 + {{modifier}}.</p>
 <div class="chat-result"><strong>{{total}}</strong><span>{{outcome}}<br>Dificuldade {{difficulty}}</span></div>
 <p>{{cost}} CE gastas{{#if payment.unlimited}} · armadura com CE ilimitada{{else}}: {{payment.fromCurrent}} atual + {{payment.fromExtra}} extra{{#if payment.overload}} + {{payment.overload}} acima do limite (−{{payment.lifeDamage}} PV){{/if}}{{/if}}.</p>
+{{#if actions}}<p>{{actions.cost}} ações de {{actions.pool}} gastas · rodada {{actions.round}}.</p>{{/if}}
 {{#if success}}<p>Poder Cósmico: <strong>{{powerCosmic}}</strong>.</p>
 {{#if isDamage}}<p>ND {{damageLevel}} · dano corporal <strong>{{damage}}</strong> · dano à armadura <strong>{{armorDamage}}</strong> (antes da resistência).</p>{{else}}<p>Controle / sustentação: confira a duração e os efeitos descritos na técnica.</p>{{/if}}
 {{#if isDamage}}<p>{{damageLevel}} ND × {{power}} Poder + nível {{userLevel}} + bônus {{damageBonus}}.</p>{{/if}}

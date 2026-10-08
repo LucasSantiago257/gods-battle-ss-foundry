@@ -12,6 +12,8 @@ import {beginCreation} from "./creation.mjs";
 import {openTestActors,importTestActors} from "./combat-examples.mjs";
 import {beginLevelUp,requestLevelUp,enqueueLevelRequest,resumeLevelRequests} from "./level-up.mjs";
 import {enqueueTechniqueRequest,notifyTechniqueResponse,resumeTechniqueRequests} from "./technique-activation.mjs";
+import {enqueueActionRequest,notifyActionResponse,resumeActionRequests,toggleActionControl,refreshActionSheets} from "./actions.mjs";
+import {stampCombatRound} from "./action-rules.mjs";
 
 Hooks.once("init", async () => {
   game.settings.register(SYSTEM_ID, "resistanceMode", {name: "Resistência: parcela do atributo", hint: "Provisório: a fórmula das páginas 207/434 usa graduação; o exemplo usa modificador. A escolha vale para todo o mundo.",
@@ -24,7 +26,7 @@ Hooks.once("init", async () => {
   registry.registerSheet(Actor, SYSTEM_ID, KnightSheet, {types: ["knight"], makeDefault: true, label: "Ficha de Cavaleiro"});
   registry.registerSheet(Item, SYSTEM_ID, ContentSheet, {types: Object.keys(ITEM_TYPES), makeDefault: true, label: "Conteúdo — A Batalha dos Deuses"});
   await foundry.applications.handlebars.loadTemplates([`systems/${SYSTEM_ID}/templates/fields.hbs`, `systems/${SYSTEM_ID}/templates/items.hbs`, `systems/${SYSTEM_ID}/templates/level-guide.hbs`, `systems/${SYSTEM_ID}/templates/technique-builder.hbs`]);
-  game.godsBattle = {createStarterCompendium, openCatalog, explainPassives: actor => evaluatePassives(actor.system,actor.items.contents),attackTarget,beginCreation,openTestActors,importTestActors,beginLevelUp,requestLevelUp};
+  game.godsBattle = {createStarterCompendium, openCatalog, explainPassives: actor => evaluatePassives(actor.system,actor.items.contents),attackTarget,beginCreation,openTestActors,importTestActors,beginLevelUp,requestLevelUp,toggleActionControl};
 });
 
 Hooks.on("preCreateActor", (actor, data = {}) => {
@@ -37,12 +39,22 @@ Hooks.on("renderChatMessageHTML",renderCombatChat);
 Hooks.on("createChatMessage",enqueueDamageRequest);
 Hooks.on("createChatMessage",enqueueLevelRequest);
 Hooks.on("createChatMessage",enqueueTechniqueRequest);
+Hooks.on("createChatMessage",enqueueActionRequest);
 Hooks.on("updateChatMessage",notifyDamageResponse);
 Hooks.on("updateChatMessage",notifyTechniqueResponse);
+Hooks.on("updateChatMessage",notifyActionResponse);
 Hooks.once("ready",resumeDamageRequests);
 Hooks.once("ready",resumeLevelRequests);
 Hooks.once("ready",resumeTechniqueRequests);
+Hooks.once("ready",resumeActionRequests);
 Hooks.on("updateUser",()=>resumeDamageRequests());
 Hooks.on("updateUser",()=>resumeLevelRequests());
 Hooks.on("updateUser",()=>resumeTechniqueRequests());
+Hooks.on("updateUser",()=>resumeActionRequests());
+Hooks.on("preUpdateCombat",stampCombatRound);
+Hooks.on("updateCombat",refreshActionSheets);
+Hooks.on("deleteCombat",refreshActionSheets);
+Hooks.on("createCombatant",refreshActionSheets);
+Hooks.on("updateCombatant",refreshActionSheets);
+Hooks.on("deleteCombatant",refreshActionSheets);
 Hooks.on("preCreateItem", (item,data = {}) => {if (item.parent?.type === "knight" && !data.system?.acquisitionLevel) item.updateSource({"system.acquisitionLevel":item.parent.system.profile.level});});
