@@ -23,6 +23,7 @@ export function techniqueSetupUpdates(actor,item,answer) {
 export async function setupTechnique(item) {
  const actor=item?.parent;
  if(item?.type!=="technique"||actor?.type!=="knight"||!actor.isOwner||!item.isOwner||busy.has(item))return;
+ if(item.flags?.[SYSTEM_ID]?.techniqueDraft)return ui.notifications.warn("Conclua ou descarte o rascunho antes de configurar a técnica.");
  if(item.flags?.[SYSTEM_ID]?.source?.reference?.manualOnly)return ui.notifications.warn("Esta técnica cooperativa mantém aplicação manual conforme sua descrição.");
  busy.add(item);
  try{

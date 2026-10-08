@@ -1,4 +1,6 @@
-Versão **0.11.0** para FoundryVTT 13 build 350.
+Versão **0.12.0** para FoundryVTT 13 build 350.
+
+0.12.0 acrescenta o construtor de técnicas personalizadas na ficha: classe/nível, natureza, primordial, seleção de Big Bangs e incrementos do compêndio, graduações e escolhas. Rascunho persistente, slots/custos/dificuldade e prévia de dano, conferência de requisitos/exceções e confirmação com histórico na cópia. Apoiar ocupa slot sem CE; incrementos custam por tipo e respeitam sua graduação máxima, incluindo Controle Cósmico único. Recursos atuais, notas, IDs e catálogos preservados. Efeitos especiais/confirmatórios, primordiais mistos e Cosmo Residual continuam manuais. Veja tecnicas-personalizadas.md e proximos-desafios.md.
 
 0.11.0 amplia o gameplay de técnicas: configuração assistida da cópia, ND/Poder automático pelo status Bronze/Prata/Ouro com adesão explícita, prévia dinâmica de custo/dificuldade/dano/pagamento, condensação e alvo vinculado ao cartão de resistência. A resistência usa o Poder Cósmico do ataque; conferir/aplicar dano e desfazer continuam disponíveis. Parâmetros manuais, cópias e compêndios existentes são preservados. Não substitui custos variáveis, efeitos de Big Bangs, manobras, ações, duração ou alcance por regras genéricas. Veja tecnicas.md.
 
