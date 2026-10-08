@@ -1,0 +1,12 @@
+<fieldset class="field-grid" {{#unless @root.editable}}disabled{{/unless}}>
+{{#each fields}}
+  <label class="field {{#if isTextarea}}wide{{/if}} {{#if isCheckbox}}check-field{{/if}}">
+    <span>{{label}}</span>
+    {{#if isSelect}}<select name="{{name}}">{{#each choices}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+    {{else if isCheckbox}}<input type="checkbox" name="{{name}}" {{#if value}}checked{{/if}}>
+    {{else if isTextarea}}<textarea name="{{name}}" rows="3">{{value}}</textarea>
+    {{else}}<input type="{{type}}" name="{{name}}" value="{{value}}" {{#if isNumber}}step="any"{{/if}}>{{/if}}
+    {{#if hint}}<small>{{hint}}</small>{{/if}}
+  </label>
+{{/each}}
+</fieldset>

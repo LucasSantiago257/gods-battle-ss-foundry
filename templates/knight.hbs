@@ -1,0 +1,63 @@
+<div class="battle-layout">
+  <header class="battle-header">
+    <img class="portrait" src="{{actor.img}}" alt="Retrato de {{actor.name}}">
+    <div class="identity"><span class="eyebrow">A BATALHA DOS DEUSES</span><input name="name" class="actor-name" value="{{actor.name}}" aria-label="Nome do cavaleiro" {{#unless editable}}disabled{{/unless}}><span class="edition">UmD10+ · Ficha de cavaleiro</span></div>
+    <div class="level-seal"><span>NÍVEL</span><strong>{{system.profile.level}}</strong></div>
+  </header>
+  <fieldset class="resource-strip" {{#unless editable}}disabled{{/unless}}>
+    <label class="resource health"><span>VIDA</span><div><input type="number" name="system.resources.health.value" value="{{system.resources.health.value}}" aria-label="Vida atual"><span>/ {{system.resources.health.max}}</span></div></label>
+    <label class="resource cosmo"><span>COSMO ENERGIA</span><div><input type="number" name="system.resources.cosmo.value" value="{{system.resources.cosmo.value}}" aria-label="Cosmo Energia atual"><span>/ {{#if system.resources.cosmo.unlimited}}∞{{else}}{{system.resources.cosmo.max}}{{/if}}</span></div></label>
+    <label class="resource maximum"><span>COSMO MÁXIMO</span><div><input type="number" min="0" max="20" name="system.resources.maximum.value" value="{{system.resources.maximum.value}}" aria-label="Cosmo Máximo"><span>/ 20</span></div></label>
+  </fieldset>
+  <nav class="tabs battle-tabs" aria-label="Áreas da ficha">{{#each tabs}}<button type="button" data-action="tab" data-group="{{group}}" data-tab="{{id}}" class="{{cssClass}}">{{label}}</button>{{/each}}</nav>
+  <div class="sheet-body">
+    <section class="tab {{tabs.overview.cssClass}}" data-group="primary" data-tab="overview">
+      <div class="attributes">{{#each attributes}}<div class="attribute-card"><button type="button" data-action="rollTest" data-kind="attribute" data-key="{{key}}" {{#unless @root.editable}}disabled{{/unless}}>{{label}} <i class="fa-solid fa-dice"></i></button><input type="number" min="0" max="12" name="system.attributes.{{key}}.value" value="{{value}}" aria-label="Graduação de {{label}}" {{#unless @root.editable}}disabled{{/unless}}><span>Modificador {{mod}}</span><label>Extra <input type="number" name="system.attributes.{{key}}.bonus" value="{{bonus}}" aria-label="Modificador extra de {{label}}" {{#unless @root.editable}}disabled{{/unless}}></label></div>{{/each}}</div>
+      <p class="note">Criação: 8 pontos de treino + 1 do estilo, além dos cinco atributos iniciais. Total básico {{system.creation.budget}}; ficha {{system.creation.total}}. Bônus de virtudes e exceções são registrados manualmente.</p>
+      <div class="stat-strip">{{#each movement}}<div><span>{{label}}</span><strong>{{value}}</strong></div>{{/each}}</div>
+      <h3>Identidade de combate e recursos</h3>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=overview}}
+      <p class="note">PV automático é provisório: PV inicial + progressão após o nível 1 + Vigor × nível + extras. Use PV máximo manual para outra interpretação. CE usa Cosmo, progressão do estilo e armadura equipada.</p>
+    </section>
+    <section class="tab {{tabs.combat.cssClass}}" data-group="primary" data-tab="combat">
+      <div class="stat-strip combat-totals">{{#each totals}}<div><span>{{label}}</span><strong>{{value}}</strong></div>{{/each}}</div>
+      <h3>Resistências</h3><p class="note">{{resistancePolicy}}</p><div class="resistance-strip">{{#each resistances}}<button type="button" data-action="rollTest" data-kind="resistance" data-key="{{key}}" {{#unless @root.editable}}disabled{{/unless}}>{{label}} · +{{value}} <i class="fa-solid fa-dice"></i></button>{{/each}}</div>
+      <h3>Habilidades de luta</h3>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=fighting}}
+      <h3>Ajustes de combate</h3>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=combatFields}}
+      <h3>Estados</h3>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=conditions}}
+      <p class="note">Estados, categoria de dano e efeitos de poderes são registros manuais nesta versão. Os bônus dos estilos após o nível 20 são lançados como ajustes. O Nível de Ataque é informado separadamente da PA.</p>
+    </section>
+    <section class="tab {{tabs.skills.cssClass}}" data-group="primary" data-tab="skills">
+      <p class="note">Pontos iniciais sugeridos: {{system.creation.skillBudget}}. Gastos registrados: {{system.progression.skillSpent}}. A aquisição de graduações e os limites são conferidos pelo mestre. Ler Estrelas exige acesso específico.</p>
+      <table class="skills-table"><thead><tr><th>Perícia</th><th>Grau</th><th>Atributo</th><th>Extra</th><th>Total</th></tr></thead><tbody>{{#each skills}}
+        <tr><td><button type="button" data-action="rollTest" data-kind="skill" data-key="{{key}}" {{#unless @root.editable}}disabled{{/unless}}>{{label}} <i class="fa-solid fa-dice"></i></button></td>
+        <td><input type="number" min="0" max="10" name="system.skills.{{key}}.value" value="{{value}}" aria-label="Graduação de {{label}}" {{#unless @root.editable}}disabled{{/unless}}></td>
+        <td><select name="system.skills.{{key}}.associated" aria-label="Atributo de {{label}}" {{#unless @root.editable}}disabled{{/unless}}>{{#each associations}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select><small>{{attributeLabel}}</small></td>
+        <td><input type="number" name="system.skills.{{key}}.bonus" value="{{bonus}}" aria-label="Bônus de {{label}}" {{#unless @root.editable}}disabled{{/unless}}></td><td><strong>{{total}}</strong></td></tr>{{/each}}</tbody></table>
+    </section>
+    <section class="tab {{tabs.techniques.cssClass}}" data-group="primary" data-tab="techniques">
+      {{> "systems/gods-battle-ss/templates/items.hbs" group=groups.technique}}
+      {{> "systems/gods-battle-ss/templates/items.hbs" group=groups.bigbang}}
+      {{> "systems/gods-battle-ss/templates/items.hbs" group=groups.increment}}
+      <p class="note">Clique no nome para editar custos, pré-requisitos e efeitos. Dano e consumo de CE de técnicas são manuais nesta etapa.</p>
+    </section>
+    <section class="tab {{tabs.powers.cssClass}}" data-group="primary" data-tab="powers">
+      {{> "systems/gods-battle-ss/templates/items.hbs" group=groups.virtue}}
+      {{> "systems/gods-battle-ss/templates/items.hbs" group=groups.ability}}
+      {{> "systems/gods-battle-ss/templates/items.hbs" group=groups.divineCosmo}}
+      <h3>Vontade</h3>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=will}}
+    </section>
+    <section class="tab {{tabs.equipment.cssClass}}" data-group="primary" data-tab="equipment">
+      {{#if isGM}}<button type="button" data-action="seedCompendium" class="compendium-button"><i class="fa-solid fa-book"></i> Abrir / criar compêndio de modelos</button>{{/if}}
+      {{> "systems/gods-battle-ss/templates/items.hbs" group=groups.armor}}
+      {{> "systems/gods-battle-ss/templates/items.hbs" group=groups.artifact}}
+      <p class="note">Arrastar adiciona uma cópia. Equipar aplica PA e CE de uma armadura viva. PV da armadura são editados na própria ficha dela; pré-requisitos, afinidade e acessórios são conferidos pelo mestre.</p>
+    </section>
+    <section class="tab {{tabs.story.cssClass}}" data-group="primary" data-tab="story">
+      <h3>Sentidos e Aura</h3>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=senseFields}}
+      <p class="note">Sentido e estágio não mudam automaticamente com o nível. Preencha os bônus da tabela correspondente; Domínio admite ajuste numérico. Velocidade superada (+) fica registrada para desempates manuais.</p>
+      <h3>Evolução</h3>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=progression}}
+      <h3>História</h3>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=biography}}
+    </section>
+  </div>
+  <footer class="sheet-footer">Alterações salvas ao editar · Fichas 0.1.0</footer>
+</div>
