@@ -1,4 +1,4 @@
-# Compêndios do livro — versão 0.5.0
+# Compêndios do livro — versão 0.9.1
 
 O pacote instala **nove compêndios nativos, com 866 Items**. Não é necessário executar uma macro nem criar o compêndio de modelos para acessar o livro. Os catálogos aparecem na aba Compêndios do Foundry e quatro deles têm atalhos na aba Poderes; Sentidos e Auras tem atalho em História e evolução; Técnicas e Big Bangs/Incrementos têm atalhos em Técnicas.
 
@@ -18,7 +18,7 @@ Os seis estilos são Santo, Sábio, Guardião, Artista, Asgardiano e Domador de 
 
 ## Usar na ficha
 
-1. Atualize o sistema com o mundo encerrado, confirme **0.5.0** e reinicie o mundo.
+1. Atualize o sistema com o mundo encerrado, confirme **0.9.1** e reinicie o mundo.
 2. Abra o cavaleiro, acesse **Poderes** e clique no catálogo desejado. Criaturas e poderes de divindades estão também na aba Compêndios.
 3. Pesquise pelo nome ou navegue pelas pastas de origem. Abra o item para conferir a regra e a página. A seção Descrição desta cópia mostra o texto completo; Outras ocorrências no livro permite comparar os contextos de uma combinação.
 4. Arraste o item para a ficha. Uma **cópia independente** é criada; o UUID do documento de origem fica registrado. Edite requisitos, notas, graduação e usos dessa cópia conforme a campanha.
@@ -30,7 +30,7 @@ Atualizações do sistema atualizam os catálogos de origem; cópias já importa
 ## Convenções de conteúdo
 
 - Nível é uma referência de aquisição no livro; não promove automaticamente o personagem. O campo Tipo distingue Habilidade, Dádiva, Especialização, Melhoria, Habilidade natural e poderes especiais.
-- Pré-requisitos, bônus, duração, escolhas e custos especiais ficam descritos. Importar uma virtude não altera atributos ou recursos. Não há Active Effects nestes catálogos.
+- Pré-requisitos, bônus, duração, escolhas e custos especiais ficam descritos. Com **Automatizar bônus conferidos** habilitado, importar habilidades/virtudes cobertas pode alterar valores derivados e máximos; os atributos de base e recursos atuais são preservados. Cada cópia informa sua cobertura, escolhas e avisos. Efeitos com requisitos pendentes ficam suspensos até resolução ou exceção explícita. Consulte [efeitos pessoais](efeitos-pessoais.md) e o [inventário de cobertura](cobertura-automacao.md). Os catálogos não usam Active Effects do Foundry; as contribuições são calculadas pelo sistema.
 - O campo **Custo / consumo descrito** registra consumos textuais. Custos de Mitos de criaturas e Pontos de Cosmo de deuses não são convertidos automaticamente em CE de cavaleiro. A ativação de técnicas continua independente.
 - Uma habilidade natural preserva o contexto completo da virtude que a concede; aplique somente o poder indicado pelo nome e as escolhas pertinentes.
 - Os círculos de refino dos Cosmos Divinos foram conferidos visualmente e transcritos como **Refino 1, 2 e 3**. O refinamento escolhido é registrado manualmente.
