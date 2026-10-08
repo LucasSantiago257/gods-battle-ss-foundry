@@ -16,8 +16,8 @@ const source = async name => JSON.parse(await readFile(`data/catalog/${name}.jso
 
 test("manifesto registra todos os compêndios e todas as fontes disponíveis", async () => {
  const manifest = JSON.parse(await readFile("system.json", "utf8"));
- assert.deepEqual(manifest.packs.map(p => p.name), CATALOG_PACKS.map(p => p.name));
- for (const p of manifest.packs) {assert.equal(p.path, `packs/${p.name}`); assert.equal(p.type, "Item"); assert.equal(p.system, manifest.id);}
+ assert.deepEqual(manifest.packs.filter(p=>p.type==="Item").map(p => p.name), CATALOG_PACKS.map(p => p.name));
+ for (const p of manifest.packs) {assert.equal(p.path, `packs/${p.name}`); assert.ok(["Item","Actor"].includes(p.type)); assert.equal(p.system, manifest.id);}
  assert.deepEqual((await readdir("data/catalog")).sort(), CATALOG_PACKS.flatMap(p => p.sources.map(s => `${s}.json`)).sort());
  assert.deepEqual(catalogs.map(p => p.entries.length), [129, 229, 98, 88, 34, 14, 49, 59, 166]);
 });

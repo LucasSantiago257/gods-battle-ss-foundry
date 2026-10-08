@@ -7,7 +7,7 @@ export async function readCatalog(pack) {
 }
 export async function catalogFingerprint() {
   const hash = createHash("sha256");
-  for (const file of ["system.json", "module/catalog.mjs", "tools/catalog.mjs", "tools/build-packs.mjs", ...CATALOG_PACKS.flatMap(p => p.sources.map(s => `data/catalog/${s}.json`))].sort()) {
+  for (const file of ["system.json", "module/catalog.mjs", "module/combat-examples.mjs", "tools/catalog.mjs", "tools/build-packs.mjs", ...CATALOG_PACKS.flatMap(p => p.sources.map(s => `data/catalog/${s}.json`))].sort()) {
     hash.update(file); hash.update(await readFile(file));
   }
   return hash.digest("hex");

@@ -3,6 +3,7 @@ import path from "node:path";
 import {compilePack} from "@foundryvtt/foundryvtt-cli";
 import {CATALOG_PACKS} from "../module/catalog.mjs";
 import {readCatalog, packDocuments, catalogFingerprint} from "./catalog.mjs";
+import {TEST_ACTOR_PACK,testActorDocuments} from "../module/combat-examples.mjs";
 
 const root = path.resolve("dist");
 function insideDist(relative) {
@@ -21,5 +22,11 @@ for (const pack of CATALOG_PACKS) {
   report.push({name: pack.name, items: entries.length});
 }
 const manifest = JSON.parse(await readFile("system.json", "utf8"));
+const actorSource=insideDist(`pack-sources/${TEST_ACTOR_PACK.name}`),actorDest=insideDist(`packs/${TEST_ACTOR_PACK.name}`);
+await rm(actorSource,{recursive:true,force:true});await mkdir(actorSource,{recursive:true});
+const actors=testActorDocuments();
+for(const actor of actors) await writeFile(path.join(actorSource,`${actor._id}.json`),JSON.stringify(actor),"utf8");
+await compilePack(actorSource,actorDest);
+report.push({name:TEST_ACTOR_PACK.name,actors:actors.length});
 await writeFile(insideDist("packs/build-report.json"), JSON.stringify({version: manifest.version, fingerprint: await catalogFingerprint(), packs: report}, null, 2));
-console.log(JSON.stringify({packs: report, total: report.reduce((n, p) => n + p.items, 0)}));
+console.log(JSON.stringify({packs: report, total: report.reduce((n, p) => n + (p.items??0), 0),actors:actors.length}));

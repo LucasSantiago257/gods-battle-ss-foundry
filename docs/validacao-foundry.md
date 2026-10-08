@@ -70,6 +70,8 @@ Estes passos requerem o Foundry real; os testes automatizados não os substituem
 
 ## Combate 0.8.0
 
+Para executar este roteiro com dados prontos, use o grupo de [fichas de teste da 0.9.2](fichas-teste.md). Confira importação individual pelo compêndio e importação do grupo pelo botão na aba Combate. Repetir o botão deve preservar PV/CE, nomes e notas já editados. Os três atores devem conservar armadura e técnica embutidas e tokens vinculados.
+
 1. Com mestre e dois jogadores conectados, marque um alvo e role ataque/defesa. Confira acertos e fórmula de dano. Cancelar não cria rolagem nem altera recursos.
 2. Ative técnica e resista. Confira dano corporal/armadura e confirme aplicação como proprietário do defensor. Os valores anunciados devem ser debitados uma vez, incluindo frações.
 3. Dois clientes confirmam o mesmo resultado: somente uma aplicação. Observador e atacante sem propriedade do defensor não podem aplicá-lo.
