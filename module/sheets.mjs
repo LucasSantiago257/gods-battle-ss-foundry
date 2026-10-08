@@ -11,6 +11,7 @@ import {CREATION_STEPS,creationReview} from "./creation-rules.mjs";
 import {beginCreation,chooseCreationItem,applyInitialStyle,finishCreation} from "./creation.mjs";
 import {recoverDamageOperation} from "./damage.mjs";
 import {openTestActors,importTestActors} from "./combat-examples.mjs";
+import {beginLevelUp,levelUpContext,chooseLevelItem,discardLevelDraft,requestLevelUp,clearInterruptedLevel} from "./level-up.mjs";
 
 export function field(name, label, value, choices, type = "number", hint = "") {
   return {name, label, value, hint, isSelect: !!choices, isCheckbox: type === "checkbox", isTextarea: type === "textarea", isNumber: type === "number", type,
@@ -26,7 +27,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
     form: {submitOnChange: true, closeOnSubmit: false},
     actions: {rollTest: KnightSheet.rollAction, createItem: KnightSheet.createItem, editItem: KnightSheet.editItem,
       deleteItem: KnightSheet.deleteItem, equipArmor: KnightSheet.equipArmor, useItem: KnightSheet.useItem, useTechnique: KnightSheet.activateTechnique, attackTarget:KnightSheet.attackTarget,
-      beginCreation:KnightSheet.beginCreation,guideStep:KnightSheet.guideStep,chooseCreationItem:KnightSheet.chooseCreationItem,applyInitialStyle:KnightSheet.applyInitialStyle,finishCreation:KnightSheet.finishCreation,recoverDamage:KnightSheet.recoverDamage,openCatalog: KnightSheet.openCatalog, seedCompendium: KnightSheet.seedCompendium,openTestActors:KnightSheet.openTestActors,importTestActors:KnightSheet.importTestActors}
+      beginCreation:KnightSheet.beginCreation,guideStep:KnightSheet.guideStep,chooseCreationItem:KnightSheet.chooseCreationItem,applyInitialStyle:KnightSheet.applyInitialStyle,finishCreation:KnightSheet.finishCreation,recoverDamage:KnightSheet.recoverDamage,openCatalog: KnightSheet.openCatalog, seedCompendium: KnightSheet.seedCompendium,openTestActors:KnightSheet.openTestActors,importTestActors:KnightSheet.importTestActors,beginLevelUp:KnightSheet.beginLevelUp,chooseLevelItem:KnightSheet.chooseLevelItem,discardLevelDraft:KnightSheet.discardLevelDraft,requestLevelUp:KnightSheet.requestLevelUp,clearInterruptedLevel:KnightSheet.clearInterruptedLevel}
   };
   static PARTS = {sheet: {template: `systems/${SYSTEM_ID}/templates/knight.hbs`, scrollable: [".sheet-body"]}};
   static TABS = {primary: {initial: "overview", tabs: [
@@ -63,6 +64,10 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
       origin: item.system.originUuid} );
     return Object.assign(context, {
       actor: this.actor, system: s, editable: this.isEditable, isGM: game.user.isGM, tabs: this._prepareTabs("primary"), groups,
+      levelGuide:await levelUpContext(this.actor),canLevelUp:this.isEditable&&s.creationGuide.status!=="draft"&&s.profile.level<30,
+      interruptedLevel:this.actor.flags?.[SYSTEM_ID]?.levelOperation?.status==="prepared",
+      levelRecord:this.actor.flags?.[SYSTEM_ID]?.levelOperation,
+      levelHistory:Object.values(this.actor.flags?.[SYSTEM_ID]?.levelHistory??{}).toSorted((a,b)=>b.time-a.time),
       calculations: calculationSummary(s, game.settings.get(SYSTEM_ID, "resistanceMode")),
       passiveLedger: evaluatePassives(s,this.actor.items.contents).ledger,
       damageLedger:Object.entries(this.actor.flags?.[SYSTEM_ID]?.damageOperations??{}).map(([key,r])=>({key,...r,statusLabel:{applied:"Aplicado",undone:"Desfeito",prepared:"Interrompido",repair:"Revisão necessária",failed:"Não aplicado"}[r.status]??r.status,canRecover:game.user.isGM&&["prepared","repair"].includes(r.status)})).toSorted((a,b)=>b.time-a.time).slice(0,20),
@@ -92,6 +97,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
         n("sense.domainBonus", "Bônus de Domínio do sentido", s.sense.domainBonus), n("sense.initiative", "Iniciativa do sentido", s.sense.initiative), field("system.sense.speedSuperated", "Velocidade superada (+)", s.sense.speedSuperated, null, "checkbox"),
         t("sense.aura", "Aura", s.sense.aura), area("system.sense.characteristics", "Características do sentido", s.sense.characteristics)],
       progression: [n("progression.xp", "Experiência", s.progression.xp), n("progression.missions", "Missões", s.progression.missions), n("progression.combats", "Combates", s.progression.combats), n("progression.legend", "Lenda", s.progression.legend),
+        n("progression.skillBank","Saldo de perícias da evolução",s.progression.skillBank,"Só inclui ganhos registrados pelo assistente ou ajuste manual conferido."),n("progression.attributeBank","Saldo de atributos da evolução",s.progression.attributeBank),n("progression.fightBank","Saldo de luta da evolução",s.progression.fightBank),
         n("progression.refinements", "Pontos de refino", s.progression.refinements), n("progression.godComplex", "Complexo de Deus", s.progression.godComplex), n("progression.skillSpent", "Pontos de perícia gastos", s.progression.skillSpent),
         n("progression.trainingAdjust", "Atributos extras de criação", s.progression.trainingAdjust), t("progression.legion", "Legião / PL", s.progression.legion), t("profile.companionUuid", "UUID da besta / companheiro", s.profile.companionUuid),
         area("system.progression.disciples", "Discípulos", s.progression.disciples), area("system.progression.strengthening", "Fortalecimentos", s.progression.strengthening), area("system.progression.history", "Histórico de evolução", s.progression.history)],
@@ -114,6 +120,11 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
   static async attackTarget() {if(this.isEditable) await attackTarget(this.actor);}
   static async openTestActors() {return openTestActors();}
   static async importTestActors() {return importTestActors();}
+  static async beginLevelUp() {if(this.isEditable)await beginLevelUp(this.actor);}
+  static async chooseLevelItem(_event,target) {if(this.isEditable)await chooseLevelItem(this.actor,target.dataset.slot);}
+  static async discardLevelDraft() {if(this.isEditable)await discardLevelDraft(this.actor);}
+  static async requestLevelUp() {if(this.isEditable)await requestLevelUp(this.actor);}
+  static async clearInterruptedLevel() {await clearInterruptedLevel(this.actor);}
   static async beginCreation() {if(this.isEditable) await beginCreation(this.actor);}
   static async guideStep(_event,target) {if(!this.isEditable)return;const step=Number(target.dataset.step);if(!CREATION_STEPS[step-1])return;await this.actor.update({"system.creationGuide.step":step});this.changeTab(CREATION_STEPS[step-1].tab,"primary");}
   static async chooseCreationItem(_event,target) {if(this.isEditable)try{await chooseCreationItem(this.actor,target.dataset.slot);}catch(error){ui.notifications.error(error.message);}}

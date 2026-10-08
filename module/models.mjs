@@ -33,7 +33,7 @@ export class KnightData extends foundry.abstract.TypeDataModel {
       creationGuide: schema({status:text("draft",{"":"Edição normal",draft:"Rascunho",complete:"Concluída"}),step:num(1,1,6),styleApplied:text("",{"":"Ainda não aplicado",...STYLES}),extraSkill:text("",{"":"Selecionar",...SKILLS}),fightChoice:text("punch",{punch:"Soco",kick:"Chute"}),acceptExceptions:flag(),exceptionReason:text(),initializeResources:new BooleanField({initial:true})}),
       conditions: schema(Object.fromEntries(Object.keys(CONDITIONS).map(k => [k, flag()]))),
       sense: schema({ordinal: num(6, 6, 9), stage: text("awakened", STAGES), levelBonus: num(), domainBonus: num(), initiative: num(2), speedSuperated: flag(), aura: text(), characteristics: text()}),
-      progression: schema({xp: num(), missions: num(), combats: num(), legend: num(0, 0, 5), refinements: num(), godComplex: num(0, 0, 5), skillSpent: num(), trainingAdjust: num(0, -100),
+      progression: schema({xp: num(), skillBank:num(),attributeBank:num(),fightBank:num(),epicActions:num(),epicCosmo:num(),evolution:text("",{"":"Ainda não escolhida",aesir:"Aesir",gold:"Cavaleiro de Ouro",judges:"Juiz do Inferno",marinas:"General Marina",dryads:"Dríade",berserkers:"Berserker"}),missions: num(), combats: num(), legend: num(0, 0, 5), refinements: num(), godComplex: num(0, 0, 5), skillSpent: num(), trainingAdjust: num(0, -100),
         legion: text(), disciples: text(), strengthening: text(), history: text()})
     };
   }

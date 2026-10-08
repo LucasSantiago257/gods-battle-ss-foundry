@@ -49,8 +49,8 @@ export function prepareKnight(system, items = [], resistanceMode = "rank") {
   const level = system.profile.level;
   // Até nível 20, tabelas dos estilos. Valores posteriores são registrados por ajuste.
   const tableLevel = Math.min(level, 20);
-  const actionGrowth = style.fastActions ? tableLevel - 1 : Math.floor(tableLevel / 2);
-  const ceGrowth = style.fastCosmo ? tableLevel - 1 : Math.floor(tableLevel / 2);
+  const actionGrowth = (style.fastActions ? tableLevel - 1 : Math.floor(tableLevel / 2)) + (system.progression.epicActions ?? 0);
+  const ceGrowth = (style.fastCosmo ? tableLevel - 1 : Math.floor(tableLevel / 2)) + (system.progression.epicCosmo ?? 0);
   const armor = items.find(i => i.type === "armor" && i.system.equipped && i.system.health.value >= 0 && i.system.state !== "dead");
   for (const item of items.filter(i => i.type === "armor")) {item.system.armor = armorValues(item.system,effects.armorHealthMultiplier || 1);item.system.health.max = item.system.armor.hp;}
   const av = armor ? armor.system.armor : {pa: 0, ce: 0, unlimited: false};

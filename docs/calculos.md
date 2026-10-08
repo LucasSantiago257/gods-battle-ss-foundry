@@ -6,6 +6,6 @@ Atributos acima de cinco concedem, por graduação excedente: Força +1 de dano 
 
 Personagens novos usam a automação. Personagens anteriores à automação e suas duplicações a conservam desativada até revisão dos lançamentos manuais; escolhas já salvas são mantidas. A migração atual de source para versão 3 é idempotente e não altera PV atuais, CE, ajustes, máximos manuais ou itens, nem inicia assistente nas fichas existentes. Recalcular não cura. PV atuais aceitam frações para resistências que dividem dano ímpar.
 
-Domínio segue a fórmula da p. 388, com bônus de estágio informado separadamente. Resistência mantém a configuração existente: graduação (fórmula das pp. 207/434) ou modificador (exemplo da p. 207). Não há troca silenciosa de interpretação. Crescimento de ações/CE depois do nível 20 e bônus dos sentidos continuam manuais.
+Domínio segue a fórmula da p. 388, com bônus de estágio informado separadamente. Resistência mantém a configuração existente: graduação (fórmula das pp. 207/434) ou modificador (exemplo da p. 207). Não há troca silenciosa de interpretação. O assistente registra +1 ação/CE nos avanços 21–30 das evoluções épicas; lançamentos anteriores ou edição direta de nível precisam de ajuste manual conferido. Bônus adicionais dos Sentidos continuam na lista de revisão. Ver evolucao.md.
 
 Na Visão geral, expanda Como os valores são calculados. Confira os máximos e suas parcelas antes de habilitar automação em personagens já usados.

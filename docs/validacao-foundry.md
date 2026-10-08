@@ -38,6 +38,16 @@ Dano ao defensor, efeitos, requisitos e sentidos são conferidos manualmente con
 
 Estes passos requerem o Foundry real; os testes automatizados não os substituem.
 
+## Evolução assistida 0.10.0
+
+1. Use Aster de teste, XP 10, antes de abrir o rascunho. Confira 1 → 2: PV máximo 23 → 36; CE máxima 6 → 7; ações 1 → 2; três pontos de perícia, dádiva/Melhoria. Recursos atuais e armadura não mudam.
+2. Feche/reabra e recarregue. Escolher referências não cria cópias; descartar não altera a ficha. Alterar a ficha fora do rascunho exige nova revisão.
+3. Como jogador proprietário, confirme a evolução com mestre ativo. Confira aquisição/nível do Item, comparação/histórico e ausência de concessão duplicada em dois clientes. Observador ou autoria inválida não pode evoluir.
+4. Avance até 4/5: escolha virtude, confira dois pontos de atributo (dois por graduação a partir de 5), dois de luta, especialização e Sentido. Saldos não distribuídos permanecem disponíveis. Limites inválidos são bloqueados; pendências exigem motivo.
+5. Teste uma Melhoria existente: graduação aumenta, notas preservadas, sexta aquisição bloqueada. Escolher conteúdo já adquirido preserva a cópia e indica pendência.
+6. Confira nível 11: técnica Prata requer configurar cópia; status/armadura permanecem. Em 20/21 confira pré-requisito do 7º Sentido e escolha de evolução épica. Avanço não reduz Sentido obtido horizontalmente.
+7. Sem mestre ativo, não há aplicação. Confira mensagens privadas, retomada de solicitações e registro interrompido. Ganhos anteriores de fichas manuais não são concedidos retroativamente.
+
 ## Cálculos e efeitos pessoais 0.6–0.7
 
 1. Abra uma ficha antiga: automação deve permanecer desativada, sem mudanças de PV atuais, ajustes ou itens. Duplicá-la deve preservar essa escolha.

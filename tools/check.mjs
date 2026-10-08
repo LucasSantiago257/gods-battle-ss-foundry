@@ -6,6 +6,7 @@ import {knight, content} from "../tests/foundry-stub.mjs";
 import {prepareKnight, armorValues} from "../module/rules.mjs";
 import {KnightSheet, ContentSheet} from "../module/sheets.mjs";
 import {ITEM_TYPES} from "../module/config.mjs";
+import {levelSignature} from "../module/level-rules.mjs";
 
 const manifest = JSON.parse(await readFile("system.json", "utf8"));
 for (const file of [...manifest.esmodules, ...manifest.styles, ...manifest.languages.map(l => l.path)]) await access(file);
@@ -69,6 +70,13 @@ await writeFile("dist/technique-book-preview.html", `<!doctype html><html lang="
 await writeFile("dist/book-preview.html", `<!doctype html><html lang="pt-BR"><meta charset="utf-8"><style>${css}body{background:#07101e;font-family:Segoe UI,sans-serif;padding:24px}.gods-battle{width:620px;height:760px;margin:auto;overflow:hidden}*{box-sizing:border-box}</style><body><main class="gods-battle">${bookHtml.replaceAll("systems/gods-battle-ss/assets/cosmos.svg", `data:image/svg+xml;base64,${bookSvg}`)}</main></body></html>`);
 await writeFile("dist/chat-preview.html", `<!doctype html><html lang="pt-BR"><meta charset="utf-8"><style>${css}body{font-family:Segoe UI,sans-serif;background:#eee;padding:24px}.battle-chat{background:white;max-width:360px;padding:16px;margin:16px;border:1px solid #777}.technique-description{white-space:pre-wrap;overflow-wrap:anywhere}</style><body>${attackCard}${resistanceCard}</body></html>`);
 const svg = await readFile("assets/cosmos.svg", "utf8");
+const levelSystem=structuredClone(s);levelSystem.profile.level=4;levelSystem.creationGuide.status="complete";levelSystem.progression.xp=40;prepareKnight(levelSystem,actor.items.contents);
+const levelDraft={id:"demoLevel0000001",from:4,to:5,baseline:levelSignature(levelSystem,actor.items.contents),attributes:{for:1,sen:1},skills:{},fighting:{punch:1,defense:1},advanceSense:true,reviewedContent:false,reviewedManual:false,acceptExceptions:false,reason:"",evolution:""};
+const levelActor={...actor,name:"Cavaleiro em evolução",system:levelSystem,flags:{"gods-battle-ss":{levelDraft}}};
+const levelContext=await new KnightSheet(levelActor)._prepareContext({});
+const levelHtml=templates["knight.hbs"](levelContext);
+if(!levelHtml.includes("Confirmar evolução")||!levelHtml.includes("Comparação antes / depois")||!levelHtml.includes("flags.gods-battle-ss.levelDraft.skills.asterism"))throw Error("Assistente de evolução incompleto.");
+await writeFile("dist/level-preview.html",`<!doctype html><html lang="pt-BR"><meta charset="utf-8"><style>${css}body{background:#07101e;font-family:Segoe UI,sans-serif;padding:24px}.gods-battle{width:920px;height:850px;margin:auto;overflow:hidden}*{box-sizing:border-box}</style><body><main class="gods-battle">${levelHtml.replaceAll("assets/cosmos.svg",`data:image/svg+xml;base64,${Buffer.from(svg).toString("base64")}`)}</main></body></html>`);
 const html = rendered.replaceAll("assets/cosmos.svg", `data:image/svg+xml;base64,${Buffer.from(svg).toString("base64")}`);
 await writeFile("dist/preview.html", `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Prévia das fichas — A Batalha dos Deuses</title><style>${css}
 body{margin:0;background:#07101e;padding:24px;font-family:Segoe UI,sans-serif}.preview-note{max-width:920px;margin:0 auto 12px;color:#c4cfe0;font-size:13px}.gods-battle{max-width:920px;height:850px;margin:auto;border:1px solid #43526b;border-radius:12px;overflow:hidden}.gods-battle input:disabled{opacity:.8}*{box-sizing:border-box}</style></head><body><p class="preview-note">Prévia visual da ficha ${manifest.version} · dados ilustrativos · sem conexão com o Foundry. As abas podem ser navegadas.</p><main class="gods-battle">${html}</main><script>

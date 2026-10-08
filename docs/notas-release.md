@@ -1,4 +1,6 @@
-Versão **0.9.2** para FoundryVTT 13 build 350.
+Versão **0.10.0** para FoundryVTT 13 build 350.
+
+A versão 0.10.0 acrescenta evolução assistida até o nível 30: rascunho persistente, distribuição de ganhos/saldos, escolhas de compêndios, comparação antes/depois e histórico. Solicitações são confirmadas e processadas pelo mestre ativo; recursos atuais, cópias e ajustes permanecem. Ganhos contextuais e promoções estão na lista de revisão. Veja evolucao.md.
 
 A revisão 0.9.2 acrescenta o compêndio de Atores **Fichas de teste — Combate**: Santo, Guardião e Sábia com recursos, armadura e técnicas prontos. Atalhos na aba Combate abrem o catálogo e importam o grupo em pasta própria, preservando fichas já presentes. Não cria fichas ou tokens ao iniciar o mundo. Veja fichas-teste.md.
 

@@ -10,6 +10,7 @@ import {attackTarget} from "./combat.mjs";
 import {renderCombatChat,enqueueDamageRequest,notifyDamageResponse,resumeDamageRequests} from "./damage.mjs";
 import {beginCreation} from "./creation.mjs";
 import {openTestActors,importTestActors} from "./combat-examples.mjs";
+import {beginLevelUp,requestLevelUp,enqueueLevelRequest,resumeLevelRequests} from "./level-up.mjs";
 
 Hooks.once("init", async () => {
   game.settings.register(SYSTEM_ID, "resistanceMode", {name: "Resistência: parcela do atributo", hint: "Provisório: a fórmula das páginas 207/434 usa graduação; o exemplo usa modificador. A escolha vale para todo o mundo.",
@@ -21,8 +22,8 @@ Hooks.once("init", async () => {
   const registry = foundry.applications.apps.DocumentSheetConfig;
   registry.registerSheet(Actor, SYSTEM_ID, KnightSheet, {types: ["knight"], makeDefault: true, label: "Ficha de Cavaleiro"});
   registry.registerSheet(Item, SYSTEM_ID, ContentSheet, {types: Object.keys(ITEM_TYPES), makeDefault: true, label: "Conteúdo — A Batalha dos Deuses"});
-  await foundry.applications.handlebars.loadTemplates([`systems/${SYSTEM_ID}/templates/fields.hbs`, `systems/${SYSTEM_ID}/templates/items.hbs`]);
-  game.godsBattle = {createStarterCompendium, openCatalog, explainPassives: actor => evaluatePassives(actor.system,actor.items.contents),attackTarget,beginCreation,openTestActors,importTestActors};
+  await foundry.applications.handlebars.loadTemplates([`systems/${SYSTEM_ID}/templates/fields.hbs`, `systems/${SYSTEM_ID}/templates/items.hbs`, `systems/${SYSTEM_ID}/templates/level-guide.hbs`]);
+  game.godsBattle = {createStarterCompendium, openCatalog, explainPassives: actor => evaluatePassives(actor.system,actor.items.contents),attackTarget,beginCreation,openTestActors,importTestActors,beginLevelUp,requestLevelUp};
 });
 
 Hooks.on("preCreateActor", (actor, data = {}) => {
@@ -33,7 +34,10 @@ Hooks.on("preCreateActor", (actor, data = {}) => {
 Hooks.on("renderChatMessageHTML", renderTechniqueChat);
 Hooks.on("renderChatMessageHTML",renderCombatChat);
 Hooks.on("createChatMessage",enqueueDamageRequest);
+Hooks.on("createChatMessage",enqueueLevelRequest);
 Hooks.on("updateChatMessage",notifyDamageResponse);
 Hooks.once("ready",resumeDamageRequests);
+Hooks.once("ready",resumeLevelRequests);
 Hooks.on("updateUser",()=>resumeDamageRequests());
+Hooks.on("updateUser",()=>resumeLevelRequests());
 Hooks.on("preCreateItem", (item,data = {}) => {if (item.parent?.type === "knight" && !data.system?.acquisitionLevel) item.updateSource({"system.acquisitionLevel":item.parent.system.profile.level});});
