@@ -24,12 +24,15 @@ for (const file of await readdir("templates")) {
 const s = knight(); s.attributes.for.value = 4; s.attributes.vig.value = 3; s.attributes.cos.value = 3; s.attributes.sen.value = 2; s.attributes.vel.value = 2;
 s.profile.sanctuary = "Athena"; s.profile.master = "Mestre do Santuário"; s.skills.combat.value = 2; s.skills.sports.value = 2; s.fighting.punch = 2; s.fighting.defense = 1;
 const a = content(); a.equipped = true; a.constellation = "Constelação protetora"; a.armor = armorValues(a); a.health.max = a.armor.hp;
+const technique = content(); technique.description = "Uma técnica de exemplo para conferir custo e resistência.";
 const actor = {system: prepareKnight(s, [{type: "armor", system: a}]), isOwner: true, img: "assets/cosmos.svg", name: "Cavaleiro de exemplo", items: {contents: [
-  {id: "demoarmor", name: "Armadura de Bronze", uuid: "Actor.demo.Item.demoarmor", sort: 0, type: "armor", img: "assets/cosmos.svg", system: a}
+  {id: "demoarmor", name: "Armadura de Bronze", uuid: "Actor.demo.Item.demoarmor", sort: 0, type: "armor", img: "assets/cosmos.svg", system: a},
+  {id: "demotech", name: "Técnica de Bronze — exemplo", uuid: "Actor.demo.Item.demotech", sort: 1, type: "technique", img: "assets/cosmos.svg", system: technique}
 ]}};
 const context = await new KnightSheet(actor)._prepareContext({});
 const rendered = templates["knight.hbs"](context);
 if (!rendered.includes("system.attributes.for.value") || !rendered.includes("Percepção Extrassensorial")) throw Error("Ficha incompleta na renderização.");
+if (!rendered.includes('data-action="useTechnique"')) throw Error("Botão de ativação ausente.");
 for (const type of Object.keys(ITEM_TYPES)) {
   const data = content(); if (type === "armor") data.armor = armorValues(data);
   templates["content.hbs"](await new ContentSheet({name: "Teste", img: "", type, isOwner: true, system: data})._prepareContext({}));
@@ -38,8 +41,15 @@ for (const type of Object.keys(ITEM_TYPES)) {
 context.actor.name = '<img src=x onerror="alert(1)">';
 if (templates["knight.hbs"](context).includes('<img src=x onerror="alert(1)">')) throw Error("Nome não escapado.");
 templates["chat.hbs"]({label: "Força", results: [10, 1, 6], total: 18, difficulty: 15});
+const unsafe = '<img src=x onerror="alert(1)">';
+const attackCard = templates["technique-chat.hbs"]({name: unsafe, description: unsafe, results: [10, 6], modifier: 4, total: 16, difficulty: 12,
+  success: true, cost: 2, payment: {fromCurrent: 2, fromExtra: 0}, effectLabel: "Dano", isDamage: true, damageLevel: 2, damage: 21, armorDamage: 10, powerCosmic: 11, outcome: "Sucesso"});
+const resistanceCard = templates["chat.hbs"]({label: "Vigor", kind: "Resistência", attackName: "Técnica de exemplo", results: [8], highest: 8, tens: 0, ones: 0, modifier: 3, total: 11, difficulty: 11,
+  outcome: "Sucesso", resistance: {damage: 10.5, armorDamage: 0, effectsResisted: true}});
+for (const html of [attackCard, templates["technique-dialog.hbs"]({name: unsafe})]) if (html.includes(unsafe)) throw Error("Texto da técnica não escapado.");
 await mkdir("dist", {recursive: true});
 const css = await readFile("styles/sheets.css", "utf8");
+await writeFile("dist/chat-preview.html", `<!doctype html><html lang="pt-BR"><meta charset="utf-8"><style>${css}body{font-family:Segoe UI,sans-serif;background:#eee;padding:24px}.battle-chat{background:white;max-width:360px;padding:16px;margin:16px;border:1px solid #777}.technique-description{white-space:pre-wrap;overflow-wrap:anywhere}</style><body>${attackCard}${resistanceCard}</body></html>`);
 const svg = await readFile("assets/cosmos.svg", "utf8");
 const html = rendered.replaceAll("assets/cosmos.svg", `data:image/svg+xml;base64,${Buffer.from(svg).toString("base64")}`);
 await writeFile("dist/preview.html", `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Prévia das fichas — A Batalha dos Deuses</title><style>${css}

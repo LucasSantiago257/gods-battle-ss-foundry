@@ -37,5 +37,5 @@ jobs:
             exit 0
           fi
           gh release create "v${VERSION}" "dist/system.json" "dist/${ID}-${VERSION}.zip" \
-            --latest --target "$GITHUB_SHA" --title "Fichas v${VERSION}" \
+            --latest --target "$GITHUB_SHA" --title "Sistema v${VERSION}" \
             --notes-file docs/notas-release.md

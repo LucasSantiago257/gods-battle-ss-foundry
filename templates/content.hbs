@@ -4,6 +4,7 @@
     {{#if armor}}<div class="stat-strip"><div><span>PV máximo</span><strong>{{armor.hp}}</strong></div><div><span>Proteção</span><strong>{{armor.pa}}</strong></div><div><span>CE</span><strong>{{#if armor.unlimited}}∞{{else}}+{{armor.ce}}{{/if}}</strong></div><div><span>Cosmo mínimo</span><strong>{{armor.minimum}}</strong></div></div>{{/if}}
     {{#if technique}}<div class="stat-strip"><div><span>CE total</span><strong>{{technique.cost}}</strong></div><div><span>Dificuldade</span><strong>{{technique.difficulty}}</strong></div><div><span>ND × Poder</span><strong>{{technique.damage}}</strong></div></div><p class="note">O dano base exibido ainda recebe nível do usuário e outros bônus. O custo publicado já deve incluir seus Big Bangs.</p>{{/if}}
     {{> "systems/gods-battle-ss/templates/fields.hbs" fields=fields}}
+    {{#if technique.canActivate}}<button type="button" data-action="useTechnique">Ativar técnica com o cavaleiro</button>{{/if}}
     {{#if origin}}<p class="note">Origem: {{origin}}. Esta ficha é uma cópia independente.</p>{{/if}}
   </div>
   <footer class="sheet-footer">Alterações salvas ao editar</footer>

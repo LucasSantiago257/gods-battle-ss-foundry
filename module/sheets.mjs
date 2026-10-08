@@ -1,6 +1,8 @@
 import {SYSTEM_ID, ATTRIBUTES, STYLES, SKILLS, FIGHTING, NATURES, ARMORS, ITEM_TYPES, STATUS, STAGES, CONDITIONS} from "./config.mjs";
 import {rollTest} from "./rolls.mjs";
 import {createStarterCompendium} from "./starter.mjs";
+import {useTechnique} from "./techniques.mjs";
+import {EFFECT_KINDS} from "./technique-rules.mjs";
 
 export function field(name, label, value, choices, type = "number", hint = "") {
   return {name, label, value, hint, isSelect: !!choices, isCheckbox: type === "checkbox", isTextarea: type === "textarea", isNumber: type === "number", type,
@@ -15,7 +17,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
     classes: ["gods-battle", "knight-sheet"], tag: "form", position: {width: 920, height: 800},
     form: {submitOnChange: true, closeOnSubmit: false},
     actions: {rollTest: KnightSheet.rollAction, createItem: KnightSheet.createItem, editItem: KnightSheet.editItem,
-      deleteItem: KnightSheet.deleteItem, equipArmor: KnightSheet.equipArmor, useItem: KnightSheet.useItem, seedCompendium: KnightSheet.seedCompendium}
+      deleteItem: KnightSheet.deleteItem, equipArmor: KnightSheet.equipArmor, useItem: KnightSheet.useItem, useTechnique: KnightSheet.activateTechnique, seedCompendium: KnightSheet.seedCompendium}
   };
   static PARTS = {sheet: {template: `systems/${SYSTEM_ID}/templates/knight.hbs`, scrollable: [".sheet-body"]}};
   static TABS = {primary: {initial: "overview", tabs: [
@@ -48,7 +50,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
     const t = (path, label, value) => tf(`system.${path}`, label, value);
     const groups = Object.fromEntries(Object.entries(ITEM_TYPES).map(([type, label]) => [type, {type, label, items: []}]));
     for (const item of this.actor.items.contents.toSorted((a, b) => a.sort - b.sort)) groups[item.type]?.items.push({id: item.id, uuid: item.uuid, name: item.name, img: item.img, equipped: item.system.equipped,
-      isArmor: item.type === "armor", uses: item.system.uses, hasUses: item.system.uses.max > 0, subtitle: item.type === "armor" ? `${ARMORS[item.system.class].label} V${item.system.version} · PV ${item.system.health.value}/${item.system.health.max} · PA ${item.system.armor.pa}` : item.type === "technique" ? `${item.system.classification} · CE ${item.system.cost + item.system.costExtra} · ND ${item.system.damageLevel}` : item.system.category,
+      isArmor: item.type === "armor", isTechnique: item.type === "technique", uses: item.system.uses, hasUses: item.system.uses.max > 0, subtitle: item.type === "armor" ? `${ARMORS[item.system.class].label} V${item.system.version} · PV ${item.system.health.value}/${item.system.health.max} · PA ${item.system.armor.pa}` : item.type === "technique" ? `${item.system.classification} · ${EFFECT_KINDS[item.system.effectKind]} · CE ${item.system.cost + item.system.costExtra} · ND ${item.system.damageLevel}` : item.system.category,
       origin: item.system.originUuid} );
     return Object.assign(context, {
       actor: this.actor, system: s, editable: this.isEditable, isGM: game.user.isGM, tabs: this._prepareTabs("primary"), groups,
@@ -57,12 +59,12 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
       overview: [f("profile.level", "Nível", s.profile.level), f("profile.style", "Estilo", s.profile.style, STYLES), f("profile.status", "Status do cavaleiro", s.profile.status, STATUS), f("profile.nature", "Natureza do Cosmo", s.profile.nature, NATURES),
         t("profile.specialization", "Especialização", s.profile.specialization), n("resources.health.manualMax", "PV máximo manual", s.resources.health.manualMax, "0 usa o cálculo provisório por estilo e Vigor."),
         n("resources.health.bonus", "PV extras", s.resources.health.bonus), n("resources.cosmo.bonus", "CE extras na capacidade", s.resources.cosmo.bonus), n("resources.cosmoExtra", "CE extra acumulada", s.resources.cosmoExtra),
-        n("resources.cosmoReserved", "CE reservada", s.resources.cosmoReserved), n("resources.cosmoOverload", "CE queimada além do corpo", s.resources.cosmoOverload)],
+        n("resources.cosmoReserved", "CE reservada", s.resources.cosmoReserved, "Parte da CE atual protegida do gasto automático."), n("resources.cosmoOverload", "CE queimada além do corpo", s.resources.cosmoOverload, "Excesso acumulado: ajuste manualmente após recuperação conforme o livro.")],
       movement: [{label: "Movimento", value: `${s.movement.walk} m`}, {label: "Corrida", value: `${s.movement.run} m`}, {label: "Salto", value: `${s.movement.jump} m`}, {label: "Erguer", value: `${s.movement.lift} kg`}, {label: "Quebrar", value: `${s.movement.break} cm`}],
       totals: [{label: "Ataques", value: s.combat.attack}, {label: "Defesas", value: s.combat.defense}, {label: "PA", value: s.combat.protection}, {label: "Poder Cósmico", value: s.combat.cosmicPower},
         {label: "Iniciativa", value: s.combat.initiative}, {label: "Mod. de nível", value: s.combat.levelModifier}, {label: "Esquiva passiva", value: s.combat.passiveEvasion}, {label: "Duelo passivo", value: s.combat.passiveDuel},
         {label: "Intuição", value: s.combat.intuition}, {label: "Domínio", value: `${s.combat.domain} m`}],
-      combatFields: [n("combat.attackLevel", "Nível de Ataque (manual)", s.combat.attackLevel), n("combat.damageBonus", "Bônus aplicado ao dano", s.combat.damageBonus), n("combat.attackBonus", "Ataques extras", s.combat.attackBonus),
+      combatFields: [n("combat.asterismPenalty", "Penalidade no próximo Asterismo", s.combat.asterismPenalty, "Falha crítica aplica −10; o próximo teste consome a penalidade."), n("combat.attackLevel", "Nível de Ataque (manual)", s.combat.attackLevel), n("combat.damageBonus", "Bônus aplicado ao dano", s.combat.damageBonus), n("combat.attackBonus", "Ataques extras", s.combat.attackBonus),
         n("combat.defenseBonus", "Defesas extras", s.combat.defenseBonus), n("combat.protectionBonus", "PA extra", s.combat.protectionBonus), n("combat.levelBonus", "Modificador de nível extra", s.combat.levelBonus),
         n("combat.powerBonus", "Poder Cósmico extra", s.combat.powerBonus), n("combat.resistanceBonus", "Resistência extra", s.combat.resistanceBonus), n("combat.initiativeBonus", "Iniciativa extra", s.combat.initiativeBonus),
         n("combat.domainBonus", "Domínio extra", s.combat.domainBonus), n("combat.attention", "Atenção / Intuição", s.combat.attention), n("combat.woundCategory", "Categoria de dano", s.combat.woundCategory)],
@@ -94,6 +96,10 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
     return result;
   }
   static async rollAction(_event, target) { await rollTest(this.actor, target.dataset.kind, target.dataset.key); }
+  static async activateTechnique(_event, target) {
+    if (!this.isEditable) return;
+    await useTechnique(this.actor, this.actor.items.get(target.closest("[data-item-id]").dataset.itemId));
+  }
   static async createItem(_event, target) {
     if (!this.isEditable || !ITEM_TYPES[target.dataset.itemType]) return;
     const [item] = await this.actor.createEmbeddedDocuments("Item", [{name: `Nova ${ITEM_TYPES[target.dataset.itemType]}`, type: target.dataset.itemType, img: `systems/${SYSTEM_ID}/assets/cosmos.svg`}]);
@@ -117,7 +123,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
 }
 
 export class ContentSheet extends foundry.applications.api.HandlebarsApplicationMixin(foundry.applications.sheets.ItemSheetV2) {
-  static DEFAULT_OPTIONS = {classes: ["gods-battle", "content-sheet"], tag: "form", position: {width: 620, height: 760}, form: {submitOnChange: true, closeOnSubmit: false}};
+  static DEFAULT_OPTIONS = {classes: ["gods-battle", "content-sheet"], tag: "form", position: {width: 620, height: 760}, form: {submitOnChange: true, closeOnSubmit: false}, actions: {useTechnique: ContentSheet.activateTechnique}};
   static PARTS = {sheet: {template: `systems/${SYSTEM_ID}/templates/content.hbs`, scrollable: [".content-body"]}};
   async _prepareContext(options) {
     const context = await super._prepareContext(options), s = this.item.system;
@@ -128,11 +134,13 @@ export class ContentSheet extends foundry.applications.api.HandlebarsApplication
       nf("system.health.value", "PV atuais da armadura", s.health.value), nf("system.health.manualMax", "PV máximo manual", s.health.manualMax, "0 usa a tabela de classe e versão."), nf("system.health.bonus", "PV extras", s.health.bonus),
       n("protectionBonus", "PA extra"), n("cosmoBonus", "CE extra"), field("system.state", "Estado", s.state, {active: "Viva", recovering: "Em recuperação", dead: "Morta"}), area("system.accessories", "Acessórios e recipiente", s.accessories));
     if (this.item.type === "technique") fields.push(field("system.classification", "Classe da técnica", s.classification, {bronze: "Bronze", silver: "Prata", gold: "Ouro"}), field("system.nature", "Natureza", s.nature, NATURES),
+      field("system.effectKind", "Big Bang primordial", s.effectKind, EFFECT_KINDS),
       n("power", "Poder da técnica"), n("damageLevel", "Nível de Dano"), n("cost", "Custo publicado (já inclui Big Bangs)"), n("costExtra", "CE adicional desta cópia"), n("range", "Alcance (metros)"), t("duration", "Duração"), t("resistance", "Resistência"),
       area("system.bigbangs", "Big Bangs / componentes", s.bigbangs), area("system.increments", "Incrementos / graduações", s.increments));
     if (["ability", "divineCosmo", "bigbang", "increment", "virtue", "artifact"].includes(this.item.type)) fields.push(t("category", "Categoria / origem"), n("level", "Nível / requisito"), n("rank", "Graduação / refino"), t("action", "Ação"), t("resistance", "Resistência"), t("duration", "Duração"), t("combination", "Combinação"), n("power", "Poder equivalente"));
     fields.push(nf("system.uses.value", "Usos atuais", s.uses.value), nf("system.uses.max", "Usos máximos (0: sem contador)", s.uses.max), tf("system.uses.reset", "Recarga", s.uses.reset), area("system.description", "Descrição e efeitos", s.description), area("system.notes", "Notas desta cópia", s.notes));
     return Object.assign(context, {item: this.item, editable: this.isEditable, fields, typeLabel: ITEM_TYPES[this.item.type], armor: this.item.type === "armor" ? s.armor : null,
-      technique: this.item.type === "technique" ? {cost: s.cost + s.costExtra, difficulty: 10 + s.cost + s.costExtra, damage: s.power * s.damageLevel} : null, origin: s.originUuid});
+      technique: this.item.type === "technique" ? {cost: s.cost + s.costExtra, difficulty: 10 + s.cost + s.costExtra, damage: s.power * s.damageLevel, canActivate: this.isEditable && this.item.parent?.type === "knight"} : null, origin: s.originUuid});
   }
+  static async activateTechnique() {if (this.isEditable) await useTechnique(this.item.parent, this.item);}
 }

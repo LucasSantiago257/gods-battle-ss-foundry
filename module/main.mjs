@@ -3,6 +3,7 @@ import {KnightData, ContentData} from "./models.mjs";
 import {BattleActor, BattleItem} from "./documents.mjs";
 import {KnightSheet, ContentSheet} from "./sheets.mjs";
 import {createStarterCompendium} from "./starter.mjs";
+import {renderTechniqueChat} from "./techniques.mjs";
 
 Hooks.once("init", async () => {
   game.settings.register(SYSTEM_ID, "resistanceMode", {name: "Resistência: parcela do atributo", hint: "Provisório: a fórmula das páginas 207/434 usa graduação; o exemplo usa modificador. A escolha vale para todo o mundo.",
@@ -22,3 +23,4 @@ Hooks.on("preCreateActor", actor => {
   if (actor.type !== "knight") return;
   actor.updateSource({"prototypeToken.actorLink": true, "prototypeToken.bar1.attribute": "resources.health", "prototypeToken.bar2.attribute": "resources.cosmo"});
 });
+Hooks.on("renderChatMessageHTML", renderTechniqueChat);
