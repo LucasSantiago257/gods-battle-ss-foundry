@@ -4,6 +4,7 @@ from urllib.parse import urlsplit
 import argparse
 import json
 import zipfile
+import hashlib
 
 root = Path(__file__).resolve().parent.parent
 parser = argparse.ArgumentParser(description=__doc__)
@@ -33,12 +34,36 @@ dest.mkdir(parents=True, exist_ok=True)
 zip_path = dest / zip_name
 manifest_text = json.dumps(manifest, ensure_ascii=False, indent=2) + "\n"
 files = [root / "README.md", root / "ATTRIBUTION.md"]
+if manifest.get("packs"):
+    report_path = root / "dist" / "packs" / "build-report.json"
+    if not report_path.exists():
+        parser.error("Compile os compêndios com npm run packs antes de gerar o ZIP.")
+    report = json.loads(report_path.read_text(encoding="utf-8"))
+    inputs = [root / p for p in ("system.json", "module/catalog.mjs", "tools/catalog.mjs", "tools/build-packs.mjs")]
+    inputs.extend((root / "data/catalog").glob("*.json"))
+    fingerprint = hashlib.sha256()
+    for file in sorted(inputs, key=lambda p: p.relative_to(root).as_posix()):
+        fingerprint.update(file.relative_to(root).as_posix().encode())
+        fingerprint.update(file.read_bytes())
+    if report["version"] != manifest["version"] or report["fingerprint"] != fingerprint.hexdigest():
+        parser.error("Compêndios desatualizados. Execute npm run packs novamente.")
+    files.append(root / "LICENSE-CONTENT.md")
 for folder in ("module", "templates", "styles", "assets", "lang", "docs"):
     files.extend(p for p in (root / folder).rglob("*") if p.is_file())
 with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as archive:
     archive.writestr(f"{manifest['id']}/system.json", manifest_text)
     for file in sorted(files):
         archive.write(file, f"{manifest['id']}/{file.relative_to(root).as_posix()}")
+    for pack in manifest.get("packs", []):
+        pack_path = Path(pack["path"])
+        if pack_path.parts != ("packs", pack["name"]):
+            raise RuntimeError("Caminho de compêndio inválido")
+        built = root / "dist" / pack_path
+        pack_files = [p for p in built.iterdir() if p.is_file() and p.name != "LOCK"]
+        if not any(p.name == "CURRENT" for p in pack_files) or not any(p.suffix == ".ldb" for p in pack_files):
+            raise RuntimeError(f"Compêndio LevelDB incompleto: {pack['name']}")
+        for file in sorted(pack_files):
+            archive.write(file, f"{manifest['id']}/{pack_path.as_posix()}/{file.name}")
 with zipfile.ZipFile(zip_path, "r") as archive:
     if archive.testzip() is not None:
         raise RuntimeError("ZIP inválido")

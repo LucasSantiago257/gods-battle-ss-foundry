@@ -1,0 +1,3440 @@
+[
+  {
+    "_id": "e54b246c3d887a45",
+    "name": "Névoa — Mortos Vivos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Retira 1 sentido do alvo a cada 2 turnos dentro da névoa.",
+      "page": "619",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Mortos Vivos. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Mortos Vivos",
+      "level": 3,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[1 Mitos][Suporte][Contínua]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "1 Mitos"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:MORTOS VIVOS:Névoa",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            619
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "433b589da373af0c",
+    "name": "Imortal — Mortos Vivos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Após perder todos os PV tem 50% de reviver com todos os PVs. Como Ação Livre.",
+      "page": "619",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Mortos Vivos. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Mortos Vivos",
+      "level": 3,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente][Reação]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:MORTOS VIVOS:Imortal",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            619
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8b61cbc2361dad18",
+    "name": "Vingança — Mortos Vivos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Cada Sucesso de Excelência causa 5 de dano na Armadura do alvo.",
+      "page": "619",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Mortos Vivos. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Mortos Vivos",
+      "level": 3,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[1 Mitos][Ataque][Contínua]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "1 Mitos"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:MORTOS VIVOS:Vingança",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            619
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5976e2a5a5547f53",
+    "name": "Velocidade — Soldados do Santuário",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Aumenta a iniciativa 1 nível.",
+      "page": "621",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Soldados do Santuário. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Soldados do Santuário",
+      "level": 3,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[1 Cosmo Energia][Suporte][Instantânea]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "1 Cosmo Energia"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:SOLDADOS DO SANTUÁRIO:Velocidade",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            621
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "7aeea18562dc0686",
+    "name": "Punho Feroz — Soldados do Santuário",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Aumenta o dano +1 BA.",
+      "page": "621",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Soldados do Santuário. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Soldados do Santuário",
+      "level": 3,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[1 Cosmo Energia][Suporte][Contínua]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "1 Cosmo Energia"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:SOLDADOS DO SANTUÁRIO:Punho Feroz",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            621
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "9df5873b719a7b53",
+    "name": "Treinamento Pesado — Soldados do Santuário",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Aumenta a Resistência contra danos Físicos +2.",
+      "page": "621",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Soldados do Santuário. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Soldados do Santuário",
+      "level": 3,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:SOLDADOS DO SANTUÁRIO:Treinamento Pesado",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            621
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "6a99e6e0ac1c7e59",
+    "name": "Cadáver — Esqueletos do Submundo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Imune a qualquer ataque que não queime cosmo energia.",
+      "page": "623",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Esqueletos do Submundo. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Esqueletos do Submundo",
+      "level": 3,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:ESQUELETOS DO SUBMUNDO:Cadáver",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            623
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "26ebb4c8bfe04486",
+    "name": "Garras do Submundo — Esqueletos do Submundo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Aumenta o dano +1 BA.",
+      "page": "623",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Esqueletos do Submundo. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Esqueletos do Submundo",
+      "level": 3,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[1 mitos][Suporte][Contínua]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "1 mitos"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:ESQUELETOS DO SUBMUNDO:Garras do submundo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            623
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5c64e43d36732bab",
+    "name": "Morto — Esqueletos do Submundo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Imune a qualquer Habilidade/Dádiva ou Técnica que tente controla-lo.",
+      "page": "623",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Esqueletos do Submundo. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Esqueletos do Submundo",
+      "level": 3,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:ESQUELETOS DO SUBMUNDO:Morto",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            623
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "74b1417cd3a19572",
+    "name": "Velocidade — Guerrieros Jaguas",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Aumenta a iniciativa 1 nível.",
+      "page": "625",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Guerrieros Jaguas. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Guerrieros Jaguas",
+      "level": 6,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[1 Cosmo Energia][Suporte][Instantânea]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "1 Cosmo Energia"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:GUERRIEROS JAGUAS:Velocidade",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            625
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a89c32324eaa5e25",
+    "name": "Garras Afiadas — Guerrieros Jaguas",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Aumenta o dano +1 BA.",
+      "page": "625",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Guerrieros Jaguas. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Guerrieros Jaguas",
+      "level": 6,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[1 Cosmo Energia][Suporte][Contínua]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "1 Cosmo Energia"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:GUERRIEROS JAGUAS:Garras Afiadas",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            625
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "19232b9ba1460ff6",
+    "name": "Metamorfose — Guerrieros Jaguas",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Assume a forma Bestial aumentando o tamanho (3m) e\n\n+30 Pontos de Vida.",
+      "page": "625",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Guerrieros Jaguas. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Guerrieros Jaguas",
+      "level": 6,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[1 Cosmo Energia][Suporte][Contínua]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "1 Cosmo Energia"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:GUERRIEROS JAGUAS:Metamorfose",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            625
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "4f292c25fd3729f5",
+    "name": "Agilidade Sobrenatural — Guerrieros Jaguas",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Capacidade de Esquivar de uma Técnica ou Habilidade/Dádiva do tipo Raio ou cone automaticamente com 20% de chance.",
+      "page": "625",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Guerrieros Jaguas. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Guerrieros Jaguas",
+      "level": 6,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:GUERRIEROS JAGUAS:Agilidade Sobrenatural",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            625
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "702c71695f96497f",
+    "name": "Presa da Obstinação — Wesdas – Sacerdote do Deus da Destrui Ção",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Wesda coloca uma presa de obsidiana no corpo da vítima (Ataque de Foco), para que perfure o seu coração, e o mesmo, tenha o calor absorvido para liberar o poder de Tezcatlipoca. A cada 2 turnos, após o primeiro, o alvo, se falhar no novo teste de\n\nResistência de Vigor recebe os efeitos de intensidade de dor cumulativo.",
+      "page": "627",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Wesdas – Sacerdote do Deus da Destrui Ção. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Wesdas – Sacerdote do Deus da Destrui Ção",
+      "level": 10,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Ataque][luta]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:WESDAS – SACERDOTE DO DEUS DA DESTRUI ÇÃO:Presa da Obstinação",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            627
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b7ba2c1bf5df83f6",
+    "name": "Controle do Fogo — Wesdas – Sacerdote do Deus da Destrui Ção",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Wesda controla o fogo do Sol absorvido pelo Calor do Coração das vítimas da Presa da obstinação, transformando e manipulando as chamas como forma de ataque, seja em golpes diretos, ou lançando em rajadas aumentando o dano da Técnica.",
+      "page": "627–628",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Wesdas – Sacerdote do Deus da Destrui Ção. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Wesdas – Sacerdote do Deus da Destrui Ção",
+      "level": 10,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:WESDAS – SACERDOTE DO DEUS DA DESTRUI ÇÃO:Controle do Fogo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            627,
+            628
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "1626f07d60b2b671",
+    "name": "Petrificação — Górgona",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Transforma o alvo em pedra. O efeito só termina com a morte da górgona.",
+      "page": "630",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Górgona. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Górgona",
+      "level": 13,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[2 Mitos][Alvo][Dias]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "2 Mitos"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:GÓRGONA:Petrificação",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            630
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "9c71d3ece66e1d2f",
+    "name": "Beleza — Górgona",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Elimina qualquer vontade do alvo de lutar. Retirando todas as ações de luta do alvo.",
+      "page": "630",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Górgona. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Górgona",
+      "level": 13,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[2 Mitos][Suporte][Luta]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "2 Mitos"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:GÓRGONA:Beleza",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            630
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5e2fc7ebbdae9b12",
+    "name": "Certeira — Górgona",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Górgona sempre busca causar o maior estrago com seus ataques.  Após as Ações de Ataque, o mestre joga 1d10 se o resultado for igual ou maior que 7 ela trespassa o inimigo ( ver a Manobra de Combate Duelo).",
+      "page": "631",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Górgona. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Górgona",
+      "level": 13,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente][Alvo][Instantânea]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:GÓRGONA:Certeira",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            631
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ad113c8d44ed17fe",
+    "name": "Ser Mitologia — Górgona",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "+5 em todas as Resistências.",
+      "page": "631",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Górgona. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Górgona",
+      "level": 13,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:GÓRGONA:Ser Mitologia",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            631
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "87aca13eb2796452",
+    "name": "Chamas do Inferno — Cérbero",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O uso da baforada deixa o alvo queimando e sofrendo 15 de dano/turno.",
+      "page": "633",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Cérbero. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Cérbero",
+      "level": 23,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[1 Mitos][Alvo][Luta]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "1 Mitos"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:CÉRBERO:Chamas do Inferno",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            633
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "92b66a5d9f032b9a",
+    "name": "Baforada — Cérbero",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Rajadas de fogo das 3 cabeças de 1 só vez. Atingindo todos os alvos que estiverem dentro do Domínio do Cérbero e causando 100 de dano.",
+      "page": "633",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Cérbero. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Cérbero",
+      "level": 23,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[1 Mitos][Alvo][Instantânea]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "1 Mitos"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:CÉRBERO:Baforada",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            633
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "908ba02e02c45eea",
+    "name": "Cabeças — Cérbero",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Cada cabeça é considerada um ser individual.",
+      "page": "633",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Cérbero. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Cérbero",
+      "level": 23,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:CÉRBERO:Cabeças",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            633
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f057efd4d5d1266c",
+    "name": "Atordoar — Cérbero",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Ao final do ataque atordoa o alvo ( Ver Sistema Atordoado). O usuário tem 45l% de chance de atordoar.",
+      "page": "634",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Cérbero. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Cérbero",
+      "level": 23,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Alvo][Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:CÉRBERO:Atordoar",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            634
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b481df72d5963129",
+    "name": "Enfraquecer — Cérbero",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A baforada diminui a Resistência do alvo. O inimigo recebe -2 de Modificador Negativo.",
+      "page": "634",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Cérbero. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Cérbero",
+      "level": 23,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[1 Mitos][Alvo][Descanso]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "1 Mitos"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:CÉRBERO:Enfraquecer",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            634
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "eddb084a53a3ad03",
+    "name": "Essência Alvo — Cérbero",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Inimigos com a Essência boa recebem +150 de dano da baforada.",
+      "page": "634",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Cérbero. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Cérbero",
+      "level": 23,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:CÉRBERO:Essência alvo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            634
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5bc97f4011ca39da",
+    "name": "Medo — Cérbero",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sua presença causa medo.",
+      "page": "634",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Cérbero. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Cérbero",
+      "level": 23,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente][Suporte][Luta]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:CÉRBERO:Medo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            634
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "2bda746fe171a508",
+    "name": "Pulverizar — Cérbero",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A baforada aplica ao alvo o Estado de Morte Pulverizado. O  Alvo que tiver seus pontos de vida superados por um valor igual ou maior que 50% dos pontos de vida totais, ess e é pulverizado, restando apenas o pó da Armadura.",
+      "page": "634",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Cérbero. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Cérbero",
+      "level": 23,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:CÉRBERO:Pulverizar",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            634
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b78504e24fd4c743",
+    "name": "Tamanho Enorme — Cérbero",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "+200 Pontos de Vida",
+      "page": "634",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Cérbero. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Cérbero",
+      "level": 23,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:CÉRBERO:Tamanho Enorme",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            634
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "53a4499a315fe08f",
+    "name": "Golpe Reforçado — Kraken",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "120+10 [ao final do turno de ataque]",
+      "page": "636",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Kraken. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Kraken",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:KRAKEN:Golpe Reforçado",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            636
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f5a293d3e1cd150f",
+    "name": "Aterrorizar — Kraken",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sua presença causa medo nos inimigos.",
+      "page": "636",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Kraken. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Kraken",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:KRAKEN:Aterrorizar",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            636
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "0e5abcbf7d329070",
+    "name": "Marca — Kraken",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Diminui 1 Vigor do alvo para cada 10 ataques efetivos.",
+      "page": "636",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Kraken. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Kraken",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:KRAKEN:Marca",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            636
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3598b63c99e06213",
+    "name": "Maremoto — Kraken",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "120 de dano em todos que estejam dentro do seu Domínio.",
+      "page": "636",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Kraken. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Kraken",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[10 Mitos][Alvo][Instantânea]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "10 Mitos"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:KRAKEN:Maremoto",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            636
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "40583f7934424df6",
+    "name": "Couraça — Kraken",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "+5 PA.",
+      "page": "636",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Kraken. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Kraken",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:KRAKEN:Couraça",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            636
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "72c0b1e2929ccafa",
+    "name": "Congelar — Kraken",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "40% de chance de congelar o alvo após um ataque.",
+      "page": "637",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Kraken. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Kraken",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:KRAKEN:Congelar",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            637
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "7e57b097815956c7",
+    "name": "Estraçalhar — Kraken",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O ataque reduz a Proteção da Armadura do Alvo que perde 10 de PA para cada 10 ataques efetivos.",
+      "page": "637",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Kraken. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Kraken",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:KRAKEN:Estraçalhar",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            637
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f783837cf6af51a6",
+    "name": "Amassar — Kraken",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Habilidade causa a inutilização de um membro. O Kraken joga 3d10 se o resultado for igual a 10 a jogada é confirmada o usuário faz outra jogada, com o resultado for abaixo. Amassar (1d10): 2-6: Inutiliza um membro do alvo (ver Dano Localizado). 7-8: Esmaga Ossos: Categoria de Dano x4 9: Estado de Morte Iminente. 10: Estado de Morte Morto.",
+      "page": "637",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Kraken. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Kraken",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[20 Mitos][Alvo][Descanso]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "20 Mitos"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:KRAKEN:Amassar",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            637
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "4b85d7d20ce0b5f9",
+    "name": "Ser Mitológico — Kraken",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "+5 na Resistência.",
+      "page": "637",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Kraken. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Kraken",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:KRAKEN:Ser mitológico",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            637
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5b8ac1f0cadedcdb",
+    "name": "Tamanho Colossal — Kraken",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "+300 Pontos de Vida",
+      "page": "637",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Kraken. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Kraken",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:KRAKEN:Tamanho Colossal",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            637
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "1cdeec54d364e080",
+    "name": "Força Colossal — Kraken",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "+2 de Dano Físico",
+      "page": "637",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Kraken. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Kraken",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:KRAKEN:Força Colossal",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            637
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a504b0907a01586e",
+    "name": "Pele Dura — Minotauro",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "+5 PA.",
+      "page": "639",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Minotauro. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Minotauro",
+      "level": 20,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:MINOTAURO:Pele Dura",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            639
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "177e16a8bba4d04d",
+    "name": "Sanguinário — Minotauro",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "+1 BA de dano.",
+      "page": "639",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Minotauro. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Minotauro",
+      "level": 20,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:MINOTAURO:Sanguinário",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            639
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "0e15f62e7eeafaef",
+    "name": "Aura da Vida — Minotauro",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "+ 100 Pontos de vida extra.",
+      "page": "639",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Minotauro. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Minotauro",
+      "level": 20,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:MINOTAURO:Aura da vida",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            639
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "6ef08f3c2918fc5f",
+    "name": "Aura da Destruição — Minotauro",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "2 de dano na Armadura ao final do turno de ataque.",
+      "page": "639",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Minotauro. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Minotauro",
+      "level": 20,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:MINOTAURO:Aura da Destruição",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            639
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "127ec4f08c8d31cc",
+    "name": "Berserker — Minotauro",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Minotauro pode abdicar das ações de defesa e transformá-las em ações de ataque.",
+      "page": "640",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Minotauro. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Minotauro",
+      "level": 20,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[2 Mitos][Suporte][Instantânea]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "2 Mitos"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:MINOTAURO:Berserker",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            640
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "7151ba90f7b138f0",
+    "name": "7 Vidas — Minotauro",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Recupera 400 PV após perder todos seus Pvs",
+      "page": "640",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Minotauro. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Minotauro",
+      "level": 20,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente][Reação]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:MINOTAURO:7 vidas",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            640
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ded6395ac6678251",
+    "name": "Faro Para Vitória — Minotauro",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Minotauro possui 2 Ações completas de Combate.",
+      "page": "640",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Minotauro. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Minotauro",
+      "level": 20,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:MINOTAURO:Faro para Vitória",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            640
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f2b6219debb28d30",
+    "name": "Destruir — Hecatônquiros",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O ataque reduz a Proteção da Armadura do Alvo que perde 10 de PA para cada 10 ataques efetivos.",
+      "page": "642",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hecatônquiros. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hecatônquiros",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HECATÔNQUIROS:Destruir",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            642
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e1a4a9473e911cfe",
+    "name": "Pedra Meteoro — Hecatônquiros",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Hecatônquiro arranca um pedaço do solo ou materializa uma grande pedra que atinge o alvo. A Habilidade pode matar o Alvo instantaneamente. Dano 200 + Teste de Confirmação. O Mestre faz um Teste de Confirmação joga 3d10 se o resultado for igual a 10 a jogada se confirma. O usuário faz outra jogada, com o resultado abaixo. Pedra Meteoro (1d10): 2-6: Inutiliza um membro do alvo (ver Dano Localizado). 7-8: Esmaga Ossos: Incapacitado x4 9: Estado de Morte Iminente. 10: Estado de Morte Morto.",
+      "page": "642–643",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hecatônquiros. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hecatônquiros",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[15 Mitos][Alvo][Descanso]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "15 Mitos"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HECATÔNQUIROS:Pedra meteoro",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            642,
+            643
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ef36b1eed517a91b",
+    "name": "Ser Mitológico — Hecatônquiros",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "+5 na Resistência.",
+      "page": "643",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hecatônquiros. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hecatônquiros",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HECATÔNQUIROS:Ser mitológico",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            643
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "4c3155b831d6d4ca",
+    "name": "Chuva Meteoro — Hecatônquiros",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Joga vária pedras nos alvos atingindo todos que estiverem em seu Domínio. Causando 120 + 10 de dano.",
+      "page": "643",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hecatônquiros. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hecatônquiros",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[5 Mitos][Alvo][Instantânea]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "5 Mitos"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HECATÔNQUIROS:Chuva meteoro",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            643
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "de5e6a4abe43fc62",
+    "name": "Força Titã — Hecatônquiros",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Vence qualquer teste de Força.",
+      "page": "643",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hecatônquiros. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hecatônquiros",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HECATÔNQUIROS:Força titã",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            643
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ed400a0142a5dbb7",
+    "name": "Pele Dura — Hecatônquiros",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "+5 de PA.",
+      "page": "643",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hecatônquiros. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hecatônquiros",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HECATÔNQUIROS:Pele dura",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            643
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "9eee99689a469450",
+    "name": "Habitante do Tártaro — Hecatônquiros",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Todos que estiverem dentro do Domínio do Hecatônquiro fica em Desvantagem.",
+      "page": "643",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hecatônquiros. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hecatônquiros",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HECATÔNQUIROS:Habitante do Tártaro",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            643
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "47bed66bbfa92e70",
+    "name": "Cabeças — Hecatônquiros",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Hecatônquiro tem 5 turnos de combate. 1 turno de combate para cada 20 cabeças.",
+      "page": "643",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hecatônquiros. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hecatônquiros",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HECATÔNQUIROS:Cabeças",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            643
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "904340af6deb5819",
+    "name": "Sanguinário — Hecatônquiros",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Dano extra +1 BA.",
+      "page": "643",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hecatônquiros. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hecatônquiros",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HECATÔNQUIROS:Sanguinário",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            643
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a7fd68a614b5f026",
+    "name": "Tamanho Colossal — Hecatônquiros",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "+300 Pontos de Vida.",
+      "page": "643",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hecatônquiros. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hecatônquiros",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HECATÔNQUIROS:Tamanho Colossal",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            643
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ceb99e67169a8e99",
+    "name": "Força Colossal — Hecatônquiros",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "+2 de Dano Físico",
+      "page": "643",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hecatônquiros. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hecatônquiros",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HECATÔNQUIROS:Força Colossal",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            643
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3362f536284c1b53",
+    "name": "Cabeças — Hidra de Lerna",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Hidra possui 3 turnos de ataque.",
+      "page": "646",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hidra de Lerna. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hidra de Lerna",
+      "level": 23,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HIDRA DE LERNA:Cabeças",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            646
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8608b02259c54826",
+    "name": "Regeneração — Hidra de Lerna",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Hidra possui uma regeneração espantosa de 100 pv/turno.",
+      "page": "646",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hidra de Lerna. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hidra de Lerna",
+      "level": 23,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HIDRA DE LERNA:Regeneração",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            646
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f91456e069100140",
+    "name": "Hálito de Fogo — Hidra de Lerna",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Baforada de fogo em forma de cone 100 de dano.",
+      "page": "646",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hidra de Lerna. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hidra de Lerna",
+      "level": 23,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[1 Mitos][Alvo][Instantânea]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "1 Mitos"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HIDRA DE LERNA:Hálito de fogo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            646
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "6a7e43c7d3ebe373",
+    "name": "Hálito de Gelo — Hidra de Lerna",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Baforada de gelo em forma de cone 100 de dano.",
+      "page": "646–647",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hidra de Lerna. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hidra de Lerna",
+      "level": 23,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[1 Mitos][Alvo][Instantânea]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "1 Mitos"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HIDRA DE LERNA:Hálito de gelo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            646,
+            647
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3524959c60a23e95",
+    "name": "Cheiro — Hidra de Lerna",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Todas as pessoas que entram no Domínio da Hidra ficam envenenadas recebendo - 4 de Modificador Negativo em suas paradas de dados.",
+      "page": "647",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hidra de Lerna. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hidra de Lerna",
+      "level": 23,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HIDRA DE LERNA:Cheiro",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            647
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "501b7d1f8b744206",
+    "name": "Pulverizar — Hidra de Lerna",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O hálito de fogo aplica ao alvo o Estado de Morte Pulverizado.  Personagens que tiverem seus pontos de vida superados em 50% dos pontos de vida totais do alvo, este é pulverizado, restando apenas o pó da Armadura.",
+      "page": "647",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hidra de Lerna. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hidra de Lerna",
+      "level": 23,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HIDRA DE LERNA:Pulverizar",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            647
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5e83e394ed2525d4",
+    "name": "Congelar — Hidra de Lerna",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O hálito de gelo tem 40% de chance de congelar o alvo.",
+      "page": "647",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hidra de Lerna. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hidra de Lerna",
+      "level": 23,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HIDRA DE LERNA:Congelar",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            647
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "1e392d744e7c322c",
+    "name": "Tamanho Enorme — Hidra de Lerna",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "+200 Pontos de Vida",
+      "page": "647",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hidra de Lerna. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hidra de Lerna",
+      "level": 23,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HIDRA DE LERNA:Tamanho Enorme",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            647
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e2a040a7c835af25",
+    "name": "Cubo de Gelo — Os Jotnar - Demônios do Gelo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A cada ação de Luta o Demônio tem 25% de congelar o alvo. O efeito só termina com a morte do demônio.",
+      "page": "649",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Os Jotnar - Demônios do Gelo. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Os Jotnar - Demônios do Gelo",
+      "level": 13,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:OS JOTNAR - DEMÔNIOS DO GELO:Cubo de gelo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            649
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "0cf3a2c46d723c46",
+    "name": "Medroso — Os Jotnar - Demônios do Gelo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Elimina qualquer vontade do alvo de lutar. Retirando todas as ações de luta do alvo.",
+      "page": "649",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Os Jotnar - Demônios do Gelo. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Os Jotnar - Demônios do Gelo",
+      "level": 13,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[1 Mitos][Suporte][Contínua]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "1 Mitos"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:OS JOTNAR - DEMÔNIOS DO GELO:Medroso",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            649
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "9a00d2f8348ce62f",
+    "name": "Certeiro — Os Jotnar - Demônios do Gelo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Demônio de Gelo ao final da cada Ação de Luta joga 1d10 se o resultado for igual ou maior que 9 ele trespassa o inimigo (ver a Manobra de Combate Duelo).",
+      "page": "649–650",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Os Jotnar - Demônios do Gelo. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Os Jotnar - Demônios do Gelo",
+      "level": 13,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:OS JOTNAR - DEMÔNIOS DO GELO:Certeiro",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            649,
+            650
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a276710e2e4e2985",
+    "name": "Terras Gélidas — Os Jotnar - Demônios do Gelo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "+10 contra Técnicas/Habilidades/Dádivas que envolvam ar frio.",
+      "page": "650",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Os Jotnar - Demônios do Gelo. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Os Jotnar - Demônios do Gelo",
+      "level": 13,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:OS JOTNAR - DEMÔNIOS DO GELO:Terras gélidas",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            650
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b0a3050ba8c1d76d",
+    "name": "Ikhor — Cor Tauri",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Abençoado por Zeus, possui uma força descomunal (10).",
+      "page": "652",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Cor Tauri. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Cor Tauri",
+      "level": 26,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:COR TAURI:Ikhor",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            652
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "54180fb0829da180",
+    "name": "Relâmpagos de Zeus — Cor Tauri",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A cada ataque uma rajada de relâmpago divino acompanha o autômato. Causa +30 de dano ao final do turno e +50 sob efeito de Devoção Divina.",
+      "page": "652",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Cor Tauri. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Cor Tauri",
+      "level": 26,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:COR TAURI:Relâmpagos de Zeus",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            652
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a575d984ee7a2e5f",
+    "name": "Armadura de Dédalos — Cor Tauri",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "+5 na Resistência.",
+      "page": "652",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Cor Tauri. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Cor Tauri",
+      "level": 26,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:COR TAURI:Armadura de Dédalos",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            652
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "12b4a54896d9da02",
+    "name": "Força Titã — Cor Tauri",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Vence qualquer teste de Força.",
+      "page": "652",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Cor Tauri. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Cor Tauri",
+      "level": 26,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:COR TAURI:Força titã",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            652
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3df0a95357499a31",
+    "name": "Autômato — Cor Tauri",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "+5 de PA.",
+      "page": "652",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Cor Tauri. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Cor Tauri",
+      "level": 26,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:COR TAURI:Autômato",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            652
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "fed364b36e638f98",
+    "name": "Punho Pesado — Cor Tauri",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Dano extra +1 BA.",
+      "page": "653",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Cor Tauri. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Cor Tauri",
+      "level": 26,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:COR TAURI:Punho Pesado",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            653
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "39bcc8fc8337eadb",
+    "name": "Benção do Protetor — Cor Tauri",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Só atingido por golpes que queimem Energia Cósmica.",
+      "page": "653",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Cor Tauri. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Cor Tauri",
+      "level": 26,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:COR TAURI:Benção do protetor",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            653
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3f2f61aa06c4d5cb",
+    "name": "Canção da Bruxa — Vouivre",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O poder de manipular à vontade alheia através da sua voz. O Alvo fica em Estado Dominado . Um novo teste de resistência é permitido a cada novo dia.",
+      "page": "655",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Vouivre. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Vouivre",
+      "level": 20,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[5 Mitos][Suporte][Dias]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "5 Mitos"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:VOUIVRE:Canção da Bruxa",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            655
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8223b904b5b988d7",
+    "name": "Joias — Vouivre",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Poder de aprisionar humanos em joias de âmbar. Um novo teste de resistência é permitido a cada novo dia.",
+      "page": "655",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Vouivre. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Vouivre",
+      "level": 20,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[10 Mitos][Alvo][Dias]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "10 Mitos"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:VOUIVRE:Joias",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            655
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "71cd152c989b89d8",
+    "name": "Sugar Vitae — Vouivre",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Para manter sua imortalidade, ela tem que sugar a vitalidade dos humanos que foram presos nas joias de âmbar. Cada humano aprisionado confere à Vouivre 30 dias de vida para cada 10 Pontos de Vida. Um humano com cosmo energia despertada confere à Vouivre 40 dias de vida para cada 10 Pontos de Vida. Um humano com cosmo energia dominada confere à Vouivre 60 dias de vida para cada 10 Pontos de Vida.",
+      "page": "655–656",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Vouivre. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Vouivre",
+      "level": 20,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:VOUIVRE:Sugar Vitae",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            655,
+            656
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f814bc60e2ceb77e",
+    "name": "Juventude — Vouivre",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Vouivre, a partir da posse da Granate de la Vouivre não envelhece. Aparente eternamente jovem.",
+      "page": "656",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Vouivre. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Vouivre",
+      "level": 20,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:VOUIVRE:Juventude",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            656
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e1c80878698256dd",
+    "name": "Voo — Vouivre",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Vouivre na forma mitológica pode voar normalmente.",
+      "page": "656",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Vouivre. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Vouivre",
+      "level": 20,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:VOUIVRE:Voo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            656
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "88a2017361ce7272",
+    "name": "Reflexão — Hypnos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Todas as Técnicas usadas contra um Deus são refletidas como ação extra. Manobra refletir Técnicas com +15 de Modificador Positivo.",
+      "page": "658–659",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hypnos. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hypnos",
+      "level": 35,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Suporte][Reação][Permanentes]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HYPNOS:Reflexão",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            658,
+            659
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "54b0a32ea70ee9cc",
+    "name": "Destruição do Cosmo — Hypnos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Esse é o golpe que todo Deus tem como característica, mudando de um para o outro. Causa 300 de dano + big Bang pulverizar.",
+      "page": "659",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hypnos. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hypnos",
+      "level": 35,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Alvo][Instantânea]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HYPNOS:Destruição Do Cosmo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            659
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3552da835f99aace",
+    "name": "Pico Cósmico — Hypnos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Aumenta temporariamente o poder de ataque.\n\nEspecial: +2 Nível de Ataque.",
+      "page": "659",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hypnos. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hypnos",
+      "level": 35,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Suporte][Contínua]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HYPNOS:Pico cósmico",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            659
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b26bf269ac05afad",
+    "name": "Sétimo Sentido Ômega — Hypnos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Modificador Positivo de Nível +6. Modificador Positivo de Percepção Extrassensorial: +6 Domínio + 6 Eleva 1 Nível de Dano das Técnicas Eleva 1 Bônus aplicado Envelhecimento tardio (2 anos igual a 1) Inimigos que não possuem o 7º sentindo, perdem suas ações de defesa. Desperta 1 Cosmo Divino Alcança Classificação: Técnica Galáxia",
+      "page": "659",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hypnos. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hypnos",
+      "level": 35,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HYPNOS:Sétimo Sentido Ômega",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            659
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "84953ed55cd4b876",
+    "name": "Barreira Divina — Hypnos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Referência do bloco de Hypnos: Barreira Divina [Permanente]. Consulte a descrição do poder homônimo na seção Poderes Divinos (pp. 674–685).",
+      "page": "659",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hypnos. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hypnos",
+      "level": 35,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HYPNOS:Barreira Divina",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            659
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "bfe29a51bf76e0e3",
+    "name": "Domínio Sobre A Criação e Destruição — Hypnos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Efeito: Permite a criação e a destruição de Armaduras, Santuários entre outros\n\nCusto: 50 a 100 Pontos de Cosmo\n\nAção: Ação Total\n\nResistência: Não",
+      "page": "659",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hypnos. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hypnos",
+      "level": 35,
+      "action": "Ação Total",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HYPNOS:Domínio sobre a Criação e Destruição",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            659
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "7625b29815b9703f",
+    "name": "Domínio Extrassensorial — Hypnos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Efeito: Atributos Mentais 12 + Percepção Extrassensorial 10\n\nCusto: 5 Pontos de Cosmo\n\nAção: Ação de Cosmo + Ação de Movimento Parcial\n\nResistência: Não",
+      "page": "659",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade do bloco de Hypnos. A criatura usa Mitos/Cosmo conforme sua ficha; não é uma aquisição geral de cavaleiro. Uso não permanente exige confirmação por Ataque de Foco (p. 617).",
+      "category": "Criatura — Hypnos",
+      "level": 35,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "myth",
+      "costText": "Conferir descrição e ficha da criatura."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "creature:HYPNOS:Domínio Extrassensorial",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            659
+          ]
+        }
+      }
+    }
+  }
+]

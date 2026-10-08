@@ -1,15 +1,17 @@
 {
   "name": "gods-battle-ss",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
   "scripts": {
     "test": "node --test",
     "check": "node tools/check.mjs",
-    "build": "python tools/package.py"
+    "build": "npm run packs && python tools/package.py",
+    "packs": "node tools/build-packs.mjs"
   },
   "devDependencies": {
-    "handlebars": "4.7.8"
+    "@foundryvtt/foundryvtt-cli": "3.0.4",
+    "handlebars": "4.7.10"
   },
   "engines": {
     "node": ">=22"

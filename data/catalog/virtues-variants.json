@@ -1,0 +1,39 @@
+[
+  {
+    "_id": "21d2f1b3e911097d",
+    "name": "Cosmo de Gelo — exemplo",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Ex: COSMO DE GELO (GERAL): O Cavaleiro foi abençoado pelo Deus do Gelo, Fjalnir que cria e controla tempestades invernais, tal como a que assola as Terras Nórdicas. O gelo criado for Fjalnir consegue congelar o fogo. Gelado durante o combate sua presença emana um ar frio e causa +1 de bônus aplicado ao dano/turno devido ao ar congelante. Tempestade de Fjalnir Técnicas do Elemento do Ar somam +1 de Modificador Positivo no Poder Cósmico.",
+      "page": "164",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Variante exemplificada de Cosmo de Fogo; alterações elementais dependem do mestre.",
+      "category": "Geral — Variante",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:variant:cosmo-de-gelo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            164
+          ]
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,4757 @@
+[
+  {
+    "_id": "b3d51a3a64f87bbd",
+    "name": "Afinidade",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Essa Virtude concede o poder de corromper os ideais de qualquer armadura. A partir desse ponto, ela se torna uma parte inseparável do P ersonagem. Por exemplo, ela pode permitir ao Cavaleiro realizar ações consideradas hediondas.",
+      "page": "161",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:AFINIDADE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            161
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "15d3d2be791adc44",
+    "name": "Anjos",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem não é um humano, é um anjo celestial. É um Personagem que foi escolhido por seu Deus para vir a Terra resolver seus assuntos. Começa o jogo com + 1 no Atributo Velocidade, podem usar seu movimento no ar como se estivessem no chão (não é voo). Tem que obrigatoriamente ser leal a um Deus. O Personagem começa o jogo com as Habilidades Naturais abaixo: Pés de Hermes  Permite ao Personagem usar a manobra de Movimento:  Movimento no ar. Armadura Olimpiana Suas Armaduras são as Glórias que evoluem com o Personagem recebendo as devidas características de Classe, ou seja, no 10º Nível progride para Prata e no 20º Nível recebem os benefícios de uma Armadura de Ouro. Por serem escolhidos por Deuses os anjos anulam as características Especiais da Armaduras da Classe Ouro.\n\nPré-Requisito:  Só escolhido no 1º nível.",
+      "page": "161–162",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Só escolhido no 1º nível.",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:ANJOS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            161,
+            162
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "22aafba667de395c",
+    "name": "Armadura Celeste",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sua Armadura recupera todos os pontos de vida após acabar uma luta.",
+      "page": "162",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:ARMADURA CELESTE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            162
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "79e792306cd76c2d",
+    "name": "Armadura Divina",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sua Armadura permite a você queimar +2 Pontos extras de Cosmo Energia sem sacrificar seu corpo.",
+      "page": "162",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:ARMADURA DIVINA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            162
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8b26f79253d5d5b7",
+    "name": "Armadura Poderosa",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sua Armadura tem o dobro de Pontos de vida.",
+      "page": "162",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:ARMADURA PODEROSA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            162
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "27e330f5ada72d74",
+    "name": "Armadura Restaurada",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sua Armadura já foi restaurada por um Alquimista. A Armadura começa ou adquire durante o jogo o Acessório Especial abaixo: Armadura Restaurada V2 recebendo +1 de PA, +5 Pontos de Vida e 2 de Cosmo Mínimo.",
+      "page": "162",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:ARMADURA RESTAURADA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            162
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "32f4feb9fc488c1f",
+    "name": "Arte dos Deuses",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Com essa Virtude o Personagem potencializa sua arte através de um instrumento. Diminui em 2 a parada de dados nos Testes de resistência das Habilidades e Dádivas do inimigo.",
+      "page": "162",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:ARTE DOS DEUSES",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            162
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "93f85d306f39975d",
+    "name": "Aumento de Atributo",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O jogador acrescenta +2 pontos em Atributos a sua escolha. Pode ser comprado mais de uma vez.",
+      "page": "162",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:AUMENTO DE ATRIBUTO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            162
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "2a44910fcf071c24",
+    "name": "Autodidata",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro aprende por esforço próprio sem a ajuda de mestre. Esta Virtude permite ao Cavaleiro que não conseguir mudar de Status, seja por escolha, predestinação ou por mérito conseguir evoluir as Habilidades o que só seria permitido, obrigatoriamente, com a mudança de Status.",
+      "page": "162–163",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:AUTODIDATA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            162,
+            163
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "7dff3d3dc3eaa568",
+    "name": "Besta Mística",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Com essa Virtude o  Domador de Bestas possui um animal mitológico como companheiro. Uma Besta Mística está intimamente ligada a cosmo energia do universo concedendo vantagem em todos os testes que envolvam o Atributo Força  e ignora falhas críticas em qualquer teste que envolva esse atributo.\n\nPré-Requisito:  Só escolhido no 1º nível.",
+      "page": "163",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Só escolhido no 1º nível.",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:BESTA MÍSTICA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            163
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "afc1fbbef4eeae1c",
+    "name": "Combustão de Cosmo",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Com essa Virtude o Personagem possui +1 Espaço para Habilidades/Dádivas.",
+      "page": "163",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:COMBUSTÃO DE COSMO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            163
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "c6b1f4d2687c1acd",
+    "name": "Companheiro de Cosmo",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Com essa Virtude o Personagem pode “transferir” e “receber” Cosmo de outros Cavaleiros.",
+      "page": "163",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:COMPANHEIRO DE COSMO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            163
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "51aece72c2a3a561",
+    "name": "Corpo Cósmico",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro recupera o dobro de Cosmo Energia.",
+      "page": "163",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:CORPO CÓSMICO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            163
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b65361a419e22be4",
+    "name": "Cosmo de Fogo",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro foi abençoado pelos Deuses com o Cosmo de Fogo uma manifestação do Deus da Agyo que aparece por detrás de Ikki, vemos aparecer em três ocasiões no anime um Personagem um tanto quanto estranho e peculiar chamado Misshaku Kongô (ou Agyo). Vajrapani é o encarregado por todos os tantras possibilita um imenso poder em seu Cosmo interior, as mãos do Cavaleiro ficam imersas em fogo místico sendo algo belo de se ver e de trazer fama a seus matadores. O Personagem começa o jogo com as Habilidades Naturais abaixo: Ígneo durante o combate sua presença causa +1 de bônus aplicado ao dano /turno devido as queimaduras causadas pelo fogo. Sopro de Agyo Técnicas do Elemento do fogo somam +1 de Modificador Positivo no Poder Cósmico. Esta Virtude pode ter seu elemento, fogo, alterado. O mestre faz as devidas alterações e atribuições, os bônus são os mesmos. Ex: COSMO DE GELO (GERAL): O Cavaleiro foi abençoado pelo Deus do Gelo, Fjalnir que cria e controla tempestades invernais, tal como a que assola as Terras Nórdicas. O gelo criado for Fjalnir consegue congelar o fogo. Gelado durante o combate sua presença emana um ar frio e causa +1 de bônus aplicado ao dano/turno devido ao ar congelante. Tempestade de Fjalnir Técnicas do Elemento do Ar somam +1 de Modificador Positivo no Poder Cósmico.",
+      "page": "163–164",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:COSMO DE FOGO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            163,
+            164
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "d22b193065a25c04",
+    "name": "Cosmo Latente",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem recupera toda Cosmo Energia após uma luta (1x1).",
+      "page": "164",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:COSMO LATENTE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            164
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "39f9d06f523aff3d",
+    "name": "Cosmo Oculto",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Ninguém percebe o seu Cosmo , nem o Cosmo  de itens que o Cavaleiro carregue. Todas ações descritas como “ação de Cosmo” não são percebidas. Exceto a ação de Cosmo  Milagre e Carregar Cosmo Energia. Usar uma Técnica é percebido, pois é uma ação de luta. O Cavaleiro entra e sai de Domínios alheios sem ser percebido ou causar perturbações no Cosmo.",
+      "page": "164",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:COSMO OCULTO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            164
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "09b23a0c56688683",
+    "name": "Cronos",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem aumenta +1 turno a\n\nDuração de uma Habilidade/Dádiva escolhida. Pode ser comprada mais de uma vez para Habilidades/Dádivas diferentes.",
+      "page": "164",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:CRONOS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            164
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "bebd3bc12b437fd8",
+    "name": "Determinação ou Orgulho",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem tem + 1 Determinação ou Orgulho extra por dia.",
+      "page": "164",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:DETERMINAÇÃO OU ORGULHO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            164
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "681e9dd8b4ae7ba8",
+    "name": "Cura Abençoada",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro ao ser derrotado cai com os ferimentos estancados, sendo assim não morrendo por hemorragia. O Personagem cai em Estado de Morte Estável e não acumula Modificadores Negativos do Estado de Morte Recuperado.",
+      "page": "164",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:CURA ABENÇOADA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            164
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e75eb3461c4ed8e3",
+    "name": "Devoção",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Existem Cavaleiros que são fiéis ao seu Deus, lutando com mais veemência e se entregando em uma luta difícil sabendo que poderá levar a sua morte. Para se torna um Cavaleiro de\n\nOuro esse é a Virtude mínima. Sempre que o Personagem estiver em uma luta defendendo os ideais do seu Deus, ou mesmo lutando para salvar pessoas do Santuário , ele recebe 30\n\n+ Vigor% de pontos de vida extra e quando o seu Cosmo  acabar, recupera 50% dele, e qualquer golpe usado para controlar o Personagem, ele recebe 30 + Sentidos% de chance de ignorar o controle e ainda tem direito ao Teste de Resistência. Os pontos de vida adquiridos por essa Virtude não se somam aos extras dados em Insistência Divina, esse Modificador substitui o outro.\n\nPré-requisito: Insistência Divina.",
+      "page": "164–165",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Insistência Divina.",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:DEVOÇÃO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            164,
+            165
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "92607514c64941d7",
+    "name": "Devoção Divina",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Há Cavaleiros que são fieis a seu Deus, porém existem Cavaleiros que não são apenas fieis ao seu Deus como também podem morrer por ele, defendendo os seus ideais, durante uma guerra santa esses são os primeiros Cavaleiros visados em um combate, os Deuses inimigos odeiam esse tipo de Cavaleiros. Sempre que um Cavaleiro estiver lutando pelo seu Deus, ele recebe mais 50 +  Vigor% de pontos de vida extra e depois que os seus pontos de vida chegarem abaixo de 0 ele continua lutando até seu Modificador de Vigor t urnos ficando imune a Técnicas e Habilidades de controle durante esse período. Os pontos de vida adquiridos por essa Virtude não se somam aos extras dados em Devoção, esse Modificador substitui o outro.\n\nPré-requisito: Devoção.",
+      "page": "165",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Devoção.",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:DEVOÇÃO DIVINA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            165
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e65648722f7d906e",
+    "name": "Discípulo de Shaka",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem é discípulo de Shaka a reencarnação de Buda. É conhecido por sua calma e sabedoria devido aos ensinamentos de Buda, passa o dia meditando e refletindo. O Personagem recebe +1 de Modificador Positivo para os Testes de Ação da Perícia Utilização do Cosmo e +1 de Modificador Positivo nos Testes de Resistência baseado em Sentidos.",
+      "page": "165",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:DISCÍPULO DE SHAKA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            165
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "1effb335583f4bfe",
+    "name": "Elo Carmesim",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "É um ritual no qual uma gota do sangue envenenado do Cavaleiro, normalmente, um mestre, é trocada gota a gota com um pupilo , para que o sangue do mesmo se torne venenoso , fazendo com que  aquele que tiver o corpo com a mais forte toxicidade e resistência ao veneno sobreviva e o sangue circule mesmo passado vários anos. O Personagem recebe +5 de Modificador Positivo nos Testes de Resistência contra qualquer tipo de veneno.",
+      "page": "165–166",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:ELO CARMESIM",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            165,
+            166
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8ee1e2e75b7f39ff",
+    "name": "Einherjar",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Também conhecidos como \"Os Guerreiros de Odin\", os Einherjar  são os guerreiros mortos recolhidos pelas Valquírias para irem ao palácio de Valhala, onde viverão em banquetes e fartura até o derradeiro dia do Ragnarok. Somente os melhores e mais heroicos guerreiros eram escolhidos e são revividos quando Odin precisar  para lutar em suas fileiras. O Cavaleiro começa o jogo com o dobro de Cosmo Energia, uma Técnica extra.\n\nPré-requisito: Só escolhido no 1º nível.",
+      "page": "166",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Só escolhido no 1º nível.",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:EINHERJAR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            166
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "aa4ae50999c0daf8",
+    "name": "Escolhido",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Você já morreu, isso mesmo, você foi um herói em batalhas passadas e provou o seu valor queimando seu Cosmo  até o infinito em momentos cruciais, tendo muitas vezes a sua história como inspiração para discípulos de sábios Mestres e, por isso, você e sua eterna companheira, a sua Armadura, foram escolhidos por um Deus para lutar novamente ao seu lado.  O Cavaleiro começa o jogo com o dobro de Cosmo Energia, uma Técnica extra.\n\nPré-requisito: Só escolhido no 1º nível.",
+      "page": "166",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Só escolhido no 1º nível.",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:ESCOLHIDO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            166
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "be7dec132a2694ed",
+    "name": "Esforçado",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro teve um treinamento mais árduo que o normal, mais isso o possibilitou aprender mais que os outros. Com essa Virtude o Cavaleiro desenvolve, como resultado do seu treinamento, mais uma Perícia de classe a sua escolha.",
+      "page": "166",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:ESFORÇADO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            166
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f75dd46f724e1369",
+    "name": "Fotográfo de Cosmo",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem pode memorizar o Cosmo de qualquer indivíduo que ele já tenha entrado em contato e encontra-lo em qualquer lugar do mundo. Para isso, basta o jogador marcar o alvo. O jogador pode “fotografar” um Cosmo para cada Nível que tiver. Marcar um alvo é uma\n\nAção Livre, bastando o alvo está dentro do domínio do Usuário.",
+      "page": "166",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:FOTOGRÁFO DE COSMO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            166
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8575244a5212a244",
+    "name": "Gigante",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem possui, correndo em suas veias, sangue  dos antigos gigantes da Gigantomakhia (batalha entre os Deuses olímpicos e os gigantes). O Personagem começa o jogo com as Habilidades Naturais abaixo: Força Titânica Permite ao Personagem Vantagem em todo Teste que envolva Força. Gigante O Personagem possui um físico  e um corpo  equiparado a musculatura  dos Gigantes . O Personagem recebe +2 pontos de vida por nível e possui pelos menos 250 cm de altura.\n\nPré-requisito: Só escolhido no 1º nível.",
+      "page": "166–167",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Só escolhido no 1º nível.",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:GIGANTE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            166,
+            167
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "abb151cee148aba3",
+    "name": "Grande Fortitude",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro recebe + 5 de Modificador Positivo em todos os Testes de Resistência envolvendo Vigor.",
+      "page": "167",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:GRANDE FORTITUDE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            167
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "af78edd75d8919e2",
+    "name": "Guerreiro Azul",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Você foi treinado em Bluegraad, no Leste da Sibéria. Embora não seja de Asgard você foi treinado no Estilo de Combate Asgadiano, mas pertence a outro Santuário. Esta Virtude permite ao Jogador escolher o estilo de Combate Asgardiano e ser de qualquer outro Santuário e continuar a desenvolver as Habilidades e Dádivas normalmente com o avanço dos Níveis.\n\nPré-requisito: Só escolhido no 1º nível.",
+      "page": "167",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Só escolhido no 1º nível.",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:GUERREIRO AZUL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            167
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8b321f495686db6e",
+    "name": "Guiado Pelos Deuses",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro ganha o Modificador Positivo de + 1 em todos os Testes de Resistência (Técnicas, Habilidades, Dádivas).",
+      "page": "167",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:GUIADO PELOS DEUSES",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            167
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "c15fca0136a081e8",
+    "name": "Hábil",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem acrescenta +2 de Modificador Positivo em uma Perícia a sua escolha. Essa Virtude não se considera como Modificador de Ações de Luta no TAP de Combate. Pode ser comprado mais de uma vez.",
+      "page": "167",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:HÁBIL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            167
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "c4118bfe96301de9",
+    "name": "Habilidade/Dádiva Penetrante",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sua Habilidade/Dádiva consegue causar mais problemas ao inimigo por penetrar mais fundo no corpo do alvo. A dificuldade de resistir a Habilidade/Dádiva , o P oder Cósmico aumenta +2.",
+      "page": "167",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:HABILIDADE/DÁDIVA PENETRANTE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            167
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "aab71307442e82e5",
+    "name": "Habilidoso",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem tem a oportunidade de adquirir uma Habilidade ou Dádiva de outra classe, desde que essas habilidades sejam do mesmo nível ou de nível inferior (Máx. 15º Nível). Isso implica que o personagem pode escolher uma habilidade de um conjunto que varia de nível 1 a 10, e uma segunda habilidade de um conjunto que vai do nível 11 a 15 . Importante destacar que o personagem só pode ter uma única classe favorecida.  (Exceto Espírito Inquebrável, Domínio Inato, Dominar Armas e Réquiem).  Exemplo: Um Sábio de 15º nível pode aprender a Habilidade Zona do Cavaleiro Artista, com classe favorecida Artista.",
+      "page": "167",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:HABILIDOSO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            167
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "1912f662d98e3508",
+    "name": "Incansável",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sempre que o Personagem estiver Cansado, ele pode reduzir o efeito em 1 Nível. Por exemplo, se ele estiver no Nível de Cansado x1 devido ao esgotamento do Cosmo em combate, com essa Virtude (reduzindo 1 Nível) ele não ficaria no Estado Cansado.",
+      "page": "168",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:INCANSÁVEL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            168
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "dd57c7ae2333b408",
+    "name": "Insistente",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Quanto mais o Cavaleiro sofre danos mais sua Cosmo  Energia cresce. Toda vez que o Personagem perde 50% de seus pontos de vida ele recupera 50% de Cosmo Energia.",
+      "page": "168",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:INSISTENTE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            168
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b9a257ea30e9064b",
+    "name": "Irmão Gêmeo",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O personagem possui um irmão gêmeo com aparência idêntica, algo que, em muitos santuários, é considerado um mau presságio. Essa crença leva os habitantes a discriminarem ambos, embora de forma mais severa o irmão gêmeo, que decide viver isolado até “ser esquecido”. Ele se recusa a se envolver nos conflitos relacionados ao Deus que servem ou à proteção das pessoas que os rejeitam. Essa escolha de isolamento é a principal característica que os diferencia, pois, apesar de sua ausência nas batalhas, o irmão gêmeo permanece atento aos acontecimentos, acompanhando o “verdadeiro” como uma sombra silenciosa. No jogo, o personagem conta com uma \"vida extra\". Quando ele morre, seu irmão gêmeo veste a armadura e assume sua posição. A nova ficha mantém as mesmas habilidades básicas e o mesmo nível do personagem original, mas com uma diferença marcante: a personalidade distinta do irmão gêmeo e sua técnica única, que o diferencia nas batalhas e acrescenta uma nova dimensão à narrativa.",
+      "page": "168",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:IRMÃO GÊMEO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            168
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e96797d59d368658",
+    "name": "Líder Natural",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro recebe +2 de Modificador Positivo em Testes da Perícia Liderança e suas tropas tem + 5 Pontos de Legião (PL).",
+      "page": "168",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:LÍDER NATURAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            168
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f6ed8180c09febe4",
+    "name": "Materializar",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro consegue modelar sua Cosmo Energia e materializar armas (ex. rosas, cartas de baralho, flechas, discos, esferas) e atacar a distância. O Personagem adquire o tipo de ataque: Ataque a distância ; armas criadas não aumentam o dano , são extensões do Cavaleiro, e seguem o Nível de Ataque do mesmo.",
+      "page": "168",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:MATERIALIZAR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            168
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a69638756a346a09",
+    "name": "Muviano",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem descende da linhagem dos Ferreiros Paranormais que criaram as Armaduras de Athena. O Personagem começa o jogo com uma das Habilidades Naturais abaixo: Psicocinese Igual a Virtude Psicocinese [Geral]. Teletransporte igual a Técnica Teletransporte [Bronze][MANIPULAÇÃO DE COSMO]. Telepatia Habilidade de comunicar-se diretamente com a mente de um indivíduo. Ferreiro Paranormal igual a Virtude Alquimista [Técnica]. Os Alquimistas são identificados através do corte ritualístico nas sobrancelhas que parecem dois sinais “pintas” na testa.  Os “não alquimistas” possuem sobrancelhas “normais”.  O Mestre deve restringir essa qualidade ao máximo e até mesmo não permitir, pois essa raça está em extinção, no desenho seus representantes eram: Mú, Shion e Kiki.\n\nPré-requisito: Só escolhido no 1º nível.",
+      "page": "168–169",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Só escolhido no 1º nível.",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:MUVIANO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            168,
+            169
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8ffdfe60e85e89b0",
+    "name": "Noção do Perigo",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Com essa Virtude o Personagem é avisado pelo seu Cosmo, em qualquer situação que venha a ferir ou prejudicar o Personagem dentro do seu Domínio.",
+      "page": "169",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:NOÇÃO DO PERIGO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            169
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "edff5cb4f7f8deff",
+    "name": "Olhos de Deus",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro com essa Habilidade é capaz de lutar com seus olhos totalmente fechados, vendo seus inimigos através de puro Cosmo e recebe +1 Ação de Ataque e +1 de Modificador Positivo na Perícia Asterismo. O Cavaleiro perde automaticamente esses Modificadores ao abrir os olhos e gastando assim uma ação de movimento parcial para retornar a esse estado caso abra os olhos.",
+      "page": "169",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:OLHOS DE DEUS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            169
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e3ac06071e1be951",
+    "name": "Perito",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Com essa Virtude o Personagem pode trocar o Atributo chave de uma Perícia. Por Exemplo Liderança que tem Atributo chave Força o jogador pode trocar para Sentidos e todos os Testes agora serão baseados em Sentidos e não mais em Força.",
+      "page": "169",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:PERITO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            169
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8af499154b4c78dc",
+    "name": "Portadores de Ikhor",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "São aqueles que receberam dos Deuses, o sangue divino em suas veias ou banhadas suas Armaduras. Essa característica permite que o Cavaleiro se torne praticamente imortal. Em termos de jogo o Personagem pode uma vez por missão escapar de uma morte certa e sua Armadura recebe o Acessório Especial “Sangue Divino” permitindo  despertar a Armadura Divina (Ver superar Limites).",
+      "page": "169",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:PORTADORES DE IKHOR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            169
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f27f5dec385daf27",
+    "name": "Posição de Lótus",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro em uma luta quando estiver em posição de lótus recebe +1 Ação de Defesa, +1 na Proteção da Armadura. O Cavaleiro perde esse Modificador caso fique atordoado saindo da posição, perdendo todos os Modificadores. Voltar ou entrar na posição requer uma ação de movimento parcial.",
+      "page": "169",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:POSIÇÃO DE LÓTUS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            169
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "2b3110282826754c",
+    "name": "Predestinado",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Você foi treinado desde garoto por um Cavaleiro Lendário de Ouro  ou de Prata, escolhido por um Deus ou até pela própria Armadura fazendo de você o seu próximo sucessor. O jogador escolhe uma Armadura (Classe Prata ou Ouro) e quando tiver o Nível e pré-requisitos necessários para assumir essa vestimenta você é convocado a assumir o seu lugar.",
+      "page": "169–170",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:PREDESTINADO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            169,
+            170
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "876a16434af7769c",
+    "name": "Proteção da Estrela Cósmica",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro recebe + 2 de Modificador Positivo em todos nos Testes de Resistência que envolva um Atributo a escolha do Jogador. O Atributo, uma vez escolhido, não pode ser mudado. Pode ser Comprado mais de uma vez, escolhendo diferentes Atributos.",
+      "page": "170",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:PROTEÇÃO DA ESTRELA CÓSMICA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            170
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "04df2f7397ed4648",
+    "name": "Psicocinese",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Habilidade de mover objetos com a mente. Também utilizado para o ataque (nas ações de ataque); não podendo ser usado de “ajuda” para outros golpes.\n\nBronze: move/ergue 10 kg causando Nível de Ataque 3 ou +1 no Teste de Força.\n\nPrata: move/ergue 200 kg causando Nível de Ataque 5 ou + 3 no Teste de Força.\n\nOuro: move/ergue 400 kg causando Nível de Ataque 10 ou +5 no Teste de Força.",
+      "page": "170",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:PSICOCINESE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            170
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e860f4e9894af03d",
+    "name": "Receptáculo",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O corpo do Personagem tem uma capacidade maior para sustentar Cosmo Energia. O corpo do Cavaleiro Libera +2 pontos de Cosmo Energia extra como se fosse um receptáculo. Para isso o Cavaleiro precisa ter uma característica que identifique essa Virtude como: tatuagens, olhos fechados, posição, recolher espíritos e etc.",
+      "page": "170",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:RECEPTÁCULO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            170
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "bb5b0b1be0fd9601",
+    "name": "Reencarnação das Eras",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Você foi e é um Cavaleiro muito valioso para o seu Deus e ele em retribuição aos seus feitos transcendeu sua alma, o transformando em anjo, o que protege sua alma dos outros Deuses e lhe permite reencarnar toda vez que seu Deus está na Terra para lutar ao seu lado. O Personagem escolhe um Deus como inimigo principal e contra ele e seus guerreiros recebe\n\n+2 de Modificador Positivo em todos os Testes de Resistência e é imune aos efeitos da barreira que protege o Santuário desse Deus e é imune a sua Barreira D ivina. No 10º Nível a Armadura do Cavaleiro se transforma em uma Glória (ver Armadura s). No 20º Nível a Armadura do Cavaleiro através de um Milagre Divino pode se transformar em Divina quando em Combate contra seu inimigo principal. Personagens com essa Virtude são alvos prioritários do exército do Deus inimigo. Exemplo no anime: Seiya e Pandora.",
+      "page": "170",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:REENCARNAÇÃO DAS ERAS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            170
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "201252fb279f9eb6",
+    "name": "Reflexos Rápidos",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro recebe + 5 de Modificador Positivo em todos os Testes de Resistência que envolvam Técnicas de Controle da Natureza.",
+      "page": "170",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:REFLEXOS RÁPIDOS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            170
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e92d7dbfd4b89071",
+    "name": "Sábio",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro possui uma Perícia com 5 graduações, não importa se ele possui a Graduação do Atributo associado. Válido para pericias que tenham Sentidos e Cosmo como Atributo chave.",
+      "page": "171",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:SÁBIO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            171
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8aa2ac95ebfba5eb",
+    "name": "Sekishiki",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "É uma rara manifestação do cosmo, que permite ao usuário interagir com almas de formas diversas que desperta junto com o Cosmo. O Personagem eleva 1 Nível de Poder de todas as Técnicas que envolvam espíritos. O seu uso custa 1 condensar. O Personagem começa o jogo com a Habilidade Natural abaixo: Véu dos mortos  Permite ao Personagem interagir com as almas de fantasmas. Esta é a habilidade mais básica do sekishiki, a habilidade de atrair e se comunicar com almas.",
+      "page": "171",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:SEKISHIKI",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            171
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "bfcffea12059a68f",
+    "name": "Semideuses",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "São os frutos do relacionamento entre mortais e imortais. Durante a série foram poucos os semideuses mostrados. O Personagem começa o jogo com as Habilidades Naturais a baixo: Eterno O Personagem não envelhece como humanos comuns, mas sim 1 ano a cada 3 passados. Velocidade Divina Seus corpos são adaptados ao combate, tudo ao seu redor funciona mais devagar e supera a Velocidade, mesmo entre Cavaleiros, classificação de Velocidade: Velocidade Massivamente Superada (+). Genética Divina Manifestam uma característica de combate que se identifica com seu Pai, por Exemplo o filho de Zeus imbuindo os punhos de energia elétrica, ao se utilizar de socos diretos parece estar portando uma lança de raios, somando +1 de Bônus aplicado ao dano.\n\nPré-requisito: Só escolhido no 1º nível.",
+      "page": "171",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Só escolhido no 1º nível.",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:SEMIDEUSES",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            171
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "cd0c682b327c2eb4",
+    "name": "Sensitivo",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro percebe a mínima interferência no Cosmo em uma área igual ao dobro do seu Domínio. Pode sentir alguém com a Cosmo Energia desperta ou não, sendo verdadeiros “radares” para encontrar Cosmos. O Personagem detecta qualquer Cosmo  dentro do seu Domíniox2 metros com +2 de Modificador Positivo. Pode marcar o dobro de pessoas caso tenha a Virtude Fotógrafo de Cosmo. Cavaleiros com Cosmo oculto são percebidos.",
+      "page": "171–172",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:SENSITIVO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            171,
+            172
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "16a79b9a5b192d92",
+    "name": "Sentidos Aguçados",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem nunca fica no Estado Surpres o. E seus sentidos são o dobro do normal adicionando +2 de Modificador Positivo nos testes de Sentido.",
+      "page": "172",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:SENTIDOS AGUÇADOS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            172
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b542b640260b4068",
+    "name": "Sortudo",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem nasceu abençoado com a Sorte pelos Deuses. O Jogador pode escolher durante a sessão 2 Cenários de Sorte.",
+      "page": "172",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:SORTUDO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            172
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "fb2922ca871fe110",
+    "name": "Taonias",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Os Taonias são guerreiros, originários das terras dos Sennins, que há várias gerações servem a Hakuryu, o Dragão Branco. Detentores de poderes míticos da natureza. Ao dominar as diversas técnicas de luta de diversas criaturas, os espíritos naturais  ou mitológicos entram em seus corpos e deixam uma marca visível em forma de tatuagem . A tatuagem é o receptáculo para  proteção que se materializa em trajes protetores graças a força interna dos guerreiros de alto escalão dos Taonias. Eles, n ormalmente, não interferem em assuntos que não tem relação com as terras Sennins, mas podem agir fora de suas terras quando a realidade estiver em grande perigo ou em buscas de aventuras. Traje Protetor Suas Armaduras são tatuagens protetoras que evoluem com o Personagem recebendo as devidas características de Classe, ou seja, no 10º Nível progride para Prata e no 20º Nível recebem os benefícios de uma Armadura de Ouro. Exímio Lutador  Por conhecerem diversas Técnicas de Luta podem desenvolver a Perícia Combate até a 9 graduação; seja ela Pericia do seu Estilo de Combate  ou Não. Se a Perícia já for uma Perícia do Estilo de Combate  escolhido; o Personagem começa o jogo com Combate 3 Graduações.\n\nPré-Requisito:  Só escolhido no 1º nível.",
+      "page": "172–173",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Só escolhido no 1º nível.",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:TAONIAS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            172,
+            173
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3880ba92072558bc",
+    "name": "Telepata",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O poder de ler e falar com os outros através da mente. O Cavaleiro ler a mente de todas as pessoas que estão dentro de seu Domínio e antecipa todas as suas ações ampliando assim sua Velocidade, classificação de Velocidade: Velocidade Massivamente Superada (++) . Consegue identificar mentiras e ilusões. É impossível resistir ao telepata sem identificar ou conhecer o Cavaleiro, para isso é preciso um Teste de Ação de Percepção Extrassensorial (Dif. Lendária [30]) que só é permitido se o telepata demostrar de alguma forma ou o alvo desconfiar de algo (bem fundamentado).  Se o telepata tiver o Atributo Cosmo maior que o alvo, não há como impedir a leitura (apenas uma ação extraordinária de Milagre). Se o alvo passar no Teste e descobrir que está sendo “lido” é preciso queimar 1 ponto de Cosmo/rodada se não quiser ter a mente “lida”.",
+      "page": "173",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:TELEPATA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            173
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "7ccab45ba7b92f5d",
+    "name": "Território",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro ao lutar em seu Santuário  ou fora dele ao custo de 1 ponto de Cosmo  espalha seu Cosmo pelo seu Domínio (ver sistema) e nesse espaço o alvo ficará em desvantagem em todos os Testes de Ação enquanto o combate durar.",
+      "page": "173",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:TERRITÓRIO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            173
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "c9eab48eec5ac3ac",
+    "name": "Vida Abençoada",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem NUNCA fica em desvantagem.",
+      "page": "173",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:VIDA ABENÇOADA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            173
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e0ef930b90f0be8c",
+    "name": "Vigor Cósmico",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro recebe + 5 de Modificador Positivo em todos os Testes de Resistência envolvendo Técnicas de Manipulação de Cosmo.",
+      "page": "173",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:VIGOR CÓSMICO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            173
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "358d217485cc6e4e",
+    "name": "Vitalidade",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem ganha + 20 pontos de vida e +2/nível.",
+      "page": "173",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:VITALIDADE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            173
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "d6bcb2b5632cdee2",
+    "name": "Vontade de Ferro",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro recebe + 5 de Modificador Positivo em todos os Testes de resistência envolvendo Técnicas Mentais ou Ilusórias.",
+      "page": "173",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:VONTADE DE FERRO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            173
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "930b9f77cefc0039",
+    "name": "Voo",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro por meio de seu poderoso cosmo, pode materializar um par de asas formadas por sua energia. O Personagem adquire o movimento Voo e pode voar ou andar no ar igual ao seu movimento e NUNCA cai (de forma natural ou não), pois são aparados por uma queda suave automaticamente como ação livre.  Suas asas dão uma aparência angelical e libera penas de energia quando ele se move.",
+      "page": "173–174",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Geral",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:GERAL:VOO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            173,
+            174
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f22fa1b7d0a93109",
+    "name": "Analítico",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem consegue analisar a situação, área ou inimigo encontrando estratégias que o ajude em combate, como: se aproveitar do terreno, atacar o ponto cego do inimigo, usar uma tática de combate. O Jogador faz um teste de combate  no início do combate, como\n\nAção Livre,  dificuldade Complexa [20] – Graduação da Perícia Percepção Extrassensorial do Cavaleiro, se for bem sucedido ficará em vantagem enquanto o combate durar.",
+      "page": "174",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:ANALÍTICO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            174
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "248a78b8586195d5",
+    "name": "Armas Próprias",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Os Deuses abençoaram sua Armadura com o dom de utilizar armas podendo assim atingir um Deus. A arma deve ser liberada pelo Mestre. A arma eleva 1 Nível de Ataque do Cavaleiro. No Status Bronze a arma deve ser física; Status Prata a arma não precisa mais ser física é criada pelo próprio Cosmo do Cavaleiro e quando Ouro a arma faz parte do Cavaleiro, seu corpo é sua arma, ela é agora uma extensão do seu corpo.",
+      "page": "174",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:ARMAS PRÓPRIAS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            174
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "2d6606981ad6ea18",
+    "name": "Artista Marcial",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "“Encontre sua cachoeira”. Diz Dohko a seu pupilo: “Há algo sobre o som da água que me acalma, me relaxa. Me sinto em paz, apenas observando aquele fluxo, assistindo o poder da água, e em como a água destrói, pensando sobre como a água pode fluir, pensando sobre como água não tem limites”  (Jon Jones) . Com essa Virtude o Cavalei  ro usa o poder e a disciplina das artes marciais para vencer a luta.  Isso faz com os ataques do inimigo causem - 1 de Bônus Aplicado ao dano.",
+      "page": "174",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:ARTISTA MARCIAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            174
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "d1f892dee754c06b",
+    "name": "Atento",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Ao usar cura rápida entre batalhas o Cavaleiro não recebe o Modificador Negativo de Sentido e pode usar cura rápida em movimento.",
+      "page": "175",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:ATENTO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            175
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b6bcae18fe1e7b4c",
+    "name": "Atordoador",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Precisa causar dano igual a 50% dos pontos de vida do inimigo para que ele fique atordoado. O normal é 70%.",
+      "page": "175",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:ATORDOADOR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            175
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "09aad3c6bc22893e",
+    "name": "Bloqueador Veloz",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Ganha +2 Ações de Defesa.  Pode ser comprado mais de uma vez.",
+      "page": "175",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:BLOQUEADOR VELOZ",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            175
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "89ea1b908f2027a5",
+    "name": "Brocador",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro troca Ações de Ataque e Defesa como achar melhor . O Jogador pode transformar até 4 Ações de ataque em 4 Ações de Defesa ou vice-versa.",
+      "page": "175",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:BROCADOR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            175
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "26f9014d4593f9f9",
+    "name": "Combatente Especialista",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Ganha + 2 pontos para distribuir nas Habilidades de Luta.",
+      "page": "175",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:COMBATENTE ESPECIALISTA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            175
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "14874b354cd7fa9d",
+    "name": "Combate Sujo",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "“Em um combate vale tudo”. Com essa Virtude o Cavaleiro usa de artimanhas “ilegais” para vencer a luta, como: jogar areia os olhos, furar os olhos, usar reféns, fingir.  Isso faz com os ataques do inimigo causem -1 de Bônus Aplicado ao dano.",
+      "page": "175",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:COMBATE SUJO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            175
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "73b195118b506e37",
+    "name": "Combo",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Ganha + 2 ações de ataque. Pode ser comprado mais de uma vez.",
+      "page": "175",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:COMBO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            175
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "30cebeef99552a9f",
+    "name": "Corpo de Diamante",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O corpo do Personagem é acostumado a ser castigado e a sofrer danos. Ganha +2 como um Bônus Natural de PA.",
+      "page": "175",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:CORPO DE DIAMANTE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            175
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ea34820e98f18574",
+    "name": "Cosmo Elevado",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Seu Cosmo é mais intenso e mais brilhoso que o normal, e você sabe todos os caminhos de destruição dos átomos que é a essência do Cosmo , sabendo disso você consegue ultrapassar a velocidade da luz rompendo as leis do Cosmo . O Personagem pode elevar o cosmo (dano) 2 graduações acima do seu limite de Vigor sem sofrer efeitos.",
+      "page": "175",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:COSMO ELEVADO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            175
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5bffc4e592075b0a",
+    "name": "Duelista",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem consegue ativar Habilidades, Dádivas e Técnicas durante um duelo. As ações para ativação são consideradas Ações Livres.",
+      "page": "175",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:DUELISTA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            175
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "83b92fed5e80201e",
+    "name": "Focado",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Ganha + 2 de Modificador Positivo nos Testes de Ações da Manobra Ataque de Foco. Pode ser comprado mais de uma vez.",
+      "page": "175–176",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:FOCADO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            175,
+            176
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "47eb1d87614ac347",
+    "name": "Guia",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Com essa Virtude o Personagem tem o dom de prever os ataques dos inimigos recebendo assim +2d nas ações de defesa.  Essa Virtude anula Punho de Luz.",
+      "page": "176",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:GUIA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            176
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ee2ca264833a000c",
+    "name": "Iniciativa Aprimorada",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem está sempre se aproximando mais rápido da velocidade da luz. Classificação de Velocidade: Velocidade Massivamente acima da Velocidade da Luz (+++).",
+      "page": "176",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:INICIATIVA APRIMORADA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            176
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "db29546fece789d7",
+    "name": "Insistência Divina",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Você é abençoado por seu Deus de tal maneira que quando você está lutando em nome dele ou lutando para salvar pessoas do Santuário, ele recebe 10 + Vigor% de pontos de vida extra.",
+      "page": "176",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:INSISTÊNCIA DIVINA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            176
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a35ceb4e47841b59",
+    "name": "Liso",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem é especialista em escapar de imobilizações. O Personagem ganha +2 de Modificador Positivo nos Testes de Ação com a característica Sustentada e preserva sua PA, caso não consiga escapar.",
+      "page": "176",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:LISO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            176
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8040112489e49df3",
+    "name": "Lutador Experiente",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A experiência em campo de batalha faz toda a diferença e esse Cavaleiro sabe como modificar a batalha a seu favor. Com essa Virtude o Cavaleiro pode alternar o turno de Combate como achar melhor, exceto para ações de ataque ou defesa. Exemplo: 2 ações de movimento + 1 ação de luta ou 2 ações de Cosmo  + 1 ação de luta entre outras possibilidades. Em um turno de combate normal o Cavaleiro tem: 1 ação de movimento + 1 ação de Cosmo + 1 ação de luta esse conjunto de ações equivale a um turno de combate.",
+      "page": "176",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:LUTADOR EXPERIENTE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            176
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3cb5c91c41dc5968",
+    "name": "Mente Fechada",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Alguns Santuários, com medo dos Cavaleiros Artistas , treinam seus guerreiros para lutar contra esse tipo de Cavaleiros, fortificando suas mentes e assim a defesa de seus Santuários. Vale ressaltar a raridade desses Cavaleiros, pois não é fácil resistir e não sucumbir as atuações da morte. O Personagem tem o direito de resistir a qualquer Habilidade ou Dádiva dos Cavaleiros Artistas que penetrem diretamente no cérebro.",
+      "page": "176",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:MENTE FECHADA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            176
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3c41500d47296dc4",
+    "name": "Mesmo Golpe 2X",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "“Nenhum golpe funciona duas vezes no mesmo Cavaleiro”. Com essa Virtude o Cavaleiro ao ser acertado por uma Técnica várias vezes fica mais resistente podendo até ficar imune. Para cada vez que for atingido pela mesma Técnica , depois da primeira , o Personagem recebe +5 de Modificador Positivo Cumulativo no Teste de Resistência. Se o resultado da\n\nResistência superar o Poder Cósmico 10 pontos acima o Cavaleiro não sofre dano.",
+      "page": "176–177",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:MESMO GOLPE 2X",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            176,
+            177
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "17cf441943470b5d",
+    "name": "Precognição",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro consegue compensar quando sua velocidade  é menor do que a de seu adversário, através de uma precognição desenvolvid a por seu grande talento como guerreiro, o que lhe permite antecipar todos os golpes de seu adversário, independentemente da velocidade que tem seus ataques, já que ele sabe onde seu oponente atacará antes mesmo deste desferir o golpe. Quando o Personagem estiver lutando contra um inimigo que possua a Velocidade de Iniciativa ou Estágio de Sentido superior, o usuário da Precognição recebe +4 Ações de Defesa.",
+      "page": "177",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:PRECOGNIÇÃO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            177
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "d33507cb272b7298",
+    "name": "Punho de Luz",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Seus golpes são tão rápidos que os inimigos não conseguem bloqueá-los. Seu inimigo defende seus ataques com -2d. Essa Virtude anula guia.",
+      "page": "177",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:PUNHO DE LUZ",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            177
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "bc690b5db65dd22a",
+    "name": "Punho Furioso",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Seus ataques causam 12 + 2 /5 Níveis do Cavaleiro de dano. Somado ao final do ataque. Pode ser comprado mais de uma vez.",
+      "page": "177",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:PUNHO FURIOSO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            177
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b766840b3ca52f86",
+    "name": "Recuperação Rápida",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro não sofre os efeitos cumulativos após se reanimar para seguir batalhando.",
+      "page": "177",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:RECUPERAÇÃO RÁPIDA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            177
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8123fcad3f98b08b",
+    "name": "Sustentador",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem é especialista em prender e segurar seus alvos até a morte. O Personagem ganha +2 nos Testes de Ação com a característica Sustentada.",
+      "page": "177",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:SUSTENTADOR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            177
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "4d8d368a275870d7",
+    "name": "Velocista",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem consegue trocar seu movimento em combate para correr sem receber os Modificadores Negativos.",
+      "page": "177",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Combate",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:COMBATE:VELOCISTA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            177
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b2ff9253b8f10359",
+    "name": "Adicionar Big Bang",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem aprimora sua Técnica deixando-a mais poderosa. O Jogador adiciona 1 Big Bang extra a sua Técnica. Essa Virtude pode ser escolhida mais de uma vez. Cada Big  Bang aumenta +1 o custo da Técnica.\n\nPré-Requisito:  Técnica com Slot vazio.",
+      "page": "177–178",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Técnica com Slot vazio.",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:ADICIONAR BIG BANG",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            177,
+            178
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "7aaf59232adbb841",
+    "name": "Alquimista",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem desenvolve a capacidade de criação e manipulação de cristais  de Oricalco (uma matéria que muda de estado físico conforme a vontade do usuário ). Adquirindo o conhecimento Manipulação de Cristais Avançado.",
+      "page": "178",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:ALQUIMISTA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            178
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "593f778ea5860707",
+    "name": "Arte da Morte",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Permite ao Personagem Artista utilizar uma Técnica enquanto estiver atuando. O Jogador pode utilizar uma Técnica ao mesmo tempo que ativar Habilidade/Dádiva do tipo Continua ou Sustentada. Custa 1 condensar.",
+      "page": "178",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:ARTE DA MORTE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            178
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "393f216f739b5f79",
+    "name": "Artesão de Técnicas",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem tem vocação e aptidão para desenvolver, criando do zero, ou aperfeiçoar e ensinar novas Técnicas. O Personagem pode fazer combinações de Big Bangs e criar novas Técnicas, com o consentimento do mestre, durante as aventuras.",
+      "page": "178",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:ARTESÃO DE TÉCNICAS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            178
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "4b3fa313a8e3c8a0",
+    "name": "Ascensão",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro pode anular +1 Sentido em Técnicas que desorientam o alvo, como:  Destruição dos 5 sentidos/Sinfonia da morte em um único ataque. O seu uso custa 1 condensar.",
+      "page": "178",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:ASCENSÃO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            178
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "cc363cf3fc9795fb",
+    "name": "Bloqueador de Técnicas",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem é treinado em defender Técnicas podendo defende-las também como Ação de Reação . O Personagem recebe + 2 de Modificador Positivo nos Testes de Ação da Asterismo para bloquear Técnicas e se falhar não recebe o Modificador Negativo e tem direito, se falhar criticamente, a um Teste de\n\nResistência.",
+      "page": "178",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:BLOQUEADOR DE TÉCNICAS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            178
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "998044e4c8449b19",
+    "name": "Conhecedor",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro é um gênio na arte de transformar seu Cosmo, conhecendo uma infinidade de Técnicas. O Personagem pode conhecer o dobro do seu Modificador de Cosmo e assim acrescentar o dobro de Técnicas a sua lista de golpes conhecidos.",
+      "page": "178",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:CONHECEDOR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            178
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "4daca6f05b734c53",
+    "name": "Cosmo Ascendente",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro ganha + 1 de Modificador Positivo n o Asterismo e eleva 1 Nível de Dano as Técnicas de Manipulação de Cosmo.",
+      "page": "178–179",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:COSMO ASCENDENTE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            178,
+            179
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "c6d514d5dcefcf9a",
+    "name": "Cosmo Mental",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro ganha + 1 de Modificador Positivo n o Asterismo e eleva 1 Nível de Dano as Técnicas Mentais ou Ilusórias.",
+      "page": "179",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:COSMO MENTAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            179
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "84b6a8885580c457",
+    "name": "Cosmo Natural",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro ganha + 1 de Modificador Positivo no Asterismo e eleva 1 Nível de Dano as Técnicas de Controle da Natureza.",
+      "page": "179",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:COSMO NATURAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            179
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b7fb73e46af0c4f1",
+    "name": "Cosmo Violento",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro + 1 de Modificador Positivo n o Asterismo e eleva 1 Nível de Dano as Técnicas Físicas.",
+      "page": "179",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:COSMO VIOLENTO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            179
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "801993147f9018cb",
+    "name": "Dançarino Estelar",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem recebe + 2 de Modificador Positivo nos TAP da Perícia Asterismo. Pode ser comprado várias vezes.",
+      "page": "179",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:DANÇARINO ESTELAR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            179
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "1b06202aff755a12",
+    "name": "Defensor de Técnicas",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem é especialista na Manobra de C ombate Refletir Técnicas. O Personagem recebe +2 na somatória da Jogada para a Manobra de Técnica Refletindo.",
+      "page": "179",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:DEFENSOR DE TÉCNICAS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            179
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f033a498a92b83dc",
+    "name": "Dois Cosmos",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro desenvolve uma Natureza de Cosmo extra diferente da principal. Adiciona uma Natureza extra e uma Técnicas da nova Natureza. Exemplo: Mentais ou Ilusórias e Físico.",
+      "page": "179",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:DOIS COSMOS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            179
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "cdc74cee5e0f3514",
+    "name": "Dois Elementos",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro Pode usar dois tipos de elementos. E suas Técnicas baseadas nesses elementos elevam 1 Nível de Dano.\n\nHabilidade Especial do Cosmo (Relâmpago de Zeus): Esta Virtude com os elementos Ar\n\n+ Água combinada com a Virtude Semideus [GERAL] (qualquer Deus) permite ao Cavaleiro liberar o relâmpago que pode matar os deuses. São a manifestação do próprio Zeus em forma de vingança divina para “consertar” as coisas. Este poder anula , automaticamente, Barreira Divina igual ou inferior ao  Nível do Usuário x 2 ou concede Nível de Modificador Positivo na Manobra Duelo de Cosmo. Só é permitido 2 personagens com essa característica no mundo da narrativa; um Relâmpago puro (Essência Boa) e um Relâmpago negro (Essência Mau). O Relâmpago de Aiolia de Leão e o do Titã Céos, ambos do Episódio G, são exemplos deste poder.",
+      "page": "179–180",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:DOIS ELEMENTOS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            179,
+            180
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "11e07d869f20ee92",
+    "name": "Especialista em Cosmo",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem é especialista em expandir seu Cosmo ao máximo. O Personagem ganha +2 nos Testes de Ação da Manobra de Combate Duelo de Cosmo.",
+      "page": "180",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:ESPECIALISTA EM COSMO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            180
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "c0d92395699731f7",
+    "name": "Especialista em Técnicas",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem pode utilizar 2 Técnicas diferentes no mesmo turno. O jogador utiliza todas as suas ações de ataque para uma Técnica e todas as ações de defesa para utilizar a outra Técnica. A segunda Técnica NÃO pode ter o Big Bang Primordial Dano. O custo é normal para cada Técnica mais 1 condensar.",
+      "page": "180",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:ESPECIALISTA EM TÉCNICAS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            180
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "eeb7b41db22d50c3",
+    "name": "Expansão de Domínio",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Os Sentidos do Personagem são mais apurados que o normal. O Personagem recebe +2 na somatória de Domínio como Domínio Extra. Essa Virtude pode ser comprada várias vezes.",
+      "page": "180",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:EXPANSÃO DE DOMÍNIO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            180
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "785dc83ee4d9db49",
+    "name": "Foco em Técnicas",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Personagem eleva 2 o Nível de Dano das Técnicas. Pode ser comprado mais de uma vez. O seu uso custa 1 condensar.",
+      "page": "180",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:FOCO EM TÉCNICAS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            180
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "cf3717f2b36dd156",
+    "name": "Gênio do Combate",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem consegue aprender Técnicas sem precisar de um Mestre que o ensine, sendo capaz de se adaptar as mais adversas condições e, graças aos seus olhos especiais, pode analisar as Técnicas de um oponente e aprendê -las durante um Combate. Para entender e assimilar como funciona a Técnica o Jogador faz um Teste de Ação da Perícia Asterismo , como ação livre, tendo sucesso, o Cavaleiro memoriza e pode desenvolvê-la – Dif. Normal [10] para Bronze, Difícil [15] para Prata e Complexa [20] para Ouro. Para utilizar a Técnica o Jogador faz um Teste de Ação da Perícia Treinamento, como ação livre, se obtiver sucesso (mesma Dificuldade acima) ele aprende permanentemente (ocupando o espaço adequado) a Técnica e já pode usar no próximo turno. A dificuldade não muda, mesmo vendo a mesma Técnica mais de uma vez e falha crítica impossibilita o jogador de aprender essa Técnica permanentemente.",
+      "page": "180–181",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:GÊNIO DO COMBATE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            180,
+            181
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "bb49fee3690b5c17",
+    "name": "Golpe Letal",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A sua Técnica eleva 1 Nível de Dano nas Armaduras. O seu uso custa 1 condensar.",
+      "page": "181",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:GOLPE LETAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            181
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e5f84dd6080e1e8d",
+    "name": "Grande Explosão",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem consegue em uma só Técnica unir duas Técnicas  ou dois elementos da natureza em um só ataque. As Técnicas devem ser, obrigatoriamente, da mesma Natureza de Cosmo. O jogador eleva 2 Níveis de Dano das Técnicas. O seu uso custa 1 condensar.  O cavaleiro define o elemento/Técnica Principal + Secundário.\n\nPré-requisito: A Virtude Dois Elementos ou Natureza Poderosa.",
+      "page": "181",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "A Virtude Dois Elementos ou Natureza Poderosa.",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:GRANDE EXPLOSÃO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            181
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "7f9b4228b26954b3",
+    "name": "Guerreiro Elemental",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Com essa Virtude o Personagem eleva 1 Nível de Poder da Técnica  quando utiliza um elemento ligado ao seu signo em suas Técnicas. O seu uso custa 1 condensar.",
+      "page": "181",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:GUERREIRO ELEMENTAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            181
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f31a13963e795b75",
+    "name": "Incremento Extra",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Jogador acrescenta +1 graduação no incremento escolhido.",
+      "page": "181",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:INCREMENTO EXTRA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            181
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "d965c02f3d01cceb",
+    "name": "Mestre",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Permite ao Personagem aperfeiçoar suas Técnicas utilizando Incrementos. O Personagem adquire 1 graduação no Incremento escolhido. Pode ser adquirido 2 vezes.",
+      "page": "181–182",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:MESTRE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            181,
+            182
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "62a2ee7f1e1aea53",
+    "name": "Natureza Poderosa",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro ultrapassou os limites habituais permitindo acessar níveis mais profundos do Cosmo. Técnicas baseadas na mesma Natureza de Cosmo elevam 1 Nível de Dano.",
+      "page": "182",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:NATUREZA PODEROSA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            182
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f5123b763f9dbcce",
+    "name": "Potencializar Big Bang",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Permite ao Cavaleiro elevar o poder do big Bang  da sua Técnica. Diminuindo 1  o valor do Teste de confirmação. O mestre deve ser sensato em não permitir certas alterações.",
+      "page": "182",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:POTENCIALIZAR BIG BANG",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            182
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3f3adb6bdbff5e22",
+    "name": "Segredo Mortal",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sua Técnica é mais poderosa que as demais, mas possui um ponto fraco. A Técnica do Personagem é 1 Nível de Poder acima das de mesmo Status e 1 Nível de Dano . Mas se o Jogador obtiver o resultado 1 em sua jogada de Asterismo, p ermite ao inimigo visualizar seu ponto fraco e ataca-lo.  O Inimigo que percebeu a vulnerabilidade pode atacar no mesmo turno (Velocidade Superada ou maior) ou na próxima utilização a Manobra de Combate Trespassar como ação livre, sempre que for alvo da Técnica.  O seu uso custa 1 condensar.",
+      "page": "182",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:SEGREDO MORTAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            182
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "09dc28ef567a0671",
+    "name": "Signo Transgressor",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Permite ao Cavaleiro aprender uma Técnica que seja de um signo diferente do seu. O Personagem não obedece ao pré-requisito memória da Armadura.",
+      "page": "182",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:SIGNO TRANSGRESSOR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            182
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5308f17f714893be",
+    "name": "Slot Extra",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem ultrapassa os limites da Técnica deixando -a mais poderosa. O Jogador adiciona 1 Slot extra a sua Técnica. Essa Virtude permite ultrapassar os limites de  Slot da classe da Técnica.",
+      "page": "182",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:SLOT EXTRA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            182
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "6bfb3ccc2a225bf5",
+    "name": "Técnica A Distância",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Você pode lançar a Técnica em outro local em que você não esteja. Sendo preciso para isso apenas saber onde se encontra o Cosmo do inimigo. A Distância de alcance da Técnica é aumentada até Nível do Personagem metros, basta o alvo estar dentro dessa distância  ou que esteja marcado com a Virtude Fotografo de Cosmo (não importa se está dentro da nova distância) que o alvo pode ser atingido. O seu uso custa 1 condensar.",
+      "page": "182–183",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:TÉCNICA A DISTÂNCIA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            182,
+            183
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "711bc4c990eafdc9",
+    "name": "Técnica Adicional",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro adquire mais 1 Técnica de sua Natureza de Cosmo Principal. Essa Virtude pode ser comprada mais de uma vez.",
+      "page": "183",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:TÉCNICA ADICIONAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            183
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "42c6631ecffcbbb7",
+    "name": "Técnica Duradoura",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Suas Técnicas duram mais que as demais. Some + 1 turno a duração da Técnica. O seu uso custa 1 condensar.",
+      "page": "183",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:TÉCNICA DURADOURA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            183
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "49da4455aad8f1ef",
+    "name": "Técnica Penetrante",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sua Técnica consegue causar mais danos ao inimigo por penetrar mais fundo no corpo do alvo. O inimigo perde 2d na parada de dados nos Testes de Ação de resistência. O inimigo sempre jogará pelo menos 1 dado, mesmo que fique com zero em sua parada de dados. O seu uso custa 1 condensar.",
+      "page": "183",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:TÉCNICA PENETRANTE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            183
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8a7e8f616838e413",
+    "name": "Teleguiada",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro consegue guiar a Técnica a distância mudando a trajetória em direção ao alvo. O usuário ataca o alvo com uma Técnica (do tipo raio ou cone); Se o alvo da Técnica obtiver sucesso contra o Poder Cósmico  do usuário, o mesmo pode, como Ação Livre, fazer a Técnica retornar ao alvo, fazendo com que ele necessite refazer o Teste de resistência, agora com +1 de Modificador Negativo no Poder Cósmico.",
+      "page": "183",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:TELEGUIADA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            183
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "67214f5b3a5917c9",
+    "name": "Venenoso",
+    "type": "virtue",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem consegue colocar 2 efeitos em um ataque de veneno. Pode ser comprado mais de uma vez. Custa 1 condensar.",
+      "page": "183",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "",
+      "category": "Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "virtue:TÉCNICA:VENENOSO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            183
+          ]
+        }
+      }
+    }
+  }
+]

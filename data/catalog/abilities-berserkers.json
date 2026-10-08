@@ -1,0 +1,385 @@
+[
+  {
+    "_id": "1c557dca5b7acd6d",
+    "name": "Chacina Brutal",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro Berserker, em um acesso de fúria, lança-se contra seu inimigo com gestos brutais e violentos. Com cada golpe que atinge seu alvo, ele deixa uma marca que acumula dano implacavelmente, esmagando o corpo do oponente em um furioso banho de sangue. Cada ataque é um ato de brutalidade que deixa seus inimigos horrorizados e incapazes de resistir à sua fúria crescente.\n\nSistema: A cada 10 ataques que atinjam o alvo o Personagem ganha um Bônus Aplicado +1 de dano (Máximo de +10). Exemplo: Se nesse turno o Personagem acertou 20 ataques, então no próximo turno seus ataques causam +2 de dano (de Bônus Aplicado) e se nesse turno ele acerte mais 10 ataques no próximo turno ele causará +3 de dano.\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "583",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Berserkers. Nível de referência no livro: 21. Conferir aquisição conforme evolução e status.",
+      "category": "Berserkers",
+      "level": 21,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[LUTA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "berserkers:ability:21:CHACINA BRUTAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            583
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "730e6a89915fe435",
+    "name": "Cicatrizes",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Raras são as batalhas em que não há um rio de sangue com os Berserkers. Em um ato de pura brutalidade, o Cavaleiro Berserker, ativa sua constelação com gestos brutais. A violência da energia de Ares flui através dele enquanto ele avança em direção ao inimigo. Cada golpe brutal que ele desfere impede a cura do adversário e faz com que seu sangue jorre incessantemente. A cena é uma carnificina, com o Berserker se tornando a personificação da destruição. Seu inimigo fica enfraquecido, incapaz de se recuperar o u conter a hemorragia causada por seus golpes brutais.\n\nSistema: Inibe qualquer tipo de cura do inimigo. Exceto Milagre  e a Técnica Cura [Prata][MANIPULAÇÃO DE COSMO].\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "583",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Berserkers. Nível de referência no livro: 22. Conferir aquisição conforme evolução e status.",
+      "category": "Berserkers",
+      "level": 22,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[PERMANENTE] [DIA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "berserkers:gift:22:CICATRIZES",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            583
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "91af465726f221e4",
+    "name": "Chamado do Espírito da Vingança",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro Berserker, em um ataque violento e brutal, ativa seu poder cósmico, anulando qualquer defesa ou bônus protetor do alvo. Sua investida feroz penetra nas defesas do inimigo, deixando-o vulnerável e à mercê de seus ataques. Os golpes atingem seu oponente com brutalidade, eliminando qualquer obstáculo que tente protegê-lo, tornando-o presa fácil para o Berserker.\n\nSistema: O Personagem anula qualquer tipo de defesa ou bônus de defesa extra s proveniente de Habilidades, Dádivas. Exceto Técnicas, Virtudes. O Cavaleiro precisa ser bem sucedido no Teste de Ação de Ataque de Foco para o efeito funcionar.\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "583–584",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Berserkers. Nível de referência no livro: 23. Conferir aquisição conforme evolução e status.",
+      "category": "Berserkers",
+      "level": 23,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[CONTÍNUA/REAÇÃO] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "berserkers:ability:23:CHAMADO DO ESPÍRITO DA VINGANÇA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            583,
+            584
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ff4ae707eec35dd6",
+    "name": "Contrato",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O implacável Cavaleiro Berserker, empunha seu cosmo com brutalidade enquanto a violência de Ares, o Deus da Guerra, flui através dele. Em um gesto brutal e sádico, ele conecta seu cosmo ao do inimigo, fazendo com que este adquira desvantagens irreversíveis. Enquanto O Berserker recebe vantagens, seu inimigo se encontra enfraquecido e incapaz de resistir aos ataques do Berserker. A cena é um redemoinho de caos e agressão, onde o poder de Ares domina completamente o campo de batalha.\n\nSistema: O Cavaleiro faz a Manobra de Combate Ataque de Foco, como ação livre, e se for bem sucedido adquire vantagem e causa desvantagem. O Alvo de contrato não pode atacar outros inimigos a não ser o Cavaleiro do contrato, o mesmo não se aplica ao Berserker. A cada turno que o inimigo continue vivo ele faz um Teste de resistência, se falhar o alvo perde 1 de PA . Esta Habilidade só acaba quando a luta terminar e não consta como uma Habilidade continua. Se o inimigo estiver sobre o efeito do contrato TODAS as Habilidades e Dádivas do Berserker duram a luta inteira.\n\nAção: Ação de Cosmo + Ação de movimento parcial\n\nResistência: Não.",
+      "page": "584",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Berserkers. Nível de referência no livro: 24. Conferir aquisição conforme evolução e status.",
+      "category": "Berserkers",
+      "level": 24,
+      "action": "Ação de Cosmo + Ação de movimento parcial",
+      "resistance": "Não.",
+      "combination": "",
+      "duration": "[LUTA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "berserkers:gift:24:CONTRATO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            584
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "0943d186b46c3b51",
+    "name": "Fera do Medo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A fúria toma conta do Cavaleiro Berserker, enquanto ele canaliza a violenta energia de Ares, o Deus da Guerra. Seu cosmo se torna uma tempestade de brutalidade, e ele se torna imune ao medo e a todas as tentativas de controlá -lo. Nada pode sustentar ou conter a fúria impiedosa, tornando-o uma força imparável que esmaga seus inimigos com selvageria.\n\nSistema: O Cavaleiro é imune a medo e quaisquer Habilidades, Dádivas e Técnicas que tentem sustenta-lo.\n\nEspecial: 60% de chance de resistir a qualquer Técnica/Habilidade ou Dádiva com efeitos de Controle ou Sustentado.\n\nCombinação: Liderança, %.",
+      "page": "584",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Berserkers. Nível de referência no livro: 25. Conferir aquisição conforme evolução e status.",
+      "category": "Berserkers",
+      "level": 25,
+      "action": "",
+      "resistance": "",
+      "combination": "Liderança, %.",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "berserkers:ability:25:FERA DO MEDO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            584
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a59d42e96499979a",
+    "name": "Ênio",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Berserker, se lança impiedosamente contra seu inimigo, incorporando a fúria de Ares. A cada turno que a luta se prolonga, a brutalidade de seus ataques aumenta, acrescentando dano adicional a cada golpe. Seu oponente sofre as consequências da crescente fúria de e mesmo com a proteção da armadura, não consegue escapar de seu castigo implacável.\n\nSistema: Quanto mais a luta se prolongar mais o Berserker castiga seu alvo. A cada turno que o inimigo é atingido o Berserker adiciona +2 ao dano ao final do turno sem PA (máximo de 50).\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "584–585",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Berserkers. Nível de referência no livro: 26. Conferir aquisição conforme evolução e status.",
+      "category": "Berserkers",
+      "level": 26,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[CONTÍNUA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "berserkers:gift:26:ÊNIO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            584,
+            585
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "53b02988d70353a5",
+    "name": "Ira",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro imerge no calor da batalha, desencadeando uma série de ataques brutais. Seus golpes bem-sucedidos alimentam sua fúria, e em um momento de ira transbordante, ele evoca as lanças dos mirmidões, que caem como chuva ardente sobre seus inimigos, infligindo estragos devastadores. Seu adversário enfrenta a fúria de Ares , sofrendo o impacto das lanças divinas.\n\nSistema:  O Cavaleiro faz a Manobra de Combate  Ataque de Foco , como ação livre . A Habilidade atinge quem estiver em seu Domínio.\n\nOuro: 40 + Nível de dano Físico.\n\nAção: Ação de Cosmo + Ação de movimento parcial\n\nResistência: Não\n\nCombinação: Treinamento, &",
+      "page": "585",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Berserkers. Nível de referência no livro: 27. Conferir aquisição conforme evolução e status.",
+      "category": "Berserkers",
+      "level": 27,
+      "action": "Ação de Cosmo + Ação de movimento parcial",
+      "resistance": "Não",
+      "combination": "Treinamento, &",
+      "duration": "[INSTANTÂNEA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "berserkers:ability:27:IRA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            585
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "992146d1b76c40bd",
+    "name": "Instinto Assassino",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Berserker, é consumido pela fúria à medida que a batalha avança. Quando seu inimigo está à beira da derrota, ele desencadeia sua habilidade brutal que ignora todas as barreiras de defesa e controle mental, golpeando o adversário com uma força esmagadora e devastadora. O inimigo é despojado de qualquer proteção, enfrentando a ira implacável do Berserker.\n\nSistema: Quando o inimigo estiver com menos de 15% dos pontos de vida o Cavaleiro causa danos sem contar o PA do alvo. Nesse estado o Berserker Ignora todo tipo de Estado de Paralisia seja Técnica, Habilidade, Dádivas ou Virtudes.",
+      "page": "585",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Berserkers. Nível de referência no livro: 28. Conferir aquisição conforme evolução e status.",
+      "category": "Berserkers",
+      "level": 28,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "berserkers:gift:28:INSTINTO ASSASSINO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            585
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "859a9ae3023804d3",
+    "name": "Espartano",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Ares, o deus da guerra, infunde o Berserker, com sua energia brutal. O Cavaleiro invoca sua fúria, empunhando sua lança de puro Cosmo imbuída de chamas ardentes. A lança arremessada em um golpe  furioso atinge o inimigo, causando uma explosão de dano devastador e incinerando tudo em seu caminho.\n\nSistema: O Personagem faz a manobra de combate Ataque de Foco e se acertar uma lança perfura o inimigo causando seu Nível de dano e se o inimigo não passar no Teste de resistência com -1 de Modificador Negativo cumulativo, leva novamente o dano até passar no Teste de resistência ou a duração da Dádiva acabar.\n\nEspecial: Ao final do ataque o Berserker tem 5 + Nível% de chance de Trespassar ( Ver Manobra de Combate Duelo).\n\nAção: Ação de Cosmo + Ação de movimento parcial\n\nResistência: Não\n\nCombinação: Combate, %.",
+      "page": "585–586",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Berserkers. Nível de referência no livro: 29. Conferir aquisição conforme evolução e status.",
+      "category": "Berserkers",
+      "level": 29,
+      "action": "Ação de Cosmo + Ação de movimento parcial",
+      "resistance": "Não",
+      "combination": "Combate, %.",
+      "duration": "[INSTANTÂNEA] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "berserkers:ability:29:ESPARTANO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            585,
+            586
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e9a382e0a02e14f2",
+    "name": "Lança de Fogo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Em um frenesi de brutalidade, o Berserker ergue seu punho em chamas, invocando a própria lança de Ares, a Ênio, em uma explosão de fúria. Labaredas de fogo se espalham, consumindo tudo em seu raio de ação, enquanto a lança queima seus inimigos e destrói o campo de batalha. O Berserker canaliza a ira e a emoção do combate, transformando-se em uma força imparável, como se Ares, o deus da guerra, lutasse através dele.\n\nSistema: Toda jogada feita pelo Personagem recebe um Modificador Positivo. Modificadores:  +2 de Modificador Positivo nos TdA, +1 de Bônus Aplicado aos Danos (Lança de Ares), eleva 1 Nível da Técnica (O Canto de Guerra).\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nCombinação: Combate, +\n\nHabilidade Especial do Cosmo (Avatar Berserker): A Virtude Devoção Divina combinada com esta Habilidade aumenta o Modificador Positivo para +1.",
+      "page": "586",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Berserkers. Nível de referência no livro: 30. Conferir aquisição conforme evolução e status.",
+      "category": "Berserkers",
+      "level": 30,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "Combate, +",
+      "duration": "[CONTÍNUA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "berserkers:gift:30:LANÇA DE FOGO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            586
+          ]
+        }
+      }
+    }
+  }
+]

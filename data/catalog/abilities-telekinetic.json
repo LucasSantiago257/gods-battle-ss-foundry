@@ -1,0 +1,309 @@
+[
+  {
+    "_id": "68c92b9d54cc2e28",
+    "name": "Especialização Telecinético",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem desenvolve a Psicocinese, a Habilidade de mover objetos com a mente. Permite ser utilizado para mesclar técnicas e ataques com poder psíquico.\n\nSistema: A cada 5 Níveis o Telecinético recebe os Modificadores:\n\nEspecial: O Alcance das Dádivas do Telecinético é igual ao seu Domínio.\n\nEspecial: A Virtude Psicocinese [GERAL] ou Muviano com habilidade natural Psicocinese aumenta +1 o Atributo Força (Equivalente).\n\nTabela: Telecinético\n\nNível Telecinético Atributo Força (Equivalente) Limite da Força Telecinética\n\n5º 5 400 kg\n\n10º 6 500 kg\n\n15º 7 1000 kg\n\n20º 8 2000 kg\n\n25º 10 5000 kg\n\n30º 12 ∞",
+      "page": "135",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Telecinético. Nível de referência no livro: 5. Conferir aquisição conforme evolução e status.",
+      "category": "Telecinético",
+      "level": 5,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "specialization"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "telekinetic:specialization:5:Especialização Telecinético",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            135
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "05d9077e080ba54d",
+    "name": "Atração",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Após anos de treinamento para dominar as forças gravitacionais do cosmo, o Cavaleiro eleva sua energia. Com um único movimento da mão direita, ele ativa a habilidade, e toda a matéria ao redor começa a ser puxada violentamente em sua direção, rachando o so lo e dobrando árvores pelo impacto. O inimigo, incapaz de resistir, é arrastado contra sua vontade, colidindo brutalmente com a força esmagadora.\n\nSistema: O Cavaleiro atrai qualquer objeto permitido pelo limite da sua Força. Alvos ou Objetos podem resistir ao poder atrativo.\n\nAção: Ação de Movimento Parcial.\n\nResistência: Sim, Teste resistido de Força.\n\nEspecial: O Cavaleiro pode manipular a gravidade ao seu redor para se mover rapidamente. Permite dobrar seu movimento.",
+      "page": "135–136",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Telecinético. Nível de referência no livro: 6. Conferir aquisição conforme evolução e status.",
+      "category": "Telecinético",
+      "level": 6,
+      "action": "Ação de Movimento Parcial.",
+      "resistance": "Sim, Teste resistido de Força.",
+      "combination": "",
+      "duration": "[INSTANTANÊA] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "telekinetic:gift:6:ATRAÇÃO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            135,
+            136
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "39bdbd65ea307f02",
+    "name": "Repulsão",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Após árduos treinamentos para controlar o fluxo cósmico e expandir sua energia ao máximo, o Cavaleiro concentra seu cosmo na palma da mão, gerando uma aura prateada e vibrante. Com um único gesto, uma força repulsiva irrompe como uma tempestade, distorcendo o ar e arrancando rochas do solo, enquanto o impacto varre tudo à sua frente. O inimigo é lançado como um projétil descontrolado, sua armadura se despedaça no ar, e seu corpo é arrastado por quilômetros, deixando um rastro de destruição por onde passa.\n\nSistema: O Cavaleiro repele qualquer objeto permitido pelo limite da sua Força. Alvos ou Objetos podem resistir ao poder repulsivo.\n\nBronze: 10 de Dano\n\nPrata: 20 de Dano\n\nOuro: 30 de Dano\n\nAção: Ação de Movimento Parcial.\n\nResistência: Sim, Teste resistido de Força.\n\nCombinação: Telecinese, &\n\nEspecial: Essa Dádiva pode ser usada para varrer uma grande área, liberando uma onda de telecinese destrutiva em todas as direções, causando uma enorme destruição. Para isso, o usuário se concentra (Ação de Movimento Total + Ação de Ataque Total) e para cada turno concentrado ele dobra seu Domínio para efeito da Dádiva.",
+      "page": "136",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Telecinético. Nível de referência no livro: 8. Conferir aquisição conforme evolução e status.",
+      "category": "Telecinético",
+      "level": 8,
+      "action": "Ação de Movimento Parcial.",
+      "resistance": "Sim, Teste resistido de Força.",
+      "combination": "Telecinese, &",
+      "duration": "[INSTANTANÊA] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "telekinetic:gift:8:REPULSÃO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            136
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "95dacdd523137487",
+    "name": "Cristalocinese",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Após anos de meditação e controle do cosmo, o Cavaleiro domina a arte de cristalizar sua Cosmo Energia em barreiras impenetráveis. Com um gesto ágil, ele ergue a mão e sua aura se condensa em uma parede cristalina translúcida, que surge instantaneamente diante do ataque inimigo.\n\nSistema: O Usuário recebe +1 no Teste de Resistência contra a Técnicas.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial.\n\nResistência: Não.\n\nCombinação: Telecinese, + %\n\nEspecial: O Usuário tem 5 + Modificador de Nível % de chance de repelir a Técnica . Anulando assim a Virtude Teleguiado.",
+      "page": "136–137",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Telecinético. Nível de referência no livro: 10. Conferir aquisição conforme evolução e status.",
+      "category": "Telecinético",
+      "level": 10,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial.",
+      "resistance": "Não.",
+      "combination": "Telecinese, + %",
+      "duration": "[CONTÍNUA] [REAÇÃO] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "telekinetic:gift:10:CRISTALOCINESE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            136,
+            137
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ff6ae982952139b7",
+    "name": "Cristalocinese II Rede de Cristal",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Após árduo treinamento para moldar seu cosmo em matéria cristalina, o Cavaleiro eleva sua energia, fazendo sua aura cintilar como um diamante. Com um gesto preciso, ele lança fios quase invisíveis que se expandem no ar, formando uma rede brilhante e indest rutível. Quando o inimigo a toca, a estrutura se contrai instantaneamente, prendendo seus membros e cortando sua pele com lâminas finas, enquanto o solo ao redor se racha com a pressão.\n\nSistema: O Usuário espalha fios de cristais em todo o seu Domínio imobilizando seus alvos. Quem entrar no Domínio do Telecinético fica automaticamente no Estado Imobilizado.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial.\n\nResistência: Sim, Teste Resistido de Força.\n\nEspecial: Os alvos que obtiverem sucesso no Teste de Resistência e continuarem dentro do Domínio do Usuário recebem o Modificador Negativo de - 1 em seu Atributo Velocidade e aumenta para -2 se utilizar o ataque corpo a corpo.\n\nEspecial: A Dádiva Zona [ARTISTA], Unificação com o universo [SÁBIO] e a Virtude Sensitivo [GERAL] percebem automaticamente os fios estendidos e sua área.",
+      "page": "137",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Telecinético. Nível de referência no livro: 12. Conferir aquisição conforme evolução e status.",
+      "category": "Telecinético",
+      "level": 12,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial.",
+      "resistance": "Sim, Teste Resistido de Força.",
+      "combination": "",
+      "duration": "[CONTÍNUA] [ALVO]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "telekinetic:gift:12:CRISTALOCINESE II REDE DE CRISTAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            137
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "345b2295dc47eb73",
+    "name": "Fotocinese",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Após um rigoroso treinamento o Cavaleiro pode gerar a luz das estrelas, que é incrivelmente destrutiva. Ele ergue as mãos ao céu, absorvendo o brilho das constelações enquanto sua aura dourada incendeia o ar. Com um movimento rápido , dispara múltiplos feixes de luz ardente que descem como estrelas cadentes, rasgando a paisagem e reduzindo rochas a poeira. O inimigo, atingido em cheio, sente seu corpo ser consumido pela energia cósmica, sua armadura se fragmenta e, em segundos, ele é engolido por uma explosã o fulminante que o reduz a cinzas.\n\nSistema: O Telecinético mescla seu poder psíquico aos seus Ataques e Técnicas. O Usuário recebe +1 de Bônus Aplicado ao Dano ou +1 no Nível de Dano da Técnica.\n\nAção: Ação de Cosmo.\n\nResistência: Não.\n\nCombinação: Telecinese, +",
+      "page": "137",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Telecinético. Nível de referência no livro: 14. Conferir aquisição conforme evolução e status.",
+      "category": "Telecinético",
+      "level": 14,
+      "action": "Ação de Cosmo.",
+      "resistance": "Não.",
+      "combination": "Telecinese, +",
+      "duration": "[INSTANTANÊA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "telekinetic:gift:14:FOTOCINESE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            137
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "dbe4a6f0b04b671a",
+    "name": "Manipulação Total Esmagamento",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Após um treinamento intenso em controle mental e manipulação de forças, o Cavaleiro concentra sua energia em seu cosmo e com um movimento rápido de sua mão, ele fixa seu alvo. Com um gesto certeiro, o inimigo é suspenso no ar, esmagado pelas forças telecinéticas que comprime sua armadura, dobrando metal e quebrando ossos, enquanto o solo ao redor se estilhaça com a pressã o. O impacto é devastador, deixando o oponente incapacitado, com o corpo esmagado e uma dor insuportável, antes de ser lançado contra o chão.\n\nSistema: O Telecinético pode manipular o inimigo como um objeto por um turno. O efeito desejado fica a cargo do mestre e da cena narrada.\n\nAção: Ação de Cosmo + Ação de Movimento Total.\n\nResistência: Sim, Teste Resistido de Força.\n\nEspecial: O Cavaleiro pode esmagar/dobrar o alvo causando dano severo.\n\nBronze: 10 de Dano + Dor Moderada (Ossos trincados) - +1 de Mod. Negativo\n\nPrata: 20 de Dano + Dor Insuportável (Ossos quebrados) - +2 de Mod. Negativo\n\nOuro: 30 de Dano + Dor Severa (Ossos esfarelados) - +3 de Mod. Negativo\n\nAção: Ação de Movimento Parcial.\n\nResistência: Sim, Teste resistido de Força.\n\nCombinação: Telecinese, &",
+      "page": "137–138",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Telecinético. Nível de referência no livro: 16. Conferir aquisição conforme evolução e status.",
+      "category": "Telecinético",
+      "level": 16,
+      "action": "Ação de Cosmo + Ação de Movimento Total.",
+      "resistance": "Sim, Teste Resistido de Força.",
+      "combination": "Telecinese, &",
+      "duration": "[INSTANTÂNEO] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "telekinetic:gift:16:MANIPULAÇÃO TOTAL ESMAGAMENTO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            137,
+            138
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "961c1211435ea267",
+    "name": "Satélite",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O ápice da Telecinese. Após um árduo treinamento para manipular a gravidade, o Cavaleiro ergue as mãos, concentrando seu cosmo em uma esfera negra pulsante entre seus dedos. Com um grito feroz, ele a lança ao céu, onde ela cresce e se torna um vórtex gravitacional. O solo treme,  rochas e destroços são arrancados da terra e elevados ao ar, formando um satélite destrutivo. O inimigo é sugado contra sua vontade, seu corpo esmagado pela pressão até ser lançado contra a massa de destroços, desaparecendo na escur idão do colosso flutuante.\n\nSistema: O Usuário consegue selar o alvo dentro do seu satélite imobilizando-o e impedindo que ele queime Cosmo Energia. Durante o selamento o alvo perde 1 ponto do Cosmo/turno.\n\nAção: Ação de Cosmo + Ação de Movimento Total.\n\nResistência: Sim, Teste Resistido de Força.\n\nCombinação: Selamento, +\n\nEspecial: Pode ser usado para selamento de Deuses substituindo um artefato.",
+      "page": "138",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Telecinético. Nível de referência no livro: 18. Conferir aquisição conforme evolução e status.",
+      "category": "Telecinético",
+      "level": 18,
+      "action": "Ação de Cosmo + Ação de Movimento Total.",
+      "resistance": "Sim, Teste Resistido de Força.",
+      "combination": "Selamento, +",
+      "duration": "[SUSTENTADA] [ALVO]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "telekinetic:gift:18:SATÉLITE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            138
+          ]
+        }
+      }
+    }
+  }
+]

@@ -1,8 +1,8 @@
 # Saint Seiya — A Batalha dos Deuses para FoundryVTT
 
-Fichas e ativação de técnicas do sistema UmD10+, com destino ao **FoundryVTT 13 build 350**. Versão **0.2.0, em desenvolvimento**. A criação de personagens na versão 0.1.1 foi confirmada pelo usuário no servidor; a nova automação ainda precisa ser validada dentro do Foundry.
+Fichas, compêndios e ativação de técnicas do sistema UmD10+, com destino ao **FoundryVTT 13 build 350**. Versão **0.3.0, em desenvolvimento**. A criação de personagens na versão 0.1.1 foi confirmada pelo usuário no servidor; a nova automação ainda precisa ser validada dentro do Foundry.
 
-A versão 0.2.0 acrescenta ativação de técnicas com gasto de CE, penalidade de Asterismo e resistência pelo chat. Mantém a correção da criação de cavaleiros. Para atualizar, encerre o mundo e use **Sistemas de Jogo → Atualizar**; depois inicie o mundo e recarregue a página.
+A versão 0.3.0 inclui **589 entradas em seis compêndios nativos**, com descrições, requisitos, origem e páginas do livro. Na aba **Poderes**, os atalhos abrem os catálogos para arrastar itens à ficha. Consulte a [cobertura e o uso dos compêndios](docs/compendios.md). Para atualizar, encerre o mundo e use **Sistemas de Jogo → Atualizar**; depois inicie o mundo e recarregue a página.
 
 ## O que já existe
 
@@ -11,6 +11,7 @@ A versão 0.2.0 acrescenta ativação de técnicas com gasto de CE, penalidade d
 - Rolagens de atributos, perícias e resistências: maior d10, +2 por 10, −2 por 1, modificadores, dificuldade e vantagem/desvantagem. Seguem o modo de visibilidade de rolagens escolhido no Foundry.
 - Equipamento de uma armadura por vez, com PA e CE derivados; PV da armadura independentes.
 - Arrastar conteúdos de Item/compêndio para a ficha cria cópias; a origem fica registrada.
+- Catálogos de virtudes, habilidades/dádivas dos estilos e evoluções, habilidades naturais, combinações de Cosmo, criaturas, poderes divinos e Cosmos Divinos, organizados por origem.
 - Botão para criar um compêndio do mundo com seis modelos iniciais. São modelos editáveis, não o catálogo integral do livro.
 - Ativação de técnicas: CE extra/reservada, elevação, queima de PV confirmada, teste de Asterismo e cálculo de dano no chat. Resistência com token próprio selecionado. Consulte o [guia de técnicas](docs/tecnicas.md).
 
@@ -28,7 +29,7 @@ Consulte o [guia de instalação por manifesto](docs/instalacao-manifesto.md). C
 
 ## Instalação manual no servidor
 
-1. Extraia o ZIP `gods-battle-ss-0.2.0.zip`. Ele contém a pasta `gods-battle-ss`.
+1. Extraia o ZIP `gods-battle-ss-0.3.0.zip`. Ele contém a pasta `gods-battle-ss`.
 2. Com o servidor Foundry parado, envie essa pasta para `<pasta de dados>/Data/systems/gods-battle-ss/`. `system.json` deve ficar diretamente nessa pasta, sem uma pasta intermediária.
 3. Reinicie o Foundry e crie um **mundo de teste** escolhendo “Saint Seiya — A Batalha dos Deuses”.
 4. Crie um Actor do tipo **Cavaleiro**. Edite o nome, atributos, estilo e recursos. As alterações são salvas ao editar os campos.
@@ -57,7 +58,7 @@ Bestas, legiões, monstros e deuses não possuem fichas especializadas nesta ver
 
 Node 22+ e Python 3. Instale as dependências com `npm ci`; rode `npm test`, `npm run check` e `npm run build`. As dependências são apenas de desenvolvimento; o sistema instalado usa as bibliotecas do próprio Foundry.
 
-`npm run check` compila os templates com Handlebars e cria `dist/preview.html`. `npm run build` gera um ZIP apenas com os arquivos necessários à instalação e o manifesto externo. `python tools/package.py --release` prepara as URLs de uma release sem publicá-la. Os testes de regras e fichas usam um contrato mínimo da API, não um servidor Foundry real.
+`npm run check` compila os templates com Handlebars e cria `dist/preview.html`. As fontes versionadas estão em `data/catalog/`. `npm run packs` compila os bancos LevelDB com a CLI oficial do Foundry; `npm run build` compila os compêndios e gera o ZIP instalável. Depois de compilar, `python tools/package.py --release` prepara as URLs de uma release sem publicá-la. O empacotamento rejeita bancos desatualizados. Os testes de compêndios fazem round-trip real dos bancos. Os testes de regras e fichas usam um contrato mínimo da API, não um servidor Foundry real.
 
 API utilizada: [ActorSheetV2 v13](https://foundryvtt.com/api/v13/classes/foundry.applications.sheets.ActorSheetV2.html), [ItemSheetV2](https://foundryvtt.com/api/v13/classes/foundry.applications.sheets.ItemSheetV2.html), [modelos de dados](https://foundryvtt.com/article/system-data-models/) e [compêndios](https://foundryvtt.com/article/compendium/).
 

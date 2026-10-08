@@ -1,0 +1,386 @@
+[
+  {
+    "_id": "ef587bcc6d8db4af",
+    "name": "Senhora da Guerra",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Deusa da Guerra e da Estratégia ensina seus Cavaleiro s que não é a força que se iguala a sabedoria, mas a sabedoria que se iguala a força.  O Cavaleiro, em meio à batalha, fecha os olhos por um instante, buscando a orientação da Deusa da Guerra e da Estratégia, sua constelação protetora brilha no céu. Seu cosmo irradia em uma aura dourada, e ele adquire uma sabedoria instantânea sobre as táticas de combate de seu inimigo. Com movimentos ágeis e precisos, ele se adapta, superando o estilo de luta de seu adversári o. Seu inimigo se vê encurralado, incapaz de prever os movimentos do Cavaleiro.\n\nSistema: O Jogador, ao final do turno de combate, rola 1d10 para um teste de confirmação e se o resultado for maior que 8 (Ouro) o alvo perde 1 dado da Perícia Combate.\n\nEspecial: A Virtude Analítico combinada a esta Dádiva diminui 1 a dificuldade do teste de confirmação.\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "557",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Cavaleiros de Ouro. Nível de referência no livro: 21. Conferir aquisição conforme evolução e status.",
+      "category": "Cavaleiros de Ouro",
+      "level": 21,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[LUTA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "gold:ability:21:SENHORA DA GUERRA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            557
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ac81b703ca3c5b5c",
+    "name": "Brilho Dourado",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cosmo do Cavaleiro passa a ser de um dourado que brilha intensamente, tornando-se tão radiante quanto o Sol. Seus sentidos se aprofundam, e ele ganha um conhecimento inigualável do cosmo que permeia todas as coisas. Seus movimentos se tornam fluidos, e ele compreende a essência cósmica do universo.\n\nSistema: O Cavaleiro recebe +1 de Modificador Positivo em todos os seus Testes de Ação.",
+      "page": "557",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Cavaleiros de Ouro. Nível de referência no livro: 22. Conferir aquisição conforme evolução e status.",
+      "category": "Cavaleiros de Ouro",
+      "level": 22,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "gold:gift:22:BRILHO DOURADO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            557
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e992928bc455e9cf",
+    "name": "Corpo de Combate",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro após um golpe devastador  que o faz  tombar, no  entanto, antes de cair, ele canaliza sua Cosmo Energia de maneira intensa e determinada. Sua constelação protetora resplandece no céu noturno. a benção de sua constelação o envolve, concedendo-lhe forças renovadas. Ele se levanta com uma aura dourada ainda mais intensa, surpreendendo seu inimigo. Agora, fortalecido, retoma a luta com uma determinação ainda maior.\n\nSistema: Quando seus Pontos de Vida chegar a 0 o Cavaleiro  recebe 50 + Nível pontos de vida como ação livre.\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "557",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Cavaleiros de Ouro. Nível de referência no livro: 23. Conferir aquisição conforme evolução e status.",
+      "category": "Cavaleiros de Ouro",
+      "level": 23,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[REAÇÃO]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "gold:ability:23:CORPO DE COMBATE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            557
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "84663209fef120c5",
+    "name": "Telepatia",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Os Cavaleiros de Status Ouro  podem se conectar e conversar pela mente , inclusive em outras dimensões. Além de perceber qualquer Cavaleiro  com Status Ouro  dentro do seu Domínio.\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "557–558",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Cavaleiros de Ouro. Nível de referência no livro: 24. Conferir aquisição conforme evolução e status.",
+      "category": "Cavaleiros de Ouro",
+      "level": 24,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "gold:gift:24:TELEPATIA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            557,
+            558
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "705e3e73b2673da3",
+    "name": "Mesmo Golpe 2X",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "No calor da batalha,  enquanto luta, o Cavaleiro  começa a compreender a natureza d os ataques inimigos, usando sua percepção e habilidade natural. A cada golpe que o atinge, ele se adapta, seus movimentos tornam -se mais ágeis e eficientes. Com a cosmo energia fluindo em sintonia com sua constelação, rapidamente domina a arte do contra-ataque. Seu oponente, surpreso, logo percebe que está enfrentando um Cavaleiro cuja habilidade evolui a cada golpe. No final, o Cavaleiro está antecipando os movimentos com precisão, graças à sua capacidade única de adaptação.\n\nSistema: O Cavaleiro recebe +1 de modificador positivo e na parada de dados  igual ao múltiplo de vezes que foi atacado a contar a partir da segunda vez atingido para os Testes de resistências incluí Técnicas, Habilidade e Dádivas, exceto Virtudes. Exemplo: O Cavaleiro é atingido pela 3x vez pela Técnica  Pó de diamante, então o jogador recebe +2 dados para os Testes de Resistência e +2 de Modificador Positivo. Exemplo2: O Cavaleiro é atingido pela aura de batalha pela segunda vez, então recebe +1 de proteção para todos os ataques da aura de batalha.\n\nEspecial: A Virtude Mesmo Golpe 2x combinada com esta Habilidade dobra os Modificadores Positivos.\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nCombinação: Treinamento, +",
+      "page": "558",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Cavaleiros de Ouro. Nível de referência no livro: 25. Conferir aquisição conforme evolução e status.",
+      "category": "Cavaleiros de Ouro",
+      "level": 25,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "Treinamento, +",
+      "duration": "[LUTA] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "gold:ability:25:MESMO GOLPE 2X",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            558
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e3cb27b038848688",
+    "name": "Área de Proteção",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro ergue seu cosmo com determinação, envolvendo o campo de combate com sua energia dourada. À medida que sua C osmo Energia se espalha, ele se sente fortalecido e abençoado pela proteção de Athena. Sua constelação brilha intensamente  no céu , conferindo-lhe força e coragem. O Dourado avança destemido, seus movimentos tornando-se mais precisos e poderosos. O inimigo percebe que enfrentar o Cavaleiro  nesse estado abençoado de cosmo é uma tarefa árdua, à medida que suas ações se tornam mais eficazes e sua determinação se intensifica.\n\nSistema: O Personagem tem direito a refazer um Teste  falho, como ação livre,  com Modificador Positivo de +1.\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nCombinação: Utilização de Cosmo, +",
+      "page": "558–559",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Cavaleiros de Ouro. Nível de referência no livro: 26. Conferir aquisição conforme evolução e status.",
+      "category": "Cavaleiros de Ouro",
+      "level": 26,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "Utilização de Cosmo, +",
+      "duration": "[REAÇÃO] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "gold:gift:26:ÁREA DE PROTEÇÃO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            558,
+            559
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e5307eec54e0913d",
+    "name": "Superar Limites",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro com os olhos cerrados  e aprofundando seu vínculo com sua constelação , se concentra em sua C osmo Energia, deixando -a fluir livremente por todo o seu ser. Seus movimentos tornam-se uma dança graciosa de energia, acompanhando o brilho de sua constelação no céu. À medida que abre os olhos, ele se sente uma extensão do cosmo, capaz de perceber e antecipar qualquer velocidade. Na batalha, ele se move com graça inigualável, equiparando e superando a velocidade de seu adversário. Seus ataques se tornam imparáveis, e o inimigo mal consegue acompanhá-lo, enfrentando um desafio que parece transcendental.\n\nSistema: O Personagem supera a velocidade do alvo. 1º Turno: Adaptação; 2 Turno: O Cavaleiro empata a velocidade do alvo, forçando os dois jogadores a testarem o Atributo Velocidade para saber quem ganha; 3 º Turno: O Cavaleiro supera a velocidade do alvo ganhando a iniciativa; a partir do 4 º Turno NADA, nem um Deus, supera a velocidade do Cavaleiro. Essa Habilidade desabilita qualquer vantagem de estágio, Virtude, Habilidade, Dádiva ou Técnica.\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "559",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Cavaleiros de Ouro. Nível de referência no livro: 27. Conferir aquisição conforme evolução e status.",
+      "category": "Cavaleiros de Ouro",
+      "level": 27,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[LUTA] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "gold:ability:27:SUPERAR LIMITES",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            559
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "968cc4da5ddcc901",
+    "name": "7º Sentido",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro mergulha em um treinamento intenso. Ele se encontra em “um santuário sagrado nas Montanhas da Morte” (por exemplo), onde as estrelas brilham intensamente. Sob o brilho de sua constelação, fecha os olhos e permite que sua Cosmo Energia flua como uma torrente incontrolável. Seu corpo é envolto em uma aura dourada, e as constelações se alinham acima dele. O cosmo irradia em uma explosão dourada, fazendo-o transcender seus limites mortais. Quando ele abre os olhos, seu corpo está envolto em uma armadura dourada cintilante, e sua aura se estende por todo o santuário. Sua força, velocidade e resistência são ampliadas. O Dourado agora possui o 7º Sentido em toda a sua plenitude, permitindo -lhe alcançar um nível de poder divino. Seus golpes são devastadores, e seu cosmo é tão avassalador que o inimigo é dominado pelo puro esplendor da constelação. O Cavaleiro é imparável, defendendo a justiça e a paz no universo com determinação inabalável.\n\nSistema: +1 Nível de Estágio de Cosmo.",
+      "page": "559–560",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Cavaleiros de Ouro. Nível de referência no livro: 28. Conferir aquisição conforme evolução e status.",
+      "category": "Cavaleiros de Ouro",
+      "level": 28,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "gold:gift:28:7º SENTIDO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            559,
+            560
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "22bc0d312d4be587",
+    "name": "Brilho do Sol",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro aprendeu a dominar a energia do Sol, e com um gesto firme, ele ergue sua mão em direção ao céu. Sua Cosmo Energia se eleva ao máximo, e sua armadura brilha com intensidade. Em um instante, ele canaliza todo o brilho do Sol, condensando -o em uma esfera ardente que se forma em sua mão. Com um grito de determinação, lança essa esfera de energia em direção ao inimigo. Ela se transforma em um poderoso raio de luz solar, que atravessa o campo de batalha a uma velocidade assombrosa, atingindo o adversário com uma explosão de energia deslumbrante. O inimigo é consumido pela intensidade da luz solar,\n\nSistema: O jogador faz um teste da Manobra de Combate Ataque de Foco  e caso acerte o raio causa 40 + Nível de dano cósmico.\n\nEspecial: Se esta Dádiva for usada em um lugar onde o Sol esteja à vista aumenta +10 de dano.\n\nEspecial: 5 + Nível% de chance de Trespassar (Ver Manobra de Combate Duelo ).\n\nAção: Ação de Cosmo + Ação de movimento parcial\n\nResistência: Não\n\nCombinação: Liderança, %",
+      "page": "560",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Cavaleiros de Ouro. Nível de referência no livro: 29. Conferir aquisição conforme evolução e status.",
+      "category": "Cavaleiros de Ouro",
+      "level": 29,
+      "action": "Ação de Cosmo + Ação de movimento parcial",
+      "resistance": "Não",
+      "combination": "Liderança, %",
+      "duration": "[INSTANTÂNEA] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "gold:ability:29:BRILHO DO SOL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            560
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a64ead1406d45f4a",
+    "name": "Avatar",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro determinado a proteger a justiça, ergue seu braço direito, com punho cerrado, enquanto seu cosmo se eleva ao máximo, com sua aura ardente dançando ao redor de seu corpo. O Dourado se torna um conduto para a ira de seu Deus e o poder cósmico flui por ele. Seu punho direito se envolve em labaredas douradas, cuja intensidade é tão imensa que faz a própria Terra tremer. Em sua outra mão, ele segura o lendário escudo sagrado, o Aégis, símbolo de proteção. Com uma determinação inabalável, ele desfere um golpe poderoso. As labaredas douradas se projetam do punho, como raios solares, atingindo as nuvens enquanto cortam o céu. A Dádiva permite que o Cavaleiro  canalize o poder do  seu Deus , infligindo um dano devastador ao inimigo. O Cavaleiro  se torna um avatar momentâneo da cólera divina, garantindo a proteção de seu deus e a vitória sobre as forças do mal.\n\nSistema: Toda jogada feita pelo Personagem recebe um Modificador Positivo. Modificadores:  +2 de Modificador Positivo nos TdA, +1 de Bônus Aplicado aos Danos, eleva 1 Nível da Técnica (Niké).\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nCombinação: Combate, +\n\nHabilidade Especial do Cosmo (Avatar da Esperança):  A Virtude Reencarnação das Eras ou Devoção Divina combinada com esta Habilidade aumenta 1 o Modificador Positivo.",
+      "page": "560–561",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Cavaleiros de Ouro. Nível de referência no livro: 30. Conferir aquisição conforme evolução e status.",
+      "category": "Cavaleiros de Ouro",
+      "level": 30,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "Combate, +",
+      "duration": "[CONTÍNUA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "gold:gift:30:AVATAR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            560,
+            561
+          ]
+        }
+      }
+    }
+  }
+]

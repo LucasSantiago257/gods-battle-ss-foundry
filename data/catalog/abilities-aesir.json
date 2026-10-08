@@ -1,0 +1,386 @@
+[
+  {
+    "_id": "6acac0d6a831d00f",
+    "name": "Coragem de Tyr",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Os Guerreiros de Odin são conhecidos por não temerem o medo.  Ele canaliza seu cosmo, fundindo-se com a constelação de Ursa Maior. Seu corpo resplandece, formando uma barreira de energia que irradia coragem e calma. Essa aura afasta o medo dos corações dos guerreiros de Asgard.\n\nSistema: Qualquer Técnica ou Habilidade/Dádiva usada para controlar o Personagem tem 40% de chance de falhar, automaticamente, além de ser imune a qualquer ação que instigue medo.\n\nAção: Ação de Cosmo\n\nCombinação: Treinamento, %",
+      "page": "551",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Aesir. Nível de referência no livro: 21. Conferir aquisição conforme evolução e status.",
+      "category": "Aesir",
+      "level": 21,
+      "action": "Ação de Cosmo",
+      "resistance": "",
+      "combination": "Treinamento, %",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aesir:ability:21:CORAGEM DE TYR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            551
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3d9ca27e0ed8676d",
+    "name": "Proteção Natural II",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Aesir em sintonia com sua constelação concentra seu cosmo. A energia cósmica flui por todo o seu corpo, fazendo com que sua armadura se funda com a natureza ao seu redor. Uma aura verde -azulada o envolve, fortalecendo sua defesa ao nível da própria terra, tornando-o quase invulnerável às investidas inimigas. Seu inimigo enfrenta uma muralha natural que desafia até mesmo os ataques mais poderosos.\n\nSistema: Imune a Técnicas , Virtudes, Habilidades e Dádivas de inimigos que utilizem um dos elementos: fogo, água, ar, terra (que não poderá ser modificado futuramente).",
+      "page": "551",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Aesir. Nível de referência no livro: 22. Conferir aquisição conforme evolução e status.",
+      "category": "Aesir",
+      "level": 22,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aesir:gift:22:PROTEÇÃO NATURAL II",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            551
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "348b2c40954ced8b",
+    "name": "Vidar",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Asgardiano assume uma postura defensiva firme. Com os gestos fluidos e precisos, ele concentra seu cosmo, permitindo que a energia cósmica flua pela terra e a natureza o envolva. Seus punhos se transformam em uma lança de gelo e sua armadura resplandece com um brilh o gélido. Cada soco que ele desfere é acompanhado por uma explosão de energia glacial, lançando chuvas de farpas de gelo que perfuram seu inimigo. Seu adversário se vê envolto por uma tempestade de frio.\n\nSistema: O Personagem faz um teste da Manobra de Combate Ataque de Foco e caso acerte seu Cosmo se transforma em uma lança de gelo, chuva de farpas de gelo entre outros que atingem o inimigo. Dano: Ouro: 30 de Dano + Nível + Pontos de Vida Trocados.\n\nEspecial: Pode trocar 2 pontos de vida por 1 ponto de dano somado ao final do ataque\n\nEspecial: 5 + Nível% de chance de Trespassar (Ver Manobra de Combate Duelo ).\n\nAção: Ação de Cosmo + Ação de movimento parcial\n\nResistência: Não\n\nCombinação: Liderança, %",
+      "page": "551–552",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Aesir. Nível de referência no livro: 23. Conferir aquisição conforme evolução e status.",
+      "category": "Aesir",
+      "level": 23,
+      "action": "Ação de Cosmo + Ação de movimento parcial",
+      "resistance": "Não",
+      "combination": "Liderança, %",
+      "duration": "[INSTANTÂNEA] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aesir:ability:23:VIDAR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            551,
+            552
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "6621bb93a493e6f5",
+    "name": "Freyr",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Aesir canaliza seu cosmo e se torna um com a constelação de Ursa Maior. Seus ataques incessantes têm um efeito debilitante no inimigo, causando fadiga e enfraquecendo gradualmente sua resistência, tornando-o vulnerávels. Seu adversário, exausto, luta para se manter em pé diante.\n\nSistema: Para cada ataque acertado o Personagem acumula 2% de acerto de status, ao final do turno ele joga a somatória se tiver sucesso o alvo perde 1 ponto de Vigor.\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "552",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Aesir. Nível de referência no livro: 24. Conferir aquisição conforme evolução e status.",
+      "category": "Aesir",
+      "level": 24,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[DESCANSO] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aesir:gift:24:FREYR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            552
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "dd6d15fd78e10af2",
+    "name": "Valir",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Asgardiano, após intensos treinamentos e conexão profunda com sua constelação, invoca o poder de Valir. Seus movimentos se tornam perfeitos e automáticos, concedendo -lhe acertos precisos em todas as suas ações de ataque e defesa. Seu inimigo se vê incapaz de contra-atacar. Como um guerreiro abençoado por Valir, ele domina a batalha com precisão impecável, tornando-se uma força incontrolável. Seus inimigos se veem impotentes diante da perfeição de seus movimentos.\n\nSistema: O Personagem adquire 1 Ação de luta.\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nCombinação: Combate, +",
+      "page": "552",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Aesir. Nível de referência no livro: 25. Conferir aquisição conforme evolução e status.",
+      "category": "Aesir",
+      "level": 25,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "Combate, +",
+      "duration": "[INSTANTÂNEA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aesir:ability:25:VALIR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            552
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ea3d2f9e201d3a9a",
+    "name": "Thor",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Aesir canaliza seu cosmo em um gesto majestoso, erguendo seu braço na direção das estrelas convoca o próprio Thor . A energia cósmica flui como um raio de luz em sintonia com a constelação de Ursa Maior. Uma tempestade de relâmpagos irrompe, envolvendo -o em um brilho eletrizante. Seu poder aumenta exponencialmente, permitindo que suas técnicas e ataques causem danos d evastadores. Seus inimigos são envoltos por essa energia elétrica, sofrendo com a fúria do trovão, incapazes de resistir.\n\nSistema: O Personagem eleva 1 Nível da Técnica e  1 Bônus Aplicado ao  dano. O alvo tem 50% de chance de ficar surdo com o som do trovão (Estado Desorientado).\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nCombinação: Asterismo, %",
+      "page": "552–553",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Aesir. Nível de referência no livro: 26. Conferir aquisição conforme evolução e status.",
+      "category": "Aesir",
+      "level": 26,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "Asterismo, %",
+      "duration": "[INSTANTÂNEA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aesir:gift:26:THOR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            552,
+            553
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "0883825ce0fe1ea7",
+    "name": "Benção de Eir",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro fecha os olhos e concentra seu cosmo na constelação de Ursa Maior. Seu gesto se assemelha ao de colher um fruto dourado no céu estrelado. Um brilho divino envolve -o enquanto a energia cósmica flui. Ele cria o Fruto da Deusa Eir, um símbolo de cura e renovação. Ao consumir esse fruto celestial, seu corpo se regenera e cura ferimentos.\n\nSistema: Quem comer a fruta dourada cura 70% dos seus pontos de vida e retira qualquer penalidade ou Estado que o aflija, inclusive efeitos de Técnicas.\n\nEspecial: O cavaleiro pode imbuir seu cosmo residual (5 pontos de cosmo permanente) e aumentar a duração da Benção de Eir por dias  ([continua] para [dias]) . O cosmo residual retornará ao Cavaleiro após o consumo da fruta.\n\nAção: Ação de Cosmo + Ação de Contato (comer)\n\nResistência: Não",
+      "page": "553",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Aesir. Nível de referência no livro: 27. Conferir aquisição conforme evolução e status.",
+      "category": "Aesir",
+      "level": 27,
+      "action": "Ação de Cosmo + Ação de Contato (comer)",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[CONTÍNUA] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aesir:ability:27:BENÇÃO DE EIR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            553
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "680138818c192955",
+    "name": "Huginn e Muninn",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Aesir, em uma clareira na Floresta de Asgard, eleva seu cosmo para se comunicar com os corvos espirituais que o circundam. Com gestos firmes, ele lança seu olhar para o céu estrelado, pedindo orientação. E dois corvos espirituais, Huginn e Muninn, aparecem a seu lado, mensageiros de Odin, respondem, revelando os segredos do inimigo e permitindo que o Cavaleiro  tome decisões estratégicas, surpreendendo seus adversários com sua perspicácia e táticas aprimoradas.\n\nSistema: O jogador faz uma pergunta ao Mestre que impõe uma dificuldade e o jogador faz o Teste da Perícia necessária. Considere que os corvos tem todas as Pericias que envolvem Sentidos e Cosmo  10 e os Atributos Cosmo  e Sentidos 9 . Só pode ser usado 1 vez por missão.\n\nAção: Ação de Cosmo + Ação de movimento total\n\nResistência: Não",
+      "page": "553–554",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Aesir. Nível de referência no livro: 28. Conferir aquisição conforme evolução e status.",
+      "category": "Aesir",
+      "level": 28,
+      "action": "Ação de Cosmo + Ação de movimento total",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[INSTANTÂNEA] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aesir:gift:28:HUGINN E MUNINN",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            553,
+            554
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "17184576e8c3b6f4",
+    "name": "Benção de Odin II",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Asgardiano, em um momento de extrema devoção, ergue os olhos para o céu e abre os braços, canalizando o poder de sua constelação e a benção de Odin. Uma aura dourada o envolve, e ele se torna o próprio guardião de Asgard, a Armadura de Odin o reveste, aumentando sua força e resistência. Seu inimigo, agora diante da majestosa Armadura de Odin, percebe a imensa disparidade de poder, temendo enfrentar um representante diret o dos deuses.\n\nSistema: O Personagem 1 vez por missão pode invocar a Armadura de Odin. Seu uso tem a duração 1 combate.\n\nAção: Ação de Cosmo\n\nResistência: Não Armadura de Odin\n\nEspecial: Só recebe dano por Cavaleiros que possuam o Sétimo sentido no estágio Ômega e por Técnicas de Ouro , caso contrário, não sofrendo dano por Técnicas, Habilidades ou Dádivas.\n\nEspecial: Todas as Armaduras Divinas desenvolvem asas funcionais (Virtude Voo).\n\nEspecial: Armadura de Odin possui o acessório especial Espada Longa. Considere com a Virtude Armas Próprias (Espada Longa).\n\nEspecial (Efeito Celestial): Todas as Armaduras Divinas são douradas e emitem um brilho divino e suas Técnicas e ações de luta são rastros de energia superando a Velocidade da Luz.",
+      "page": "554",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Aesir. Nível de referência no livro: 29. Conferir aquisição conforme evolução e status.",
+      "category": "Aesir",
+      "level": 29,
+      "action": "Ação de Cosmo",
+      "resistance": "Não Armadura de Odin",
+      "combination": "",
+      "duration": "[CONTÍNUA] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aesir:ability:29:BENÇÃO DE ODIN II",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            554
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "de8a5e8f759de354",
+    "name": "Sangue Viking",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "No ápice da luta, o Aesir  estende os braços aos céus, seu cosmo se intensifica até atingir uma conexão com o Valhalla. Uma trombeta ecoa, seguida por um estrondo de trovão, e os portões do reino dos deuses nórdicos se abrem. Os espíritos de seus companheiros caídos emergem, unindo -se a o Asgardiano  em uma formação imponente. Seu poder cresce exponencialmente, inspirando medo e reverência nos inimigos, que se veem diante de um exército celestial de valor inigualável. O ataque final é executado com tal força que nenhuma Classe da Armadura Pontos de Vida Proteção Cosmo Energia Cosmo Mínimo Divina 150 15 +15 7º Sentido Superado\n\nbarreira pode detê-lo, levando a vitória e garantindo a entrada de seus aliados no glorioso Valhalla após a batalha.\n\nSistema: Toda jogada feita pelo Personagem recebe o Modificador Positivo abaixo. Modificadores:  +2 de Modificador Positivo nos TdA, +1 de Bônus Aplicado aos Danos, eleva 1 Nível da Técnica.\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nCombinação: Treinamento, +\n\nHabilidade Especial do Cosmo (Avatar de Gelo): A Virtude Einherjar combinada com esta Habilidade aumenta 1 o Modificador Positivo.",
+      "page": "554–555",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Aesir. Nível de referência no livro: 30. Conferir aquisição conforme evolução e status.",
+      "category": "Aesir",
+      "level": 30,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "Treinamento, +",
+      "duration": "[CONTÍNUA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "aesir:gift:30:SANGUE VIKING",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            554,
+            555
+          ]
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,388 @@
+[
+  {
+    "_id": "a7dc6f7062a78c93",
+    "name": "Sementes do Mal",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "As Dríades são capazes de atacar usando sementes criadas pela própria Erís . Para lançar uma semente, a Dríade deve usar a manobra Ataque de Foco  como ação livre. Quando um alvo é atingido por uma Habilidade ou Dádiva das Dríades, ele tem direito a um Teste de\n\nResistência a cada turno. No entanto, se ele falhar no mesmo efeito em turnos subsequentes, seu Modificador Negativo aumenta em +1 e ele per de -1d na parada de dados cumulativo de Resistência para aquela Habilidade ou Dádiva específica. Cada teste deve ser tratado separadamente. Após a germinação da semente (que dura 5 turnos), tanto o Cavaleiro quanto o alvo sofrem os efeitos do último turno até o final da luta ou até que o alvo tenha sucesso no teste de\n\nResistência. Eris permite que uma dríade sustente mais de duas Habilidades o u Dádivas continuamente ativas. 2 Habilidades/Dádivas ativas no 21-22 3 Habilidades/Dádivas ativas no 23-24 4 Habilidades/Dádivas ativas no 24-25 5 Habilidades/Dádivas ativas no 26-27 6 Habilidades/Dádivas ativas no 28-29 Exemplo 1: Uma Dríade entra em combate com um Guerreiro Deus, e vencendo a iniciativa no 1º turno usa a Habilidade Planta Carnívora, como ação livre, faz o teste de Ataque de Foco e obtém sucesso, a semente atinge o alvo e a planta começa a germinar dentro do Guerreiro Deus. Os jogadores fazem suas ações de luta normalmente e no final do turno o Guerreiro Deus faz um teste de resistência de Vigor e obtém sucesso não sofrendo dano extra da Habilidade. No 2º turno o Guerreiro Deus falha e, recebe 20  de dano extra ao final do turno e perde - 1 dado na sua parada de dados e recebe - 1 de Modificador Negativo no próximo teste de resistência. No 3º turno o Guerreiro Deus tem sucesso e não recebe o dano extra ao final do turno e continua com -1 dado na sua parada de dados e recebe - 1 de Modificador Negativo para o próximo teste de resistência. No 4º turno o Guerreiro Deus falha, e recebe 40 de dano extra ao final do turno e perde - 2 dados na sua parada de dados e recebe - 2 de Modificador Negativo no próximo teste de resistência. No 5º turno o Guerreiro Deus falha, e recebe 50 de dano extra ao final do turno e perde - 3 dados na sua parada de dados e recebe - 3 de Modificador Negativo no próximo teste de resistência. Nos turnos subsequentes, enquanto o Guerreiro Deus, não obter sucesso no teste de resistência ele sofrerá 50  de dano extra ao final de cada turno e a duração da semente ficará ativa até o final do combate. Se o Guerreiro Deus for bem sucedido no teste de resistência todos os efeitos somem. Exemplo 2: Um Cavaleiro de Athena está lutando contra uma Dríade que lançou a sement1e de Arruda uma habilidade que suga o Cosmo do alvo. No primeiro turno, o Cavaleiro falha no teste de resistência e, portanto, recebe um modificador negativo de +1 e perde 1d na parada de dados de resistência. No segundo turno, o Cavaleiro falha novamente no teste de resistência, acumulando agora um modificador negativo de +2 e perdendo 2d na parada de dados de resistência. Se ele for atingido por outra habilidade da Dríade , sua parada de dados será completa, ou seja, sem penalidades. Após cinco turnos, a germinação da semente estará completa e o efeito da habilidade da Dríade durará até o final da luta ou até o Cavaleiro ter sucesso no teste de resistência. Se a Dríade lançar outras habilidades ou dádivas, cada uma delas terá que passar pelo teste de resistência separadamente. A regra permite que a Dríade mantenha mais de duas habilidades ou dádivas ativas ao mesmo tempo.\n\nEspecial: As Dríades podem usar a ação elevar o Cosmo para acelerar os efeitos de suas sementes e aumentar 1 turno de efeito.\n\nAção: Ação de Cosmo + Ação Livre\n\nResistência: Sim",
+      "page": "575–577",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Dríades. Nível de referência no livro: 21. Conferir aquisição conforme evolução e status.",
+      "category": "Dríades",
+      "level": 21,
+      "action": "Ação de Cosmo + Ação Livre",
+      "resistance": "Sim",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "dryads:ability:21:SEMENTES DO MAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            575,
+            576,
+            577
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "345e1b7227afe005",
+    "name": "Manto Natural",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro eleva seu Cosmo onde a energia das plantas e da deusa Eris preenche o ar. Com um gesto sereno, ele semeia uma pequena semente em seu próprio corpo. Seu cosmo flui pelas raízes imaginárias que crescem a partir dela, fortalecendo seu poder defensivo. Uma aura verde e espinhosa o envolve, tornando -o virtualmente impenetrável. Enquanto seus inimigos tentam atacá-lo, eles descobrem que suas ações são cada vez menos eficazes, pois a proteção vegetal se fortalece.\n\nSistema: O Cavaleiro coloca uma semente dentro de si que vai germinando e potencializando sua defesa. A semente absorve danos de ataques.\n\n1º turno de efeito: +1 PA\n\n2º turno de efeito: +2 PA\n\n3º turno de efeito: +3 PA\n\n4º turno de efeito: +4 PA\n\n5º turno de efeito: +5 PA\n\nAção: Ação de Cosmo\n\nEspecial: Qualquer ataque que utilize Habilidade/Dádiva é considerado ataque com Energia Cósmica.\n\nResistência: Não",
+      "page": "577–578",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Dríades. Nível de referência no livro: 22. Conferir aquisição conforme evolução e status.",
+      "category": "Dríades",
+      "level": 22,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[CONTÍNUA/REAÇÃO] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "dryads:gift:22:MANTO NATURAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            577,
+            578
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f943ea0cca666d4f",
+    "name": "Semente da Dor",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Fantasma de Eris  se impregna com  a cosmo energia das plantas e da deusa Eris que fluem intensamente. Com um gesto firme, ele insere uma pequena semente em seu coração. Seu cosmo flui pelas raízes imaginárias que crescem a partir dela, fortalecendo seus ataques. Uma aura verde e espinhosa o envolve enquanto ele move-se com agilidade e graça. Seus golpes, impregnados da energia vegetal e do caos de Eris, tornam -se poderosos e desordenados, desafiando os sentidos de seus inimigos.\n\nSistema: O Cavaleiro coloca uma semente dentro de si que vai germinando e potencializando seus ataques. A semente aumenta o dano da Dríade como dano extra para cada acerto efetivo.\n\n1º turno de efeito: +1 de Bônus Aplicado\n\n2º turno de efeito: +2 de Bônus Aplicado\n\n3º turno de efeito: +3 de Bônus Aplicado\n\n4º turno de efeito: +4 de Bônus Aplicado\n\n5º turno de efeito: +5 de Bônus Aplicado\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "578",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Dríades. Nível de referência no livro: 23. Conferir aquisição conforme evolução e status.",
+      "category": "Dríades",
+      "level": 23,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[CONTÍNUA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "dryads:ability:23:SEMENTE DA DOR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            578
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "0f6d9793b19b0160",
+    "name": "Raíz",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Fantasma de Eris, estende a mão, e uma semente negra e retorcida emerge de sua palma. Com um toque sinistro, ele implanta uma pequena semente nas profundezas do coração de seu inimigo. O cosmo energético da discórdia de Eris é canalizado através da semente, que germina e começa a criar raízes, reduzindo a mobilidade do alvo dificultando cada vez mais sua movimentação e aprisionando-o no caos.\n\nSistema: O Cavaleiro coloca uma semente dentro do alvo que vai germinando e literalmente criando raízes no Cavaleiro. Diminui a velocidade do alvo no decorrer do tempo.\n\n1º turno de efeito: -1 na tabela de Velocidade\n\n2º turno de efeito: -2 na tabela de velocidade\n\n3º turno de efeito: -3 na tabela de velocidade\n\n4º turno de efeito: -4 na tabela de velocidade\n\n5º turno de efeito: “Enraizado” Movimento 0 até o inimigo descansar.\n\nAção: Ação de Cosmo\n\nResistência: Vigor",
+      "page": "578–579",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Dríades. Nível de referência no livro: 24. Conferir aquisição conforme evolução e status.",
+      "category": "Dríades",
+      "level": 24,
+      "action": "Ação de Cosmo",
+      "resistance": "Vigor",
+      "combination": "",
+      "duration": "[DESCANSO] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "dryads:gift:24:RAÍZ",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            578,
+            579
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "732d287891de2e98",
+    "name": "Semente de Arruda",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Em meio à batalha, o Cavaleiro de Eris, faz um gesto misterioso. Uma semente obscura e pulsante aparece em sua mão. Ele então projeta essa semente em direção ao seu adversário. Quando a semente toca o inimigo, ela se enraíza, absorvendo a energia cósmica do oponente e deixando -o cada ve z mais enfraquecido. O Cavaleiro inimigo luta desesperadamente para conter a perda de sua C osmo Energia, enquanto a Dríade  sorri sinistramente com a energia roubada.\n\nSistema: O Cavaleiro coloca uma semente dentro do alvo que vai germinando e sugando a energia liberada pelo inimigo. A semente suga pontos de Cosmo  Energia iguais aos queimados pelo inimigo. Exemplo: Um Cavaleiro atingido pela Semente de Arruda utiliza uma Técnica e queima 3 pontos de Cosmos, nesse caso, a Semente suga 3 pontos de Cosmo s, ou seja, o Cavaleiro queimou 6 pontos de Cosmo no total.\n\nAção: Ação de Cosmo\n\nResistência: Vigor",
+      "page": "579",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Dríades. Nível de referência no livro: 25. Conferir aquisição conforme evolução e status.",
+      "category": "Dríades",
+      "level": 25,
+      "action": "Ação de Cosmo",
+      "resistance": "Vigor",
+      "combination": "",
+      "duration": "[CONTÍNUA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "dryads:ability:25:SEMENTE DE ARRUDA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            579
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "0a239ab74e814904",
+    "name": "Fruto Proibido",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Fantasma de Eris mergulhando no cosmo de Eris, a Deusa da Discórdia num momento de conexão, ele incorpora uma semente viva de discórdia, que brota em seu interior, protegendo sua mente de influências externas. Agora, no calor da batalha, enquanto seu inimigo tenta manipulá-lo, ele ativa seu cosmo, liberando a energia caótica da semente, fazendo-a crescer e envolvendo-o numa aura de resistência mental.\n\nSistema: O Cavaleiro coloca uma semente dentro dele que vai germinando e o impedindo que o Cavaleiro seja controlado.  Imuniza o Cavaleiro de Habilidades, Dádivas e Técnicas que tentem controlá-lo.\n\n1º turno de efeito: 20% de imunidade\n\n2º turno de efeito: 25% de imunidade\n\n3º turno de efeito: 30% de imunidade\n\n4º turno de efeito: 35% de imunidade\n\n5º turno de efeito: 40% de imunidade\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nCombinação: Treinamento, %",
+      "page": "579–580",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Dríades. Nível de referência no livro: 26. Conferir aquisição conforme evolução e status.",
+      "category": "Dríades",
+      "level": 26,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "Treinamento, %",
+      "duration": "[CONTÍNUA] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "dryads:gift:26:FRUTO PROIBIDO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            579,
+            580
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5b17f318e4b0fe95",
+    "name": "Planta Carnívora",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro, após profunda conexão com o caos,  aprendeu a extrair o poder das plantas venenosas e sementes malignas, que prosperam sob o toque de Eris. Com um gesto sinistro, ativa seu cosmo, enraizando uma semente da discórdia na mente de seu inimigo, causando uma agonia mental crescente. O alvo trem e de dor enquanto a semente germina e se enrosca em seu âmago. Finalmente, num estouro de caos, a semente explode de dentro para fora, deixando o inimigo atordoado.\n\nSistema: Causa danos ao final do turno sem PA.\n\n1º turno de efeito: 10 de dano\n\n2º turno de efeito: 20 de dano\n\n3º turno de efeito: 30 de dano\n\n4º turno de efeito: 40 de dano\n\n5º turno de efeito: 50 de dano +20 de dano na Armadura\n\nEspecial: 5 + Nível% de chance de atordoar o alvo .\n\nAção: Ação de Cosmo\n\nResistência: Vigor\n\nCombinação: Utilização do Cosmo, &",
+      "page": "580",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Dríades. Nível de referência no livro: 27. Conferir aquisição conforme evolução e status.",
+      "category": "Dríades",
+      "level": 27,
+      "action": "Ação de Cosmo",
+      "resistance": "Vigor",
+      "combination": "Utilização do Cosmo, &",
+      "duration": "[CONTÍNUA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "dryads:ability:27:PLANTA CARNÍVORA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            580
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "493ec5c8e86d32c6",
+    "name": "Cravos de Defunto",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro aprendeu a entrelaçar os ciclos naturais com o cosmo. Marca seu inimigo com a energia do ciclo da natureza. Quando é ferido mortalmente, uma conexão sombria é ativada, e seu inimigo sofre um dano igual. Um elo profano é forjado, selando o destino de ambos em um ciclo mortal de sofrimento compartilhado  onde cada golpe pode se voltar contra ele.\n\nSistema: O Cavaleiro marca o alvo, caso falhe no Teste de resistência ele fica marcado até o final da batalha, e quando o Cavaleiro sofrer um dano efetivo igual ou maior que 40% dos seus pontos de vida, o cravo de defunto age atacando o alvo que sofre o dobro do dano causado e se tiver uma falha crítica no Teste de resistência o dano é triplicado.\n\nAção: Ação de Cosmo\n\nResistência: Vigor",
+      "page": "580–581",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Dríades. Nível de referência no livro: 28. Conferir aquisição conforme evolução e status.",
+      "category": "Dríades",
+      "level": 28,
+      "action": "Ação de Cosmo",
+      "resistance": "Vigor",
+      "combination": "",
+      "duration": "[CONTÍNUA] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "dryads:gift:28:CRAVOS DE DEFUNTO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            580,
+            581
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e67710063a526183",
+    "name": "Planta Carnívora Sanguessuga",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro concentra o cosmo nas palmas das mãos e com um gesto sinistro, insere uma semente no corpo de seu inimigo.  A semente começa a germinar, causando uma dor excruciante. Finalmente, explode em um redemoinho de pólen venenoso, drenando a vitalidade do inimigo e fortalecendo a Dríade  e seus aliados. O inimigo agoniza, enquanto o Cavaleiro se alimenta da dor.\n\nSistema: Causa danos ao final do turno sem PA e o dano causado é convertido em cura para o Personagem e seus companheiros dentro do seu Domínio.\n\n1º turno de efeito: 10 de dano e cura 10 Pontos de Vida\n\n2º turno de efeito: 20 de dano e cura 20 Pontos de Vida\n\n3º turno de efeito: 30 de dano e cura 30 Pontos de Vida\n\n4º turno de efeito: 40 de dano e cura 40 Pontos de Vida\n\n5º turno de efeito: 50 de dano +20 de dano na Armadura. e cura 50 Pontos de Vida\n\nAção: Ação de Cosmo\n\nResistência: Vigor\n\nCombinação: Utilização do Cosmo, &",
+      "page": "581",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Dríades. Nível de referência no livro: 29. Conferir aquisição conforme evolução e status.",
+      "category": "Dríades",
+      "level": 29,
+      "action": "Ação de Cosmo",
+      "resistance": "Vigor",
+      "combination": "Utilização do Cosmo, &",
+      "duration": "[CONTÍNUA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "dryads:ability:29:PLANTA CARNÍVORA SANGUESSUGA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            581
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "2d07fc8b848c5211",
+    "name": "Maçã de Eris",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro Fantasma mergulha no caos e discórdia, invocando o poder sombrio da natureza. Com gestos sinistros, ele se torna um com a discórdia, canalizando a maldade de Eris. Seu punho é envolto por uma intensa energia cósmica, capaz de destruir montanhas, enquanto ele se lança contra seus inimigos, espalhando o caos e a destruição. Seu poder aterroriza a todos e é usado para aniquilar qualquer adversário que cruze o caminho de Eris.\n\nSistema: Toda jogada feita pelo Personagem recebe um Modificador Positivo. Modificadores: +2 de Modificador Positivo nos TdA, +1 de Bônus Aplicado aos Danos (O Tridente de Eris), eleva 1 Nível da Técnica (O Cosmo Planta).\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nCombinação: Utilização de Cosmo, +\n\nHabilidade Especial do Cosmo (Avatar Ente):  A Virtude Devoção Divina combinada com esta Habilidade aumenta o Modificador Positivo para +1.",
+      "page": "581",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Dríades. Nível de referência no livro: 30. Conferir aquisição conforme evolução e status.",
+      "category": "Dríades",
+      "level": 30,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "Utilização de Cosmo, +",
+      "duration": "[CONTÍNUA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "dryads:gift:30:MAÇÃ DE ERIS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            581
+          ]
+        }
+      }
+    }
+  }
+]

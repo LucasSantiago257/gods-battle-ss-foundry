@@ -1,0 +1,806 @@
+[
+  {
+    "_id": "d6c05609bec6c1bd",
+    "name": "Melhoria Santo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sistema: +1 de Dano Extra.\n\nAção: Ação de Cosmo.\n\nResistência: Não.",
+      "page": "58",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Santo. Nível de referência no livro: 1. Conferir aquisição conforme evolução e status.",
+      "category": "Santo",
+      "level": 1,
+      "action": "Ação de Cosmo.",
+      "resistance": "Não.",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "improvement"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "saint:improvement:1:MELHORIA SANTO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            58
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "c2e2954accfac735",
+    "name": "Velocidade",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro concentra seu Cosmo, formando uma aura dourada que o envolve e ele se torna um raio de luz, esquivando -se dos ataques inimigos e entregando golpes fulminantes, enquanto estrelas cintilam em seu rastro.\n\nSistema: A Velocidade do Cavaleiro evolui para: Velocidade Superada (+).\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "59",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Santo. Nível de referência no livro: 1. Conferir aquisição conforme evolução e status.",
+      "category": "Santo",
+      "level": 1,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[REAÇÃO/INSTANTÂNEA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "saint:ability:1:VELOCIDADE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            59
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "1e3a003dfdad5568",
+    "name": "Aura de Coragem",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sob sua constelação, o Cavaleiro concentra seu Cosmo, e seu corpo irradia uma aura luminosa. Seus companheiros são envolvidos por uma energia dourada, fortalecendo sua determinação contra influências malignas.\n\nSistema: O Cavaleiro irradia uma aura de coragem no seu Domínio, dando aos seus amigos e a ele próprio +1 de Modificador Positivo contra efeitos de Controle.\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nCombinação: Liderança, +",
+      "page": "59",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Santo. Nível de referência no livro: 2. Conferir aquisição conforme evolução e status.",
+      "category": "Santo",
+      "level": 2,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "Liderança, +",
+      "duration": "[CONTÍNUA/REAÇÃO] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "saint:gift:2:AURA DE CORAGEM",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            59
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "d1d4be08f5dd9f85",
+    "name": "Sanguinário",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sob sua cintilante constelação, o Cavaleiro canaliza seu Cosmo. Seus olhos brilham intensamente e, com uma investida precisa, ele atinge o ponto vulnerável do inimigo, emanando uma explosão de energia cósmica. .Sistema: +1 no Bônus aplicado ao dano.\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "59",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Santo. Nível de referência no livro: 3. Conferir aquisição conforme evolução e status.",
+      "category": "Santo",
+      "level": 3,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[INSTANTÂNEA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "saint:ability:3:SANGUINÁRIO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            59
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "71e7e073dc221114",
+    "name": "Aura de Batalha",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "No calor da batalha, o Cavaleiro eleva seu Cosmo ao máximo. Uma aura ardente se manifesta em seus braços, incendiando o campo de batalha. Cada golpe desencadeia uma explosão de energia, devastando os inimigos com fúria incontrolável\n\nSistema: Eleva 1 Nível de Ataque.\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "59",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Santo. Nível de referência no livro: 4. Conferir aquisição conforme evolução e status.",
+      "category": "Santo",
+      "level": 4,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[CONTÍNUA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "saint:gift:4:AURA DE BATALHA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            59
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "7c8a2b47c9bfa93f",
+    "name": "Espírito Inquebrável",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro sabe a forma mais destrutiva de destruir os átomos com seu Cosmo canalizado na Força.\n\nSistema: A cada 5 Níveis o Santo recebe os Modificadores:\n\n+1 de Bônus aplicado ao dano em seus ataques Todo sucesso de Excelência no Teste de Ação de Combate ao atacar um inimigo causa 2 de dano extra na Armadura.\n\nEspecial: Aceleração Atômica: O Santo pode a cada 10 níveis anular 1 reação do alvo.\n\nSistema: Ação livre; Instantânea; Quantidade de uso por dia.",
+      "page": "59–60",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Santo. Nível de referência no livro: 5. Conferir aquisição conforme evolução e status.",
+      "category": "Santo",
+      "level": 5,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "specialization"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "saint:specialization:5:ESPÍRITO INQUEBRÁVEL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            59,
+            60
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "033802b0d19fabdf",
+    "name": "Aura Divina",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro eleva seu Cosmo ao extremo, convocando a fúria divina de seu Deus. Uma explosão de energia dourada irrompe, envolvendo -o enquanto ele desfere um golpe que rasga o tecido do universo, causando uma destruição avassaladora que ecoa pelo cosmos.\n\nSistema: O Personagem recebe um bônus somado ao dano final de um ataque  sem direito a PA . É necessário que o Personagem acerte a Manobra Ataque de Foco  para o efeito funcionar.\n\nBronze: 10 de Dano\n\nPrata: 20 de Dano\n\nOuro: 30 de Dano\n\nAção: Ação de Cosmo + Ação de movimento parcial\n\nResistência: Não",
+      "page": "60–61",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Santo. Nível de referência no livro: 6. Conferir aquisição conforme evolução e status.",
+      "category": "Santo",
+      "level": 6,
+      "action": "Ação de Cosmo + Ação de movimento parcial",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[INSTANTÂNEA] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "saint:gift:6:AURA DIVINA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            60,
+            61
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "6dc7e61835c7fd5c",
+    "name": "Aura Explosiva",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Com sua constelação reluzindo no céu, o Cavaleiro amplifica seu Cosmo ao extremo. Seus ataques cortam o ar com um estrondo ensurdecedor, desencadeando pequenas explosões de energia cósmica que penetram nos inimigos. Seus oponentes sentem o Cosmo incendiando seus corpos, afetando órgãos internos e reverberando dor.\n\nSistema: Quando atingido, o alvo, se não resistir, sofre ferimentos internos resultando em danos que se acumulam. É preciso pelo menos um acerto para causa o efeito. O efeito dura até o combate terminar ou por qualquer Habilidade/Dádiva, Técnica ou Virtude que possa curar o alvo. Dano: 1 + Graduação da Perícia Combate/turno cumulativo.\n\nAção: Ação de Cosmo\n\nResistência: Vigor",
+      "page": "61",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Santo. Nível de referência no livro: 7. Conferir aquisição conforme evolução e status.",
+      "category": "Santo",
+      "level": 7,
+      "action": "Ação de Cosmo",
+      "resistance": "Vigor",
+      "combination": "",
+      "duration": "[LUTA] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "saint:ability:7:AURA EXPLOSIVA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            61
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a55c33ec64e005bd",
+    "name": "Mente Pura",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Cavaleiro concentra seu Cosmo deixando sua mente pura, desencadeando um resplandecente brilho dourado. O escudo mental se forma à sua volta, reforçando sua resistência contra técnicas de controle. Com coragem e pureza, ele se torna inquebrável, desafiando as forças sombrias que ousam dominá-lo.\n\nSistema: O Cavaleiro ganha +1 no Teste de resistência contra Técnicas de Controle.\n\nCombinação: Treinamento, +",
+      "page": "61",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Santo. Nível de referência no livro: 8. Conferir aquisição conforme evolução e status.",
+      "category": "Santo",
+      "level": 8,
+      "action": "",
+      "resistance": "",
+      "combination": "Treinamento, +",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "saint:gift:8:MENTE PURA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            61
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5c3bfae99258548c",
+    "name": "Caçador",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Os Cavaleiros são conhecidos por serem peritos em guerra e rastreio. Essa Habilidade permite ao Cavaleiro rastrear seus inimigos por meio de pegadas e rastros identificando e localizando o alvo.\n\nSistema: O Cavaleiro pode encontrar inimigos que estejam se escondendo ou fugindo. Dentro do Domínio: Automático. Fora do Domínio: Teste resistido de Percepção Extrassensorial x Furtividade.\n\nAção: Ação de Cosmo + Ação de Movimento Total\n\nResistência: Sim\n\nHabilidade Especial do Cosmo (Radar de Ameaças): Virtude Noção do Perigo junto com essa Habilidade permite ao Personagem encontrar potenciais ameaças, mesmo as que não tenham intenção de ferir o Cavaleiro.",
+      "page": "61–62",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Santo. Nível de referência no livro: 9. Conferir aquisição conforme evolução e status.",
+      "category": "Santo",
+      "level": 9,
+      "action": "Ação de Cosmo + Ação de Movimento Total",
+      "resistance": "Sim",
+      "combination": "",
+      "duration": "[DIAS] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "saint:ability:9:CAÇADOR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            61,
+            62
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "be99c319e214f7b2",
+    "name": "Aura da Vida",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Em meio ao campo de treinamento, o Cavaleiro  se conecta com as estrelas da sua constelação, absorvendo a energia cósmica pura. Seu cosmo resplandece, criando uma aura dourada que envolve seu corpo. À medida que ele treina  sua habilidade, sua resistência aumenta exponencialmente. Seus músculos parecem esculpidos em aço divino, enquanto ele irradia uma presença imponente.\n\nSistema: O Personagem ganha +20 pontos de vida e +1 por Nível.\n\nHabilidade Especial do Cosmo  (Saudável): Virtude Gigante junto com essa Dádiva proporciona ao Personagem ganhar o total de +40 pontos de vida.",
+      "page": "62",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Santo. Nível de referência no livro: 10. Conferir aquisição conforme evolução e status.",
+      "category": "Santo",
+      "level": 10,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "saint:gift:10:AURA DA VIDA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            62
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5db4aab50bd8fa5b",
+    "name": "Imagem Residual",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "No campo de batalha à luz das estrelas, o Cavaleiro eleva seu Cosmo ao máximo. Com um piscar de olhos, ele se transforma em uma miragem dourada, movendo -se à velocidade da luz. Seus movimentos são tão rápidos que o inimigo ataca uma ilusão, enquanto o Cavaleiro já está muito além, revelando uma agilidade divina que deixa seu oponente atônito e impotente.\n\nSistema: O Santo recebe +1 Ação de Defesa e ao esquivar automaticamente se movimenta (movimento parcial) para o próximo espaço adjacente ao atacante.\n\nEspecial: Essa Dádiva tem 5 + Nível% de chance de esquivar de um ataque de foco.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial\n\nResistência: Não\n\nCombinação: Treinamento, + e %\n\nHabilidade Especial do Cosmo  (Ataques na velocidade da luz): Virtude Semideus ou Telepata junto com essa Habilidade aumenta +2 Ações de Defesa perdidas do alvo.",
+      "page": "62",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Santo. Nível de referência no livro: 11. Conferir aquisição conforme evolução e status.",
+      "category": "Santo",
+      "level": 11,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial",
+      "resistance": "Não",
+      "combination": "Treinamento, + e %",
+      "duration": "[INSTANTÂNEA] [REAÇÃO] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "saint:ability:11:IMAGEM RESIDUAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            62
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "2867546ab0a3f4e8",
+    "name": "Sete Vidas",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro, à beira da derrota, irradia seu Cosmo mais profundo. Uma luz divina envolve seu corpo, e ele ressurge das cinzas como uma Fênix, renovado e invencível. Seu renascimento simboliza a proteção divina concedida aos bravos guerreiros.\n\nSistema: Quando o Personagem cai em batalha, automaticamente ele revigora seus pontos de vida renascendo. Pode ser usada uma vez por missão. O Jogador faz um TdA de Sentidos dificuldade Difícil [15] se obter sucesso a Dádiva terá efeito como Ação Livre, se não passar não consegue agir no mesmo turno, mas recuperando a consciência impossibilitado de agir.\n\nPrata: 50 + Vigor x 5 Pontos de Vida\n\nOuro: 100 + Vigor x 5 Pontos de Vida\n\nAção: Ação Livre ou Ação Completa.\n\nResistência: Não",
+      "page": "62–63",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Santo. Nível de referência no livro: 12. Conferir aquisição conforme evolução e status.",
+      "category": "Santo",
+      "level": 12,
+      "action": "Ação Livre ou Ação Completa.",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[REAÇÃO] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "saint:gift:12:SETE VIDAS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            62,
+            63
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "6420d3f0f7a54da6",
+    "name": "Soco na Velocidade da Luz",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "No calor da batalha, o Cavaleiro canaliza seu Cosmo. Seus movimentos se tornam um borrão de velocidade, e sua armadura brilha intensamente. Gradualmente, seus ataques se transformam em feixes de luz, atingindo o alvo com brutalidade cósmica, enquanto o campo de batalha é banhado em raios divinos.\n\nSistema: O Cavaleiro adquire +1 Ação de Ataque.\n\nEspecial: 5 + Nível% de chance de Trespassar o alvo (ver Manobra de Combate Duelo ).\n\nAção: Ação de Cosmo + Ação de Movimento Parcial\n\nResistência: Não\n\nCombinação: Combate, +",
+      "page": "63",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Santo. Nível de referência no livro: 13. Conferir aquisição conforme evolução e status.",
+      "category": "Santo",
+      "level": 13,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial",
+      "resistance": "Não",
+      "combination": "Combate, +",
+      "duration": "[INSTANTÂNEA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "saint:ability:13:SOCO NA VELOCIDADE DA LUZ",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            63
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "4a9a532ae9b14845",
+    "name": "Soco Poderoso",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro concentra seu Cosmo. Com um golpe preciso, ele atinge o inimigo, e uma onda de energia irrompe, deixando -o momentaneamente atordoado. O campo de batalha pulsa com a Cosmo energia da luta enquanto o Cavaleiro se prepara para o próximo movimento.\n\nSistema: Ao final das ações de ataque, o Cavaleiro faz um teste de confirmação e se tiver sucesso o alvo fica atordoado perdendo um turno de ação.\n\nEspecial: Chance de Atordoar: 10 + Nível %.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial\n\nResistência: Não\n\nCombinação: Combate, %",
+      "page": "63",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Santo. Nível de referência no livro: 14. Conferir aquisição conforme evolução e status.",
+      "category": "Santo",
+      "level": 14,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial",
+      "resistance": "Não",
+      "combination": "Combate, %",
+      "duration": "[INSTANTÂNEA] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "saint:gift:14:SOCO PODEROSO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            63
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "48bccb51a534af83",
+    "name": "Marca",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro eleva seu Cosmo a níveis inimagináveis. Seus golpes, precisos e imparáveis, atingem o mesmo ponto no corpo do inimigo, uma e outra vez, criando uma espiral de energia que enfraquece progressivamente o adversário\n\nSistema: Para cada 10 ataques efetivos que causem dano no alvo, este perde 1 de Vigor.\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "63–64",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Santo. Nível de referência no livro: 15. Conferir aquisição conforme evolução e status.",
+      "category": "Santo",
+      "level": 15,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[DESCANSO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "saint:ability:15:MARCA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            63,
+            64
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b7fcdfc6e3c9c8b4",
+    "name": "Aura da Vingança",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro canaliza seu Cosmo ao máximo. Seu punho se torna uma esfera pulsante de energia, e ele se lança como um meteoro em direção ao inimigo. Em frações de segundos, ele desfere um golpe avassalador que abala o campo de batalha com sua força titânica. O impacto é acompanhado por uma explosão de energia que ilumina a escuridão da noite e ressoa como um trovão cósmico.\n\nSistema: O Jogador precisa ter sucesso na Manobra Ataque de Foco para o efeito funcionar.\n\nPrata: 20 de Dano\n\nOuro: 30 de Dano\n\nEspecial: 5 + Nível% de chance de incapacitar o alvo (ver Estados ).\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "64",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Santo. Nível de referência no livro: 16. Conferir aquisição conforme evolução e status.",
+      "category": "Santo",
+      "level": 16,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[INSTANTÂNEA] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "saint:gift:16:AURA DA VINGANÇA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            64
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "22fa679ccff37584",
+    "name": "Aura da Dor",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Em meio à fervente batalha, o Cavaleiro transcende seus limites. Seu Cosmo irrompe, envolvendo-o em uma aura de pura destruição. Cada movimento se torna um furacão de destruição, e sua vontade incansável de causar danos aos inimigos transcende a própria batalha, enquanto o inimigo é consumido pela intensidade de seu desejo de vitória.\n\nSistema: O Cavaleiro retorna uma porcentagem do dano causado nesse turno como dano extra e soma ao dano total sem P A do inimigo no final do turno e metade desse dano na Armadura. Dano retornado: +25% de dano retornado no alvo, 10% do dano retornado na Armadura.\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nCombinação: Combate, %",
+      "page": "64",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Santo. Nível de referência no livro: 17. Conferir aquisição conforme evolução e status.",
+      "category": "Santo",
+      "level": 17,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "Combate, %",
+      "duration": "[INSTANTÂNEA] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "saint:ability:17:AURA DA DOR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            64
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ca58c77fa647c258",
+    "name": "Aura de Destruição",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro eleva seu Cosmo ao extremo. Sua aura dourada irrompe, concentrando -se nos punhos. Cada soco desfere uma explosão de energia cósmica que penetra na armadura inimiga, causando danos devastadores.\n\nSistema: 1 de dano na Armadura por ataque efetivo.\n\nAção: Ação de Cosmo + Ação de movimento parcial\n\nResistência: Não",
+      "page": "64–65",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Santo. Nível de referência no livro: 18. Conferir aquisição conforme evolução e status.",
+      "category": "Santo",
+      "level": 18,
+      "action": "Ação de Cosmo + Ação de movimento parcial",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[INSTANTÂNEA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "saint:gift:18:AURA DE DESTRUIÇÃO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            64,
+            65
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "1a8cd001d01036da",
+    "name": "Fraquezas",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro eleva seu Cosmo, e as cicatrizes em sua armadura brilham como marcas de coragem e experiência. Seus punhos atingem com precisão os pontos desprotegidos do inimigo, desencadeando uma torrente de ataques que punem severamente o adversário.\n\nSistema: O alvo perde 1 de Proteção de Armadura.\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "65",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Santo. Nível de referência no livro: 19. Conferir aquisição conforme evolução e status.",
+      "category": "Santo",
+      "level": 19,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[INSTANTÂNEA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "saint:ability:19:FRAQUEZAS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            65
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "616d41784ebe2916",
+    "name": "Coração Inabalável",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Em meio ao campo de batalha, o Cavaleiro eleva seu Cosmo, irradiando uma aura de inquebrantável determinação. Seus olhos refletem a resiliência lendária dos Santos, e sua postura permanece inabalável, mesmo diante do inimigo mais mortal. A cena é uma manifestação da fortaleza que define os verdadeiros guerreiros.  Cada passo dele é um ato de determinação, e sua presença inspira esperança em meio à escuridão da guerra.\n\nSistema: Técnicas (Big Bang Controle) ou Habilidades/Dádivas que tentem controlar as ações do Cavaleiro utilizadas por inimigos do Nível igual ou inferior ao do Santo são, automaticamente, anuladas. As demais têm 40% de chance de falharem.\n\nAção: Ação Livre\n\nCombinação: Liderança, %",
+      "page": "65",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Santo. Nível de referência no livro: 20. Conferir aquisição conforme evolução e status.",
+      "category": "Santo",
+      "level": 20,
+      "action": "Ação Livre",
+      "resistance": "",
+      "combination": "Liderança, %",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "saint:gift:20:CORAÇÃO INABALÁVEL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            65
+          ]
+        }
+      }
+    }
+  }
+]

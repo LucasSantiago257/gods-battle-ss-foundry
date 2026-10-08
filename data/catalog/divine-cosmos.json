@@ -1,0 +1,545 @@
+[
+  {
+    "_id": "672007eb8ebf12b8",
+    "name": "Controle Sobre A Mãe Natureza",
+    "type": "divineCosmo",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "História e mitologia das gerações: A lenda de Ilias Desde jovem, o Cavaleiro  se destacou entre seus pares por sua ligação sobrenatural e controle absoluto com a natureza ao seu redor, além de se comunicar com suas forças, o que o torna diferente de todos os demais Cavaleiro s antecessores conhecidos. Sua jurisdição sobre esta província concedeu -lhe uma vasta gama de Habilidade s e Atributo s que lhe fizeram ser conhecido como \"Aquele que ouve a Terra\": controlar o vento ao ponto de atirar com um arco e flecha sem ao menos se mexer de seu lugar; comunicar se com os animais como quando faz os peixes magicamente, aparecerem de bom grado em suas mãos; consciência de tudo que ocorre na Terra como evidenciado ao saber a localização exata de qualquer objeto ou ser no universo, como por Exemplo, saber quando uma estrela se apagou ou antecipar a chegada de um Cavaleiro ou dos espectros, podendo até discernir seus Cosmos ao qual afirmou que \"feriam as árvores e o ciclo da vida\"; e o dom da pré -cognição, sendo capaz de prever os eventos que estão prestes a acontecer. Ao morrer, a alma do Cavaleiro se fundi a natureza, adquirindo assim a onipresença.\n\nPré-requisitos:\n\n8º sentido, Essência bom, Pericia Utilização do Cosmo  8 e Liderança 5, Virtude  Guerreiro Elemental e Cosmo Natural. Bônus: O jogador ganha + 1 ponto no Atributo Cosmo.\n\nEfeito: O jogador literalmente conversa com a natureza (animais, plantas e elementos – vento, fogo ...) e consegue fazer feitos relacionados a mãe natureza. Níveis de Refino: Refino 1: Comunicar (entender e ser entendido)  com a natureza : água, vento, árvores, terra, animais dentre outros. Refino 2: Viver após a morte. Quando o Personagem morre ele se une a natureza mantendo todos os seus poderes adquirindo Cosmo Energia infinita. O Personagem pode agir como “natureza” por Nível turnos por dia até voltar a “dormir” na natureza. Forma de Natureza: Pontos de Vida [1500], PA [30], Cosmo Energia [∞], Imune [Controle, Sustentar, Todos os Estados, Técnicas de Controle da Natureza], outras características continuam iguais. Refino 3: Arrancar a divindade do corpo de alguém. Para arrancar a divindade do alvo o Personagem deve seguir o sistema de Selamento – Arrancando a divindade de um Hospedeiro . O Cavaleiro faz o Teste em Vantagem e com +5 de Modificador Positivo.",
+      "page": "483–484",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Cosmo Divino de cavaleiro; confira despertar, Complexo de Deus e refino (pp. 482–483). Os três refinos e bônus são aplicados manualmente.",
+      "category": "Cosmo Divino",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "notes": "Os círculos de refino do PDF foram conferidos visualmente e transcritos como Refino 1, 2 e 3. Grafias do corpo preservadas."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-cosmo:CONTROLE SOBRE A MÃE NATUREZA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            483,
+            484
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "88d5f1d926810b3a",
+    "name": "Imortal",
+    "type": "divineCosmo",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "História e mitologia das gerações: A lenda de Dokho Por ter seu corpo agraciado com o sangue de Athena, o Cavaleiro  se torna capaz de utilizar o Misopethamenos , que o permitiu estender sua vida mais que o normal, Exemplo de Krest visto que vivera mais de 500 anos, o que o fazia ser o mais velho Cavaleiro do Santuário ainda vivo no século XVIII. O sangue da Deus a também amplia suas capacidades físicas e o poder de seus ataques. Todavia, diferente de Dokho que poderia recuperar sua juventude ao quebrar o estado, Krest não poderia. E em seu estado não mostra necessidade de nenhum alimento ou sono, como ele poderia passar incontáveis dias meditando sem descanso.\n\nPré-requisitos:\n\n7º sentido Superado, Ômega , Pericias Acadêmicos 1 e Medicina 4, Virtude  Cura abençoada. Bônus: O jogador ganha + 1 ponto no Atributo Vigor.\n\nEfeito: O jogador não morre por meios naturais. Níveis de Refino: Refino 1: Sangue Aurifico: permite doar sangue para qualquer um sem possibilidade de rejeição, permitindo que ele o integre completamente naquele a quem transfunde. Seu sangue possui qualidades de cura e é capaz de tratar qualquer doença humana. Refino 2: Misopethamenos: A Habilidade de regeneração não morrendo por velhice. Regenera seu Nível pontos de vida  por turno e envelhece 1 dia por ano. Refino 3: Ressureição: Permite ao Personagem reviver alguém, para isso a alma deve desejar reviver. Não precisa de um corpo, todas as células são criadas pelo Personagem  ou reencarnar em alguém que tenha recebido o Sangue Aurifico. O tempo de reencarnação é a critério do mestre.",
+      "page": "485–486",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Cosmo Divino de cavaleiro; confira despertar, Complexo de Deus e refino (pp. 482–483). Os três refinos e bônus são aplicados manualmente.",
+      "category": "Cosmo Divino",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "notes": "Os círculos de refino do PDF foram conferidos visualmente e transcritos como Refino 1, 2 e 3. Grafias do corpo preservadas."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-cosmo:IMORTAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            485,
+            486
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3ef42d378c21a13c",
+    "name": "Utilização do Cosmo",
+    "type": "divineCosmo",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "História e mitologia das gerações: A lenda de Shion Sendo Cavaleiro de Athena, utiliza o Cosmo como sua fonte de energia e por ser da patente de Ouro, ele tem um controle ainda mais refinado que os demais. Em seu caso em especifico, o Cosmo do Cavaleiro se torna quase imensurável em questões de limites, como quando emanado ou incitado, era capaz de cobrir uma extensa área do campo de batalha em questão de segundos e até influenciar as forças da natureza na região, podendo assim facilmente repelir seus ad versários quando atacavam fisicamente e até mesmo anular Técnicas cósmicas de inferiores até as de mais alto calibre estimuladas pelo Sétimo Sentido, agindo como uma barreira protetora natural quase que absoluta e capaz de deixar seus adversários em estado de temor e terror.\n\nPré-requisitos:\n\n7º sentido Superado, Ômega, Pericias Utilização do Cosmo 5, Virtude Foco em Técnica. Bônus: O jogador ganha + 1 ponto no Atributo Cosmo.\n\nEfeito: Aumento do dano das Técnicas e imune a Técnicas de Bronze e Prata. Níveis de Refino: Refino 1: +30 no dano e é imune a Técnicas da Classe Bronze. Refino 2: +60 no dano e é imune a Técnicas da Classe Prata. Refino 3: +100 no dano.",
+      "page": "486",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Cosmo Divino de cavaleiro; confira despertar, Complexo de Deus e refino (pp. 482–483). Os três refinos e bônus são aplicados manualmente.",
+      "category": "Cosmo Divino",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "notes": "Os círculos de refino do PDF foram conferidos visualmente e transcritos como Refino 1, 2 e 3. Grafias do corpo preservadas."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-cosmo:UTILIZAÇÃO DO COSMO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            486
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "9f6ebab5ca544d4a",
+    "name": "Domínio do Sétimo Sentido",
+    "type": "divineCosmo",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "História e mitologia das gerações: A lenda de Mu Como Cavaleiro de Ouro, adquire o completo controle sobre o Sétimo Sentido, podendo desferir golpes na velocidade da luz. Em seu caso, seu domínio sobre a velocidade é praticamente absoluto, como nenhum dos demais de sua patente em época ou posteriormente conseguiram se igualar . Ele também possui um conhecimento profundo sobre o tempo e os alcances que pode possibilitar.\n\nPré-requisitos:\n\n7º sentido Superado, Ômega, Pericias Utilização do Cosmo 5, Virtude Iniciativa aprimorada ou Telepata. Bônus: O jogador ganha + 1 ponto no Atributo Velocidade.\n\nEfeito: O Cavaleiro consegue se antecipar e desacelerar o tempo. Níveis de Refino: Refino 1: Retardar o tempo. Todos ao redor do Personagem tem -1 na tabela de Velocidade. Refino 2: Acelerar o tempo: Permite ao Personagem decidir quem age primeiro. O alvo tem +1 Nível na tabela de Velocidade. Refino 3: O Personagem sabe o que o inimigo irá fazer antes que seja feito. O Mestre avisa ao jogador o que acontecerá um turno ou ação a frente, dando ao Personagem a vantagem de se preparar.",
+      "page": "486–487",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Cosmo Divino de cavaleiro; confira despertar, Complexo de Deus e refino (pp. 482–483). Os três refinos e bônus são aplicados manualmente.",
+      "category": "Cosmo Divino",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "notes": "Os círculos de refino do PDF foram conferidos visualmente e transcritos como Refino 1, 2 e 3. Grafias do corpo preservadas."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-cosmo:DOMÍNIO DO SÉTIMO SENTIDO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            486,
+            487
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "9a46acbbc3807728",
+    "name": "Estilo de Combate Deus Grego",
+    "type": "divineCosmo",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "História e mitologia das gerações: A lenda de Aiolia O Cavaleiro demonstrou um altíssimo grau de Habilidades em combate físico, sendo capaz de bloquear facilmente vários ataques onidirecionais e lutar com múltiplos inimigos ao mesmo tempo. Sua velocidade também fora dita como absoluta, podendo atacar e anular os ataques de seus adversários antes que sequer notassem sua movimentação. Ele também pareceu ter uma resistência e durabilidade desumana, capaz de se mover incólume no epicentro das Técnicas de seus adversários sem sofrer nenhum arranhão. Também possuía igualmente uma força titânica, sendo capaz de danificar Armadura s de Ouro  e até ferir a energia vital delas com sua Técnica máxima.\n\nPré-requisitos:\n\n7º sentido Superado, Ômega, Pericias Combate e Medicina 5, Virtude  Punho de luz ou bloqueador veloz. Bônus: O jogador ganha + 1 ponto no Atributo Força.\n\nEfeito: O jogador luta contra uma quantidade de inimigos guardando suas ações de luta sem a necessidade de dividi-las, ele as tem total pra cada inimigo. Níveis de Refino: Refino 1: + 1 inimigo. Refino 2: + 3 inimigos. Refino 3: + 5 inimigos.",
+      "page": "487–488",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Cosmo Divino de cavaleiro; confira despertar, Complexo de Deus e refino (pp. 482–483). Os três refinos e bônus são aplicados manualmente.",
+      "category": "Cosmo Divino",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "notes": "Os círculos de refino do PDF foram conferidos visualmente e transcritos como Refino 1, 2 e 3. Grafias do corpo preservadas."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-cosmo:ESTILO DE COMBATE DEUS GREGO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            487,
+            488
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "d3263d61f196ad92",
+    "name": "Mestre das Técnicas",
+    "type": "divineCosmo",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "História e mitologia das gerações: A lenda de Regulus O Cavaleiro possui uma enorme capacidade de adaptação, graças a seu vasto intelecto, tem um conhecimento de uma grande variedade de indivíduos e Habilidades, o que lhe permitia identificar uma Técnica  logo que fosse realizada e reagir com o contra -ataque mais adequado.\n\nPré-requisitos:\n\n7º sentido Superado, Ômega, Pericias Treinamento 5, Virtude  Conhecedor ou Técnica adicional. Bônus: O jogador ganha + 1 ponto no Atributo Velocidade.\n\nEfeito: O jogador conhece uma quantidade Enorme de Técnicas. Níveis de Refino: Refino 1: Quantidade de Técnicas aprendíveis igual ao Nível do Cavaleiro. Refino 2: Qualquer Técnica vista pode ser aprendida. Refino 3: Qualquer Técnica vista pode ser copiada.",
+      "page": "488–489",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Cosmo Divino de cavaleiro; confira despertar, Complexo de Deus e refino (pp. 482–483). Os três refinos e bônus são aplicados manualmente.",
+      "category": "Cosmo Divino",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "notes": "Os círculos de refino do PDF foram conferidos visualmente e transcritos como Refino 1, 2 e 3. Grafias do corpo preservadas."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-cosmo:MESTRE DAS TÉCNICAS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            488,
+            489
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "37beaf3a32cf984d",
+    "name": "Estilo de Combate Porteiro das Dimensões",
+    "type": "divineCosmo",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "História e mitologia das gerações: A lenda de Saga O Cavaleiro utiliza investidas poderosas e rápidas por se mover na velocidade da luz, além de possuir maestria na manipulação do Cosmo, podendo também lançar rajadas de energia, criar distorções temporais e abrir portais para Outra Dimensão, bem como também usar o controle neural para manipular seus oponentes. De acordo com os demais Cavaleiro s de\n\nOuro e por si mesmo, seu poder era capaz de destruir galáxias e até mesmo o impacto de suas Técnicas poderiam gerar abalos sísmicos que podiam ser sentindo a centenas de quilômetros.\n\nPré-requisitos:\n\n7º sentido Superado, Ômega, Pericias Utilização do Cosmo 5, Virtude Técnica a distância e a Técnica teletransporte. Bônus: O jogador ganha + 1 ponto no Atributo Velocidade.\n\nEfeito: A Habilidade de usar uma Técnica se locomovendo entre portais próximos. O Personagem abre um pequeno portal perto dele e outro se abre no destino escolhido, a Técnica viaja por esse caminho. Níveis de Refino: Refino 1: Acrescenta o nível do usuário de correr metros como modificador de distância da Técnica do Personagem. Refino 2: Acrescenta 2x o nível do usuário de correr metros como modificador de distância da Técnica do Personagem. Refino 3: O Personagem cria uma projeção sua que pode lutar por ele em qualquer lugar que não esteja precisando apenas que tenha um Cosmo conhecido no local. A projeção tem tudo que o Personagem tem, é uma cópia perfeita. Caso a projeção morra o Personagem  perde 2 pontos de Vigor permanente.",
+      "page": "489–490",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Cosmo Divino de cavaleiro; confira despertar, Complexo de Deus e refino (pp. 482–483). Os três refinos e bônus são aplicados manualmente.",
+      "category": "Cosmo Divino",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "notes": "Os círculos de refino do PDF foram conferidos visualmente e transcritos como Refino 1, 2 e 3. Grafias do corpo preservadas."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-cosmo:ESTILO DE COMBATE PORTEIRO DAS DIMENSÕES",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            489,
+            490
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "d49b8bd09a15cd69",
+    "name": "Exclamação de Athena",
+    "type": "divineCosmo",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "História e mitologia das gerações: A lenda de Regulus É uma Técnica secreta de poder tão devastador que Athena expressamente proibiu seu uso em batalha. É necessário a união do Cosmo  de três Cavaleiro s de Ouro para utilizá-la. O Cavaleiro é capaz de reproduzi-la sozinho.\n\nPré-requisitos:\n\n7º sentido Superado, Ômega, Pericias Utilização do Cosmo e Combate 5, Virtude Gênio de combate. Bônus: O jogador ganha + 1 ponto no Atributo Cosmo.\n\nEfeito: O Cavaleiro consegue sozinho executar a Exclamação de Athena. (Ver manobras). Níveis de Refino: Refino 1: O Personagem consegue usar a manobra Exclamação de Athena. Refino 2: O Personagem canaliza todo o poder em si, evitando que todos os seus companheiros necessitem ter sucesso. Refino 3: O Personagem pode executar a exclamação de Athena sozinho.",
+      "page": "490",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Cosmo Divino de cavaleiro; confira despertar, Complexo de Deus e refino (pp. 482–483). Os três refinos e bônus são aplicados manualmente.",
+      "category": "Cosmo Divino",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "notes": "Os círculos de refino do PDF foram conferidos visualmente e transcritos como Refino 1, 2 e 3. Grafias do corpo preservadas."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-cosmo:EXCLAMAÇÃO DE ATHENA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            490
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "66eb0997c6e28d96",
+    "name": "Domínio Sobre O Fluxo Sanguíneo",
+    "type": "divineCosmo",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "História e mitologia das gerações: A lenda de Kardia Esse Cosmo se alimenta da febre gravíssima que o Cavaleiro de Escorpião tem  que descarrega contra o seu inimigo. As feridas que se assemelham as posições das estrelas da constelação que começam a brilhar e o sangue da vítima começa a esquentar de maneira assustadora, por meio do Cosmo  do coração de Kardia. Quanto mais alto e mais rápido bater o coração do Cavaleiro, mais quente o sangue do inimigo fica, até que caia morto. É uma Técnica suicida, porque é revelado que Kardia possui uma doença do coração que é uma espécie de febre que o afeta , ao usar esse golpe ele sofreu uma parad a cardíaca por causa da elevação absurda da temperatura de seu próprio coração antes de disparar o Katakeo que agravou mais ainda a doença.\n\nPré-requisitos:\n\n7º Sentido Superado, Ômega, Pericias Medicina e Combate 5, Virtude Vitalidade. Bônus: O jogador ganha + 1 ponto no Atributo Vigor.\n\nEfeito: Fazendo seu coração bater mais forte e aumentando seu fluxo de sangue o Cavaleiro pode causar mais dano. Níveis de Refino: Refino 1: Permite ao Personagem trocar 1 ponto de vida por 2 pontos de dano. Refino 2: Permite ao Personagem trocar 1 ponto de vida por 3 pontos de dano. Refino 3: Permite ao Personagem trocar 1 ponto de vide por 4 pontos de dano.",
+      "page": "491",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Cosmo Divino de cavaleiro; confira despertar, Complexo de Deus e refino (pp. 482–483). Os três refinos e bônus são aplicados manualmente.",
+      "category": "Cosmo Divino",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "notes": "Os círculos de refino do PDF foram conferidos visualmente e transcritos como Refino 1, 2 e 3. Grafias do corpo preservadas."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-cosmo:DOMÍNIO SOBRE O FLUXO SANGUÍNEO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            491
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "115c50bf7e470789",
+    "name": "Domínio Sobre O Elemento II",
+    "type": "divineCosmo",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "História e mitologia das gerações: A lenda de Ikki Algumas vezes os senhores do fogo criam manifestações cósmicas que tomam forma de criaturas mitológicas que passam a habitar o mundo em seus confins mais remotos, essas criações em seu interior possuem a chama da criação, ou como é conhecida a chama primordial, algumas vezes essas chamas ao entrarem em contato com indivíduos que possuem Cosmos capazes de dominar as chamas, decidem habitar no interior desses Cavaleiros, nutrindo , e aumentando exponencialmente as capacidades desses Cavaleiro s, no começo o Cavaleiro  vai ouvir vozes em sua mente no momento da união, um rito de passagem para o hospedeiro do fogo verdadeiro, aquele que portar a chama jamais será o mesmo pois o fogo se dobrará a sua vontade e nunca mais será capaz de feri-lo, pois ele é aquele que carreg a a chama da criação, a chama que nunca se extingue , em sua fúria vulcões explodirão , em sua paz incêndios cessarão, dizem que até mesmo o calor que emana dos corpos são sentidos por esses indivíduos.\n\nPré-requisitos:\n\n7º sentido Superado, Ômega, Pericias Utilização do Cosmo e Combate 5, Virtude Cosmo de fogo. Bônus: O jogador ganha + 1 ponto no Atributo Cosmo.\n\nEfeito: As chamas da criação nunca se apagam, indivíduos quando submetidos a ela tem em seus corpos queimaduras terríveis. Níveis de Refino: Refino 1: Os Alvos de suas Técnicas de fogo ficarão queimando nos turnos subsequentes 5 de dano/Turno. Refino 2: Os Alvos de suas Técnicas de fogo ficarão queimando nos turnos subsequentes 10 de dano/Turno. Refino 3: Os Alvos de suas Técnicas de fogo ficarão queimando nos turnos subsequentes 15 de dano/Turno. OBS: O dano não é cumulativo pelo uso de múltiplas Técnicas e o fogo só se extingue pelo uso de um milagre.",
+      "page": "491–492",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Cosmo Divino de cavaleiro; confira despertar, Complexo de Deus e refino (pp. 482–483). Os três refinos e bônus são aplicados manualmente.",
+      "category": "Cosmo Divino",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "notes": "Os círculos de refino do PDF foram conferidos visualmente e transcritos como Refino 1, 2 e 3. Grafias do corpo preservadas."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-cosmo:DOMÍNIO SOBRE O ELEMENTO II",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            491,
+            492
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "850959b9202087c6",
+    "name": "Domínio Sobre Zero Absoluto",
+    "type": "divineCosmo",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "História e mitologia das gerações: A lenda de Krest Como todos Cavaleiro s que dominam o gelo, você possui a capacidade de controlar as temperaturas do ponto de congelamento dos átomos. No seu caso em particular, Krest é dito ser o único Cavaleiro em toda a história do Santuário que detinha o domínio total sobre o Zero Absoluto e capaz de ir além dele, dado que ele era capaz de empregá -lo em todas as suas Técnicas, algo que nem mesmo seu aluno, os demais sucessores da Armadura  de Aquário ou usuários deste estilo foram capazes de realizar sem ter de utilizar a Execução Aurora, sendo este o provável motivo dele ser visto como o mais forte Cavaleiro de Aquário que já viveu. Graças a esse domínio absoluto que detinha, Krest afirmou que poderia derrotar até os mais poderosos Cavaleiro s de Ouro  e ainda congelar suas Armaduras . Ele também era capaz de resistir o Zero Absoluto quando utilizado contra ele.\n\nPré-requisitos:\n\n7º sentido Superado, Ômega, Pericias Utilização do Cosmo, Acadêmicos e Combate 5, Virtude Cosmo natural ou Big Bang Zero Absoluto. Bônus: O jogador ganha + 1 ponto no Atributo Cosmo.\n\nEfeito: Fazendo os átomos perderem completamente seus movimentos. As Armaduras perdem sua Proteção de Armadura e qualquer Instrumento ou Acessório Especial. Níveis de Refino: Refino 1: - 273,15º C o Cavaleiro congela uma Armadura de Ouro. Refino 2: - 273, 25º C o Cavaleiro congela qualquer Barreira Divina. Refino 3: Cócytos, o Inferno de Gelo. O Cavaleiro Congela uma Kamui.",
+      "page": "492–493",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Cosmo Divino de cavaleiro; confira despertar, Complexo de Deus e refino (pp. 482–483). Os três refinos e bônus são aplicados manualmente.",
+      "category": "Cosmo Divino",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "notes": "Os círculos de refino do PDF foram conferidos visualmente e transcritos como Refino 1, 2 e 3. Grafias do corpo preservadas."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-cosmo:DOMÍNIO SOBRE ZERO ABSOLUTO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            492,
+            493
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "de627d2b252d049e",
+    "name": "Controle Neural",
+    "type": "divineCosmo",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "História e mitologia das gerações: A lenda de Aspros O Cavaleiro detém o conhecimento completo de como o cérebro humano funciona, bem como que regiões são responsáveis pela razão, lealdade, vontade própria e até mesmo a que conecta o corpo com o Cosmo . Graças a isso, ele poderia arrebatar qualquer tipo de comportamento cerebral e transformar qualquer um em meras marionetes sem vontade, a não ser em certos casos onde as vítimas detinham uma força de vontade maior que a da Técnica. Aspros afirma que tal capacidade é o que o torna quase tão poderoso quanto um Deus, como ele fora capaz de anular até mesmo a ligação absoluta que Hades tem com um de seus espectros tal qual ele fez com Chris. Isso fez com que Airheart o declarasse como o mais perigoso Cavaleiro de sua geração e um risco para ambos os lados.\n\nPré-requisitos:\n\n7º sentido Superado, Ômega, Pericias Utilização do Cosmo e Medicina 5, Virtude Proteção do Cosmo (Controle). Bônus: O jogador ganha + 1 ponto no Atributo Sentidos.\n\nEfeito: O total controle da mente humana e da ligação das estrelas Níveis de Refino: Refino 1: Imune a qualquer ação que tente controlar a mente do Cavaleiro. Refino 2: Manipulação da mente humana.  Introduz e apaga memórias no alvo. O cavaleiro precisa ter uma Técnica que atinja a mente, para poder manipular o alvo e ser bem sucedido no ataque. Refino 3: O Cavaleiro pode, por 1 dia, cortar a ligação da constelação protetora de outro Cavaleiro. Fazendo com que o inimigo perca todos os bônus e características ligada a ela , o alvo não pode usar Dád ivas, Técnicas, queimar o Cosmo ou usar qualquer Perícia que o Atributo Associado seja Cosmo.\n\nHabilidade Especial do Cosmo  (Mestre dos Sentidos de Shaka/Saga) : A Virtude Ascenção combinada com esse Cosmo Divino permite ao Cavaleiro anular os 5 Sentidos do alvo em um único golpe da Técnica Destruição dos 5 Sentidos ou Técnica semelhante.",
+      "page": "493–495",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Cosmo Divino de cavaleiro; confira despertar, Complexo de Deus e refino (pp. 482–483). Os três refinos e bônus são aplicados manualmente.",
+      "category": "Cosmo Divino",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "notes": "Os círculos de refino do PDF foram conferidos visualmente e transcritos como Refino 1, 2 e 3. Grafias do corpo preservadas."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-cosmo:CONTROLE NEURAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            493,
+            494,
+            495
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "0bd3dbc3f4442c29",
+    "name": "Controle do Espaço-Tempo e das Dimensões",
+    "type": "divineCosmo",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "História e mitologia das gerações: A lenda de Aspros Tal qual manda a tradição dentre os Cavaleiro s de Gêmeos, você é capaz de manipular o espaço-tempo e em seu caso, você é um Mestre absoluto neste campo, a ponto de se rivalizar com Deuses como Kairos, que comentou que o domínio de Aspros de gêmeos era maior que o seu próprio. Usando seu Cosmo, Aspros poderia rasgar o espaço-tempo a onde ele queria e expandi-lo ao tamanho que desejasse, podendo assim engolfar totalmente até mesmo uma área tão grande quanto a Arena dos Fantasmas e deixá-la existindo em uma fenda dimensional a parte, conseguindo até impedir que alguém possa sair de seus domínios. Ele também poderia criar uma abertura para uma dimensão especifica como um universo dimensional onde pode observar as pessoas. Não obsta nte, Aspros também é capaz de viajar grandes distâncias rapidamente através de suas fendas dimensionais, sendo que quando fazia isso, as assinaturas de sua Cosmo  Energia desapareciam por completo. Ele até poderia invadir outras Técnicas do mesmo estilo como visto quando entrou na Outra Dimensão de Defteros e o enviou para seu templo. Referente a dimensões, Aspros também detinha controle e conhecimento total sobre os campos interdimensionais, visto que poderia abrir portais com facilidade para dimensões com leis físicas próprias (resumidamente, onde o tal poderia manipulá-lo completamente) e fora capaz de abrir caminhos até para a Hiper-dimensão.\n\nPré-requisitos:\n\n7º sentido Superado, Ômega, Pericias Utilização do Cosmo e Furtividade 5, Virtude Portador de Ikhor. Bônus: O jogador ganha + 1 ponto no Atributo Cosmo.\n\nEfeito: A Habilidade de se locomover entre os planos naturais de existência (não funciona em planos criados por outros). Níveis de Refino: Refino 1: Pode acessar e quem estiver com ele o plano (Santuários) de Hades e Poseidon. Refino 2: Pode acessar e quem estiver com ele o Hípermito, sem sofrer dano. Refino 3: Pode criar seu próprio plano onde ele faz todas as regras e é praticamente um Deus.",
+      "page": "495–496",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Cosmo Divino de cavaleiro; confira despertar, Complexo de Deus e refino (pp. 482–483). Os três refinos e bônus são aplicados manualmente.",
+      "category": "Cosmo Divino",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "notes": "Os círculos de refino do PDF foram conferidos visualmente e transcritos como Refino 1, 2 e 3. Grafias do corpo preservadas."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-cosmo:CONTROLE DO ESPAÇO-TEMPO E DAS DIMENSÕES",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            495,
+            496
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8a7b83fd53c51164",
+    "name": "Técnica de Selamento",
+    "type": "divineCosmo",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "História e mitologia das gerações: A lenda de Hakurei Como Grande Mestre do Santuário, Sage tinha proficiência com a Habilidade de manejar os Talismãs de Athena com a função de utilizá-los dependendo da necessidade em uma Guerra Santa para selar divindades opositoras ou até mesmo fazê-lo sobreviver na Hiper-dimensão e selá-la. Tal é seu poder com o uso dos Talismãs que ele poderia até mesmo extrair as almas de Deus es tão fortes como Hades  de seus hospedeiros. No caso de Thanatos, o Talismã fora capaz apenas de enfraquecê-lo temporariamente, já que o poder dos Talismãs diminui a cada século que passa. Cavaleiros com essas características são treinados para ser o futuro Mestre do Santuário.\n\nPré-requisitos:\n\n7º sentido Superado, Ômega, Pericias Utilização do Cosmo e Mitologia 5, Virtude Receptáculo. Bônus: O jogador ganha + 1 ponto no Atributo Cosmo.\n\nEfeito: Conhecedor da Técnica secreta que é capaz de aprisionar Deuses, em cristais, ânforas etc. Níveis de Refino: Refino 1: A Habilidade de selar os poderes de cada Armadura. (ver tabela) Refino 2: A Habilidade de selar as Virtudes dos inimigos. (ver tabela) Refino 3: Capaz de gerar barreiras de selamento que poderiam distorcer, paralisar, privar ou regredir a passagem do tempo de seus alvos com cosmos inferior ao seu e Permite ao Personagem selar alguém com cosmo superior ao seu com a ajuda de algum artefato. O Cavaleiro recebe +10 nos TAP Selamento. Para aprisionar o alvo, o Personagem deve ver selamento no Capitulo 6 seção 6.4.",
+      "page": "496",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Cosmo Divino de cavaleiro; confira despertar, Complexo de Deus e refino (pp. 482–483). Os três refinos e bônus são aplicados manualmente.",
+      "category": "Cosmo Divino",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "notes": "Os círculos de refino do PDF foram conferidos visualmente e transcritos como Refino 1, 2 e 3. Grafias do corpo preservadas."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-cosmo:TÉCNICA DE SELAMENTO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            496
+          ]
+        }
+      }
+    }
+  }
+]

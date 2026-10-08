@@ -1,0 +1,807 @@
+[
+  {
+    "_id": "2d31fdc8d046732d",
+    "name": "Melhoria Asgardiano",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sistema: +10 Pontos de Vida.\n\nAção: Ação de Cosmo.\n\nResistência: Não.",
+      "page": "106",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Asgardiano. Nível de referência no livro: 1. Conferir aquisição conforme evolução e status.",
+      "category": "Asgardiano",
+      "level": 1,
+      "action": "Ação de Cosmo.",
+      "resistance": "Não.",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "improvement"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "asgardian:improvement:1:MELHORIA ASGARDIANO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            106
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "c7d7893f007f90fd",
+    "name": "Olho de Odin",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Seu corpo irradia uma aura gélida com cristais de gelo. Seu poder permite que ele detecte automaticamente os inimigos que ousam invadir seu domínio, revelando qualquer presença indesejada e preparando-se para defender Asgard contra intrusos.\n\nSistema: O Personagem detecta automaticamente indivíduos de Santuários ou Essência diferentes do Cavaleiro que estejam ou entrem em seu Domínio.\n\nResistência: Não",
+      "page": "106",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Asgardiano. Nível de referência no livro: 1. Conferir aquisição conforme evolução e status.",
+      "category": "Asgardiano",
+      "level": 1,
+      "action": "",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "asgardian:ability:1:OLHO DE ODIN",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            106
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3d303209bbac4c51",
+    "name": "Pele de Carvalho",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O destemido Cavaleiro de Asgard, eleva seu cosmo. Sua constelação o envolve em uma aura protetora, tornando-o impenetrável. Enquanto enfrenta seus adversários, a barreira cósmica o defende, tornando -o tão resistente quanto uma árvore antiga e poderosa, frust rando os ataques inimigos.\n\nSistema:  +2 de Proteção de Armadura.\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nCombinação: Treinamento, +",
+      "page": "106",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Asgardiano. Nível de referência no livro: 2. Conferir aquisição conforme evolução e status.",
+      "category": "Asgardiano",
+      "level": 2,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "Treinamento, +",
+      "duration": "[CONTÍNUA/REAÇÃO] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "asgardian:gift:2:PELE DE CARVALHO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            106
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "6b6b70c105747f23",
+    "name": "Velocidade",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Asgardiano, em harmonia com sua constelação e o ambiente natural de Asgard, realiza gestos delicados e fluídos, permitindo que seu cosmo flua como um rio rápido. Sua aura cósmica se expande, concedendo -lhe velocidade extraordinária. Enquanto se move, seus inimigos percebem sua presença apenas como um raio de luz, incapazes de acompanhá-lo, tornando-o um adversário evasivo e ágil em combate.\n\nSistema: O Cavaleiro eleva sua classificação de Velocidade para Velocidade Superada (+).\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "106–107",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Asgardiano. Nível de referência no livro: 3. Conferir aquisição conforme evolução e status.",
+      "category": "Asgardiano",
+      "level": 3,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[CONTÍNUA/REAÇÃO] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "asgardian:ability:3:VELOCIDADE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            106,
+            107
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "29359a6b7f4020e5",
+    "name": "Elfo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro se torna uno com a natureza de Asgard, fundindo seu cosmo com o ambiente. Com gestos fluidos, ele desaparece nos elementos naturais, deslizando entre as árvores e o vento. Seus inimigos veem apenas reflexos do Cavaleiro, incapazes de segui-lo. Ele se torna um guardião invisível da natureza, tornando -se extremamente evasivo e protegido contra ataques inimigos.\n\nSistema: O Personagem dobra  seu movimento e rola 1d10 para um teste de confirmação e se o resultado for 8 (Ouro), 9 (Prata) ou 10  (Bronze) ele fica inatingível esse turno para um alvo (se esconde dentro de uma árvore, torna -se um com o vento, com a Terra, some na neblina).\n\nEspecial: O Asgardiano consegue usar suas ações de luta normalmente enquanto se move.\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nHabilidade Especial do Cosmo (Querido da Natureza): A Virtude Guerreiro Elemental ou Cosmo Natural combinada a esta Dádiva diminui 1 a dificuldade do teste de confirmação para: 7 (Ouro), 8 (Prata) ou 9 (Bronze).\n\nHabilidade Especial do Cosmo (Viajante das Sombras): A Técnica Flecha das Sombras [PRATA][MANIPULAÇÃO DE COSMO] junto com essa Dádiva permite o Cavaleiro se esconder e mover dentro de sombras.",
+      "page": "107",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Asgardiano. Nível de referência no livro: 4. Conferir aquisição conforme evolução e status.",
+      "category": "Asgardiano",
+      "level": 4,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[CONTÍNUA] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "asgardian:gift:4:ELFO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            107
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "1f2126fdd2e4e14f",
+    "name": "Especialização",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem escolhe uma especialização entre: Espirito Inquebrável  (Santo), Domínio Inato (Sábio), Dominar Armas (Guardião) e Réquiem (Artista).",
+      "page": "107",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Asgardiano. Nível de referência no livro: 5. Conferir aquisição conforme evolução e status.",
+      "category": "Asgardiano",
+      "level": 5,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "specialization"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "asgardian:specialization:5:ESPECIALIZAÇÃO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            107
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a6e5994a5ab162ad",
+    "name": "Fenrir",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Asgardiano,  em harmonia com o Grande Lobo de Odin, realiza gestos cerimoniais, elevando seu cosmo e invocando a feroz criatura mitológica. O lobo se materializa a partir da energia cósmica, e com olhos ardentes de intensa energia, envolve o inimigo como uma sombra am eaçadora. Seus uivos aterrorizantes induzem um profundo medo e incutem fraqueza em seus adversários\n\nSistema: Causa o Estado Amedrontado.\n\nAção: Ação de Cosmo\n\nResistência: Sentidos",
+      "page": "107",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Asgardiano. Nível de referência no livro: 6. Conferir aquisição conforme evolução e status.",
+      "category": "Asgardiano",
+      "level": 6,
+      "action": "Ação de Cosmo",
+      "resistance": "Sentidos",
+      "combination": "",
+      "duration": "[CONTÍNUA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "asgardian:gift:6:FENRIR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            107
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "4dcd0d1a87ab177a",
+    "name": "Mjolnir",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro, canalizando o poder de Thor, eleva seu cosmo ao extremo. Seus punhos são envolvidos por uma aura de faíscas elétricas, e ao golpear, o som de trovões ressoa, fazendo com que cada soco desfira danos devastadores. O inimigo é sobrecarregado por essa fúria elétrica e sofre golpes extremamente poderosos.\n\nSistema: O Jogador precisa ter sucesso na Manobra Ataque de Foco para o efeito funcionar.\n\nBronze: 10 de Dano\n\nPrata: 20 de Dano\n\nOuro: 30 de Dano\n\nAção: Ação de Cosmo + Ação de Movimento Parcial\n\nResistência: Não",
+      "page": "108",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Asgardiano. Nível de referência no livro: 7. Conferir aquisição conforme evolução e status.",
+      "category": "Asgardiano",
+      "level": 7,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[INSTANTÂNEA] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "asgardian:ability:7:MJOLNIR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            108
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3f902e7c3c48c35d",
+    "name": "Dois Cosmos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sua ligação com a Natureza cósmica se aprofunda, e uma nova técnica se desdobra diante dele, complementando sua essência.  Revelando sua conexão profunda com o Cosmo enquanto seu poder cósmico se renova e se torna mais formidável do que nunca.\n\nSistema: O Cavaleiro desenvolve +1 Natureza de Cosmo + 1 Técnica que deve ser da mesma Natureza de Cosmo desenvolvido. Ex. Mentais ou Ilusórias e Físico.",
+      "page": "108",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Asgardiano. Nível de referência no livro: 8. Conferir aquisição conforme evolução e status.",
+      "category": "Asgardiano",
+      "level": 8,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "asgardian:gift:8:DOIS COSMOS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            108
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "2faa6d2a05cc5109",
+    "name": "Perseverança",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Asgardiano, conectado à sua constelação e à natureza, ergue sua mão ao céu. Seu cosmo se intensifica, e a aura da constelação de Ursa Maior o envolve, concedendo -lhe a benção de Odin. Uma barreira divina se forma, aumentando sua defesa contra todas as técnicas e habilidades adversárias. O inimigo se vê incapaz de penetrar essa proteção, tornando seus ataques ineficazes.\n\nSistema: O Personagem recebe +1 de Modificador Positivo nos Testes de resistência de Técnicas, Habilidades e Dádivas.\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nCombinação: Utilização do Cosmo, +",
+      "page": "108",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Asgardiano. Nível de referência no livro: 9. Conferir aquisição conforme evolução e status.",
+      "category": "Asgardiano",
+      "level": 9,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "Utilização do Cosmo, +",
+      "duration": "[CONTÍNUA/REAÇÃO] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability",
+      "notes": "Correção de grafia no nome; título no livro: Perserverança. Regras preservadas."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "asgardian:ability:9:PERSERVERANÇA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            108
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "57784248d0b7a9c6",
+    "name": "Proteção Natural",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Asgardiano  adentra o misterioso Bosque de Yggdrasil. Lá, ele inicia um treinamento intenso, meditando em harmonia com a natureza e sua constelação. Seu cosmo se entrelaça com o cosmo da floresta e, como resultado, ele fortalece a proteção natural concedida por Odin. Sua Armadura irradia uma aura impenetrável, tornando-o imune a um dos elementos da natureza, deixando o inimigo perplexo ao tentar atacá-lo com fogo, frio, ar, terra ou água, sem sucesso.\n\nSistema: O Jogador escolhe sua Proteção Natural entre: fogo, água, ar, terra (que não poderá ser modificado futuramente) e terá uma resistência extra descrita abaixo:\n\nEfeito Natural: Imune ao elemento escolhido.\n\nEfeito Cósmico: O Personagem recebe +1 de Modificador Positivo em todas as situações do elemento escolhido.\n\nCombinação: Treinamento, +\n\nHabilidade Especial do Cosmo  (Reforço Natural) : A Virtude Guerreiro Elemental combinada com esta Dádiva aumenta +1 o Modificador Positivo.\n\nHabilidade Especial do Cosmo (Reforço Ampliado): A Virtude Dois Elementos combinada com esta Dádiva permite ao Cavaleiro escolher 2 elementos como Proteção Natural.",
+      "page": "108–109",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Asgardiano. Nível de referência no livro: 10. Conferir aquisição conforme evolução e status.",
+      "category": "Asgardiano",
+      "level": 10,
+      "action": "",
+      "resistance": "",
+      "combination": "Treinamento, +",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "asgardian:gift:10:PROTEÇÃO NATURAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            108,
+            109
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "998f9a6388f77bc1",
+    "name": "Lobo das Sombras",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro , ativa sua habilidade, conectando -se profundamente à sua constelação e à natureza circundante. Com gestos precisos, ele traça runas no solo, evocando os poderes do Fenrir, o lendário lobo asgardiano. Seu cosmo se entrelaça com a energia da terra, revelando pegadas e rastros que o conduzem diretamente ao seu alvo. O inimigo, mesmo tentando se esconder, é rastreado implacavelmente, incapaz de escapar do cerco do Fenrir.\n\nSistema: O Cavaleiro pode encontrar inimigos que estejam se escondendo ou fugindo. Dentro do Domínio: Automático. Fora do Domínio: Teste resistido de Percepção Extrassensorial x Furtividade.\n\nAção: Ação de Cosmo + Ação de Movimento Total\n\nResistência: Sim\n\nHabilidade Especial do Cosmo  (Matilha de Lobos): Virtude Fotógrafo de Cosmo  junto com essa Habilidade permite ao Personagem ampliar seu Domínio a qualquer lugar no mundo, ou seja, o mundo é seu Domínio.",
+      "page": "109",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Asgardiano. Nível de referência no livro: 11. Conferir aquisição conforme evolução e status.",
+      "category": "Asgardiano",
+      "level": 11,
+      "action": "Ação de Cosmo + Ação de Movimento Total",
+      "resistance": "Sim",
+      "combination": "",
+      "duration": "[DIAS] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "asgardian:ability:11:LOBO DAS SOMBRAS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            109
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "88945a6aa7719402",
+    "name": "Foco em Técnicas",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "parte em uma jornada solitária nas florestas profundas de Asgard, em busca de aprimorar seu cosmo. Durante seu treinamento, ele medita junto às árvores antigas, absorvendo a energia cósmica da natureza  em perfeita harmonia com a vida ao seu redor. Em um momento de transcendência cósmica, seu poder se expande dramaticamente. Com sua técnica aprimorada e, agora, dotado de um cosmo mais formidável, ele se torna uma força intransponível no campo de batalha.\n\nSistema: O Personagem eleva 1 Nível de Dano de suas Técnicas.",
+      "page": "109–110",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Asgardiano. Nível de referência no livro: 12. Conferir aquisição conforme evolução e status.",
+      "category": "Asgardiano",
+      "level": 12,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "asgardian:gift:12:FOCO EM TÉCNICAS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            109,
+            110
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "eb84fa72c4bb058a",
+    "name": "Caminho do Valhalla",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O impetuoso Cavaleiro de Asgard, irradia sua presença enquanto avança, sua armadura resplandecendo com um brilho divino. Com a majestade de um guerreiro digno, ele emprega seu cosmo para moldar a natureza em seu favor. Ao final de cada impactante ataque, estacas de gelo brotam de seus punhos, perfurando seu adversário e impondo um fardo de danos ao longo do tempo, tornando cada confronto uma batalha inesquecível e angustiante para seu inimigo.\n\nSistema: A cada 10 ataques que cause danos. O inimigo recebe 1 estaca de gelo e pode ter no máximo uma quantidade de estacas igual ao Atributo chave do Personagem. Cada estaca causa danos cumulativo e podem ser explodidas todas de uma vez causando danos da explosão. Dano: +3 de dano cumulativo por estaca e 10 de dano de  explosão por estaca.\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "110",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Asgardiano. Nível de referência no livro: 13. Conferir aquisição conforme evolução e status.",
+      "category": "Asgardiano",
+      "level": 13,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[LUTA] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "asgardian:ability:13:CAMINHO DO VALHALLA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            110
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "92bd0e12f6d879ff",
+    "name": "O Último Homem em Pé",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "No coração de Asgard, o Cavaleiro se submete a um treinamento árduo e profundo. Conectado com a natureza e sua constelação, ele canaliza o cosmo de Dubhe para reviver após a derrota, renascendo como o imortal guerreiro  Siegfried. S ua respiração e movimentos fluem como a própria essência da vida, sua conexão com a natureza lhe confere uma nova chance, desafiando a morte e protegendo Asgard de toda ameaça.\n\nSistema: Quando o Personagem cai em batalha, automaticamente ele revigora seus pontos de vida renascendo. Pode ser usada uma vez por missão. O Jogador faz um TdA de Sentidos dificuldade Difícil [15] se obter sucesso a Dádiva terá efeito como Ação Livre, se não passar não consegue agir no mesmo turno, mas recuperando a consciência impossibilitado de agir.\n\nPrata: 50 + Vigor x 5 Pontos de Vida\n\nOuro: 100 + Vigor x 5 Pontos de Vida\n\nAção: Ação Livre ou Ação Completa.\n\nResistência: Não",
+      "page": "110",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Asgardiano. Nível de referência no livro: 14. Conferir aquisição conforme evolução e status.",
+      "category": "Asgardiano",
+      "level": 14,
+      "action": "Ação Livre ou Ação Completa.",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[REAÇÃO] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "asgardian:gift:14:O ÚLTIMO HOMEM EM PÉ",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            110
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ae345fe55fec4fc0",
+    "name": "Sopro de Loki",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O destemido Cavaleiro  de Asgard, ergue s eu braço sob a majestosa aurora boreal. Seu cosmo se funde com a natureza circundante, aumentando sua velocidade à medida que os ventos gelados de Asgard canalizam sua energia. Seus golpes, inicialmente poderosos, aceleram gradualmente até se transformarem em feixes de luz, atravessando as defesas do inimigo e causando estragos imparáveis. O adversário, incapaz de acompanhar sua velocidade crescente, sucumbe ao turbilhão de ataques.\n\nSistema: O alvo perde 1 ação de defesa.\n\nAção: Ação de Cosmo\n\nResistência: Velocidade\n\nCombinação: Treinamento, +\n\nHabilidade Especial do Cosmo  (Sopro Extra): Virtude Semideus ou Telepata junto com essa Habilidade aumenta +2 ações perdidas do alvo.",
+      "page": "110–111",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Asgardiano. Nível de referência no livro: 15. Conferir aquisição conforme evolução e status.",
+      "category": "Asgardiano",
+      "level": 15,
+      "action": "Ação de Cosmo",
+      "resistance": "Velocidade",
+      "combination": "Treinamento, +",
+      "duration": "[INSTANTÂNEO] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "asgardian:ability:15:SOPRO DE LOKI",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            110,
+            111
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "6d84305f200098aa",
+    "name": "Mãe Natureza",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O valente Cavaleiro de Asgard, abre seus braços  e fecha os olhos em concentração. Seu cosmo se mescla com a natureza, tornando -se uno com o vento, o mar, o céu e o cosmo. Seu corpo é envolto por uma aura luminosa que irradia poder. Com sua profunda conexão com a natureza, ele absorve a pura energia cósmica da terra de Asgard. Ele assume uma postura firme como uma árvore tornando-se um guardião da natureza.\n\nSistema: A cada turno parado em meio a natureza o Personagem  recupera 2 pontos de Cosmo Energia.\n\nEspecial: O Cavaleiro não pode fazer outras ações, nem utilizando Virtudes.\n\nEspecial:  O Personagem consegue acumular +1 Ponto de Cosmo Energia acima da capacidade do corpo humano para explodir seu Cosmo ao máximo.  A cada 2 pontos de Cosmo Energia acumulada acima do limite humano, dessa forma, o Cavaleiro eleva seu Cosmo Máximo 1 Ponto. Caso interrompa a meditação antes do término do tempo, o Cavaleiro, perde todos os pontos acumulados meditados zerando a barra de Cosmo Máximo.\n\nAção: Ação de Cosmo + Ação de Movimento Total\n\nResistência: Não\n\nCombinação: Treinamento, +\n\nHabilidade Especial do Cosmo  (Escolhido pela mãe natureza de Alberish o 13°): A Virtude Guerreiro Elemental ou Cosmo Natural combinada com esta Dádiva permite ao Cavaleiro ficar indetectável enquanto durar a Dádiva. Considera que o Asgardiano está com a Virtude Cosmo Oculto e só pode ser descoberto com as Dádivas: Zona [Artista 10°] e Unificação com o universo [Sábio 20º].",
+      "page": "111",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Asgardiano. Nível de referência no livro: 16. Conferir aquisição conforme evolução e status.",
+      "category": "Asgardiano",
+      "level": 16,
+      "action": "Ação de Cosmo + Ação de Movimento Total",
+      "resistance": "Não",
+      "combination": "Treinamento, +",
+      "duration": "[SUSTENTADO] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "asgardian:gift:16:MÃE NATUREZA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            111
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ef75033606d9385a",
+    "name": "Olhos de Loki",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro invoca o ensinamento do ardiloso deus Loki. Com a astúcia do deus e sua ligação à natureza, o Asgardiano focaliza seu cosmo na identificação dos pontos vulneráveis da armadura inimiga. Em um movimento calculado, ele ataca esses pontos, castigando severamente seu adversário, deixando -o indefeso e exposto perante sua destreza inigualável.\n\nSistema: O alvo perde 1 de Proteção da Armadura.\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nCombinação: Combate, +",
+      "page": "111–112",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Asgardiano. Nível de referência no livro: 17. Conferir aquisição conforme evolução e status.",
+      "category": "Asgardiano",
+      "level": 17,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "Combate, +",
+      "duration": "[INSTANTÂNEA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "asgardian:ability:17:OLHOS DE LOKI",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            111,
+            112
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "10445db1b0b3e7af",
+    "name": "Frio de Odin",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "No cenário gélido de Asgard, o Cavaleiro eleva sua Cosmo Energia ao seu auge. Com movimentos graciosos, ele desenha o símbolo da sua constelação e a neve começa a cair ao seu redor. Cada ataque seu desencadeia uma nevasca feroz, transformando a paisagem em um reino de gelo e congelando seu inimigo, prendendo-o em uma prisão de frio eterno.\n\nSistema: Chance 5 + Nível% de congelar um membro d o alvo a cada final de turno que o Cavaleiro de Odin atacar e causar danos. Cada membro congelado fica incapacitado ( ver Estado: Incapacitado).\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nHabilidade Especial do Cosmo  (Mudança Natural) : A Virtude Guerreiro Elemental combinada com esta Dádiva transforma o tipo Continua em Permanente.",
+      "page": "112",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Asgardiano. Nível de referência no livro: 18. Conferir aquisição conforme evolução e status.",
+      "category": "Asgardiano",
+      "level": 18,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[CONTÍNUA] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "asgardian:gift:18:FRIO DE ODIN",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            112
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b8b26c9f5555839a",
+    "name": "Protetor",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Em um ato de sublime coragem, o Asgardiano estende os braços em um gesto imponente, invocando a força de sua constelação e canalizando o cosmo através das árvores e rochas ao seu redor. Em um turbilhão de folhas e pedras, ele se torna um escudo impenetrável, protegendo seus companheiros de equipe dos ataques inimigos, revelando sua verdadeira essência protetora.\n\nSistema: O Cavaleiro transforma suas ações de ataque em ações de defesa para defender alguém ou a si mesmo.\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "112",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Asgardiano. Nível de referência no livro: 19. Conferir aquisição conforme evolução e status.",
+      "category": "Asgardiano",
+      "level": 19,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[CONTÍNUA/REAÇÃO] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "asgardian:ability:19:PROTETOR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            112
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "0536234fc888b3ce",
+    "name": "Benção de Odin",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Asgardiano, em um momento de extrema devoção, ergue os olhos para o céu e abre os braços, canalizando o poder de sua constelação e a benção de Odin. Uma aura dourada o envolve, e ele se torna o próprio guardião de Asgard, a Armadura de Odin o reveste, aumentando sua força e resistência. Seu inimigo, agora diante da majestosa Armadura de Odin, percebe a imensa disparidade de poder, temendo enfrentar um representante direto dos deuses.\n\nSistema: O Personagem 1 vez por missão pode invocar a Armadura de Odin.\n\nAção: Ação de Cosmo\n\nResistência: Não Armadura de Odin\n\nEspecial: Só recebe dano por Cavaleiros que possuam o Sétimo sentido no estágio Ômega e por Técnicas de Ouro , caso contrário, não sofrendo dano por Técnicas, Habilidades ou Dádivas.\n\nEspecial: Todas as Armaduras Divinas desenvolvem asas funcionais (Virtude Voo).\n\nEspecial: Armadura de Odin possui o acessório especial Espada Longa. Considere com a Virtude Armas Próprias (Espada Longa).\n\nEspecial (Efeito Celestial): Todas as Armaduras Divinas são douradas e emitem um brilho divino e suas Técnicas e ações de luta são rastros de energia superando a Velocidade da Luz. Classe da Armadura Pontos de Vida Proteção Cosmo Energia Cosmo Mínimo Divina 150 15 +15 7º Sentido Superado",
+      "page": "112–113",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Asgardiano. Nível de referência no livro: 20. Conferir aquisição conforme evolução e status.",
+      "category": "Asgardiano",
+      "level": 20,
+      "action": "Ação de Cosmo",
+      "resistance": "Não Armadura de Odin",
+      "combination": "",
+      "duration": "[INSTANTÂNEA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "asgardian:gift:20:BENÇÃO DE ODIN",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            112,
+            113
+          ]
+        }
+      }
+    }
+  }
+]

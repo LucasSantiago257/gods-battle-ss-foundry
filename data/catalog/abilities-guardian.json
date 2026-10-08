@@ -1,0 +1,809 @@
+[
+  {
+    "_id": "7af30a1254c30ffd",
+    "name": "Melhoria Guardião",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sistema: +1 de Proteção de Armadura.\n\nAção: Ação de Cosmo.\n\nResistência: Não.",
+      "page": "79–80",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Guardião. Nível de referência no livro: 1. Conferir aquisição conforme evolução e status.",
+      "category": "Guardião",
+      "level": 1,
+      "action": "Ação de Cosmo.",
+      "resistance": "Não.",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "improvement"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "guardian:improvement:1:MELHORIA GUARDIÃO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            79,
+            80
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "73e87cc00bb343ab",
+    "name": "Animar Armas",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Seu Cosmo flui intensamente, envolvendo a arma com o brilho das estrelas. As armas, agora animadas, tremem de vida e ressoam em harmonia com a vontade do Cavaleiro. Elas se lançam contra os inimigos como seres conscientes, cortando com precisão e defendendo seu mestre com ferocidade, como se tivessem ganhado vida própria.\n\nSistema: Com essa Habilidade o Personagem  pode animar as Armas como se elas estivessem vivas.  Especial: Permite ao Cavaleiro utilizar Ataques a Distância com suas armas.\n\nEspecial: As armas percorrem uma distância equivalente ao movimento  do Cavaleiro. Atingindo o alvo até o movimento do Cavaleiro metros. No 10º Nível suas armas evoluem e podem alcançar o dobro do seu movimento.\n\nEspecial: Com esta Habilidade as Armas se materializam através de puro Cosmo (como ação livre), e o Cavaleiro não necessita mais da Armadura  para conjura-la, as Armas fazem parte do Cosmo do Cavaleiro. Sendo Bronzeadas quando o Cavaleiro for de Bronze, prateada quando for de um Cavaleiro de Prata e emanará um brilho dourado e irradiará pó de estrelas quando o Cavaleiro for de Ouro.\n\nEspecial: O Cavaleiro mesmo sem Armadura causa o dano como se tivesse a portando.\n\nHabilidade Especial do Cosmo  (Guerreiro da Natureza): A Virtude Guerreiro Elemental em conjunto com esta Habilidade permite ao Cavaleiro imbuir sua Arma com o elemento escolhido (exceto fogo) acrescentando +1 de Bônus aplicado aos danos causados por ela.\n\nHabilidade Especial do Cosmo (Enviado de Hélio): A Virtude Cosmo de Fogo em conjunto com esta Habilidade permite imbuir sua Arma com o puro fogo acrescentando +1 de Bônus aplicado aos danos causados por ela.",
+      "page": "80",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Guardião. Nível de referência no livro: 1. Conferir aquisição conforme evolução e status.",
+      "category": "Guardião",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "guardian:ability:1:ANIMAR ARMAS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            80
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "649c717711d195b1",
+    "name": "Aterrorizar",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro ergue suas armas sagradas. Seu Cosmo, flui por elas , irradiando uma aura ameaçadora enquanto ele move suas armas com destreza inigualável. Os inimigos à sua frente são consumidos por um medo avassalador, suas mentes obscurecidas por pesadelos que tornam a batalha um desafio insuperável. A coragem desaparece enquanto o Guardião comanda o medo.\n\nSistema: Causa o Estado Amedrontado.\n\nAção: Ação de Cosmo + Ação de movimento total\n\nResistência: Sentidos",
+      "page": "80–81",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Guardião. Nível de referência no livro: 2. Conferir aquisição conforme evolução e status.",
+      "category": "Guardião",
+      "level": 2,
+      "action": "Ação de Cosmo + Ação de movimento total",
+      "resistance": "Sentidos",
+      "combination": "",
+      "duration": "[CONTÍNUA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "guardian:gift:2:ATERRORIZAR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            80,
+            81
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5fc59fbbc7615c2a",
+    "name": "Arma Dupla",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Seu corpo é cercado por um manto de Cosmo energia. Com sua arma sagrada em mãos  e com um movimento fluido, o Cavaleiro  empunha sua arma de forma defensiva, formando uma defesa reluzente, enquanto simultaneamente desfere golpes devastadores com sua segunda arma. Seu inimigo, atordoado e incapaz de acompanhar a velocidade do Cavaleiro, é surpreendido pela incrível maestria que permite a ele atacar e defender com perfeição.\n\nSistema: O Personagem pode fazer com que uma de suas Armas ataquem enquanto uma defende. Acrescenta 1 ação de ataque e defesa extra.\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nCombinação: Combate, +\n\nHabilidade Especial do Cosmo (Cosmo Amigo): A Virtude Companheiro de Cosmo junto com essa Dádiva permite ao cavaleiro defender seus companheiros que estão dentro do seu domínio, acrescentando ações de defesas extras. O mesmo funciona para os protegidos da determinação do Cavaleiro.",
+      "page": "81",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Guardião. Nível de referência no livro: 3. Conferir aquisição conforme evolução e status.",
+      "category": "Guardião",
+      "level": 3,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "Combate, +",
+      "duration": "[INSTANTÂNEA] [SUPORTE] [REAÇÃO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "guardian:ability:3:ARMA DUPLA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            81
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "9b8c159f50495494",
+    "name": "Noção do Perigo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "As armas, agora como sentinelas vivas, detectam qualquer perigo iminente, tornando o inimigo invisível um alvo inevitável. Sua perícia e vigilância incomparáveis permitem que ele se antecipe a qualquer ameaça, mantendo sua Guarda protegida e pronta para a ação.\n\nSistema: Qualquer perigo direcionado ao Cavaleiro dentro d o seu Domínio  é percebid o. Considere que as armas estão sempre em vigilância recebendo +1 de Modificador Positivo em seu Domínio.\n\nResistência: Não",
+      "page": "81",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Guardião. Nível de referência no livro: 4. Conferir aquisição conforme evolução e status.",
+      "category": "Guardião",
+      "level": 4,
+      "action": "",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "guardian:gift:4:NOÇÃO DO PERIGO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            81
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "7dbf2e40167fd937",
+    "name": "Dominar Armas",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Os Cavaleiros Guardiões são considerados os mais ágeis entre todas as constelações e isso se dá ao fato de que seus treinamentos os deixam verdadeiras máquinas de defesa a uma velocidade inigualável.\n\nSistema: A cada 5 Níveis o Guardião recebe os Modificadores:\n\n+1 ação de defesa;\n\n+1 na Proteção de Armadura.\n\nEspecial: Escudo de Combate: O Guardião pode a cada 10 níveis reduzir o dano recebido em 10 + 10% para cada 5 Níveis.\n\nSistema: Ação livre; Instantânea; Quantidade de uso por dia.\n\nHabilidade Especial do Cosmo (Escudo Amigo): A Virtude Companheiro de Cosmo junto com essa Dádiva permite ao cavaleiro utilizar o Especial Escudo de Combate  em outra pessoa que deve estar dentro do seu domínio, recebendo 30% do dano total para si.\n\nHabilidade Especial do Cosmo (Guardião do Grupo): A Virtude Companheiro de Cosmo mais a Virtude Fotógrafo de Cosmo junto com essa Dádiva permite ao cavaleiro utilizar o\n\nEspecial Escudo de Combate  e defender seus companheiros que estão dentro do seu domínio, recebendo 10% do dano total para si.",
+      "page": "81–82",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Guardião. Nível de referência no livro: 5. Conferir aquisição conforme evolução e status.",
+      "category": "Guardião",
+      "level": 5,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "specialization"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "guardian:specialization:5:DOMINAR ARMAS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            81,
+            82
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "641d20d2884567ef",
+    "name": "Energizar Armas",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro eleva sua determinação e irradia seu Cosmo intenso em sua arma. Com um movimento rápido, sua arma, se transforma momentaneamente, crescendo e brilhando com pura energia. Em um movimento incrivelmente veloz, ele desfere um golpe devastador no inimigo. A energia cósmica atravessa o corpo do adversário, causando danos físicos e de energia, e lançando-o pelos ares, incapaz de resistir à força avassaladora do ataque.\n\nSistema: O Jogador faz um teste da Manobra de Combate Ataque de Foco  para acertar o alvo e o efeito funcionar.\n\nBronze: 10 de Dano\n\nPrata: 20 de Dano\n\nOuro: 30 de Dano\n\nAção: Ação de Cosmo + Ação de movimento parcial\n\nResistência: Não\n\nHabilidade Especial do Cosmo  (Ainda Não Acabou) : A Virtude Semideus em conjunto com esta Habilidade permite ao Cavaleiro atingir o mesmo alvo mais uma única vez. E atingir outros alvos diferentes para cada ação de Movimento Parcial que ele utilizar.",
+      "page": "82",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Guardião. Nível de referência no livro: 6. Conferir aquisição conforme evolução e status.",
+      "category": "Guardião",
+      "level": 6,
+      "action": "Ação de Cosmo + Ação de movimento parcial",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[INSTANTÂNEA] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "guardian:gift:6:ENERGIZAR ARMAS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            82
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "699ef8b53646d16f",
+    "name": "Balanço",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro fixa suas armas, incorporando -as à energia da Terra. Sua determinação é palpável à medida que ele se prepara para o ataque. Com um movimento foraz, ele se solta, impulsionando suas armas em direção ao inimigo com a força de um estilingue cósmico. As armas voam pelo campo de batalha, atravessando o espaço em alta velocidade até atingir o(s) alvo(s) com precisão milimétrica, causando estragos no(s) oponente(s) e deixando-o(s) atordoado(s) pela velocidade e potência do ataque.\n\nSistema:  O Jogador precisa ter sucesso na Manobra Ataque de Foco para o efeito funcionar.\n\nBronze: 10 de Dano\n\nPrata: 20 de Dano\n\nOuro: 30 de Dano\n\nEspecial: A Habilidade faz com que a Arma do Cavaleiro aumente e  atinja quem estiver em seu domínio. A Arma sai, literalmente, seguindo os alvos, seja: em zigue zague ou serpenteando.\n\nAção: Ação de Cosmo + Ação de movimento total\n\nResistência: Não",
+      "page": "82–83",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Guardião. Nível de referência no livro: 7. Conferir aquisição conforme evolução e status.",
+      "category": "Guardião",
+      "level": 7,
+      "action": "Ação de Cosmo + Ação de movimento total",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[INSTANTÂNEA] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "guardian:ability:7:BALANÇO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            82,
+            83
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "66bc062b9d43be30",
+    "name": "Estilhaço",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro canaliza sua Cosmo Energia na arma, que começa a brilhar intensamente como uma estrela. Com um golpe preciso, a arma atinge o inimigo e, no momento do impacto, irradia estilhaços de estrelas que se espalham como fogos cósmicos, causando estragos no oponente.\n\nSistema: Quando atingido, o alvo, se não resistir, sofre ferimentos internos resultando em danos que se acumulam. É preciso pelo menos um acerto para causa o efeito. O efeito dura até o combate terminar ou por qualquer Habilidade/Dádiva, Técnica ou Virtude que possa curar o alvo. Dano: 1 + Graduação da Perícia Combate (sem PA).\n\nAção: Ação de Cosmo\n\nResistência: Vigor",
+      "page": "83",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Guardião. Nível de referência no livro: 8. Conferir aquisição conforme evolução e status.",
+      "category": "Guardião",
+      "level": 8,
+      "action": "Ação de Cosmo",
+      "resistance": "Vigor",
+      "combination": "",
+      "duration": "[LUTA] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "guardian:gift:8:ESTILHAÇO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            83
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "cb727e4104afd956",
+    "name": "Defesa Circular",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro começa a girar sua arma rapidamente, criando uma barreira de energia giratória formando verdadeiros “tentáculos”. Os tentáculos da barreira, como se ganhassem vida própria, se estendem em direção ao inimigo, formando uma muralha defensiva impenetrável e ameaçadora. O inimigo se vê incapaz de atravessar essa formação, enfrentando a impenetrável proteção da muralha viva.\n\nSistema: +2 de Modificador Positivo nas ações de defesa.\n\nAção: Ação de Cosmo + Ação de movimento parcial\n\nResistência: Não\n\nCombinação: Esportes, +\n\nEspecial: O Cavaleiro Guardião pode  dispersar venenos externos (em forma de gases ou líquidos) naturais e cósmicos (Dif. Duelo Passivo do alvo) e dessa forma anular seus efeitos.",
+      "page": "83–84",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Guardião. Nível de referência no livro: 9. Conferir aquisição conforme evolução e status.",
+      "category": "Guardião",
+      "level": 9,
+      "action": "Ação de Cosmo + Ação de movimento parcial",
+      "resistance": "Não",
+      "combination": "Esportes, +",
+      "duration": "[CONTÍNUA/REAÇÃO] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "guardian:ability:9:DEFESA CIRCULAR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            83,
+            84
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "34d2e04a85d56960",
+    "name": "Imobilizar",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro concentra seu cosmo em suas armas, que começam a brilhar intensamente. Ele arremessa as armas em direção ao inimigo, e no momento do impacto, elas se fixam no alvo. As armas começam a emitir uma aura ofuscante, enquanto envolvem o inimigo, imobilizando-o completamente. À medida que a aura intensifica, as armas pressionam com força, esmagando os órgãos internos do inimigo e despedaçando sua armadura, deixando-o inimigo é dominado por esse ataque avassalador.\n\nEspecial: O Cavaleiro Guardião pode prender e continuar atacando, se utilizar a Habilidade Arma Dupla (apenas com os bônus), sem perder a vantagem da manobra, caso contrário, vai precisar manter o inimigo preso, não podendo atacar.\n\nSistema: O Usuário precisa ser bem sucedido num teste de  Imobilização Sustentada. Com o Alvo imobilizado as armas causam Dano + Nível sem PA por turno e +1/turno (cumulativo) que passar preso de dano.\n\nEspecial: A cada 3 turnos presos o inimigo sofre o Modificador de força também na Armadura.\n\nAção: Ação de Cosmo + Ação de movimento parcial.\n\nResistência: Sim",
+      "page": "84",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Guardião. Nível de referência no livro: 10. Conferir aquisição conforme evolução e status.",
+      "category": "Guardião",
+      "level": 10,
+      "action": "Ação de Cosmo + Ação de movimento parcial.",
+      "resistance": "Sim",
+      "combination": "",
+      "duration": "[SUSTENTADO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "guardian:gift:10:IMOBILIZAR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            84
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "13d72c398def2c2b",
+    "name": "Golpe Reforçado",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cavaleiro concentra seu cosmo em sua arma, que começa a brilhar com uma luz dourada. Ele então levanta sua arma e a estende para o céu. A arma se alonga até o limite da visão, formando um raio de luz dourado. O cavaleiro então mergulha do céu, atingindo o oponente com a parte mais longa de sua arma.\n\nSistema:  O Jogador precisa ter sucesso na Manobra Ataque de Foco para o efeito funcionar. A Arma causa:\n\nPrata: 20 de Dano\n\nOuro: 30 de Dano\n\nEspecial: 5 + Nível% de chance de Trespassar o alvo (ver Manobra de Combate Duelo ).\n\nAção: Ação de Cosmo + Ação de movimento parcial\n\nResistência: Não",
+      "page": "84",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Guardião. Nível de referência no livro: 11. Conferir aquisição conforme evolução e status.",
+      "category": "Guardião",
+      "level": 11,
+      "action": "Ação de Cosmo + Ação de movimento parcial",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[INSTANTÂNEA] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "guardian:ability:11:GOLPE REFORÇADO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            84
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "56b0da33ad957e02",
+    "name": "Tentáculos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro pode se defender mesmo estando imobilizado, paralisado ou alguma situação que imobilize seu corpo (Habilidades, Dádivas ou Técnicas) suas Armas reagem em sua defesa evitando o máximo de dano possível.\n\nSistema: Quando o Personagem estiver em qualquer Estado que reduza seu movimento, ele tem direito a jogadas de Ações de Defesa normalmente. Se o Cavaleiro estiver “Sustentado” suas armas o ajudam a se libertar fornecendo +1 de Modificador Positivo para se libertar.\n\nAção: Ação Livre\n\nResistência: Não\n\nCombinação: Esportes, +",
+      "page": "84–85",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Guardião. Nível de referência no livro: 12. Conferir aquisição conforme evolução e status.",
+      "category": "Guardião",
+      "level": 12,
+      "action": "Ação Livre",
+      "resistance": "Não",
+      "combination": "Esportes, +",
+      "duration": "[REAÇÃO] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "guardian:gift:12:TENTÁCULOS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            84,
+            85
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3424a461905091c1",
+    "name": "Rede de Armas",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Cavaleiro estende ambas as mãos ao céu, invocando o poder do cosmo. O brilho estelar em seus olhos intensifica -se à medida que ele assume uma postura defensiva. Com um movimento ágil, sua arma se torna uma extensão de sua vontade ,  formando um círculo perfeito, um escudo cósmico que o envolve. E uma aura protetora irradia do círculo, desviando qualquer técnica adversária. A constelação do Cavaleiro brilha ainda mais intensamente, e ele assume uma postura invencível.\n\nSistema: O Personagem pode bloquear ou desviar Técnicas como Reação (ver Bloquear Técnicas) acrescentando +1 de Modificador Positivo no Teste da Perícia Asterismo.\n\nAção: Ação de Movimento Parcial\n\nResistência: Não\n\nCombinação: Combate, +",
+      "page": "85",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Guardião. Nível de referência no livro: 13. Conferir aquisição conforme evolução e status.",
+      "category": "Guardião",
+      "level": 13,
+      "action": "Ação de Movimento Parcial",
+      "resistance": "Não",
+      "combination": "Combate, +",
+      "duration": "[INSTANTÂNEA/REAÇÃO] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "guardian:ability:13:REDE DE ARMAS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            85
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "bd6f52d97675f8ec",
+    "name": "Guardião",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro se ergue, com a constelação de sua armadura brilhando intensamente. Seu cosmo se intensifica, e com gestos precisos, ele empunha suas armas, que giram ao seu redor como estrelas em órbita. Com um movimento final, ele posiciona as armas em perfeita sincronia, formando uma barreira impenetrável. Nesse momento, um resplendor cósmico irradia da constelação em sua armadura, criando uma aura de proteção. Com essa barreira, o Cavaleiro e seus companheiros ignoram um ataque ou dano total, desafiando até mesmo a ira de um Deus inimigo. Nada pode romper essa defesa cósmica, tornando-os invencíveis por um breve instante.\n\nSistema: O Personagem ou seu companheiro ignora um ataque ou dano total uma vez por missão. Há relatos de Cavaleiros que com esse poder que defenderam um Santuário inteiro da ira de um Deus inimigo.\n\nCusto: 1 Ponto de Cosmo Energia ou 2 pontos de Cosmo Energia por companheiro.\n\nResistência: Teste d e Duelo de Cosmo Passivo. O Usuário da Dádiva recebe +1 de Modificador Positivo para superar o alvo.\n\nAção: Ação de Cosmo + Ação de Movimento Total\n\nResistência: Sim\n\nCombinação: Asterismo, +",
+      "page": "85–86",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Guardião. Nível de referência no livro: 14. Conferir aquisição conforme evolução e status.",
+      "category": "Guardião",
+      "level": 14,
+      "action": "Ação de Cosmo + Ação de Movimento Total",
+      "resistance": "Teste d e Duelo de Cosmo Passivo. O Usuário da Dádiva recebe +1 de Modificador Positivo para superar o alvo.",
+      "combination": "Asterismo, +",
+      "duration": "[INSTANTÂNEA/REAÇÃO] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "guardian:gift:14:GUARDIÃO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            85,
+            86
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "0f3035f41e6f3cca",
+    "name": "Vagaroso",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro assume uma postura majestosa, suas armas brilhando com uma luminosidade celestial. Com um gesto decidido, ele canaliza seu cosmo e direciona essa energia para suas armas. Quando ele ataca, as armas atingem o inimigo com uma precisão impressionante, irradiando um brilho que parece retirar a velocidade do próprio tempo. O inimigo é envolto por essa energia cósmica, e a cada golpe, sua velocidade diminui. Cada arma lançada é como um elo que enfraquece a agilidade do oponente. O Cavaleiro se torna um arauto do tempo, enfraquecendo seu inimigo golpe após golpe\n\nSistema: Com esse poder as Armas ao atingir o inimigo vão diminuindo a velocidade do alvo. Para cada 10 ataques que atinjam o alvo e cause danos, es te perde 1 ponto de Velocidade.\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "86",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Guardião. Nível de referência no livro: 15. Conferir aquisição conforme evolução e status.",
+      "category": "Guardião",
+      "level": 15,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[DESCANSO] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "guardian:ability:15:VAGAROSO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            86
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3cf9b07e35a8ca3f",
+    "name": "Aegis",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Guardião se ergue com uma postura confiante, erguendo sua arma para o alto. Seus movimentos são suaves e coordenados, enquanto ele concentra seu cosmo. O brilho das estrelas cintila ao redor dele, envolvendo-o em uma aura de proteção. Com um gesto amplo e majestoso, ele lança sua arma ao chão, fazendo com que ondas de energia cósmica se espalhem pelo campo de batalha. Essas ondas formam uma barreira defensiva, protegendo seus companheiros e a vida inocente na área. O Cavaleiro se torna o guardião daqueles que estão sob sua proteção.\n\nSistema: O Personagem pode utilizar suas Habilidades/Dádivas ou Técnicas de defesa em um espaço igual a seu Domínio.\n\nAção: Ação de Cosmo + Ação de Movimento Total\n\nResistência: Não\n\nHabilidade Especial do Cosmo  (Escudo das Esperança) : A Virtude Devoção junto com essa Dádiva permite multiplicar o Domínio:\n\nPrata: Domínio x 2.\n\nOuro: Domínio X 4.\n\nHabilidade Especial do Cosmo (Defesa Confiável): A Virtude Fotógrafo de Cosmo junto com essa Dádiva permite o Cavaleiro defender a pessoa marcada pela Virtude aonde ela estiver. A quantidade de pessoas que podem ser defendidas ao mesmo tempo é igual a graduação do Atributo Cosmo.",
+      "page": "86–87",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Guardião. Nível de referência no livro: 16. Conferir aquisição conforme evolução e status.",
+      "category": "Guardião",
+      "level": 16,
+      "action": "Ação de Cosmo + Ação de Movimento Total",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[INSTANTÂNEA/REAÇÃO] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "guardian:gift:16:AEGIS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            86,
+            87
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "7184e927fd2cb9b8",
+    "name": "Fortaleza",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro assume uma postura firme, levantando suas armas ao céu com determinação. Seus movimentos são graciosos e precisos, enquanto ele infunde seu cosmo com a energia da constelação. Um brilho celestial envolve suas armas, que começam a girar em um movimento circular. À medida que as armas aceleram, o brilho se intensifica, criando uma esfera de proteção resplandecente que o cerca. O inimigo testemunha sua investida se despedaçar contra essa barreira perfeita, enquanto o Cavaleiro permanece pronto para defender a justiça e a paz com suas armas.\n\nSistema:  Enquanto o Cavaleiro ficar imóvel as Armas absorverão dano por turno imóvel. Absorção: 30 + Nível pontos de vida.\n\nEspecial: Utilizado em outra pessoa as Armas absorvem 50 + Nível pontos de vida.\n\nEspecial: Os pontos de vida da barreira só são subtraídos pelo Dano Efetivo.\n\nAção: Ação de Cosmo + Ação de Movimento Total\n\nResistência: Não\n\nHabilidade Especial do Cosmo  (Ataque de todos os lados): A Virtude Armas Próprias junto com essa Habilidade permite o Cavaleiro usar as ações de luta normalmente enquanto defende.",
+      "page": "87",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Guardião. Nível de referência no livro: 17. Conferir aquisição conforme evolução e status.",
+      "category": "Guardião",
+      "level": 17,
+      "action": "Ação de Cosmo + Ação de Movimento Total",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[CONTÍNUA/REAÇÃO] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "guardian:ability:17:FORTALEZA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            87
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e7a7311e2b01c0e1",
+    "name": "Ira das Tormentas",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "No auge da batalha, o Guardião assume uma postura imponente, mantendo sua constelação inspiradora como guia. Seus gestos são calculados e graciosos, evocando o cosmo com uma intensidade inigualável. O ar ao seu redor parece vibrar à medida que ele concentra sua energia cósmica. Com um movimento único e preciso, ergue sua arma, apontando-a para o horizonte. Um feixe brilhante de energia cósmica irrompe da arma, criando uma onda expansiva que abrange uma vasta área. Seus inimigos são envolvidos por esse poder avassalador.\n\nSistema: O jogador pode usar qualquer Habilidade ou Dádiva que cause dano em um espaço igual a seu Domínio. Os alvos têm direito a suas ações de defesa, resistência ou qualquer outra ação , EXCETO se já tiverem agido na rodada. Essa Dádiva, não funciona como ação Surpresa. Teste de Resistência: Se Habilidade ou Dádiva usada exigir.\n\nAção: Ação de Cosmo\n\nResistência: Sim",
+      "page": "88",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Guardião. Nível de referência no livro: 18. Conferir aquisição conforme evolução e status.",
+      "category": "Guardião",
+      "level": 18,
+      "action": "Ação de Cosmo",
+      "resistance": "Sim",
+      "combination": "",
+      "duration": "[INSTANTÂNEA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "guardian:gift:18:IRA DAS TORMENTAS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            88
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "1597f66927d36d1e",
+    "name": "Bloqueador Feroz",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro ergue sua mão e fecha os olhos, concentrando seu cosmo interno e ligando-se à constelação cujas estrelas brilham intensamente no céu. Seu corpo é envolto em um fulgor dourado enquanto o cosmo flui através dele. Com movimentos ágeis o Guardião assume uma posição de defesa, suas armas prontas para qualquer ataque inimigo. Seus adversários à medida que tentam atingi-lo, suas armas e punhos se chocam com uma barreira invisível de energia cósmica. Eles são repelidos violentamente, gemendo de dor à medida que seu próprio ataque se volta contra eles. A concentração do cosmo do Guardião fortalece seu corpo, tornando -o uma verdadeira fortaleza. Seus inimigos, por outro lado, sofrem ferimentos e fraturas ao tentar atravessar a defesa impenetrável. É uma Habilidade Máxima, onde o equilíbrio e a defesa são supremos.\n\nSistema: O Personagem faz com que seus inimigos se machuquem ao atacá-lo. Dano (refletido): 1 de dano/ataque levado\n\nResistência: Não",
+      "page": "88",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Guardião. Nível de referência no livro: 19. Conferir aquisição conforme evolução e status.",
+      "category": "Guardião",
+      "level": 19,
+      "action": "",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "guardian:ability:19:BLOQUEADOR FEROZ",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            88
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ccceab83f6f3afd5",
+    "name": "Infinito",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Em um movimento majestoso, o Guardião estende sua mão esquerda, e sua arma se materializa. Ele se posiciona com firmeza, uma perna ligeiramente à frente da outra, e o cosmo ao seu redor cria uma aura protetora. Nesse momento, seus olhos se abrem, revelando um brilho determinado e intenso. Suas armas, como extensões de sua própria vontade, desaparecem no horizonte, atravessando dimensões. Elas reaparecem instantaneamente onde o Guardião deseja, em qualquer distância que ele possa imaginar. Seus inimigos, confusos e atônitos, são surpreendidos por ataques precisos que chegam de lugares inesperados, incapazes de escapar do alcance infinito de suas armas. Essa demonstração de domínio do cosmo é a verdadeira essência do Guardião, em que a distância e o espaço são irrelevantes diante do poder do Cavaleiro. Seus inimigos estão destinados a enfrentar a justiça, não importa onde estejam.\n\nSistema: Suas Armas não têm fim, percorrem ou atingem qualquer distância desejada, desde que seja nessa dimensão. O tempo de chegada fica a cargo do Mestre. Marca do Infinito: O Usuário fixa um alvo pretendido, e enquanto em posse da Marca do Infinito o Alvo será alcançado pelas armas do Guardião independente da distância. O alvo precisa ter sua Aura detectada e reconhecida como alvo (TAP Utilização de Cosmo Dificuldade: Normal, Intensidade Alta; Difícil Intensidade Média; Complexa, Intensidade Baixa).\n\nAção: Ação Livre\n\nResistência: Não\n\nEspecial: Detecta Ilusões, automaticamente, ao tentar fixar a Marca do Infinito. A arma, simplesmente, fica inerte e não reage a ameaça.\n\nEspecial: Em situações que não envolvam combates ou intenção de causar dano, à distância percorrida pela Arma do Usuário é infinita, permanentemente, cabendo os limites a cena narrada e a decisão do mestre.\n\nHabilidade Especial do Cosmo (Romper Barreiras): A Virtude Fotógrafo de Cosmo junto com essa Dádiva aumenta a duração da Marca do Infinito para 1 dia.\n\nHabilidade Especial do Cosmo (Romper Barreiras do Inferno): A Virtude Sekishiki junto com es ta Dádiva permite o Cavaleiro encontrar o alvo marcado pela Virtude dentro do Mundo do Mortos.\n\nHabilidade Especial do Cosmo  (Romper Barreiras da Realidade) : As Técnicas que possuam o Big Bang Dimensão junto com esta Dádiva permite ao Cavaleiro atingir alvos em qualquer dimensão.",
+      "page": "88–89",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Guardião. Nível de referência no livro: 20. Conferir aquisição conforme evolução e status.",
+      "category": "Guardião",
+      "level": 20,
+      "action": "Ação Livre",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[LUTA] [PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "guardian:gift:20:INFINITO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            88,
+            89
+          ]
+        }
+      }
+    }
+  }
+]

@@ -3,6 +3,7 @@ import {rollTest} from "./rolls.mjs";
 import {createStarterCompendium} from "./starter.mjs";
 import {useTechnique} from "./techniques.mjs";
 import {EFFECT_KINDS} from "./technique-rules.mjs";
+import {ABILITY_KINDS, openCatalog} from "./catalog.mjs";
 
 export function field(name, label, value, choices, type = "number", hint = "") {
   return {name, label, value, hint, isSelect: !!choices, isCheckbox: type === "checkbox", isTextarea: type === "textarea", isNumber: type === "number", type,
@@ -17,7 +18,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
     classes: ["gods-battle", "knight-sheet"], tag: "form", position: {width: 920, height: 800},
     form: {submitOnChange: true, closeOnSubmit: false},
     actions: {rollTest: KnightSheet.rollAction, createItem: KnightSheet.createItem, editItem: KnightSheet.editItem,
-      deleteItem: KnightSheet.deleteItem, equipArmor: KnightSheet.equipArmor, useItem: KnightSheet.useItem, useTechnique: KnightSheet.activateTechnique, seedCompendium: KnightSheet.seedCompendium}
+      deleteItem: KnightSheet.deleteItem, equipArmor: KnightSheet.equipArmor, useItem: KnightSheet.useItem, useTechnique: KnightSheet.activateTechnique, openCatalog: KnightSheet.openCatalog, seedCompendium: KnightSheet.seedCompendium}
   };
   static PARTS = {sheet: {template: `systems/${SYSTEM_ID}/templates/knight.hbs`, scrollable: [".sheet-body"]}};
   static TABS = {primary: {initial: "overview", tabs: [
@@ -120,6 +121,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
     await item.update({"system.uses.value": item.system.uses.value - 1});
   }
   static async seedCompendium() { await createStarterCompendium(); }
+  static async openCatalog(_event, target) {await openCatalog(target.dataset.pack);}
 }
 
 export class ContentSheet extends foundry.applications.api.HandlebarsApplicationMixin(foundry.applications.sheets.ItemSheetV2) {
@@ -138,6 +140,8 @@ export class ContentSheet extends foundry.applications.api.HandlebarsApplication
       n("power", "Poder da técnica"), n("damageLevel", "Nível de Dano"), n("cost", "Custo publicado (já inclui Big Bangs)"), n("costExtra", "CE adicional desta cópia"), n("range", "Alcance (metros)"), t("duration", "Duração"), t("resistance", "Resistência"),
       area("system.bigbangs", "Big Bangs / componentes", s.bigbangs), area("system.increments", "Incrementos / graduações", s.increments));
     if (["ability", "divineCosmo", "bigbang", "increment", "virtue", "artifact"].includes(this.item.type)) fields.push(t("category", "Categoria / origem"), n("level", "Nível / requisito"), n("rank", "Graduação / refino"), t("action", "Ação"), t("resistance", "Resistência"), t("duration", "Duração"), t("combination", "Combinação"), n("power", "Poder equivalente"));
+    if (this.item.type === "ability") fields.push(field("system.abilityKind", "Tipo", s.abilityKind, ABILITY_KINDS));
+    if (["ability", "divineCosmo", "virtue"].includes(this.item.type)) fields.push(t("costText", "Custo / consumo descrito"));
     fields.push(nf("system.uses.value", "Usos atuais", s.uses.value), nf("system.uses.max", "Usos máximos (0: sem contador)", s.uses.max), tf("system.uses.reset", "Recarga", s.uses.reset), area("system.description", "Descrição e efeitos", s.description), area("system.notes", "Notas desta cópia", s.notes));
     return Object.assign(context, {item: this.item, editable: this.isEditable, fields, typeLabel: ITEM_TYPES[this.item.type], armor: this.item.type === "armor" ? s.armor : null,
       technique: this.item.type === "technique" ? {cost: s.cost + s.costExtra, difficulty: 10 + s.cost + s.costExtra, damage: s.power * s.damageLevel, canActivate: this.isEditable && this.item.parent?.type === "knight"} : null, origin: s.originUuid});

@@ -1,0 +1,86 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import {readFile, readdir, mkdir, writeFile, mkdtemp, rm} from "node:fs/promises";
+import path from "node:path";
+import {createHash} from "node:crypto";
+import {compilePack, extractPack} from "@foundryvtt/foundryvtt-cli";
+import {content, validateStrings} from "./foundry-stub.mjs";
+import {ContentData} from "../module/models.mjs";
+import {CATALOG_PACKS, openCatalog} from "../module/catalog.mjs";
+import {readCatalog, packDocuments, folderId} from "../tools/catalog.mjs";
+import {KnightSheet} from "../module/sheets.mjs";
+
+const catalogs = await Promise.all(CATALOG_PACKS.map(async p => ({...p, entries: await readCatalog(p)})));
+const all = catalogs.flatMap(p => p.entries);
+const source = async name => JSON.parse(await readFile(`data/catalog/${name}.json`, "utf8"));
+
+test("manifesto registra todos os compêndios e todas as fontes disponíveis", async () => {
+ const manifest = JSON.parse(await readFile("system.json", "utf8"));
+ assert.deepEqual(manifest.packs.map(p => p.name), CATALOG_PACKS.map(p => p.name));
+ for (const p of manifest.packs) {assert.equal(p.path, `packs/${p.name}`); assert.equal(p.type, "Item"); assert.equal(p.system, manifest.id);}
+ assert.deepEqual((await readdir("data/catalog")).sort(), CATALOG_PACKS.flatMap(p => p.sources.map(s => `${s}.json`)).sort());
+ assert.deepEqual(catalogs.map(p => p.entries.length), [129, 226, 98, 88, 34, 14]);
+});
+test("conteúdos importáveis têm IDs estáveis, proveniência e dados válidos sem informações pessoais", () => {
+ assert.equal(new Set(all.map(e => e._id)).size, all.length);
+ const keys = new Set();
+ for (const e of all) {
+  const provenance=e.flags["gods-battle-ss"].source;
+  assert.equal(e._id, createHash("sha256").update(provenance.key).digest("hex").slice(0,16), e.name);
+  assert.ok(!keys.has(provenance.key)); keys.add(provenance.key);
+  assert.ok(e.name.trim() && e.system.description.trim(), e.name);
+  assert.ok(["ability", "virtue", "divineCosmo"].includes(e.type));
+  assert.doesNotThrow(() => validateStrings(ContentData.defineSchema(), {...content(), ...e.system}), e.name);
+  for (const key of ["level", "power", "cost"]) assert.ok(Number.isInteger(e.system[key]) && e.system[key]>=0);
+  assert.equal(provenance.author, "Dhoko de Libra"); assert.equal(provenance.license, "CC BY-NC-SA 4.0");
+  assert.ok(provenance.pages.length && provenance.pages.every(p => Number.isInteger(p) && p>=1 && p<=702));
+  assert.doesNotMatch(JSON.stringify(e), /Autorizada para|CPF\s*:|E-mail\s*:|[\w.+-]+@[\w.-]+\.[a-z]{2,}|\d{3}\.\d{3}\.\d{3}-\d{2}|C:[\\/]/i);
+ }
+});
+test("listas dos estilos, especializações e evoluções cobrem os níveis nomeados no livro", async () => {
+ for (const style of ["saint", "sage", "guardian", "artist", "asgardian", "beastmaster"]) {
+  const entries=await source(`abilities-${style}`);
+  assert.deepEqual(entries.filter(e => e.system.abilityKind!=="improvement").map(e => e.system.level), Array.from({length:20},(_,i)=>i+1));
+  assert.equal(entries.filter(e => e.system.abilityKind==="improvement").length,1);
+ }
+ for (const style of ["protector", "assassin", "telekinetic"]) assert.deepEqual((await source(`abilities-${style}`)).map(e=>e.system.level), [5,6,8,10,12,14,16,18]);
+ for (const style of ["aesir", "gold", "judges", "marinas", "dryads", "berserkers"]) assert.deepEqual((await source(`abilities-${style}`)).map(e=>e.system.level), Array.from({length:10},(_,i)=>i+21));
+});
+test("títulos quebrados e regras distintas de mesmo nome permanecem separados", async () => {
+ const virtues=await source("virtues"); assert.ok(virtues.some(e=>e.name==="Determinação ou Orgulho"));
+ const tele=await source("abilities-telekinetic");
+ assert.match(tele[0].system.description,/Tabela: Telecinético/); assert.doesNotMatch(tele[1].system.description,/Tabela: Telecinético/);
+ const sage=await source("abilities-sage"); assert.equal(sage.filter(e=>e.name.startsWith("Transcendência —")).length,2);
+ assert.equal(catalogs.find(p=>p.name==="cosmo-especial").entries.filter(e=>e.name.startsWith("Viajante das Sombras")).length,2);
+ assert.ok(catalogs.find(p=>p.name==="criaturas").entries.some(e=>e.name==="Sétimo Sentido Ômega — Hypnos"));
+ for (const e of catalogs.find(p=>p.name==="cosmos-divinos").entries) for (const rank of [1,2,3]) assert.match(e.system.description,new RegExp(`Refino ${rank}:`));
+});
+test("atalhos abrem apenas compêndios conhecidos e não criam dados no mundo", async () => {
+ let opened=0;
+ game.packs=new Map([["gods-battle-ss.habilidades", {render: flag=>{assert.equal(flag,true);opened++;}}]]);
+ await openCatalog("../../unknown"); assert.equal(opened,0);
+ await KnightSheet.openCatalog({}, {dataset:{pack:"habilidades"}}); assert.equal(opened,1);
+});
+test("compêndios LevelDB preservam todos os Items, regras, fontes e pastas no round-trip nativo", async () => {
+ const root=path.resolve("dist/catalog-tests"); await mkdir(root,{recursive:true}); const temp=await mkdtemp(path.join(root,"roundtrip-"));
+ try {
+  for (const pack of catalogs) {
+   const input=path.join(temp,pack.name,"sources"), db=path.join(temp,pack.name,"db"), output=path.join(temp,pack.name,"output");
+   await mkdir(input,{recursive:true});
+   const docs=packDocuments(pack.entries);
+   for (const doc of docs) await writeFile(path.join(input,`${doc._id}.json`), JSON.stringify(doc));
+   await compilePack(input,db); await extractPack(db,output,{folders:false});
+   const exported=await Promise.all((await readdir(output)).filter(f=>f.endsWith(".json")).map(async f=>JSON.parse(await readFile(path.join(output,f),"utf8"))));
+   const items=exported.filter(e=>e._key.startsWith("!items!")), folders=exported.filter(e=>e._key.startsWith("!folders!"));
+   assert.equal(items.length,pack.entries.length); assert.equal(folders.length,new Set(pack.entries.map(e=>e.system.category)).size);
+   for (const original of pack.entries) {
+    const item=items.find(e=>e._id===original._id); assert.ok(item,original.name);
+    assert.equal(item.name,original.name); assert.equal(item.type,original.type);
+    assert.deepEqual(item.system,original.system); assert.deepEqual(item.flags,original.flags);
+    assert.equal(item.folder,folderId(original.system.category)); assert.deepEqual(item.effects,[]);
+   }
+  }
+ } finally {
+  const resolved=path.resolve(temp); assert.ok(resolved.startsWith(root+path.sep)); await rm(resolved,{recursive:true,force:true});
+ }
+});

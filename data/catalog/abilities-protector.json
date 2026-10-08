@@ -1,0 +1,308 @@
+[
+  {
+    "_id": "c27b90d55dce7784",
+    "name": "Especialização Protetor",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sistema: A cada 5 Níveis o Protetor recebe os Modificadores:\n\n+1 ação de defesa;\n\n+1 Protegido. Protegido: É o Alvo que o Protetor deseja proteger com suas Habilidades. Cada Alvo é protegido pelo Protetor como Ação Livre e recebe TODOS os modificadores e benefícios que o Protetor receber provenientes de Habilidades ou Dádivas ativas. Um Protegido não pode acumular modificadores ou benefícios de Habilidades ou Dádivas diferentes.\n\nDuração: A Marca do Protegido dura 1 dia\n\nAção: Ação Livre\n\nResistência: Não\n\nCusto: 1 Ponto de Cosmo Energia permanente enquanto a Marca do Protegido estiver ativa no alvo.\n\nEspecial: A Habilidade/Dádiva utilizada pelo Protetor em um alvo com a marca do protegido é ativada mesmo se o Protetor possuir um Estágio de Sentido inferior ao atacante.\n\nHabilidade Especial do Cosmo  (Proteção Extra): A Virtude Companheiro de Cosmo [GERAL] em conjunto com es sa Especialização permite ao Cavaleiro dobrar o número de protegidos.",
+      "page": "125",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Protetor. Nível de referência no livro: 5. Conferir aquisição conforme evolução e status.",
+      "category": "Protetor",
+      "level": 5,
+      "action": "Ação Livre",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "A Marca do Protegido dura 1 dia",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "specialization"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "protector:specialization:5:Especialização Protetor",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            125
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "cb32df413210cee9",
+    "name": "Égide",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Em um gesto majestoso, o Protetor  ergue sua mão, convocando a imensa força de sua constelação. Seu cosmo se materializa em um colossal escudo dourado, protegendo -o de qualquer ataque inimigo. O impacto disso faz o solo tremer, e seu adversário percebe que o enfrentar  se tornou uma tarefa ainda mais formidável, com sua defesa reforçada ao máximo.\n\nSistema: O Escudo aumenta 1 PA do Usuário.\n\nEspecial: O Guardião pode sustentar o escudo e abdicar de sua Ação de Movimento e permanecer parado aumentando sua proteção. O Escudo aumenta 2 PA do Usuário.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial ou Ação de Movimento Total.\n\nResistência: Não\n\nCombinação: Armadura, +.",
+      "page": "126",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Protetor. Nível de referência no livro: 6. Conferir aquisição conforme evolução e status.",
+      "category": "Protetor",
+      "level": 6,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial ou Ação de Movimento Total.",
+      "resistance": "Não",
+      "combination": "Armadura, +.",
+      "duration": "[CONTÍNUO] [SUSTENTADO] [REAÇÃO] [ALVO] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "protector:gift:6:ÉGIDE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            126
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ea635565bba113f9",
+    "name": "Égide Superior",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "À medida que o combate prossegue, o cosmo do Protetor evolui, permitindo que seu escudo não apenas o defenda, mas também cure gradualmente suas feridas, tornando -o um oponente quase invencível.\n\nSistema: O Escudo aumenta 1 PA do Usuário e cura Nível Pontos de Vida do Usuário/Turno.\n\nEspecial: O Guardião pode sustentar o escudo e abdicar de sua Ação de Movimento e permanecer parado aumentando sua proteção. O Escudo aumenta 2 PA do Usuário.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial ou Ação de Movimento Total.\n\nResistência: Não\n\nCombinação: Armadura, +.",
+      "page": "126",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Protetor. Nível de referência no livro: 8. Conferir aquisição conforme evolução e status.",
+      "category": "Protetor",
+      "level": 8,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial ou Ação de Movimento Total.",
+      "resistance": "Não",
+      "combination": "Armadura, +.",
+      "duration": "[CONTÍNUO] [SUSTENTADO] [ALVO] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "protector:gift:8:ÉGIDE SUPERIOR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            126
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ebfac602524de1e8",
+    "name": "Égide Superior II",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "À medida que o combate prossegue, o cosmo d o Protetor  evolui exponencialmente, permitindo que seu escudo não apenas o defenda, mas também restaure e cure gradualmente suas feridas, tornando-o um oponente quase invencível.\n\nSistema: O Escudo aumenta 1 PA do Usuário, cura Nível x 2 Pontos de Vida do Usuário/Turno e elimina todos os modificadores negativos.\n\nEspecial: O Guardião pode sustentar o escudo e abdicar de sua Ação de Movimento e permanecer parado aumentando sua proteção.  O Escudo aumenta 2 PA do Usuário.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial ou Ação de Movimento Total.\n\nResistência: Não\n\nCombinação: Armadura, +.",
+      "page": "126–127",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Protetor. Nível de referência no livro: 10. Conferir aquisição conforme evolução e status.",
+      "category": "Protetor",
+      "level": 10,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial ou Ação de Movimento Total.",
+      "resistance": "Não",
+      "combination": "Armadura, +.",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "protector:gift:10:ÉGIDE SUPERIOR II",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            126,
+            127
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "c8169faa61c68183",
+    "name": "Corpo Diamante",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Em meio a um treinamento intenso o Protetor conecta-se com sua constelação protetora. A partir desse momento, entende que seu treinamento não apenas aumentou sua força, mas também a resistência a ferimentos. Cada golpe que antes o abalaria agora o faz parecer inabalável. Seu corpo se torna uma fortaleza impenetrável, causando desespero em s eus adversários, que mal conseguem arranhá-lo.\n\nSistema: O Cavaleiro recebe +1 Ponto de Vida por Nível.\n\nHabilidade Especial do Cosmo (Vida Eterna): A Virtude Vitalidade em conjunto com esta Dádiva permite ao Cavaleiro mais Vigor Físico. O Cavaleiro recebe +2 Ponto s de Vida por\n\nNível.",
+      "page": "127",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Protetor. Nível de referência no livro: 12. Conferir aquisição conforme evolução e status.",
+      "category": "Protetor",
+      "level": 12,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "protector:gift:12:CORPO DIAMANTE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            127
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "9a39dd26eed3c03d",
+    "name": "Égide Divina",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro levanta majestosamente seu braço, invocando a energia de sua constelação. Com um movimento firme , ele estende a mão, criando uma redoma dourada de cosmo energia que envolve seus companheiros. Seus olhos faíscam com determinação enquanto ele se torna o escudo protetor da equipe, deixando o inimigo perplexo perante essa barreira intransponível.\n\nSistema: O Escudo aumenta 1 PA de todos que estão dentro do Domínio do Usuário. Personagens de Santuário s diferentes do Usuário não serão afetados, exceto alvos de Protegido.\n\nEspecial: O Guardião pode sustentar o escudo e abdicar de sua Ação de Movimento e permanecer parado aumentando sua proteção. O Escudo aumenta 2 PA de todos os que estão dentro do Domínio do Usuário.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial ou Ação de Movimento Total.\n\nResistência: Não\n\nCombinação: Armadura, +.",
+      "page": "127",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Protetor. Nível de referência no livro: 14. Conferir aquisição conforme evolução e status.",
+      "category": "Protetor",
+      "level": 14,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial ou Ação de Movimento Total.",
+      "resistance": "Não",
+      "combination": "Armadura, +.",
+      "duration": "[CONTÍNUO] [SUSTENTADO] [ALVO] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "protector:gift:14:ÉGIDE DIVINA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            127
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e88cd1294d220332",
+    "name": "Égide Divina Superior",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "À medida que o combate prossegue, o cosmo do Protetor evolui, permitindo que sua redoma não apenas a todos, mas também cure gradualmente suas feridas.\n\nSistema: O Escudo aumenta 1 PA e cura Nível x 2 Pontos de Vida do Usuário/Turno de todos os que estão dentro do Domínio do Usuário. Personagens de Santuário s diferentes do Usuário não serão afetados, exceto alvos de Protegido.\n\nEspecial: O Guardião pode sustentar o escudo e abdicar de sua Ação de Movimento e permanecer parado aumentando sua proteção. O Escudo aumenta 2 PA de todos os que estão dentro do Domínio do Usuário.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial ou Ação de Movimento Total.\n\nResistência: Não\n\nCombinação: Armadura, +.",
+      "page": "127–128",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Protetor. Nível de referência no livro: 16. Conferir aquisição conforme evolução e status.",
+      "category": "Protetor",
+      "level": 16,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial ou Ação de Movimento Total.",
+      "resistance": "Não",
+      "combination": "Armadura, +.",
+      "duration": "[CONTÍNUO] [SUSTENTADO] [ALVO] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "protector:gift:16:ÉGIDE DIVINA SUPERIOR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            127,
+            128
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "45a1513273aebd09",
+    "name": "Absorver",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Em um ato de sacrifício heroico, o Cavaleiro, assume uma posição defensiva, erguendo seu imponente corpo com determinação. Seus músculos se contraem à medida que ele concentra seu cosmo para proteger seu protegido. Ao ser atingido, o cosmo flui através de seu corpo, transformando a dor em poder. Com um grito ressoante, ele canaliza essa energia para lançar um contra-ataque devastador, fazendo seu inimigo pagar o preço por ousar ferir seu protegido.\n\nSistema: O Cavaleiro recebe o dano do seu protegido.  O Protetor pode receber o dano sofrido por seu Protegido. A ação deve ser avisada ao mestre antes da rolagem do dano. O Usuário da Dádiva não precisa se deslocar, o dano vai automaticamente para ele através do elo com o protegido.  O Usuário recebe 100% do dano efetivo, mas sofre apenas 50% do dano efetivo e reflete, automaticamente, 50% do dano para o inimigo.\n\nAção: Ação Livre.\n\nResistência: Não\n\nHabilidade Especial do Cosmo (Manipulação de Dano): A Virtude Insistente [GERAL] em conjunto com esta Dádiva permite ao Cavaleiro transformar o dano em Cosmo Energia. O Cavaleiro Subtrai seu Nível de Cosmo Energia do Dano Efetivo e Recupera o que foi queimado; o que sobrar, desse valor, vai direto para o Cosmo Máximo e o restante do Dano Efetivo é sofrido pelo Cavaleiro.",
+      "page": "128",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Protetor. Nível de referência no livro: 18. Conferir aquisição conforme evolução e status.",
+      "category": "Protetor",
+      "level": 18,
+      "action": "Ação Livre.",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[REAÇÃO] [ALVO] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "protector:gift:18:ABSORVER",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            128
+          ]
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,197 @@
+[
+  {
+    "_id": "4038f23a204ca1e4",
+    "name": "Agraciado pelo Cosmo de Afrodite",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Origem / contexto: Big Bang Cosmo Residual.\n\nEste Big Bang em conjunto com a Virtude Materializar ou a Habilidade Animar Armas [GUARDIÃO] pode dispersar seu Cosmo e ampliar seus Sentidos e Técnicas através dos objetos materializados. Por exemplo, deixar uma rosa em um local e ver através dela ou pe rmitir que ela cure (necessário a Técnica Cura).",
+      "page": "232",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação ligada a Big Bang Cosmo Residual. Conferir os componentes na descrição.",
+      "category": "Cosmo especial — Variações de título",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo",
+      "notes": "Título preservado desta ocorrência. O índice de combinações usa outra grafia ou nome semelhante; conferir ambas as referências sem presumir condições idênticas."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special-variant:agraciado pelo cosmo de afrodite",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            232
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "19155aac8c454617",
+    "name": "Restaurador Avançado de Mu",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Origem / contexto: Técnica Restaurar Armaduras.\n\nA Virtude Alquimista ou Muviano (Habilidade Natural Ferreiro Paranormal ) combinada com esta Técnica a permite acesso ao conhecimento “perdido” Restaurar Armaduras Manipulação de Cristais Avançada que possibilita restaurar, evoluir e reviver Armaduras.",
+      "page": "308",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação ligada a Técnica Restaurar Armaduras. Conferir os componentes na descrição.",
+      "category": "Cosmo especial — Variações de título",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo",
+      "notes": "Título preservado desta ocorrência. O índice de combinações usa outra grafia ou nome semelhante; conferir ambas as referências sem presumir condições idênticas."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special-variant:restaurador avançado de mu",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            308
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "7e54ad6ba0285f04",
+    "name": "Flecha ininterrupta",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Origem / contexto: Técnica Flecha da Justiça.\n\nA Virtude Fotógrafo de Cosmo permite a Técnica alcançar o alvo a qualquer distância dentro do planeta Terra.",
+      "page": "314",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação ligada a Técnica Flecha da Justiça. Conferir os componentes na descrição.",
+      "category": "Cosmo especial — Variações de título",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo",
+      "notes": "Título preservado desta ocorrência. O índice de combinações usa outra grafia ou nome semelhante; conferir ambas as referências sem presumir condições idênticas."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special-variant:flecha ininterrupta",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            314
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b3a4d6cfa312a1a2",
+    "name": "Arqueiro da Morte",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Origem / contexto: Técnica Flecha da Justiça.\n\nA Virtude Sekishiki combinada com esta Técnica permite ao Cavaleiro atingir o alvo no Mundo dos Mortos/Inferno, mesmo o Usuário estando na Terra.",
+      "page": "314",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação ligada a Técnica Flecha da Justiça. Conferir os componentes na descrição.",
+      "category": "Cosmo especial — Variações de título",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo",
+      "notes": "Título preservado desta ocorrência. O índice de combinações usa outra grafia ou nome semelhante; conferir ambas as referências sem presumir condições idênticas."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special-variant:arqueiro da morte",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            314
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "15fada3210ffbb2e",
+    "name": "Mestre dos Sentidos de Shaka/Saga",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Origem / contexto: Cosmo Divino Controle Neural.\n\nA Virtude Ascenção combinada com esse Cosmo Divino permite ao Cavaleiro anular os 5 Sentidos do alvo em um único golpe da Técnica Destruição dos 5 Sentidos ou Técnica semelhante.",
+      "page": "495",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação ligada a Cosmo Divino Controle Neural. Conferir os componentes na descrição.",
+      "category": "Cosmo especial — Variações de título",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo",
+      "notes": "Título preservado desta ocorrência. O índice de combinações usa outra grafia ou nome semelhante; conferir ambas as referências sem presumir condições idênticas."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special-variant:mestre dos sentidos de shaka/saga",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            495
+          ]
+        }
+      }
+    }
+  }
+]

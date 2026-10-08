@@ -1,0 +1,386 @@
+[
+  {
+    "_id": "e92b760ca986c8a6",
+    "name": "Morte Certa",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Seu treinamento sob o jugo de Hades lhe conferiu o poder de canalizar a fúria das almas torturadas como uma fonte de energia. Seu cosmo, agora impregnado com a essência sombria do inferno, flui intensamente. Com uma postura majestosa, o Espectro ergue os braços, invocando a energia das almas sofredoras que o cercam. O cosmo sombrio envolve seu corpo, tornando -o um avatar da própria escuridão. Seus olhos brilham com um fulgor ameaçador. Ao desferir seu golpe, a energia sombria é liberada com um estrondo ensurdecedor. O impacto é devastador, consumindo o inimigo em chamas negras, enquanto suas almas torturadas clamam por redenção.\n\nSistema: O Personagem recebe um Modificador somado ao dano final de um ataque e o alvo recebe o dano sem PA. O Jogador precisa ter sucesso na Manobra Ataque de Foco para o efeito funcionar. Dano: 40 + Nível de dano cósmico.\n\nAção: Ação de Cosmo + Ação de movimento parcial\n\nResistência: Não\n\nCombinação: Utilização de Cosmo, &",
+      "page": "563",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Juízes do Inferno. Nível de referência no livro: 21. Conferir aquisição conforme evolução e status.",
+      "category": "Juízes do Inferno",
+      "level": 21,
+      "action": "Ação de Cosmo + Ação de movimento parcial",
+      "resistance": "Não",
+      "combination": "Utilização de Cosmo, &",
+      "duration": "[INSTANTÂNEA] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "judges:ability:21:MORTE CERTA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            563
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "2b1a82de46c7db3a",
+    "name": "Último Dia",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Quando confrontado por um adversário poderoso, após ser derrotado e caído, o Espectro ressurge das sombras, banhado na energia do submundo, pronto para se vingar. Seu poder concede a ele a capacidade de ressurgir após a derrota, surpreendendo seus inimigos e assombrando-os com o terror de enfrentar um juiz do inferno que desafia a própria morte.\n\nSistema: O Personagem irá para o Tártaro e após 30h – Nível do Personagem será trazido de volta a vida. A menos que o Cavaleiro seja selado, onde acontece a morte definitiva. Pode ser usado uma vez por missão ou 1 vez por sessão se Hades estiver desperto.\n\nResistência: Não",
+      "page": "563–564",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Juízes do Inferno. Nível de referência no livro: 22. Conferir aquisição conforme evolução e status.",
+      "category": "Juízes do Inferno",
+      "level": 22,
+      "action": "",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "judges:gift:22:ÚLTIMO DIA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            563,
+            564
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ee38385e3df2b3ec",
+    "name": "Definhar",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Com gestos sinistros, ele ergue as mãos, convocando as almas inquietas do submundo. Seu cosmo negro se mistura com as energias sombrias, formando uma aura de terror ao seu redor. As almas atormentadas convergem ao seu redor, suas lamentações ecoando no vazio. À medida que o cosmo sinistro o envolve, o Espectro canaliza a energia para enfraquecer seu inimigo. Sua maldição atinge o oponente, drenando sua força vital e resistência. O inimigo enfraquecido cambaleia, sua energia murchando rapidamente, tornando-se presa fácil para o juiz do inferno, que então avança.\n\nSistema: O alvo recebe +1 de Modificador Negativo nos testes de Resistência.\n\nAção: Ação de Cosmo\n\nResistência: Vigor\n\nCombinação: Asterismo, +",
+      "page": "564",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Juízes do Inferno. Nível de referência no livro: 23. Conferir aquisição conforme evolução e status.",
+      "category": "Juízes do Inferno",
+      "level": 23,
+      "action": "Ação de Cosmo",
+      "resistance": "Vigor",
+      "combination": "Asterismo, +",
+      "duration": "[CONTÍNUA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "judges:ability:23:DEFINHAR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            564
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "4808cb71d93c298f",
+    "name": "Mestre do Submundo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Em uma câmara sombria e silenciosa no reino do submundo de Hades, o Espectro em profundo estado de meditação, concentra seu cosmo, sintonizando-se com o aspecto mais sinistro de sua constelação. Com gestos sinistros e olhos brilhando em tom carmesim, canaliza a energia do submundo. Sua armadura negra começa a pulsar com uma aura sombria e terrível. Neste momento, ele aperfeiçoa suas técnicas e adquire poderes inimagináveis, tornando -se uma ameaça imparável.\n\nSistema: O Personagem adquire um Incremento a sua escolha começando com Graduação 1 ou ganha 1 ponto de incremento se já possuir Incrementos.",
+      "page": "564",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Juízes do Inferno. Nível de referência no livro: 24. Conferir aquisição conforme evolução e status.",
+      "category": "Juízes do Inferno",
+      "level": 24,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "judges:gift:24:MESTRE DO SUBMUNDO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            564
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "887a6c0227b8404c",
+    "name": "Comedor de Almas",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Juiz assume uma postura sinistra e concentra seu cosmo. Sua armadura obscura começa a ressoar com gritos distantes de almas atormentadas enquanto ele faz gestos lentos, evocando o poder do Tártaro. O cosmo sombrio se intensifica, envolvendo seu inimigo em uma aura de agonia. A alma do adversário é puxada para o próprio Inferno, deixando -o paralisado e indefeso. O Cavaleiro drena implacavelmente a vida e a energia de seu oponente, fortalecendo -se à medida que o inimigo definha, levando -o à beira da morte e mergulhando -o em um abismo de sofrimento.\n\nSistema: O Personagem faz um Teste de Ação Resistido da Perícia Esportes x Esportes, se bem sucedido o alvo fica em Estado Paralisado,  enquanto o inimigo estiver paralisado o Usuário da Habilidade  drena pontos de vida do alvo.  O Alvo tem direito a cada início de turno a um Teste de Ação Resistido da Perícia Esportes x Esportes necessitando vencer para sair do efeito. O Espectro não pode fazer outras ações, nem utilizando Virtudes para isso. Dreno: Nível Pontos de Vida/turno cumulativo.\n\nAção: Ação de Cosmo + Ação de Movimento Total\n\nResistência: Sim\n\nHabilidade Especial do Cosmo  (Devorador de Vidas de Rhadamanthys) : A Virtude Território combinada com essa Dádiva drena os pontos de vida de todos os indivíduos que estão dentro do Domínio do Cavaleiro. Pessoas sem Cosmo Energia  desperta morrem automaticamente doando 50 pontos de vida para o Cavaleiro.",
+      "page": "564–565",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Juízes do Inferno. Nível de referência no livro: 25. Conferir aquisição conforme evolução e status.",
+      "category": "Juízes do Inferno",
+      "level": 25,
+      "action": "Ação de Cosmo + Ação de Movimento Total",
+      "resistance": "Sim",
+      "combination": "",
+      "duration": "[SUSTENTADO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "judges:ability:25:COMEDOR DE ALMAS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            564,
+            565
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b101e8f554966fe2",
+    "name": "Executor",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Juiz emerge em meio à escuridão do submundo de Hades. Sua armadura imponente irradia uma aura sinistra, enquanto seu cosmo se funde com o poder do submundo. Ele levanta lentamente a mão e uma aura de puro cosmo sombrio irrompe ao seu redor. Dentro desse domínio, o tempo e o espaço parecem distorcidos, e todos que ousam enfrentá-lo são envolvidos por uma sensação avassaladora de desvantagem. Seus movimentos tornam-se mais lentos, suas forças se esvaem e o medo penetra em seus corações. É como se o Espectro dominasse o próprio destino de seus adversários, selando-lhes o destino com sua presença aterrorizante.\n\nSistema: A aura é automática e não necessita sustentá-la. Enquanto ativada ela deixa quem estiver dentro do Domínio do Usuário em desvantagem cumulativa/turno e anula qualquer Modificador Positivo proveniente de Habilidades/Dádivas ou Técnicas.\n\nAção: Ação de Cosmo\n\nResistência: Cosmo\n\nCombinação: Liderança, +\n\nHabilidade Especial do Cosmo  (Cosmo de Azar) : A Virtude Território combinada com esta Dádiva atribui +1 de desvantagem acumulada.",
+      "page": "565",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Juízes do Inferno. Nível de referência no livro: 26. Conferir aquisição conforme evolução e status.",
+      "category": "Juízes do Inferno",
+      "level": 26,
+      "action": "Ação de Cosmo",
+      "resistance": "Cosmo",
+      "combination": "Liderança, +",
+      "duration": "[CONTÍNUA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "judges:gift:26:EXECUTOR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            565
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ed95ebec77eda67c",
+    "name": "Fraqueza Fatal",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Juiz do Inferno com sua armadura imponente irradia uma aura sinistra. Seu corpo, repleto de cicatrizes e experiências, refletem a sabedoria cruel que adquiriu após inúmeras batalhas. Seus movimentos são calculados e precisos, como se soubesse o momento exato de cada ataque. Diante de seu oponente, ele estende o braço, e a energia do submundo flui por sua mão, moldando-se em um golpe direto na área desprotegida da armadura do inimigo. O golpe é certeiro, penetrando as defesas do adversário, castigando -o severamente, mesmo onde  a armadura não oferece proteção.\n\nSistema: O alvo perde 1 de Proteção da Armadura.\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "565–566",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Juízes do Inferno. Nível de referência no livro: 27. Conferir aquisição conforme evolução e status.",
+      "category": "Juízes do Inferno",
+      "level": 27,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[INSTANTÂNEA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "judges:ability:27:FRAQUEZA FATAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            565,
+            566
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "d90f79d5ff1025ce",
+    "name": "Fogo Fátuo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Juiz do Inferno, ergue-se sobre o campo de batalha do submundo. Sua armadura sombria ressoa com o poder do cosmo do submundo de Hades. Ele fecha os olhos por um momento, concentrando-se profundamente na escuridão que o rodeia. As almas angustiadas e aflitas que habitam o submundo respondem ao seu chamado. Ele estende as mãos para o céu, e as almas começam a se acumular ao seu redor. Uma aura sinistra e sombria envolve o Juiz enquanto as almas se transformam em um poderoso combustível. A energia do submundo é liberada em uma explosão aterrorizante, consumindo tudo em seu caminho. Seu inimigo é atingido por essa força terrível, tendo sua resistência enfraquecida e seu espírito quebrado. A explosão de energia do submundo é tão avassaladora que deixa o inimigo em um estado de desespero, incapaz de resistir. A habilidade do Espectro que é uma demonstração brutal do poder do submundo e da crueldade com que ele pune aqueles que desafiam Hades.\n\nSistema: O jogador faz um teste da Manobra de Combate Ataque de Foco  e caso acerte a explosão causa 40 + Nível de dano cósmico.\n\nEspecial: Se essa Dádiva for usada em um lugar onde tenha ocorrido muitas mortes o dano aumenta 10.\n\nEspecial: A Virtude Sekishiki combinada com esta Dádiva aumenta +10 de dano .\n\nEspecial: 5 + Nível% de chance de Atordoar o alvo.\n\nAção: Ação de Cosmo + Ação de movimento parcial\n\nResistência: Não\n\nCombinação: Liderança, &",
+      "page": "566",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Juízes do Inferno. Nível de referência no livro: 28. Conferir aquisição conforme evolução e status.",
+      "category": "Juízes do Inferno",
+      "level": 28,
+      "action": "Ação de Cosmo + Ação de movimento parcial",
+      "resistance": "Não",
+      "combination": "Liderança, &",
+      "duration": "[INSTANTÂNEA] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "judges:gift:28:FOGO FÁTUO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            566
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "87e0b3243c551423",
+    "name": "Juiz e Juri",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Juiz do Inferno, se ergue sobre o campo de batalha com sua imponente armadura de irradiando uma aura sinistra. Ele estende seus braços com a destreza de um carrasco do submundo, sua mão pairando sobre o coração de seu inimigo. Com um gesto majestoso, ele sussurra palavras sombrias, invocando os pecados do inimigo. O cosmo do submundo responde, prendendo a alma do oponente em um vórtice sombrio. A alma do inimigo é arrancada de seu corpo e, com um grito angustiante, é puxada para o Tártaros, onde deve enfrentar os horrores de seus próprios pecados. Enquanto a cena se desenrola, o inimigo experimenta uma agonia indescritível, revivendo todos os erros e culpas de sua vida. O poder terrível do Espectro força o inimigo a confrontar a escuridão de sua alma, deixando -o vulnerável e devastado. Nesse momento , o juiz do inferno mostra sua crueldade deixando uma marca eterna naqueles que desafiam o submundo de Hades.\n\nSistema: O Espectro faz um TAP Asterismo  com dificuldade igual ao Nível do alvo se tiver sucesso o alvo faz um Teste de resistência de Cosmo com um Modificador Negativo -1, caso falhe fica em Estado de Morte Estável pela duração da Dádiva, mas acorda se sofrer danos.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial\n\nResistência: Cosmo\n\nCombinação: Liderança. +",
+      "page": "567",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Juízes do Inferno. Nível de referência no livro: 29. Conferir aquisição conforme evolução e status.",
+      "category": "Juízes do Inferno",
+      "level": 29,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial",
+      "resistance": "Cosmo",
+      "combination": "Liderança. +",
+      "duration": "[CONTÍNUA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "judges:ability:29:JUIZ E JURI",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            567
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "1b771458b786d6ba",
+    "name": "Shinigami",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O implacável Juiz do Inferno, começa seu ritual sombrio. Ele ergue os braços lentamente, suas mãos se entrelaçando enquanto sua armadura negra exala uma aura sombria. Seus gestos convocam o cosmo do submundo, uma energia tenebrosa que o envolve. O próprio ar fica mais pesado à medida que sua Cosmo Energia se transforma em labaredas negras, crescendo até tocar as nuvens. Com um movimento fluido, ele ataca, e as labaredas negras se transformam em uma espada de Hades que perfura seu inimigo. A vítima é consumida pela ira do submundo, incapaz de resistir à agonia que a domina. Com essa habilidade, o Espectro se torna o executor da vontade de Hades, canalizando o poder do submundo para aniquilar seus adversários, tornando a batalha um pesadelo inevitável e derradeiro.\n\nSistema: Toda jogada feita pelo Personagem recebe um Modificador Positivo. Modificadores:  +2 de Modificador Positivo nos TdA, +1 de Bônus Aplicado aos Danos (A Espada de Hades), eleva 1 Nível da Técnica (O Medalhão de 5 Pontas).\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nCombinação: Combate, +\n\nHabilidade Especial do Cosmo (A Morte):  A Virtude Devoção Divina combinada com esta Habilidade aumenta 1 o Modificador Positivo.",
+      "page": "567–568",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Juízes do Inferno. Nível de referência no livro: 30. Conferir aquisição conforme evolução e status.",
+      "category": "Juízes do Inferno",
+      "level": 30,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "Combate, +",
+      "duration": "[CONTÍNUA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "judges:gift:30:SHINIGAMI",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            567,
+            568
+          ]
+        }
+      }
+    }
+  }
+]
