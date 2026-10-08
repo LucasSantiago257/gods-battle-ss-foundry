@@ -1,4 +1,10 @@
-# Ativar técnicas e resistir — 0.9.1
+# Ativar técnicas e resistir — 0.11.0
+
+**Configurar** na lista de técnicas (ou **Configurar técnica para combate** na cópia) reúne natureza, classe, efeito, custo completo, alcance e modo de dano. Confira a descrição e marque a revisão. A configuração altera somente esta cópia; conserva notas, proveniência e parâmetros manuais quando o modo automático é escolhido. Cancelar não grava.
+
+O modo **ND e Poder pelo status do usuário** usa a tabela da p.201: Bronze ND2/Poder10, Prata ND3/Poder15, Ouro ND4/Poder20. Acompanha o status atual, que é separado da classe da técnica; subir de nível não promove status. A tabela refere o status do cavaleiro, não a armadura equipada. Técnicas com ND/Poder específicos ou usuários Divino/Deus usam modo manual. Cópias antigas começam em modo manual, preservando seus cálculos. A opção é explícita; nenhum Item do compêndio é reescrito.
+
+O custo publicado já contém componentes e permanece sujeito à revisão. O assistente não substitui custos variáveis pelo custo simples da classe. Na ativação, a prévia atualiza custo, dificuldade de Asterismo, Poder Cósmico da resistência, dano normal/crítico, dano à armadura e pagamento conforme você altera os campos. Não rola nem gasta recursos durante a prévia. Condensar soma uma CE por virtude aplicada (pp.208–209); seus efeitos precisam de conferência. Não conte novamente algo já incluído no custo publicado ou CE fixa adicional.
 
 Na aba **Técnicas**, crie ou arraste uma técnica e abra sua ficha. Confira natureza, classe, Big Bang primordial (dano, controle ou sustentada), Poder, ND e custo publicado. Esse custo já deve conter os Big Bangs; não haverá uma segunda soma automática. Os modelos novos de Bronze usam ND 2, Poder 10 e custo 2 (páginas 198–202). Cópias e compêndios existentes preservam seus valores; ajuste o ND antigo manualmente se necessário.
 
@@ -10,13 +16,13 @@ CE insuficiente bloqueia a ativação. Para ultrapassar o limite do corpo, marqu
 
 O cartão apresenta a rolagem, o custo, o resultado e o Poder Cósmico. Para dano, calcula **ND × Poder + nível + bônus de dano**, incorporando +1 ND em sucesso crítico. Dano à armadura: Bronze 10, Prata 20, Ouro 30; escala planetária (ND 11–20) 70 e galáctica (ND 21+) 100. Técnicas especiais/divinas e exceções devem ser conferidas no livro.
 
-Selecione apenas o token do defensor e clique em **Resistir com o cavaleiro selecionado** no cartão de uma técnica bem-sucedida. Sem token selecionado, usa o personagem atribuído ao usuário. É necessário possuir permissão de proprietário. A natureza define o atributo e o Poder Cósmico define a dificuldade inicial, editável. A configuração provisória da fórmula de resistência continua disponível no mundo.
+Marque um único cavaleiro como alvo antes de ativar para vincular o cartão ao defensor. **Resistir com o alvo marcado** usa a ficha desse alvo, mesmo que outro token esteja controlado; somente seu proprietário ou mestre pode resistir. Sem alvo marcado, continua disponível o fluxo com token próprio selecionado ou personagem atribuído ao usuário. Múltiplos alvos não usam a resolução genérica; técnicas em área têm regras próprias. A natureza define o atributo e o Poder Cósmico fixa a dificuldade da resistência. Ajustes situacionais continuam no modificador; aplicação de dano permite ajustes justificados. A configuração provisória da fórmula de resistência continua disponível no mundo.
 
 O cartão apresenta dano completo na falha; metade do dano corporal e nenhum dano à armadura no sucesso; zero em sucesso crítico; dano corporal dobrado na falha crítica. Sem armadura viva equipada, dobra novamente o dano corporal. Armadura com PV 0 ainda é viva; com PV negativos ou estado Morta deixa de proteger. Metades são exibidas sem arredondamento imposto. O cartão indica efeitos resistidos ou duração dobrada na falha crítica.
 
 **A resistência calcula o dano; aplicar exige confirmação.** O proprietário do defensor ou mestre pode usar **Aplicar dano**, conferir o corpo e a armadura e justificar ajustes. Um mestre ativo processa a solicitação, registra os valores e impede aplicação duplicada. A última aplicação pode ser desfeita enquanto os recursos corresponderem ao registro; consulte [combate](combate.md). Confira proteções, Big Bangs e exceções antes de confirmar. Alcance, ações, aprendizado, estados, duração, sustentação por turno e recuperação são manuais. Controle/sustentação não recebe dano corporal genérico. As mensagens seguem a visibilidade de rolagens do Foundry.
 
-A ativação impede cliques duplicados no mesmo cliente e verifica mudanças de recursos antes de salvar. Evite ativar simultaneamente o mesmo cavaleiro em clientes diferentes. Se o chat falhar depois do desconto, a notificação informa que os recursos já foram gastos; confira a ficha antes de repetir.
+A ativação impede cliques duplicados no mesmo cliente e verifica mudanças na ficha/técnica durante a prévia e rolagem antes de salvar. Se os dados mudarem, reabra a ativação para conferir os novos valores. Evite ativar simultaneamente o mesmo cavaleiro em clientes diferentes; o pagamento de CE ainda não usa a fila central do mestre. Se o chat falhar depois do desconto, a notificação informa que os recursos já foram gastos; confira a ficha antes de repetir.
 
 ## Importar técnicas do livro (0.5.0)
 

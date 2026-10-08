@@ -21,6 +21,7 @@ export async function prepareRollMessage(actor, roll, context, {template = "chat
 
 export async function rollTest(actor, kind, key, options = {}) {
   if (!actor.isOwner) return;
+  if(options.resistanceAttack?.targetUuid&&options.resistanceAttack.targetUuid!==actor.uuid)throw Error("Este resultado pertence ao alvo marcado da técnica.");
   const label = kind === "skill" ? SKILLS[key]?.label : ATTRIBUTES[key];
   if (!label) return;
   const parameters = testParameters(actor.system, kind, key, game.settings.get(SYSTEM_ID, "resistanceMode"), {technique:!!options.resistanceAttack});
@@ -28,7 +29,7 @@ export async function rollTest(actor, kind, key, options = {}) {
   parameters.modifier += pendingPenalty;
   const difficulty = Number.isFinite(options.difficulty) ? options.difficulty : 10;
   const answer = await foundry.applications.api.DialogV2.wait({window: {title: `${kind === "resistance" ? "Resistência: " : ""}${label}`},
-    content: `<div class="form-group"><label>Dificuldade</label><input name="dc" type="number" value="${difficulty}" step="1"></div>
+    content: `<div class="form-group"><label>Dificuldade${options.resistanceAttack?" · Poder Cósmico do ataque":""}</label><input name="dc" type="number" value="${difficulty}" step="1" ${options.resistanceAttack?"readonly":""}></div>
       <div class="form-group"><label>Modificador da situação</label><input name="bonus" type="number" value="0" step="1"></div>
       <div class="form-group"><label>Vantagem / desvantagem</label><select name="advantage"><option value="0">Normal</option><option value="1">Vantagem (+1 dado, +2)</option><option value="-1">Desvantagem (-1 dado, -2)</option></select></div>
       <p>${parameters.dice}d10; modificador base ${parameters.modifier >= 0 ? "+" : ""}${parameters.modifier}.</p>`,
@@ -37,6 +38,7 @@ export async function rollTest(actor, kind, key, options = {}) {
       return {difficulty: Number(form.elements.dc.value), bonus: Number(form.elements.bonus.value), advantage: Number(form.elements.advantage.value)};
     }}, {action: "cancel", label: "Cancelar", callback: () => null}], rejectClose: false});
   if (!answer || typeof answer !== "object") return;
+  if(options.resistanceAttack)answer.difficulty=difficulty;
   if (!Object.values(answer).every(Number.isFinite) || ![-1, 0, 1].includes(answer.advantage)) return ui.notifications.warn("Informe valores numéricos válidos.");
   const dice = Math.max(1, Math.min(kind === "skill" ? 5 : 100, parameters.dice + answer.advantage));
   const {result, messageRoll} = await evaluatePool(dice, parameters.modifier + answer.bonus + answer.advantage * 2);

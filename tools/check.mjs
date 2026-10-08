@@ -7,6 +7,7 @@ import {prepareKnight, armorValues} from "../module/rules.mjs";
 import {KnightSheet, ContentSheet} from "../module/sheets.mjs";
 import {ITEM_TYPES} from "../module/config.mjs";
 import {levelSignature} from "../module/level-rules.mjs";
+import {techniqueSetupContext} from "../module/technique-setup.mjs";
 
 const manifest = JSON.parse(await readFile("system.json", "utf8"));
 for (const file of [...manifest.esmodules, ...manifest.styles, ...manifest.languages.map(l => l.path)]) await access(file);
@@ -48,9 +49,15 @@ const attackCard = templates["technique-chat.hbs"]({name: unsafe, description: u
   success: true, cost: 2, payment: {fromCurrent: 2, fromExtra: 0}, effectLabel: "Dano", isDamage: true, damageLevel: 2, damage: 21, armorDamage: 10, powerCosmic: 11, outcome: "Sucesso"});
 const resistanceCard = templates["chat.hbs"]({label: "Vigor", kind: "Resistência", attackName: "Técnica de exemplo", results: [8], highest: 8, tens: 0, ones: 0, modifier: 3, total: 11, difficulty: 11,
   outcome: "Sucesso", resistance: {damage: 10.5, armorDamage: 0, effectsResisted: true}});
-for (const html of [attackCard, templates["technique-dialog.hbs"]({name: unsafe})]) if (html.includes(unsafe)) throw Error("Texto da técnica não escapado.");
+for (const html of [attackCard, templates["technique-dialog.hbs"]({name: unsafe,targetName:unsafe}),templates["technique-setup.hbs"]({name:unsafe,printedCost:unsafe})]) if (html.includes(unsafe)) throw Error("Texto da técnica não escapado.");
 await mkdir("dist", {recursive: true});
 const css = await readFile("styles/sheets.css", "utf8");
+const gameplaySystem=knight();gameplaySystem.profile.level=25;gameplaySystem.profile.status="gold";gameplaySystem.skills.asterism.value=3;gameplaySystem.resources.cosmo.value=20;prepareKnight(gameplaySystem);
+const gameplayTechnique={...content(),classification:"gold",techniqueMode:"status",cost:8};
+const gameplayDialog=templates["technique-dialog.hbs"]({name:"Técnica de exercício",cost:8,current:20,extra:0,reserve:0,targetName:"Defensor de exercício"});
+const setupDialog=templates["technique-setup.hbs"](techniqueSetupContext({system:gameplaySystem},{name:"Técnica de exercício",system:gameplayTechnique}));
+if(!gameplayDialog.includes('data-technique-preview="damage"')||!setupDialog.includes('name="techniqueMode"'))throw Error("Configuração/prévia ausente.");
+await writeFile("dist/gameplay-preview.html",`<!doctype html><html lang="pt-BR"><meta charset="utf-8"><style>${css}body{background:#07101e;color:#e6edfa;font-family:Segoe UI,sans-serif;padding:24px}.preview-dialog{background:#142035;border:1px solid #52637e;border-radius:8px;padding:20px;max-width:680px;margin:16px auto}.form-group{display:flex;align-items:center;gap:16px;margin:12px 0}.form-group label{flex:1}.form-group input,.form-group select{max-width:300px}input,select,button{padding:7px}.technique-preview{padding:12px;border:1px solid #c2a963}.note{color:#e8bc83}*{box-sizing:border-box}</style><body><form id="activation" class="preview-dialog">${gameplayDialog}<button type="button" data-action="activate">Gastar CE e rolar</button></form><form id="setup" class="preview-dialog">${setupDialog}<button type="button">Salvar configuração revisada</button></form><script type="module">import {installTechniquePreview} from "../module/technique-ui.mjs";installTechniquePreview(document.querySelector("#activation"),${JSON.stringify(gameplaySystem)},${JSON.stringify(gameplayTechnique)});window.__gameplayReady=true;</script></body></html>`);
 const audited = JSON.parse(await readFile("data/catalog/cosmo-special.json", "utf8")).find(e => e.name === "Olho de Fogo");
 const bookContext = await new ContentSheet({...audited, system: {...content(), ...audited.system}, isOwner: false})._prepareContext({});
 const bookHtml = templates["content.hbs"](bookContext);

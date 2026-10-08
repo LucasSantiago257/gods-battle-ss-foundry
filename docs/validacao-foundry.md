@@ -98,3 +98,12 @@ Para executar este roteiro com dados prontos, use o grupo de [fichas de teste da
 5. Exceda orçamento/limites: revisão aponta pendências. Concluir requer corrigir ou marcar exceção com justificativa. Cancelar mantém recursos e rascunho.
 6. Feche/reabra e recarregue entre etapas. Conclua com preenchimento de recursos desligado e confira PV/CE anteriores. Com preenchimento ligado, somente recursos do cavaleiro são preenchidos; armadura não é curada.
 7. Repetir conclusão não concede benefícios nem importa itens. Teste como proprietário e observador.
+
+## Gameplay de técnicas 0.11.0
+
+1. Arraste uma técnica, abra Configurar e cancele: dados/notas/origem permanecem. Escolha natureza, custo completo e modo ND/Poder pelo status; confirme a leitura. Custo0 continua pendente; componentes não são cobrados novamente. Técnicas cooperativas permanecem manuais.
+2. Como Bronze nível1, confira ND2/Poder10 e dano21 sem bônus. Altere somente o status para Prata: ND3/Poder15. Valores manuais salvos permanecem; retornar ao modo manual os recupera. Nível alto sozinho não muda status.
+3. Abra Ativar: elevação/condensação/CE extra devem atualizar custo, dificuldade, dano normal/crítico, armadura e pagamento, sem gastar na prévia. Cancelar não altera recursos. CE insuficiente exige liberar reserva/obter CE ou autorizar queima, com confirmação exata dos PV.
+4. Marque um alvo e deixe outro token controlado. O cartão Resistir deve usar exclusivamente o alvo marcado e sua dificuldade de Poder Cósmico. Proprietário de outro cavaleiro não pode resistir/aplicar esse resultado. Sem alvo, o fluxo com token selecionado permanece. Teste tokens vinculados e não vinculados.
+5. Resista como proprietário e confirme dano corporal/armadura; confira metade, crítico, ausência de armadura, privacidade e desfazer. Trocar a ficha ou técnica enquanto a prévia/rolagem estiver aberta deve impedir cobrança até reabrir.
+6. Teste com mestre/jogador no build350. Consumo de ações, alcance, condições e Big Bangs específicos ainda são conferidos manualmente. Pagamento de técnicas ainda não usa a fila central: evite ativações simultâneas do mesmo ator em clientes distintos.
