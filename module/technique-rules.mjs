@@ -33,7 +33,7 @@ export function techniqueParameters(system, technique, options = {}) {
   if (!ATTRIBUTES[attribute]) throw Error("Atributo de Asterismo inválido.");
   const base = testParameters(system, "skill", "asterism");
   const trained = skill.value > 0;
-  const modifier = (trained ? skill.mod + system.attributes[attribute].mod + skill.bonus : 0)
+  const modifier = (trained ? skill.mod + system.attributes[attribute].mod + skill.bonus + (skill.effectBonus ?? 0) : 0)
     + (system.combat.asterismPenalty ?? 0) + bonus + advantage * 2;
   return {cost, difficulty: 10 + cost, attribute, attributeLabel: ATTRIBUTES[attribute],
     dice: Math.max(1, Math.min(5, base.dice + advantage)), modifier, elevate, effectKind,
@@ -61,7 +61,7 @@ export function techniqueOutcome(system, technique, parameters, total) {
   const outcome = classify(total, parameters.difficulty);
   const success = total >= parameters.difficulty;
   const critical = total > parameters.difficulty + 10;
-  const damageLevel = parameters.effectKind === "damage" ? integer(technique.damageLevel, "Nível de Dano", 1) + parameters.elevate + (critical ? 1 : 0) : 0;
+  const damageLevel = parameters.effectKind === "damage" ? integer(technique.damageLevel, "Nível de Dano", 1) + parameters.elevate + (system.automation?.techniqueND ?? 0) + (critical ? 1 : 0) : 0;
   const damage = parameters.effectKind === "damage"
     ? Math.max(0, damageLevel * integer(technique.power, "Nível de Poder") + system.profile.level + system.combat.damageBonus + (system.combat.techniqueDamageBonus ?? 0)) : 0;
   const armorDamage = parameters.effectKind !== "damage" ? 0 : damageLevel > 20 ? 100 : damageLevel > 10 ? 70

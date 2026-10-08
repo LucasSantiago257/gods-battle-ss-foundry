@@ -46,6 +46,7 @@
       {{> "systems/gods-battle-ss/templates/items.hbs" group=groups.virtue}}
       {{> "systems/gods-battle-ss/templates/items.hbs" group=groups.ability}}
       {{> "systems/gods-battle-ss/templates/items.hbs" group=groups.divineCosmo}}
+      <details class="calculation-ledger"><summary>Benefícios dos itens e pendências</summary>{{#each passiveLedger}}<p><strong>{{name}}</strong>: {{reason}}{{#each contributions}}<br>{{label}}: {{amount}} {{#if applied}}(considerado){{else}}(não acumulado){{/if}}{{/each}}</p>{{/each}}</details>
       <h3>Vontade</h3>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=will}}
     </section>
     <section class="tab {{tabs.equipment.cssClass}}" data-group="primary" data-tab="equipment">
@@ -61,5 +62,5 @@
       <h3>História</h3>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=biography}}
     </section>
   </div>
-  <footer class="sheet-footer">Alterações salvas ao editar · Fichas 0.6.0</footer>
+  <footer class="sheet-footer">Alterações salvas ao editar · Fichas 0.7.0</footer>
 </div>

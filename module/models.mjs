@@ -15,12 +15,12 @@ export class KnightData extends foundry.abstract.TypeDataModel {
   static migrateData(source) {super.migrateData(source); return migrateKnightSource(source);}
   static defineSchema() {
     return {
-      schemaVersion: num(2, 1), automation: schema({enabled: flag()}),
+      schemaVersion: num(2, 1), automation: schema({enabled: flag(), healthBonus: num(), resistanceBonus: num(), techniqueND: num(), physicalDamage: num(), testSen: num(), resistanceCos: num(), resistanceSen: num()}),
       profile: schema({level: num(1, 1, 100), style: text("saint", STYLES), status: text("bronze", STATUS), nature: text("physical", NATURES), specialization: text(),
         nationality: text(), age: text(), height: text(), weight: text(), appearance: text(), essence: text("Bom"), personality: text(), sign: text(), quality: text(), flaw: text(),
         sanctuary: text(), deity: text(), master: text(), trainingPlace: text(), biography: text(), companionUuid: text()}),
-      attributes: schema(Object.fromEntries(Object.keys(ATTRIBUTES).map(k => [k, schema({value: num(1, 0, 12), bonus: num(0, -100), mod: num(0, -100)})]))),
-      skills: schema(Object.fromEntries(Object.keys(SKILLS).map(k => [k, schema({value: num(0, 0, 10), bonus: num(0, -100), associated: text("", {"": "Automático", ...ATTRIBUTES}), attribute: text("for", ATTRIBUTES), mod: num(), total: num(0, -1000)})]))),
+      attributes: schema(Object.fromEntries(Object.keys(ATTRIBUTES).map(k => [k, schema({value: num(1, 0, 12), effective: num(1, 0, 12), bonus: num(0, -100), mod: num(0, -100)})]))),
+      skills: schema(Object.fromEntries(Object.keys(SKILLS).map(k => [k, schema({value: num(0, 0, 10), bonus: num(0, -100), effectBonus: num(), associated: text("", {"": "Automático", ...ATTRIBUTES}), attribute: text("for", ATTRIBUTES), mod: num(), total: num(0, -1000)})]))),
       fighting: schema(Object.fromEntries(Object.keys(FIGHTING).map(k => [k, num(0, 0, 5)]))),
       resources: schema({health: resource(21), cosmo: resource(1), maximum: schema({value: num(0, 0, 20), max: num(20, 20, 20)}),
         cosmoExtra: num(), cosmoReserved: num(), cosmoOverload: num(), determination: schema({value: num(1), max: num(1), objective: text()}), pride: schema({value: num(), max: num(), objective: text()})}),
@@ -41,7 +41,7 @@ export class KnightData extends foundry.abstract.TypeDataModel {
 export class ContentData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {
-      schemaVersion: num(1, 1), description: text(), page: text(), sourceVersion: text("PDF V49.1.1"), originUuid: text(), requirements: text(),
+      schemaVersion: num(1, 1), rulesEnabled: new BooleanField({initial:true}), rulesAccepted: flag(), acquisitionLevel: num(), attributeChoice1: text("", {"":"Selecionar",...ATTRIBUTES}), attributeChoice2: text("", {"":"Selecionar",...ATTRIBUTES}), description: text(), page: text(), sourceVersion: text("PDF V49.1.1"), originUuid: text(), requirements: text(),
       equipped: flag(), class: text("bronze", ARMORS), version: num(1, 1, 5), constellation: text(), affinity: num(0, 0, 20), state: text("active"),
       health: resource(30), protectionBonus: num(0, -100), cosmoBonus: num(0, -100), accessories: text(),
       armor: schema({hp: num(30), pa: num(3), ce: num(3), minimum: num(1), unlimited: flag()}),
