@@ -2,4 +2,4 @@
 {{#if resistance}}<h4>Contra {{attackName}}</h4><p>Dano corporal após resistência: <strong>{{resistance.damage}}</strong>; dano à armadura: <strong>{{resistance.armorDamage}}</strong>.</p>
 {{#if resistance.unarmored}}<p>Sem armadura viva equipada: dano corporal dobrado, já incluído.</p>{{/if}}
 {{#if resistance.effectsResisted}}<p>Efeitos adicionais resistidos.</p>{{else}}<p>Confira os efeitos adicionais da técnica.{{#if resistance.doubleDuration}} Falha crítica: duração dos efeitos dobrada.{{/if}}</p>{{/if}}
-<p class="note">Prévia para conferência. Os PV não foram alterados; confira proteções e exceções especiais.</p>{{/if}}</div>
+<p class="note">Prévia para conferência. Os PV não foram alterados; confira proteções e exceções especiais.</p><button type="button" data-action="applyDamage">Conferir e aplicar dano</button><button type="button" data-action="undoDamage">Desfazer aplicação</button>{{/if}}</div>
