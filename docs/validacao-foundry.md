@@ -26,3 +26,14 @@ Estado: o usuário confirmou a criação e funcionamento das fichas 0.1.1 no ser
 9. Dois cliques rápidos em Ativar devem abrir uma única ativação e gastar uma vez. Recarregar e conferir CE, PV e penalidade. Evitar ativação simultânea do mesmo cavaleiro em clientes diferentes.
 
 Dano ao defensor, efeitos, requisitos e sentidos são conferidos manualmente conforme os limites do README e do guia de técnicas.
+
+## Compêndios nativos 0.3.0
+
+1. Na aba Compêndios, confira os seis catálogos e suas quantidades conforme docs/compendios.md. Abra as pastas de um estilo e busque uma virtude por nome.
+2. Na aba Poderes de um cavaleiro, abra Habilidades e Dádivas, Virtudes, Combinações de Cosmo e Cosmos Divinos pelos atalhos.
+3. Arraste uma dádiva, uma virtude e um Cosmo Divino para a ficha. Abra cada cópia e confira descrição, requisitos, tipo e página; confirme o registro da origem.
+4. Edite as notas da cópia. O Item do catálogo deve continuar com suas notas originais; importar não deve alterar atributos ou gastar recursos.
+5. Repita com um jogador proprietário do cavaleiro. Ajuste a visibilidade do catálogo como mestre se necessário. Um observador não pode modificar a ficha.
+6. Reabra o mundo e confira a persistência das cópias. Modelos e compêndios anteriores do mundo devem permanecer intactos.
+
+Estes passos requerem o Foundry real; os testes automatizados não os substituem.

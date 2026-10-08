@@ -1,0 +1,808 @@
+[
+  {
+    "_id": "92c74c9ed4de7129",
+    "name": "Melhoria Sábio",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sistema: +1 Nível de Dano na Técnica.\n\nAção: Ação de Cosmo.\n\nResistência: Não.",
+      "page": "68",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Sábio. Nível de referência no livro: 1. Conferir aquisição conforme evolução e status.",
+      "category": "Sábio",
+      "level": 1,
+      "action": "Ação de Cosmo.",
+      "resistance": "Não.",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "improvement"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sage:improvement:1:MELHORIA SÁBIO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            68
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "08180ffd5d28774a",
+    "name": "Ohm",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Os Sábios sempre serão os mais próximos dos Deuses. Em um estado de meditação profunda, o Sábio se conecta ao cosmos, acumulando uma quantidade imensa de energia cósmica em seu corpo. Essa energia impulsiona suas habilidades, tornando -o virtualmente invencível por um dia.\n\nSistema: Personagem possui a habilidade de acumular uma quantidade adicional de pontos de Cosmo Energia. Essa quantidade é igual à sua Graduação no Atributo Cosmo, ultrapassando os limites naturais do corpo humano a cada dia de meditação. A quantidade de Cosmo Ener gia Extra acumulada está limitada ao nível do Personagem. Além disso, a cada novo dia de meditação, o Cavaleiro também aumenta a barra de cosmo máximo 2 Pontos. Durante os dias que passam, o domínio do Cavaleiro dobra cumulativamente. No entanto, caso o Cavaleiro interrompa sua meditação, contra sua vontade, ele perderá todos os bônus e extras acumulados durante a meditação.\n\nAção: Ação de Movimento Total\n\nEspecial: Cavaleiros com a Virtude Cosmo Oculto são percebidos ao usar essa Habilidade.\n\nEspecial: O Sábio não sente a necessidade de nenhum alimento ou sono, podendo passar incontáveis dias meditando sem descanso. Limite de 1 dia/Graduação em Vigor.\n\nHabilidade Especial do Cosmo (Posição Divina): Virtude Posição de Lotus junto com essa Habilidade acumula +2 pontos de Cosmo Energia extra/dia.",
+      "page": "68–69",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Sábio. Nível de referência no livro: 1. Conferir aquisição conforme evolução e status.",
+      "category": "Sábio",
+      "level": 1,
+      "action": "Ação de Movimento Total",
+      "resistance": "",
+      "combination": "",
+      "duration": "[DIAS] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sage:ability:1:OHM",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            68,
+            69
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "0c1026825552a18f",
+    "name": "Barreira Intransponível",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro ergue sua mão ao céu estrelado. Seu Cosmo se intensifica, criando uma barreira brilhante de energia cósmica que envolve sua armadura. O inimigo, ao ataca-lo, vê seus ataques deslizarem para fora do Cavaleiro, como se enfrentassem uma força inquebrável da natureza.\n\nSistema: +2 de Proteção de Armadura.\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nCombinação: Telecinese, +",
+      "page": "69",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Sábio. Nível de referência no livro: 2. Conferir aquisição conforme evolução e status.",
+      "category": "Sábio",
+      "level": 2,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "Telecinese, +",
+      "duration": "[CONTÍNUA/REAÇÃO] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sage:gift:2:BARREIRA INTRANSPONÍVEL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            69
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "73d99fe5b1a4fdee",
+    "name": "Dançarino",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A sabedoria cósmica flui através do Cavaleiro e a leitura das estrelas se torna instantânea e letal. Sua habilidade de leitura estelar é amplificada, concedendo -lhe um domínio ainda mais letal das constelações.\n\nSistema: Estudioso do Cosmo  conseguem ler as estrelas mais rápido . Acrescente + 1 de Modificador Positivo no resultado da Perícia Asterismo.\n\nCombinação: Asterismo, +",
+      "page": "69",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Sábio. Nível de referência no livro: 3. Conferir aquisição conforme evolução e status.",
+      "category": "Sábio",
+      "level": 3,
+      "action": "",
+      "resistance": "",
+      "combination": "Asterismo, +",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sage:ability:3:DANÇARINO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            69
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a89b265d24483b7c",
+    "name": "Transcendência — 4º",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sua ligação com a Natureza cósmica se aprofunda, e uma nova técnica se desdobra diante dele, complementando sua essência.  Revelando sua conexão profunda com o Cosmo enquanto seu poder cósmico se renova e se torna mais formidável do que nunca.\n\nSistema: O Cavaleiro desenvolve +1 Natureza de Cosmo + 1 Técnica que deve ser da mesma Natureza de Cosmo desenvolvido. Ex. Mentais ou Ilusórias e Físico.",
+      "page": "69–70",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Sábio. Nível de referência no livro: 4. Conferir aquisição conforme evolução e status.",
+      "category": "Sábio",
+      "level": 4,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sage:gift:4:TRANSCENDÊNCIA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            69,
+            70
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "eecef4769df2b7a8",
+    "name": "Domínio Inato",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Ninguém conhece melhor o uso de uma Técnica como um Cavaleiro Sábio. Estudiosos dos caminhos da destruição das estrelas, esses Cavaleiros sabem usar 100% do seu poder.\n\nSistema: A cada 5 Níveis o Sábio recebe os modificadores:\n\n+1 no Incremento escolhido\n\n+1 de Poder Cósmico para Técnicas\n\nEspecial: Mestre: Desenvolve 1 Incremento a sua escolha a cada 10 Níveis.",
+      "page": "70",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Sábio. Nível de referência no livro: 5. Conferir aquisição conforme evolução e status.",
+      "category": "Sábio",
+      "level": 5,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "specialization"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sage:specialization:5:DOMÍNIO INATO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            70
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "743f67734367bfa0",
+    "name": "Cosmo Elevado",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro, ergue seus braços em direção ao cosmo estrelado. Seu Cosmo se intensifica, envolvendo sua técnica com uma aura dourada. Com um gesto, ele libera seu ataque, que irrompe como uma onda de destruição que abala o próprio universo. O campo de batalha é banhado em uma luminosidade deslumbrante enquanto a técnica se torna uma força avassaladora da natureza.\n\nSistema: Suas Técnicas elevam 1 Nível de Dano na Armadura.\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "70",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Sábio. Nível de referência no livro: 6. Conferir aquisição conforme evolução e status.",
+      "category": "Sábio",
+      "level": 6,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sage:gift:6:COSMO ELEVADO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            70
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a1c7cb97ff9bc13d",
+    "name": "Domínio Extrasensorial",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro fecha os olhos e adota uma postura de meditação. Sua Cosmo Energia toma a forma de sutis ondas douradas que irradiam dele. À medida que seus sentidos se aprofundam, ele percebe as mínimas flutuações do Cosmo no ambiente, tornando -se uma sentinela implacável  contra qualquer ameaça. O campo de batalha ressoa com a aura tranquila e vigilante do Cavaleiro, enquanto ele se prepara para enfrentar seus adversários com uma precisão surpreendente.\n\nSistema: O Personagem dentro de seu Domínio nunca fica em desvantagem por situações surpresas ou que envolvam seus sentidos e fica em vantagem quando a situação necessita de seus sentidos.\n\nEspecial: O Personagem recebe +1 nos testes de Intuição.\n\nAção: Ação de Cosmo\n\nCombinação: Percepção Extrassensorial, +\n\nHabilidade Especial do Cosmo (Visão de Cronos): Virtude Sentidos aguçados junto com essa Dádiva consegue prever a situação antes que ela aconteça . Pode prever a próxima ação do alvo ou 1 turno a frente da cena.",
+      "page": "70–71",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Sábio. Nível de referência no livro: 7. Conferir aquisição conforme evolução e status.",
+      "category": "Sábio",
+      "level": 7,
+      "action": "Ação de Cosmo",
+      "resistance": "",
+      "combination": "Percepção Extrassensorial, +",
+      "duration": "[CONTÍNUA] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sage:ability:7:DOMÍNIO EXTRASENSORIAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            70,
+            71
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "1f76e434f7600ebe",
+    "name": "Domínio da Matéria",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Sábio eleva sua mente e cosmo a um estado transcendental. Seu treinamento meticuloso reflete na concentração suprema. Seus olhos se abrem, irradiando uma aura divina. Com um gesto suave, ele canaliza sua psicocinese, fazendo com que os escombros ao redor flutuem no ar e, em um movimento sutil, ele os dirige para esmagar seus inimigos. Sob o domínio absoluto do Cavaleiro, os oponentes sucumbem ao poder da mente do Sábio.\n\nSistema: O Personagem desenvolve a Psicocinese, a Habilidade de mover objetos com a mente. Permite ser utilizado para o ataque (nas ações de ataque) impulsionando o dano.\n\nBronze: move/ergue 10 kg causando Nível de Ataque 3 ou +1 no Teste de Força.\n\nPrata: move/ergue 200 kg causando Nível de Ataque 5 ou + 3 no Teste de Força.\n\nOuro: move/ergue 400 kg causando Nível de Ataque 10 ou +5 no Teste de Força.\n\nHabilidade Especial do Cosmo  (Cinestesia): A Virtude Psicocinese ou Muviano (Habilidade Natural Psicocinese) combinada com esta Habilidade eleva 1 Nível em todos os bônus descritos acima.\n\nHabilidade Especial do Cosmo  (O mais poderoso de sua Geração) : A Virtude Psicocinese e a Virtude Muviano (Habilidade Natural Psicocinese) juntas garantem, automaticamente, sucesso entre Testes de Ação Resistido entre Personagens com Psicocinese. Recebendo a alcunha do “Cavaleiro com o poder Telecinético mais poderos o de sua geração”.",
+      "page": "71",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Sábio. Nível de referência no livro: 8. Conferir aquisição conforme evolução e status.",
+      "category": "Sábio",
+      "level": 8,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sage:gift:8:DOMÍNIO DA MATÉRIA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            71
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "34d471b13de8c099",
+    "name": "Domínio do Cosmo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Sábio concentra seu cosmo em um treinamento solitário (embaixo da cachoeira de Rozan, dentro do vulcão na ilha Kanon, etc.). Com gestos fluidos e meditativos, ele sintoniza seu ser com as energias do cosmos. Nesse momento de transcendência, ele aprimora seu controle sobre a cosmo  energia universal. Quando ele canaliza essa habilidade em combate, aumenta drasticamente a eficácia de suas técnicas.\n\nSistema: O Personagem melhora o seu controle do Cosmo. O Cavaleiro recebe +1 nos Teste de Duelo de Cosmo.\n\nCombinação: Asterismo, +",
+      "page": "71",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Sábio. Nível de referência no livro: 9. Conferir aquisição conforme evolução e status.",
+      "category": "Sábio",
+      "level": 9,
+      "action": "",
+      "resistance": "",
+      "combination": "Asterismo, +",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sage:ability:9:DOMÍNIO DO COSMO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            71
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "6ac2c1314e91e425",
+    "name": "Khan",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sua Cosmo Energia flui intensamente, formando uma aura dourada ao seu redor. Com movimentos graciosos, ele estende os braços, criando um casulo protetor em forma de Lótus que se ergue, envolvendo -o. Enquanto permanece dentro do casulo, ele lança ataques poderosos contra seus inimigos, que batem contra a barreira, sem sucesso.\n\nSistema: O Cavaleiro cria um casulo protetor em forma de Lótus que defende o Cavaleiro enquanto ele ataca de dentro.  A barreira protetora possui  30 + Nível P ontos de V ida que recebem o dano direcionado ao Cavaleiro  se dissipando quando seus PV chegarem a 0. Essa barreira não pode ser usada como reação.\n\nEspecial: Os pontos de vida da barreira só são subtraídos pelo Dano Efetivo.\n\nAção: Ação de Cosmo + Ação de movimento parcial\n\nResistência: Não\n\nHabilidade Especial do Cosmo  (Posição Perfeita): Virtude Posição de Lotus junto com essa Dádiva dobra os pontos de vida da barreira.\n\nHabilidade Especial do Cosmo  (Reação na Velocidade da Luz): A Virtude Telepata, Iniciativa Aprimorada ou Semideus junto com essa Dádiva permite que ela seja usada como Reação.",
+      "page": "71–72",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Sábio. Nível de referência no livro: 10. Conferir aquisição conforme evolução e status.",
+      "category": "Sábio",
+      "level": 10,
+      "action": "Ação de Cosmo + Ação de movimento parcial",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[CONTÍNUA] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sage:gift:10:KHAN",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            71,
+            72
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "7dc5950dde0bcd2d",
+    "name": "Domínio do Tempo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro através de treinamento árduo aprende  a essência do Cosmo ao seu redor, e novas técnicas se tornam mais fáceis  de assimilar em sua mente. O campo de treinamento é inundado com uma sensação de expansão cósmica, enquanto o Cavaleiro, imerso em sua sabedoria, adiciona novos golpes à sua já vasta coleção.\n\nSistema: O Cavaleiro é um gênio na arte do Cosmo conhecendo uma infinidade de Técnicas. O Personagem pode conhecer, e assim acrescentar mais duas Técnicas a sua lista de golpes conhecidos mesmo que ultrapasse o limite do seu Modificador do Atributo Cosmo.",
+      "page": "72",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Sábio. Nível de referência no livro: 11. Conferir aquisição conforme evolução e status.",
+      "category": "Sábio",
+      "level": 11,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sage:ability:11:DOMÍNIO DO TEMPO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            72
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8f9b535197b0a601",
+    "name": "Liberação",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro assume uma postura solene. Sua Cosmo Energia começa a crescer, e ele escolhe, com uma determinação feroz, privar-se de um de seus sentidos. Uma aura dourada irrompe ao seu redor, demonstrando sua capacidade aprimorada de reter o Cosmo. Uma explosão de energia cósmica o envolve, revelando que ele agora é capaz de armazenar mais Cosmo do que antes.\n\nSistema: Aumenta +5 a capacidade do corpo humano em Liberar Cosmo Energia, mas para isso o Cavaleiro se priva de um Sentido (visão, olfato, paladar, tato, audição)  recebendo o Estado Desorientado para o Sentido escolhido.\n\nEspecial: A Virtude Olhos de Deus retira o efeito de desvantagem dessa Dádiva.\n\nCombinação: Treinamento, +\n\nHabilidade Especial do Cosmo (Cosmo infinito): A Virtude Receptáculo junto com essa Dádiva aumenta +2 a capacidade da Cosmo Energia acumulada.",
+      "page": "72–73",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Sábio. Nível de referência no livro: 12. Conferir aquisição conforme evolução e status.",
+      "category": "Sábio",
+      "level": 12,
+      "action": "",
+      "resistance": "",
+      "combination": "Treinamento, +",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sage:gift:12:LIBERAÇÃO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            72,
+            73
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b5e3b71e5ff0d96c",
+    "name": "Big Bang",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro concentra sua Cosmo Energia. Sua mente se ilumina com conhecimento cósmico, permitindo -lhe entender profundamente as Técnicas dos deuses. Um brilho dourado emana dele, revelando sua capacidade de aprimorar técnicas existentes e até criar novas. Seu Cosmo irradia sabedoria e poder, enquanto o Cavaleiro aperfeiçoa seu domínio das artes do Big Bang.\n\nSistema: O Sábio adquire 1 slot e 1 Big Bang para adicionar a sua Técnica principal.",
+      "page": "73",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Sábio. Nível de referência no livro: 13. Conferir aquisição conforme evolução e status.",
+      "category": "Sábio",
+      "level": 13,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sage:ability:13:BIG BANG",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            73
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "9e500f587db89013",
+    "name": "Transcendência — 14º",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sua ligação com a Natureza cósmica se aprofunda, e uma nova técnica se desdobra diante dele, complementando sua essência.  Revelando sua conexão profunda com o Cosmo enquanto seu poder cósmico se renova e se torna mais formidável do que nunca.\n\nSistema: O Cavaleiro desenvolve +1 Natureza de Cosmo + 1 Técnica que deve ser da mesma Natureza de Cosmo desenvolvido. Ex. Mentais ou Ilusórias e Físico",
+      "page": "73",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Sábio. Nível de referência no livro: 14. Conferir aquisição conforme evolução e status.",
+      "category": "Sábio",
+      "level": 14,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sage:gift:14:TRANSCENDÊNCIA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            73
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8cd28956482d3ab9",
+    "name": "Sábio",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro se coloca em meditação profunda. Su a Cosmo Energia se desdobra em volta dele, formando uma esfera cintilante. Enquanto medita, a sabedoria cósmica flui para ele, permitindo-lhe aprender perícias a uma velocidade surpreendente. Sua mente iluminada irradia a busca incansável pelo conhecimento, quebrando os limites do que é comum.\n\nSistema: O Cavaleiro aprende Perícias espantosamente rápido, não importa se ele possui a Graduação do Atributo limite. A exceção das Perícias de classes de outro Estilo de Combate. O Personagem, automaticamente, aumenta 1 Graduação d e uma  Perícia escolhida e as demais graduações custarão 2 P ontos de P erícia por Graduação. Por exemplo a Perícia Mitologia de 5 Graduações vai automaticamente para 6 Graduações e a 7ª Graduação custará 2 pontos, assim como a 8ª.\n\nEspecial: Todas as Graduações das Pericias de Classe custarão 2 Pontos de Perícia.\n\nEspecial: A Virtude Perito retira a exceção permitindo ser sábio em qualquer Perícia do jogo.\n\nHabilidade Especial do Cosmo (O homem mais próximo de Deus): A Virtude Semideus junto com essa Habilidade permite o Personagem  alcançar a 9 ª graduação na Perícia Escolhida. Garantindo a fama dos homens mais próximos dos deuses.",
+      "page": "73–74",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Sábio. Nível de referência no livro: 15. Conferir aquisição conforme evolução e status.",
+      "category": "Sábio",
+      "level": 15,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sage:ability:15:SÁBIO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            73,
+            74
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "14f59e5199d6188a",
+    "name": "Super Nova",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro se isola em profunda meditação sob a cúpula estrelada, em um local secreto de treinamento, fecha os olhos e medita sob o brilho das estrelas. Seu cosmo atinge níveis inimagináveis, e ele canaliza essa energia para sua técnica. Quando ele a ativa, seus golpes se tornam tão poderosos que são capazes de destruir galáxias. No calor da batalha, seus inimigos tremem ao testemunhar o cataclismo cósmico desencadeado pelo Sábio , que é capaz de reduzir planetas inteiros a poeira cósmica.\n\nSistema: Eleva 1 Nível de Dano da Técnica.\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nCombinação: Asterismo, +\n\nHabilidade Especial do Cosmo (Amigos de Cosmo): A Virtude Companheiro de Cosmo junto com essa Dádiva permite aos companheiros aumentarem o poder de dano da Técnica. Cada Companheiro que transfira Cosmo Energia ao Cavaleiro igual 1/2 do custo da Técnica eleva 1 Nível de Dano . Os outros Cavaleiros não podem fazer outra ação enquanto estão doando seu Cosmo para o Cavaleiro.",
+      "page": "74",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Sábio. Nível de referência no livro: 16. Conferir aquisição conforme evolução e status.",
+      "category": "Sábio",
+      "level": 16,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "Asterismo, +",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sage:gift:16:SUPER NOVA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            74
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "d7cae517dccaaf20",
+    "name": "Combustão do Cosmo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Um turbilhão de estrelas e constelações se forma ao redor  do Sábio , alimentando sua Técnica com poder cósmico. Com um gesto majestoso, ele libera sua devastadora Técnica, causando estragos que poderiam destruir galáxias inteiras. A explosão  é arrebatadora, mostrando a grandiosidade do Cavaleiro Sábio.\n\nSistema: O Cavaleiro pode ao usar uma Técnica decidir concentra-la e assim aumentar o seu impacto. Cada turno concentrado eleva 1 Nível de Dano.  O Máximo de Turnos concentrado é 2.\n\nAção: Ação de Cosmo + Ação de movimento parcial\n\nResistência: Não\n\nEspecial: Enquanto concentra com seu movimento Total (0) cada turno concentrado eleva 2 Níveis de Dano, mas o Máximo de Turnos concentrado é 2.\n\nHabilidade Especial do Cosmo (Corpo Cósmico): A Virtude Receptáculo junto com essa Habilidade permite o Personagem aumentar Máximo de Turnos concentrado para 3.\n\nHabilidade Especial do Cosmo (Sábio de Batalha) : A Virtude Lutador Experiente junto com essa Habilidade permite o Personagem se movimentar enquanto concentra sua Técnica. Ação: Ação de Cosmo + Ação Movimento Parcial.",
+      "page": "74–75",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Sábio. Nível de referência no livro: 17. Conferir aquisição conforme evolução e status.",
+      "category": "Sábio",
+      "level": 17,
+      "action": "Ação de Cosmo + Ação de movimento parcial",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sage:ability:17:COMBUSTÃO DO COSMO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            74,
+            75
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "11d68db6cd330b56",
+    "name": "Domínio da Palavra",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Diante de um ataque massivo, o Cavaleiro ergue seu braço. Sua Cosmo Energia irradia como um escudo protetor, e com uma palavra firme, ele repel e Técnicas inimigas, criando uma barreira impenetrável. O impacto da defesa ecoa como um trovão, demonstrando a invulnerabilidade do Sábio.\n\nSistema: O Cavaleiro recebe +1 de Modificador Positivo para a Manobra Especial Refletindo .\n\nAção: Ação de Cosmo + Ação de movimento total\n\nResistência: Não\n\nCombinação: Asterismo, +",
+      "page": "75",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Sábio. Nível de referência no livro: 18. Conferir aquisição conforme evolução e status.",
+      "category": "Sábio",
+      "level": 18,
+      "action": "Ação de Cosmo + Ação de movimento total",
+      "resistance": "Não",
+      "combination": "Asterismo, +",
+      "duration": "[INSTANTÂNEA] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sage:gift:18:DOMÍNIO DA PALAVRA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            75
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "bd6189760a9ce8dd",
+    "name": "Domínio do Espaço",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Diante da tranquila postura de meditação o Sábio lentamente ergue o dedo indicador para o céu. Seu cosmo se expande, estendendo seus sentidos pelo universo. Em um ápice de compreensão cósmica, ele domina uma nova Habilidade que lhe permite controlar o espaço e o tempo, duplicando a distância percorrida de suas Técnicas.\n\nSistema: As Técnicas do Sábio dobram a distância percorrida.\n\nEspecial: Essa Habilidade não modifica a quantidade de alvos afetados.\n\nHabilidade Especial do Cosmo  (Domínio Estendido): A Virtude Técnica a Distância combinada com esta Habilidade dobra a distância afetada pela Técnica.",
+      "page": "75–76",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Sábio. Nível de referência no livro: 19. Conferir aquisição conforme evolução e status.",
+      "category": "Sábio",
+      "level": 19,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sage:ability:19:DOMÍNIO DO ESPAÇO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            75,
+            76
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "0e1ea59671509958",
+    "name": "Unificação com O Universo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Seu Cosmo se estende por todos os cantos, e com um toque gentil de sua mão, ele revela os átomos que compõem cada ser vivo. As plantas florescem, os animais se aquietam, e o universo flui harmoniosamente sob seu domínio. O poder do Sábio sobre a vida transcende a compreensão humana.\n\nEspecial: O Personagem sente qualquer perigo dentro do seu Domínio, automaticamente, mesmo que ele não seja o alvo.\n\nEspecial: Consegue identificar Essências, Constelação, Status e Quantidade de Cosmo do alvo dentro do Domínio do Sábio.\n\nEspecial: Recebem +1 de Modificador Positivo nos testes da Perícia Percepção Extrassensorial e Tecnologia (Artefatos).\n\nEspecial: É impossível ser enganado por mentiras e ilusões.  Inimigos precisam superar o Duelo de Cosmo Passivo do Cavaleiro que recebe +1 de Modificador Positivo.\n\nEspecial: O Personagem conecta a mente com o cosmo do universo e adquire uma mente superior. Imune a Virtude Telepatia, simplesmente, o usuário de Telepatia ver um “vazio” indecifrável na mente do Sábio. Salvo, inimigo com Estágio de Sentido Superior ao Sábio.\n\nEspecial: Suas Técnicas tem 5% por graduação de Asterismo de chances de ignorar qualquer tipo de bloqueio que tente anulá-la.\n\nEspecial: O Big Bang Outra Dimensão permite o Cavaleiro viajar de voltar de outra dimensão a qual foi enviado, como Ação de Movimento Parcial.\n\nResistência: Não\n\nCombinação: Percepção Extrassensorial, + ou %\n\nHabilidade Especial do Cosmo  (Armadura Remota): A Virtude Técnica a Distância combinada com esta Dádiva permite o Personagem controlar sua armadura à distância e também fazê -la lutar usando apenas seu Cosmo, ficando imperceptível ao inimigo, conhecida como \"Armadura Remota\". No entanto, é impossível para o Cavaleiro utilizar todo o seu poder com esta habilidade.   O Jogador controla a Armadura como se o Personagem estivesse dentro. A Armadura terá as mesmas  caraterísticas e poderes do Personagem  5 níveis abaixo, por exemplo,  um Personagem de 20° Nível controlará a Armadura como seu próprio Personagem de 15° Nível.\n\nEspecial: A Dádiva Infinito [GUARDIÃO] viaja por todo o espaço ou dimensões  e localizará o  usuário da Armadura Remota.",
+      "page": "76",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Sábio. Nível de referência no livro: 20. Conferir aquisição conforme evolução e status.",
+      "category": "Sábio",
+      "level": 20,
+      "action": "",
+      "resistance": "Não",
+      "combination": "Percepção Extrassensorial, + ou %",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sage:gift:20:UNIFICAÇÃO COM O UNIVERSO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            76
+          ]
+        }
+      }
+    }
+  }
+]

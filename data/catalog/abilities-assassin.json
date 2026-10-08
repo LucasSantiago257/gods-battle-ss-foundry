@@ -1,0 +1,309 @@
+[
+  {
+    "_id": "2891b1b5e3838bd8",
+    "name": "Especialização Assassino",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sistema: A cada 5 Níveis o Assassino recebe os Modificadores:\n\n+1 Ação de Defesa (como esquiva)\n\n+1 Marca do Assassino. Marca do Assassino: A intenção assassina do Usuário permite fixar um resíduo do próprio Cosmo no alvo, a Marca do Assassino, e causar mais dano ao alvo. O Assassino recebe +1 de Dano Aplicado e +1 de Nível de Dano contra o Alvo indicado pela Marca do Assassino.\n\nDuração: A Marca do Assassino permanece enquanto o Assassino deixá-la ativa\n\nAção: Ação Livre\n\nResistência: Não\n\nCusto: 2 Pontos de Cosmo Energia permanente enquanto a Marca do Assassino estiver ativa no alvo.\n\nEspecial: Enquanto marcado é impossível esconder -se do Assassino. O alvo pode ser localizado pelo assassino, como ação livre, desde que na mesma dimensão.\n\nEspecial: A Dádiva Zona [Artista], Unificação com o Universo [Sábio] percebem , automaticamente, a marca do Assassino. Habilidades/Dádivas/Virtudes que avisem Perigo NÃO alertam a Marca do Assassino.",
+      "page": "130",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Assassino. Nível de referência no livro: 5. Conferir aquisição conforme evolução e status.",
+      "category": "Assassino",
+      "level": 5,
+      "action": "Ação Livre",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "A Marca do Assassino permanece enquanto o Assassino deixá-la ativa",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "specialization"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "assassin:specialization:5:Especialização Assassino",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            130
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8626f3a676227700",
+    "name": "Esquiva Fantasma",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro move -se como uma sombra, aprimorando sua agilidade e esquivas durante treinamentos solitários. Seu cosmo se intensifica com cada movimento, e sua aura cósmica assume uma tonalidade escarlate. Em batalha, ele desliza pelo campo, esquivando -se dos ataques inimigos com uma destreza sobre-humana, enquanto sua habilidade evita ataques e confunde o inimigo, tornando-se praticamente intocável.\n\nSistema: O Cavaleiro confia em sua rapidez e é treinado em esquivas  e recebe +1 Ação de Defesa.\n\nAção: Ação Livre.\n\nResistência: Não\n\nCombinação: Treinamento, +.\n\nHabilidade Especial do Cosmo  (Percepção de Combate de Shura):  A Virtude Precognição combinada com esta Dádiva adiciona +2 Ações de Defesa.",
+      "page": "130–131",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Assassino. Nível de referência no livro: 6. Conferir aquisição conforme evolução e status.",
+      "category": "Assassino",
+      "level": 6,
+      "action": "Ação Livre.",
+      "resistance": "Não",
+      "combination": "Treinamento, +.",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "assassin:gift:6:ESQUIVA FANTASMA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            130,
+            131
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a7fe469d1a555e57",
+    "name": "Nadis",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro concentra seu cosmo com determinação  direcionando sua força para os ataques. Ao atingir seus próprios pontos cósmicos, a energia flui intensamente em seus golpes, tornando-os ainda mais poderosos, devastando seus inimigos e aumentando sua eficácia. Seu oponente, sobrecarregado pela intensidade, enfrenta ataques cósmicos imparáveis.\n\nSistema: O Assassino recebe +1 de Bônus Aplicado ao dano.\n\nAção: Ação de Movimento Parcial.\n\nResistência: Não\n\nCombinação: Treinamento, +.",
+      "page": "131",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Assassino. Nível de referência no livro: 8. Conferir aquisição conforme evolução e status.",
+      "category": "Assassino",
+      "level": 8,
+      "action": "Ação de Movimento Parcial.",
+      "resistance": "Não",
+      "combination": "Treinamento, +.",
+      "duration": "[CONTÍNUO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "assassin:gift:8:NADIS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            131
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "6b2a2031629e2353",
+    "name": "Ataque Fantasma",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Assassino aprofundando sua conexão com o cosmo, foca no fluxo de energia de seu inimigo, como um olhar penetrante. Seus gestos precisos mirando os órgãos internos do oponente. Seus golpes são como agulhas de energia que penetram o corpo do oponente, causando danos internos e bloqueando seus próprios fluxos de energia. Ao atingir o fluxo de energia com precisão, ele perturba o equilíbrio vital do inimigo, causando dano direto nos órgãos internos.\n\nSistema: O Assassino em sua ação de ataque, ao obter ataques efetivos , opta por causar dano diretamente nos órgãos internos do alvo. O inimigo atingido recebe o Estado Categoria de Dano 1.\n\nAção: Ação de Cosmo + Ação de Ataque.\n\nResistência: Não.\n\nEspecial: Alvos atingidos pelo Ataque Fantasma se recuperam apenas com descanso ou a Técnica Cura [PRATA][MANIPULAÇÃO DE COSMO].",
+      "page": "131",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Assassino. Nível de referência no livro: 10. Conferir aquisição conforme evolução e status.",
+      "category": "Assassino",
+      "level": 10,
+      "action": "Ação de Cosmo + Ação de Ataque.",
+      "resistance": "Não.",
+      "combination": "",
+      "duration": "[CONTÍNUO] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "assassin:gift:10:ATAQUE FANTASMA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            131
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a61ecf4204289bcc",
+    "name": "Manipura",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro concentra seu cosmo nas mãos e corpo aprofundando sua ligação com o cosmo. Concentrando-se profundamente, ele acerta seus próprios Pontos Cósmicos, expulsando todas as impurezas de seu corpo e mente. Isso resulta em uma purificação de sua C osmo Energia e o fortalecimento de seus ataques\n\nSistema: O Assassino elimina qualquer Modificador Negativo de suas jogadas.\n\nAção: Ação de Movimento Parcial.",
+      "page": "131–132",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Assassino. Nível de referência no livro: 12. Conferir aquisição conforme evolução e status.",
+      "category": "Assassino",
+      "level": 12,
+      "action": "Ação de Movimento Parcial.",
+      "resistance": "",
+      "combination": "",
+      "duration": "[INSTANTÂNEA] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "assassin:gift:12:MANIPURA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            131,
+            132
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a6deda08fe201cb2",
+    "name": "Corte",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Assassino aperfeiçoa sua habilidade. Com gestos precisos e uma concentração intensa, ele direciona sua Cosmo Energia para atingir o Ponto Cósmico do inimigo que controla suas habilidades, deixando-o temporariamente impedido de usar seus poderes. O inimigo fica enfraquecido, incapaz de se defender.\n\nSistema: O Assassino faz um teste da Manobra Ataque de Foco e se bem sucedido reduz 1 Bônus Aplicado, 1 Nível de Dano e 1 de PA do alvo.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial.\n\nResistência: Não.\n\nHabilidade Especial do Cosmo (Eficaz): A Virtude Analítico combinada com esta Dádiva reduz 2 Bônus Aplicado, 2 Níveis de Dano e 2 de PA do alvo.",
+      "page": "132",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Assassino. Nível de referência no livro: 14. Conferir aquisição conforme evolução e status.",
+      "category": "Assassino",
+      "level": 14,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial.",
+      "resistance": "Não.",
+      "combination": "",
+      "duration": "[CONTÍNUO] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "assassin:gift:14:CORTE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            132
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "2d20fd34d28e6869",
+    "name": "Precisão",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro se concentra profundamente, direcionando sua Cosmo Energia para a constelação protetora do inimigo. Com movimentos rápidos e precisos, ele atinge os pontos cósmicos que ligam o alvo à sua constelação, enfraquecendo-o e minando sua conexão com os poderes protetores. O inimigo fica vulnerável, desprotegido por sua constelação, e à mercê dos ataques do Assassino.\n\nSistema: O Assassino faz um teste da Manobra Ataque de Foco e será bem sucedido quando o resultado exceder a Dificuldade d a Esquiva Passiva do alvo com os valores adicionais abaixo: Ataque de Foco +2 Atinge 1 Ponto Cósmico: o Alvo perde a Ação de Movimento durante este turno e sofre Nível do Usuário +5 de dano. Ataque de Foco +3 Atinge metade dos Pontos Cósmicos: o Alvo perde a Ação de Cosmo durante este turno e sofre Nível do Usuário +10 de dano. Ataque de Foco +5 Atinge Todos os Pontos Cósmicos: O Assassino “corta” a ligação entre o Alvo e a Armadura dele. Considere o Inimigo sem o Cosmo mínimo para sustentar a Armadura durante todo o combate. O Alvo sofre Nível do Usuário +15 de dano.\n\nEspecial: A Proteção da Armadura reduz o dano da Precisão normalmente.\n\nAção: Ação de Cosmo + Ação de Movimento Total.\n\nResistência: Não.\n\nHabilidade Especial do Cosmo (Constelação Morta): A Virtude Punho de Luz [COMBATE] combinada com esta Dádiva permite ao Assassino, se obtiver o sucesso máximo (Ataque de Foco + 5), atingir o alvo com todos os efeitos acima acumulados. A Virtude GUIA [COMBATE] anula esta Dádiva.",
+      "page": "132–133",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Assassino. Nível de referência no livro: 16. Conferir aquisição conforme evolução e status.",
+      "category": "Assassino",
+      "level": 16,
+      "action": "Ação de Cosmo + Ação de Movimento Total.",
+      "resistance": "Não.",
+      "combination": "",
+      "duration": "[INSTANTÂNEO] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "assassin:gift:16:PRECISÃO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            132,
+            133
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "4c8f3a34b7bcc786",
+    "name": "Esquiva Superior",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro concentra seu cosmo de maneira intensa e profunda. Ele então ativa sua habilidade especial, desaparecendo em uma explosão de velocidade que supera a luz. Seus movimentos são quase imperceptíveis, e ele se torna uma sombra esquiva, treinada para esquivar habilidades inimigas com maestria. Seu inimigo mal consegue acompanhá-lo.\n\nSistema: O Personagem consegue esquivar Técnicas. O Assassino faz um Teste de Treinamento e precisa superar o resultado d o Asterismo do atacante em + 2 para poder esquivar. Esta Dádiva não funciona com Técnicas do Big Bang Controle e Sustentada. Sucesso: A Técnica é Esquivada e o Personagem não sofre nenhum dano. Falha: O Personagem não consegue Esquivar, mas reduz à metade o dano da Técnica. Falha Crítica: O Personagem não consegue Esquivar nem reduzir o dano da Técnica.\n\nEspecial: O Assassino recebe +1 de Modificador Positivo no valor de sua Esquiva Passiva .\n\nAção: Ação Livre\n\nResistência: Não\n\nCombinação: Treinamento, +.\n\nHabilidade Especial do Cosmo (Surpresa): A Virtude Iniciativa Aprimorada ou Semideus combinada com esta Dádiva permite ao Assassino, se obtiver sucesso, se movimentar para as costas do atacante como ação livre. O Defensor fica em desvantagem durante as Ações de Defesa e o Usuário em Vantagem nas Ações de Ataque.",
+      "page": "133",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Assassino. Nível de referência no livro: 18. Conferir aquisição conforme evolução e status.",
+      "category": "Assassino",
+      "level": 18,
+      "action": "Ação Livre",
+      "resistance": "Não",
+      "combination": "Treinamento, +.",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "assassin:gift:18:ESQUIVA SUPERIOR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            133
+          ]
+        }
+      }
+    }
+  }
+]

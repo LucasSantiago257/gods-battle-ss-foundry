@@ -1,0 +1,503 @@
+[
+  {
+    "_id": "f3018a9ab309de3d",
+    "name": "Relâmpago de Zeus",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Origem / contexto: Dois Elementos (Técnica).\n\nEsta Virtude com os elementos Ar\n\n+ Água combinada com a Virtude Semideus [GERAL] (qualquer Deus) permite ao Cavaleiro liberar o relâmpago que pode matar os deuses. São a manifestação do próprio Zeus em forma de vingança divina para “consertar” as coisas. Este poder anula , automaticamente, Barreira Divina igual ou inferior ao  Nível do Usuário x 2 ou concede Nível de Modificador Positivo na Manobra Duelo de Cosmo. Só é permitido 2 personagens com essa característica no mundo da narrativa; um Relâmpago puro (Essência Boa) e um Relâmpago negro (Essência Mau). O Relâmpago de Aiolia de Leão e o do Titã Céos, ambos do Episódio G, são exemplos deste poder.",
+      "page": "179–180",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial ligada a Dois Elementos. Conferir componentes e condições no texto.",
+      "category": "Cosmo especial — Técnica",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special-extra:relâmpago de zeus",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            179,
+            180
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f43755e021e18aad",
+    "name": "Escudo das Esperança",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Origem / contexto: Aegis (Guardião).\n\nA Virtude Devoção junto com essa Dádiva permite multiplicar o Domínio:\n\nPrata: Domínio x 2.\n\nOuro: Domínio X 4.",
+      "page": "86–87",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial ligada a Aegis. Conferir componentes e condições no texto.",
+      "category": "Cosmo especial — Guardião",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special-extra:escudo das esperança",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            86,
+            87
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3fecc5ce4f7b96e3",
+    "name": "Querido da Natureza",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Origem / contexto: Elfo (Asgardiano).\n\nA Virtude Guerreiro Elemental ou Cosmo Natural combinada a esta Dádiva diminui 1 a dificuldade do teste de confirmação para: 7 (Ouro), 8 (Prata) ou 9 (Bronze).",
+      "page": "107",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial ligada a Elfo. Conferir componentes e condições no texto.",
+      "category": "Cosmo especial — Asgardiano",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special-extra:querido da natureza",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            107
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e063b6c06a9e8cfa",
+    "name": "Vida Eterna",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Origem / contexto: Corpo Diamante (Protetor).\n\nA Virtude Vitalidade em conjunto com esta Dádiva permite ao Cavaleiro mais Vigor Físico. O Cavaleiro recebe +2 Ponto s de Vida por\n\nNível.",
+      "page": "127",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial ligada a Corpo Diamante. Conferir componentes e condições no texto.",
+      "category": "Cosmo especial — Protetor",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special-extra:vida eterna",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            127
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "c6bca8e227242386",
+    "name": "Eficaz",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Origem / contexto: Corte (Assassino).\n\nA Virtude Analítico combinada com esta Dádiva reduz 2 Bônus Aplicado, 2 Níveis de Dano e 2 de PA do alvo.",
+      "page": "132",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial ligada a Corte. Conferir componentes e condições no texto.",
+      "category": "Cosmo especial — Assassino",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special-extra:eficaz",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            132
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5481ad4cc31d63df",
+    "name": "Surpresa",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Origem / contexto: Esquiva Superior (Assassino).\n\nA Virtude Iniciativa Aprimorada ou Semideus combinada com esta Dádiva permite ao Assassino, se obtiver sucesso, se movimentar para as costas do atacante como ação livre. O Defensor fica em desvantagem durante as Ações de Defesa e o Usuário em Vantagem nas Ações de Ataque.",
+      "page": "133",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial ligada a Esquiva Superior. Conferir componentes e condições no texto.",
+      "category": "Cosmo especial — Assassino",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special-extra:surpresa",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            133
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a0a443034bd99d8d",
+    "name": "Avatar de Gelo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Origem / contexto: Sangue Viking (Aesir).\n\nA Virtude Einherjar combinada com esta Habilidade aumenta 1 o Modificador Positivo.",
+      "page": "554–555",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial ligada a Sangue Viking. Conferir componentes e condições no texto.",
+      "category": "Cosmo especial — Aesir",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special-extra:avatar de gelo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            554,
+            555
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "accc3dc6007e551d",
+    "name": "Avatar da Esperança",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Origem / contexto: Avatar (Cavaleiros de Ouro).\n\nA Virtude Reencarnação das Eras ou Devoção Divina combinada com esta Habilidade aumenta 1 o Modificador Positivo.",
+      "page": "560–561",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial ligada a Avatar. Conferir componentes e condições no texto.",
+      "category": "Cosmo especial — Cavaleiros de Ouro",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special-extra:avatar da esperança",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            560,
+            561
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e6d5c083b0d66c33",
+    "name": "A Morte",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Origem / contexto: Shinigami (Juízes do Inferno).\n\nA Virtude Devoção Divina combinada com esta Habilidade aumenta 1 o Modificador Positivo.",
+      "page": "567–568",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial ligada a Shinigami. Conferir componentes e condições no texto.",
+      "category": "Cosmo especial — Juízes do Inferno",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special-extra:a morte",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            567,
+            568
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "0b812d4eb632bea5",
+    "name": "Salteador de Oceanos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Origem / contexto: Tritão (Generais Marinas).\n\nA Virtude Território combinada com essa Habilidade pode criar poças de água em que o Personagem pode se movimentar dentre elas durante o combate triplicando seu movimento e alterando o tipo de Habilidade para L (Luta).",
+      "page": "572–573",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial ligada a Tritão. Conferir componentes e condições no texto.",
+      "category": "Cosmo especial — Generais Marinas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special-extra:salteador de oceanos",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            572,
+            573
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e66a91793f79cec4",
+    "name": "Avatar dos Oceanos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Origem / contexto: Lança de Poseidon (Generais Marinas).\n\nA Virtude Devoção Divina ou Guerreiro Elemental (água) combinada com esta Habilidade aumenta o Modificador Positivo para +1.",
+      "page": "573–574",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial ligada a Lança de Poseidon. Conferir componentes e condições no texto.",
+      "category": "Cosmo especial — Generais Marinas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special-extra:avatar dos oceanos",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            573,
+            574
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ac851312122eea0b",
+    "name": "Avatar Ente",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Origem / contexto: Maçã de Eris (Dríades).\n\nA Virtude Devoção Divina combinada com esta Habilidade aumenta o Modificador Positivo para +1.",
+      "page": "581",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial ligada a Maçã de Eris. Conferir componentes e condições no texto.",
+      "category": "Cosmo especial — Dríades",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special-extra:avatar ente",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            581
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b7eef2f1705bc381",
+    "name": "Avatar Berserker",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Origem / contexto: Lança de Fogo (Berserkers).\n\nA Virtude Devoção Divina combinada com esta Habilidade aumenta o Modificador Positivo para +1.",
+      "page": "586",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial ligada a Lança de Fogo. Conferir componentes e condições no texto.",
+      "category": "Cosmo especial — Berserkers",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special-extra:avatar berserker",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            586
+          ]
+        }
+      }
+    }
+  }
+]

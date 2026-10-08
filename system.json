@@ -1,8 +1,8 @@
 {
   "id": "gods-battle-ss",
   "title": "Saint Seiya — A Batalha dos Deuses",
-  "description": "Sistema UmD10+ com fichas de cavaleiros, compêndios editáveis e ativação de técnicas para Foundry 13.350.",
-  "version": "0.2.0",
+  "description": "Sistema UmD10+ com fichas de cavaleiros, técnicas e compêndios do livro para Foundry 13.350.",
+  "version": "0.3.0",
   "compatibility": {
     "minimum": "13",
     "maximum": "13"
@@ -15,7 +15,7 @@
   ],
   "url": "https://github.com/LucasSantiago257/gods-battle-ss-foundry",
   "manifest": "https://github.com/LucasSantiago257/gods-battle-ss-foundry/releases/latest/download/system.json",
-  "download": "https://github.com/LucasSantiago257/gods-battle-ss-foundry/releases/download/v0.2.0/gods-battle-ss-0.2.0.zip",
+  "download": "https://github.com/LucasSantiago257/gods-battle-ss-foundry/releases/download/v0.3.0/gods-battle-ss-0.3.0.zip",
   "esmodules": [
     "module/main.mjs"
   ],
@@ -50,5 +50,49 @@
     "units": "m"
   },
   "primaryTokenAttribute": "resources.health",
-  "secondaryTokenAttribute": "resources.cosmo"
+  "secondaryTokenAttribute": "resources.cosmo",
+  "packs": [
+    {
+      "name": "virtudes",
+      "label": "Virtudes — A Batalha dos Deuses",
+      "path": "packs/virtudes",
+      "type": "Item",
+      "system": "gods-battle-ss"
+    },
+    {
+      "name": "habilidades",
+      "label": "Habilidades e Dádivas — A Batalha dos Deuses",
+      "path": "packs/habilidades",
+      "type": "Item",
+      "system": "gods-battle-ss"
+    },
+    {
+      "name": "cosmo-especial",
+      "label": "Combinações de Cosmo — A Batalha dos Deuses",
+      "path": "packs/cosmo-especial",
+      "type": "Item",
+      "system": "gods-battle-ss"
+    },
+    {
+      "name": "criaturas",
+      "label": "Habilidades de Criaturas — A Batalha dos Deuses",
+      "path": "packs/criaturas",
+      "type": "Item",
+      "system": "gods-battle-ss"
+    },
+    {
+      "name": "poderes-divinos",
+      "label": "Poderes e Habilidades Divinas — A Batalha dos Deuses",
+      "path": "packs/poderes-divinos",
+      "type": "Item",
+      "system": "gods-battle-ss"
+    },
+    {
+      "name": "cosmos-divinos",
+      "label": "Cosmos Divinos — A Batalha dos Deuses",
+      "path": "packs/cosmos-divinos",
+      "type": "Item",
+      "system": "gods-battle-ss"
+    }
+  ]
 }

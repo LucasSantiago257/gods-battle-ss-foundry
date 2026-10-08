@@ -1,0 +1,3047 @@
+[
+  {
+    "_id": "8dd8f6acaceb407c",
+    "name": "Radar de ameaças",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Virtude Noção do Perigo + Caçador [SANTO] permite ao Personagem encontrar potenciais ameaças, mesmo as que não tenham intenção de ferir o Cavaleiro.",
+      "page": "460",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Santo",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:radar de ameaças",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            460
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ada7bb73a5d93f32",
+    "name": "Saudável",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Virtude Gigante combinada com a Habilidade Aura da Vida [SANTO]  proporciona ao Personagem ganhar o total de +40 pontos de vida.",
+      "page": "461",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Santo",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:saudável",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            461
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e954bad557c77ab4",
+    "name": "Ataques na velocidade da luz",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Virtude Semideus ou Telepata combinada com a Habilidade Aura de Velocidade [SANTO] aumenta +2 ações perdidas do alvo.",
+      "page": "461",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Santo",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:ataques na velocidade da luz",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            461
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3e1ec0979b4ca17c",
+    "name": "Cinestesia",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Psicocinese ou Muviano (Habilidade Natural Psicocinese) combinada com a Habilidade Domínio da Matéria [SÁBIO] eleva 1 Nível em todos os bônus dessa Habilidade.",
+      "page": "461",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Sábio",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:cinestesia",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            461
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "08d0456efd16e5b1",
+    "name": "O mais poderoso de sua geração",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Psicocinese e a Virtude Muviano (Habilidade Natural Psicocinese) juntas e combinadas com a Habilidade Domínio da Matéria [SÁBIO] garantem, automaticamente, sucesso entre Testes de Ação Resistido entre Personagens com Psicocinese. Recebendo a alcunha do “Cavaleiro com o poder Telecinético mais poderoso de sua geração”.",
+      "page": "461",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Sábio",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:o mais poderoso de sua geração",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            461
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "bb644f30138777fc",
+    "name": "Visão de Cronos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Virtude Sentidos aguçados junto com a Dádiva Domínio Extrassensorial [SÁBIO] consegue prever a situação antes que ela aconteça. Pode prever a próxima ação do alvo ou 1 turno a frente da cena.",
+      "page": "461",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Sábio",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:visão de cronos",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            461
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "2496aeb0859a7c0a",
+    "name": "Posição Perfeita",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Virtude Posição de Lotus junto com a Dádiva Khan [SÁBIO] dobra os pontos de vida da barreira.",
+      "page": "461",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Sábio",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:posição perfeita",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            461
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "4f84ee620704d1bc",
+    "name": "Reação na Velocidade da luz",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Telepata, Iniciativa Aprimorada ou Semideus junto com a Dádiva Khan [SÁBIO] permite que ela seja usada como Reação.",
+      "page": "461",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Sábio",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:reação na velocidade da luz",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            461
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e5205adeeda9515b",
+    "name": "Cosmo infinito",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Receptáculo junto com a Dádiva Liberação [SÁBIO] aumenta 2 a capacidade da Cosmo Energia acumulada.",
+      "page": "461",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Sábio",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:cosmo infinito",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            461
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b801dc16f1eb263d",
+    "name": "O homem mais próximo de Deus",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Semideus junto com a Habilidade Sábio [SÁBIO] permite o Personagem alcançar a 9ª graduação na Perícia Escolhida. Garantindo a fama dos homens mais próximos dos deuses.",
+      "page": "461",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Sábio",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:o homem mais próximo de deus",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            461
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3efa0acf6a11a235",
+    "name": "Amigos de Cosmo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Companheiro de Cosmo junto com a Dádiva Cosmo Elevado Super Nova [SÁBIO] permite aos companheiros aumentarem o poder de dano da Técnica. Cada Companheiro que transfira Cosmo Energia ao Cavaleiro igual 1/2 do custo da Técnica eleva 1 Nível de Da no. Os outros Cavaleiros não podem fazer outra ação enquanto estão doando seu Cosmo para o Cavaleiro.",
+      "page": "461",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Sábio",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:amigos de cosmo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            461
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "bc103a71da81fcbc",
+    "name": "Domínio Estendido",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Técnica a Distância combinada com a Habilidade Domínio do Espaço [SÁBIO] dobra a distância afetada pela Técnica.",
+      "page": "462",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Sábio",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:domínio estendido",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            462
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "7144458e27e36e80",
+    "name": "Posição Divina",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Virtude Posição de Lotus junto com a Habilidade OHM {SÁBIO} acumula +2 pontos de Cosmo Energia extra/dia.",
+      "page": "462",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Sábio",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:posição divina",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            462
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f4c15697fb7dba8b",
+    "name": "Corpo Cósmico",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Receptáculo junto com a Habilidade Domínio do Sétimo Sentido [SÁBIO] permite o Personagem aumentar Máximo de Turnos concentrado para 3.",
+      "page": "462",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Sábio",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:corpo cósmico",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            462
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f88c68d518ed1851",
+    "name": "Sábio de Batalha",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Lutador Experiente junto com a Habilidade Domínio do Sétimo Sentido [SÁBIO] permite o Personagem se movimentar enquanto concentra sua Técnica. Ação: Ação de Cosmo + Ação Movimento Parcial.",
+      "page": "462",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Sábio",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:sábio de batalha",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            462
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ebc29b1fa7dbe063",
+    "name": "Armadura Remota",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Técnica a Distância combinada com esta Dádiva Unificação com o Universo [ SÁBIO] permite o Personagem controlar sua armadura à distância e também fazê -la lutar usando apenas seu Cosmo, ficando imperceptível ao inimigo, conhecida como \"Armadura Remota\". No entanto, é impossível para o Cavaleiro utilizar todo o seu poder com esta habilid ade.   O Jogador controla a Armadura como se o Personagem estivesse dentro. A Armadura terá as mesmas caraterísticas e poderes do Personagem 5 níveis abaixo, por exemplo,  um Personagem de\n\n20° Nível controlará a Armadura como seu próprio Personagem de 15° Nível.",
+      "page": "462",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Sábio",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:armadura remota",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            462
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "33ed614c0938ba5b",
+    "name": "Cosmo Amigo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Companheiro de Cosmo junto com a Dádiva Arma Dupla [GUARDIÃO] permite ao cavaleiro defender seus companheiros que estão dentro do seu domínio, acrescentando ações de defesas extras. O mesmo funciona para os protegidos da determinação do Cavaleiro.",
+      "page": "462",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Guardião",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:cosmo amigo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            462
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "4c9e662dc3301588",
+    "name": "Guerreiro da natureza",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Guerreiro Elemental em conjunto com Animar Armas [GUARDIÃO] permite ao Cavaleiro imbuir sua Arma com o elemento escolhido (exceto fogo) acrescentando +1 de Bônus aplicado aos danos causados por ela.",
+      "page": "462",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Guardião",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:guerreiro da natureza",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            462
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "2512d7fab8f2ac6b",
+    "name": "Enviado de Hélio",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Cosmo de Fogo em conjunto com a Habilidade Animar Armas [GUARDIÃO] permite imbuir sua Arma com o puro fogo acrescentando +1 de Bônus aplicado aos danos causados por ela.",
+      "page": "462",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Guardião",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:enviado de hélio",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            462
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "202a3e36757a98cf",
+    "name": "Ainda não Acabou",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Semideus em conjunto com a Habilidade Energizar Armas [GUARDIÃO] permite ao Cavaleiro atingir o mesmo alvo mais uma única vez. E atingir outros alvos diferentes para cada ação de Movimento Parcial que ele utilizar.",
+      "page": "462–463",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Guardião",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:ainda não acabou",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            462,
+            463
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "d6fed47482e53105",
+    "name": "Escudo da Esperança",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Devoção junto com a Dádiva Aegis [GUARDIÃO] permite multiplicar o Domínio:\n\nPrata: Domínio x 2.\n\nOuro: Domínio X 4.",
+      "page": "463",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Guardião",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:escudo da esperança",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            463
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "670c7bfa0ce27618",
+    "name": "Defesa Confiável",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Fotógrafo de Cosmo junto com a Dádiva Aegis [GUARDIÃO] permite o Cavaleiro defender a pessoa marcada pela Virtude aonde ela estiver. A quantidade de pessoas que podem ser defendidas ao mesmo tempo é igual a graduação do Atributo Cosmo.",
+      "page": "463",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Guardião",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:defesa confiável",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            463
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "03b82cc2f3c4249b",
+    "name": "Ataque de todos os lados",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Armas Próprias junto com a Habilidade Fortaleza [GUARDIÃO] permite o Cavaleiro usar as ações de luta normalmente enquanto defende.",
+      "page": "463",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Guardião",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:ataque de todos os lados",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            463
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "9cacc53381c5bcf9",
+    "name": "Romper Barreiras",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Fotógrafo de Cosmo junto com a Dádiva Infinito aumenta a duração da Marca do Infinito para 1 dia.",
+      "page": "463",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Guardião",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:romper barreiras",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            463
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "dc8e7ef8f8c4a69c",
+    "name": "Romper barreiras do inferno",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Sekishiki junto com a Dádiva Infinito  [GUARDIÃO] permite o Cavaleiro encontrar o alvo marcado pela Virtude dentro do Mundo do Mortos.",
+      "page": "463",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Guardião",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:romper barreiras do inferno",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            463
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b37f69f58e36fad7",
+    "name": "Romper barreiras da realidade",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "As Técnicas que possuam o Big Bang Dimensão junto com a Dádiva Infinito [GUARDIÃO] permite o Cavaleiro criar espaços dimensionais e atingir alvos em qualquer dimensão.",
+      "page": "463",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Guardião",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:romper barreiras da realidade",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            463
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "725d54a7b0247c92",
+    "name": "Agraciado pelo cosmo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Big Bang Cosmo Residual em conjunto com a Virtude Materializar ou a Habilidade Animar Armas [GUARDIÃO] + Utilização do Cosmo 5 Graduações, pode dispersar seu Cosmo e ampliar seus Sentidos e Técnicas através dos objetos materializados. Por exemplo, deixar uma rosa em um local e ver através dela ou depositar Técnicas nela permitindo que ela cure (necessário a Técnica Cura).",
+      "page": "463",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Guardião",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:agraciado pelo cosmo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            463
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "351815a4e484b42c",
+    "name": "Escudo Amigo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Companheiro de Cosmo junto com a Especialização do Guardião permite ao cavaleiro utilizar o Especial Escudo de Combate em outra pessoa que deve estar dentro do seu domínio, recebendo 30% do dano total para si.",
+      "page": "463",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Guardião",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:escudo amigo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            463
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b8262219e0ee3753",
+    "name": "Guardião do Grupo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Companheiro de Cosmo mais a Virtude Fotógrafo de Cosmo junto com a Especialização do Guardião permite ao cavaleiro utilizar o Especial Escudo de Combate  e defender seus companheiros que estão dentro do seu domínio, recebendo 10% do dano total para si.",
+      "page": "463",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Guardião",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:guardião do grupo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            463
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "656c38bda900baac",
+    "name": "Cosmo alerta",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Noção do Perigo junto com a Dádiva Intenção Assassina [ARTISTA] alerta o Personagem antes de entrar em Domínios alheios, salvo se for um Domínio de um Cavaleiro com Cosmo Oculto.",
+      "page": "464",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Artista",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:cosmo alerta",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            464
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "de482aaa9022ed1a",
+    "name": "Amigo precioso",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Companheiro de Cosmo junto com a Dádiva Intenção Assassina [ARTISTA] permite que seus companheiros não sejam afetados pela Característica Barreira dos Santuários.",
+      "page": "464",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Artista",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:amigo precioso",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            464
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "1216caf77cf01872",
+    "name": "Melodia Continua",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Semideus em conjunto com a Habilidade Rajada [ARTISTA] permite ao Cavaleiro atingir o mesmo alvo mais uma única vez. E atingir outros alvos diferentes para cada ação de Movimento Parcial que ele utilizar.",
+      "page": "464",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Artista",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:melodia continua",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            464
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "58a756449c1e654f",
+    "name": "Mãos de Cronos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Dádiva Zona [ARTISTA] junto do Cosmo Divino Utilização de Cosmo permite ao jogador ver o passado que aconteceu cerca de 1h atrás para cada graduação de Utilização do Cosmo.",
+      "page": "464",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Artista",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:mãos de cronos",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            464
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8f81d4cbef938e7b",
+    "name": "Caçador de dimensões",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Virtude Fotógrafo de Cosmo junto com a Habilidade Caçador [ARTISTA] permite ao Personagem ampliar seu Domínio a outras dimensões.",
+      "page": "464",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Artista",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:caçador de dimensões",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            464
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "202be38b85c255ba",
+    "name": "Clone",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cosmo Divino Porteiro das Dimensões na terceira graduação junto com a Dádiva Réplicas [ARTISTA] permite ao Cavaleiro criar e controlar todas essas imagens em lugares diferentes realizando ações diferentes. Para isso, o Cavaleiro precisa estar em medita ção total e queimando 1 ponto de Cosmo residual que fica com a projeção mais os gastos pelas projeções em usos de Habilidades, Dádivas, Técnicas entre outros, se utilizado. Se uma projeção morrer, todas desaparecem automaticamente e o Personagem perde 1 ponto do Atributo Cosmo permanente.",
+      "page": "464",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Artista",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:clone",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            464
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f8f3f5b6dc03ddf4",
+    "name": "Querido pela natureza",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Guerreiro Elemental ou Cosmo Natural combinada a Dádiva Elfo [ASGARDIANO] diminui 1 a dificuldade do teste de confirmação para: 7 (Ouro), 8 (Prata) ou 9 (Bronze).",
+      "page": "464",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Asgardiano",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:querido pela natureza",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            464
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "243cbe3d8b3bf7c2",
+    "name": "Viajante das Sombras",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Técnica Flecha das Sombras [PRATA][MANIPULAÇÃO DE COSMO] junto com a Dádiva Elfo [ASGARDIANO] permite o Cavaleiro se esconder e mover dentro de sombras.",
+      "page": "464",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Asgardiano",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:viajante das sombras",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            464
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "67bc33e46587f4e6",
+    "name": "Reforço natural",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Guerreiro Elemental combinada com a Dádiva Proteção Natural [ASGARDIANO]  aumenta +1 o Modificador Positivo.",
+      "page": "464",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Asgardiano",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:reforço natural",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            464
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5ab2d64796c721c5",
+    "name": "Reforço ampliado",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Dois Elementos combinada com Dádiva Proteção Natural [ASGARDIANO] permite ao Cavaleiro escolher 2 elementos como Proteção Natural.",
+      "page": "465",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Asgardiano",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:reforço ampliado",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            465
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "44a04807065f9cb9",
+    "name": "Matilha de lobos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Virtude Fotógrafo de Cosmo junto com a Habilidade Lobo das Sombras [ASGARDIANO] permite ao Personagem ampliar seu Domínio a qualquer lugar no mundo, ou seja, o mundo é seu Domínio.",
+      "page": "465",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Asgardiano",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:matilha de lobos",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            465
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "fc003a2df1acb4c5",
+    "name": "Sopro extra",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Virtude Semideus ou Telepata junto com a Habilidade Sopro de Loki [ASGARDIANO] aumenta +2 ações perdidas do alvo.",
+      "page": "465",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Asgardiano",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:sopro extra",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            465
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "37366207f7616b4a",
+    "name": "Escolhido pela mãe natureza de Alberish o 13°",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Guerreiro Elemental ou Cosmo Natural combinada com a Dádiva Mãe Natureza permite ao Cavaleiro ficar indetectável enquanto durar a Dádiva. Considera que o Asgardiano está com a Virtude Cosmo Oculto e só pode ser descoberto com as Dádivas: Zona [Artista 10°] e Unificação com o universo [Sábio 20º].",
+      "page": "465",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Asgardiano",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:escolhido pela mãe natureza de alberish o 13°",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            465
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "0e02d0329c3cb749",
+    "name": "Mudança natural",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Guerreiro Elemental combinada com a Dádiva Frio de Odin [ASGARDIANO] transforma o tipo Continua em Permanente.",
+      "page": "465",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Asgardiano",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:mudança natural",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            465
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "aa27a22608255eec",
+    "name": "Olho Dimensional",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Big Bang Outra Dimensão combinada com a  Dádiva Visão Aérea permite ao Cavaleiro enxergar dentro dos locais fechados.",
+      "page": "465",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Domador de Bestas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:olho dimensional",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            465
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "2ed69fac4fb2ab8c",
+    "name": "Olho de Fogo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Sensitivo combinada com a Dádiva Visão Aérea permite ao Cavaleiro enxergar todos os Cosmos dentro do Domínio da Dádiva automaticamente. Essa Habilidade Especial NÃO enxerga Cosmo Oculto.\n\nEspecial: As Dádivas: Zona [Artista 10°] e Unificação com o universo [Sábio 20º] percebem automaticamente o uso dessa Dádiva.",
+      "page": "465",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Domador de Bestas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:olho de fogo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            465
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a06b5906721bcccc",
+    "name": "Proteção Extra",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Companheiro de Cosmo em conjunto com a Especialização de Protetor [PROTETOR] permite ao Cavaleiro dobrar o número de protegidos.",
+      "page": "465",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Protetor",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:proteção extra",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            465
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "21ed2cabd49dc2ba",
+    "name": "Manipulação de Dano",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Insistente [GERAL] em conjunto com a Dádiva Absorver [PROTETOR] permite ao Cavaleiro transformar o dano em Cosmo Energia. O Cavaleiro Subtrair seu Nível de Cosmo Energia do Dano Efetivo e Recupera o que foi queimado; o que sobrar, desse valor, vai direto para o Cosmo Máximo e o restante do Dano Efetivo é sofrido pelo Cavaleiro.",
+      "page": "465",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Protetor",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:manipulação de dano",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            465
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8183aadc8397ed84",
+    "name": "Percepção de Combate de Shura",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Precognição combinada com a Dádiva Esquiva [ASSASSINO] adiciona +2 Ações de Defesa.",
+      "page": "466",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Assassino",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:percepção de combate de shura",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            466
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "2920ba678a605eb0",
+    "name": "Constelação Morta",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Punho de Luz combinada com a Dádiva Precisão [ASSASSINO] permite ao Assassino, se obtiver o sucesso máximo (ATAQUE DE FOCO + 15), atingir o alvo com todos os efeitos acima acumulados. A Virtude GUIA [COMBATE] anula esta Dádiva.",
+      "page": "466",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Assassino",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:constelação morta",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            466
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "378fd28e024eda03",
+    "name": "Devorador de Vidas de Rhadamanthys",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Território combinada com a Dádiva Comedor de Almas [JUIZES DO INFERNO] drena os pontos de vida de todos os indivíduos que estão dentro do Domínio do Cavaleiro. Pessoas sem Cosmo Energia desperta morrem automaticamente doando 50 pontos de vida para o Cavaleiro.",
+      "page": "466",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Juízes do Inferno",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:devorador de vidas de rhadamanthys",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            466
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "856969b22618ba33",
+    "name": "Cosmo de Azar",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Território combinada com a Dádiva Executor [JUIZES DO INFERNO] atribui +1 de desvantagem acumulada.",
+      "page": "466",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Juízes do Inferno",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:cosmo de azar",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            466
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b20d8f092e26721b",
+    "name": "Salteador de Oceano",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Território combinada com a Habilidade  Tritão [MARINA] pode criar poças de água em que o Personagem pode se movimentar dentre elas durante o combate triplicando seu movimento e alterando o tipo de Habilidade para L (Luta).",
+      "page": "466",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Generais Marinas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:salteador de oceano",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            466
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "66cfc6ef03f9f10d",
+    "name": "Ilusionista",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Técnica a Distância combinada com a Técnica Ilusão Maior [MENTAIS OU ILUSÓRIAS] permite ao Cavaleiro “deslocar” seu Domínio para outro local, onde ele não esteja no centro, permitindo que, modele a realidade como se estivesse no local.",
+      "page": "466",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:ilusionista",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            466
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "35701ed1ac0d9005",
+    "name": "Marionete sem vontade de Aspros",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Telepata combinada com a Técnica Satã Imperial  [MENTAIS OU ILUSÓRIAS] + Big Bang Outra Dimensão permite o Cavaleiro se comunicar mentalmente com as vítimas de seu Satã Imperial independente da distância e lhe passar novos comandos.",
+      "page": "466",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:marionete sem vontade de aspros",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            466
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "0d88c5cbbfab4ec0",
+    "name": "Buraco Negro de Aspros",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Bloqueador de Técnicas combinada com a Técnica Esfera de Gravidade [MANIPULAÇÃO DE COSMO] + 5 Graduações na Perícia Utilização do Cosmo permite o Cavaleiro sobrepujar as Técnicas do adversário que são atraídas pela intensa gravidade da Esfera de Gravidade, anulando seus efeitos. O Cavaleiro tem 30 + Nível% de chances de anular qualquer Técnica, exceto de classe superior ou inimigos com estágios de Cosmo superior. Ação de Reação + Ação Parcial.",
+      "page": "466–467",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:buraco negro de aspros",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            466,
+            467
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "daf6f9bf6e820524",
+    "name": "Pó de Armaduras",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Alquimista, Golpe Letal ou Muviano (Habilidade Natural Ferreiro Paranormal) combinada com a Técnica OHM [MENTAIS OU ILUSÓRIAS], Braços de Urso [FÍSICO], Prisão [FÍSICO], Réquiem de Cordas [FÍSICO], Rosa Piranha [FÍSICO], Marionete Cósmica [FÍSICO][MANIPULAÇÃO DE COSMO], Cabelos Dourados da Morte [FÍSICO][MANIPULAÇÃO DE COSMO], Fios Sedosos [MANIPULAÇÃO DE COSMO], Revolução Estelar [MANIPULAÇÃO DE COSMO], Cólera dos 100 Dragões [MANIPULAÇÃO DE COSMO], Lanças de Gelo da Lotus Branca [CONTROLE DA NATUREZA], Presas Douradas do Dragão [CONTROLE DA NATUREZA], Coroa de Fogo [CONTROLE DA NATUREZA], Tempestade Giratória das 100 Lanças de Gelo [CONTROLE DA NATUREZA] eleva 1 Nível de Dano na Armadura.",
+      "page": "467",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:pó de armaduras",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            467
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5be2a9106dbd41cb",
+    "name": "Ferrão Ardente de Kardia",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Técnica Agulha Escarlate [FÍSICO] combinada com a Virtude Cosmo de Fogo libera o Ferrão Ardente. A unha do Cavaleiro emana labaredas de fogo e todas as “agulhadas” são revestidas de fogo que queimam o inimigo. Eleva +1 Nível de Dano da Técnica.",
+      "page": "467",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:ferrão ardente de kardia",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            467
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5b9720f32faff257",
+    "name": "Cosmo Botânico de Afrodite",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Técnica Rosa Sangrenta [FÍSICO] ou Rosa Diabólica Real Pólen [FÍSICO] combinada com a Virtude Cosmo Natural permite ao Cavaleiro estudar, examinar, analisar, identificar e encontrar qualquer vestígio ou informação de qualquer planta seja proveniente da natureza ou de criação cósmica. Considere o Personagem como se possuísse a Virtude Sábio em Acadêmicos com especialidade em Plantas. É como se o Cavaleiro conversasse com as plantas.",
+      "page": "467",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:cosmo botânico de afrodite",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            467
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "2fd01c1fe1eb8df6",
+    "name": "Manipulação do Sangue de Albafica",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Elo Carmesim combinada com a Técnica Rosa Diabólica [FÍSICO], Rosa Sangrenta [FÍSICO]  e Espinhos Vermelhos [MANIPULAÇÃO DE COSMO] eleva 1 Nível de Dano da Técnica.",
+      "page": "467",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:manipulação do sangue de albafica",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            467
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "04cd6c35d9f8092c",
+    "name": "Manipulação do Sangue de Rugonis",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Elo Carmesim combinada com a Técnica Sangue Carmesim [FÍSICO] eleva 1 Nível de Dano da Técnica. O personagem pode aumentar a velocidade com que seu sangue deixa o corpo causando mais dano ao inimigo. Além do bônus de +1 essa Habilidade permite o Cavaleiro elevar +2 Níveis de Dano da Técnica, mas para isso o Usuário recebe uma categoria de dano/+2 Níveis de Dano da Técnica.",
+      "page": "467",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:manipulação do sangue de rugonis",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            467
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5f240eabcaef55b5",
+    "name": "Romper Dimensões",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Técnica Excalibur [FÍSICO] + o Big Bang Outra Dimensão permite o Cavaleiro criar uma fenda que liga o mundo real a outras dimensões o permitindo entrar ou sair de determinadas dimensões.",
+      "page": "467",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:romper dimensões",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            467
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "433f522a86805306",
+    "name": "Sangue Venenoso",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Venenoso [TÉCNICA] combinada com a Técnica Sangue Camersin [FÍSICO] permite o Cavaleiro se tornar praticamente imune a qualquer tipo de veneno. O Personagem faz qualquer Teste de\n\nResistência contra veneno em Vantagem e é imune a veneno de inimi gos que possuam Estágio de Sentido inferior ao do usuário.",
+      "page": "468",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:sangue venenoso",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            468
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5aada814c85cf5c3",
+    "name": "Viajante das Sombras — Técnicas",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Técnica Flecha das Sombras [PRATA][MANIPULAÇÃO DE COSMO] junto com O Big Bang Outra Dimensão permite o Cavaleiro se mover dentro de sombras.",
+      "page": "468",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo",
+      "notes": "O livro traz outra ocorrência deste nome com redação/origem diferente. Esta entrada preserva a ocorrência referenciada, sem unificar condições."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:viajante das sombras:Técnicas",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            468
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e534ed73736ece68",
+    "name": "Teletransportador de Legiões",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtudes Território combinadas com a Técnica Teletransporte [MANIPULAÇÃO DE COSMO] permite ao Cavaleiro teletransportar todas as pessoas que estiverem dentro do seu Domínio. Todas as pessoas devem estar cientes que serão tele transportadas e consentir com a ação, caso contrário ela falha automaticamente. Custa 1 condensar a cada 5 pessoas.",
+      "page": "468",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:teletransportador de legiões",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            468
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a15249133ff69a1d",
+    "name": "Teletransportador de Santuários",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Território e a Habilidade Especial do Cosmo “O mais poderoso de sua Geração ” combinadas com a Técnica Teletransporte [MANIPULAÇÃO DE COSMO] permite ao Cavaleiro teletransportar todas as pessoas que estiverem dentro do Santuário do Cavaleiro.  Custa 20 pontos de Cosmo.",
+      "page": "468",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:teletransportador de santuários",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            468
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "0e4871e41bc472c1",
+    "name": "Fadas Infernais de Myu de Papillon",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Sekishiki combinada com a Técnica Melodia dos Espíritos [MANIPULAÇÃO DE COSMO] ou Encontro com Fadas [MANIPULAÇÃO DE COSMO] permite ao personagem invocar as Fadas Infernais.",
+      "page": "468",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:fadas infernais de myu de papillon",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            468
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "937e8cf8594f47b6",
+    "name": "Cosmo sem distância de Mu",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Cavaleiros com a Virtude Fotógrafo de Cosmo combinada com a Técnica Teletransporte [MANIPULAÇÃO DE COSMO] podem se teletransportar para o lado do indivíduo que eles conheçam não importa a distância.",
+      "page": "468",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:cosmo sem distância de mu",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            468
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "2124034f93747e33",
+    "name": "Visão Cósmica de Saga",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "As Virtudes Sensitivos e Semideuses combinadas com a Técnica Teletransporte [MANIPULAÇÃO DE COSMO] podem se teletransportar para lugares que nunca estiveram bastando visualizar, apenas uma imagem do local.",
+      "page": "468",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:visão cósmica de saga",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            468
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "2844da04d1142695",
+    "name": "Fogo Fátuo de Manigold",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Sekishiki combinada com a Técnica Chamas Demoníacas Azuis [MANIPULAÇÃO DE COSMO] eleva 1 o Nível de Dano da Técnica.",
+      "page": "468",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:fogo fátuo de manigold",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            468
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f05d2378d42d6f30",
+    "name": "Restaurador Avançado de Mu/Shion",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Alquimista ou Muviano (Habilidade Natural Ferreiro Paranormal) combinada com a Técnica Consertar Armaduras [MANIPULAÇÃO DE COSMO] permite acesso ao conhecimento “perdido” Restaurar Armaduras Manipulação de Cristais Avançada que possibilita restaurar, evoluir e reviver Armaduras.",
+      "page": "468–469",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:restaurador avançado de mu/shion",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            468,
+            469
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "fe82d675e2ebb58b",
+    "name": "Companheiro das Armaduras de Shion",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Alquimista ou Muviano  (Habilidade Natural Ferreiro Paranormal) + Perícia Armadura 6 Graduações combinada com a Técnica Consertar Armaduras [MANIPULAÇÃO DE COSMO] permite ao Cavaleiro uma Proficiência considerada raríssima mesmo entre os Muvianos ou Alquimistas. Graças a sua comunhão e convívio com as armaduras, o Cavaleiro adquire a capacidade latente de comunicar-se com as Armadura e assim saber todas suas histórias, técnicas e fraquezas do seu usuário atual ou da geração anterior só de estar perto delas ou tocá-la.",
+      "page": "469",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:companheiro das armaduras de shion",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            469
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "c35e77a9a1264d24",
+    "name": "Arqueiro das Dimensões de Sísifo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Big Bang Dimensão combinado com a Técnica Flecha da Justiça [FÍSICO][MANIPULAÇÃO DE COSMO] permite ao Cavaleiro atingir o alvo em qualquer dimensão, mesmo as criadas pelo alvo, exceto no Mundo dos Mortos.",
+      "page": "469",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:arqueiro das dimensões de sísifo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            469
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f2cfe0a2967c95d5",
+    "name": "Bem-vindo ao Inferno de Máscara da Morte",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Sekishiki combinada com a Técnica Transmigração aos Seis Mundos [MANIPULAÇÃO DE COSMO] traz o Inferno para a Terra (num espaço igual ao Domínio do Personagem) recebendo todos os bônus e eleva 3 Níveis de Dano dos seus ataques ou Técnicas.",
+      "page": "469",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:bem-vindo ao inferno de máscara da morte",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            469
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b7218f7c618b4416",
+    "name": "Criador de Dimensões de Aspros",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Perícia Acadêmicos 5 + Utilização do Cosmo 5 + o Big Bang Outra Dimensão  combinada com a Técnica Galáxia Suprema [MANIPULAÇÃO DE COSMO] a permite ao Cavaleiro criar Dimensões com Características diferentes e manipuláveis da realidade. Por exemplo, criar uma dimensão onde o tempo não passa, como fez Aspros de Gêmeos.",
+      "page": "469",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:criador de dimensões de aspros",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            469
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "c38bd67aafc6a211",
+    "name": "Invencível de Mu",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Psicocinese [GERAL] ou Muviano (Habilidade Natural Psicocinese) [GERAL] combinada com a Técnica Parede de Cristal [OURO][MANIPULAÇÃO DE COSMO]  permite ao Cavaleiro revestindo o próprio cérebro, inibir a dor do corpo por um curto período de tempo. O Cavaleiro utiliza a Técnica sobre si, não recebendo as Ações de Defesa nem a penalidade de deslocamento zero e fica “imune” a dor durante a duração da Técnica. Mas ao final da duração da Técnica o corpo do Cavaleiro recebe TODO o dano acumulado de uma só vez.",
+      "page": "469",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:invencível de mu",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            469
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "fa89fc1092799a06",
+    "name": "Espinhos Vermelhos Demoníacos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Venenoso [TÉCNICA] combinada com a Técnica Espinho Vermelho [MANIPULAÇÃO DE COSMO] + a Técnica Veneno [MANIPILAÇÃO DE COSMO] permite o Cavaleiro transformar o próprio sangue em uma espessa nevoa de sangue que envolve o inimigo e esta em espinho s de sangue, conhecido como Espinhos Vermelhos Demoníacos. O Personagem eleva +2 o Nível de Dano da Técnica.",
+      "page": "469–470",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:espinhos vermelhos demoníacos",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            469,
+            470
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "dd9ee017a58ff047",
+    "name": "Espinhos Vermelhos Demoníacos Superior",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Venenoso [TÉCNICA] e Território [GERAL] combinada com a Técnica Espinho Vermelho [MANIPULAÇÃO DE COSMO] + a Técnica Veneno [MANIP ULAÇÃO DE COSMO] permite o Cavaleiro transformar o próprio sangue em uma espessa nevoa de sangue que envolve todo o Domínio do Usuário, e depois em espinhos de sangue, atingindo todos os inimigos que estão nos seus limites. O Personagem também eleva +2 o Nível de Dano da Técnica.",
+      "page": "470",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:espinhos vermelhos demoníacos superior",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            470
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "59bcd90b51d184bb",
+    "name": "Calor do Sol",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Cosmo de Fogo combinada com a Técnica Chamas de Babel [CONTROLE DA NATUREZA] aumenta o dano da Brasas em +5.",
+      "page": "470",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Técnicas",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:calor do sol",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            470
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "783d1c3ec57687aa",
+    "name": "Mestre dos sentidos de Saga/Shaka",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Virtude Ascenção combinada com Cosmo Divino Controle Neural permite ao Cavaleiro anular os 5 Sentidos do alvo em um único golpe da Técnica Destruição dos 5 Sentidos ou Técnica semelhante.",
+      "page": "470",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Cosmos Divinos",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:mestre dos sentidos de saga/shaka",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            470
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "6ecc947514284c67",
+    "name": "Porteiro dos Planos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A combinação do Cosmo Divino Porteiro das Dimensões com a Ação de Milagre  Divino permite ao cavaleiro conversar através do Cosmo entre outros planos ao custo de 1 Ponto de Cosmo.",
+      "page": "470",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Combinação especial: confira os componentes e as condições descritos no texto. Não é aquisição automática por nível.",
+      "category": "Cosmo especial — Cosmos Divinos",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "special:porteiro dos planos",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            470
+          ]
+        }
+      }
+    }
+  }
+]

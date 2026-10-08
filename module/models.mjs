@@ -1,5 +1,6 @@
 import {ATTRIBUTES, SKILLS, FIGHTING, STYLES, STATUS, STAGES, NATURES, ARMORS, CONDITIONS} from "./config.mjs";
 import {EFFECT_KINDS} from "./technique-rules.mjs";
+import {ABILITY_KINDS} from "./catalog.mjs";
 const {NumberField, StringField, BooleanField, SchemaField} = foundry.data.fields;
 const num = (initial = 0, min = 0, max) => new NumberField({required: true, nullable: false, initial, integer: true, min, ...(max === undefined ? {} : {max})});
 // Listas como "Automático" usam "" como escolha válida; blank deve ser explícito.
@@ -44,6 +45,7 @@ export class ContentData extends foundry.abstract.TypeDataModel {
       armor: schema({hp: num(30), pa: num(3), ce: num(3), minimum: num(1), unlimited: flag()}),
       nature: text("physical", NATURES), classification: text("bronze"), effectKind: text("damage", EFFECT_KINDS), power: num(10), damageLevel: num(2, 1), cost: num(2), costExtra: num(), range: new NumberField({initial: 3, min: 0}),
       duration: text("Instantânea"), resistance: text(), bigbangs: text(), increments: text(), category: text(), level: num(1, 1), action: text(), combination: text(),
+      abilityKind: text("ability", ABILITY_KINDS), costText: text(),
       uses: schema({value: num(), max: num(), reset: text("dia")}), rank: num(1, 1, 10), active: flag(), notes: text()
     };
   }

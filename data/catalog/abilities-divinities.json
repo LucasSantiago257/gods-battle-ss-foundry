@@ -1,0 +1,1337 @@
+[
+  {
+    "_id": "3d33de6c2688e33a",
+    "name": "Domínio do Cosmo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "As divindades foram a primeira raça a ter o completo controle do Cosmo e terem dominado completamente todos os seus caminhos ocultos, ao ponto que a energia em si passa a servir como o receptáculo de toda a memória, conhecimento e aspecto que os deuses tem de si mesmos. Ao incitarem seus Cosmos, as divindades o manifestam na forma de uma aura cuja cor e forma variam.\n\nEfeito: Domínio Pleno do Sentido\n\nCusto: 0\n\nAção: Permanentemente Ativo\n\nResistência: Não\n\nSétimo Sentido Superado, Ômega [PSEUDODEUSES][INFERIORES] Exemplo: Euríbia: O Domínio dos Mares, Kairos : O Tempo Oportuno, Prometeu : \"Protetor dos Humanos\", Atlas: Deus do Aço, \"Aquele que Segura o Mundo\", Ares : Deus da Guerra, Hypnos: Deus do Sono, Tânatos : Deus da Morte, Kerr: Deusa do Destino e do Infortúnio, Pallas: Deusa da Tragédia e do Amor , Éris: Deusa da Discórdia e da Guerra, Abel : Antigo Deus do Sol, Nike : Deusa da Vitória, Deimos:  Deus do Pânico, Fobos: Deus do Medo , Oneiros: Líder dos Deuses dos Sonhos, Morfeu: Deus do Sonho dos Heróis, Fântaso: Deus das Fantasias Humanas, Ícelo: Deus do Sonho dos Pesadelos, Fobetor: Deus do Sonho das Vontades Humanas, Hélio : Deus do Sol , Odin : Deus nórdico de Asgard, da Magia, da Sabedoria, Loki: Deus nórdico da Trapaça, Falsidade, da Magia e do Mal, Fafnir (Assassino): Deus Dragão nórdico, Apsu: Grande Deus sumério das Trevas e das Águas frescas, Anúbis: Deus egípcio dos Mortos e da Mumificação, Tezcatlipoca: Deus asteca do Céu Noturno, da Lua, das Estrelas, Senhor do Fogo e da Morte, Quetzalcóatl : Divindade asteca da Luz e do Vento, Hakuryu: Deus Dragão da Natureza, dos Taonia e do Senkyou, Lúcifer: Deus angelical judaico caído intitulado de \"Satã, o Rei do Mundo dos Demônios\", Ashtaroth: Deus angelical judaico caído intitulado de \"Rei da Serpente Branca das Cabeças Gêmeas\", Belzebu:  Deus angelical judaico caído intitulado de \"Deus Guerreiro do Céu\", Atavaka:  Deus-Demônio budista do Desespero, Tomoe: Deusa misteriosa que se intitula \"Athena do Caos\".\n\nOitavo Sentido [MEDIANOS] Exemplo: Athena: Deusa da Paz, da Sabedoria, da Guerra Justa e da Terra, Ártemis:  Deusa da Lua e da Caça, Apolo: Deus do Sol, da Profecia, das Artes, da Cura, Afrodite : Deusa do Amor e da Beleza, Héstia : Deusa do Lar, Hera:  Deusa do Matrimonio, Hefesto:  Deus da Metalurgia, do Fogo e Ferreiro dos Deuses , Hermes: Deus do Comércio, dos Ladrões, das Atividades Esportivas, e Mensageiro dos Deuses, Deméter: Deusa da Colheita, da Agricultura e da Fertilidade.\n\nNono Sentido [OLIMPIANOS][PRIMORDIAIS] Exemplo Primordiais: Caos: O Vazio/Nada, Cronos : O Tempo, Gaia: A Terra, Urano : O Céu, Pontos: O Mar, Tártaro: O Inferno primordial, Érebo: A Escuridão, Eros: O Amor. Exemplo Olimpianos: Zeus: Deus dos Céus, das Tempestades, dos Raios, Relâmpagos e Rei dos Deuses, Poseido n: Deus dos Mares e Oceanos, Hades:  Deus do Submundo e da Escuridão.",
+      "page": "674–676",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Castas: [PSEUDODEUSES][INFERIORES][MEDIANOS][OLIMPIANOS][PRIMORDIAIS]. Poder da divindade; não equivale automaticamente a Cosmo Divino de um cavaleiro.",
+      "category": "Divindade — Poderes",
+      "level": 1,
+      "action": "Permanentemente Ativo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "0"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divinity:DOMÍNIO DO COSMO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            674,
+            675,
+            676
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "fbaccd472356358e",
+    "name": "Barreira Divina",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "No geral, a intensidade do Cosmo dos deuses é tão poderosa que servem como uma barreira natural contra ataques consideravelmente mais fracos (como dos mortais) podendo ricochetear de volta. Ao liberarem todo o seu poder, essa barreira se torna mais poderosa, sendo que a única forma de a trespassar  é quando o Cosmo agressor se elevar mais que o da divindade ou se o Cosmo do deus estiver enfraquecido.\n\nEfeito: Toda vez que for atacado, o atacante deve ser bem sucedido num Teste de Utilização de Cosmo X a Barreira Divina. Sucesso: O Atacante consegue atingir o Alvo. Falha: O Atacante não consegue ultrapassar a barreira e seus ataques não surtem efeitos. Falha Critica: O ataque de volta contra o atacante.\n\nEspecial [Ricochete]: Se a diferença entre o valor da Barreira Divina do Deus X o resultado do TAP Utilização de Cosmo for igual ou maior que 5 o ataque de volta contra o atacante. Exemplo: Barreira Divina do Deus 45 e o resultado da Manobra Duelo de Cosmo for 40 (45- 40 = 5) o atacante sofre o ataque que tinha desferido contra o Deus.\n\nBarreira Divina:\n\n7 + Modificador Total da Perícia Utilização de Cosmo +  Modificador de Nível + Modificadores Positivos/Negativos.\n\nCusto: 0\n\nAção: Permanentemente Ativo\n\nResistência: Não",
+      "page": "676",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Castas: [INFERIORES][MEDIANOS][OLIMPIANOS][PRIMORDIAIS]. Poder da divindade; não equivale automaticamente a Cosmo Divino de um cavaleiro.",
+      "category": "Divindade — Poderes",
+      "level": 1,
+      "action": "Permanentemente Ativo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "0"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divinity:BARREIRA DIVINA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            676
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "2ea6a562867b6041",
+    "name": "Domínio do Nono Sentido",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Os deuses são justamente os seres supremos do universo porque controlam a Suprema Virtude, o que permitiu a eles ascenderem ao estado superior que estão e despertarem uma ampla gama de habilidades bem como atributos próximos a onipotência, geralmente como a imortalidade, cura miraculosa, possuírem corpos humanos, transitar pelo Muro das Lamentações e a Hiper dimensão , reencarnarem pela eternidade, mover planetas, dimensões, estrelas e até galáxias bem como destruí -los se quiserem. Eles também são capazes de feitos absurdos com seus Cosmos, mesmo que entre em contradição com as leis da física. Exemplo: Hades alinhou facilmente todos os planetas do Sistema Solar e Poseidon provocou tsunamis, tempestades, maremotos em todo o mundo. Certas habilidades e atributos só estão disponíveis apenas para os deuses que dominaram completamente nono sentido, mas mesmo o domínio incompleto pode garantir um poder divino esmagador. Parece também que as divindades despertam uma capacidade diferenciada de acordo com suas linhagens divinas ao obter o controle completo deste sentido, como olimpianos usam a Grande Vontade enquanto os titãs e os grandes deuses utilizam tanto o Dunamis.\n\nEfeito: Permite realizar efeitos Cósmicos Universais\n\nCusto: 100 Pontos de Cosmo\n\nAção: Variável\n\nResistência: Não",
+      "page": "676–677",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Castas: [OLIMPIANOS][PRIMORDIAIS]. Poder da divindade; não equivale automaticamente a Cosmo Divino de um cavaleiro.",
+      "category": "Divindade — Poderes",
+      "level": 1,
+      "action": "Variável",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "100 Pontos de Cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divinity:DOMÍNIO DO NONO SENTIDO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            676,
+            677
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "4b825c6283e55619",
+    "name": "Dunamis",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Dunamis é uma força primordial (energia) disponível apenas para os Titãs e os deuses do Velho Panteão, capaz (ao contrário de Cosmo , que serve como um impacto destrutivo concentrado em pequena escala) para criar tudo do zero/do nada (incluindo quaisquer formas de vida e até mesmo universos inteiros), com base em manipulações materiais e energéticas da realidade. Dunamis acabariam sendo a \"força criativa\", enquanto o Cosmo é a \"força destrutiva\", dando em si mesmo que um é o oposto de outro naturalmente.\n\nEfeito: Permite realizar efeitos Cósmicos Universais\n\nCusto: 100 Pontos de Cosmo\n\nAção: Variável\n\nResistência: Não",
+      "page": "677",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Castas: [PRIMORDIAIS]. Poder da divindade; não equivale automaticamente a Cosmo Divino de um cavaleiro.",
+      "category": "Divindade — Poderes",
+      "level": 1,
+      "action": "Variável",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "100 Pontos de Cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divinity:DUNAMIS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            677
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "544f5cffa3b6e442",
+    "name": "Imortalidade",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A maioria dos deuses que obtiveram completamente o controle sobre o nono sentido são agraciados com a máxima de ter seus corpos divinizados.\n\nEfeito: Estes corpos então passam a ser imunes a qualquer arma e qualquer tipo de dano que facilmente mataria mortais ou seres mitológicos. Eles também se tornam incapazes de morrer pela passagem do tempo, imunes a todas as doenças humanas (embora ainda são vulneráveis as aflições sobrenaturais), e capazes de sobreviver a danos que facilmente destruiriam um humano. Esta capacidade, embora considerada como o atributo mais poderoso dos deuses, significa segurança apenas da morte natural. Deve -se notar, que sob as condições certas, os deuses ainda podem morrer, só que quanto mais poderoso o imortal for, mais difícil é matá-lo. Neste caso, é preferível incapacitar a divindade selando sua alma. A imortalidade também não protege os corpos dos deuses de serem destr uídos ou de envelhecerem (embora a retarde longamente). Pra evitar o envelhecimento, eles precisam usar regularmente a habilidade Misopethamenos para conservarem sua juventude e altivez.\n\nCusto: 0 Pontos de Cosmo\n\nAção: Permanentemente Ativa\n\nResistência: Não",
+      "page": "677–678",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Castas: [MEDIANOS][OLIMPIANOS][PRIMORDIAIS]. Poder da divindade; não equivale automaticamente a Cosmo Divino de um cavaleiro.",
+      "category": "Divindade — Poderes",
+      "level": 1,
+      "action": "Permanentemente Ativa",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "0 Pontos de Cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divinity:IMORTALIDADE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            677,
+            678
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "fb3b99b0f11bff34",
+    "name": "Ikhor",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Uma vez que os deuses tem seus corpos divinizados e tornado eternos, o sangue em suas veias passasse a se chamar de Ikhor. Este fluído carrega o mesmo poder divino que seu portador, sendo extremamente venenoso para mortais. Ao mesmo tempo, ele pode ser usado pelos mesmos e até por outras divindades para se curarem, fortalecerem ou expandirem suas capacidades. Todavia, como os mortais, os deuses também podem sofrer os males da perda de sangue, perdendo a consciência ou mesmo entrando em coma, chegando, em casos mais graves, até morrer.\n\nEfeito: Permite realizar efeitos com o Ikhor e Regeneração de 100 Pontos de Vida/Turno\n\nCusto: 0 Pontos de Cosmo\n\nAção: Permanentemente Ativo\n\nResistência: Não",
+      "page": "678–679",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Castas: [MEDIANOS][OLIMPIANOS][PRIMORDIAIS]. Poder da divindade; não equivale automaticamente a Cosmo Divino de um cavaleiro.",
+      "category": "Divindade — Poderes",
+      "level": 1,
+      "action": "Permanentemente Ativo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "0 Pontos de Cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divinity:IKHOR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            678,
+            679
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3eafcf629d0f9339",
+    "name": "Aptidão Física",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Os deuses tem habilidades físicas, como força, velocidade, resistência e vigor, vastamente superiores se comparadas a dos mortais, indo mesmo além daqueles que também são vistos como sobre -humanos. Eles possuem uma desumana durabilidade, podendo gerar e manipular rapidamente imensas quantidades de Cosmo  Energia sem inconvenientes, além de possuírem incríveis capacidades regenerativas.\n\nEfeito: Atributos Físicos 12\n\nCusto: 0 Pontos de Cosmo\n\nAção: Permanentemente Ativo\n\nResistência: Não",
+      "page": "679",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Castas: [PSEUDODEUSES][INFERIORES][MEDIANOS][OLIMPIANOS][PRIMORDIAIS]. Poder da divindade; não equivale automaticamente a Cosmo Divino de um cavaleiro.",
+      "category": "Divindade — Poderes",
+      "level": 1,
+      "action": "Permanentemente Ativo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "0 Pontos de Cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divinity:APTIDÃO FÍSICA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            679
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5b0da3da345fafc9",
+    "name": "Resistência",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Os deuses podem se cansar ou serem dominados dependendo de quão poderoso seu adversário for ou quão numerosos são. Embora capazes de sustentar grandes níveis de dano, eles ainda são suscetíveis à dor e alguns deuses foram mostrados morrendo por ferimentos fatais. Exemplo:  Hades morreu ao ter seu corpo transpassado pelo Báculo de Athena (carregado com os Cosmos da deusa junto com Shiryu, Hyoga, Shun e Ikki após ascenderem a força divina), já Saturno, no entanto, sobreviveu mesmo após ser apunhalado pela Adaga Dourada, uma das únicas armas capazes de despachar deuses, simplesmente por ser um \"Grande Deus Imortal\". Os deuses Abel e Éris, por sua vez, foram mortos ao serem atingidos pela Flecha de Sagitário (também carregada com os Cosmos de Athena, Seiya e os demais Cavaleiros de Bronze , porém, apenas com os Cosmo s no nível dos Cavaleiros de Ouro ), apesar do artefato não ser considerado sagrado. Já outro punhado de deuses foram mortos ao serem atingidos pelas técnicas dos mortais, como Tânatos e Hypnos, embora isso ocorreu depois que os ditos mortais ascenderam seus poderes ao nível divino. Deuses que abandonam a imortalidade, como Athena, podem ser mortos de diferentes formas.\n\nEspecial: +10 Modificador Positivo em Resistências.",
+      "page": "679",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Castas: [PSEUDODEUSES][INFERIORES][MEDIANOS][OLIMPIANOS][PRIMORDIAIS]. Poder da divindade; não equivale automaticamente a Cosmo Divino de um cavaleiro.",
+      "category": "Divindade — Poderes",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": ""
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divinity:RESISTÊNCIA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            679
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "bf68f4caa1b1adaf",
+    "name": "Inteligência",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A maioria das divindades possui o conhecimento e sabedoria de tudo no universo, incluindo o que existe ou já existiu nele. Eles também, aparentemente, podem aumentar infinitamente suas capacidades mentais. Todavia, eles não são totalmente oniscientes, portanto, podem ser surpreendidos ou pegos desprevenidos. Os deuses também podem ser enganados ou manipulados e, inconscientemente, terem suas ações direcionadas por outras divindades. Embora raro de ocorrer, eles também podem ser enganados por mortais.\n\nEfeito: Atributos Mentais 12\n\nCusto: 0 Pontos de Cosmo\n\nAção: Permanentemente Ativo\n\nResistência: Não",
+      "page": "679–680",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Castas: [PSEUDODEUSES][INFERIORES][MEDIANOS][OLIMPIANOS][PRIMORDIAIS]. Poder da divindade; não equivale automaticamente a Cosmo Divino de um cavaleiro.",
+      "category": "Divindade — Poderes",
+      "level": 1,
+      "action": "Permanentemente Ativo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "0 Pontos de Cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divinity:INTELIGÊNCIA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            679,
+            680
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e13e04b27ce34b02",
+    "name": "Habilidades",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Cada divindade possui um método de combate próprio dependendo de seu papel e poder divino especifico, sendo que alguns nem lutam. No entanto, as divindades geralmente compartilham as mesmas formas de ataque envolvendo golpes ou rajadas cósmicas, ondas de choque em forma de energia capazes de derrubar até mesmo outras divindades com a força do impacto. Caso possuam armamentos, como no caso de Athena, Poseidon ou Hades, os deuses normalmente são hábeis e exímios lutadores com suas armas, sendo alguns tão poderosos que é quase impossível vencê-los sem antes lhe privar de sua respectiva arma.\n\nEfeito: Permite utilizar algumas Habilidades Divinas “comuns”\n\nCusto: 20 Pontos de Cosmo\n\nAção: Ação de Cosmo + Movimento Parcial\n\nDuração: Instantânea\n\nResistência: Sim\n\nTabela: Castas e Poderes Divinos\n\nClassificação  Quantidade Poderes Divinos PseudoDeus  2 Inferiores 3 Mediano 4 Olimpiano  5 Primordiais   10",
+      "page": "680",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Castas: [PSEUDODEUSES][INFERIORES][MEDIANOS][OLIMPIANOS][PRIMORDIAIS]. Poder da divindade; não equivale automaticamente a Cosmo Divino de um cavaleiro.",
+      "category": "Divindade — Poderes",
+      "level": 1,
+      "action": "Ação de Cosmo + Movimento Parcial",
+      "resistance": "Sim",
+      "combination": "",
+      "duration": "Instantânea",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "20 Pontos de Cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divinity:HABILIDADES",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            680
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8222237d382d6509",
+    "name": "Domínio Sobre A Criação e Destruição",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Dependendo de quão poderoso o controle dos átomos da divindade é, ela terá capacidade de controlar a energia da criação ou materialização de suas formas, podendo assim gerar matéria física e criar quaisquer tipos de objetos, inclusive armas, a partir do nada. Da mesma forma, eles também terão igual domínio sobre a energia da destruição, porém, em nível divino, variando de pelo menos desintegrar algo ou alguém em um nível subatômico (aos quais nem as mais resistentes Armaduras ou os próprios deuses escapam dessa categoria), alterar a realidade e até remover completamente toda a existência do ambiente onde se encontra.\n\nEfeito: Permite a criação e a destruição de Armaduras, Santuários entre outros\n\nCusto: 50 a 100 Pontos de Cosmo\n\nAção: Ação Total\n\nResistência: Não",
+      "page": "682",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Castas: [MEDIANOS][OLIMPIANOS][PRIMORDIAIS]. Poder da divindade; não equivale automaticamente a Cosmo Divino de um cavaleiro.",
+      "category": "Divindade — Poderes",
+      "level": 1,
+      "action": "Ação Total",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "50 a 100 Pontos de Cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divinity:DOMÍNIO SOBRE A CRIAÇÃO E DESTRUIÇÃO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            682
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "55867667812f02e3",
+    "name": "Domínio Astral e Espiritual",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Os deuses que dominam completamente o nono sentido tem suas almas divinizadas, tornando virtualmente impossível afligir suas essências espirituais a ponto que mesmo tendo suas almas desvanecidas, elas voltarão a se restabelecer dependendo de quão antiga e poderosa a divindade é, embora a duração desse processo possa variar de anos para séculos. Como tal, eles detêm o controle absoluto sobre esse plano superior de existência espiritual, ou seja, mesmo se tiverem sua forma física destruída, os deuses podem re tornar em uma forma astral. Cronos mesmo fora capaz de gerar uma forma espectral gigantesca capaz de interagir com o plano físico. No entanto, embora possam se tornar imunes a maioria dos ataques e poderem possuir mortais para se abrigar dentro deles neste estado, eles se tornam extremamente vulneráveis a serem selados dentro de um recipiente ou local por alguém, independentemente de ser mortal ou divino. Uma vez que a alma divina toma possessão do corpo de um mortal é dito que somente outro poder divino é suficiente para separar um deus do hospedeiro, embora seja possível usar métodos ortodoxos para realizar o mesmo feito.\n\nEfeito: Formal Cósmica/Astral (ver acima)\n\nCusto: 50 Pontos de Cosmo\n\nAção: Ação de Cosmo + Ação Total\n\nResistência: Não",
+      "page": "682–683",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Castas: [MEDIANOS][OLIMPIANOS][PRIMORDIAIS]. Poder da divindade; não equivale automaticamente a Cosmo Divino de um cavaleiro.",
+      "category": "Divindade — Poderes",
+      "level": 1,
+      "action": "Ação de Cosmo + Ação Total",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "50 Pontos de Cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divinity:DOMÍNIO ASTRAL E ESPIRITUAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            682,
+            683
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "1a9de3f9d6ab9e93",
+    "name": "Domínio Sobre A Vida e A Morte",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "As divindades são creditadas serem as únicas entidades que tem o absoluto controle sobre a vida e a morte. Como tal, eles possuem a capacidade de manipular a alma, a essência que constitui um indivíduo, o que os permite ressuscitar ou conjurar a representação espiritual dos que estão mortos, contudo, nem todos conseguem fazer isso. Além disso, parece que o poder da divindade, dependendo de seu papel ou poder especifico, influencia a forma como fazem isso. Exemplo: Abel trouxe de volta a vida Saga, Máscara d a Morte, Afrodite, Shura e Camus com seus poderes abaixo do que originalmente tinham, já Hades trouxe eles juntos de Shion (no anime, juntamente com alguns dos Cavaleiros de Prata) com a mesma potência que tiveram em vida. Os deuses também precisam que o morto queira servi -los para trazê-los de volta a vida plenamente, do contrário, a ressurreição falhará. De fato, algumas divindades, como Hades e Tânatos, tem tal domínio deste campo que são capazes de decidir quem vive e quem morre no universo. É notável t ambém que, por mais acima da vida e da morte que os deuses estejam, apenas alguns podem transitar no Mundo dos Mortos sem serem afetados por ele. Da mesma forma, todos os deuses são igualmente vulneráveis a ficarem incapacitados dentro das profundezas do Tártaro caso sejam selados lá.\n\nEfeito: Benção da Vida (Traz uma pessoa de volta do mundo dos mortos) e da Morte (Causa 1000 de dano)\n\nCusto: 70 Pontos de Cosmo\n\nAção: Ação Total\n\nResistência: Vigor",
+      "page": "683–684",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Castas: [OLIMPIANOS][PRIMORDIAIS]. Poder da divindade; não equivale automaticamente a Cosmo Divino de um cavaleiro.",
+      "category": "Divindade — Poderes",
+      "level": 1,
+      "action": "Ação Total",
+      "resistance": "Vigor",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "70 Pontos de Cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divinity:DOMÍNIO SOBRE A VIDA E A MORTE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            683,
+            684
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "23186c6b834e0b2d",
+    "name": "Domínio Extrassensorial",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Os deuses, mas não todos, possuem uma quantidade quase ilimitada de controle sobre os poderes mentais gerais, incluindo levitação, teletransporte, telepatia,  Psicocinese e, em alguns casos, até precognição.\n\nEfeito: Atributos Mentais 12 + Percepção Extrassensorial 10\n\nCusto: 5 Pontos de Cosmo\n\nAção: Ação de Cosmo + Ação de Movimento Parcial\n\nResistência: Não",
+      "page": "684",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Castas: [PSEUDODEUSES][INFERIORES][MEDIANOS][OLIMPIANOS][PRIMORDIAIS]. Poder da divindade; não equivale automaticamente a Cosmo Divino de um cavaleiro.",
+      "category": "Divindade — Poderes",
+      "level": 1,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "5 Pontos de Cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divinity:DOMÍNIO EXTRASSENSORIAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            684
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "0c285de04a028681",
+    "name": "Domínio Dimensional e do Espaço-Tempo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Certas divindades mostraram ter o poder de rasgar o espaço -tempo aonde eles queriam e expandi-lo ao tamanho que desejassem, podendo assim engolfar totalmente até mesmo uma área tão grande quanto o Santuário  de Athena e deixá -lo existindo em uma fenda dimensional a parte, conseguindo até impedir que alguém possa sair de seus domínios. Eles também podem criar uma abertura para uma dimensão especifica como um universo dimensional particular onde pode observar as pessoas.  Não obstante, eles também são capazes de viajar grandes distâncias rapidamente através de suas fendas dimensionais. Eles até poderiam invadir outras técnicas do mesmo estilo. Referente a dimensões, alguns também detinham controle e conhecimento total sobre os campos interdimensionais, visto que poderiam abrir portais com facilidade para dimensões com leis físicas próprias (resumidamente, onde o usuário poderia manipulá-lo completamente) e foram capazes de abrir caminhos até para a Hiper dimensão.\n\nEfeito: Criar e alterar dimensões\n\nCusto: 50 Pontos de Cosmo\n\nAção: Ação Total de Movimento\n\nResistência: Não",
+      "page": "684",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Castas: [MEDIANOS][OLIMPIANOS][PRIMORDIAIS]. Poder da divindade; não equivale automaticamente a Cosmo Divino de um cavaleiro.",
+      "category": "Divindade — Poderes",
+      "level": 1,
+      "action": "Ação Total de Movimento",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "50 Pontos de Cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divinity:DOMÍNIO DIMENSIONAL E DO ESPAÇO-TEMPO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            684
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f648ba5c2aa74bc6",
+    "name": "Domínio Sobre O Fluxo do Tempo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Apenas as divindades Cronos, Kairos e Saturno exibiram esta capacidade. Ela lhes permite ter total domínio do tempo: passado, presente e futuro, permitindo-lhes também usá-lo como uma arma, aprisionando inimigos ou mundos inteiros em infinitos ciclos de tempo. Porque o tempo é um componente absoluto  no equilíbrio do universo, a maioria esmagadora dos demais deuses estão sujeitos a esse poder.\n\nEfeito: Criar pequenos “loops” temporais\n\nCusto: 30 Pontos de Cosmo\n\nAção: Ação de Cosmo + Ação de Movimento Total\n\nResistência: Sentidos",
+      "page": "685",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Castas: [INFERIORES][MEDIANOS][OLIMPIANOS][PRIMORDIAIS]. Poder da divindade; não equivale automaticamente a Cosmo Divino de um cavaleiro.",
+      "category": "Divindade — Poderes",
+      "level": 1,
+      "action": "Ação de Cosmo + Ação de Movimento Total",
+      "resistance": "Sentidos",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "30 Pontos de Cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divinity:DOMÍNIO SOBRE O FLUXO DO TEMPO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            685
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8c6e1f6119585876",
+    "name": "Domínio da Natureza e dos Elementos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Alguns deuses, dependendo de seus domínios ou aspectos que representam, mostraram manipular os elementos e a natureza, porém, em uma escala tão imensurável que não pode ser medida em quantidade de controle.\n\nEfeito: Permite criar efeitos Cósmicos Planetários\n\nCusto: 30 Pontos de Cosmo\n\nAção: Ação de Cosmo + Ação de Movimento Total\n\nResistência: Não",
+      "page": "685",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Castas: [INFERIORES][MEDIANOS][OLIMPIANOS][PRIMORDIAIS]. Poder da divindade; não equivale automaticamente a Cosmo Divino de um cavaleiro.",
+      "category": "Divindade — Poderes",
+      "level": 1,
+      "action": "Ação de Cosmo + Ação de Movimento Total",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "30 Pontos de Cosmo"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divinity:DOMÍNIO DA NATUREZA E DOS ELEMENTOS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            685
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "4bec223b89ca8e23",
+    "name": "Controle da Gravidade",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Pode alterar o valor da gravidade e aumentar em até 100x. diminuindo o Atributo Velocidade do alvo em -2/turno.",
+      "page": "681",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade comum de divindades. Conferir quantidade por casta e regra geral (p. 680): 20 Pontos de Cosmo, Ação de Cosmo + Movimento Parcial e resistência permitida, respeitando as exceções de cada entrada.",
+      "category": "Divindade — Habilidades comuns",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Suporte][Contínua]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "20 Pontos de Cosmo (regra geral, p. 680); conferir exceções."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-ability:controle da gravidade",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            681
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "2b13e9cfc73c8318",
+    "name": "Atração e Repulsão",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Pode atrair e puxar objetos para si como se tivesse Força 12.",
+      "page": "681",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade comum de divindades. Conferir quantidade por casta e regra geral (p. 680): 20 Pontos de Cosmo, Ação de Cosmo + Movimento Parcial e resistência permitida, respeitando as exceções de cada entrada.",
+      "category": "Divindade — Habilidades comuns",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Alvo][Instantânea]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "20 Pontos de Cosmo (regra geral, p. 680); conferir exceções."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-ability:atração e repulsão",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            681
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5a807333d9959364",
+    "name": "Reflexão",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Todas as Técnicas usadas contra um Deus são refletidas como ação extra. Manobra refletir Técnicas com +15 de Modificador Positivo.",
+      "page": "681",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade comum de divindades. Conferir quantidade por casta e regra geral (p. 680): 20 Pontos de Cosmo, Ação de Cosmo + Movimento Parcial e resistência permitida, respeitando as exceções de cada entrada.",
+      "category": "Divindade — Habilidades comuns",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Suporte][Reação][Permanentes]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "20 Pontos de Cosmo (regra geral, p. 680); conferir exceções."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-ability:reflexão",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            681
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8eaf672664e51e54",
+    "name": "Esfera de Aniquilação",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Uma pequena esfera que sai da mão do Deus, em que bate e espalha atingindo uma área igual a ½ do Domínio metros ao seu redor. Dano: 150 de dano.",
+      "page": "681",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade comum de divindades. Conferir quantidade por casta e regra geral (p. 680): 20 Pontos de Cosmo, Ação de Cosmo + Movimento Parcial e resistência permitida, respeitando as exceções de cada entrada.",
+      "category": "Divindade — Habilidades comuns",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Alvo][Instantânea]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "20 Pontos de Cosmo (regra geral, p. 680); conferir exceções."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-ability:esfera de aniquilação",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            681
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "0b6fc631dfe1ce9e",
+    "name": "Técnicas",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Todos os poderes de um tipo de Técnica (caracterizados), todos tiram dano máximo  – de acordo com a Tabela de Criação de Deuses). O dano na Armadura é normal.",
+      "page": "681",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade comum de divindades. Conferir quantidade por casta e regra geral (p. 680): 20 Pontos de Cosmo, Ação de Cosmo + Movimento Parcial e resistência permitida, respeitando as exceções de cada entrada.",
+      "category": "Divindade — Habilidades comuns",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Alvo][Suporte][Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "20 Pontos de Cosmo (regra geral, p. 680); conferir exceções."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-ability:técnicas",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            681
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ba9fbbe5ddd6f874",
+    "name": "Destruição do Cosmo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Esse é o golpe que todo Deus tem como característica, mudando de um para o outro. Causa 300 de dano + big Bang pulverizar.",
+      "page": "681",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade comum de divindades. Conferir quantidade por casta e regra geral (p. 680): 20 Pontos de Cosmo, Ação de Cosmo + Movimento Parcial e resistência permitida, respeitando as exceções de cada entrada.",
+      "category": "Divindade — Habilidades comuns",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Alvo][Instantânea]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "20 Pontos de Cosmo (regra geral, p. 680); conferir exceções."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-ability:destruição do cosmo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            681
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "257508aa49c7cf4e",
+    "name": "Destruir Todos Os Átomos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Modificador de Cosmo/dia tanto para o Personagem quanto para as Armaduras. Se falhar o Personagem é desintegrado. Apenas para Olimpianos e Primordiais.",
+      "page": "681",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade comum de divindades. Conferir quantidade por casta e regra geral (p. 680): 20 Pontos de Cosmo, Ação de Cosmo + Movimento Parcial e resistência permitida, respeitando as exceções de cada entrada.",
+      "category": "Divindade — Habilidades comuns",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Alvo][Instantânea]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "20 Pontos de Cosmo (regra geral, p. 680); conferir exceções."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-ability:destruir todos os átomos",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            681
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8b1471762079efd1",
+    "name": "Deus",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Ações completas para cada inimigo.",
+      "page": "681",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade comum de divindades. Conferir quantidade por casta e regra geral (p. 680): 20 Pontos de Cosmo, Ação de Cosmo + Movimento Parcial e resistência permitida, respeitando as exceções de cada entrada.",
+      "category": "Divindade — Habilidades comuns",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "20 Pontos de Cosmo (regra geral, p. 680); conferir exceções."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-ability:deus",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            681
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b0de35c632d7943c",
+    "name": "Centelha Estelar",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Cria pequenas explosões de energia que podem afastar oponentes. Dano: 200 de dano.",
+      "page": "681",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade comum de divindades. Conferir quantidade por casta e regra geral (p. 680): 20 Pontos de Cosmo, Ação de Cosmo + Movimento Parcial e resistência permitida, respeitando as exceções de cada entrada.",
+      "category": "Divindade — Habilidades comuns",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Alvo][Instantânea]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "20 Pontos de Cosmo (regra geral, p. 680); conferir exceções."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-ability:centelha estelar",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            681
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b7d4d4d48b70abd2",
+    "name": "Visão Astral",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Permite ao usuário enxergar além do espectro visível, detectando formas de energia.",
+      "page": "681",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade comum de divindades. Conferir quantidade por casta e regra geral (p. 680): 20 Pontos de Cosmo, Ação de Cosmo + Movimento Parcial e resistência permitida, respeitando as exceções de cada entrada.",
+      "category": "Divindade — Habilidades comuns",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Permanente]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "20 Pontos de Cosmo (regra geral, p. 680); conferir exceções."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-ability:visão astral",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            681
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8d1e11b8e35f327c",
+    "name": "Pico Cósmico",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Aumenta temporariamente o poder de ataque. Especial: +2 Nível de Ataque.",
+      "page": "681",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade comum de divindades. Conferir quantidade por casta e regra geral (p. 680): 20 Pontos de Cosmo, Ação de Cosmo + Movimento Parcial e resistência permitida, respeitando as exceções de cada entrada.",
+      "category": "Divindade — Habilidades comuns",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Suporte][Contínua]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "20 Pontos de Cosmo (regra geral, p. 680); conferir exceções."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-ability:pico cósmico",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            681
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5382c0bcd76a41ba",
+    "name": "Portal Estelar",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Abre um portal para outro local, permitindo movimento rápido entre lugares e dimensões.",
+      "page": "681–682",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade comum de divindades. Conferir quantidade por casta e regra geral (p. 680): 20 Pontos de Cosmo, Ação de Cosmo + Movimento Parcial e resistência permitida, respeitando as exceções de cada entrada.",
+      "category": "Divindade — Habilidades comuns",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Suporte][Instantânea]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "20 Pontos de Cosmo (regra geral, p. 680); conferir exceções."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-ability:portal estelar",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            681,
+            682
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f8ebfcb36cbc8d03",
+    "name": "Astralização",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Transforma temporariamente o corpo em uma forma de energia cósmica.",
+      "page": "682",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade comum de divindades. Conferir quantidade por casta e regra geral (p. 680): 20 Pontos de Cosmo, Ação de Cosmo + Movimento Parcial e resistência permitida, respeitando as exceções de cada entrada.",
+      "category": "Divindade — Habilidades comuns",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Suporte][Contínua]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "20 Pontos de Cosmo (regra geral, p. 680); conferir exceções."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-ability:astralização",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            682
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "92ba06cd0a2d4d30",
+    "name": "Colar das Constelações",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Cria uma armadura energética que amplifica todas as habilidades do usuário.\n\nEspecial: PA +10.",
+      "page": "682",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade comum de divindades. Conferir quantidade por casta e regra geral (p. 680): 20 Pontos de Cosmo, Ação de Cosmo + Movimento Parcial e resistência permitida, respeitando as exceções de cada entrada.",
+      "category": "Divindade — Habilidades comuns",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Suporte][Contínua]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "20 Pontos de Cosmo (regra geral, p. 680); conferir exceções."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-ability:colar das constelações",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            682
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a285533c64532184",
+    "name": "Dominus Estellarum",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Manipula a energia de várias estrelas para criar um escudo defensivo durável.\n\nEspecial: PA +5.",
+      "page": "682",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade comum de divindades. Conferir quantidade por casta e regra geral (p. 680): 20 Pontos de Cosmo, Ação de Cosmo + Movimento Parcial e resistência permitida, respeitando as exceções de cada entrada.",
+      "category": "Divindade — Habilidades comuns",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Suporte][Descanso]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "20 Pontos de Cosmo (regra geral, p. 680); conferir exceções."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-ability:dominus estellarum",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            682
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a4b6a2e29843e228",
+    "name": "Ressonância Galáctica",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sintoniza com a energia das galáxias para amplificar a força e habilidades do usuário.\n\nEspecial: Qualquer Atributo +2.",
+      "page": "682",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade comum de divindades. Conferir quantidade por casta e regra geral (p. 680): 20 Pontos de Cosmo, Ação de Cosmo + Movimento Parcial e resistência permitida, respeitando as exceções de cada entrada.",
+      "category": "Divindade — Habilidades comuns",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Alvo][Contínua]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "20 Pontos de Cosmo (regra geral, p. 680); conferir exceções."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-ability:ressonância galáctica",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            682
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3aa34b16dc0ec27d",
+    "name": "Escudo Planetário",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Cria uma barreira protetora ao redor de uma área, resistindo a ataques Planetário/Galáxia/Universais.",
+      "page": "682",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Habilidade comum de divindades. Conferir quantidade por casta e regra geral (p. 680): 20 Pontos de Cosmo, Ação de Cosmo + Movimento Parcial e resistência permitida, respeitando as exceções de cada entrada.",
+      "category": "Divindade — Habilidades comuns",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[Suporte][Dias]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "divine",
+      "costText": "20 Pontos de Cosmo (regra geral, p. 680); conferir exceções."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "divine-ability:escudo planetário",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            682
+          ]
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,622 @@
+[
+  {
+    "_id": "7742de75385b360a",
+    "name": "Pés de Hermes",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Habilidade natural de Anjos.\n\nO Personagem não é um humano, é um anjo celestial. É um Personagem que foi escolhido por seu Deus para vir a Terra resolver seus assuntos. Começa o jogo com + 1 no Atributo Velocidade, podem usar seu movimento no ar como se estivessem no chão (não é voo). Tem que obrigatoriamente ser leal a um Deus. O Personagem começa o jogo com as Habilidades Naturais abaixo: Pés de Hermes  Permite ao Personagem usar a manobra de Movimento:  Movimento no ar. Armadura Olimpiana Suas Armaduras são as Glórias que evoluem com o Personagem recebendo as devidas características de Classe, ou seja, no 10º Nível progride para Prata e no 20º Nível recebem os benefícios de uma Armadura de Ouro. Por serem escolhidos por Deuses os anjos anulam as características Especiais da Armaduras da Classe Ouro.\n\nPré-Requisito:  Só escolhido no 1º nível.",
+      "page": "161–162",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Origem: Virtude Anjos. A descrição preserva o contexto completo da virtude; aplique apenas a habilidade indicada pelo nome e as escolhas exigidas.\nSó escolhido no 1º nível.",
+      "category": "Natural — Anjos",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "natural"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "natural:Anjos:Pés de Hermes",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            161,
+            162
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "cc4a948f7665f33e",
+    "name": "Armadura Olimpiana",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Habilidade natural de Anjos.\n\nO Personagem não é um humano, é um anjo celestial. É um Personagem que foi escolhido por seu Deus para vir a Terra resolver seus assuntos. Começa o jogo com + 1 no Atributo Velocidade, podem usar seu movimento no ar como se estivessem no chão (não é voo). Tem que obrigatoriamente ser leal a um Deus. O Personagem começa o jogo com as Habilidades Naturais abaixo: Pés de Hermes  Permite ao Personagem usar a manobra de Movimento:  Movimento no ar. Armadura Olimpiana Suas Armaduras são as Glórias que evoluem com o Personagem recebendo as devidas características de Classe, ou seja, no 10º Nível progride para Prata e no 20º Nível recebem os benefícios de uma Armadura de Ouro. Por serem escolhidos por Deuses os anjos anulam as características Especiais da Armaduras da Classe Ouro.\n\nPré-Requisito:  Só escolhido no 1º nível.",
+      "page": "161–162",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Origem: Virtude Anjos. A descrição preserva o contexto completo da virtude; aplique apenas a habilidade indicada pelo nome e as escolhas exigidas.\nSó escolhido no 1º nível.",
+      "category": "Natural — Anjos",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "natural"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "natural:Anjos:Armadura Olimpiana",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            161,
+            162
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "74fd76c6a01132bf",
+    "name": "Ígneo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Habilidade natural de Cosmo de Fogo.\n\nO Cavaleiro foi abençoado pelos Deuses com o Cosmo de Fogo uma manifestação do Deus da Agyo que aparece por detrás de Ikki, vemos aparecer em três ocasiões no anime um Personagem um tanto quanto estranho e peculiar chamado Misshaku Kongô (ou Agyo). Vajrapani é o encarregado por todos os tantras possibilita um imenso poder em seu Cosmo interior, as mãos do Cavaleiro ficam imersas em fogo místico sendo algo belo de se ver e de trazer fama a seus matadores. O Personagem começa o jogo com as Habilidades Naturais abaixo: Ígneo durante o combate sua presença causa +1 de bônus aplicado ao dano /turno devido as queimaduras causadas pelo fogo. Sopro de Agyo Técnicas do Elemento do fogo somam +1 de Modificador Positivo no Poder Cósmico. Esta Virtude pode ter seu elemento, fogo, alterado. O mestre faz as devidas alterações e atribuições, os bônus são os mesmos. Ex: COSMO DE GELO (GERAL): O Cavaleiro foi abençoado pelo Deus do Gelo, Fjalnir que cria e controla tempestades invernais, tal como a que assola as Terras Nórdicas. O gelo criado for Fjalnir consegue congelar o fogo. Gelado durante o combate sua presença emana um ar frio e causa +1 de bônus aplicado ao dano/turno devido ao ar congelante. Tempestade de Fjalnir Técnicas do Elemento do Ar somam +1 de Modificador Positivo no Poder Cósmico.",
+      "page": "163–164",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Origem: Virtude Cosmo de Fogo. A descrição preserva o contexto completo da virtude; aplique apenas a habilidade indicada pelo nome e as escolhas exigidas.",
+      "category": "Natural — Cosmo de Fogo",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "natural"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "natural:Cosmo de Fogo:Ígneo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            163,
+            164
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e57c45d7cc6837e0",
+    "name": "Sopro de Agyo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Habilidade natural de Cosmo de Fogo.\n\nO Cavaleiro foi abençoado pelos Deuses com o Cosmo de Fogo uma manifestação do Deus da Agyo que aparece por detrás de Ikki, vemos aparecer em três ocasiões no anime um Personagem um tanto quanto estranho e peculiar chamado Misshaku Kongô (ou Agyo). Vajrapani é o encarregado por todos os tantras possibilita um imenso poder em seu Cosmo interior, as mãos do Cavaleiro ficam imersas em fogo místico sendo algo belo de se ver e de trazer fama a seus matadores. O Personagem começa o jogo com as Habilidades Naturais abaixo: Ígneo durante o combate sua presença causa +1 de bônus aplicado ao dano /turno devido as queimaduras causadas pelo fogo. Sopro de Agyo Técnicas do Elemento do fogo somam +1 de Modificador Positivo no Poder Cósmico. Esta Virtude pode ter seu elemento, fogo, alterado. O mestre faz as devidas alterações e atribuições, os bônus são os mesmos. Ex: COSMO DE GELO (GERAL): O Cavaleiro foi abençoado pelo Deus do Gelo, Fjalnir que cria e controla tempestades invernais, tal como a que assola as Terras Nórdicas. O gelo criado for Fjalnir consegue congelar o fogo. Gelado durante o combate sua presença emana um ar frio e causa +1 de bônus aplicado ao dano/turno devido ao ar congelante. Tempestade de Fjalnir Técnicas do Elemento do Ar somam +1 de Modificador Positivo no Poder Cósmico.",
+      "page": "163–164",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Origem: Virtude Cosmo de Fogo. A descrição preserva o contexto completo da virtude; aplique apenas a habilidade indicada pelo nome e as escolhas exigidas.",
+      "category": "Natural — Cosmo de Fogo",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "natural"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "natural:Cosmo de Fogo:Sopro de Agyo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            163,
+            164
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5cf85676a058ef67",
+    "name": "Força Titânica",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Habilidade natural de Gigante.\n\nO Personagem possui, correndo em suas veias, sangue  dos antigos gigantes da Gigantomakhia (batalha entre os Deuses olímpicos e os gigantes). O Personagem começa o jogo com as Habilidades Naturais abaixo: Força Titânica Permite ao Personagem Vantagem em todo Teste que envolva Força. Gigante O Personagem possui um físico  e um corpo  equiparado a musculatura  dos Gigantes . O Personagem recebe +2 pontos de vida por nível e possui pelos menos 250 cm de altura.\n\nPré-requisito: Só escolhido no 1º nível.",
+      "page": "166–167",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Origem: Virtude Gigante. A descrição preserva o contexto completo da virtude; aplique apenas a habilidade indicada pelo nome e as escolhas exigidas.\nSó escolhido no 1º nível.",
+      "category": "Natural — Gigante",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "natural"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "natural:Gigante:Força Titânica",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            166,
+            167
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "7a0652881a9414b7",
+    "name": "Gigante",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Habilidade natural de Gigante.\n\nO Personagem possui, correndo em suas veias, sangue  dos antigos gigantes da Gigantomakhia (batalha entre os Deuses olímpicos e os gigantes). O Personagem começa o jogo com as Habilidades Naturais abaixo: Força Titânica Permite ao Personagem Vantagem em todo Teste que envolva Força. Gigante O Personagem possui um físico  e um corpo  equiparado a musculatura  dos Gigantes . O Personagem recebe +2 pontos de vida por nível e possui pelos menos 250 cm de altura.\n\nPré-requisito: Só escolhido no 1º nível.",
+      "page": "166–167",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Origem: Virtude Gigante. A descrição preserva o contexto completo da virtude; aplique apenas a habilidade indicada pelo nome e as escolhas exigidas.\nSó escolhido no 1º nível.",
+      "category": "Natural — Gigante",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "natural"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "natural:Gigante:Gigante",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            166,
+            167
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "061b0a32962271d0",
+    "name": "Psicocinese",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Habilidade natural de Muviano.\n\nO Personagem descende da linhagem dos Ferreiros Paranormais que criaram as Armaduras de Athena. O Personagem começa o jogo com uma das Habilidades Naturais abaixo: Psicocinese Igual a Virtude Psicocinese [Geral]. Teletransporte igual a Técnica Teletransporte [Bronze][MANIPULAÇÃO DE COSMO]. Telepatia Habilidade de comunicar-se diretamente com a mente de um indivíduo. Ferreiro Paranormal igual a Virtude Alquimista [Técnica]. Os Alquimistas são identificados através do corte ritualístico nas sobrancelhas que parecem dois sinais “pintas” na testa.  Os “não alquimistas” possuem sobrancelhas “normais”.  O Mestre deve restringir essa qualidade ao máximo e até mesmo não permitir, pois essa raça está em extinção, no desenho seus representantes eram: Mú, Shion e Kiki.\n\nPré-requisito: Só escolhido no 1º nível.",
+      "page": "168–169",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Origem: Virtude Muviano. A descrição preserva o contexto completo da virtude; aplique apenas a habilidade indicada pelo nome e as escolhas exigidas.\nSó escolhido no 1º nível.",
+      "category": "Natural — Muviano",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "natural"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "natural:Muviano:Psicocinese",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            168,
+            169
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "82d42ec147761aca",
+    "name": "Teletransporte",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Habilidade natural de Muviano.\n\nO Personagem descende da linhagem dos Ferreiros Paranormais que criaram as Armaduras de Athena. O Personagem começa o jogo com uma das Habilidades Naturais abaixo: Psicocinese Igual a Virtude Psicocinese [Geral]. Teletransporte igual a Técnica Teletransporte [Bronze][MANIPULAÇÃO DE COSMO]. Telepatia Habilidade de comunicar-se diretamente com a mente de um indivíduo. Ferreiro Paranormal igual a Virtude Alquimista [Técnica]. Os Alquimistas são identificados através do corte ritualístico nas sobrancelhas que parecem dois sinais “pintas” na testa.  Os “não alquimistas” possuem sobrancelhas “normais”.  O Mestre deve restringir essa qualidade ao máximo e até mesmo não permitir, pois essa raça está em extinção, no desenho seus representantes eram: Mú, Shion e Kiki.\n\nPré-requisito: Só escolhido no 1º nível.",
+      "page": "168–169",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Origem: Virtude Muviano. A descrição preserva o contexto completo da virtude; aplique apenas a habilidade indicada pelo nome e as escolhas exigidas.\nSó escolhido no 1º nível.",
+      "category": "Natural — Muviano",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "natural"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "natural:Muviano:Teletransporte",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            168,
+            169
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8c9dc85199c44adb",
+    "name": "Telepatia",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Habilidade natural de Muviano.\n\nO Personagem descende da linhagem dos Ferreiros Paranormais que criaram as Armaduras de Athena. O Personagem começa o jogo com uma das Habilidades Naturais abaixo: Psicocinese Igual a Virtude Psicocinese [Geral]. Teletransporte igual a Técnica Teletransporte [Bronze][MANIPULAÇÃO DE COSMO]. Telepatia Habilidade de comunicar-se diretamente com a mente de um indivíduo. Ferreiro Paranormal igual a Virtude Alquimista [Técnica]. Os Alquimistas são identificados através do corte ritualístico nas sobrancelhas que parecem dois sinais “pintas” na testa.  Os “não alquimistas” possuem sobrancelhas “normais”.  O Mestre deve restringir essa qualidade ao máximo e até mesmo não permitir, pois essa raça está em extinção, no desenho seus representantes eram: Mú, Shion e Kiki.\n\nPré-requisito: Só escolhido no 1º nível.",
+      "page": "168–169",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Origem: Virtude Muviano. A descrição preserva o contexto completo da virtude; aplique apenas a habilidade indicada pelo nome e as escolhas exigidas.\nSó escolhido no 1º nível.",
+      "category": "Natural — Muviano",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "natural"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "natural:Muviano:Telepatia",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            168,
+            169
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e00835218f78836a",
+    "name": "Ferreiro Paranormal",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Habilidade natural de Muviano.\n\nO Personagem descende da linhagem dos Ferreiros Paranormais que criaram as Armaduras de Athena. O Personagem começa o jogo com uma das Habilidades Naturais abaixo: Psicocinese Igual a Virtude Psicocinese [Geral]. Teletransporte igual a Técnica Teletransporte [Bronze][MANIPULAÇÃO DE COSMO]. Telepatia Habilidade de comunicar-se diretamente com a mente de um indivíduo. Ferreiro Paranormal igual a Virtude Alquimista [Técnica]. Os Alquimistas são identificados através do corte ritualístico nas sobrancelhas que parecem dois sinais “pintas” na testa.  Os “não alquimistas” possuem sobrancelhas “normais”.  O Mestre deve restringir essa qualidade ao máximo e até mesmo não permitir, pois essa raça está em extinção, no desenho seus representantes eram: Mú, Shion e Kiki.\n\nPré-requisito: Só escolhido no 1º nível.",
+      "page": "168–169",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Origem: Virtude Muviano. A descrição preserva o contexto completo da virtude; aplique apenas a habilidade indicada pelo nome e as escolhas exigidas.\nSó escolhido no 1º nível.",
+      "category": "Natural — Muviano",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "natural"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "natural:Muviano:Ferreiro Paranormal",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            168,
+            169
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a4f66141e8f66a54",
+    "name": "Véu dos mortos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Habilidade natural de Sekishiki.\n\nÉ uma rara manifestação do cosmo, que permite ao usuário interagir com almas de formas diversas que desperta junto com o Cosmo. O Personagem eleva 1 Nível de Poder de todas as Técnicas que envolvam espíritos. O seu uso custa 1 condensar. O Personagem começa o jogo com a Habilidade Natural abaixo: Véu dos mortos  Permite ao Personagem interagir com as almas de fantasmas. Esta é a habilidade mais básica do sekishiki, a habilidade de atrair e se comunicar com almas.",
+      "page": "171",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Origem: Virtude Sekishiki. A descrição preserva o contexto completo da virtude; aplique apenas a habilidade indicada pelo nome e as escolhas exigidas.",
+      "category": "Natural — Sekishiki",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "natural"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "natural:Sekishiki:Véu dos mortos",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            171
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "86cca430ad2a2542",
+    "name": "Eterno",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Habilidade natural de Semideuses.\n\nSão os frutos do relacionamento entre mortais e imortais. Durante a série foram poucos os semideuses mostrados. O Personagem começa o jogo com as Habilidades Naturais a baixo: Eterno O Personagem não envelhece como humanos comuns, mas sim 1 ano a cada 3 passados. Velocidade Divina Seus corpos são adaptados ao combate, tudo ao seu redor funciona mais devagar e supera a Velocidade, mesmo entre Cavaleiros, classificação de Velocidade: Velocidade Massivamente Superada (+). Genética Divina Manifestam uma característica de combate que se identifica com seu Pai, por Exemplo o filho de Zeus imbuindo os punhos de energia elétrica, ao se utilizar de socos diretos parece estar portando uma lança de raios, somando +1 de Bônus aplicado ao dano.\n\nPré-requisito: Só escolhido no 1º nível.",
+      "page": "171",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Origem: Virtude Semideuses. A descrição preserva o contexto completo da virtude; aplique apenas a habilidade indicada pelo nome e as escolhas exigidas.\nSó escolhido no 1º nível.",
+      "category": "Natural — Semideuses",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "natural"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "natural:Semideuses:Eterno",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            171
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "90484f1451e596de",
+    "name": "Velocidade Divina",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Habilidade natural de Semideuses.\n\nSão os frutos do relacionamento entre mortais e imortais. Durante a série foram poucos os semideuses mostrados. O Personagem começa o jogo com as Habilidades Naturais a baixo: Eterno O Personagem não envelhece como humanos comuns, mas sim 1 ano a cada 3 passados. Velocidade Divina Seus corpos são adaptados ao combate, tudo ao seu redor funciona mais devagar e supera a Velocidade, mesmo entre Cavaleiros, classificação de Velocidade: Velocidade Massivamente Superada (+). Genética Divina Manifestam uma característica de combate que se identifica com seu Pai, por Exemplo o filho de Zeus imbuindo os punhos de energia elétrica, ao se utilizar de socos diretos parece estar portando uma lança de raios, somando +1 de Bônus aplicado ao dano.\n\nPré-requisito: Só escolhido no 1º nível.",
+      "page": "171",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Origem: Virtude Semideuses. A descrição preserva o contexto completo da virtude; aplique apenas a habilidade indicada pelo nome e as escolhas exigidas.\nSó escolhido no 1º nível.",
+      "category": "Natural — Semideuses",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "natural"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "natural:Semideuses:Velocidade Divina",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            171
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "73f1608c55b6f283",
+    "name": "Genética Divina",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Habilidade natural de Semideuses.\n\nSão os frutos do relacionamento entre mortais e imortais. Durante a série foram poucos os semideuses mostrados. O Personagem começa o jogo com as Habilidades Naturais a baixo: Eterno O Personagem não envelhece como humanos comuns, mas sim 1 ano a cada 3 passados. Velocidade Divina Seus corpos são adaptados ao combate, tudo ao seu redor funciona mais devagar e supera a Velocidade, mesmo entre Cavaleiros, classificação de Velocidade: Velocidade Massivamente Superada (+). Genética Divina Manifestam uma característica de combate que se identifica com seu Pai, por Exemplo o filho de Zeus imbuindo os punhos de energia elétrica, ao se utilizar de socos diretos parece estar portando uma lança de raios, somando +1 de Bônus aplicado ao dano.\n\nPré-requisito: Só escolhido no 1º nível.",
+      "page": "171",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Origem: Virtude Semideuses. A descrição preserva o contexto completo da virtude; aplique apenas a habilidade indicada pelo nome e as escolhas exigidas.\nSó escolhido no 1º nível.",
+      "category": "Natural — Semideuses",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "natural"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "natural:Semideuses:Genética Divina",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            171
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "668218578f0aa380",
+    "name": "Traje Protetor",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Habilidade natural de Taonias.\n\nOs Taonias são guerreiros, originários das terras dos Sennins, que há várias gerações servem a Hakuryu, o Dragão Branco. Detentores de poderes míticos da natureza. Ao dominar as diversas técnicas de luta de diversas criaturas, os espíritos naturais  ou mitológicos entram em seus corpos e deixam uma marca visível em forma de tatuagem . A tatuagem é o receptáculo para  proteção que se materializa em trajes protetores graças a força interna dos guerreiros de alto escalão dos Taonias. Eles, n ormalmente, não interferem em assuntos que não tem relação com as terras Sennins, mas podem agir fora de suas terras quando a realidade estiver em grande perigo ou em buscas de aventuras. Traje Protetor Suas Armaduras são tatuagens protetoras que evoluem com o Personagem recebendo as devidas características de Classe, ou seja, no 10º Nível progride para Prata e no 20º Nível recebem os benefícios de uma Armadura de Ouro. Exímio Lutador  Por conhecerem diversas Técnicas de Luta podem desenvolver a Perícia Combate até a 9 graduação; seja ela Pericia do seu Estilo de Combate  ou Não. Se a Perícia já for uma Perícia do Estilo de Combate  escolhido; o Personagem começa o jogo com Combate 3 Graduações.\n\nPré-Requisito:  Só escolhido no 1º nível.",
+      "page": "172–173",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Origem: Virtude Taonias. A descrição preserva o contexto completo da virtude; aplique apenas a habilidade indicada pelo nome e as escolhas exigidas.\nSó escolhido no 1º nível.",
+      "category": "Natural — Taonias",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "natural"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "natural:Taonias:Traje Protetor",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            172,
+            173
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "018e2355d1b331db",
+    "name": "Exímio Lutador",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Habilidade natural de Taonias.\n\nOs Taonias são guerreiros, originários das terras dos Sennins, que há várias gerações servem a Hakuryu, o Dragão Branco. Detentores de poderes míticos da natureza. Ao dominar as diversas técnicas de luta de diversas criaturas, os espíritos naturais  ou mitológicos entram em seus corpos e deixam uma marca visível em forma de tatuagem . A tatuagem é o receptáculo para  proteção que se materializa em trajes protetores graças a força interna dos guerreiros de alto escalão dos Taonias. Eles, n ormalmente, não interferem em assuntos que não tem relação com as terras Sennins, mas podem agir fora de suas terras quando a realidade estiver em grande perigo ou em buscas de aventuras. Traje Protetor Suas Armaduras são tatuagens protetoras que evoluem com o Personagem recebendo as devidas características de Classe, ou seja, no 10º Nível progride para Prata e no 20º Nível recebem os benefícios de uma Armadura de Ouro. Exímio Lutador  Por conhecerem diversas Técnicas de Luta podem desenvolver a Perícia Combate até a 9 graduação; seja ela Pericia do seu Estilo de Combate  ou Não. Se a Perícia já for uma Perícia do Estilo de Combate  escolhido; o Personagem começa o jogo com Combate 3 Graduações.\n\nPré-Requisito:  Só escolhido no 1º nível.",
+      "page": "172–173",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Origem: Virtude Taonias. A descrição preserva o contexto completo da virtude; aplique apenas a habilidade indicada pelo nome e as escolhas exigidas.\nSó escolhido no 1º nível.",
+      "category": "Natural — Taonias",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "natural"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "natural:Taonias:Exímio Lutador",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            172,
+            173
+          ]
+        }
+      }
+    }
+  }
+]

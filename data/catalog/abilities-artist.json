@@ -1,0 +1,809 @@
+[
+  {
+    "_id": "eeb52a9bff7d4630",
+    "name": "Melhoria Artista",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sistema: +1 em Domínio.\n\nAção: Ação de Cosmo.\n\nResistência: Não.",
+      "page": "93",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Artista. Nível de referência no livro: 1. Conferir aquisição conforme evolução e status.",
+      "category": "Artista",
+      "level": 1,
+      "action": "Ação de Cosmo.",
+      "resistance": "Não.",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "improvement"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artist:improvement:1:MELHORIA ARTISTA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            93
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "9996c85ca6a2214b",
+    "name": "Chamado do Combate",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro emana uma aura de serenidade que contrasta com o caos ao seu redor. Em um movimento grácil, ele ergue seu instrumento com uma mão, utilizando seus dedos ágeis e habilidosos. Seu cosmo, calmo e harmonioso, envolve seus companheiros, inspirando -os a lutar com coragem e determinação. Enquanto a atuação do Artista ecoa pelo campo de batalha, uma sensação de tranquilidade e força toma conta dos aliados de Orpheu. Seus Cosmos brilham com um fulgor divino, e eles sentem uma energia renovada e coragem crescente. Os Cavaleiros, antes abatido s, encontram força para lutar sem medo da morte, pois o Cosmo do Artista toca seus corações e infunde neles uma determinação férrea. O Chamado do Combate é uma força inspiradora que não apenas fortalece seus aliados, mas também enfraquece seus adversários, minando a confiança e a coragem deles. É um poder que ecoa na alma dos Cavaleiros.\n\nSistema: Enquanto os companheiros estiverem dentro do Domínio do Artista todas as suas ações recebem +1 de Modificador Positivo aos seus Testes de : Atributo, Resistência e de Perícias (não adiciona ação de luta).\n\nAção: Ação de Cosmo + Ação de Movimento Parcial\n\nResistência: Não\n\nCombinação: Atuação, +",
+      "page": "93–94",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Artista. Nível de referência no livro: 1. Conferir aquisição conforme evolução e status.",
+      "category": "Artista",
+      "level": 1,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial",
+      "resistance": "Não",
+      "combination": "Atuação, +",
+      "duration": "[CONTÍNUA/SUSTENTADA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artist:ability:1:CHAMADO DO COMBATE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            93,
+            94
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "38a4f536242053bc",
+    "name": "Agilidade Sonora",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Em uma cena magnífica e inspiradora, o Artista emerge no campo de batalha com serenidade. Diante do inimigo, ele ergue seu instrumento com elegância e começa a utiliza-lo com maestria. À medida que seu poder enche o ar, seu cosmo se infunde com a arte, criando uma aura de tranquilidade e harmonia ao seu redor. As ondas de energia cósmica fluem através dela, perturbando a percepção do inimigo. Os reflexos brilhantes do cosmo do Cavaleiro dançam ao redor dele, criando uma barreira de ilusões que obscurece a visão do adversário. Conforme o inimigo tenta atacar o Artista, eles são desviados pelas ilusões que se manifestam em movimentos graciosos, tornando difícil discernir o verdadeiro Cavaleiro, com o Artista deslizando sobre o campo de batalha, como se estivesse dançando, enquanto seus reflexos e ilusões o protegem, tornando-o praticamente intocável. O Artista desempenha uma sinfonia cósmica que tanto o protege quanto confunde seus adversários, tornando-o uma força formidável no campo de batalha.\n\nSistema: O Personagem adquire 1 ação de defesa extra.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial\n\nResistência: Não\n\nCombinação: Utilização do Cosmo, +",
+      "page": "94",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Artista. Nível de referência no livro: 2. Conferir aquisição conforme evolução e status.",
+      "category": "Artista",
+      "level": 2,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial",
+      "resistance": "Não",
+      "combination": "Utilização do Cosmo, +",
+      "duration": "[CONTÍNUA/SUSTENTADA/REAÇÃO] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artist:gift:2:AGILIDADE SONORA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            94
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "929028a9ceff58aa",
+    "name": "Barreira",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O cosmo do Artista flui por meio de sua arte, infundindo o ar ao redor com uma energia etérea. À medida que seu cosmo preenche o espaço, cria uma fina barreira cósmica ao redor de seu corpo. Essa barreira é formada pela vibração de sua atuação e é quase invisível, fazendo com que os golpes inimigos pareçam atingir o vazio. A energia cósmica que envolve o Cavaleiro age como uma ilusão, fazendo com que os golpes do inimigo passem por ele, como se ele fosse intocável.\n\nSistema: +2 de Proteção de Armadura.\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nCombinação: Utilização de Cosmo, +",
+      "page": "94–95",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Artista. Nível de referência no livro: 3. Conferir aquisição conforme evolução e status.",
+      "category": "Artista",
+      "level": 3,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "Utilização de Cosmo, +",
+      "duration": "[CONTÍNUA/REAÇÃO] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artist:ability:3:BARREIRA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            94,
+            95
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "02ab74f9533a9406",
+    "name": "Medo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro com elegância ergue seu instrumento, enquanto seu cosmo se intensifica. O Artista, mestre da ilusão, canaliza seu cosmo para aprimorar sua habilidade única. Concentrando-se no cosmo e na arte que fluem do seu instrumento, ele cria uma ilusão poderosa. Com gestos sutis, ele envolve o campo de batalha em sua ilusão cósmica. O cosmo do Cavaleiro atinge um ápice, e sua atuação se torna envolvente ganhando uma qualidade onírica, como um mundo alternativo. O efeito desse poder no inimigo é intrigante e amedrontador. Os adversários se encontram submersos em suas piores fobias e pesadelos. As ilusões são tão vívidas que os inimigos podem \"tocar\" e interagir com o que acreditam ser realidade. Eles ficam desorie ntados, incapazes de distinguir entre o que é verdade e o que é criação.\n\nSistema: Causa o Estado Amedrontado.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial\n\nResistência: Sentidos",
+      "page": "95",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Artista. Nível de referência no livro: 4. Conferir aquisição conforme evolução e status.",
+      "category": "Artista",
+      "level": 4,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial",
+      "resistance": "Sentidos",
+      "combination": "",
+      "duration": "[CONTÍNUA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artist:gift:4:MEDO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            95
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e3b2c12bae3330a9",
+    "name": "Réquiem",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Nenhum Cavaleiro manipula e controla melhor o Cosmo do que os Cavaleiros Artistas, eles conhecem os movimentos, as linhas cósmicas e tem um domínio de fazer inveja a qualquer Cavaleiro de Ouro. São especialistas em utilizar o Cosmo.\n\nSistema: A cada 5 Níveis o Artista recebe como Modificador:\n\n+1 de Modificador Positivo nos Testes das Perícias da Classe\n\n+1 de Poder Cósmico para Habilidades/Dádivas\n\nEspecial: Dualidade do Cosmo: O Artista consegue transformar a dualidade da Essência do Cosmo. Conseguindo inverter os efeitos de suas Habilidades e Dádivas. Uma Habilidade ou Dádiva que beneficie um companheiro com Modificadores Positivos pode ser transformada e causar prejuízo ao inimigo com Modificadores Negativos. Assim como uma Habilidade ou Dádiva que cause prejuízo ao inimigo com Modificadores Negativos pode ser transformada e beneficiar um companheiro com Modificadores Positivos.",
+      "page": "95–96",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Artista. Nível de referência no livro: 5. Conferir aquisição conforme evolução e status.",
+      "category": "Artista",
+      "level": 5,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "specialization"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artist:specialization:5:RÉQUIEM",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            95,
+            96
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e23e9453dac1c100",
+    "name": "Benção de Orfeu",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O efeito desse poder no inimigo é angustiante. Eles experimentam dor e tormento enquanto são envolvidos pela combinação única de arte e cosmo do Artista. A sensação é avassaladora e debilitante, enfraquecendo drasticamente a capacidade de luta de seus oponentes. O Artista, o mestre da dualidade entre beleza e agonia, utiliza sua arte para infligir sofrimento a seus adversários.\n\nSistema: O Personagem joga suas ações de luta (o inimigo não joga as ações de defesa) cada sucesso funciona como um acerto. Dano: Nível de Ataque 1 (Status Bronze)\n\nNível de Ataque 2 (Status Prata)\n\nNível de Ataque 3 (Status Ouro)\n\nEspecial: Esta Dádiva permite atingir vários inimigos, desde que estejam dentro do Domínio do Artista. Custa 2 pontos de Cosmo Energia por alvo extra.\n\nEspecial: Retira a resistência do alvo se usada junto com Benção de Apolo , salvo pela Virtude Mente Fechada.\n\nEspecial: Este dano NÃO soma com NENHUM tipo de bônus aplicado.\n\nEspecial: Este dano é SEM a Proteção da Armadura do Alvo.\n\nAção: Ação de Cosmo\n\nResistência: Sentidos",
+      "page": "96",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Artista. Nível de referência no livro: 6. Conferir aquisição conforme evolução e status.",
+      "category": "Artista",
+      "level": 6,
+      "action": "Ação de Cosmo",
+      "resistance": "Sentidos",
+      "combination": "",
+      "duration": "[CONTÍNUA/SUSTENTADA] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artist:gift:6:BENÇÃO DE ORFEU",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            96
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "bb9f18b5947b3129",
+    "name": "Definhar",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro ergue seu instrumento sagrado, e em um movimento fluído, começa a atuar e seu cosmo ecoa por todo o campo de batalha. Seu cosmo cresce intensamente, formando um vórtice de energia em torno de seu corpo. A energia de sua constelação é invocada, e o Artista concentra sua mente no inimigo. Neste momento, ele consegue aprisionar, por alguns instantes, a Cosmo Energia do adversário. Uma sensação de impotência toma conta do inimigo, enfraquecendo temporariamente sua capacidade de luta. Essa Habilidade é um exemplo de como a harmonia entre a art e, o cosmo e a destreza do Artista são usados para subjugar seus adversários, tornando-o um oponente formidável.\n\nSistema: O Cavaleiro anula qualquer Habilidade ou Dádiva ativa pelo alvo.\n\nAção: Ação de Cosmo\n\nResistência: Sentidos",
+      "page": "96–97",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Artista. Nível de referência no livro: 7. Conferir aquisição conforme evolução e status.",
+      "category": "Artista",
+      "level": 7,
+      "action": "Ação de Cosmo",
+      "resistance": "Sentidos",
+      "combination": "",
+      "duration": "[CONTÍNUA/SUSTENTADA] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artist:ability:7:DEFINHAR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            96,
+            97
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "131b9717c1690b02",
+    "name": "Intenção Assassina",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro utiliza sua constelação como inspiração para uma atuação silenciosa. Seu cosmo, normalmente brilhante e poderoso, se apaga completamente. Seu corpo, envolto em uma aura pacífica, desliza pelas sombras em direção ao inimigo. O efeito desse poder no inimigo é a desorientação total. Eles não conseguem detectar a presença do Cavaleiro e são pegos de surpresa. Essa habilidade permite que o Artista se infiltre silenciosamente entre os adversários, pegando -os de surpresa e, se neces sário, realizando assassinatos furtivos. A harmonia entre sua constelação, sua atuação e seu cosmo apagado torna-o um espião mortal nos bastidores das batalhas.\n\nSistema: O Cavaleiro “apaga” seu cosmo (igual a virtude Cosmo Oculto [Geral]) e não demonstra nenhuma motivação, raiva ou ódio sendo imune a qualquer poder ou Técnica que tente enxergar suas intenções, suas mentiras, verdades, sentimentos ou Santuário . Qualquer tentativa de interação com o usuário, que contrarie suas verdadeiras intenções, terá o Duelo de Cosmo passivo + 1 de Modificador Positivo como dificuldade para sobressair a intenção assassina.\n\nEspecial: Elimina a característica Barreira dos Santuários, evitando que o Cavaleiro receba os Modificadores Negativos.\n\nEspecial: As Virtudes Telepata (apenas se direcionada ao Cavaleiro) e Sensitivo “Sente algo estranho em seu Domínio ” e pela Dádiva Unificação com o universo [Sábio]  (basta entrar na Domínio do Personagem) anula essa Dádiva.\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nCombinação: Atuação, +\n\nHabilidade Especial do Cosmo  (Cosmo Alerta): A Virtude Noção do Perigo junto com essa Dádiva alerta o Personagem antes de entrar em Domínios alheios, salvo se for um Domínio de um Cavaleiro com Cosmo Oculto.\n\nHabilidade Especial do Cosmo (Amigo Precioso): A Virtude Companheiro de Cosmo junto com essa Dádiva  permite que seus companheiros não sejam afetados pela Característica Barreira dos Santuários.",
+      "page": "97",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Artista. Nível de referência no livro: 8. Conferir aquisição conforme evolução e status.",
+      "category": "Artista",
+      "level": 8,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "Atuação, +",
+      "duration": "[DIAS] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artist:gift:8:INTENÇÃO ASSASSINA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            97
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "32504823d2bc29ef",
+    "name": "Rajada",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro deixa sua expressão inocente e bela tomar conta. Seu cosmo começa a brilhar de forma sutil, como se fosse uma obra de arte em movimento. Com um gesto suave, ele libera sua arte cósmica, que se manifesta como uma rajada de energia pura. Ao liberar sua arte cósmica, ele causa danos devastadores aos oponentes, mostrando que por trás da beleza existe um guerreiro formidável.\n\nSistema: O Jogador precisa ter sucesso na Manobra Ataque de Foco para o efeito funcionar.\n\nBronze: 10 de Dano\n\nPrata: 20 de Dano\n\nOuro: 30 de Dano\n\nAção: Ação de Cosmo + Ação de Movimento Parcial\n\nResistência: Não\n\nHabilidade Especial do Cosmo (Melodia Continua): A Virtude Semideus em conjunto com esta Habilidade permite ao Cavaleiro atingir o mesmo alvo mais uma única vez. E atingir outros alvos diferentes para cada ação de Movimento Parcial que ele utilizar.",
+      "page": "97–98",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Artista. Nível de referência no livro: 9. Conferir aquisição conforme evolução e status.",
+      "category": "Artista",
+      "level": 9,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[INSTANTÂNEA] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artist:ability:9:RAJADA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            97,
+            98
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f9c9ddfdc68eaa2c",
+    "name": "Zona",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Artista fecha os olhos e entra em um estado meditativo profundo. Ele começa a atuar de forma harmoniosa e suave enquanto seu cosmo ressoa com o universo. O cosmo ao seu redor responde à sua harmonia, criando padrões brilhantes no ar que representam os fluxos de energia cósmica. Esses padrões se entrelaçam em torno do Cavaleiro, formando uma intricada teia de aranha cósmica que só ele pode ver. Isso permite que ele sinta cada movimento, cada respiração e cada traço de cosmo em seu ambiente e nos corpos das pessoas ao seu redor.\n\nSistema: Faz com que tudo dentro d o Domínio do Personagem que toque as linhas seja perceptível ao Cavaleiro: ilusões falsas, territórios (são anulados), identificar tipos de Cosmo, seguir Cosmos, personalidades, Santuários, barreiras, artefatos e Níveis de poder do inimigo, alvos escondidos entre outras situações que envolvam Cosmo que fica a critério do Mestre.\n\nEspecial: A Dádiva Unificação com o universo  enxerga essas linhas (basta entrar na Domínio do Personagem) e “pode” anular essa Dádiva.\n\nAção: Ação de Cosmo + Ação de Movimento Total\n\nResistência: Não\n\nHabilidade Especial do Cosmo  (Mãos de Cronos) : Essa Dádiva junto do Cosmo  Divino Utilização de Cosmo  permite ao jogador ver o passado que aconteceu cerca de 1h atrás para cada graduação de Utilização do Cosmo.",
+      "page": "98–99",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Artista. Nível de referência no livro: 10. Conferir aquisição conforme evolução e status.",
+      "category": "Artista",
+      "level": 10,
+      "action": "Ação de Cosmo + Ação de Movimento Total",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[CONTÍNUA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artist:gift:10:ZONA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            98,
+            99
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "9a03f46d21adde88",
+    "name": "Atuação Rápida",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Em um espetáculo deslumbrante  o Cavaleiro eleva sua arte a novos limites. Seus gestos graciosos e precisos transformam seu instrumento que emite várias Habilidades/Dádivas simultaneamente. Essas notas ressoam com diferentes tipos de cosmos, uma aura brilhante de energia cósmica se forma ao redor dele, entrelaçando-se em padrões complexos. O efeito desse poder é verdadeiramente hipnotizante, confundindo os sentidos de seus inimigos e deixando-os incapazes de acompanhar a complexidade de suas criações. Cada atuação tem uma função específica, seja para desorientar, defender ou atacar. O Artist a domina a arte de usar seu instrumento \"da morte\" com maestria e precisão, tornando-se um oponente notável em batalha.\n\nSistema: O Personagem pode sustentar efeitos já ativos e pode adicionar novos ignorando o seu limite de espaços  de Habilidade/Dádiva. É necessário ser bem sucedido no Teste da Perícia Atuação. O Usuário consegue introduzir +1 nova melodia por turno sustentando os efeitos anteriores limitado a Graduação da Perícia Atuação do Personagem. Difícil (15) para Habilidades/Dádivas de Bronze Complexa (20) para Habilidades/Dádivas de Prata Lendária (30) para Habilidades/Dádivas de Ouro A cada Teste, a partir do primeiro, o jogador perde um dado na jogada de atuação. Uma falha faz com que todos os efeitos, inclusive os que já estavam ativos, se anulem.\n\nEspecial: A Virtude Anjo permite um Modificador Positivo + 1 nos Testes de Atuação junto com essa Habilidade.\n\nAção: Ação de Cosmo + Ação Parcial\n\nResistência: Não\n\nCombinação: Atuação, +",
+      "page": "99",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Artista. Nível de referência no livro: 11. Conferir aquisição conforme evolução e status.",
+      "category": "Artista",
+      "level": 11,
+      "action": "Ação de Cosmo + Ação Parcial",
+      "resistance": "Não",
+      "combination": "Atuação, +",
+      "duration": "[SUSTENTADA] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artist:ability:11:ATUAÇÃO RÁPIDA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            99
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "74180016db5f202e",
+    "name": "Benção de Apollo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Artista após dedicados treinamentos, alinha sua arte com perfeição, aprofundando sua ligação com sua constelação.  Quando ele ativa essa habilidade, sua música transcende o físico, penetrando diretamente na mente do inimigo, causando perturbação e dor mental. O inimigo fica cativo da atuação , incapaz de resistir, tornando -se vulnerável aos ataques subsequentes do Cavaleiro. A conexão direta com a mente do inimigo torna essa habilidade inescapável.\n\nSistema: O Cavaleiro consegue que sua arte entre diretamente no cérebro do inimigo, sendo assim não podendo ser parada. Exemplo: parar de escutar colocando as mãos nos ouvidos, para de ver colocando a mão nos olhos. (É um efeito, não precisa tocar um instrumento).\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "100",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Artista. Nível de referência no livro: 12. Conferir aquisição conforme evolução e status.",
+      "category": "Artista",
+      "level": 12,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artist:gift:12:BENÇÃO DE APOLLO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            100
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "01f0d01fae8de05f",
+    "name": "Caçador",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro inicia sua ação com gestos suaves e graciosos, movendo suas mãos em um padrão hipnótico. Seu cosmo se manifesta como notas douradas que envolvem seus inimigos. A atuação cósmica entra em sintonia com o cosmo de seus alvos, revelando sua localização e intenções. O efeito desse poder é que o inimigo se torna rastreável, com o Artista sintonizando-se com a estrela protetora de cada indivíduo e identificando seus cosmos. Assim, ele pode localizá-los e antecipar seus movimentos, transformando sua arte cósmica em uma t rilha de rastreamento.\n\nSistema: O Cavaleiro pode encontrar inimigos pela leitura de Cosmo. Para isso, é necessário saber a Constelação protetora do alvo e enxerga-la no céu. Após identificado , o Cavaleiro consegue traçar uma linha da constelação que guia diretamente ao alvo.\n\nResistência: Teste resistido de Utilização do Cosmo x Furtividade. Se o alvo não souber que está sendo procurado ele tem um Modificador Negativo de -5 no TdAP.\n\nEspecial: O poder dessa Habilidade supera o limite do Domínio do Cavaleiro. Ele, simplesmente, encontra o alvo em qualquer lugar da Terra.\n\nAção: Ação de Cosmo + Ação de Movimento total\n\nResistência: Sim\n\nHabilidade Especial do Cosmo  (Caçador de Dimensões): Virtude Fotógrafo de Cosmo junto com essa Habilidade permite ao Personagem  ampliar seu Domínio  a outras dimensões.",
+      "page": "100",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Artista. Nível de referência no livro: 13. Conferir aquisição conforme evolução e status.",
+      "category": "Artista",
+      "level": 13,
+      "action": "Ação de Cosmo + Ação de Movimento total",
+      "resistance": "Teste resistido de Utilização do Cosmo x Furtividade. Se o alvo não souber que está sendo procurado ele tem um Modificador Negativo de -5 no TdAP.",
+      "combination": "",
+      "duration": "[DIAS] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artist:ability:13:CAÇADOR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            100
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5c526070f9ee1e29",
+    "name": "Expansão do Domínio",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Em meio à serenidade, o Cavaleiro,  se unifica com o cosmo. Seu cosmo se transforma em ondas que fluem pelo campo de batalha, afetando a realidade. Seus movimentos são graciosos, como uma dança, enquanto ele sintoniza sua energia cósmica com a harmonia universal. O cosmo do Artista expande-se, envolvendo a todos em um campo de energia intensificado. Ele sente uma força renovada e um aumento em seu próprio cosmo, permitindo -lhe lutar com maior poder.\n\nSistema: O Cavaleiro recebe +1 Ponto de Domínio Extra.\n\nCombinação: Percepção Extrassensorial, +",
+      "page": "100–101",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Artista. Nível de referência no livro: 14. Conferir aquisição conforme evolução e status.",
+      "category": "Artista",
+      "level": 14,
+      "action": "",
+      "resistance": "",
+      "combination": "Percepção Extrassensorial, +",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artist:gift:14:EXPANSÃO DO DOMÍNIO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            100,
+            101
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a50bbe0865864abf",
+    "name": "Arte da Morte",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Artista, rodeado pela energia cósmica, molda essa energia em sua forma mais pura, aprimorando sua habilidade artística. Cada movimento é fluido e preciso, refletindo a harmonia de seu cosmo. O efeito desse poder é surpreendente. O Artista pode não só atacar fisicamente seu inimigo, mas também atuar em conjunto , afetando o próprio tecido da realidade.\n\nSistema: O Personagem pode atuar e atacar ao mesmo tempo. O Jogador se bem sucedido no teste de Atuação pode usar suas Ações de Ataque ou de Defesa ao mesmo tempo que sustenta outras Habilidades/Dádivas.\n\nEspecial: Não pode ser utilizada em conjunto com Atuação Rápida.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial.\n\nResistência: Não",
+      "page": "101",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Artista. Nível de referência no livro: 15. Conferir aquisição conforme evolução e status.",
+      "category": "Artista",
+      "level": 15,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial.",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artist:ability:15:ARTE DA MORTE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            101
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "faf6b2806b05e1dd",
+    "name": "Réplicas",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro assume uma postura majestosa, seu instrumento em mãos. Seus gestos são elegantes e harmoniosos, como se ele regesse uma sinfonia cósmica. Seu cosmo irradia em ondas sonoras visíveis, formando imagens espelhadas de si mesmo. O Artista cria múltiplas projeções holográficas de si mesmo, todas agindo em perfeita sincronia. Essas projeções de cosmo tornam quase impossível localizar o verdadeiro. Seu poder confunde e desorienta os adversários, tornando-o um mestre da ilusão no campo de batalha.\n\nSistema: O Cavaleiro projeta uma imagem que é sua réplica.  As imagens precisam estar dentro do Domínio do Personagem. Se uma imagem sofrer dano ela some instantaneamente e se o verdadeiro for atingido todas somem. Custa 1 ponto de Cosmo por imagem.\n\nEspecial: A Virtude Telepata, Sensitivo e as  Dádivas Unificação com o universo [Sábio] e Zona [Artista] são imunes a esta Dádiva.\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nHabilidade Especial do Cosmo  (Clone): O Cosmo  Divino Porteiro das Dimensões na terceira graduação junto com essa Dádiva permite ao Cavaleiro criar e controlar todas essas imagens em lugares diferentes realizando ações diferentes. Para isso, o Cavaleiro precisa estar em meditação total e queimando 1 ponto de Cosmo residual que fica com a projeção mais os gastos pelas projeções em usos de Habilidades, Dádivas, Técnicas entre outros, se utilizado. Se uma projeção morrer, todas desaparecem automaticamente e o P ersonagem perde 1 ponto do Atributo Cosmo permanente.",
+      "page": "101–102",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Artista. Nível de referência no livro: 16. Conferir aquisição conforme evolução e status.",
+      "category": "Artista",
+      "level": 16,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[CONTÍNUA] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artist:gift:16:RÉPLICAS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            101,
+            102
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "2fd8564186a96073",
+    "name": "Arrebatar",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro inicia sua atuação de forma majestosa. Seu cosmo se eleva, envolvendo seu corpo com uma aura deslumbrante. Enquanto ele atua e utiliza seu instrumento, uma energia cósmica flui de seus movimentos para envolver o inimigo. À medida que a atuação continua, o adversário começa a sentir um entorpecimento nos membros, ficando gradualmente paralisado. Simultaneamente, o cosmo do inimigo é drenado e absorvido pelo Cavaleiro que demonstra seu domínio no controle de cosmo, deixando o oponente enfraquecido  e impotente diante de sua habilidade artística mortal.\n\nSistema: O alvo fica imobilizado (ver imobilização sustentada) enquanto preso, o alvo, perde 2 pontos de Cosmo Energia por turno que o Usuário da Habilidade adiciona aos seus Pontos de Cosmo.\n\nEspecial: Não pode ser utilizada em conjunto com Atuação Rápida.\n\nResistência: TdA Resistido da Perícia Utilização do Cosmo.\n\nAção: Ação de Cosmo + Ação de Movimento Total\n\nResistência: Cosmo\n\nCombinação: Atuação, +",
+      "page": "102",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Artista. Nível de referência no livro: 17. Conferir aquisição conforme evolução e status.",
+      "category": "Artista",
+      "level": 17,
+      "action": "Ação de Cosmo + Ação de Movimento Total",
+      "resistance": "TdA Resistido da Perícia Utilização do Cosmo.",
+      "combination": "Atuação, +",
+      "duration": "[SUSTENTADA] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artist:ability:17:ARREBATAR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            102
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8c4ced7ae8c9b1c0",
+    "name": "Abalo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro inicia sua performance com graça e destreza. Seu cosmo flui em harmonia com seus movimentos artísticos enquanto ele atua. À medida que a arte envolvente toma conta, a mente do inimigo é arrancada de seu corpo, perturbando sua C osmo Energia e abalando seus sentidos e determinação. O adversário fica momentaneamente desorientado e vulnerável aos próximos movimentos do Cavaleiro, que aproveita essa oportunidade para atacar com ainda mais intensidade.\n\nSistema: O inimigo perde 1 dado do Atributo Sentidos (temporário) por rodada enquanto diante da atuação . Se o valor do Atributo Sentidos do alvo chegar a 0  o inimigo fica em estado de Morte Estável (seus Atributos físicos vão a 0).\n\nAção: Ação de Cosmo + Ação de Movimento Parcial\n\nResistência: Sim, Duelo de Cosmo Passivo. O Usuário recebe +1 de Modificador Positivo para superar o alvo.\n\nCombinação: Utilização do Cosmo, +",
+      "page": "102–103",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Artista. Nível de referência no livro: 18. Conferir aquisição conforme evolução e status.",
+      "category": "Artista",
+      "level": 18,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial",
+      "resistance": "Sim, Duelo de Cosmo Passivo. O Usuário recebe +1 de Modificador Positivo para superar o alvo.",
+      "combination": "Utilização do Cosmo, +",
+      "duration": "[SUSTENTADA] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artist:gift:18:ABALO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            102,
+            103
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "058cb3e70c2a911f",
+    "name": "Arte de Apollo",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro eleva seu cosmo ao máximo. Seu poder cósmico e de ataque aumentam exponencialmente, afetando não apenas a si mesmo, mas também seus companheiros. Uma aura cintilante envolve o grupo, amplificando a força de seus golpes e energizando-os para a batalha iminente , enquanto seus inimigos sentem a pressão do cosmo crescendo e tremem diante desse poder.\n\nSistema: Ao usar essa Habilidade o Cavaleiro Artista  eleva 1 Nível de Dano e 1 Nível de Ataque de seus companheiros e as suas.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial\n\nResistência: Não\n\nCombinação: Utilização do Cosmo, +",
+      "page": "103",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Artista. Nível de referência no livro: 19. Conferir aquisição conforme evolução e status.",
+      "category": "Artista",
+      "level": 19,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial",
+      "resistance": "Não",
+      "combination": "Utilização do Cosmo, +",
+      "duration": "[SUSTENTADA] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artist:ability:19:ARTE DE APOLLO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            103
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "4b373787520f6efc",
+    "name": "Selamento",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Seu controle impecável do cosmo permite que ele aprisione o Big Bang dentro do corpo de seu inimigo, tornando -o incapaz de usar ou liberar sua Cosmo Energia. O adversário fica impotente diante desse domínio espetacular do cosmo.\n\nSistema: Impede o alvo de queimar Cosmo, inibindo também qualquer Ação de Cosmo.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial\n\nResistência: Cosmo\n\nEspecial: O Artista aprende a determinação de selar divindades, e a canalizar seu cosmo para dominar a arte do selamento. Seus gestos refinados e precisos atraem o poder das estrelas de sua constelação. Ele aprimora seu conhecimento, adquirindo a habilidade de selar divindades, desafiando até as entidades mais poderosas e mantendo o equilíbrio cósmico.\n\nSistema: O personagem adquire com a Dádiva o conhecimento dos selos e artefatos tornando-se capaz de selar divindades recebendo +1 nos TAP Selamento.\n\nCombinação: Selamento, +",
+      "page": "103",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Artista. Nível de referência no livro: 20. Conferir aquisição conforme evolução e status.",
+      "category": "Artista",
+      "level": 20,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial",
+      "resistance": "Cosmo",
+      "combination": "Selamento, +",
+      "duration": "[CONTÍNUA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artist:gift:20:SELAMENTO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            103
+          ]
+        }
+      }
+    }
+  }
+]

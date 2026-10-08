@@ -1,0 +1,806 @@
+[
+  {
+    "_id": "2e64b2aa0fc7fdc7",
+    "name": "Melhoria Domador de Bestas",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sistema: +1 em Domínio.\n\nAção: Ação de Cosmo.\n\nResistência: Não.",
+      "page": "118",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Domador de Bestas. Nível de referência no livro: 1. Conferir aquisição conforme evolução e status.",
+      "category": "Domador de Bestas",
+      "level": 1,
+      "action": "Ação de Cosmo.",
+      "resistance": "Não.",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "improvement"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "beastmaster:improvement:1:MELHORIA DOMADOR DE BESTAS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            118
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "1bc20a2ed776fc09",
+    "name": "Companheiro Fiel",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Ao canalizar o Cosmo, o Domador invoca ou cria um vínculo cósmico com uma Besta fiel que o acompanha em combate, criando uma ligação inquebrável. O vínculo cósmico permite a troca de habilidades entre domador e besta . Essa ligação é telepática e emocional, permitindo comunicação instantânea e sincronia em combate. A criatura age como uma extensão do domador, combinando ataques físicos com o poder do cosmo, enquanto o cavaleiro pode canalizar sua energia para amplificar as habilidades da besta. Esse elo evolui com o tempo, fortalecendo tanto o poder da Besta quanto o domínio do cosmo do Domador.\n\nSistema: A criatura seguirá a sistemática das Bestas descritas acima.\n\nAção: Ação de Cosmo + Ação Livre.\n\nResistência: Não.\n\nEspecial: O Domador e a Besta se comunicam telepaticamente e ambos se entendem . A Virtude Telepatia NÃO consegue “decifrar” a linguagem falada entre Domador e Besta. A Habilidade do Sábio Unificação com o Universo consegue “traduzir”, e assim entender, o que Domador e Besta “falam”.",
+      "page": "118",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Domador de Bestas. Nível de referência no livro: 1. Conferir aquisição conforme evolução e status.",
+      "category": "Domador de Bestas",
+      "level": 1,
+      "action": "Ação de Cosmo + Ação Livre.",
+      "resistance": "Não.",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "beastmaster:ability:1:COMPANHEIRO FIEL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            118
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "5bc3685819507c22",
+    "name": "Proteção Bestial",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Besta age instintivamente para proteger seu Domador, criando um escudo vivo contra ataques.\n\nSistema: A criatura pode usar uma reação para interceptar um ataque contra o Domador, reduzindo o dano pela metade.  A outra metade do dano é repassado para a Besta que somente receberá metade do dano repassado.\n\nAção: Reação.\n\nResistência: Não.",
+      "page": "118–119",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Domador de Bestas. Nível de referência no livro: 2. Conferir aquisição conforme evolução e status.",
+      "category": "Domador de Bestas",
+      "level": 2,
+      "action": "Reação.",
+      "resistance": "Não.",
+      "combination": "",
+      "duration": "[REAÇÃO] [ALVO]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "beastmaster:gift:2:PROTEÇÃO BESTIAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            118,
+            119
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "7c9c8782d16abf38",
+    "name": "Investida Coordenada",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Domador e sua Besta atacam como um só, realizando um golpe devastador. A Besta avança em perfeita sincronia com ele, ambos desferindo um ataque poderoso que ecoa como um trovão. A energia liberada rasga o chão e cria ondas de choque que destroem tudo ao redor, enquanto o inimigo é lançado longe, com a armadura fragmentada e profundas lacerações em seu corpo.\n\nSistema: O Jogador precisa ter sucesso na Manobra Ataque de Foco para o efeito funcionar.\n\nBronze: 10 de Dano\n\nPrata: 20 de Dano\n\nOuro: 30 de Dano\n\nAção: Ação de Cosmo + Ação de Movimento Parcial.\n\nResistência: Não",
+      "page": "119",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Domador de Bestas. Nível de referência no livro: 3. Conferir aquisição conforme evolução e status.",
+      "category": "Domador de Bestas",
+      "level": 3,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial.",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[INSTANTÂNEA] [ALVO]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "beastmaster:ability:3:INVESTIDA COORDENADA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            119
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "666c2eb270552698",
+    "name": "Resistência Férrea",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro ergue uma mão ao céu, traçando lentamente sua constelação enquanto seu cosmo emana, envolvendo a si e à Besta ao seu lado. A energia densa cria uma barreira quase tangível que distorce o ar ao redor, rachando o solo com a pressão. Os ataques do inimigo se desfazem ao contato, deixando apenas faíscas impotentes, enquanto o Cavaleiro e a Besta avançam ilesos, irradiando um poder inquebrável.\n\nSistema: O Domador ou a Besta recebe +1 de Proteção de Armadura.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial.\n\nResistência: Não.\n\nCombinação: Treinamento, +",
+      "page": "119",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Domador de Bestas. Nível de referência no livro: 4. Conferir aquisição conforme evolução e status.",
+      "category": "Domador de Bestas",
+      "level": 4,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial.",
+      "resistance": "Não.",
+      "combination": "Treinamento, +",
+      "duration": "[CONTÍNUA] [SUPORTE] [REAÇÃO]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "beastmaster:gift:4:RESISTÊNCIA FÉRREA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            119
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "7282e15cdb34777f",
+    "name": "Sinergia Selvagem",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O laço entre o Domador e sua Besta se intensifica, permitindo que ambos ampliem suas capacidades simultaneamente.  O vínculo cósmico permite a troca de habilidades entre Domador e Besta.\n\nSistema 1: A cada 5 Níveis o Domador de Bestas recebe como Modificador:\n\n+1 Ataque Extra causado pela Besta.\n\nSistema 2: 1 Vez por dia a cada 5 Níveis o Domador pode: Domador → Besta: O domador pode infundir sua energia cósmica permitindo usar a Besta como meio para utilizar suas Habilidades/Dádivas e Técnicas. Besta → Domador: A besta pode transferir parte de sua for ça instintiva, melhorando temporariamente habilidades do Domador. Por exemplo: Melhorando seu olfato, visão, etc. Permitir respirar debaixo d’água, voar, saltar ou correr mais.\n\nAção: Ação de Cosmo + Ação de Movimento correspondente Habilidade/Dádiva/Técnica.\n\nResistência: Não.\n\nEspecial: Dois corpos uma mente: Uma vez por dia a cada 10 Níveis o Domador pode incorporar sua Besta e ter o domínio de seu corpo SEM perder o controle do seu. Neste estado o Domador fica IMUNE a qualquer Habilidade/Dádiva que tente controlar suas ações.",
+      "page": "119–120",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Domador de Bestas. Nível de referência no livro: 5. Conferir aquisição conforme evolução e status.",
+      "category": "Domador de Bestas",
+      "level": 5,
+      "action": "Ação de Cosmo + Ação de Movimento correspondente Habilidade/Dádiva/Técnica.",
+      "resistance": "Não.",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "specialization"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "beastmaster:specialization:5:SINERGIA SELVAGEM",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            119,
+            120
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3508512d867cc53f",
+    "name": "Sentidos Compartilhado",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Após um rigoroso treinamento em meditação e controle do cosmo, o Cavaleiro aprende a alinhar seu espírito ao da Besta, criando uma conexão sensorial perfeita. O Domador fecha os olhos e ativa a técnica, traçando a constelação no ar enquanto sua aura se funde à energia da criatura.\n\nSistema: O Domador consegue utilizar os 5 sentidos da sua Besta onde quer que ela esteja e determinar sua localização exata, inclusive em outros planos. O Domador ver pelos olhos da Besta, escuta pelos ouvidos da Besta, cheira pelo nariz da Besta, sente sabor e tato pela Besta. Durante o uso desta Dádiva o Domador permanece imóvel (Movimento 0).\n\nAção: Ação de Cosmo + Movimento Total.\n\nResistência: Não.",
+      "page": "120",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Domador de Bestas. Nível de referência no livro: 6. Conferir aquisição conforme evolução e status.",
+      "category": "Domador de Bestas",
+      "level": 6,
+      "action": "Ação de Cosmo + Movimento Total.",
+      "resistance": "Não.",
+      "combination": "",
+      "duration": "[CONTÍNUA] [SUPORTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "beastmaster:gift:6:SENTIDOS COMPARTILHADO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            120
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "d239039ce2f6fd4e",
+    "name": "Fúria Instintiva",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Após intensos treinos de resistência e controle do vínculo cósmico,  o Cavaleiro aprende a canalizar o sofrimento em força, conectando-se ainda mais profundamente à Besta. Quando ambos são feridos, o cosmo irrompe em chamas vermelhas e negras, envolvendo -os em uma aura selvagem. O impacto da fúria primal abala a terra, cri ando rachaduras profundas enquanto o Cavaleiro e sua criatura desferem ataques brutais, rasgando a armadura inimiga.\n\nSistema: O Jogador recebe +1 de Bônus Aplicado ao dano.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial.\n\nResistência: Não.\n\nCombinação: Treinamento, +",
+      "page": "120",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Domador de Bestas. Nível de referência no livro: 7. Conferir aquisição conforme evolução e status.",
+      "category": "Domador de Bestas",
+      "level": 7,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial.",
+      "resistance": "Não.",
+      "combination": "Treinamento, +",
+      "duration": "[CONTÍNUA] [SUPORTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "beastmaster:ability:7:FÚRIA INSTINTIVA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            120
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "033cc1ee271163d6",
+    "name": "Presença Dominante",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro estende as mãos para os lados, concentrando sua energia cósmica e criando uma aura negra e opressiva que envolve a si e à Besta. A criatura, com seus olhos brilhando ferozmente, emite um rugido que reverbera pela terra, causando tremores nas ro chas e árvores ao redor. O ar se torna denso, e os inimigos ao redor sentem seu corpo pesar e sua vontade enfraquecer diante da intimidação avassaladora.\n\nSistema: Impede os inimigos de usar Determinação ou Orgulho.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial.\n\nResistência: Sentidos.",
+      "page": "121",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Domador de Bestas. Nível de referência no livro: 8. Conferir aquisição conforme evolução e status.",
+      "category": "Domador de Bestas",
+      "level": 8,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial.",
+      "resistance": "Sentidos.",
+      "combination": "",
+      "duration": "[CONTÍNUA] [REAÇÃO] [SUPORTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "beastmaster:gift:8:PRESENÇA DOMINANTE",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            121
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "e0bf08a6d51cfb54",
+    "name": "Rastreador",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Após anos de treinamento intenso, o Cavaleiro aperfeiçoa a arte de rastrear com precisão, conectando-se profundamente com sua Besta e seus sentidos , desenvolvendo uma habilidade única de identificar qualquer alvo. Ele fecha os olhos, sentindo o fluxo cósmico ao seu redor, antes de liberar uma aura azul cintilante que reverbera como ondas, iluminando o campo de batalha. que se expande ao seu redor, dist orcendo o ar e criando uma visão sobrenatural da área. No momento seguinte, ele se move com precisão sobrenatural, localizando seu alvo instantaneamente.\n\nSistema: Esta Dádiva fornece +1 de Modificador Positivo na Intuição e nas Perícias Espionar, Furtividade, Percepção Extrassensorial.\n\nAção: Ação de Cosmo.\n\nResistência: Não.\n\nCombinação: Treinamento, +",
+      "page": "121",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Domador de Bestas. Nível de referência no livro: 9. Conferir aquisição conforme evolução e status.",
+      "category": "Domador de Bestas",
+      "level": 9,
+      "action": "Ação de Cosmo.",
+      "resistance": "Não.",
+      "combination": "Treinamento, +",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "beastmaster:ability:9:RASTREADOR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            121
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "a3aba7d6bc1ca77a",
+    "name": "Ligação Espiritual",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A conexão entre o Domador e sua Besta se fortalece, permitindo que ambos compartilhem energia vital para se manterem em combate.\n\nSistema: Permite transferir Pontos de Cosmo ou Pontos de Vida entre o Domador e sua Besta.\n\nAção: Ação de Cosmo + Ação de Movimento Total.\n\nResistência: Não.\n\nCombinação: Utilização de Cosmo, +\n\nEspecial: A Besta torna -se um Receptáculo de cosmo energia, permitindo armazenar 1 Ponto de Cosmo.",
+      "page": "121",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Domador de Bestas. Nível de referência no livro: 10. Conferir aquisição conforme evolução e status.",
+      "category": "Domador de Bestas",
+      "level": 10,
+      "action": "Ação de Cosmo + Ação de Movimento Total.",
+      "resistance": "Não.",
+      "combination": "Utilização de Cosmo, +",
+      "duration": "[INSTANTÂNEA] [PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "beastmaster:gift:10:LIGAÇÃO ESPIRITUAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            121
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "14650c2433a489c6",
+    "name": "Domínio Compartilhado",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Domador e sua Besta desenvolvem uma maior sinergia cósmica aumentando o poder de seu vínculo cósmico.\n\nSistema: O Domador consegue deslocar o seu domínio e colocá-lo na Besta. Permitindo que o Domador consiga realizar tudo que precisaria de seu domínio para realizar, mas fora dele. Durante o uso desta Habilidade o Domador permanece imóvel (Movimento 0).\n\nAção: Ação de Cosmo + Movimento Total.\n\nResistência: Não.",
+      "page": "121–122",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Domador de Bestas. Nível de referência no livro: 11. Conferir aquisição conforme evolução e status.",
+      "category": "Domador de Bestas",
+      "level": 11,
+      "action": "Ação de Cosmo + Movimento Total.",
+      "resistance": "Não.",
+      "combination": "",
+      "duration": "[CONTÍNUA] [SUPORTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "beastmaster:ability:11:DOMÍNIO COMPARTILHADO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            121,
+            122
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "c1ea79ab3c794db7",
+    "name": "Visão Aérea",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Domador consegue antecipar os passos de seus inimigos com uma visão área de determinada área.\n\nSistema: O Domador triplica seu Domínio e o deslocar para uma área superior permitindo uma visão ampla de cima para baixo de determinado lugar. Esse lugar deve estar na área de visão do Personagem.\n\nAção: Ação de Cosmo + Movimento Total.\n\nResistência: Não.\n\nHabilidade Especial do Cosmo  (Olho Dimensional) : O Big Bang Outra Dimensão combinada com esta Dádiva permite ao Cavaleiro enxergar dentro dos locais fechados.\n\nHabilidade Especial do Cosmo (Olho de Fogo): A Virtude Fotógrafo de Cosmo  combinada com esta Dádiva permite ao Cavaleiro enxergar todos os Cosmos dentro do Domínio da Dádiva. Essa Habilidade Especial NÃO enxerga Cosmo Oculto.\n\nEspecial: As Dádivas: Zona [Artista 10°] e Unificação com o universo [Sábio 20º] percebem automaticamente o uso dessa Dádiva.",
+      "page": "122",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Domador de Bestas. Nível de referência no livro: 12. Conferir aquisição conforme evolução e status.",
+      "category": "Domador de Bestas",
+      "level": 12,
+      "action": "Ação de Cosmo + Movimento Total.",
+      "resistance": "Não.",
+      "combination": "",
+      "duration": "[CONTÍNUA] [SUPORTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift",
+      "notes": "Correção de grafia no nome; título no livro: Visão Áerea. Regras preservadas."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "beastmaster:gift:12:VISÃO ÁEREA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            122
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "0aecf606f382b207",
+    "name": "Reflexos Instintivos",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Besta desenvolve reflexos aprimorados, tornando -a mais ágil e perigosa contra adversários descuidados.\n\nSistema: Toda vez que o alvo obtiver uma falha crítica em sua jogada de dados de Habilidades de Luta a Besta ataca-o. Causando o dano abaixo para cada “1” da jogada adversária. Dano: Graduação do Atributo Cosmo do Domador\n\nAção: Ação de Cosmo + Ação Livre.\n\nResistência: Não.\n\nCombinação: Treinamento, +",
+      "page": "122",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Domador de Bestas. Nível de referência no livro: 13. Conferir aquisição conforme evolução e status.",
+      "category": "Domador de Bestas",
+      "level": 13,
+      "action": "Ação de Cosmo + Ação Livre.",
+      "resistance": "Não.",
+      "combination": "Treinamento, +",
+      "duration": "[CONTÍNUA] [ALVO]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "beastmaster:ability:13:REFLEXOS INSTINTIVOS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            122
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "9055b58e2ced7302",
+    "name": "Investida Bestial",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Domador e sua Besta realizam ataques coordenados com precisão letal, ignorando completamente as defesas do adversário.\n\nSistema: O Personagem recebe +1 Ação de Ataque. Esses ataques extras são realizados pela Besta.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial.\n\nResistência: Não.\n\nCombinação: Treinamento, +",
+      "page": "123",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Domador de Bestas. Nível de referência no livro: 14. Conferir aquisição conforme evolução e status.",
+      "category": "Domador de Bestas",
+      "level": 14,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial.",
+      "resistance": "Não.",
+      "combination": "Treinamento, +",
+      "duration": "[CONTÍNUA] [SUPORTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "beastmaster:gift:14:INVESTIDA BESTIAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            123
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "7f415fd676a82abd",
+    "name": "Devoração Energética",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Besta consome a energia de seus adversários derrotados, revitalizando tanto ela quanto o Domador.\n\nSistema: O Domador e a Besta recuperam o dobro de cura natural e da recuperação de cosmo, além de recuperarem 1 nível de Status Cansado ou Recuperado e 1 uso de Habilidade/Dádiva diária.\n\nAção: Ação de Cosmo + Ação de Movimento Total.\n\nResistência: Não.",
+      "page": "123",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Domador de Bestas. Nível de referência no livro: 15. Conferir aquisição conforme evolução e status.",
+      "category": "Domador de Bestas",
+      "level": 15,
+      "action": "Ação de Cosmo + Ação de Movimento Total.",
+      "resistance": "Não.",
+      "combination": "",
+      "duration": "[INSTANTÂNEA] [ALVO]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "beastmaster:ability:15:DEVORAÇÃO ENERGÉTICA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            123
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "796a5059c4e1a434",
+    "name": "Chamado da Alcateia",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Domador convoca aliados bestiais temporários para reforçar o campo de batalha, transformando o combate em um verdadeiro cerco selvagem.\n\nSistema: O Personagem convoca 1 Besta para cada Graduação em Combate fazendo com que o alvo fique em desvantagem.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial.\n\nResistência: Não.\n\nCombinação: Combate, +",
+      "page": "123",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Domador de Bestas. Nível de referência no livro: 16. Conferir aquisição conforme evolução e status.",
+      "category": "Domador de Bestas",
+      "level": 16,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial.",
+      "resistance": "Não.",
+      "combination": "Combate, +",
+      "duration": "[LUTA] [SUPORTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "beastmaster:gift:16:CHAMADO DA ALCATEIA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            123
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8a321831b24a5bf2",
+    "name": "Rugido Devastador",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A criatura solta um rugido aterrorizante que abala a determinação dos inimigos ao seu redor.\n\nSistema: O Personagem causa medo no alvo.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial.\n\nResistência: Força.",
+      "page": "123",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Domador de Bestas. Nível de referência no livro: 17. Conferir aquisição conforme evolução e status.",
+      "category": "Domador de Bestas",
+      "level": 17,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial.",
+      "resistance": "Força.",
+      "combination": "",
+      "duration": "[LUTA] [ALVO]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "beastmaster:ability:17:RUGIDO DEVASTADOR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            123
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "afbb359a812ac7a7",
+    "name": "Renascimento Selvagem",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Mesmo diante da derrota, o Domador protege sua Besta, reafirmando seu laço inquebrantável.\n\nSistema: O Personagem anula um dano direto na Besta ou a envia para dentro do recipiente da armadura ou a teleporta para um local seguro. Uma vez utilizada essa Dádiva, o Domador só poderá convoca-la em outro combate.\n\nAção: Ação de Cosmo + Ação de Movimento Parcial.\n\nResistência: Não.",
+      "page": "123–124",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Domador de Bestas. Nível de referência no livro: 18. Conferir aquisição conforme evolução e status.",
+      "category": "Domador de Bestas",
+      "level": 18,
+      "action": "Ação de Cosmo + Ação de Movimento Parcial.",
+      "resistance": "Não.",
+      "combination": "",
+      "duration": "[INSTANTÂNEA] [REAÇÃO] [SUPORTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "beastmaster:gift:18:RENASCIMENTO SELVAGEM",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            123,
+            124
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "f1ada8b724cc9ce5",
+    "name": "Marcando Território",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Besta escolhe um local e marca o território trazendo a mudança na roleta do destino para o Domador.\n\nSistema: O Personagem cria um o efeito de sorte.\n\nAção: Ação de Cosmo.\n\nResistência: Não.",
+      "page": "124",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Domador de Bestas. Nível de referência no livro: 19. Conferir aquisição conforme evolução e status.",
+      "category": "Domador de Bestas",
+      "level": 19,
+      "action": "Ação de Cosmo.",
+      "resistance": "Não.",
+      "combination": "",
+      "duration": "[INSTATÂNEO] [SUPORTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "beastmaster:ability:19:MARCANDO TERRITÓRIO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            124
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "8b60c1fe74da487b",
+    "name": "Transformação Mística",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Neste Nível a Besta podem sofre transformações ao atingir níveis elevados, adquirindo formas mais poderosas ou novas capacidades (ex.: um lobo comum evoluir para um Fenrir ou uma fênix ganhar domínio sobre novas chamas cósmicas).\n\nSistema: A Besta adquire as mudanças abaixo Bestas Atributos: Os atributos da Besta se igualam ao Atributo associado do Domador. Pontos de Vida: A Besta possui os Pontos do Vida do Domador. Proteção a ataques: A Besta reflete em seu corpo o dobro da Proteção de Armadura de seu Domador. Iniciativa: A Besta possui a mesma iniciativa do Domador.\n\nAção: Ação de Cosmo.\n\nResistência: Não.",
+      "page": "124",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Domador de Bestas. Nível de referência no livro: 20. Conferir aquisição conforme evolução e status.",
+      "category": "Domador de Bestas",
+      "level": 20,
+      "action": "Ação de Cosmo.",
+      "resistance": "Não.",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift",
+      "notes": "Correção de grafia no nome; título no livro: Trabsformação Mística. Regras preservadas."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "beastmaster:gift:20:TRABSFORMAÇÃO MÍSTICA",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            124
+          ]
+        }
+      }
+    }
+  }
+]

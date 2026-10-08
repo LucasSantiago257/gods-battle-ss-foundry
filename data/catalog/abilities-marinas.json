@@ -1,0 +1,386 @@
+[
+  {
+    "_id": "733baedc26d6868e",
+    "name": "Mãos de Poseidon",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O General levanta as mãos e canaliza o cosmo dos oceanos de Poseidon. A energia cósmica se manifesta como poderosas ondas de água que circundam seus punhos. Com um gesto poderoso, ele desfere um golpe certeiro contra o inimigo. O impacto é devastador; a força dos maremotos irrompe do ponto de contato, produzindo um pequeno terremoto que faz a terra tremer e a água se espalhar em gotículas pelo espaço. O inimigo é atingido por essa explosão de poder, sentindo a terra sob seus pés se desfazer e os elementos da natureza obedecerem ao domínio do Marina.\n\nSistema:  O Jogador precisa ter sucesso na Manobra Ataque de Foco para o efeito funcionar. Dano: 40 + Nível.\n\nAção: Ação de Cosmo + Ação de movimento parcial\n\nResistência: Não\n\nCombinação: Utilização de Cosmo, &",
+      "page": "570",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Generais Marinas. Nível de referência no livro: 21. Conferir aquisição conforme evolução e status.",
+      "category": "Generais Marinas",
+      "level": 21,
+      "action": "Ação de Cosmo + Ação de movimento parcial",
+      "resistance": "Não",
+      "combination": "Utilização de Cosmo, &",
+      "duration": "[INSTANTÂNEA] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "marinas:ability:21:MÃOS DE POSEIDON",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            570
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "1bbf3a689566cd3a",
+    "name": "Filhos do Mar",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Quantos Cavaleiros não caíram perante a fúria do mar? Muitos desses feitos aconteceram porque Cavaleiros desavisados enfrentam Santos de Poseidon perto do Oceano, falha que não repetem nunca mais, pois não sobrevivem para repetir o erro. Enquanto luta próximo à água, o Cavaleiro concentra sua Cosmo Energia, sentindo a presença do Deus dos Mares. Seu corpo e armadura são banhados por uma aura aquática brilhante. Seus movimentos se tornam fluidos e poderosos. A água circundante se curva às suas vontades, elevando-se em ondas defensivas ou agindo como um ataque implacável. Seu inimigo, incapaz de lidar com o poder dos oceanos, é afetado por sua presença divina. O General se torna um mestre das marés, fortalecendo-se com a bênção de Poseidon para dominar o campo de batalha.\n\nSistema: Enquanto o Cavaleiro estiver na presença ou a até 100m de qualquer fonte de água (lagoa, rio ou mar ) todas as suas ações são em vantagem e nada anula suas vantagens e fica imune a desvantagem. A quantidade de água necessária fica a critério do mestre.",
+      "page": "570",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Generais Marinas. Nível de referência no livro: 22. Conferir aquisição conforme evolução e status.",
+      "category": "Generais Marinas",
+      "level": 22,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "marinas:gift:22:FILHOS DO MAR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            570
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "309aa0e358286634",
+    "name": "Escamas",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro estende os braços, erguendo suas mãos em gestos graciosos. Sua Cosmo Energia flui como correntes oceânicas ao seu redor. Enquanto seus inimigos avançam, o General concentra sua Cosmo Energia, invocando corais do fundo do mar para envolvê -lo. Esses corais formam uma barreira irrompível que o protege, enquanto sua armadura de brilha intensamente. Quando os oponentes tentam atacá-lo, suas investidas são em vão, pois eles são repelidos pelos corais afiados. O Marina se torna um guardião intransponível dos oceanos de Poseidon, deixando seus inimigos feridos e desesperados, incapazes de romper sua defesa aquática.\n\nSistema: O inimigo sofre 1 de dano para cada ataque efetivo que atingir o Usuário ou 2  de dano estando na água.\n\nAção: Ação de Cosmo\n\nResistência: Não",
+      "page": "570–571",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Generais Marinas. Nível de referência no livro: 23. Conferir aquisição conforme evolução e status.",
+      "category": "Generais Marinas",
+      "level": 23,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "marinas:ability:23:ESCAMAS",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            570,
+            571
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "2d7a85f2f5c22a3f",
+    "name": "Bolha de Coral",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O General Marina ergue os braços, traçando padrões com os dedos enquanto sua constelação brilha intensamente no horizonte. Seu cosmo se funde com os oceanos de Poseidon, e a água ao seu redor responde ao seu chamado. Uma esfera de água começa a se formar ao seu redor, subindo das profundezas do oceano. À medida que sua energia flui, corais se erguem em volta dele, reforçando sua barreira aquática. Os inimigos que se aproximam encontram uma resistência intransponível. A esfera de água protege o Cavaleiro, e os corais afiados se erguem para repelir qualquer ataque.\n\nSistema: Aumenta +2 a Proteção da Armadura do Usuário. O Modificador de PA sobe para\n\n+3 se o Usuário estiver na água.\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nCombinação: Utilização de Cosmo, &",
+      "page": "571",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Generais Marinas. Nível de referência no livro: 24. Conferir aquisição conforme evolução e status.",
+      "category": "Generais Marinas",
+      "level": 24,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "Utilização de Cosmo, &",
+      "duration": "[CONTÍNUA/REAÇÃO] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "marinas:gift:24:BOLHA DE CORAL",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            571
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "dc71d2bdc6311835",
+    "name": "Dançarino",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro aprofunda em seu treinamento, buscando o conhecimento das estrelas com determinação. Com a energia dos oceanos de Poseidon, sua técnica se intensifica. Seus movimentos se tornam mais ágeis e seus ataques mais precisos. Cada golpe é impulsionado pela leitura veloz e mortal das estrelas, aumentando drasticamente o poder de suas técnicas.\n\nSistema: Estudioso do Cosmo conseguem ler as estrelas mais rápido. Acrescente +1 de Modificador Positivo no resultado da Perícia Asterismo.\n\nCombinação: Asterismo, +",
+      "page": "571",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Generais Marinas. Nível de referência no livro: 25. Conferir aquisição conforme evolução e status.",
+      "category": "Generais Marinas",
+      "level": 25,
+      "action": "",
+      "resistance": "",
+      "combination": "Asterismo, +",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "marinas:ability:25:DANÇARINO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            571
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "9eccfa756dd04011",
+    "name": "Tsunami",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O General Marina entra em um estado de concentração profunda, seus gestos delicados refletem sua conexão com a sua constelação e os oceanos de Poseidon. Seu cosmo se mistura com a fúria de seu Deus, amplificando seu poder. Nesse momento, um turbilhão de água se forma ao redor do Cavaleiro, erguendo -se como uma tromba d'água gigante. Ele controla essa força destrutiva e a direciona com precisão contra seus inimigos. O impacto é devastador, cortando tudo em seu caminho e deixando seus adversários em estado de choque diante do poder impressionante do oceano.\n\nSistema: O jogador faz um teste da Manobra de Combate Ataque de Foco  e caso acerte trompas de água saem do chão e causam 40 + Nível para quem estiver dentro do Domínio do Cavaleiro. Custa +1 Ponto de Cosmo Energia/alvo.\n\nEspecial: A Virtude Guerreiro Elemental, elemento água, combinada com essa Dádiva aumenta o dano +10.\n\nAção: Ação de Cosmo + Ação de movimento parcial\n\nResistência: Não\n\nCombinação: Utilização do Cosmo, &",
+      "page": "571–572",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Generais Marinas. Nível de referência no livro: 26. Conferir aquisição conforme evolução e status.",
+      "category": "Generais Marinas",
+      "level": 26,
+      "action": "Ação de Cosmo + Ação de movimento parcial",
+      "resistance": "Não",
+      "combination": "Utilização do Cosmo, &",
+      "duration": "[INSTANTÂNEA] [ALVO] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "marinas:gift:26:TSUNAMI",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            571,
+            572
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "4a019ac98d40aae1",
+    "name": "Tritão",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O General Marina canaliza seu cosmo conectado com as águas oceânicas de Poseidon. Seus gestos fluem como as ondas do mar. Seu cosmo se harmoniza com os oceanos de Poseidon, tornando-se um com a vastidão aquática, à medida que seu poder cresce. O General mergulha em uma poça d'água, desaparecendo diante dos olhos de seus inimigos. Reaparece instantaneamente de outra poça d'água nas proximidades, surpreendendo seus adversários com sua velocidade e capacidade de se deslocar por vastas distâncias em questão de segundos.\n\nSistema: O Personagem pode se teletransportar de uma poça de água para outra, desde que seu corpo possa atravessar a superfície. O Deus Poseidon não mede distâncias então seus Cavaleiros podem ir de um oceano a outro em questões de segundos utilizando as correntes oceânicas. O  Personagem tem todo controle de quando aparecer entre uma superfície ou outra.\n\nEspecial: Em combate o Personagem duplica seu movimento e rola 1d10, no início do turno como ação livre, para um teste de confirmação e se o resultado for  maior igual a 8  (Ouro) ele fica inatingível esse turno (seu corpo se transforma em água).\n\nEspecial: O Marina consegue usar suas ações de luta normalmente enquanto se move entre as poças.\n\nEspecial: A Virtude Guerreiro Elemental ou Cosmo Natural combinada a esta Dádiva diminui em -1 a dificuldade do teste de confirmação para: 7 (Ouro).\n\nAção: Ação de Cosmo + Ação de movimento parcial\n\nResistência: Não\n\nHabilidade Especial do Cosmo (Salteador de Oceanos): A Virtude Território combinada com essa Habilidade pode criar poças de água em que o Personagem pode se movimentar dentre elas durante o combate triplicando seu movimento e alterando o tipo de Habilidade para L (Luta).",
+      "page": "572–573",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Generais Marinas. Nível de referência no livro: 27. Conferir aquisição conforme evolução e status.",
+      "category": "Generais Marinas",
+      "level": 27,
+      "action": "Ação de Cosmo + Ação de movimento parcial",
+      "resistance": "Não",
+      "combination": "",
+      "duration": "[INSTANTÂNEA/CONTÍNUA] [SUPORTE] [DEFESA]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "marinas:ability:27:TRITÃO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            572,
+            573
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "02f44e274214399b",
+    "name": "Oceano",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Seu cosmo flui como as marés em movimento, s ua conexão com o mar transcende e desenvolve a  habilidade de armazenar a energia e controlar o poder dos oceanos com facilidade preenchendo artefatos com energia cósmica dos oceanos de Poseidon. Tatuagens místicas representando o mar e as profundezas oceânicas, uma concha sagrada esculpida com símbolos do oceano  ou qualquer objeto que identifique o Cavaleiro e sua conexão com os oceanos.\n\nSistema: O jogador atribui a um objeto um elo entre seu Cosmo e o mar. Adicionando seu Cosmo Residual criando um artefato simples que pode guardar +5 pontos de Cosmo Energia extras que podem ser usados todos de uma vez. Estes Pontos de Cosmo Energia não são somados ao que o Corpo Humano pode suportar, são extras.\n\nCombinação: Tecnologia, +",
+      "page": "573",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Generais Marinas. Nível de referência no livro: 28. Conferir aquisição conforme evolução e status.",
+      "category": "Generais Marinas",
+      "level": 28,
+      "action": "",
+      "resistance": "",
+      "combination": "Tecnologia, +",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "marinas:gift:28:OCEANO",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            573
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "24b7770bbd0a9d6e",
+    "name": "Lobo do Mar",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O General Marina com seu cosmo fluindo em sintonia com as correntes marinhas, com  um gesto de seus braços, ele invoca as energias do oceano, fazendo com que o próprio mar responda a seu comando. Seus ataques se transformam em manifestações congelantes, capazes de congelar seus oponentes com a força das águas glaciais.\n\nSistema: Todas as Técnicas e Ações de Luta  do Cavaleiro tem uma  chance de congelar o alvo, ao final do turno.\n\nEspecial: Chance de congelar 40%  (Ver paralisado).\n\nResistência: Não\n\nCombinação: Treinamento, %",
+      "page": "573",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Generais Marinas. Nível de referência no livro: 29. Conferir aquisição conforme evolução e status.",
+      "category": "Generais Marinas",
+      "level": 29,
+      "action": "",
+      "resistance": "Não",
+      "combination": "Treinamento, %",
+      "duration": "[PERMANENTE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "ability"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "marinas:ability:29:LOBO DO MAR",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            573
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "73c9155bc1458fa9",
+    "name": "Lança de Poseidon",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O General Marina fecha os olhos e ergue seus braços, como se estivesse chamando as correntes das profundezas. Seu cosmo se funde com as águas, e uma aura de energia aquática o envolve. Em um gesto decidido, ele canaliza a ira do Deus dos Sete Mares, Poseidon, e desencadeia uma devastadora onda de poder. Seu punho se transforma em um monstro marinho colossal, envolto em uma energia aquosa que absorve toda a umidade ao redor. Quando ele desfere seu golpe, uma tempestade oceânica se forma, esmagando seus inimigos em um cataclismo de água e força. Seus oponentes são varridos por tsunamis imparáveis, deixando um rastro de destruição em seu caminho.\n\nSistema: Toda jogada feita pelo Personagem recebe um Modificador Positivo. Modificadores: +2 de Modificador Positivo nos TdA, +1 de Bônus Aplicado aos Danos (O tridente de Poseidon), eleva 1 Nível da Técnica (Energia dos Corais).\n\nAção: Ação de Cosmo\n\nResistência: Não\n\nCombinação: Utilização de Cosmo, +\n\nHabilidade Especial do Cosmo  (Avatar dos Oceanos) : A Virtude Devoção Divina ou Guerreiro Elemental (água) combinada com esta Habilidade aumenta o Modificador Positivo para +1.",
+      "page": "573–574",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Estilo / origem: Generais Marinas. Nível de referência no livro: 30. Conferir aquisição conforme evolução e status.",
+      "category": "Generais Marinas",
+      "level": 30,
+      "action": "Ação de Cosmo",
+      "resistance": "Não",
+      "combination": "Utilização de Cosmo, +",
+      "duration": "[CONTÍNUA] [SUPORTE] [ATAQUE]",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "abilityKind": "gift"
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "marinas:gift:30:LANÇA DE POSEIDON",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            573,
+            574
+          ]
+        }
+      }
+    }
+  }
+]
