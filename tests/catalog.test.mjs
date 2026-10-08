@@ -19,7 +19,7 @@ test("manifesto registra todos os compêndios e todas as fontes disponíveis", a
  assert.deepEqual(manifest.packs.map(p => p.name), CATALOG_PACKS.map(p => p.name));
  for (const p of manifest.packs) {assert.equal(p.path, `packs/${p.name}`); assert.equal(p.type, "Item"); assert.equal(p.system, manifest.id);}
  assert.deepEqual((await readdir("data/catalog")).sort(), CATALOG_PACKS.flatMap(p => p.sources.map(s => `${s}.json`)).sort());
- assert.deepEqual(catalogs.map(p => p.entries.length), [129, 229, 98, 88, 34, 14, 49]);
+ assert.deepEqual(catalogs.map(p => p.entries.length), [129, 229, 98, 88, 34, 14, 49, 59]);
 });
 test("conteúdos importáveis têm IDs estáveis, proveniência e dados válidos sem informações pessoais", () => {
  assert.equal(new Set(all.map(e => e._id)).size, all.length);
@@ -29,7 +29,7 @@ test("conteúdos importáveis têm IDs estáveis, proveniência e dados válidos
   assert.equal(e._id, createHash("sha256").update(provenance.key).digest("hex").slice(0,16), e.name);
   assert.ok(!keys.has(provenance.key)); keys.add(provenance.key);
   assert.ok(e.name.trim() && e.system.description.trim(), e.name);
-  assert.ok(["ability", "virtue", "divineCosmo"].includes(e.type));
+  assert.ok(["ability", "virtue", "divineCosmo", "bigbang", "increment"].includes(e.type));
   assert.doesNotThrow(() => validateStrings(ContentData.defineSchema(), {...content(), ...e.system}), e.name);
   for (const key of ["level", "power", "cost"]) assert.ok(Number.isInteger(e.system[key]) && e.system[key]>=0);
   assert.equal(provenance.author, "Dhoko de Libra"); assert.equal(provenance.license, "CC BY-NC-SA 4.0");
@@ -84,6 +84,32 @@ test("índice e ocorrência com requisitos divergentes preservam suas condiçõe
  assert.ok(variants.find(e=>e.name.endsWith("— Técnicas")).flags["gods-battle-ss"].source.occurrences.some(o=>o.category==="Técnica Prata" && /Flecha.*Sombras/i.test(o.name)));
  assert.ok(variants.find(e=>e.name==="Viajante das Sombras").flags["gods-battle-ss"].source.occurrences.every(o=>o.category==="Asgardiano"));
  assert.equal(catalogs.find(p=>p.name==="habilidades").entries.filter(e=>e.system.category==="Natural — Muvianos (raças)").length,3);
+});
+test("componentes preservam exceções de custo, graduação única e regras complementares", async () => {
+ const bang=await source("bigbangs"), increments=await source("increments");
+ assert.equal(bang.filter(e=>e.system.category==="Big Bang Primordial").length,4);
+ assert.equal(bang.filter(e=>e.system.category==="Big Bang Extra").length,43);
+ const support=bang.find(e=>e.name==="Big Bang Apoiar");
+ assert.equal(support.system.cost,0); assert.equal(support.flags["gods-battle-ss"].source.reference.slots,1);
+ assert.match(support.system.description,/NÃO altera a classificação original/);
+ assert.ok(bang.filter(e=>e.system.category==="Big Bang Extra" && e!==support).every(e=>e.system.cost===1));
+ const residual=bang.find(e=>e.name==="Big Bang Cosmo Residual");
+ assert.match(residual.system.description,/Um novo Teste de\s+Resistência poderá/);
+ assert.doesNotMatch(residual.system.description,/Tabela: Testes/);
+ assert.ok(residual.flags["gods-battle-ss"].source.occurrences.some(o=>o.pages.includes(232)));
+ assert.match(bang.find(e=>e.name==="Big Bang Zero Absoluto").system.description,/-273, 15 °C/);
+ const cosmic=increments.find(e=>e.name==="Controle Cósmico");
+ assert.equal(cosmic.flags["gods-battle-ss"].source.reference.maxRank,1);
+ assert.doesNotMatch(cosmic.system.description,/Graduação [23]:/);
+ assert.match(cosmic.system.description,/após a resistência/);
+ for (const e of increments.filter(e=>e!==cosmic)) {
+  assert.equal(e.flags["gods-battle-ss"].source.reference.benefits.length,3);
+  for (const rank of [1,2,3]) assert.match(e.system.description,new RegExp(`Graduação ${rank}:`));
+ }
+ const energy=increments.find(e=>e.name==="Controle sobre a Energia");
+ assert.match(energy.system.description,/NUNCA pode recuperar mais/);
+ assert.match(increments.find(e=>e.name==="Controle sobre o Big Bang").system.description,/Só funciona em Técnicas com o Big Bang Guardar/);
+ assert.ok([...bang,...increments].every(e=>!e.effects && /manual|manuais/.test(e.system.notes)));
 });
 test("compêndios LevelDB preservam todos os Items, regras, fontes e pastas no round-trip nativo", async () => {
  const root=path.resolve("dist/catalog-tests"); await mkdir(root,{recursive:true}); const temp=await mkdtemp(path.join(root,"roundtrip-"));

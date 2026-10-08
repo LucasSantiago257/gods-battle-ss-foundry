@@ -44,3 +44,9 @@ Estes passos requerem o Foundry real; os testes automatizados não os substituem
 2. Abra Olho de Fogo no compêndio. Confira a descrição principal e expanda Outras ocorrências no livro: Visão Aérea deve preservar Fotógrafo de Cosmo, com página122, além da regra do índice465.
 3. Importe uma cópia e edite sua descrição. A área de leitura deve refletir essa edição, enquanto os trechos de outras ocorrências continuam como referência original. Um observador consegue ler e expandir o conteúdo, sem editar.
 4. Confira que cópias importadas na versão0.3.0 conservam seus dados. Nenhuma importação ou leitura gasta recursos nem aplica bônus automaticamente.
+
+## Componentes 0.4.0
+
+1. Na aba Técnicas, abra Big Bangs e Incrementos. Confira 47 Big Bangs e 12 incrementos; abra Apoiar (0 CE e 1 slot), Cosmo Residual (regra contínua e exemplo de aventura) e Controle Cósmico (graduação única).
+2. Arraste um Big Bang e um incremento para a ficha. Confira seus grupos, descrição e origem. Editar graduação/notas da cópia não modifica o catálogo; importar não modifica CE, técnica ou bônus.
+3. Abra uma técnica antiga: custo, componentes e parâmetros devem continuar iguais. Registre a composição e ajuste o custo manualmente antes de ativar.

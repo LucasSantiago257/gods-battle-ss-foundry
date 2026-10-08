@@ -1,0 +1,589 @@
+[
+  {
+    "_id": "78a4e3b143c829db",
+    "name": "Controle sobre a Natureza",
+    "type": "increment",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro consegue em milésimos de segundos alterar o fluxo do Big Bang da Técnica conseguindo “engana-lo”. Sua Técnica tem a capacidade de atinge mais de um alvo. Graduação 1: + 1 alvo Graduação 2: + 2 alvos Graduação 3: + 3 alvos\n\nAquisição, progressão e custo (p. 217)\nINCREMENTOS\n\nOs Cavaleiros mais poderosos sabem que suas Técnicas podem apagar galáxias. Estudiosos dos caminhos do Cosmo  conseguem controlar o Big Bang em outro patamar por meio de práticas incansáveis, trabalho árduo e muito conheciment o. D ando as Técnicas características devastadoras. Quando o Personagem compra a Virtude Mestre ele adquire 1 graduação em 1 Incremento. O Incremento é um avanço no  controle dos Big Bangs associados as Técnica s e funciona em todas de sua lista. Os incrementos possuem até 3 Níveis de graduações, quanto maior o nível maior o bônus. Após o 1º Nível, a graduação do (s) incremento(s) escolhido(s) avança +1 a cada 10 Níveis. Se o jogador decidir despertar outro incremento ele deve comprar a Virtude Mestre novamente. Um Personagem só pode despertar no máximo 3  tipos de Incrementos diferentes.\n\nCusto O uso de um Incremento custa +1 condensar por Incremento.",
+      "page": "217",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Virtude Mestre; até 3 tipos diferentes de Incrementos (p. 217).",
+      "category": "Incremento",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 condensar por Incremento (p. 217).",
+      "notes": "Graduação escolhida e benefícios são manuais; importar não aumenta o custo nem modifica as técnicas. "
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "increment:Controle sobre a Natureza",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            217
+          ],
+          "reference": {
+            "component": "increment",
+            "maxRank": 3,
+            "benefits": [
+              "+ 1 alvo",
+              "+ 2 alvos",
+              "+ 3 alvos"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "5f24c377be178c53",
+    "name": "Controle sobre o Espaço",
+    "type": "increment",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro expande seu Cosmo ao máximo. Sua Técnica tem a capacidade de ir mais longe para atingir o alvo. Graduação 1: +1,5 m Graduação 2: +3 m Graduação 3: +4,5 m\n\nAquisição, progressão e custo (p. 217)\nINCREMENTOS\n\nOs Cavaleiros mais poderosos sabem que suas Técnicas podem apagar galáxias. Estudiosos dos caminhos do Cosmo  conseguem controlar o Big Bang em outro patamar por meio de práticas incansáveis, trabalho árduo e muito conheciment o. D ando as Técnicas características devastadoras. Quando o Personagem compra a Virtude Mestre ele adquire 1 graduação em 1 Incremento. O Incremento é um avanço no  controle dos Big Bangs associados as Técnica s e funciona em todas de sua lista. Os incrementos possuem até 3 Níveis de graduações, quanto maior o nível maior o bônus. Após o 1º Nível, a graduação do (s) incremento(s) escolhido(s) avança +1 a cada 10 Níveis. Se o jogador decidir despertar outro incremento ele deve comprar a Virtude Mestre novamente. Um Personagem só pode despertar no máximo 3  tipos de Incrementos diferentes.\n\nCusto O uso de um Incremento custa +1 condensar por Incremento.",
+      "page": "217, 218",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Virtude Mestre; até 3 tipos diferentes de Incrementos (p. 217).",
+      "category": "Incremento",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 condensar por Incremento (p. 217).",
+      "notes": "Graduação escolhida e benefícios são manuais; importar não aumenta o custo nem modifica as técnicas. "
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "increment:Controle sobre o Espaço",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            217,
+            218
+          ],
+          "reference": {
+            "component": "increment",
+            "maxRank": 3,
+            "benefits": [
+              "+1,5 m",
+              "+3 m",
+              "+4,5 m"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "1c01581703b54546",
+    "name": "Controle sobre o Sentimento",
+    "type": "increment",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro absorve a Cosmo Energia da Técnica do inimigo e a altera para causar dano. O dano sofrido no turno anterior é acrescentado ao dano da sua Técnica. Graduação 1: +10% Graduação 2: +30% Graduação 3: +50%\n\nAquisição, progressão e custo (p. 217)\nINCREMENTOS\n\nOs Cavaleiros mais poderosos sabem que suas Técnicas podem apagar galáxias. Estudiosos dos caminhos do Cosmo  conseguem controlar o Big Bang em outro patamar por meio de práticas incansáveis, trabalho árduo e muito conheciment o. D ando as Técnicas características devastadoras. Quando o Personagem compra a Virtude Mestre ele adquire 1 graduação em 1 Incremento. O Incremento é um avanço no  controle dos Big Bangs associados as Técnica s e funciona em todas de sua lista. Os incrementos possuem até 3 Níveis de graduações, quanto maior o nível maior o bônus. Após o 1º Nível, a graduação do (s) incremento(s) escolhido(s) avança +1 a cada 10 Níveis. Se o jogador decidir despertar outro incremento ele deve comprar a Virtude Mestre novamente. Um Personagem só pode despertar no máximo 3  tipos de Incrementos diferentes.\n\nCusto O uso de um Incremento custa +1 condensar por Incremento.",
+      "page": "217, 218",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Virtude Mestre; até 3 tipos diferentes de Incrementos (p. 217).",
+      "category": "Incremento",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 condensar por Incremento (p. 217).",
+      "notes": "Graduação escolhida e benefícios são manuais; importar não aumenta o custo nem modifica as técnicas. "
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "increment:Controle sobre o Sentimento",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            217,
+            218
+          ],
+          "reference": {
+            "component": "increment",
+            "maxRank": 3,
+            "benefits": [
+              "+10%",
+              "+30%",
+              "+50%"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "dcadaab675918016",
+    "name": "Controle sobre a Energia",
+    "type": "increment",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro manipula o Cosmo queimado alterando seu ciclo de efeito. Sua Técnica tem a capacidade de recuperar o Cosmo  gasto na Técnica.  Este Incremento NUNCA pode recuperar mais Cosmo Energia que o que foi gasto. Será queimado pelo menos 1 Ponto de Cosmo Energia. Graduação 1: 2 Pontos de Cosmo Energia Graduação 2: 4 Pontos de Cosmo Energia Graduação 3: 6 Pontos de Cosmo Energia\n\nAquisição, progressão e custo (p. 217)\nINCREMENTOS\n\nOs Cavaleiros mais poderosos sabem que suas Técnicas podem apagar galáxias. Estudiosos dos caminhos do Cosmo  conseguem controlar o Big Bang em outro patamar por meio de práticas incansáveis, trabalho árduo e muito conheciment o. D ando as Técnicas características devastadoras. Quando o Personagem compra a Virtude Mestre ele adquire 1 graduação em 1 Incremento. O Incremento é um avanço no  controle dos Big Bangs associados as Técnica s e funciona em todas de sua lista. Os incrementos possuem até 3 Níveis de graduações, quanto maior o nível maior o bônus. Após o 1º Nível, a graduação do (s) incremento(s) escolhido(s) avança +1 a cada 10 Níveis. Se o jogador decidir despertar outro incremento ele deve comprar a Virtude Mestre novamente. Um Personagem só pode despertar no máximo 3  tipos de Incrementos diferentes.\n\nCusto O uso de um Incremento custa +1 condensar por Incremento.",
+      "page": "217, 218",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Virtude Mestre; até 3 tipos diferentes de Incrementos (p. 217).",
+      "category": "Incremento",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 condensar por Incremento (p. 217).",
+      "notes": "Graduação escolhida e benefícios são manuais; importar não aumenta o custo nem modifica as técnicas. "
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "increment:Controle sobre a Energia",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            217,
+            218
+          ],
+          "reference": {
+            "component": "increment",
+            "maxRank": 3,
+            "benefits": [
+              "2 Pontos de Cosmo Energia",
+              "4 Pontos de Cosmo Energia",
+              "6 Pontos de Cosmo Energia"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "c007d9fb8e5f6f2f",
+    "name": "Controle Atômico",
+    "type": "increment",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro arrisca todo seu conhecimento em Utilização do Cosmo para fazer pressionar o Big Bang e aumentar o dano. Sua Técnica eleva 1 Nível de Dano para cada 0 na jogada de dado, mas a cada 1 consome 1 ponto de Cosmo Energia Extra. Graduação 1: +1 Nível de Dano Graduação 2: +2 Nível de Dano Graduação 3: +3 Nível de Dano\n\nAquisição, progressão e custo (p. 217)\nINCREMENTOS\n\nOs Cavaleiros mais poderosos sabem que suas Técnicas podem apagar galáxias. Estudiosos dos caminhos do Cosmo  conseguem controlar o Big Bang em outro patamar por meio de práticas incansáveis, trabalho árduo e muito conheciment o. D ando as Técnicas características devastadoras. Quando o Personagem compra a Virtude Mestre ele adquire 1 graduação em 1 Incremento. O Incremento é um avanço no  controle dos Big Bangs associados as Técnica s e funciona em todas de sua lista. Os incrementos possuem até 3 Níveis de graduações, quanto maior o nível maior o bônus. Após o 1º Nível, a graduação do (s) incremento(s) escolhido(s) avança +1 a cada 10 Níveis. Se o jogador decidir despertar outro incremento ele deve comprar a Virtude Mestre novamente. Um Personagem só pode despertar no máximo 3  tipos de Incrementos diferentes.\n\nCusto O uso de um Incremento custa +1 condensar por Incremento.",
+      "page": "217, 218",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Virtude Mestre; até 3 tipos diferentes de Incrementos (p. 217).",
+      "category": "Incremento",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 condensar por Incremento (p. 217).",
+      "notes": "Graduação escolhida e benefícios são manuais; importar não aumenta o custo nem modifica as técnicas. "
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "increment:Controle Atômico",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            217,
+            218
+          ],
+          "reference": {
+            "component": "increment",
+            "maxRank": 3,
+            "benefits": [
+              "+1 Nível de Dano",
+              "+2 Nível de Dano",
+              "+3 Nível de Dano"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "de15bef11745f7c2",
+    "name": "Controle sobre a Destruição",
+    "type": "increment",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro cria uma capsula de energia em torno de sua Técnica que a pressiona ao máximo. Sua Técnica tem a capacidade de diminuir a resistência de um alvo durante o combate. Graduação 1: -1 de Modificador Negativo no Teste de Resistência Graduação 2: -2 de Modificador Negativo no Teste de Resistência Graduação 3: -3 de Modificador Negativo no Teste de Resistência\n\nAquisição, progressão e custo (p. 217)\nINCREMENTOS\n\nOs Cavaleiros mais poderosos sabem que suas Técnicas podem apagar galáxias. Estudiosos dos caminhos do Cosmo  conseguem controlar o Big Bang em outro patamar por meio de práticas incansáveis, trabalho árduo e muito conheciment o. D ando as Técnicas características devastadoras. Quando o Personagem compra a Virtude Mestre ele adquire 1 graduação em 1 Incremento. O Incremento é um avanço no  controle dos Big Bangs associados as Técnica s e funciona em todas de sua lista. Os incrementos possuem até 3 Níveis de graduações, quanto maior o nível maior o bônus. Após o 1º Nível, a graduação do (s) incremento(s) escolhido(s) avança +1 a cada 10 Níveis. Se o jogador decidir despertar outro incremento ele deve comprar a Virtude Mestre novamente. Um Personagem só pode despertar no máximo 3  tipos de Incrementos diferentes.\n\nCusto O uso de um Incremento custa +1 condensar por Incremento.",
+      "page": "217, 218, 219",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Virtude Mestre; até 3 tipos diferentes de Incrementos (p. 217).",
+      "category": "Incremento",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 condensar por Incremento (p. 217).",
+      "notes": "Graduação escolhida e benefícios são manuais; importar não aumenta o custo nem modifica as técnicas. Título original: Controle sobre s Destruição."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "increment:Controle sobre s Destruição",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            217,
+            218,
+            219
+          ],
+          "reference": {
+            "component": "increment",
+            "maxRank": 3,
+            "benefits": [
+              "-1 de Modificador Negativo no Teste de Resistência",
+              "-2 de Modificador Negativo no Teste de Resistência",
+              "-3 de Modificador Negativo no Teste de Resistência"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "cc1de5590ac02b6f",
+    "name": "Controle do Movimento",
+    "type": "increment",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro cria uma capsula de energia em torno de sua Técnica que contorce  o espaço-tempo. Sua Técnica tem a capacidade de diminui 1 Nível a iniciativa/velocidade do alvo. Graduação 1: 2 turnos Graduação 2: 4 turnos Graduação 3: 6 turnos\n\nAquisição, progressão e custo (p. 217)\nINCREMENTOS\n\nOs Cavaleiros mais poderosos sabem que suas Técnicas podem apagar galáxias. Estudiosos dos caminhos do Cosmo  conseguem controlar o Big Bang em outro patamar por meio de práticas incansáveis, trabalho árduo e muito conheciment o. D ando as Técnicas características devastadoras. Quando o Personagem compra a Virtude Mestre ele adquire 1 graduação em 1 Incremento. O Incremento é um avanço no  controle dos Big Bangs associados as Técnica s e funciona em todas de sua lista. Os incrementos possuem até 3 Níveis de graduações, quanto maior o nível maior o bônus. Após o 1º Nível, a graduação do (s) incremento(s) escolhido(s) avança +1 a cada 10 Níveis. Se o jogador decidir despertar outro incremento ele deve comprar a Virtude Mestre novamente. Um Personagem só pode despertar no máximo 3  tipos de Incrementos diferentes.\n\nCusto O uso de um Incremento custa +1 condensar por Incremento.",
+      "page": "217, 219",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Virtude Mestre; até 3 tipos diferentes de Incrementos (p. 217).",
+      "category": "Incremento",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 condensar por Incremento (p. 217).",
+      "notes": "Graduação escolhida e benefícios são manuais; importar não aumenta o custo nem modifica as técnicas. "
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "increment:Controle do Movimento",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            217,
+            219
+          ],
+          "reference": {
+            "component": "increment",
+            "maxRank": 3,
+            "benefits": [
+              "2 turnos",
+              "4 turnos",
+              "6 turnos"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "bbdf353875fd789a",
+    "name": "Controle Cósmico",
+    "type": "increment",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro suprime sua Técnica para que ele expanda com maior força. Se nenhum ponto de Cosmo Energia foi gasto no turno anterior, nesse turno sua Técnica causa mais dano. Esse dano perfura as defesas do alvo, sendo considerado extra, entrando direto no alvo após a resistência. Graduação 1: +1 Nível de Dano (Nível único)\n\nAquisição, progressão e custo (p. 217)\nINCREMENTOS\n\nOs Cavaleiros mais poderosos sabem que suas Técnicas podem apagar galáxias. Estudiosos dos caminhos do Cosmo  conseguem controlar o Big Bang em outro patamar por meio de práticas incansáveis, trabalho árduo e muito conheciment o. D ando as Técnicas características devastadoras. Quando o Personagem compra a Virtude Mestre ele adquire 1 graduação em 1 Incremento. O Incremento é um avanço no  controle dos Big Bangs associados as Técnica s e funciona em todas de sua lista. Os incrementos possuem até 3 Níveis de graduações, quanto maior o nível maior o bônus. Após o 1º Nível, a graduação do (s) incremento(s) escolhido(s) avança +1 a cada 10 Níveis. Se o jogador decidir despertar outro incremento ele deve comprar a Virtude Mestre novamente. Um Personagem só pode despertar no máximo 3  tipos de Incrementos diferentes.\n\nCusto O uso de um Incremento custa +1 condensar por Incremento.",
+      "page": "217, 219",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Virtude Mestre; até 3 tipos diferentes de Incrementos (p. 217).",
+      "category": "Incremento",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 condensar por Incremento (p. 217).",
+      "notes": "Graduação escolhida e benefícios são manuais; importar não aumenta o custo nem modifica as técnicas. "
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "increment:Controle Cósmico",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            217,
+            219
+          ],
+          "reference": {
+            "component": "increment",
+            "maxRank": 1,
+            "benefits": [
+              "+1 Nível de Dano (Nível único)"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "1c0a9862d3c417fd",
+    "name": "Controle sobre as Estrelas",
+    "type": "increment",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro manipula seu Cosmo para atingir e destruir em escala atômica o Oricalco. Sua Técnica perfura todas as defesas da Armadura do alvo. Dificultando sua resistência. Graduação 1: +1 de Modificador Positivo no Poder Cósmico Graduação 2: +2 de Modificador Positivo no Poder Cósmico Graduação 3: +3 de Modificador Positivo no Poder Cósmico\n\nAquisição, progressão e custo (p. 217)\nINCREMENTOS\n\nOs Cavaleiros mais poderosos sabem que suas Técnicas podem apagar galáxias. Estudiosos dos caminhos do Cosmo  conseguem controlar o Big Bang em outro patamar por meio de práticas incansáveis, trabalho árduo e muito conheciment o. D ando as Técnicas características devastadoras. Quando o Personagem compra a Virtude Mestre ele adquire 1 graduação em 1 Incremento. O Incremento é um avanço no  controle dos Big Bangs associados as Técnica s e funciona em todas de sua lista. Os incrementos possuem até 3 Níveis de graduações, quanto maior o nível maior o bônus. Após o 1º Nível, a graduação do (s) incremento(s) escolhido(s) avança +1 a cada 10 Níveis. Se o jogador decidir despertar outro incremento ele deve comprar a Virtude Mestre novamente. Um Personagem só pode despertar no máximo 3  tipos de Incrementos diferentes.\n\nCusto O uso de um Incremento custa +1 condensar por Incremento.",
+      "page": "217, 219",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Virtude Mestre; até 3 tipos diferentes de Incrementos (p. 217).",
+      "category": "Incremento",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 condensar por Incremento (p. 217).",
+      "notes": "Graduação escolhida e benefícios são manuais; importar não aumenta o custo nem modifica as técnicas. "
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "increment:Controle sobre as Estrelas",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            217,
+            219
+          ],
+          "reference": {
+            "component": "increment",
+            "maxRank": 3,
+            "benefits": [
+              "+1 de Modificador Positivo no Poder Cósmico",
+              "+2 de Modificador Positivo no Poder Cósmico",
+              "+3 de Modificador Positivo no Poder Cósmico"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "fafac9e25a9892fd",
+    "name": "Controle sobre o Big Bang",
+    "type": "increment",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro manipula o Cosmo fortalecendo o Bing Bang. Sua Técnica tem a capacidade de aumentar sua defesa, aumentando seu Modificador no Resultado da Defesa. Só funciona em Técnicas com o Big Bang Guardar. Graduação 1: +4 Modificador Positivo na Quantidade de Defesas Graduação 2: +6 Modificador Positivo na Quantidade de Defesas Graduação 3: +8 Modificador Positivo na Quantidade de Defesas\n\nAquisição, progressão e custo (p. 217)\nINCREMENTOS\n\nOs Cavaleiros mais poderosos sabem que suas Técnicas podem apagar galáxias. Estudiosos dos caminhos do Cosmo  conseguem controlar o Big Bang em outro patamar por meio de práticas incansáveis, trabalho árduo e muito conheciment o. D ando as Técnicas características devastadoras. Quando o Personagem compra a Virtude Mestre ele adquire 1 graduação em 1 Incremento. O Incremento é um avanço no  controle dos Big Bangs associados as Técnica s e funciona em todas de sua lista. Os incrementos possuem até 3 Níveis de graduações, quanto maior o nível maior o bônus. Após o 1º Nível, a graduação do (s) incremento(s) escolhido(s) avança +1 a cada 10 Níveis. Se o jogador decidir despertar outro incremento ele deve comprar a Virtude Mestre novamente. Um Personagem só pode despertar no máximo 3  tipos de Incrementos diferentes.\n\nCusto O uso de um Incremento custa +1 condensar por Incremento.",
+      "page": "217, 219, 220",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Virtude Mestre; até 3 tipos diferentes de Incrementos (p. 217).",
+      "category": "Incremento",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 condensar por Incremento (p. 217).",
+      "notes": "Graduação escolhida e benefícios são manuais; importar não aumenta o custo nem modifica as técnicas. "
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "increment:Controle sobre o Big Bang",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            217,
+            219,
+            220
+          ],
+          "reference": {
+            "component": "increment",
+            "maxRank": 3,
+            "benefits": [
+              "+4 Modificador Positivo na Quantidade de Defesas",
+              "+6 Modificador Positivo na Quantidade de Defesas",
+              "+8 Modificador Positivo na Quantidade de Defesas"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "18a8db447a0554fd",
+    "name": "Controle sobre a Vitalidade",
+    "type": "increment",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro acelera o Cosmo em seu corpo a partir da Cosmo Energia do alvo. Sua Técnica tem a capacidade de reverter danos em cura. X% do dano causado é curado no Cavaleiro. Graduação 1: 10% Graduação 2: 30% Graduação 3: 50%\n\nAquisição, progressão e custo (p. 217)\nINCREMENTOS\n\nOs Cavaleiros mais poderosos sabem que suas Técnicas podem apagar galáxias. Estudiosos dos caminhos do Cosmo  conseguem controlar o Big Bang em outro patamar por meio de práticas incansáveis, trabalho árduo e muito conheciment o. D ando as Técnicas características devastadoras. Quando o Personagem compra a Virtude Mestre ele adquire 1 graduação em 1 Incremento. O Incremento é um avanço no  controle dos Big Bangs associados as Técnica s e funciona em todas de sua lista. Os incrementos possuem até 3 Níveis de graduações, quanto maior o nível maior o bônus. Após o 1º Nível, a graduação do (s) incremento(s) escolhido(s) avança +1 a cada 10 Níveis. Se o jogador decidir despertar outro incremento ele deve comprar a Virtude Mestre novamente. Um Personagem só pode despertar no máximo 3  tipos de Incrementos diferentes.\n\nCusto O uso de um Incremento custa +1 condensar por Incremento.",
+      "page": "217, 220",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Virtude Mestre; até 3 tipos diferentes de Incrementos (p. 217).",
+      "category": "Incremento",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 condensar por Incremento (p. 217).",
+      "notes": "Graduação escolhida e benefícios são manuais; importar não aumenta o custo nem modifica as técnicas. "
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "increment:Controle sobre a Vitalidade",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            217,
+            220
+          ],
+          "reference": {
+            "component": "increment",
+            "maxRank": 3,
+            "benefits": [
+              "10%",
+              "30%",
+              "50%"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "1c06081cf1a96e4e",
+    "name": "Controle sobre a Luz",
+    "type": "increment",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Sua Técnica tem o poder de causar algum Estado como efeito extra quando ataca. Por Exemplo: atordoar, congelar, imobilizar. Graduação 1: 15% dura 1 turno Graduação 2: 30% dura 1 turno Graduação 3: 45% dura 1 turno\n\nAquisição, progressão e custo (p. 217)\nINCREMENTOS\n\nOs Cavaleiros mais poderosos sabem que suas Técnicas podem apagar galáxias. Estudiosos dos caminhos do Cosmo  conseguem controlar o Big Bang em outro patamar por meio de práticas incansáveis, trabalho árduo e muito conheciment o. D ando as Técnicas características devastadoras. Quando o Personagem compra a Virtude Mestre ele adquire 1 graduação em 1 Incremento. O Incremento é um avanço no  controle dos Big Bangs associados as Técnica s e funciona em todas de sua lista. Os incrementos possuem até 3 Níveis de graduações, quanto maior o nível maior o bônus. Após o 1º Nível, a graduação do (s) incremento(s) escolhido(s) avança +1 a cada 10 Níveis. Se o jogador decidir despertar outro incremento ele deve comprar a Virtude Mestre novamente. Um Personagem só pode despertar no máximo 3  tipos de Incrementos diferentes.\n\nCusto O uso de um Incremento custa +1 condensar por Incremento.",
+      "page": "217, 220",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Virtude Mestre; até 3 tipos diferentes de Incrementos (p. 217).",
+      "category": "Incremento",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 condensar por Incremento (p. 217).",
+      "notes": "Graduação escolhida e benefícios são manuais; importar não aumenta o custo nem modifica as técnicas. "
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "increment:Controle sobre a Luz",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            217,
+            220
+          ],
+          "reference": {
+            "component": "increment",
+            "maxRank": 3,
+            "benefits": [
+              "15% dura 1 turno",
+              "30% dura 1 turno",
+              "45% dura 1 turno"
+            ]
+          }
+        }
+      }
+    }
+  }
+]

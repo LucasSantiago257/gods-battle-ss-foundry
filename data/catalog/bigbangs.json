@@ -1,0 +1,2276 @@
+[
+  {
+    "_id": "13841831d802c5be",
+    "name": "Big Bang Dano",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Técnica causa danos no alvo e tem duração instantânea.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Primordial",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "Custo primordial: Bronze 2 CE; Prata 3 CE; Ouro 4 CE.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:primordial:Dano",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224
+          ],
+          "reference": {
+            "component": "primordial",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "953cf77664309d03",
+    "name": "Big Bang Controle",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Técnica consegue controlar ações do alvo ou aplicar algum tipo de Estado. Ficam ativas a duração da Técnica.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Primordial",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "Custo primordial: Bronze 2 CE; Prata 3 CE; Ouro 4 CE.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:primordial:Controle",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224
+          ],
+          "reference": {
+            "component": "primordial",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "49b31d7e766c2fd9",
+    "name": "Big Bang Cosmo Residual",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Após a duração normal da Técnica o usuário pode sustentar seu efeito sem estar no local, infundindo seu Cosmo no alvo ou objeto.\n\nSistema: O alvo deve estar sob o efeito da Técnica ou dentro das especificações exigidas em sua descrição. No turno seguinte, ou no decorrer da Duração da Técnica, para depositar sua Cosmo Energia no alvo ou objeto, o usuário faz um segundo teste de Asterismo(Ação de Cosmo + Ação de Movimento Parcial) e contabiliza o excesso do resultado do Asterismo e acrescenta-o como Modificador Positivo a seu Poder Cósmico . Este é o valor fixo do Cosmo Residual que o alvo deve superar para se libertar do efeito. O  efeito continua enquanto o alvo não obter sucesso no Teste de Resistência. Um novo Teste de\n\nResistência poderá ser realizado diariamente ou de acordo com as especificações de cada Técnica. Vale lembrar que o  novo Teste permite testes seguidos por falha , “tentando de novo”. A cada novo teste, após o primeiro, o alvo recebe +1 de Modificador Positivo Cumulativo no Teste de Resistência para se libertar por dia. Quando o Jogador conseguir igualar ou superar a Cosmo Residual, ele consegue se libertar. Exemplo: O Sábio, Cavaleiro de Ouro  de Aquário após vencer o Cavaleiro de Ouro  de Libra Guardião decide eterniza -lo em um ataúde de gelo eterno. Com todas as exigências concluídas, o jogador de Aquário faz um teste da Asterismo com dificuldade 13 (9 + 4) e obtém o resultado de 22, acumulando 9  (22-13) de Modificador Negativo para o alvo que faz o Teste de Resistência com Dificuldade 10 + 25 (Modif. Nível) + 6 (Virtudes e Habilidades) + 9  (Residual) totalizando 50 o Cavaleiro de Libra para sua resistência te m 25 (Modif. Nível) + 5  (Atributo Velocidade) + 8 (Jogada do dado) totalizando 38. O Cavaleiro de Libra está congelado e preso no ataúde de gelo. Como ele milagrosamente não morreu tem direito a um teste de resistência todo dia, recebendo +1 de Modificador Positivo Cumulativo por dia e tentando superar o Poder Cósmico do Cosmo Residual de 50 ou morrer eternizado.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 225, 230, 232, 233",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Primordial",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "Custo primordial: Bronze 2 CE; Prata 3 CE; Ouro 4 CE.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:primordial:Cosmo Residual",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            225,
+            230,
+            232,
+            233
+          ],
+          "reference": {
+            "component": "primordial",
+            "slots": 1
+          },
+          "occurrences": [
+            {
+              "name": "Big Bang Cosmo Residual",
+              "category": "Uso na aventura (a critério do mestre)",
+              "pages": [
+                230,
+                232,
+                233
+              ],
+              "text": "BIG BANGS DENTRO DA AVENTURA\n\nTer controle dos Big Bangs é “acessar” as características fundamentais dos átomos. A níveis atômicos. E este conhecimento não é restrito apenas ao uso nas Técnicas, mas acessível, também, no cotidiano do Cavaleiro. Sem precisar usa a Técnica em si, mas partes que a compõe. Tipo de ação: Ação de Cosmo + Ação de Movimento Parcial  (a critério do mestre).\n\nBig Bang Cosmo Residual Um Cavaleiro que possua uma Técnica com o Big Bang Cosmo Residual. Ele sabe depositar sua Cosmo Energia em objetos, pessoas. Criando uma ligação entre o Cavaleiro e o seu Cosmo. Porque ele possui este conhecimento.\n\nHabilidade Especial do Cosmo (Agraciado pelo Cosmo de Afrodite): Este Big Bang em conjunto com a Virtude Materializar ou a Habilidade Animar Armas [GUARDIÃO] pode dispersar seu Cosmo e ampliar seus Sentidos e Técnicas através dos objetos materializados. Por exemplo, deixar uma rosa em um local e ver através dela ou pe rmitir que ela cure (necessário a Técnica Cura).\n\nNem todos os Big Bangs podem ser “acessados” separadamente. Algo dentro deles não permite, são complementos ou , simplesmente, fazem parte de um conjunto maior . A centelha da Explosão que não permite ser acessada. Um Cavaleiro que possua uma Técnica com o Big Bang Quebrar Armadura. Ele sabe como despedaçar Armaduras, mas mesmo possuindo esse conhecimento ele não consegue separar esse Big Bang. Esses são alguns exemplos, mas fica a critério do mestre os Big Bangs que podem ou não serem acessados. Importante se atentar que TODOS os Big Bangs acessados tem seus limites  e duração de acordo com sua classificação e poder. Por exemplo 1: O Cavaleiro tem Força 2 pode quebrar 5cm de espessura. Se ele usar o Big Bang Pulverizar ele vai pulverizar os mesmos 5cm. Nem mais nem menos. Por exemplo 2: O Cavaleiro tem Domínio de 20m não poderá abrir uma dimensão maior que isso."
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "ac34d9f38628bd92",
+    "name": "Big Bang Sustentada",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Após a duração normal da Técnica o usuário pode sustentar seu efeito. Os Cavaleiros fazem Testes Resistidos da Manobra de Combate Duelo de Cosmo ou Atributo Chave da Técnica (a escolha do usuário) e a Técnica continua ativa enquanto o usuário vencer o duelo.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 225",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Primordial",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "Custo primordial: Bronze 2 CE; Prata 3 CE; Ouro 4 CE.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:primordial:Sustentada",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            225
+          ],
+          "reference": {
+            "component": "primordial",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "0a5968168986eea1",
+    "name": "Big Bang Anular Proteção",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Técnica reduz a Proteção da Armadura do Alvo que perde 1 + 1 de PA para cada Status do Cavaleiro.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 225",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Anular Proteção",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            225
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "02cba36e32fda2f8",
+    "name": "Big Bang Apoiar",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Classe da Técnica evolui com a Status do Personagem sem a necessidade de ser comprada novamente em uma classe superior. • O Big Bang Apoiar é o único que tem custo 0, mas ocupa 1 slot. • A Técnica com o  Big Bang Apoiar ao evoluir adquire +1 slot  extra, automaticamente, de acordo com a classe, que pode ser preenchido pelo Jogador com a Virtude Adicionar Big Bang [TÉCNICA]. • A evolução NÃO altera a classificação original da Técnica.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 225",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "0 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Apoiar",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            225
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "e63322f3195be739",
+    "name": "Big Bang Brasas",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O uso da Técnica deixa o alvo queimando até a sua duração.\n\nBronze: 5 de dano/turno, Prata: 10 de dano/turno, Ouro: 15 de dano/turno.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 225",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Brasas",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            225
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "249ef45f75955f74",
+    "name": "Big Bang Parar Coração",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Se o Personagem falhar no Teste de resistência seus pontos de vida caem para 0 (ilusoriamente) ficando em Estado de Morte Estável. Caso o Personagem não consiga se livrar do controle em Vigor turnos seu dano ilusório virará real e ele avança para o Estado de Morte Iminente. Se ele for atacado nesse estado sua resistência é de 1 dado, mas após o ataque ele desperta atordoado.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 226",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Parar Coração",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            226
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "c1433855689c0301",
+    "name": "Big Bang Alargar",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Técnica abrange um Domínio maior alargando seu efeito. Área: Especificar. Limite máximo Domínio do usuário, salvo algumas exceções.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 226",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Alargar",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            226
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "0f4bd13d0cbf9b36",
+    "name": "Big Bang Anular Outro",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Elimina qualquer vontade do alvo de lutar. Retirando todas as ações de luta do alvo.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 226",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Anular Outro",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            226
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "24536e8da27b96d4",
+    "name": "Big Bang Assumir Querido",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O atacante pode, ser quiser, como ação extra fazer um Teste de Cosmo com dificuldade Normal [10] para poder assumir com perfeição a forma do ente querido do alvo. Sucesso Crítico: O Cavaleiro aplica o golpe de misericórdia no alvo, trespassando o coração do alvo e o alvo continua acreditando na ilusão. Ver trespassar (Ver Manobras de combate). Sucesso: O Cavaleiro consegue assumir com perfeição a forma querida do alvo. A vítima faz o Teste de Resistência em desvantagem. Falha: O Cavaleiro consegue assumir a forma querida do alvo. A vítima faz o Teste de Resistência normalmente. Falha Crítica:  O Cavaleiro consegue assumir a forma querida do alvo, mas com algumas falhas. A vítima faz o Teste de Resistência com +1 de Modificador Positivo.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 226, 230, 231, 232, 233",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Assumir Querido",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            226,
+            230,
+            231,
+            232,
+            233
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          },
+          "occurrences": [
+            {
+              "name": "Big Bang Assumir Querido",
+              "category": "Uso na aventura (a critério do mestre)",
+              "pages": [
+                230,
+                231,
+                232,
+                233
+              ],
+              "text": "BIG BANGS DENTRO DA AVENTURA\n\nTer controle dos Big Bangs é “acessar” as características fundamentais dos átomos. A níveis atômicos. E este conhecimento não é restrito apenas ao uso nas Técnicas, mas acessível, também, no cotidiano do Cavaleiro. Sem precisar usa a Técnica em si, mas partes que a compõe. Tipo de ação: Ação de Cosmo + Ação de Movimento Parcial  (a critério do mestre).\n\nBig Bang Assumir Querido Um Cavaleiro que possua uma Técnica com o Big Bang Assumir Querido sabe assumir outras formas. Então, ele pode usar este Big Bang e criar uma ilusão para parecer com outra pessoa e enganar humanos que não possuam a Cosmo Energia Despertada. Quanto mais sucesso no TdA da Perícia Percepção Extrassensorial mais fiel é sua ilusão. Nem todos os Big Bangs podem ser “acessados” separadamente. Algo dentro deles não permite, são complementos ou , simplesmente, fazem parte de um conjunto maior . A centelha da Explosão que não permite ser acessada. Um Cavaleiro que possua uma Técnica com o Big Bang Quebrar Armadura. Ele sabe como despedaçar Armaduras, mas mesmo possuindo esse conhecimento ele não consegue separar esse Big Bang. Esses são alguns exemplos, mas fica a critério do mestre os Big Bangs que podem ou não serem acessados. Importante se atentar que TODOS os Big Bangs acessados tem seus limites  e duração de acordo com sua classificação e poder. Por exemplo 1: O Cavaleiro tem Força 2 pode quebrar 5cm de espessura. Se ele usar o Big Bang Pulverizar ele vai pulverizar os mesmos 5cm. Nem mais nem menos. Por exemplo 2: O Cavaleiro tem Domínio de 20m não poderá abrir uma dimensão maior que isso."
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "64b403810f4e5120",
+    "name": "Big Bang Atordoar",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Técnica atordoa o alvo (Ver Sistema Atordoado). O usuário tem 20\n\n+ Nível% de chance de atordoar.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 226",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Atordoar",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            226
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "1b9c0fcbfaf271d0",
+    "name": "Big Bang Ceifar",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Essa Técnica inibe uma Habilidade ou Dádiva. Anula: Especificar Habilidade ou Dádiva anulada.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 226",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Ceifar",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            226
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "eedfc2b7fd558c96",
+    "name": "Big Bang Certeiro",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Técnica causa dano  extra. O usuário da Técnica faz um teste de confirmação e se o resultado for igual ou maior que 8 (Ouro ), 9 (Prata) ou 10 (Bronze) ele trespassa o inimigo (ver a Manobra de Combate Duelo).\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 226",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Certeiro",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            226
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "884f5e834cba0582",
+    "name": "Big Bang Comando",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O alvo recebe ordens que não podem ser desobedecidas, mesmo que a vítima esteja consciente do que está acontecendo. O alvo fica em Estado Dominado.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 226, 230, 232, 233",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Comando",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            226,
+            230,
+            232,
+            233
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          },
+          "occurrences": [
+            {
+              "name": "Big Bang Comando",
+              "category": "Uso na aventura (a critério do mestre)",
+              "pages": [
+                230,
+                232,
+                233
+              ],
+              "text": "BIG BANGS DENTRO DA AVENTURA\n\nTer controle dos Big Bangs é “acessar” as características fundamentais dos átomos. A níveis atômicos. E este conhecimento não é restrito apenas ao uso nas Técnicas, mas acessível, também, no cotidiano do Cavaleiro. Sem precisar usa a Técnica em si, mas partes que a compõe. Tipo de ação: Ação de Cosmo + Ação de Movimento Parcial  (a critério do mestre).\n\nBig Bang Comando Um Cavaleiro que possua uma Técnica com o Big Bang Comando ou Controle consegue dar ordens simples a humanos que não possuem Cosmo Energia Despertada. Quanto mais sucesso no TdA da Perícia Liderança mais empenho terá o alvo em concluir o comando. Nem todos os Big Bangs podem ser “acessados” separadamente. Algo dentro deles não permite, são complementos ou , simplesmente, fazem parte de um conjunto maior . A centelha da Explosão que não permite ser acessada. Um Cavaleiro que possua uma Técnica com o Big Bang Quebrar Armadura. Ele sabe como despedaçar Armaduras, mas mesmo possuindo esse conhecimento ele não consegue separar esse Big Bang. Esses são alguns exemplos, mas fica a critério do mestre os Big Bangs que podem ou não serem acessados. Importante se atentar que TODOS os Big Bangs acessados tem seus limites  e duração de acordo com sua classificação e poder. Por exemplo 1: O Cavaleiro tem Força 2 pode quebrar 5cm de espessura. Se ele usar o Big Bang Pulverizar ele vai pulverizar os mesmos 5cm. Nem mais nem menos. Por exemplo 2: O Cavaleiro tem Domínio de 20m não poderá abrir uma dimensão maior que isso."
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "19eefdbd9a2f0f51",
+    "name": "Big Bang Congelar",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Técnica tem 5 (Bronze), 10 (Prata), 15 (Ouro) + Nível% de chance de congelar o alvo. Alvos congelados, ficam paralisados (Ver Sistemas Paralisado) .\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 226, 230, 231, 232, 233",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Congelar",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            226,
+            230,
+            231,
+            232,
+            233
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          },
+          "occurrences": [
+            {
+              "name": "Big Bang Congelar",
+              "category": "Uso na aventura (a critério do mestre)",
+              "pages": [
+                230,
+                231,
+                232,
+                233
+              ],
+              "text": "BIG BANGS DENTRO DA AVENTURA\n\nTer controle dos Big Bangs é “acessar” as características fundamentais dos átomos. A níveis atômicos. E este conhecimento não é restrito apenas ao uso nas Técnicas, mas acessível, também, no cotidiano do Cavaleiro. Sem precisar usa a Técnica em si, mas partes que a compõe. Tipo de ação: Ação de Cosmo + Ação de Movimento Parcial  (a critério do mestre).\n\nBig Bang Congelar Um Cavaleiro que possua uma Técnica com o Big Bang Congelar . Ele sabe reduzir os movimentos atômicos. Então no lugar de quebrar um objeto, ele pode congelá-lo, esfriar uma área, congelar um membro (incapacitar ). Porque ele possui este conhecimento. Nem todos os Big Bangs podem ser “acessados” separadamente. Algo dentro deles não permite, são complementos ou , simplesmente, fazem parte de um conjunto maior . A centelha da Explosão que não permite ser acessada. Um Cavaleiro que possua uma Técnica com o Big Bang Quebrar Armadura. Ele sabe como despedaçar Armaduras, mas mesmo possuindo esse conhecimento ele não consegue separar esse Big Bang. Esses são alguns exemplos, mas fica a critério do mestre os Big Bangs que podem ou não serem acessados. Importante se atentar que TODOS os Big Bangs acessados tem seus limites  e duração de acordo com sua classificação e poder. Por exemplo 1: O Cavaleiro tem Força 2 pode quebrar 5cm de espessura. Se ele usar o Big Bang Pulverizar ele vai pulverizar os mesmos 5cm. Nem mais nem menos. Por exemplo 2: O Cavaleiro tem Domínio de 20m não poderá abrir uma dimensão maior que isso."
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "b08f2daefedb5e11",
+    "name": "Big Bang Conjunto",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Essa Técnica pode ser combinada com outra Técnica, sem a necessidade de possuir a Virtude Especialista em Técnicas. Conjunto: Especificar Técnica.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 227",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Conjunto",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            227
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "776508191383c613",
+    "name": "Big Bang Cortar Fora",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Técnica causa a inutilização de um membro. O usuário da Técnica faz um teste de confirmação, se o resultado for igual ou maior que 8 (Ouro ), 9 (Prata) ou 10 (Bronze), inutiliza um membro do alvo ( ver Dano Localizado). Se a jogada se confirmar o usuário faz outra jogada, se o resultado for igual a 8, o membro é cortado fora. Cortar Fora (1d10): 1 – 8. Consequência 1: Dano localizado. 9. Consequência 5: Estado de Morte Iminente. 10. Consequência 6: Estado de Morte Morto.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 227",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Cortar Fora",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            227
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "df270f85e3119481",
+    "name": "Big Bang Cumulativo",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Cada vez que a Técnica é usada e o inimigo não obter sucesso no Teste de Resistência seus efeitos se acumulam.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 227",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Cumulativo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            227
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "58bdca0c68257d75",
+    "name": "Big Bang Destino",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O dano ou efeito que o alvo sofrerá dependerá de sua escolha.\n\nSistema: O Usuário cria diferentes “escolhas/opções” para o Alvo, determinando se este enfrentará um destino trágico ou favorável. A quantidade de opções disponíveis dependerá da descrição da Técnica e da aprovação do mestre. No entanto, deverá existir SEMPRE uma opção em que o Alvo saia ileso . Exemplo: Opção 1 : Escolhendo este destino o Alvo sofrerá o dano da Técnica SEM resistência; Opção 2 : Escolhendo este destino o Alvo NÃO sofrerá o dano da Técnica.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 227",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Destino",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            227
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "66c0ae61f929a718",
+    "name": "Big Bang Desvantagem",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Enquanto o efeito durar o alvo ficará com desvantagem.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 227",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Desvantagem",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            227
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "afae5ce14e3cc370",
+    "name": "Big Bang Dimensão",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Com a realidade talhada ao seu modo o Cavaleiro pode utilizar outras Técnicas para atravessar o plano criado para atingir o adversário.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 227, 230, 231, 232, 233",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Dimensão",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            227,
+            230,
+            231,
+            232,
+            233
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          },
+          "occurrences": [
+            {
+              "name": "Big Bang Outra Dimensão e Dimensão",
+              "category": "Uso na aventura (a critério do mestre)",
+              "pages": [
+                230,
+                231,
+                232,
+                233
+              ],
+              "text": "BIG BANGS DENTRO DA AVENTURA\n\nTer controle dos Big Bangs é “acessar” as características fundamentais dos átomos. A níveis atômicos. E este conhecimento não é restrito apenas ao uso nas Técnicas, mas acessível, também, no cotidiano do Cavaleiro. Sem precisar usa a Técnica em si, mas partes que a compõe. Tipo de ação: Ação de Cosmo + Ação de Movimento Parcial  (a critério do mestre).\n\nBig Bang Outra Dimensão e Dimensão Um Cavaleiro que possua uma Técnica com o Big Bang Outra Dimensão  e Dimensão. Ele sabe atravessar para uma dimensão paralela. Então ele pode acessar sua dimensão a qualquer momento e lugar. Porque ele possui este conhecimento sem precisar destruir galáxias. Nem todos os Big Bangs podem ser “acessados” separadamente. Algo dentro deles não permite, são complementos ou , simplesmente, fazem parte de um conjunto maior . A centelha da Explosão que não permite ser acessada. Um Cavaleiro que possua uma Técnica com o Big Bang Quebrar Armadura. Ele sabe como despedaçar Armaduras, mas mesmo possuindo esse conhecimento ele não consegue separar esse Big Bang. Esses são alguns exemplos, mas fica a critério do mestre os Big Bangs que podem ou não serem acessados. Importante se atentar que TODOS os Big Bangs acessados tem seus limites  e duração de acordo com sua classificação e poder. Por exemplo 1: O Cavaleiro tem Força 2 pode quebrar 5cm de espessura. Se ele usar o Big Bang Pulverizar ele vai pulverizar os mesmos 5cm. Nem mais nem menos. Por exemplo 2: O Cavaleiro tem Domínio de 20m não poderá abrir uma dimensão maior que isso."
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3842abfc5ab0aed3",
+    "name": "Big Bang Domínio Deslocado",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O usuário da Técnica sai do centro do Domínio podendo projetar a área do seu Domínio para: sua frente, costas, direita, esquerdo, cima ou baixo.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 227",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Domínio Deslocado",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            227
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "ea761952eeab6d92",
+    "name": "Big Bang Dreno",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Essa Técnica permite o usuário retirar a Cosmo Energia do alvo. O Personagem retira Pontos de Cosmo Energia do alvo.\n\nBronze: 1 Ponto/turno, Prata: 3 Pontos/turno, Ouro: 5 Pontos/turno.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 227",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Dreno",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            227
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "169e5ff9593bd3a9",
+    "name": "Big Bang Duradouro",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O efeito da Técnica não é anulado se o alvo sofrer danos.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 227",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Duradouro",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            227
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "83074cf01c6e5681",
+    "name": "Big Bang Enfraquecer",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Técnica diminui a Resistência do alvo. O inimigo recebe  a Graduação do Atributo Chave da Técnica do usuário como Modificador Negativo  nos testes de Resistência contra o Poder Cósmico do Usuário.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 227",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Enfraquecer",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            227
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "69e4c648b940a68e",
+    "name": "Big Bang Esgotar",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem pode queimar Cosmo Energia para aumentar o dano. O Cavaleiro queima 2 pontos de Cosmo Energia para lançar mais ataques . A cada 2 Pontos de Cosmo queimado o Nível de Dano da Técnica aumenta 1 Graduação.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 228",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Esgotar",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            228
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "b7b2a3b6f95c71fe",
+    "name": "Big Bang Essência Alvo",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A natureza ofensiva do golpe varia de acordo com a maldade ou bondade no coração do inimigo. Inimigos com a Essência contrária ao usuário da Técnica recebe o dano elevado 1 Nível de Dano.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 228",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Essência Alvo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            228
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "2ab2aa61d73321ab",
+    "name": "Big Bang Estocar",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O usuário consegue, ao se concentrar, acumular dano e liberá-lo de uma vez. O Personagem eleva 1 Nível de Dano /turno concentrado e pode acumular no máximo: Estocar Bronze: Nível de Dano 5. Estocar Prata: Nível de Dano 10. Estocar Ouro: Nível de Dano 20.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 228",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Estocar",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            228
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "2ae91160f2c54ebf",
+    "name": "Big Bang Finalizador",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Técnica é capaz de matar o alvo em uma ação. O usuário da Técnica faz um teste de confirmação, se o resultado for igual ou maior que 8 (Ouro ), 9 (Prata) ou 10 (Bronze), atordoa o alvo (ver Sistema atordoado). Se a jogada se confirmar o usuário faz outra jogada, se o resultado for igual a 10, aplica o Estado de Morte Morto. Finalizador (1d10): 9. Consequência 1: causando o Estado de Morte Iminente. 10. Consequência 2: causando o Estado de Morte Morto.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 228",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Finalizador",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            228
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "c22c4608b04af4ed",
+    "name": "Big Bang Guardar",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Protege o alvo aumentando suas Ações de Defesa.\n\nBronze:   +10 Ações de Defesa +1/turno imóvel.\n\nPrata:   +15 Ações de Defesa +1/turno imóvel.\n\nOuro:   +20 Ações de Defesa +1/turno imóvel.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 228, 229",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Guardar",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            228,
+            229
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "617eb459db9aa8eb",
+    "name": "Big Bang Infinito",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A duração da Técnica depende da vontade, situação ou do poder do usuário.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 229",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Infinito",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            229
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "25be5aaad51dbae6",
+    "name": "Big Bang Inibir Sentidos",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O alvo da Técnica perde a noção sensorial ligada aos 5 sentidos recebendo o Estado Desorientado (Ver tabela de perda de Sentidos).\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 229",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Inibir Sentidos",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            229
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "cae6e31975db545e",
+    "name": "Big Bang Medo",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Técnica induz ao alvo o Estado Amedrontado.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 229, 230, 232, 233",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Medo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            229,
+            230,
+            232,
+            233
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          },
+          "occurrences": [
+            {
+              "name": "Big Bang Medo",
+              "category": "Uso na aventura (a critério do mestre)",
+              "pages": [
+                230,
+                232,
+                233
+              ],
+              "text": "BIG BANGS DENTRO DA AVENTURA\n\nTer controle dos Big Bangs é “acessar” as características fundamentais dos átomos. A níveis atômicos. E este conhecimento não é restrito apenas ao uso nas Técnicas, mas acessível, também, no cotidiano do Cavaleiro. Sem precisar usa a Técnica em si, mas partes que a compõe. Tipo de ação: Ação de Cosmo + Ação de Movimento Parcial  (a critério do mestre).\n\nBig Bang Medo Um Cavaleiro que possua uma Técnica com o Big Bang Medo consegue ao elevar/queimar seu Cosmo emanar medo ou desconforto a humanos que não possuem Cosmo Energia Despertada. Quanto mais sucesso no TdA da Perícia Liderança mais medo terá o alvo. Nem todos os Big Bangs podem ser “acessados” separadamente. Algo dentro deles não permite, são complementos ou , simplesmente, fazem parte de um conjunto maior . A centelha da Explosão que não permite ser acessada. Um Cavaleiro que possua uma Técnica com o Big Bang Quebrar Armadura. Ele sabe como despedaçar Armaduras, mas mesmo possuindo esse conhecimento ele não consegue separar esse Big Bang. Esses são alguns exemplos, mas fica a critério do mestre os Big Bangs que podem ou não serem acessados. Importante se atentar que TODOS os Big Bangs acessados tem seus limites  e duração de acordo com sua classificação e poder. Por exemplo 1: O Cavaleiro tem Força 2 pode quebrar 5cm de espessura. Se ele usar o Big Bang Pulverizar ele vai pulverizar os mesmos 5cm. Nem mais nem menos. Por exemplo 2: O Cavaleiro tem Domínio de 20m não poderá abrir uma dimensão maior que isso."
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "af4cf8038621ae27",
+    "name": "Big Bang Novamente",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O usuário da Técnica tem 10  (Bronze), 20 (Prata), 30 (Ouro) +\n\nNível% de chance de atacar novamente causando danos extra: Bronze: 15, Prata: 30,\n\nOuro: 50.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 229",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Novamente",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            229
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "3db91f91d5c36fe8",
+    "name": "Big Bang Movendo",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Usar essa técnica exige uma ação de movimento  parcial ou total e não todas as ações de luta.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 229",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Movendo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            229
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "00707a4dbbcd3fbb",
+    "name": "Big Bang Outra Dimensão",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O alvo é teletransportado para uma dimensão paralela criada pelo usuário e ficará vagando neste lugar de vazio eterno até a duração da Técnica. O alvo retorna no mesmo lugar em que foi lançado a outra dimensão.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 229, 230, 231, 232, 233",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Outra Dimensão",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            229,
+            230,
+            231,
+            232,
+            233
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          },
+          "occurrences": [
+            {
+              "name": "Big Bang Outra Dimensão e Dimensão",
+              "category": "Uso na aventura (a critério do mestre)",
+              "pages": [
+                230,
+                231,
+                232,
+                233
+              ],
+              "text": "BIG BANGS DENTRO DA AVENTURA\n\nTer controle dos Big Bangs é “acessar” as características fundamentais dos átomos. A níveis atômicos. E este conhecimento não é restrito apenas ao uso nas Técnicas, mas acessível, também, no cotidiano do Cavaleiro. Sem precisar usa a Técnica em si, mas partes que a compõe. Tipo de ação: Ação de Cosmo + Ação de Movimento Parcial  (a critério do mestre).\n\nBig Bang Outra Dimensão e Dimensão Um Cavaleiro que possua uma Técnica com o Big Bang Outra Dimensão  e Dimensão. Ele sabe atravessar para uma dimensão paralela. Então ele pode acessar sua dimensão a qualquer momento e lugar. Porque ele possui este conhecimento sem precisar destruir galáxias. Nem todos os Big Bangs podem ser “acessados” separadamente. Algo dentro deles não permite, são complementos ou , simplesmente, fazem parte de um conjunto maior . A centelha da Explosão que não permite ser acessada. Um Cavaleiro que possua uma Técnica com o Big Bang Quebrar Armadura. Ele sabe como despedaçar Armaduras, mas mesmo possuindo esse conhecimento ele não consegue separar esse Big Bang. Esses são alguns exemplos, mas fica a critério do mestre os Big Bangs que podem ou não serem acessados. Importante se atentar que TODOS os Big Bangs acessados tem seus limites  e duração de acordo com sua classificação e poder. Por exemplo 1: O Cavaleiro tem Força 2 pode quebrar 5cm de espessura. Se ele usar o Big Bang Pulverizar ele vai pulverizar os mesmos 5cm. Nem mais nem menos. Por exemplo 2: O Cavaleiro tem Domínio de 20m não poderá abrir uma dimensão maior que isso."
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "07ee50d8a597606f",
+    "name": "Big Bang Paralisia",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Técnica deixa o alvo paralisado (Ver Sistemas Paralisado).\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 229, 230, 232, 233",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Paralisia",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            229,
+            230,
+            232,
+            233
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          },
+          "occurrences": [
+            {
+              "name": "Big Bang Paralisia",
+              "category": "Uso na aventura (a critério do mestre)",
+              "pages": [
+                230,
+                232,
+                233
+              ],
+              "text": "BIG BANGS DENTRO DA AVENTURA\n\nTer controle dos Big Bangs é “acessar” as características fundamentais dos átomos. A níveis atômicos. E este conhecimento não é restrito apenas ao uso nas Técnicas, mas acessível, também, no cotidiano do Cavaleiro. Sem precisar usa a Técnica em si, mas partes que a compõe. Tipo de ação: Ação de Cosmo + Ação de Movimento Parcial  (a critério do mestre).\n\nBig Bang Paralisia Um Cavaleiro que possua uma Técnica com o Big Bang Paralisia consegue paralisar humanos que não possuem Cosmo Energia Despertada. Quanto mais sucesso no TdA da Perícia Acadêmicos mais forte ou mais alvos ficam paralisados. Nem todos os Big Bangs podem ser “acessados” separadamente. Algo dentro deles não permite, são complementos ou , simplesmente, fazem parte de um conjunto maior . A centelha da Explosão que não permite ser acessada. Um Cavaleiro que possua uma Técnica com o Big Bang Quebrar Armadura. Ele sabe como despedaçar Armaduras, mas mesmo possuindo esse conhecimento ele não consegue separar esse Big Bang. Esses são alguns exemplos, mas fica a critério do mestre os Big Bangs que podem ou não serem acessados. Importante se atentar que TODOS os Big Bangs acessados tem seus limites  e duração de acordo com sua classificação e poder. Por exemplo 1: O Cavaleiro tem Força 2 pode quebrar 5cm de espessura. Se ele usar o Big Bang Pulverizar ele vai pulverizar os mesmos 5cm. Nem mais nem menos. Por exemplo 2: O Cavaleiro tem Domínio de 20m não poderá abrir uma dimensão maior que isso."
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "686c2ba7a44d3b7e",
+    "name": "Big Bang Perfeito",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Ao utilizar a Técnica em ação pela primeira vez e seus efeitos estão funcionando, permite reutilizar a Técnica ou outra Técnica com o sucesso máximo  no Teste da Asterismo.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 229",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Perfeito",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            229
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "31676829278a7def",
+    "name": "Big Bang Prender o Cosmo",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O alvo fica com o Atributo Cosmo 0 e fica incapaz de fazer qualquer ação relacionada ao Cosmo como queimar Cosmo Energia e usar Técnicas.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 229",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Prender o Cosmo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            229
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "c2383b4006f8efae",
+    "name": "Big Bang Pulverizar",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "A Técnica aplica ao alvo o Estado de Morte Pulverizado . Personagens que tiverem seus pontos de vida superados por uma Técnica e o valor excedido for igual ou maior que 50% dos pontos de vida totais do alvo, este é pulverizado, restando apenas o pó da Armadura. Esse Big Bang anula qualquer reação ou virtude que venha curar o alvo por perda de pontos de vida.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 229, 230, 232, 233",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Pulverizar",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            229,
+            230,
+            232,
+            233
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          },
+          "occurrences": [
+            {
+              "name": "Big Bang Pulverizar",
+              "category": "Uso na aventura (a critério do mestre)",
+              "pages": [
+                230,
+                232,
+                233
+              ],
+              "text": "BIG BANGS DENTRO DA AVENTURA\n\nTer controle dos Big Bangs é “acessar” as características fundamentais dos átomos. A níveis atômicos. E este conhecimento não é restrito apenas ao uso nas Técnicas, mas acessível, também, no cotidiano do Cavaleiro. Sem precisar usa a Técnica em si, mas partes que a compõe. Tipo de ação: Ação de Cosmo + Ação de Movimento Parcial  (a critério do mestre).\n\nBig Bang Pulverizar Um Cavaleiro que possua uma Técnica com o Big Bang Pulverizar. Ele sabe reduzir as coisas a pó estelar. Então no lugar de quebrar um objeto, ele pode pulveriza -lo. Porque ele possui este conhecimento. Nem todos os Big Bangs podem ser “acessados” separadamente. Algo dentro deles não permite, são complementos ou , simplesmente, fazem parte de um conjunto maior . A centelha da Explosão que não permite ser acessada. Um Cavaleiro que possua uma Técnica com o Big Bang Quebrar Armadura. Ele sabe como despedaçar Armaduras, mas mesmo possuindo esse conhecimento ele não consegue separar esse Big Bang. Esses são alguns exemplos, mas fica a critério do mestre os Big Bangs que podem ou não serem acessados. Importante se atentar que TODOS os Big Bangs acessados tem seus limites  e duração de acordo com sua classificação e poder. Por exemplo 1: O Cavaleiro tem Força 2 pode quebrar 5cm de espessura. Se ele usar o Big Bang Pulverizar ele vai pulverizar os mesmos 5cm. Nem mais nem menos. Por exemplo 2: O Cavaleiro tem Domínio de 20m não poderá abrir uma dimensão maior que isso."
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "4bf80b08a6fdf40c",
+    "name": "Big Bang Quebrar Armadura",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O foco dessa Técnica é despedaçar Armaduras. Dessa forma, causando danos também nas vestimentas do alvo. Instantânea: Eleva 1 Nível de Dano na Armadura. Sustentada: Bronze: 1/turno, Prata: 2/turno, Ouro: 3/turno.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 229",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Quebrar Armadura",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            229
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "e0577d2bd83ea227",
+    "name": "Big Bang Refletir",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Enquanto ela estiver ativa pode refletir QUALQUER Técnica como ação livre. Quando o Cavaleiro for atacado por uma Técnica, faz um Teste da Manobra\n\nEspecial Refletir Técnicas (ver Técnicas) com +0 ou +5 de Modificador Positivo.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 229, 230, 231, 232, 233",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Refletir",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            229,
+            230,
+            231,
+            232,
+            233
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          },
+          "occurrences": [
+            {
+              "name": "Big Bang Refletir",
+              "category": "Uso na aventura (a critério do mestre)",
+              "pages": [
+                230,
+                231,
+                232,
+                233
+              ],
+              "text": "BIG BANGS DENTRO DA AVENTURA\n\nTer controle dos Big Bangs é “acessar” as características fundamentais dos átomos. A níveis atômicos. E este conhecimento não é restrito apenas ao uso nas Técnicas, mas acessível, também, no cotidiano do Cavaleiro. Sem precisar usa a Técnica em si, mas partes que a compõe. Tipo de ação: Ação de Cosmo + Ação de Movimento Parcial  (a critério do mestre).\n\nBig Bang Refletir Um Cavaleiro que possua uma Técnica com o Big Bang Refletir . Ele sabe refletir outras Técnicas. Então ele não precisa da Virtude Bloqueador de Técnicas para refletir uma Técnica como ação de Reação. Porque ele possui este conhecimento. Nem todos os Big Bangs podem ser “acessados” separadamente. Algo dentro deles não permite, são complementos ou , simplesmente, fazem parte de um conjunto maior . A centelha da Explosão que não permite ser acessada. Um Cavaleiro que possua uma Técnica com o Big Bang Quebrar Armadura. Ele sabe como despedaçar Armaduras, mas mesmo possuindo esse conhecimento ele não consegue separar esse Big Bang. Esses são alguns exemplos, mas fica a critério do mestre os Big Bangs que podem ou não serem acessados. Importante se atentar que TODOS os Big Bangs acessados tem seus limites  e duração de acordo com sua classificação e poder. Por exemplo 1: O Cavaleiro tem Força 2 pode quebrar 5cm de espessura. Se ele usar o Big Bang Pulverizar ele vai pulverizar os mesmos 5cm. Nem mais nem menos. Por exemplo 2: O Cavaleiro tem Domínio de 20m não poderá abrir uma dimensão maior que isso."
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "_id": "3fe4dddba25b8214",
+    "name": "Big Bang Relâmpago",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Cavaleiro eleva sua classificação de Velocidade para Velocidade Massivamente Superada ++ na tabela de velocidade.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 230",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Relâmpago",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            230
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "fb437ee6eaa7010a",
+    "name": "Big Bang Sacrifício",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Personagem pode extinguir pontos de vida para aumentar o dano. O Cavaleiro extingue 5  pontos de vida para lançar mais ataques  e causar seu Modificador de Atributo Chave da Técnica de dano.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 230",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Sacrifício",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            230
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "83665b3c116a7f30",
+    "name": "Big Bang Terreno Favorável",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Quando o Personagem estiver em um ambiente que favoreça o uso da Técnica, que deve ser especificado, ele eleva 1 Nível de Dano.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 230",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Terreno Favorável",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            230
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "ba467c73c6ab64dd",
+    "name": "Big Bang Zero Absoluto",
+    "type": "bigbang",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Zero absoluto é a temperatura na qual toda a atividade de átomos é impossível, portanto, nada se move, é o limite extremo. Em um combate entre dois cavaleiros do frio, a vitória caberá ao que se aproximar mais desse limite! Frio 1 (Nível de Dano 15): O ar gélido do Cavaleiro atinge -150º C. Nesta temperatura as Armaduras da Categoria de Bronze congelam. Frio 2 (Nível de Dano 20): O ar gélido do Cavaleiro atinge -200º C. Nesta temperatura as Armaduras da Categoria de Prata congelam. Próximo Zero Absoluto (Nível de Dano 25): O ar gélido do Cavaleiro atinge -273º C. Nesta temperatura  as Armaduras da Categoria de Bronze e Prata quebram. mas as Armaduras de ouro não congelam antes dos -273, 15 °C, portanto você precisaria baixar a temperatura até o zero absoluto para congelar uma Armadura da Categoria Ouro.\n\nEspecial: Uma Armadura congelada perde sua Proteção de Armadura até o final do combate ou se o alvo superar o Duelo de Cosmo Passivo do usuário do Big Bang.\n\nRegras de composição (p. 222)\nPodemos desenvolver Técnicas novas, diferentes ou apenas evolui -las acrescentando Big Bangs em seus slots.\n\nBig Bang Primordial\n\nTodas as Técnicas possuem em sua essência a grande explosão do universo, os Big Bangs, vinculada ao Ciclo de Cosmo  Energia do universo . Os alquimistas de Mu chamam essa “fagulha” do universo de Big Bang Primordial, que é a base do poder que destrói galáxias e de onde deriva todos os outros Big Bangs. Os Sábios com o passar dos anos, de longos estudos e treinamentos foram aprendendo como evoluir, criar e expandir esses universos.\n\nOs Big Bangs primordiais são as características fundamentais da explosão e queima do Cosmo de determinada Técnica e são eles: Big Bang Primordial Dano, Controle, Sustentada e Cosmo Residual.\n\nUma Técnica de Bronze possui o seu Slot Primordial + 2 Slots extra. Uma Técnica de Prata possui o seu Slot Primordial + 3 slots extras. Uma Técnica de Ouro possui o seu Slot Primordial + 4 slots extras.\n\nCusto:\n\n1 Big Bang Extra = +1 Ponto de Cosmo Energia queimada\n\nUma Técnica de Bronze necessita a queima de 2 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Prata necessita a queima de 3 pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra. Uma Técnica de Ouro necessita a queima de 4  pontos de Cosmo Energia equivalente ao uso do Big Bang primordial + 1 ponto de Cosmo Energia por Big Bang extra.\n\nO tempo de desenvolvimento e criação de uma Técnica nova é de 6 meses por slot.\n\nTestes de confirmação (p. 224): Bronze: 1 dado; Prata: 2 dados; Ouro: 3 dados. Essa quantidade NÃO muda em hipótese alguma. O resultado 1 na jogada de confirmação NÃO anula sucesso.",
+      "page": "222, 224, 230",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Componente de técnica; observe os slots e a classe da técnica (pp. 222–223).",
+      "category": "Big Bang Extra",
+      "level": 1,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 1,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      },
+      "costText": "+1 CE; ocupa 1 slot.",
+      "notes": "Referência: importar não acrescenta slots, custos, bônus ou efeitos à técnica. Registre a composição e ajuste seu custo manualmente."
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "bigbang:extra:Zero Absoluto",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            222,
+            224,
+            230
+          ],
+          "reference": {
+            "component": "extra",
+            "slots": 1
+          }
+        }
+      }
+    }
+  }
+]
