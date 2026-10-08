@@ -1,5 +1,8 @@
-name: Preparar release para instalação por manifesto
+name: Publicar sistema para instalação por manifesto
 on:
+  push:
+    branches: [main]
+    paths: [system.json]
   workflow_dispatch:
 permissions:
   contents: write
@@ -23,12 +26,16 @@ jobs:
       - run: npm test
       - run: npm run check
       - run: python tools/package.py --release
-      - name: Criar rascunho de release
+      - name: Publicar release com manifesto e ZIP
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           VERSION=$(node -p "require('./system.json').version")
           ID=$(node -p "require('./system.json').id")
+          if gh release view "v${VERSION}" >/dev/null 2>&1; then
+            echo "A versão v${VERSION} já existe; os arquivos publicados não serão alterados."
+            exit 0
+          fi
           gh release create "v${VERSION}" "dist/system.json" "dist/${ID}-${VERSION}.zip" \
-            --draft --target "$GITHUB_SHA" --title "Fichas v${VERSION}" \
+            --latest --target "$GITHUB_SHA" --title "Fichas v${VERSION}" \
             --notes-file docs/notas-release.md

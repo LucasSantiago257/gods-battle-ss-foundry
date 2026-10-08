@@ -15,7 +15,13 @@ Primeira implementação das fichas do sistema UmD10+, com destino ao **FoundryV
 
 Em **Sistemas de Jogo → Instalar Sistema**, o Foundry aceita uma URL de manifesto e baixa o pacote automaticamente. Para este sistema, o arquivo é `system.json`. O JSON e o ZIP precisam estar acessíveis ao servidor por HTTPS.
 
-O repositório atual é privado. Os arquivos foram preparados, mas ainda não existe uma URL pública de instalação. Consulte o [guia de instalação por manifesto](docs/instalacao-manifesto.md) para publicar a distribuição. O acesso ao GitHub privado no navegador não é transferido ao instalador.
+O repositório é público, e a distribuição é publicada pelo GitHub Actions. Use a URL abaixo após a release estar disponível:
+
+```text
+https://github.com/LucasSantiago257/gods-battle-ss-foundry/releases/latest/download/system.json
+```
+
+Consulte o [guia de instalação por manifesto](docs/instalacao-manifesto.md). Crie um mundo de teste para validar as fichas no Foundry 13 build 350.
 
 ## Instalação manual no servidor
 
