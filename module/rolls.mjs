@@ -18,12 +18,18 @@ export async function rollTest(actor, kind, key) {
   if (!answer || typeof answer !== "object") return;
   if (!Object.values(answer).every(Number.isFinite)) return ui.notifications.warn("Informe valores numéricos válidos.");
   const dice = Math.max(1, parameters.dice + answer.advantage);
-  const roll = await new Roll(`${dice}d10`).evaluate();
+  const roll = await new Roll(`${dice}d10kh1`).evaluate();
   const result = resolvePool(roll.dice[0].results.map(r => r.result), parameters.modifier + answer.bonus + answer.advantage * 2);
+  // A rolagem nativa salva no chat também precisa representar o total UmD10+.
+  // Reutiliza a parada avaliada; o termo adicional é determinístico.
+  const adjustment = result.tens * 2 - result.ones * 2 + result.modifier;
+  const constant = await new Roll(String(Math.abs(adjustment))).evaluate();
+  const messageRoll = Roll.fromTerms([...roll.terms, new foundry.dice.terms.OperatorTerm({operator: adjustment < 0 ? "-" : "+"}), ...constant.terms]);
+  if (!Number.isFinite(messageRoll.total)) await messageRoll.evaluate();
   const content = await foundry.applications.handlebars.renderTemplate(`systems/${SYSTEM_ID}/templates/chat.hbs`, {label,
     kind: kind === "resistance" ? "Resistência" : kind === "skill" ? "Perícia" : "Atributo", ...result, difficulty: answer.difficulty, outcome: classify(result.total, answer.difficulty)});
   const mode = game.settings.get("core", "rollMode");
-  const message = {speaker: ChatMessage.getSpeaker({actor}), content, rolls: [roll], flags: {[SYSTEM_ID]: {test: result, difficulty: answer.difficulty}}};
+  const message = {speaker: ChatMessage.getSpeaker({actor}), content, rolls: [messageRoll], flags: {[SYSTEM_ID]: {test: result, difficulty: answer.difficulty}}};
   ChatMessage.applyRollMode(message, mode);
   return ChatMessage.create(message);
 }
