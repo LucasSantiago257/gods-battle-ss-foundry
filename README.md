@@ -1,0 +1,49 @@
+# Saint Seiya — A Batalha dos Deuses para FoundryVTT
+
+Primeira implementação das fichas do sistema UmD10+, com destino ao **FoundryVTT 13 build 350**. Versão **0.1.0, em desenvolvimento**. Os testes locais não substituem a validação no Foundry; `compatibility.verified` será preenchido após essa validação.
+
+## O que já existe
+
+- Ficha de cavaleiro com sete áreas, cinco atributos, 18 perícias, habilidades de luta, recursos, estados, sentidos, biografia e evolução.
+- Fichas de armaduras, técnicas, virtudes, habilidades/dádivas, Big Bangs, incrementos, artefatos e Cosmo Divino.
+- Rolagens de atributos, perícias e resistências: maior d10, +2 por 10, −2 por 1, modificadores, dificuldade e vantagem/desvantagem. Seguem o modo de visibilidade de rolagens escolhido no Foundry.
+- Equipamento de uma armadura por vez, com PA e CE derivados; PV da armadura independentes.
+- Arrastar conteúdos de Item/compêndio para a ficha cria cópias; a origem fica registrada.
+- Botão para criar um compêndio do mundo com seis modelos iniciais. São modelos editáveis, não o catálogo integral do livro.
+
+## Instalar no servidor
+
+1. Extraia o ZIP `gods-battle-ss-0.1.0.zip`. Ele contém a pasta `gods-battle-ss`.
+2. Com o servidor Foundry parado, envie essa pasta para `<pasta de dados>/Data/systems/gods-battle-ss/`. `system.json` deve ficar diretamente nessa pasta, sem uma pasta intermediária.
+3. Reinicie o Foundry e crie um **mundo de teste** escolhendo “Saint Seiya — A Batalha dos Deuses”.
+4. Crie um Actor do tipo **Cavaleiro**. Edite o nome, atributos, estilo e recursos. As alterações são salvas ao editar os campos.
+5. Na aba **Armadura**, clique em **Abrir / criar compêndio de modelos** como mestre. Arraste um modelo para a ficha e use **Equipar** para aplicar a armadura.
+6. Confira o [roteiro de validação](docs/validacao-foundry.md).
+
+Se a hospedagem usa um painel gerenciado, use o gerenciador de arquivos ou o método de instalação manual oferecido pelo provedor. O caminho é a pasta de **dados do Foundry**, não a pasta dos executáveis. Não houve instalação ou alteração do seu servidor por esta tarefa.
+
+O repositório é privado. URLs privadas do GitHub normalmente exigem autenticação e não funcionam como manifesto público para o instalador do Foundry. Nesta etapa use o ZIP/manual; nenhuma credencial deve ser colocada em `system.json`. Uma URL de instalação automática será definida quando houver um endereço de distribuição adequado.
+
+## Convenções atuais
+
+- Escolha do usuário: **8 pontos de treino** e **Cosmo Energia baseada em Cosmo**. Com os cinco iniciais e o ponto do estilo, o orçamento básico de atributos é 14. A distribuição, o ponto do estilo e bônus de virtudes são lançados pelo usuário.
+- Resistência: por padrão **graduação + modificador de nível**, conforme as fórmulas das páginas 207/434. O mestre pode escolher **modificador do atributo + modificador de nível** em Configurações do mundo. É uma interpretação provisória, identificada nas fichas.
+- PV: cálculo provisório `PV inicial + incremento × (nível − 1) + Vigor × nível + extras`. Há campo de máximo manual. Bônus especiais de atributos divinos e poderes são lançados manualmente.
+- Tabelas de ações e CE dos estilos são aplicadas até nível 20; depois desse ponto, use os ajustes. Alterar nível não promove status nem altera sentido automaticamente.
+- Os bônus de sentidos, Domínio, Nível de Ataque, afinidade e efeitos especiais são registrados manualmente. A ficha mostra essas separações.
+
+## Limites desta entrega
+
+Ainda não automatiza ataque contra defesa, aplicação de dano, custos de técnicas, pré-requisitos de aquisição, efeitos de estados/virtudes, descanso, promoção, compra de perícias ou recuperação de armaduras. A ficha oferece campos para registrar essas regras. Big Bangs e incrementos de uma técnica ficam descritos na cópia; compor técnicas a partir de referências estruturadas é um próximo marco.
+
+Bestas, legiões, monstros e deuses não possuem fichas especializadas nesta versão. O cavaleiro guarda o UUID de seu companheiro e os registros de legião/discípulos.
+
+## Desenvolvimento
+
+Node 22+ e Python 3. Instale as dependências com `npm ci`; rode `npm test`, `npm run check` e `npm run build`. As dependências são apenas de desenvolvimento; o sistema instalado usa as bibliotecas do próprio Foundry.
+
+`npm run check` compila os templates com Handlebars e cria `dist/preview.html`. `npm run build` gera um ZIP apenas com os arquivos necessários à instalação. Os testes de regras e fichas usam um contrato mínimo da API, não um servidor Foundry real.
+
+API utilizada: [ActorSheetV2 v13](https://foundryvtt.com/api/v13/classes/foundry.applications.sheets.ActorSheetV2.html), [ItemSheetV2](https://foundryvtt.com/api/v13/classes/foundry.applications.sheets.ItemSheetV2.html), [modelos de dados](https://foundryvtt.com/article/system-data-models/) e [compêndios](https://foundryvtt.com/article/compendium/).
+
+Créditos e origem do conteúdo em [ATTRIBUTION.md](ATTRIBUTION.md).
