@@ -19,7 +19,7 @@ O workflow **Publicar sistema para instalação por manifesto** verifica o proje
 Outra hospedagem pode ser usada com:
 
 ```sh
-python tools/package.py --manifest-url https://HOST/system.json --download-url https://HOST/gods-battle-ss-0.1.0.zip
+python tools/package.py --manifest-url https://HOST/system.json --download-url https://HOST/gods-battle-ss-0.1.1.zip
 ```
 
 Substitua `HOST` pelo endereço real e publique os dois arquivos juntos. O endereço do manifesto deve permanecer estável entre versões.

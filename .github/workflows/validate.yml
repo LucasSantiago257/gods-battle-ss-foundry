@@ -24,7 +24,7 @@ jobs:
       - run: python tools/package.py --release --output dist/manifest-install
       - uses: actions/upload-artifact@v4
         with:
-          name: gods-battle-ss-0.1.0
+          name: gods-battle-ss
           path: |
             dist/*.zip
             dist/preview.html
