@@ -1,0 +1,14 @@
+<section class="creation-guide technique-builder"><h3>Construir técnica personalizada</h3><p>Rascunho salvo na cópia. Escolha classe, primordial, Big Bangs extras e incrementos. Os parâmetros da técnica só mudam ao concluir.</p>
+{{> "systems/gods-battle-ss/templates/fields.hbs" fields=builder.fields}}
+{{#if builder.error}}<p class="note">{{builder.error}}</p>{{else}}
+<div class="stat-strip"><div><span>Slots extras</span><strong>{{builder.used}} / {{builder.capacity}}</strong></div><div><span>CE da composição</span><strong>{{builder.totalCost}}</strong></div><div><span>Dificuldade</span><strong>{{builder.difficulty}}</strong></div></div>
+<p>Primordial {{builder.primary.label}} · custo {{builder.cost}}CE de Big Bangs + {{builder.fixed}}CE de incrementos/ajuste. <button type="button" data-action="openReference" data-uuid="{{builder.primary.uuid}}">Ler primordial</button></p>
+{{#if builder.preview}}<p>Dano corporal {{builder.preview.normal.damage}} · crítico {{builder.preview.critical.damage}}; armadura {{builder.preview.normal.armorDamage}} · crítico {{builder.preview.critical.armorDamage}}, antes da resistência. {{builder.preview.formula}}</p>{{/if}}
+{{#each builder.components}}<details class="book-rule-view"><summary>{{name}} · graduação {{rank}} · slots {{slots}} · custo {{cost}}CE · p.{{page}}</summary>
+<div class="book-rule-text">{{description}}</div><p>Requisitos: {{requirements}}</p><p class="note">{{author}} · {{license}}</p>
+{{#if benefit}}<p>Efeito descrito da graduação: {{benefit}} · aplicar após conferência.</p>{{/if}}
+{{> "systems/gods-battle-ss/templates/fields.hbs" fields=fields}}
+<button type="button" data-action="openReference" data-uuid="{{uuid}}">Abrir referência</button><button type="button" data-action="removeTechniqueComponent" data-slot="{{slot}}" {{#unless @root.editable}}disabled{{/unless}}>Remover da composição</button></details>{{/each}}
+{{#each builder.warnings}}<p class="note">Pendência: {{this}}</p>{{/each}}{{#each builder.manual}}<p class="note">{{this}}</p>{{/each}}
+{{/if}}
+<div class="catalog-links"><button type="button" data-action="addTechniqueComponent" {{#unless editable}}disabled{{/unless}}>Adicionar Big Bang / incremento</button><button type="button" data-action="finishTechniqueBuilder" {{#unless editable}}disabled{{/unless}}>Concluir composição</button><button type="button" data-action="discardTechniqueBuilder" {{#unless editable}}disabled{{/unless}}>Descartar rascunho</button></div></section>

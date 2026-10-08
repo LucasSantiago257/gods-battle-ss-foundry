@@ -29,3 +29,7 @@ A ativação impede cliques duplicados no mesmo cliente e verifica mudanças na 
 O catálogo de Técnicas possui 166 entradas, organizadas por origem. Arraste uma para a ficha e use **Conferir**. Revise natureza, efeito, custo total, Poder/ND quando houver dano, alcance e regras específicas; marque a revisão ao terminar. Campos numéricos pendentes usam 0 e custos variáveis permanecem descritos em texto. A revisão é exigida somente pelas cópias do novo catálogo; técnicas anteriores continuam funcionando.
 
 Consultar Big Bangs relacionados abre referências gerais sem modificar a cópia. Efeitos próprios da técnica prevalecem e continuam manuais. Exclamação de Athena é cooperativa e não habilita o botão de ativação genérica. A seção [compêndios](compendios.md) detalha as convenções.
+
+## Composição personalizada
+
+Técnicas → Adicionar abre o construtor com rascunho persistente, classe, primordial, componentes e graduações. Slots, custo, dificuldade e parâmetros genéricos são calculados; requisitos e efeitos especiais exigem revisão. Veja tecnicas-personalizadas.md. A CE fixa já inclui os tipos de incrementos selecionados: em Condensar, conte apenas virtudes adicionais ainda não incluídas.

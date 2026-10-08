@@ -13,6 +13,7 @@ export function effectiveTechnique(system,technique) {
   return {...technique,damageLevel:tier.damageLevel,power:tier.power};
 }
 export function techniqueReadiness(item) {
+  if(item?.flags?.["gods-battle-ss"]?.techniqueDraft)return "Conclua ou descarte o rascunho de composição antes de ativar esta técnica.";
   const reference = item?.flags?.["gods-battle-ss"]?.source?.reference, s = item?.system;
   if (reference?.manualOnly) return "Técnica cooperativa ou especial: aplique os testes e efeitos manualmente conforme a descrição.";
   if (!reference?.reviewRequired) return s?.effectKind === "manual" ? "Esta técnica usa aplicação manual." : null;

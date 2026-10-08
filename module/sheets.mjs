@@ -4,6 +4,7 @@ import {createStarterCompendium} from "./starter.mjs";
 import {useTechnique} from "./techniques.mjs";
 import {EFFECT_KINDS,TECHNIQUE_MODES,effectiveTechnique,techniqueReadiness} from "./technique-rules.mjs";
 import {setupTechnique} from "./technique-setup.mjs";
+import {createPersonalTechnique,beginTechniqueBuilder,techniqueBuilderContext,techniqueConstruction,addTechniqueComponent,removeTechniqueComponent,discardTechniqueBuilder,finishTechniqueBuilder} from "./technique-builder.mjs";
 import {ABILITY_KINDS, openCatalog} from "./catalog.mjs";
 import {calculationSummary} from "./calculations.mjs";
 import {evaluatePassives, passiveDefinition, passiveWarnings} from "./passives.mjs";
@@ -139,6 +140,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
   static async setupTechnique(_event,target) {if(this.isEditable)await setupTechnique(this.actor.items.get(target.closest("[data-item-id]").dataset.itemId));}
   static async createItem(_event, target) {
     if (!this.isEditable || !ITEM_TYPES[target.dataset.itemType]) return;
+    if(target.dataset.itemType==="technique")return createPersonalTechnique(this.actor);
     const [item] = await this.actor.createEmbeddedDocuments("Item", [{name: `Nova ${ITEM_TYPES[target.dataset.itemType]}`, type: target.dataset.itemType, img: `systems/${SYSTEM_ID}/assets/cosmos.svg`}]);
     item.sheet.render(true);
   }
@@ -161,7 +163,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
 }
 
 export class ContentSheet extends foundry.applications.api.HandlebarsApplicationMixin(foundry.applications.sheets.ItemSheetV2) {
-  static DEFAULT_OPTIONS = {classes: ["gods-battle", "content-sheet"], tag: "form", position: {width: 620, height: 760}, form: {submitOnChange: true, closeOnSubmit: false}, actions: {useTechnique: ContentSheet.activateTechnique,setupTechnique:ContentSheet.setupTechnique, openReference: ContentSheet.openReference}};
+  static DEFAULT_OPTIONS = {classes: ["gods-battle", "content-sheet"], tag: "form", position: {width: 620, height: 760}, form: {submitOnChange: true, closeOnSubmit: false}, actions: {useTechnique: ContentSheet.activateTechnique,setupTechnique:ContentSheet.setupTechnique,beginTechniqueBuilder:ContentSheet.beginTechniqueBuilder,addTechniqueComponent:ContentSheet.addTechniqueComponent,removeTechniqueComponent:ContentSheet.removeTechniqueComponent,discardTechniqueBuilder:ContentSheet.discardTechniqueBuilder,finishTechniqueBuilder:ContentSheet.finishTechniqueBuilder, openReference: ContentSheet.openReference}};
   static PARTS = {sheet: {template: `systems/${SYSTEM_ID}/templates/content.hbs`, scrollable: [".content-body"]}};
   async _prepareContext(options) {
     const context = await super._prepareContext(options), s = this.item.system;
@@ -199,11 +201,16 @@ export class ContentSheet extends foundry.applications.api.HandlebarsApplication
         includesUser:!!user,reviewMessage,canActivate:this.isEditable&&this.item.parent?.type==="knight"&&!reviewMessage,canSetup:this.isEditable&&this.item.parent?.type==="knight"&&!source?.reference?.manualOnly};
     }
     return Object.assign(context, {item: this.item, editable: this.isEditable, fields, typeLabel: ITEM_TYPES[this.item.type], armor: this.item.type === "armor" ? s.armor : null,
-      technique, origin: s.originUuid, bookReference,
+      technique, origin: s.originUuid, bookReference,builder:await techniqueBuilderContext(this.item),canBuild:this.isEditable&&this.item.type==="technique"&&this.item.parent?.type==="knight"&&!source,construction:techniqueConstruction(this.item),
       ruleReference: definition ? {...definition, statusLabel: {automated:"Automatizada",partial:"Parcialmente automatizada",manual:"Aplicação manual"}[definition.status], warnings: this.item.parent?.type === "knight" ? passiveWarnings(this.item.parent.system,this.item) : []} : null});
   }
   static async activateTechnique() {if (this.isEditable) await useTechnique(this.item.parent, this.item);}
   static async setupTechnique() {if(this.isEditable)await setupTechnique(this.item);}
+  static async beginTechniqueBuilder() {if(this.isEditable)await beginTechniqueBuilder(this.item);}
+  static async addTechniqueComponent() {if(this.isEditable)await addTechniqueComponent(this.item);}
+  static async removeTechniqueComponent(_event,target) {if(this.isEditable)await removeTechniqueComponent(this.item,target.dataset.slot);}
+  static async discardTechniqueBuilder() {if(this.isEditable)await discardTechniqueBuilder(this.item);}
+  static async finishTechniqueBuilder() {if(this.isEditable)await finishTechniqueBuilder(this.item);}
   static async openReference(_event, target) {
     const uuid = target.dataset.uuid;
     if (!/^Compendium\.gods-battle-ss\.componentes-tecnicas\.Item\.[a-f0-9]{16}$/.test(uuid)) return;
