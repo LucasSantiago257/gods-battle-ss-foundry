@@ -23,7 +23,7 @@ export async function rollTest(actor, kind, key, options = {}) {
   if (!actor.isOwner) return;
   const label = kind === "skill" ? SKILLS[key]?.label : ATTRIBUTES[key];
   if (!label) return;
-  const parameters = testParameters(actor.system, kind, key, game.settings.get(SYSTEM_ID, "resistanceMode"));
+  const parameters = testParameters(actor.system, kind, key, game.settings.get(SYSTEM_ID, "resistanceMode"), {technique:!!options.resistanceAttack});
   const pendingPenalty = kind === "skill" && key === "asterism" ? actor.system.combat.asterismPenalty ?? 0 : 0;
   parameters.modifier += pendingPenalty;
   const difficulty = Number.isFinite(options.difficulty) ? options.difficulty : 10;

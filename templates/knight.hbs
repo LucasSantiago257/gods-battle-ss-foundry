@@ -11,9 +11,13 @@
   </fieldset>
   <nav class="tabs battle-tabs" aria-label="Áreas da ficha">{{#each tabs}}<button type="button" data-action="tab" data-group="{{group}}" data-tab="{{id}}" class="{{cssClass}}">{{label}}</button>{{/each}}</nav>
   <div class="sheet-body">
+    {{#if canBeginCreation}}<button type="button" data-action="beginCreation">Abrir assistente de criação de nível 1</button>{{/if}}
+    {{#if creationGuide}}<section class="creation-guide"><h3>Criação · etapa {{creationGuide.step}} de 6 · {{creationGuide.current.label}}</h3><p>{{creationGuide.current.hint}}</p><nav class="catalog-links" aria-label="Etapas da criação">{{#each creationGuide.steps}}<button type="button" data-action="guideStep" data-step="{{index}}" {{#unless @root.editable}}disabled{{/unless}}>{{index}}. {{label}}</button>{{/each}}</nav><p><strong>Treino:</strong> {{creationGuide.trainingSpent}} / 8 · restante {{creationGuide.trainingRemaining}}. <strong>Perícias:</strong> {{creationGuide.skillSpent}} / {{creationGuide.skillBudget}} · restante {{creationGuide.skillRemaining}}.</p>
+      <details><summary>Escolhas iniciais e revisão</summary><p>Estilo: referências {{creationGuide.initial.page}}. Virtude inicial do estilo: {{creationGuide.initial.virtue}}.</p>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=creationGuide.fields}}<div class="catalog-links"><button type="button" data-action="applyInitialStyle" {{#unless editable}}disabled{{/unless}}>Aplicar / conferir benefícios do estilo</button><button type="button" data-action="chooseCreationItem" data-slot="virtue1" {{#unless editable}}disabled{{/unless}}>Escolher virtude Geral</button><button type="button" data-action="chooseCreationItem" data-slot="virtue2" {{#unless editable}}disabled{{/unless}}>Escolher virtude do estilo</button><button type="button" data-action="chooseCreationItem" data-slot="ability" {{#unless editable}}disabled{{/unless}}>Escolher habilidade inicial</button><button type="button" data-action="chooseCreationItem" data-slot="armor" {{#unless editable}}disabled{{/unless}}>Armadura inicial</button><button type="button" data-action="chooseCreationItem" data-slot="technique" {{#unless editable}}disabled{{/unless}}>Escolher técnica</button></div>{{#each creationGuide.warnings}}<p class="note">Pendência: {{this}}</p>{{/each}}<button type="button" data-action="finishCreation" {{#unless editable}}disabled{{/unless}}>Concluir criação</button><p class="note">Rascunho salvo ao editar. Fechar a ficha não perde o progresso. Concluir registra exceções e conserva as cópias importadas.</p></details>
+    </section>{{/if}}
     <section class="tab {{tabs.overview.cssClass}}" data-group="primary" data-tab="overview">
       <div class="attributes">{{#each attributes}}<div class="attribute-card"><button type="button" data-action="rollTest" data-kind="attribute" data-key="{{key}}" {{#unless @root.editable}}disabled{{/unless}}>{{label}} <i class="fa-solid fa-dice"></i></button><input type="number" min="0" max="12" name="system.attributes.{{key}}.value" value="{{value}}" aria-label="Graduação de {{label}}" {{#unless @root.editable}}disabled{{/unless}}><span>Modificador {{mod}}</span><label>Extra <input type="number" name="system.attributes.{{key}}.bonus" value="{{bonus}}" aria-label="Modificador extra de {{label}}" {{#unless @root.editable}}disabled{{/unless}}></label></div>{{/each}}</div>
-      <p class="note">Criação: 8 pontos de treino + 1 do estilo, além dos cinco atributos iniciais. Total básico {{system.creation.budget}}; ficha {{system.creation.total}}. Bônus de virtudes e exceções são registrados manualmente.</p>
+      <p class="note">Criação: 8 pontos de treino + 1 do estilo, além dos cinco atributos iniciais. Total básico {{system.creation.budget}}; ficha {{system.creation.total}}. Benefícios dos itens conferidos aparecem na memória de Poderes; ajustes e exceções ficam separados.</p>
       <div class="stat-strip">{{#each movement}}<div><span>{{label}}</span><strong>{{value}}</strong></div>{{/each}}</div>
       <h3>Identidade de combate e recursos</h3>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=overview}}
       <details class="calculation-ledger"><summary>Como os valores são calculados</summary>{{#each calculations}}<p><strong>{{label}}</strong>: {{text}}<br><small>Referência: {{page}}</small></p>{{/each}}</details>
@@ -25,6 +29,7 @@
       <h3>Habilidades de luta</h3>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=fighting}}
       <h3>Ajustes de combate</h3>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=combatFields}}
       <h3>Estados</h3>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=conditions}}
+      <details class="calculation-ledger"><summary>Histórico de aplicações de dano</summary>{{#each damageLedger}}<p><strong>{{statusLabel}}</strong> · PV {{before.health}} → {{after.health}} · armadura {{before.armor}} → {{after.armor}}{{#if reason}}<br>Ajuste: {{reason}}{{/if}}</p>{{#if canRecover}}<button type="button" data-action="recoverDamage" data-operation="{{key}}">Conferir e recuperar operação interrompida</button>{{/if}}{{else}}<p>Nenhuma aplicação registrada.</p>{{/each}}</details>
       <p class="note">Estados, categoria de dano e efeitos de poderes são registros manuais nesta versão. Os bônus dos estilos após o nível 20 são lançados como ajustes. O Nível de Ataque é informado separadamente da PA.</p>
     </section>
     <section class="tab {{tabs.skills.cssClass}}" data-group="primary" data-tab="skills">
@@ -63,5 +68,5 @@
       <h3>História</h3>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=biography}}
     </section>
   </div>
-  <footer class="sheet-footer">Alterações salvas ao editar · Fichas 0.8.0</footer>
+  <footer class="sheet-footer">Alterações salvas ao editar · Fichas 0.9.0</footer>
 </div>

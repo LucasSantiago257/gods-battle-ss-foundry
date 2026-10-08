@@ -16,7 +16,7 @@ export function resolvePool(results, modifier = 0) {
   const ones = results.filter(n => n === 1).length;
   return {results, highest: Math.max(...results), tens, ones, modifier, total: Math.max(...results) + tens * 2 - ones * 2 + modifier};
 }
-export function testParameters(system, kind, key, resistanceMode = "rank") {
+export function testParameters(system, kind, key, resistanceMode = "rank", {technique = false} = {}) {
   if (kind === "attribute") return {dice: effectiveAttribute(system,key), modifier: system.attributes[key].mod + (key === "sen" ? system.automation.testSen ?? 0 : 0)};
   if (kind === "skill") {
     const skill = system.skills[key];
@@ -24,7 +24,7 @@ export function testParameters(system, kind, key, resistanceMode = "rank") {
   }
   if (kind === "resistance") {
     const a = system.attributes[key];
-    return {dice: effectiveAttribute(system,key), modifier: (resistanceMode === "rank" ? effectiveAttribute(system,key) : a.mod) + system.combat.levelModifier + system.combat.resistanceBonus + divineBonuses(system).resistance + (system.automation.resistanceBonus ?? 0) + (key === "cos" ? system.automation.resistanceCos ?? 0 : key === "sen" ? system.automation.resistanceSen ?? 0 : 0)};
+    return {dice: effectiveAttribute(system,key), modifier: (resistanceMode === "rank" ? effectiveAttribute(system,key) : a.mod) + system.combat.levelModifier + system.combat.resistanceBonus + divineBonuses(system).resistance + (system.automation.resistanceBonus ?? 0) + (technique ? key === "cos" ? system.automation.resistanceCos ?? 0 : key === "sen" ? system.automation.resistanceSen ?? 0 : 0 : 0)};
   }
   throw new Error("Tipo de teste desconhecido.");
 }

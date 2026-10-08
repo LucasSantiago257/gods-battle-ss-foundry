@@ -23,6 +23,7 @@ for (const file of await readdir("templates")) {
 }
 const s = knight(); s.attributes.for.value = 4; s.attributes.vig.value = 3; s.attributes.cos.value = 3; s.attributes.sen.value = 2; s.attributes.vel.value = 2;
 s.profile.sanctuary = "Athena"; s.profile.master = "Mestre do Santuário"; s.skills.combat.value = 2; s.skills.sports.value = 2; s.fighting.punch = 2; s.fighting.defense = 1;
+s.creationGuide.styleApplied = "saint";
 const a = content(); a.equipped = true; a.constellation = "Constelação protetora"; a.armor = armorValues(a); a.health.max = a.armor.hp;
 const technique = content(); technique.description = "Uma técnica de exemplo para conferir custo e resistência.";
 const actor = {system: prepareKnight(s, [{type: "armor", system: a}]), isOwner: true, img: "assets/cosmos.svg", name: "Cavaleiro de exemplo", items: {contents: [

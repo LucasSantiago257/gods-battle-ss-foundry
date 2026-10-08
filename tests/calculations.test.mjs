@@ -26,6 +26,6 @@ test("atributos divinos entram uma vez, sem modificar recursos atuais ou bônus 
 test("migração é idempotente e mantém dados antigos sem ativar automação", () => {
   const source = {schemaVersion: 1, resources: {health: {value: -2.5, manualMax: 88}}, attributes: {vig: {value: 8}}};
   const original = structuredClone(source); migrateKnightSource(source); migrateKnightSource(source);
-  assert.equal(source.schemaVersion, 2); assert.equal(source.automation.enabled, false);
+  assert.equal(source.schemaVersion, 3); assert.equal(source.automation.enabled, false); assert.equal(source.creationGuide.status, "");
   assert.deepEqual(source.resources, original.resources); assert.deepEqual(source.attributes, original.attributes);
 });

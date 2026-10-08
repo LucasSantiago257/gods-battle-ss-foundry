@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {knight,content} from "./foundry-stub.mjs";
 import {physicalDamage,damageSnapshot,snapshotMatches,canReadChat} from "../module/combat-rules.mjs";
-import {executeDamageRequest,enqueueDamageRequest} from "../module/damage.mjs";
+import {executeDamageRequest,enqueueDamageRequest,recoverDamageOperation} from "../module/damage.mjs";
 const ID='gods-battle-ss';
 function patch(obj,data) {for(const [path,value] of Object.entries(data)){const parts=path.split('.');let o=obj;for(const key of parts.slice(0,-1))o=o[key]??={};o[parts.at(-1)]=structuredClone(value);}}
 function fixture() {
@@ -49,4 +49,11 @@ test('observador, autor falso e cliente que não é mestre responsável não alt
  const {actor,request}=fixture();actor.testUserPermission=()=>false;await executeDamageRequest(request(),'p');assert.equal(actor.system.resources.health.value,100);
  const forged=request();await executeDamageRequest(forged,'gm');assert.equal(actor.system.resources.health.value,100);
  game.user={id:'other'};await executeDamageRequest(request(),'p');assert.equal(actor.system.resources.health.value,100);
+});
+test('recuperação explícita reverte gravação parcial e recusa valores posteriores',async()=>{
+ const {actor,armor}=fixture();const r={...damageSnapshot(actor,10.5,10,armor.id),status:'prepared',direction:'apply',previousKey:null};
+ actor.flags[ID]={damageOperations:{attack:r}};armor.system.health.value=r.after.armor;
+ foundry.applications.api.DialogV2={confirm:async()=>true};await recoverDamageOperation(actor,'attack');assert.equal(armor.system.health.value,30);assert.equal(actor.flags[ID].damageOperations.attack.status,'failed');
+ actor.flags[ID].damageOperations.attack.status='prepared';actor.system.resources.health.value=77;
+ await assert.rejects(recoverDamageOperation(actor,'attack'),/Recursos diferentes/);assert.equal(actor.system.resources.health.value,77);
 });
