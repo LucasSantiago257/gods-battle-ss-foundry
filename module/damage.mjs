@@ -38,6 +38,8 @@ export async function executeDamageRequest(message,userId) {
     const source=game.messages.get(request.messageId);
     if (!source || !canReadChat(requester,source) || !["apply","undo"].includes(request.action)) throw Error("Solicitação sem acesso ao resultado.");
     const r=resolution(source);actor=await fromUuid(r.actorUuid);
+    const root=game.messages.get(r.rootMessageId),techniqueTarget=root?.flags?.[SYSTEM_ID]?.attack?.targetUuid;
+    if(techniqueTarget&&techniqueTarget!==r.actorUuid)throw Error("A resistência não pertence ao alvo marcado da técnica.");
     if(actor?.type!=="knight" || !actor.testUserPermission(requester,"OWNER")) throw Error("Sem permissão para alterar o defensor.");
     const sourceAuthor=game.users.get(source.author?.id??source.user?.id);
     if (!sourceAuthor || !actor.testUserPermission(sourceAuthor,"OWNER")) throw Error("O resultado precisa ser publicado pelo defensor ou mestre.");

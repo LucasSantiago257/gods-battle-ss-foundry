@@ -2,6 +2,16 @@ import {NATURES, ATTRIBUTES} from "./config.mjs";
 import {testParameters, classify} from "./rules.mjs";
 
 export const EFFECT_KINDS = {damage: "Dano", control: "Controle", sustained: "Sustentada", manual: "Especial / aplicação manual"};
+export const TECHNIQUE_MODES={manual:"Parâmetros manuais da cópia",status:"ND e Poder pelo status do usuário (p.201)"};
+export const TECHNIQUE_TIERS={bronze:{cost:2,damageLevel:2,power:10,range:3},silver:{cost:3,damageLevel:3,power:15,range:4.5},gold:{cost:4,damageLevel:4,power:20,range:6}};
+export function effectiveTechnique(system,technique) {
+  const mode=technique.techniqueMode??"manual";
+  if(!TECHNIQUE_MODES[mode])throw Error("Modo de cálculo da técnica inválido.");
+  if(mode==="manual")return {...technique};
+  const tier=TECHNIQUE_TIERS[system?.profile.status];
+  if(!tier)throw Error("Este status exige ND e Poder manuais; a tabela automática cobre Bronze, Prata e Ouro.");
+  return {...technique,damageLevel:tier.damageLevel,power:tier.power};
+}
 export function techniqueReadiness(item) {
   const reference = item?.flags?.["gods-battle-ss"]?.source?.reference, s = item?.system;
   if (reference?.manualOnly) return "Técnica cooperativa ou especial: aplique os testes e efeitos manualmente conforme a descrição.";
@@ -10,7 +20,8 @@ export function techniqueReadiness(item) {
   if (!NATURES[s.nature]) return "Selecione a natureza desta cópia antes de ativar.";
   if (!EFFECT_KINDS[s.effectKind] || s.effectKind === "manual") return "Configure um efeito compatível ou aplique esta técnica manualmente.";
   if (!Number.isSafeInteger(s.cost) || s.cost < 1) return "Configure o custo total da técnica; 0 indica custo pendente no catálogo.";
-  if (s.effectKind === "damage" && (!Number.isSafeInteger(s.power) || s.power < 1 || !Number.isSafeInteger(s.damageLevel) || s.damageLevel < 1)) return "Configure Poder e Nível de Dano antes de ativar.";
+  if(s.techniqueMode==="status"&&item.parent?.type==="knight"&&!TECHNIQUE_TIERS[item.parent.system.profile.status])return "Este status exige ND e Poder manuais; abra a cópia para conferir.";
+  if (s.effectKind === "damage" && s.techniqueMode!=="status" && (!Number.isSafeInteger(s.power) || s.power < 1 || !Number.isSafeInteger(s.damageLevel) || s.damageLevel < 1)) return "Configure Poder e Nível de Dano antes de ativar.";
   return null;
 }
 const integer = (value, label, min = 0) => {
@@ -18,15 +29,17 @@ const integer = (value, label, min = 0) => {
   return value;
 };
 export function techniqueParameters(system, technique, options = {}) {
+  technique=effectiveTechnique(system,technique);
   const nature = NATURES[technique.nature];
   if (!nature) throw Error("Natureza da técnica inválida.");
   const extra = integer(options.extra ?? 0, "CE adicional");
   const elevate = integer(options.elevate ?? 0, "Elevar Cosmo");
+  const condense=integer(options.condense??0,"Condensar");
   const advantage = options.advantage ?? 0, bonus = options.bonus ?? 0;
   if (![-1, 0, 1].includes(advantage) || !Number.isFinite(bonus)) throw Error("Modificadores inválidos.");
   const effectKind = technique.effectKind ?? "damage";
   if (!EFFECT_KINDS[effectKind] || effectKind === "manual") throw Error("Big Bang primordial inválido ou de aplicação manual.");
-  const cost = integer(integer(technique.cost, "Custo") + integer(technique.costExtra, "CE fixa adicional") + extra + elevate, "Custo total");
+  const cost = integer(integer(technique.cost, "Custo") + integer(technique.costExtra, "CE fixa adicional") + extra + elevate + condense, "Custo total");
   const skill = system.skills.asterism;
   // p. 193/198: Asterismo acompanha a natureza da técnica usada, com ajuste manual preservado.
   const attribute = skill.associated || nature.key;
@@ -36,7 +49,7 @@ export function techniqueParameters(system, technique, options = {}) {
   const modifier = (trained ? skill.mod + system.attributes[attribute].mod + skill.bonus + (skill.effectBonus ?? 0) : 0)
     + (system.combat.asterismPenalty ?? 0) + bonus + advantage * 2;
   return {cost, difficulty: 10 + cost, attribute, attributeLabel: ATTRIBUTES[attribute],
-    dice: Math.max(1, Math.min(5, base.dice + advantage)), modifier, elevate, effectKind,
+    dice: Math.max(1, Math.min(5, base.dice + advantage)), modifier, elevate, condense, effectKind, baseDamageLevel:technique.damageLevel,power:technique.power,
     powerCosmic: system.combat.cosmicPower + (effectKind === "damage" ? 0 : elevate)};
 }
 export function cosmoPayment(system, cost, {useExtra = true, allowOverload = false} = {}) {
@@ -58,6 +71,7 @@ export function cosmoPayment(system, cost, {useExtra = true, allowOverload = fal
   return {updates, cost, fromExtra, fromCurrent, overload, lifeDamage, unlimited: false};
 }
 export function techniqueOutcome(system, technique, parameters, total) {
+  technique=effectiveTechnique(system,technique);
   const outcome = classify(total, parameters.difficulty);
   const success = total >= parameters.difficulty;
   const critical = total > parameters.difficulty + 10;
@@ -68,6 +82,11 @@ export function techniqueOutcome(system, technique, parameters, total) {
     : ({bronze: 10, silver: 20, gold: 30}[technique.classification] ?? 0);
   return {outcome, success, critical, damageLevel, damage: success ? damage : 0, armorDamage: success ? armorDamage : 0,
     nextPenalty: total < parameters.difficulty - 10 ? -10 : 0};
+}
+export function activationPreview(system,technique,options={}) {
+ const parameters=techniqueParameters(system,technique,options),normal=techniqueOutcome(system,technique,parameters,parameters.difficulty),critical=techniqueOutcome(system,technique,parameters,parameters.difficulty+11);
+ let payment,error="";try{payment=cosmoPayment(system,parameters.cost,options);}catch(e){error=e.message;}
+ return {parameters,normal,critical,payment,error,formula:parameters.effectKind==="damage"?`${normal.damageLevel} ND × ${parameters.power} + nível ${system.profile.level} + bônus ${system.combat.damageBonus+(system.combat.techniqueDamageBonus??0)}`:"Efeito de controle/sustentação; sem dano genérico."};
 }
 export function resistancePreview(system, items, attack, total, difficulty = attack.powerCosmic) {
   const outcome = classify(total, difficulty);

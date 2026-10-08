@@ -2,7 +2,8 @@ import {SYSTEM_ID, ATTRIBUTES, STYLES, SKILLS, FIGHTING, NATURES, ARMORS, ITEM_T
 import {rollTest} from "./rolls.mjs";
 import {createStarterCompendium} from "./starter.mjs";
 import {useTechnique} from "./techniques.mjs";
-import {EFFECT_KINDS, techniqueReadiness} from "./technique-rules.mjs";
+import {EFFECT_KINDS,TECHNIQUE_MODES,effectiveTechnique,techniqueReadiness} from "./technique-rules.mjs";
+import {setupTechnique} from "./technique-setup.mjs";
 import {ABILITY_KINDS, openCatalog} from "./catalog.mjs";
 import {calculationSummary} from "./calculations.mjs";
 import {evaluatePassives, passiveDefinition, passiveWarnings} from "./passives.mjs";
@@ -26,7 +27,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
     classes: ["gods-battle", "knight-sheet"], tag: "form", position: {width: 920, height: 800},
     form: {submitOnChange: true, closeOnSubmit: false},
     actions: {rollTest: KnightSheet.rollAction, createItem: KnightSheet.createItem, editItem: KnightSheet.editItem,
-      deleteItem: KnightSheet.deleteItem, equipArmor: KnightSheet.equipArmor, useItem: KnightSheet.useItem, useTechnique: KnightSheet.activateTechnique, attackTarget:KnightSheet.attackTarget,
+      deleteItem: KnightSheet.deleteItem, equipArmor: KnightSheet.equipArmor, useItem: KnightSheet.useItem, useTechnique: KnightSheet.activateTechnique, setupTechnique:KnightSheet.setupTechnique,attackTarget:KnightSheet.attackTarget,
       beginCreation:KnightSheet.beginCreation,guideStep:KnightSheet.guideStep,chooseCreationItem:KnightSheet.chooseCreationItem,applyInitialStyle:KnightSheet.applyInitialStyle,finishCreation:KnightSheet.finishCreation,recoverDamage:KnightSheet.recoverDamage,openCatalog: KnightSheet.openCatalog, seedCompendium: KnightSheet.seedCompendium,openTestActors:KnightSheet.openTestActors,importTestActors:KnightSheet.importTestActors,beginLevelUp:KnightSheet.beginLevelUp,chooseLevelItem:KnightSheet.chooseLevelItem,discardLevelDraft:KnightSheet.discardLevelDraft,requestLevelUp:KnightSheet.requestLevelUp,clearInterruptedLevel:KnightSheet.clearInterruptedLevel}
   };
   static PARTS = {sheet: {template: `systems/${SYSTEM_ID}/templates/knight.hbs`, scrollable: [".sheet-body"]}};
@@ -60,7 +61,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
     const t = (path, label, value) => tf(`system.${path}`, label, value);
     const groups = Object.fromEntries(Object.entries(ITEM_TYPES).map(([type, label]) => [type, {type, label, items: []}]));
     for (const item of this.actor.items.contents.toSorted((a, b) => a.sort - b.sort)) groups[item.type]?.items.push({id: item.id, uuid: item.uuid, name: item.name, img: item.img, equipped: item.system.equipped,
-      isArmor: item.type === "armor", isTechnique: item.type === "technique", needsReview: item.type === "technique" && !!techniqueReadiness(item), uses: item.system.uses, hasUses: item.system.uses.max > 0, subtitle: item.type === "armor" ? `${ARMORS[item.system.class].label} V${item.system.version} · PV ${item.system.health.value}/${item.system.health.max} · PA ${item.system.armor.pa}` : item.type === "technique" ? techniqueReadiness(item) ? "Configure a cópia / confira a aplicação manual" : `${item.system.classification} · ${EFFECT_KINDS[item.system.effectKind]} · CE ${item.system.cost + item.system.costExtra} · ND ${item.system.damageLevel}` : item.system.category,
+      isArmor: item.type === "armor", isTechnique: item.type === "technique", needsReview: item.type === "technique" && !!techniqueReadiness(item), uses: item.system.uses, hasUses: item.system.uses.max > 0, subtitle: item.type === "armor" ? `${ARMORS[item.system.class].label} V${item.system.version} · PV ${item.system.health.value}/${item.system.health.max} · PA ${item.system.armor.pa}` : item.type === "technique" ? techniqueReadiness(item) ? "Configure a cópia / confira a aplicação manual" : `${item.system.classification} · ${EFFECT_KINDS[item.system.effectKind]} · CE ${item.system.cost + item.system.costExtra} · ND ${item.system.techniqueMode==="status"?"automático pelo status":item.system.damageLevel}` : item.system.category,
       origin: item.system.originUuid} );
     return Object.assign(context, {
       actor: this.actor, system: s, editable: this.isEditable, isGM: game.user.isGM, tabs: this._prepareTabs("primary"), groups,
@@ -135,6 +136,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
     if (!this.isEditable) return;
     await useTechnique(this.actor, this.actor.items.get(target.closest("[data-item-id]").dataset.itemId));
   }
+  static async setupTechnique(_event,target) {if(this.isEditable)await setupTechnique(this.actor.items.get(target.closest("[data-item-id]").dataset.itemId));}
   static async createItem(_event, target) {
     if (!this.isEditable || !ITEM_TYPES[target.dataset.itemType]) return;
     const [item] = await this.actor.createEmbeddedDocuments("Item", [{name: `Nova ${ITEM_TYPES[target.dataset.itemType]}`, type: target.dataset.itemType, img: `systems/${SYSTEM_ID}/assets/cosmos.svg`}]);
@@ -159,7 +161,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
 }
 
 export class ContentSheet extends foundry.applications.api.HandlebarsApplicationMixin(foundry.applications.sheets.ItemSheetV2) {
-  static DEFAULT_OPTIONS = {classes: ["gods-battle", "content-sheet"], tag: "form", position: {width: 620, height: 760}, form: {submitOnChange: true, closeOnSubmit: false}, actions: {useTechnique: ContentSheet.activateTechnique, openReference: ContentSheet.openReference}};
+  static DEFAULT_OPTIONS = {classes: ["gods-battle", "content-sheet"], tag: "form", position: {width: 620, height: 760}, form: {submitOnChange: true, closeOnSubmit: false}, actions: {useTechnique: ContentSheet.activateTechnique,setupTechnique:ContentSheet.setupTechnique, openReference: ContentSheet.openReference}};
   static PARTS = {sheet: {template: `systems/${SYSTEM_ID}/templates/content.hbs`, scrollable: [".content-body"]}};
   async _prepareContext(options) {
     const context = await super._prepareContext(options), s = this.item.system;
@@ -170,8 +172,8 @@ export class ContentSheet extends foundry.applications.api.HandlebarsApplication
       nf("system.health.value", "PV atuais da armadura", s.health.value), nf("system.health.manualMax", "PV máximo manual", s.health.manualMax, "0 usa a tabela de classe e versão."), nf("system.health.bonus", "PV extras", s.health.bonus),
       n("protectionBonus", "PA extra"), n("cosmoBonus", "CE extra"), field("system.state", "Estado", s.state, {active: "Viva", recovering: "Em recuperação", dead: "Morta"}), area("system.accessories", "Acessórios e recipiente", s.accessories));
     if (this.item.type === "technique") fields.push(field("system.classification", "Classe da técnica", s.classification, {bronze: "Bronze", silver: "Prata", gold: "Ouro"}), field("system.nature", "Natureza", s.nature, {"": "Selecionar na cópia", ...NATURES}),
-      field("system.effectKind", "Big Bang primordial", s.effectKind, EFFECT_KINDS),
-      n("power", "Poder da técnica"), n("damageLevel", "Nível de Dano"), n("cost", "Custo publicado (já inclui Big Bangs)"), n("costExtra", "CE adicional desta cópia"), n("range", "Alcance (metros)"), t("duration", "Duração"), t("resistance", "Resistência"),
+      field("system.effectKind", "Big Bang primordial", s.effectKind, EFFECT_KINDS),field("system.techniqueMode","Cálculo de ND/Poder",s.techniqueMode??"manual",TECHNIQUE_MODES),
+      n("power", "Poder manual da técnica","Conservado; usado no modo manual."), n("damageLevel", "Nível de Dano manual","Conservado; usado no modo manual."), n("cost", "Custo publicado (já inclui Big Bangs)"), n("costExtra", "CE adicional desta cópia"), n("range", "Alcance (metros)"), t("duration", "Duração"), t("resistance", "Resistência"),
       area("system.bigbangs", "Big Bangs / componentes", s.bigbangs), area("system.increments", "Incrementos / graduações", s.increments));
     if (["ability", "divineCosmo", "bigbang", "increment", "virtue", "artifact"].includes(this.item.type)) fields.push(t("category", "Categoria / origem"), n("level", "Nível / requisito"), n("rank", "Graduação / refino"), t("action", "Ação"), t("resistance", "Resistência"), t("duration", "Duração"), t("combination", "Combinação"), n("power", "Poder equivalente"));
     if (this.item.type === "ability") fields.push(field("system.abilityKind", "Tipo", s.abilityKind, ABILITY_KINDS));
@@ -188,11 +190,20 @@ export class ContentSheet extends foundry.applications.api.HandlebarsApplication
     const bookReference = source ? {description: s.description, pages: s.page, author: source.author, license: source.license,
       references: Array.isArray(source.references) ? source.references.filter(r => /^Compendium\.gods-battle-ss\.componentes-tecnicas\.Item\.[a-f0-9]{16}$/.test(r.uuid)) : [],
       occurrences: Array.isArray(source.occurrences) ? source.occurrences.map(o => ({name: o.name, category: o.category, pages: Array.isArray(o.pages) ? o.pages.join(", ") : "", text: o.text})) : []} : null;
+    let technique=null;
+    if(this.item.type==="technique"){
+      let effective=s,reviewMessage=techniqueReadiness(this.item);
+      try{effective=effectiveTechnique(this.item.parent?.system,s);}catch(error){reviewMessage=error.message;}
+      const user=this.item.parent?.system;
+      technique={cost:s.cost+s.costExtra,difficulty:10+s.cost+s.costExtra,damage:s.effectKind==="damage"?effective.power*(effective.damageLevel+(user?.automation?.techniqueND??0))+(user?.profile.level??0)+(user?.combat.damageBonus??0)+(user?.combat.techniqueDamageBonus??0):0,
+        includesUser:!!user,reviewMessage,canActivate:this.isEditable&&this.item.parent?.type==="knight"&&!reviewMessage,canSetup:this.isEditable&&this.item.parent?.type==="knight"&&!source?.reference?.manualOnly};
+    }
     return Object.assign(context, {item: this.item, editable: this.isEditable, fields, typeLabel: ITEM_TYPES[this.item.type], armor: this.item.type === "armor" ? s.armor : null,
-      technique: this.item.type === "technique" ? {cost: s.cost + s.costExtra, difficulty: 10 + s.cost + s.costExtra, damage: s.power * s.damageLevel, reviewMessage: techniqueReadiness(this.item), canActivate: this.isEditable && this.item.parent?.type === "knight" && !techniqueReadiness(this.item)} : null, origin: s.originUuid, bookReference,
+      technique, origin: s.originUuid, bookReference,
       ruleReference: definition ? {...definition, statusLabel: {automated:"Automatizada",partial:"Parcialmente automatizada",manual:"Aplicação manual"}[definition.status], warnings: this.item.parent?.type === "knight" ? passiveWarnings(this.item.parent.system,this.item) : []} : null});
   }
   static async activateTechnique() {if (this.isEditable) await useTechnique(this.item.parent, this.item);}
+  static async setupTechnique() {if(this.isEditable)await setupTechnique(this.item);}
   static async openReference(_event, target) {
     const uuid = target.dataset.uuid;
     if (!/^Compendium\.gods-battle-ss\.componentes-tecnicas\.Item\.[a-f0-9]{16}$/.test(uuid)) return;

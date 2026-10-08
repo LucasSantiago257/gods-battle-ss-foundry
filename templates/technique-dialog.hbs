@@ -1,10 +1,18 @@
 <p><strong>{{name}}</strong> · custo base {{cost}} CE.</p>
+<p>{{#if targetName}}Alvo desta ativação: <strong>{{targetName}}</strong>.{{else}}Sem alvo marcado; escolha o defensor pelo cartão após rolar.{{/if}}</p>
 <p>{{#if unlimited}}CE ilimitada pela armadura.{{else}}CE atual {{current}}, reservada {{reserve}}, extra {{extra}}.{{/if}}</p>
 {{#if penalty}}<p>Penalidade de Asterismo pendente: {{penalty}} (consumida neste teste).</p>{{/if}}
 <div class="form-group"><label>CE adicional desta ativação</label><input name="extra" type="number" min="0" step="1" value="0"></div>
 <div class="form-group"><label>Elevar Cosmo (+1 CE por elevação)</label><input name="elevate" type="number" min="0" step="1" value="0"></div>
+<div class="form-group"><label>Condensar (+1 CE por virtude aplicada)</label><input name="condense" type="number" min="0" step="1" value="0"></div>
 <div class="form-group"><label>Modificador da situação</label><input name="bonus" type="number" step="1" value="0"></div>
 <div class="form-group"><label>Vantagem / desvantagem</label><select name="advantage"><option value="0">Normal</option><option value="1">Vantagem (+1 dado, +2)</option><option value="-1">Desvantagem (-1 dado, -2)</option></select></div>
 <div class="form-group"><label>Usar CE extra primeiro</label><input name="useExtra" type="checkbox" checked></div>
 <div class="form-group"><label>Permitir queima de PV acima da CE disponível</label><input name="allowOverload" type="checkbox"></div>
+<section class="technique-preview" aria-live="polite"><h4>Prévia desta ativação</h4>
+<p>Custo <strong data-technique-preview="cost">—</strong> · Asterismo dificuldade <strong data-technique-preview="difficulty">—</strong> · Resistência dificuldade <strong data-technique-preview="powerCosmic">—</strong>.</p>
+<p>Asterismo: <span data-technique-preview="roll"></span>.</p>
+<p>Dano corporal <strong data-technique-preview="damage">—</strong> · crítico <strong data-technique-preview="criticalDamage">—</strong>. Armadura <strong data-technique-preview="armorDamage">—</strong> · crítico <strong data-technique-preview="criticalArmorDamage">—</strong>, antes da resistência.</p>
+<p data-technique-preview="formula"></p><p data-technique-preview="payment"></p><p class="note" data-technique-preview="error"></p></section>
+<p>Condensar contabiliza a CE; confira os efeitos da virtude. Ganhos já incluídos no custo publicado não devem ser somados outra vez. Prévia não gasta recursos.</p>
 <p>A CE é gasta mesmo se o teste falhar. A CE reservada fica protegida. Confirme pré-requisitos, distância, ações disponíveis e efeitos especiais antes de ativar.</p>

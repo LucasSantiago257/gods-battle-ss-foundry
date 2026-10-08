@@ -1,4 +1,6 @@
-Versão **0.10.0** para FoundryVTT 13 build 350.
+Versão **0.11.0** para FoundryVTT 13 build 350.
+
+0.11.0 amplia o gameplay de técnicas: configuração assistida da cópia, ND/Poder automático pelo status Bronze/Prata/Ouro com adesão explícita, prévia dinâmica de custo/dificuldade/dano/pagamento, condensação e alvo vinculado ao cartão de resistência. A resistência usa o Poder Cósmico do ataque; conferir/aplicar dano e desfazer continuam disponíveis. Parâmetros manuais, cópias e compêndios existentes são preservados. Não substitui custos variáveis, efeitos de Big Bangs, manobras, ações, duração ou alcance por regras genéricas. Veja tecnicas.md.
 
 A versão 0.10.0 acrescenta evolução assistida até o nível 30: rascunho persistente, distribuição de ganhos/saldos, escolhas de compêndios, comparação antes/depois e histórico. Solicitações são confirmadas e processadas pelo mestre ativo; recursos atuais, cópias e ajustes permanecem. Ganhos contextuais e promoções estão na lista de revisão. Veja evolucao.md.
 

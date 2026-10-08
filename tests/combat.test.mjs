@@ -57,3 +57,10 @@ test('recuperação explícita reverte gravação parcial e recusa valores poste
  actor.flags[ID].damageOperations.attack.status='prepared';actor.system.resources.health.value=77;
  await assert.rejects(recoverDamageOperation(actor,'attack'),/Recursos diferentes/);assert.equal(actor.system.resources.health.value,77);
 });
+test('mestre recusa aplicar resistência de outra ficha a técnica com alvo vinculado',async()=>{
+ const {actor,armor,request}=fixture();game.messages.set('attack',{flags:{[ID]:{attack:{targetUuid:'Actor.other'}}}});
+ const wrong=request();await executeDamageRequest(wrong,'p');assert.equal(actor.system.resources.health.value,100);assert.equal(armor.system.health.value,30);
+ assert.match(wrong.flags[ID].damageResponse.error,/alvo marcado/);
+ game.messages.get('attack').flags[ID].attack.targetUuid=actor.uuid;
+ const correct=request('correct');await executeDamageRequest(correct,'p');assert.equal(correct.flags[ID].damageResponse.ok,true);assert.equal(actor.system.resources.health.value,89.5);
+});

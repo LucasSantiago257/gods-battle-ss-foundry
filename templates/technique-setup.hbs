@@ -1,0 +1,14 @@
+<p><strong>{{name}}</strong> · configuração desta cópia.</p>
+<p>Status do usuário: {{statusLabel}} · tabela da p.201: {{automatic}}.</p>
+{{#if printedCost}}<p>Custo descrito no livro: <strong>{{printedCost}}</strong>. Confira valores variáveis e componentes antes de informar o total.</p>{{/if}}
+<div class="form-group"><label>Classe da técnica</label><select name="classification">{{#each classes}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></div>
+<div class="form-group"><label>Natureza utilizada</label><select name="nature">{{#each natures}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></div>
+<div class="form-group"><label>Efeito primordial</label><select name="effectKind">{{#each effects}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></div>
+<div class="form-group"><label>Cálculo de dano</label><select name="techniqueMode">{{#each modes}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></div>
+<div class="form-group"><label>Custo total publicado (inclui componentes)</label><input name="cost" type="number" min="1" step="1" value="{{cost}}"></div>
+<div class="form-group"><label>CE fixa adicional da cópia</label><input name="costExtra" type="number" min="0" step="1" value="{{costExtra}}"></div>
+<div class="form-group"><label>ND manual (usado no modo manual)</label><input name="damageLevel" type="number" min="0" step="1" value="{{damageLevel}}"></div>
+<div class="form-group"><label>Poder manual (usado no modo manual)</label><input name="power" type="number" min="0" step="1" value="{{power}}"></div>
+<div class="form-group"><label>Alcance conferido (metros)</label><input name="range" type="number" min="0" step="any" value="{{range}}"></div>
+<p>O modo por status acompanha Bronze/Prata/Ouro do usuário sem alterar ND/Poder manuais salvos. A classe da técnica continua separada. Não promove status, não interpreta efeitos especiais e não acrescenta o custo dos componentes novamente. Classe/custos variáveis precisam de conferência.</p>
+<label><input name="reviewed" type="checkbox"> Li a descrição, requisitos, natureza aprendida, custo, alcance e exceções da técnica.</label>

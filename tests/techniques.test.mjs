@@ -2,8 +2,10 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {knight, content} from "./foundry-stub.mjs";
 import {prepareKnight} from "../module/rules.mjs";
-import {techniqueParameters, techniqueOutcome, cosmoPayment, resistancePreview, techniqueReadiness} from "../module/technique-rules.mjs";
-import {useTechnique, resistanceActor, renderTechniqueChat} from "../module/techniques.mjs";
+import {techniqueParameters, techniqueOutcome, cosmoPayment, resistancePreview, techniqueReadiness,effectiveTechnique,activationPreview} from "../module/technique-rules.mjs";
+import {useTechnique, resistanceActor, renderTechniqueChat,techniqueTarget,resistanceForAttack} from "../module/techniques.mjs";
+import {techniqueSetupUpdates,setupTechnique} from "../module/technique-setup.mjs";
+import {installTechniquePreview} from "../module/technique-ui.mjs";
 import {rollTest} from "../module/rolls.mjs";
 
 const system = () => {const s = knight(); s.skills.asterism.value = 2; s.resources.cosmo.value = 10; return prepareKnight(s);};
@@ -189,4 +191,83 @@ test("resistência pelo chat usa dificuldade informada e não altera PV", async 
   const before = r.actor.system.resources.health.value;
   await rollTest(r.actor, "resistance", "vig", {difficulty: 15, resistanceAttack: {name: "Ataque", damage: 20, armorDamage: 10, powerCosmic: 15}});
   assert.ok(r.sent[0].flags["gods-battle-ss"].resistance); assert.equal(r.actor.system.resources.health.value, before); assert.equal(r.updates.length, 0);
+});
+
+test("modo por status acompanha Bronze/Prata/Ouro, preserva manual e não promove pelo nível",()=>{
+ const s=system(),t={...content(),power:77,damageLevel:9,techniqueMode:"status"},original=structuredClone(t);
+ for(const [status,nd,power]of [["bronze",2,10],["silver",3,15],["gold",4,20]]){
+  s.profile.status=status;s.profile.level=25;prepareKnight(s);const effective=effectiveTechnique(s,t);
+  assert.equal(effective.damageLevel,nd);assert.equal(effective.power,power);
+  const p=techniqueParameters(s,t);assert.equal(techniqueOutcome(s,t,p,p.difficulty).damage,nd*power+25);
+ }
+ assert.deepEqual(t,original);t.techniqueMode="manual";assert.equal(effectiveTechnique(s,t).power,77);
+ s.profile.status="divine";t.techniqueMode="status";assert.throws(()=>techniqueParameters(s,t),/status exige/);
+});
+test("condensar soma uma vez ao custo, prévia não gasta e controle eleva somente PC",()=>{
+ const s=system();s.profile.status="gold";s.profile.level=25;s.resources.cosmo.value=20;prepareKnight(s);
+ const t={...content(),cost:8,techniqueMode:"status",classification:"gold"},before=structuredClone(s);
+ const p=activationPreview(s,t,{condense:3});assert.equal(p.parameters.cost,11);assert.equal(p.parameters.difficulty,21);
+ assert.equal(p.normal.damage,105);assert.equal(p.critical.damage,125);assert.equal(p.normal.armorDamage,30);assert.deepEqual(s,before);
+ t.effectKind="control";const c=activationPreview(s,t,{condense:1,elevate:2});assert.equal(c.parameters.cost,11);
+ assert.equal(c.parameters.powerCosmic,s.combat.cosmicPower+2);assert.equal(c.normal.damage,0);
+ t.effectKind="damage";t.techniqueMode="manual";t.classification="bronze";t.damageLevel=10;
+ const threshold=activationPreview(s,t);assert.equal(threshold.normal.armorDamage,10);assert.equal(threshold.critical.armorDamage,70);
+ assert.throws(()=>techniqueParameters(s,t,{condense:-1}));assert.throws(()=>techniqueParameters(s,t,{condense:0.5}));
+});
+test("catálogo automático exige revisão e custo, sem exigir ND/Poder manuais",()=>{
+ const item={parent:{type:"knight",system:system()},system:{...content(),techniqueMode:"status",cost:3,power:0,damageLevel:0},flags:{"gods-battle-ss":{source:{reference:{reviewRequired:true}}}}};
+ assert.match(techniqueReadiness(item),/marque a revisão/);item.system.techniqueReviewed=true;assert.equal(techniqueReadiness(item),null);
+ item.system.cost=0;assert.match(techniqueReadiness(item),/custo total/);item.system.cost=3;item.parent.system.profile.status="god";
+ assert.match(techniqueReadiness(item),/status exige/);
+});
+const setupAnswer={classification:"bronze",nature:"mental",effectKind:"damage",techniqueMode:"status",cost:3,costExtra:1,range:3,power:77,damageLevel:9,reviewed:true};
+test("configuração conserva parâmetros manuais, notas e custo completo do livro",()=>{
+ const r=runtime(),before=structuredClone(r.item.system),updates=techniqueSetupUpdates(r.actor,r.item,setupAnswer);
+ assert.equal(updates["system.cost"],3);assert.equal(updates["system.costExtra"],1);assert.equal(updates["system.techniqueReviewed"],true);
+ assert.equal(updates["system.power"],undefined);assert.equal(updates["system.damageLevel"],undefined);assert.equal(updates["system.notes"],undefined);assert.deepEqual(r.item.system,before);
+ assert.equal(techniqueSetupUpdates(r.actor,r.item,{...setupAnswer,techniqueMode:"manual"})["system.power"],77);
+ for(const change of [{reviewed:false},{cost:0},{cost:1.5},{nature:""},{range:-1}])assert.throws(()=>techniqueSetupUpdates(r.actor,r.item,{...setupAnswer,...change}));
+ r.item.flags={"gods-battle-ss":{source:{reference:{manualOnly:true}}}};assert.throws(()=>techniqueSetupUpdates(r.actor,r.item,setupAnswer),/cooperativa/);
+});
+test("configuração cancelada ou cópia alterada não grava; revisão salva só a cópia",async()=>{
+ const r=runtime(),changes=[];r.item.isOwner=true;r.item.update=async data=>changes.push(data);
+ foundry.applications.api.DialogV2.wait=async()=>null;await setupTechnique(r.item);assert.equal(changes.length,0);
+ foundry.applications.api.DialogV2.wait=async()=>setupAnswer;await setupTechnique(r.item);assert.equal(changes.length,1);assert.equal(r.updates.length,0);
+ foundry.applications.api.DialogV2.wait=async()=>{r.item.system.notes="Nova anotação";return setupAnswer;};
+ await setupTechnique(r.item);assert.equal(changes.length,1);assert.equal(r.item.system.notes,"Nova anotação");assert.match(r.notices.at(-1),/cópia mudou/);
+});
+test("prévia responde a elevação/condensação e pagamento, sem tocar recursos",()=>{
+ const s=system(),before=structuredClone(s),listeners={},outputs=Object.fromEntries(["cost","difficulty","damage","error"].map(key=>[key,{dataset:{techniquePreview:key},textContent:""}])),button={disabled:false};
+ const form={elements:{extra:{value:0},elevate:{value:0},condense:{value:0},bonus:{value:0},advantage:{value:0},useExtra:{checked:true},allowOverload:{checked:false}},querySelectorAll:()=>Object.values(outputs),querySelector:()=>button,addEventListener:(key,callback)=>listeners[key]=callback};
+ installTechniquePreview(form,s,content());assert.equal(outputs.difficulty.textContent,"12");assert.equal(outputs.damage.textContent,"21");
+ form.elements.elevate.value=2;form.elements.condense.value=1;listeners.input();assert.equal(outputs.cost.textContent,"5 CE");assert.equal(outputs.difficulty.textContent,"15");assert.equal(outputs.damage.textContent,"41");
+ form.elements.extra.value=20;listeners.change();assert.equal(button.disabled,true);assert.match(outputs.error.textContent,/insuficiente/);
+ form.elements.allowOverload.checked=true;listeners.change();assert.equal(button.disabled,false);assert.deepEqual(s,before);
+});
+test("alvo marcado vincula cartão e resistência mesmo com outro token controlado",async()=>{
+ const r=runtime(),target={uuid:"Actor.defender",name:"Defensor",type:"knight",isOwner:true};game.user.targets=new Set([{actor:target}]);
+ await useTechnique(r.actor,r.item);assert.equal(r.sent[0].flags["gods-battle-ss"].attack.targetUuid,target.uuid);
+ globalThis.fromUuid=async uuid=>uuid===target.uuid?target:null;
+ assert.equal(await resistanceForAttack({targetUuid:target.uuid},[{actor:r.actor}],r.actor),target);
+ target.isOwner=false;await assert.rejects(()=>resistanceForAttack({targetUuid:target.uuid}),/proprietário/);
+ assert.throws(()=>techniqueTarget([{actor:target},{actor:target}]),/somente um alvo/);
+});
+test("múltiplos alvos bloqueiam antes de rolar ou gastar CE",async()=>{
+ const r=runtime();game.user.targets=new Set([{actor:r.actor},{actor:r.actor}]);await useTechnique(r.actor,r.item);
+ assert.equal(r.evaluations(),0);assert.equal(r.updates.length,0);assert.equal(r.renders.length,0);
+ assert.match(r.notices.at(-1),/somente um alvo/);game.user.targets=new Set();
+});
+test("mudança na técnica durante diálogo ou status durante rolagem invalida pagamento",async()=>{
+ const old=console.error;console.error=()=>{};
+ try{
+  const a=runtime();foundry.applications.api.DialogV2.wait=async()=>{a.item.system.power=20;return {};};await useTechnique(a.actor,a.item);assert.equal(a.updates.length,0);assert.equal(a.evaluations(),0);
+  const b=runtime(),evaluate=Roll.prototype.evaluate;Roll.prototype.evaluate=async function(){const result=await evaluate.call(this);if(this.formula.includes("d10"))b.actor.system.profile.status="gold";return result;};
+  await useTechnique(b.actor,b.item);assert.equal(b.updates.length,0);assert.equal(b.sent.length,0);assert.match(b.notices.at(-1),/nenhum recurso/);
+ }finally{console.error=old;}
+});
+test("resistência usa PC do cartão e recusa ficha diferente do alvo",async()=>{
+ const r=runtime();r.actor.uuid="Actor.defender";foundry.applications.api.DialogV2.wait=async()=>({difficulty:1,bonus:0,advantage:0});
+ await rollTest(r.actor,"resistance","vig",{difficulty:15,resistanceAttack:{targetUuid:r.actor.uuid,name:"Ataque",damage:20,armorDamage:10,powerCosmic:15}});
+ assert.equal(r.sent[0].flags["gods-battle-ss"].difficulty,15);assert.equal(r.updates.length,0);
+ await assert.rejects(()=>rollTest(r.actor,"resistance","vig",{difficulty:15,resistanceAttack:{targetUuid:"Actor.other"}}),/alvo marcado/);
 });
