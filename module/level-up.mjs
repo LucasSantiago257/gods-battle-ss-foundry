@@ -1,8 +1,8 @@
 import {SYSTEM_ID,ATTRIBUTES,SKILLS,FIGHTING} from "./config.mjs";
 import {EVOLUTIONS,levelMilestones,eligibleLevelPower,levelSignature,planLevel} from "./level-rules.mjs";
-import {primaryGM} from "./damage.mjs";
+import {primaryGM,runMasterOperation,assertNoTechniqueInterruption} from "./master-queue.mjs";
 const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const busy=new WeakSet();let queue=Promise.resolve();
+const busy=new WeakSet();
 const flag=(actor,key)=>actor.flags?.[SYSTEM_ID]?.[key];
 const source=actor=>({system:actor.system.toObject?actor.system.toObject():structuredClone(actor.system),items:actor.items.contents.map(item=>item.toObject?item.toObject():structuredClone(item))});
 const signature=actor=>{const data=source(actor);return levelSignature(data.system,data.items);};
@@ -99,6 +99,7 @@ function matchingBase(actor,operation) {
 }
 export async function applyLevelOperation(actor,requester) {
  if(primaryGM()?.id!==game.user.id||!actor.testUserPermission(requester,"OWNER"))throw Error("Sem permissão para evoluir este cavaleiro.");
+ assertNoTechniqueInterruption(actor);
  const draft=flag(actor,"levelDraft");if(!draft)throw Error("Evolução já aplicada ou rascunho ausente.");
  const decision=draftSignature(draft);
  if(flag(actor,"levelOperation")?.status==="prepared")throw Error("Evolução interrompida exige conferência do mestre.");
@@ -142,7 +143,7 @@ export async function executeLevelRequest(message,userId) {
  }catch(error){response={ok:false,text:error.message};}
  await message.update({[`flags.${SYSTEM_ID}.levelResponse`]:response,content:`<p>${escape(response.text)}</p>`});
 }
-export function enqueueLevelRequest(message,_options,userId) {if(!message.flags?.[SYSTEM_ID]?.levelRequest)return;queue=queue.then(()=>executeLevelRequest(message,userId)).catch(error=>console.error("Evolução assistida",error));return queue;}
+export function enqueueLevelRequest(message,_options,userId) {if(!message.flags?.[SYSTEM_ID]?.levelRequest)return;return runMasterOperation(()=>executeLevelRequest(message,userId)).catch(error=>console.error("Evolução assistida",error));}
 export async function resumeLevelRequests() {
  if(primaryGM()?.id!==game.user.id)return;
  for(const message of game.messages.contents.filter(message=>message.flags?.[SYSTEM_ID]?.levelRequest&&!message.flags?.[SYSTEM_ID]?.levelResponse))await enqueueLevelRequest(message,{},message.author?.id??message.user?.id);

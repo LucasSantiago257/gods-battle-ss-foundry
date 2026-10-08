@@ -1,5 +1,7 @@
 # Saint Seiya — A Batalha dos Deuses para FoundryVTT
 
+**Ativar** agora envia o pagamento para a fila do mestre ativo, compartilhada com dano e evolução. A mesma solicitação recebe o cartão de resultado; concorrência, interrupção e recuperação não repetem cobrança/rolagem. Consulte [pagamento central e recuperação](docs/ativacoes.md). É necessário um mestre conectado.
+
 **Técnicas → Adicionar** abre o construtor personalizado: classe, natureza, primordial, Big Bangs extras e incrementos com graduação, referência e parâmetros. Slots, CE, dificuldade e prévia de dano são calculados antes da confirmação; rascunho/histórico ficam na cópia. Veja [como criar técnicas](docs/tecnicas-personalizadas.md) e [o mapa dos próximos desafios](docs/proximos-desafios.md).
 
 **Configurar** na lista de técnicas oferece ND/Poder pelo status do cavaleiro ou parâmetros manuais. **Ativar** mostra uma prévia dinâmica de custo, dificuldade e dano; o alvo marcado recebe o cartão de resistência com dificuldade do ataque. O resultado permite conferir/aplicar dano e desfazer. Veja [técnicas e gameplay](docs/tecnicas.md).
@@ -8,7 +10,7 @@
 
 Para exercitar o combate, abra **Compêndios → Fichas de teste — Combate**. A versão 0.9.2 acrescenta Santo, Guardião e Sábia com armadura, técnica e recursos preenchidos. Como mestre, **Combate → Importar grupo de teste** cria as fichas ausentes em uma pasta própria e preserva as cópias existentes. Veja [o exercício passo a passo](docs/fichas-teste.md).
 
-Fichas, compêndios e ativação de técnicas do sistema UmD10+, com destino ao **FoundryVTT 13 build 350**. Versão **0.12.0, em desenvolvimento**. A criação de personagens na versão 0.1.1 foi confirmada pelo usuário no servidor; a nova automação ainda precisa ser validada dentro do Foundry.
+Fichas, compêndios e ativação de técnicas do sistema UmD10+, com destino ao **FoundryVTT 13 build 350**. Versão **0.13.0, em desenvolvimento**. A criação de personagens na versão 0.1.1 foi confirmada pelo usuário no servidor; a nova automação ainda precisa ser validada dentro do Foundry.
 
 O sistema inclui **866 entradas em nove compêndios nativos**, com descrições, requisitos, origem e páginas do livro. Na aba **Poderes**, os atalhos abrem os catálogos para arrastar itens à ficha. Acrescenta 166 técnicas para consulta e configuração, com atalhos na aba Técnicas. As cópias do catálogo exigem revisão antes de gastar CE; custos variáveis, efeitos especiais e Exclamação de Athena permanecem manuais. A ficha permite abrir os Big Bangs relacionados para consulta. Os Items do livro mostram a descrição completa em uma área de leitura. Consulte a [cobertura e o uso dos compêndios](docs/compendios.md). Para atualizar, encerre o mundo e use **Sistemas de Jogo → Atualizar**; depois inicie o mundo e recarregue a página.
 
@@ -45,7 +47,7 @@ Consulte o [guia de instalação por manifesto](docs/instalacao-manifesto.md). C
 
 ## Instalação manual no servidor
 
-1. Extraia o ZIP `gods-battle-ss-0.12.0.zip`. Ele contém a pasta `gods-battle-ss`.
+1. Extraia o ZIP `gods-battle-ss-0.13.0.zip`. Ele contém a pasta `gods-battle-ss`.
 2. Com o servidor Foundry parado, envie essa pasta para `<pasta de dados>/Data/systems/gods-battle-ss/`. `system.json` deve ficar diretamente nessa pasta, sem uma pasta intermediária.
 3. Reinicie o Foundry e crie um **mundo de teste** escolhendo “Saint Seiya — A Batalha dos Deuses”.
 4. Crie um Actor do tipo **Cavaleiro**. Edite o nome, atributos, estilo e recursos. As alterações são salvas ao editar os campos.
@@ -66,7 +68,7 @@ Nenhuma credencial deve ser colocada em `system.json`.
 
 ## Limites desta entrega
 
-Efeitos pessoais têm cobertura parcial explicitada por Item e no inventário das 358 entradas. Estados, críticos específicos de luta, manobras avançadas, ações gastas, descanso, promoção e recuperação de armaduras continuam manuais. Custos por turno de sustentação são manuais. Os assistentes conferem orçamento e alguns pré-requisitos; requisitos textuais continuam sujeitos à revisão. O construtor estrutura componentes/graduações/slots/custos, mas efeitos específicos, confirmação e primordiais mistos/Residual mantêm resolução manual. Pagamento de CE entre clientes ainda precisa de fila central.
+Efeitos pessoais têm cobertura parcial explicitada por Item e no inventário das 358 entradas. Estados, críticos específicos de luta, manobras avançadas, ações gastas, descanso, promoção e recuperação de armaduras continuam manuais. Custos por turno de sustentação são manuais. Os assistentes conferem orçamento e alguns pré-requisitos; requisitos textuais continuam sujeitos à revisão. O construtor estrutura componentes/graduações/slots/custos, mas efeitos específicos, confirmação e primordiais mistos/Residual mantêm resolução manual. Pagamentos de técnicas usam a fila central; edição manual e macros ficam fora dessa coordenação. Validação real com dois clientes continua pendente.
 
 Bestas, legiões, monstros e deuses não possuem fichas especializadas nesta versão. O cavaleiro guarda o UUID de seu companheiro e os registros de legião/discípulos.
 

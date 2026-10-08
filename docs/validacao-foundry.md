@@ -106,7 +106,7 @@ Para executar este roteiro com dados prontos, use o grupo de [fichas de teste da
 3. Abra Ativar: elevação/condensação/CE extra devem atualizar custo, dificuldade, dano normal/crítico, armadura e pagamento, sem gastar na prévia. Cancelar não altera recursos. CE insuficiente exige liberar reserva/obter CE ou autorizar queima, com confirmação exata dos PV.
 4. Marque um alvo e deixe outro token controlado. O cartão Resistir deve usar exclusivamente o alvo marcado e sua dificuldade de Poder Cósmico. Proprietário de outro cavaleiro não pode resistir/aplicar esse resultado. Sem alvo, o fluxo com token selecionado permanece. Teste tokens vinculados e não vinculados.
 5. Resista como proprietário e confirme dano corporal/armadura; confira metade, crítico, ausência de armadura, privacidade e desfazer. Trocar a ficha ou técnica enquanto a prévia/rolagem estiver aberta deve impedir cobrança até reabrir.
-6. Teste com mestre/jogador no build350. Consumo de ações, alcance, condições e Big Bangs específicos ainda são conferidos manualmente. Pagamento de técnicas ainda não usa a fila central: evite ativações simultâneas do mesmo ator em clientes distintos.
+6. Teste com mestre/jogador no build350. Consumo de ações, alcance, condições e Big Bangs específicos ainda são conferidos manualmente. Pagamento agora usa fila central; execute também o roteiro0.13.0 abaixo.
 
 ## Técnicas personalizadas 0.12.0
 
@@ -117,3 +117,17 @@ Para executar este roteiro com dados prontos, use o grupo de [fichas de teste da
 5. Cancele conclusão: nenhum parâmetro/recurso muda. Conclua e confira notas, ID, origem, PV/CE e armadura preservados, custo e histórico salvos. Reabra composição, remova componente, revise e conclua: registro novo não pode reter componente removido.
 6. Edite ficha/técnica/composição em outro cliente durante confirmação: recusar estado alterado. Descartar preserva a técnica; modificar o rascunho em outro cliente durante descarte deve exigir nova conferência. Técnicas do livro mantêm Configurar e não são reescritas pelo construtor.
 7. Finalize, exporte para compêndio do mundo, arraste para outro cavaleiro e confira cópia independente e modo por status desse novo usuário. Atualização do sistema não deve alterar composições existentes. Testar no Foundry13.350; estes passos não foram executados no servidor por Codex.
+
+
+## Pagamento central de técnicas 0.13.0
+
+1. Mestre e dois jogadores conectados, usando mundo de teste. Atribua o mesmo cavaleiro a ambos para o ensaio; importe cópias das fichas de exercício. Ativar abre prévia. Cancelar ou cancelar queima de PV não cria solicitação, rola ou gasta.
+2. Confirmar envia solicitação privada; mestre processa automaticamente e atualiza o mesmo cartão com resultado. Desconto, falha crítica e alvo devem coincidir com a prévia. Conferir histórico na aba Combate. Repetir uma solicitação recebida não cobra nem rola novamente.
+3. Dois clientes confirmam a mesma ficha: apenas a primeira confirmação desse estado é aceita; a outra informa mudança e exige reabrir. Repetir com CE ilimitada, sem modificar outros recursos. Sem mestre ativo, ativação não processa rolagem nem pagamento.
+4. Testar público, privado, cego e somente para si em contas distintas. O modo self deve pertencer ao jogador, não ao mestre que executou. Cego não revela dados ao solicitante por notificação/histórico de Actor. Cartão final conserva autor e remove dados privados de solicitação/preparação.
+5. Conferir CE extra/reservada e excesso cumulativo: limites autorizados não mudam durante confirmação. Altere ficha/técnica/alvo ou remova Item durante prévia/processamento; a cobrança deve parar e exigir conferência. Fazer ensaio com token vinculado e não vinculado.
+6. Concorrer ativação por excesso com aplicação/desfazer de dano e evolução: nenhuma alteração confirma um valor antigo por cima de outra operação. Operação preparada interrompida bloqueia dano/evolução/novas técnicas até conferência; editor manual permanece disponível para reparos.
+7. Recarregar/trocar mestre durante processamento. Solicitação preparada não repete rolagem/pagamento; estado pago recupera somente publicação do mesmo resultado. Recuperação automática/manualmente não muda recursos alterados depois do pagamento.
+8. Ensaiar recuperação em cópia do mundo: estado anterior encerra sem gasto; posterior completo reconhece pagamento sem cobrar; valores divergentes recusam restauração. Após reparo manual, liberar exige conferência e justificativa, sem alterar recursos nem criar resultado. Cancelar mantém registro. Confirmar permissões do mestre responsável.
+9. Reabrir mundo e atualizar0.13.0 sobre fichas existentes: notas/origem/IDs/recursos/compêndios preservados. Conferir aplicação de dano pelo cartão atualizado e desfazer no defensor. Este roteiro depende do Foundry real; testes locais não equivalem à sua execução.
+

@@ -1,6 +1,7 @@
 import {SYSTEM_ID, ATTRIBUTES, SKILLS} from "./config.mjs";
 import {resolvePool, testParameters, classify} from "./rules.mjs";
 import {resistancePreview} from "./technique-rules.mjs";
+import {assertNoTechniqueInterruption} from "./master-queue.mjs";
 
 export async function evaluatePool(dice, modifier) {
   if (!Number.isInteger(dice) || dice < 1 || dice > 100 || !Number.isFinite(modifier)) throw Error("Parada ou modificador inválido.");
@@ -12,15 +13,16 @@ export async function evaluatePool(dice, modifier) {
   if (!Number.isFinite(messageRoll.total)) await messageRoll.evaluate();
   return {result, messageRoll};
 }
-export async function prepareRollMessage(actor, roll, context, {template = "chat", flags = {}} = {}) {
+export async function prepareRollMessage(actor, roll, context, {template = "chat", flags = {},rollMode=game.settings.get("core", "rollMode")} = {}) {
   const content = await foundry.applications.handlebars.renderTemplate(`systems/${SYSTEM_ID}/templates/${template}.hbs`, context);
   const message = {speaker: ChatMessage.getSpeaker({actor}), content, rolls: [roll], flags: {[SYSTEM_ID]: flags}};
-  ChatMessage.applyRollMode(message, game.settings.get("core", "rollMode"));
+  ChatMessage.applyRollMode(message, rollMode);
   return message;
 }
 
 export async function rollTest(actor, kind, key, options = {}) {
   if (!actor.isOwner) return;
+  if(kind==="skill"&&key==="asterism")try{assertNoTechniqueInterruption(actor);}catch(error){return ui.notifications.warn(error.message);}
   if(options.resistanceAttack?.targetUuid&&options.resistanceAttack.targetUuid!==actor.uuid)throw Error("Este resultado pertence ao alvo marcado da técnica.");
   const label = kind === "skill" ? SKILLS[key]?.label : ATTRIBUTES[key];
   if (!label) return;
@@ -47,6 +49,6 @@ export async function rollTest(actor, kind, key, options = {}) {
     kind: kind === "resistance" ? "Resistência" : kind === "skill" ? "Perícia" : "Atributo", ...result, difficulty: answer.difficulty, outcome: classify(result.total, answer.difficulty)},
     {flags: {test: result, difficulty: answer.difficulty, ...(resistance ? {resistance, attack: options.resistanceAttack,
       ...(options.resistanceAttack.messageId ? {resolvedDamage:{actorUuid:actor.uuid,rootMessageId:options.resistanceAttack.messageId,body:resistance.damage,armor:resistance.armorDamage,armorId:actor.items.contents.find(i=>i.type==="armor"&&i.system.equipped&&i.system.health.value>=0&&i.system.state!=="dead")?.id??null}} : {})} : {})}});
-  if (kind === "skill" && key === "asterism") await actor.update({"system.combat.asterismPenalty": result.total < answer.difficulty - 10 ? -10 : 0});
+  if (kind === "skill" && key === "asterism") {try{assertNoTechniqueInterruption(actor);}catch(error){return ui.notifications.warn(error.message);}await actor.update({"system.combat.asterismPenalty": result.total < answer.difficulty - 10 ? -10 : 0});}
   return ChatMessage.create(message);
 }

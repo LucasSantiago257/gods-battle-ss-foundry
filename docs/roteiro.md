@@ -7,7 +7,7 @@
 3. Combate: ataque/defesa comuns, dano confirmado, fila por mestre ativo, journal, desfazer e recuperação explícita de operações interrompidas. Críticos específicos de luta, consumo de ações, manobras avançadas e condições permanecem manuais.
 4. Criação: assistente de nível 1 em seis etapas, rascunho persistente, benefício do estilo uma vez, importação sem substituir cópias, orçamentos, limites e registro de exceções. Schema 3 conserva fichas anteriores em edição normal.
 
-Validação local: 126 testes, round-trip de 866 Items e três Atores com itens embutidos, templates/JavaScript e empacotamento. A prévia de fichas é conferida no Edge. Esses testes usam um contrato mínimo da API; execução no servidor Foundry 13.350 continua pendente. Ver roteiro validacao-foundry.md.
+Validação local: 144 testes, round-trip de 866 Items e três Atores com itens embutidos, templates/JavaScript e empacotamento. A prévia de fichas é conferida no Edge. Esses testes usam um contrato mínimo da API; execução no servidor Foundry 13.350 continua pendente. Ver roteiro validacao-foundry.md.
 
 0.9.2 inclui fichas de exercício de combate e importação preservando cópias existentes; instruções em fichas-teste.md.
 
@@ -15,7 +15,7 @@ Validação local: 126 testes, round-trip de 866 Items e três Atores com itens 
 
 ## Trabalho restante
 
-Prioridade humana atual: gameplay. 0.11.0 entrega configuração assistida de técnicas, modo ND/Poder por status, prévia dinâmica de custo/dificuldade/dano, condensação e resistência do alvo marcado. Próximos marcos: centralizar pagamento de ativações para concorrência entre clientes; ações/turnos e consumo; distância/condições; efeitos específicos de componentes; bloqueio/duelo de técnicas. Conferir fontes/ambiguidades antes de automatizar. Catálogos ficam subordinados a esses marcos enquanto esta prioridade vigorar.
+Prioridade humana atual: gameplay. 0.11.0 entrega configuração assistida de técnicas, modo ND/Poder por status, prévia dinâmica de custo/dificuldade/dano, condensação e resistência do alvo marcado. Próximos marcos: ações/turnos e consumo; distância/condições; efeitos específicos de componentes; bloqueio/duelo de técnicas. Conferir fontes/ambiguidades antes de automatizar. Catálogos ficam subordinados a esses marcos enquanto esta prioridade vigorar.
 
 - Validar a atualização real, incluindo dois clientes, permissões, migração e solicitações processadas pelo mestre. Não preencher compatibility.verified antecipadamente.
 - Ampliar efeitos pessoais e requisitos estruturados, revisando cada regra e suas combinações; consultar cobertura-automacao.md antes de escolher novos itens.
@@ -26,5 +26,9 @@ Prioridade humana atual: gameplay. 0.11.0 entrega configuração assistida de t�
 
 Preservar IDs/proveniência dos compêndios e todas as cópias editadas do mundo. Nunca distribuir PDF, imagens, marcas d'água ou informações pessoais do exemplar.
 
-0.12.0 entrega composição personalizada com rascunho, seleção de componentes, graduações, slots/custos, revisão e histórico. Ver tecnicas-personalizadas.md. O mapa atualizado e priorizado está em proximos-desafios.md: pagamento central, ações/turnos, efeitos de componentes, distância/condições e sustentação/duelos.
+0.12.0 entrega composição personalizada com rascunho, seleção de componentes, graduações, slots/custos, revisão e histórico. Ver tecnicas-personalizadas.md. O mapa atualizado e priorizado está em proximos-desafios.md: ações/turnos, efeitos de componentes, distância/condições e sustentação/duelos. Pagamento central foi entregue em0.13.0, sujeito à validação real.
+
+
+0.13.0 entrega pagamento central de técnicas, fila compartilhada com dano/evolução, resultado persistente na solicitação, deduplicação e recuperação sem nova cobrança/rolagem. Ver ativacoes.md. Próxima prioridade de implementação: ações e turnos; validar concorrência/privacidade/reconexão no Foundry real.
+
 

@@ -11,3 +11,7 @@ Aplicação registra valores anteriores/posteriores e justificativa em flags.god
 Falha entre gravações tenta restaurar a armadura quando os valores ainda coincidem. Na aba Combate, Histórico de aplicações de dano mostra valores anteriores/posteriores e ajustes. Operação interrompida tem botão de recuperação para o mestre responsável: ele confirma a conferência, e o sistema só completa o registro ou reverte a gravação parcial se os recursos coincidirem com os valores armazenados. Alterações posteriores exigem conferência manual. Reentrada e troca de mestre não reaplicam uma operação preparada. Solicitações não processadas são retomadas ao abrir o mundo ou atualizar usuários.
 
 Controle, sustentação, duração, condições, efeitos em área e movimentação permanecem manuais. PV fracionários são conservados conforme a escolha de preservar a metade do dano. Não aplicar a proteção de ataque físico novamente sobre o dano de uma técnica.
+
+## Pagamento de técnicas 0.13.0
+
+Pagamento/rolagem de técnicas agora compartilha a fila do mestre ativo com dano e evolução. A solicitação do jogador vira o cartão final, preservando autoria e visibilidade. Confirmações sobre um estado anterior são recusadas; pagamento interrompido exige conferência e bloqueia alterações automatizadas conflitantes. Histórico/recuperação na aba Combate não repete cobrança ou rolagem. Edição direta/macros ficam fora da fila. Ver ativacoes.md e validar dois clientes no servidor antes de considerar este fluxo verificado.

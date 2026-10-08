@@ -79,6 +79,13 @@ await writeFile("dist/technique-book-preview.html", `<!doctype html><html lang="
 await writeFile("dist/book-preview.html", `<!doctype html><html lang="pt-BR"><meta charset="utf-8"><style>${css}body{background:#07101e;font-family:Segoe UI,sans-serif;padding:24px}.gods-battle{width:620px;height:760px;margin:auto;overflow:hidden}*{box-sizing:border-box}</style><body><main class="gods-battle">${bookHtml.replaceAll("systems/gods-battle-ss/assets/cosmos.svg", `data:image/svg+xml;base64,${bookSvg}`)}</main></body></html>`);
 await writeFile("dist/chat-preview.html", `<!doctype html><html lang="pt-BR"><meta charset="utf-8"><style>${css}body{font-family:Segoe UI,sans-serif;background:#eee;padding:24px}.battle-chat{background:white;max-width:360px;padding:16px;margin:16px;border:1px solid #777}.technique-description{white-space:pre-wrap;overflow-wrap:anywhere}</style><body>${attackCard}${resistanceCard}</body></html>`);
 const svg = await readFile("assets/cosmos.svg", "utf8");
+const activationActor={...actor,name:"Cavaleiro em combate",flags:{"gods-battle-ss":{techniqueOperations:{paidDemo:{requestId:"paidDemo",status:"paid",cardPublished:true,name:"Fulgor estelar",payment:{cost:5,lifeDamage:0},before:{current:10,extra:0,health:23},after:{current:5,extra:0,health:23},time:1},pendingDemo:{requestId:"pendingDemo",status:"prepared",name:"Técnica interrompida",payment:{cost:3,lifeDamage:2},before:{current:1,extra:0,health:23},after:{current:0,extra:0,health:21},time:2}}}}};
+const activationContext=await new KnightSheet(activationActor)._prepareContext({});
+for(const tab of Object.values(activationContext.tabs))tab.cssClass=tab.id==="combat"?"active":"";
+const activationHtml=templates["knight.hbs"](activationContext);
+if(!activationHtml.includes('data-action="recoverTechnique"')||!activationHtml.includes("Paga e publicada")||!activationHtml.includes("Interrompida"))throw Error("Registro de ativações ausente.");
+activationContext.techniqueLedger[0].name=unsafe;if(templates["knight.hbs"](activationContext).includes(unsafe))throw Error("Histórico de ativações não escapado.");
+await writeFile("dist/activation-ledger-preview.html",`<!doctype html><html lang="pt-BR"><meta charset="utf-8"><style>${css}body{background:#07101e;font-family:Segoe UI,sans-serif;padding:24px}.gods-battle{width:920px;height:850px;margin:auto;overflow:hidden}*{box-sizing:border-box}</style><body><main class="gods-battle">${activationHtml.replaceAll("assets/cosmos.svg",`data:image/svg+xml;base64,${Buffer.from(svg).toString("base64")}`)}</main></body></html>`);
 const components=[...JSON.parse(await readFile("data/catalog/bigbangs.json","utf8")),...JSON.parse(await readFile("data/catalog/increments.json","utf8"))];
 const componentDocs=new Map(components.map(doc=>[componentUuid(doc._id),{...doc,uuid:componentUuid(doc._id),toObject:()=>structuredClone(doc)}]));
 game.packs=new Map([["gods-battle-ss.componentes-tecnicas",{testUserPermission:()=>true}]]);globalThis.fromUuid=async uuid=>componentDocs.get(uuid);foundry.utils={randomID:()=>"builderExample01"};
@@ -108,3 +115,4 @@ document.querySelectorAll('input,select,textarea').forEach(el=>el.disabled=true)
 document.querySelectorAll('button:not([data-action="tab"])').forEach(el=>el.disabled=true);
 </script></body></html>`, "utf8");
 console.log("Manifesto, JavaScript e templates verificados; prévia em dist/preview.html.");
+

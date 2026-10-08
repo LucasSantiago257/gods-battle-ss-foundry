@@ -11,6 +11,7 @@ import {renderCombatChat,enqueueDamageRequest,notifyDamageResponse,resumeDamageR
 import {beginCreation} from "./creation.mjs";
 import {openTestActors,importTestActors} from "./combat-examples.mjs";
 import {beginLevelUp,requestLevelUp,enqueueLevelRequest,resumeLevelRequests} from "./level-up.mjs";
+import {enqueueTechniqueRequest,notifyTechniqueResponse,resumeTechniqueRequests} from "./technique-activation.mjs";
 
 Hooks.once("init", async () => {
   game.settings.register(SYSTEM_ID, "resistanceMode", {name: "Resistência: parcela do atributo", hint: "Provisório: a fórmula das páginas 207/434 usa graduação; o exemplo usa modificador. A escolha vale para todo o mundo.",
@@ -35,9 +36,13 @@ Hooks.on("renderChatMessageHTML", renderTechniqueChat);
 Hooks.on("renderChatMessageHTML",renderCombatChat);
 Hooks.on("createChatMessage",enqueueDamageRequest);
 Hooks.on("createChatMessage",enqueueLevelRequest);
+Hooks.on("createChatMessage",enqueueTechniqueRequest);
 Hooks.on("updateChatMessage",notifyDamageResponse);
+Hooks.on("updateChatMessage",notifyTechniqueResponse);
 Hooks.once("ready",resumeDamageRequests);
 Hooks.once("ready",resumeLevelRequests);
+Hooks.once("ready",resumeTechniqueRequests);
 Hooks.on("updateUser",()=>resumeDamageRequests());
 Hooks.on("updateUser",()=>resumeLevelRequests());
+Hooks.on("updateUser",()=>resumeTechniqueRequests());
 Hooks.on("preCreateItem", (item,data = {}) => {if (item.parent?.type === "knight" && !data.system?.acquisitionLevel) item.updateSource({"system.acquisitionLevel":item.parent.system.profile.level});});

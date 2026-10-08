@@ -1,9 +1,9 @@
 import {SYSTEM_ID} from "./config.mjs";
 import {damageSnapshot,snapshotMatches,canReadChat} from "./combat-rules.mjs";
 import {defendAttack} from "./combat.mjs";
-let queue=Promise.resolve();
+import {primaryGM,runMasterOperation,assertNoTechniqueInterruption} from "./master-queue.mjs";
+export {primaryGM} from "./master-queue.mjs";
 const localBusy=new Set();
-export function primaryGM() {return game.users?.activeGM;}
 function resolution(message) {
   const r=message.flags?.[SYSTEM_ID]?.resolvedDamage;
   if (!r || !/^[a-zA-Z0-9_-]+$/.test(r.rootMessageId) || ![r.body,r.armor].every(n=>Number.isFinite(n)&&n>=0)) throw Error("Cartão de dano inválido; resolva o combate novamente.");
@@ -41,6 +41,7 @@ export async function executeDamageRequest(message,userId) {
     const root=game.messages.get(r.rootMessageId),techniqueTarget=root?.flags?.[SYSTEM_ID]?.attack?.targetUuid;
     if(techniqueTarget&&techniqueTarget!==r.actorUuid)throw Error("A resistência não pertence ao alvo marcado da técnica.");
     if(actor?.type!=="knight" || !actor.testUserPermission(requester,"OWNER")) throw Error("Sem permissão para alterar o defensor.");
+    assertNoTechniqueInterruption(actor);
     const sourceAuthor=game.users.get(source.author?.id??source.user?.id);
     if (!sourceAuthor || !actor.testUserPermission(sourceAuthor,"OWNER")) throw Error("O resultado precisa ser publicado pelo defensor ou mestre.");
     key=r.rootMessageId;
@@ -85,8 +86,7 @@ export async function executeDamageRequest(message,userId) {
 }
 export function enqueueDamageRequest(message,_options,userId) {
   if(primaryGM()?.id!==game.user.id || !message.flags?.[SYSTEM_ID]?.damageRequest) return;
-  queue=queue.catch(()=>{}).then(()=>executeDamageRequest(message,userId)).catch(error=>console.error(`${SYSTEM_ID}: solicitação de dano`,error));
-  return queue;
+  return runMasterOperation(()=>executeDamageRequest(message,userId)).catch(error=>console.error(`${SYSTEM_ID}: solicitação de dano`,error));
 }
 export function notifyDamageResponse(message) {
   const response=message.flags?.[SYSTEM_ID]?.damageResponse;
@@ -99,7 +99,8 @@ export async function resumeDamageRequests() {
 }
 export async function recoverDamageOperation(actor,key) {
   if(!game.user.isGM || primaryGM()?.id!==game.user.id)throw Error('A recuperação deve ser feita pelo mestre responsável pelas aplicações.');
-  queue=queue.catch(()=>{}).then(async()=>{
+  return runMasterOperation(async()=>{
+    assertNoTechniqueInterruption(actor);
     const r=actor.flags?.[SYSTEM_ID]?.damageOperations?.[key];
     if(!r || !['prepared','repair'].includes(r.status))throw Error('Não há operação interrompida para recuperar.');
     const from=r.direction==='undo'?'after':'before',to=r.direction==='undo'?'before':'after',armor=r.armorId?actor.items.get(r.armorId):null;
@@ -112,7 +113,6 @@ export async function recoverDamageOperation(actor,key) {
     if(armor&&armor.system.health.value!==r[from].armor)await armor.update({'system.health.value':r[from].armor});
     await actor.update({[`flags.${SYSTEM_ID}.damageOperations.${key}.status`]:r.direction==='undo'?'applied':'failed'});
   });
-  return queue;
 }
 export function renderCombatChat(message,html) {
   for(const [action,callback] of [["defendAttack",()=>defendAttack(message)],["applyDamage",()=>requestDamage(message,"apply")],["undoDamage",()=>requestDamage(message,"undo")]]) {

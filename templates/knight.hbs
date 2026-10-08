@@ -33,6 +33,7 @@
       <h3>Habilidades de luta</h3>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=fighting}}
       <h3>Ajustes de combate</h3>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=combatFields}}
       <h3>Estados</h3>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=conditions}}
+      <details class="calculation-ledger"><summary>Histórico de ativações de técnicas</summary>{{#each techniqueLedger}}<p><strong>{{statusLabel}}</strong> · {{name}} · {{payment.cost}} CE{{#if payment.lifeDamage}} · {{payment.lifeDamage}} PV por excesso{{/if}}<br>{{#if after}}CE atual {{before.current}} → {{after.current}} · extra {{before.extra}} → {{after.extra}} · PV {{before.health}} → {{after.health}}{{else}}Recursos no início: CE {{before.current}} · extra {{before.extra}} · PV {{before.health}}. Pagamento aguarda conferência.{{/if}}{{#if review}}<br>Revisão: {{review.reason}}{{/if}}</p>{{#if canRecover}}<button type="button" data-action="recoverTechnique" data-operation="{{key}}">Conferir pagamento / recuperar cartão</button><button type="button" data-action="reviewTechnique" data-operation="{{key}}">Encerrar após reparo manual</button>{{/if}}{{else}}<p>Nenhuma ativação registrada.</p>{{/each}}<p class="note">A recuperação não cobra ou rola novamente. Valores alterados exigem reparo manual; encerrar após revisão não restaura recursos.</p></details>
       <details class="calculation-ledger"><summary>Histórico de aplicações de dano</summary>{{#each damageLedger}}<p><strong>{{statusLabel}}</strong> · PV {{before.health}} → {{after.health}} · armadura {{before.armor}} → {{after.armor}}{{#if reason}}<br>Ajuste: {{reason}}{{/if}}</p>{{#if canRecover}}<button type="button" data-action="recoverDamage" data-operation="{{key}}">Conferir e recuperar operação interrompida</button>{{/if}}{{else}}<p>Nenhuma aplicação registrada.</p>{{/each}}</details>
       <p class="note">Estados, categoria de dano e efeitos de poderes são registros manuais nesta versão. Os bônus dos estilos após o nível 20 são lançados como ajustes. O Nível de Ataque é informado separadamente da PA.</p>
     </section>
@@ -74,5 +75,6 @@
       <h3>História</h3>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=biography}}
     </section>
   </div>
-  <footer class="sheet-footer">Alterações salvas ao editar · Fichas 0.12.0</footer>
+  <footer class="sheet-footer">Alterações salvas ao editar · Fichas 0.13.0</footer>
 </div>
+
