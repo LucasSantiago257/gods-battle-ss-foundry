@@ -1,6 +1,8 @@
 # Saint Seiya — A Batalha dos Deuses para FoundryVTT
 
-Primeira implementação das fichas do sistema UmD10+, com destino ao **FoundryVTT 13 build 350**. Versão **0.1.0, em desenvolvimento**. Os testes locais não substituem a validação no Foundry; `compatibility.verified` será preenchido após essa validação.
+Primeira implementação das fichas do sistema UmD10+, com destino ao **FoundryVTT 13 build 350**. Versão **0.1.1, em desenvolvimento**. Os testes locais não substituem a validação no Foundry; `compatibility.verified` será preenchido após essa validação.
+
+A versão 0.1.1 corrige o erro `skills ... can't be blank` ao criar um cavaleiro: a opção “Automático” das perícias passa a aceitar explicitamente o valor vazio. Para atualizar, encerre o mundo e use **Sistemas de Jogo → Atualizar**; depois inicie o mundo e recarregue a página.
 
 ## O que já existe
 
@@ -25,7 +27,7 @@ Consulte o [guia de instalação por manifesto](docs/instalacao-manifesto.md). C
 
 ## Instalação manual no servidor
 
-1. Extraia o ZIP `gods-battle-ss-0.1.0.zip`. Ele contém a pasta `gods-battle-ss`.
+1. Extraia o ZIP `gods-battle-ss-0.1.1.zip`. Ele contém a pasta `gods-battle-ss`.
 2. Com o servidor Foundry parado, envie essa pasta para `<pasta de dados>/Data/systems/gods-battle-ss/`. `system.json` deve ficar diretamente nessa pasta, sem uma pasta intermediária.
 3. Reinicie o Foundry e crie um **mundo de teste** escolhendo “Saint Seiya — A Batalha dos Deuses”.
 4. Crie um Actor do tipo **Cavaleiro**. Edite o nome, atributos, estilo e recursos. As alterações são salvas ao editar os campos.

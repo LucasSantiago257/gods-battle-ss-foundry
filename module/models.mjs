@@ -1,7 +1,9 @@
 import {ATTRIBUTES, SKILLS, FIGHTING, STYLES, STATUS, STAGES, NATURES, ARMORS, CONDITIONS} from "./config.mjs";
 const {NumberField, StringField, BooleanField, SchemaField} = foundry.data.fields;
 const num = (initial = 0, min = 0, max) => new NumberField({required: true, nullable: false, initial, integer: true, min, ...(max === undefined ? {} : {max})});
-const text = (initial = "", choices) => new StringField({required: true, nullable: false, initial, ...(choices ? {choices: Object.keys(choices)} : {})});
+// Listas como "Automático" usam "" como escolha válida; blank deve ser explícito.
+const text = (initial = "", choices) => new StringField({required: true, nullable: false,
+  blank: !choices || Object.hasOwn(choices, ""), initial, ...(choices ? {choices: Object.keys(choices)} : {})});
 const flag = () => new BooleanField({initial: false});
 const schema = obj => new SchemaField(obj);
 const resource = value => schema({value: num(value, -100000), max: num(value), manualMax: num(), bonus: num(0, -100000), unlimited: flag()});

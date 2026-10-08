@@ -1,7 +1,7 @@
 {
   "name": "gods-battle-ss",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "scripts": {"test": "node --test", "check": "node tools/check.mjs", "build": "python tools/package.py"},
   "devDependencies": {"handlebars": "4.7.8"},
