@@ -1,6 +1,6 @@
-# Compêndios do livro — versão 0.4.0
+# Compêndios do livro — versão 0.5.0
 
-O pacote instala **oito compêndios nativos, com 700 Items**. Não é necessário executar uma macro nem criar o compêndio de modelos para acessar o livro. Os catálogos aparecem na aba Compêndios do Foundry e quatro deles têm atalhos na aba Poderes; Sentidos e Auras tem atalho em História e evolução; Big Bangs e Incrementos tem atalho em Técnicas.
+O pacote instala **nove compêndios nativos, com 866 Items**. Não é necessário executar uma macro nem criar o compêndio de modelos para acessar o livro. Os catálogos aparecem na aba Compêndios do Foundry e quatro deles têm atalhos na aba Poderes; Sentidos e Auras tem atalho em História e evolução; Técnicas e Big Bangs/Incrementos têm atalhos em Técnicas.
 
 | Compêndio | Entradas | Cobertura |
 | --- | ---: | --- |
@@ -12,12 +12,13 @@ O pacote instala **oito compêndios nativos, com 700 Items**. Não é necessári
 | Cosmos Divinos | 14 | Catálogo das pp. 483–496, com pré-requisitos, bônus, efeitos e três níveis de refino de cada Cosmo. |
 | Sentidos e Auras | 49 | 38 auras básicas/divinas (pp. 456–458), quatro estágios do 6º Sentido, cinco do 7º e referências do 8º e 9º (pp. 474–480). |
 | Big Bangs e Incrementos | 59 | Quatro Big Bangs primordiais e 43 extras (pp. 224–230); 12 incrementos, com benefícios por graduação (pp. 217–220). |
+| Técnicas | 166 | 165 entradas com classe da lista (pp. 235–366), mais Exclamação de Athena e manobra cooperativa (pp. 215–217). |
 
 Os seis estilos são Santo, Sábio, Guardião, Artista, Asgardiano e Domador de Bestas (pp. 58–124). As especializações adicionais são Protetor, Assassino e Telecinético (pp. 125–138). As evoluções são Aesir, Cavaleiros de Ouro, Juízes do Inferno, Generais Marinas, Dríades e Berserkers (pp. 551–586). Cada lista inclui todos os níveis nomeados nessa seção do livro.
 
 ## Usar na ficha
 
-1. Atualize o sistema com o mundo encerrado, confirme **0.4.0** e reinicie o mundo.
+1. Atualize o sistema com o mundo encerrado, confirme **0.5.0** e reinicie o mundo.
 2. Abra o cavaleiro, acesse **Poderes** e clique no catálogo desejado. Criaturas e poderes de divindades estão também na aba Compêndios.
 3. Pesquise pelo nome ou navegue pelas pastas de origem. Abra o item para conferir a regra e a página. A seção Descrição desta cópia mostra o texto completo; Outras ocorrências no livro permite comparar os contextos de uma combinação.
 4. Arraste o item para a ficha. Uma **cópia independente** é criada; o UUID do documento de origem fica registrado. Edite requisitos, notas, graduação e usos dessa cópia conforme a campanha.
@@ -37,7 +38,7 @@ Atualizações do sistema atualizam os catálogos de origem; cópias já importa
 - Variações de título fora do índice ficam identificadas por suas referências, sem presumir equivalência de todas as condições. Alguns nomes com erro de grafia foram corrigidos com nota contendo o título original.
 - Quando o bloco da criatura lista somente o nome de um poder, a entrada identifica a referência. Por exemplo, Barreira Divina de Hypnos remete à seção de poderes divinos; nenhum efeito foi inventado para preencher o espaço.
 
-O catálogo cobre as listas e poderes nomeados acima. As quantidades de “espaços de habilidades” dos monstros nem sempre coincidem com as descrições presentes no livro; não foram criadas habilidades ausentes. Auras e estágios dos Sentidos são referências importáveis; sua importação não altera os campos Sentido, estágio, Aura ou bônus do cavaleiro. Ações básicas de combate e listas de técnicas e artefatos são outras categorias de regras, ainda fora deste catálogo. A auditoria de referências distribuídas pelo restante do livro continua.
+O catálogo cobre as listas e poderes nomeados acima. As quantidades de “espaços de habilidades” dos monstros nem sempre coincidem com as descrições presentes no livro; não foram criadas habilidades ausentes. Auras e estágios dos Sentidos são referências importáveis; sua importação não altera os campos Sentido, estágio, Aura ou bônus do cavaleiro. Ações básicas de combate e artefatos são outras categorias de regras, ainda fora deste catálogo. A auditoria de referências distribuídas pelo restante do livro continua.
 
 ## Componentes de técnicas
 
@@ -46,6 +47,20 @@ O novo catálogo preserva as regras de composição (p. 222), testes de confirma
 Os círculos dos incrementos foram conferidos visualmente e transcritos como **Graduação 1, 2 e 3**. Controle Cósmico tem graduação única. Controle sobre a Destruição tem nota com o título original “Controle sobre s Destruição”. Controle Atômico preserva a referência do livro ao resultado “0”; a interpretação desse resultado no d10 permanece com o mestre.
 
 Arraste os componentes para a ficha e ajuste o campo Graduação na cópia. Eles são referências independentes: importar não compõe automaticamente uma técnica, não acrescenta slots, não aplica efeitos e não altera seu custo. Registre Big Bangs e incrementos nos campos da técnica e confira seu custo total antes de ativar. Para aquisição e progressão dos incrementos, consulte os requisitos e a regra da Virtude Mestre em cada entrada.
+
+## Técnicas para consulta e configuração
+
+As 165 entradas da lista são separadas por seção: 27 Mentais/Ilusórias, 46 Físicas, 47 de Manipulação de Cosmo e 45 de Controle da Natureza. A Exclamação de Athena é a 166ª entrada. Títulos repetidos de classes ou seções diferentes ficam separados, e os elementos entre parênteses são preservados. Aniquilação Aurora (Ar), cujo cabeçalho ocupa duas linhas na p. 355, mantém sua própria entrada e continuação até a p. 357.
+
+Abra **Técnicas do livro**, arraste para o cavaleiro e clique em **Conferir** na cópia. Leia a descrição, o custo descrito e as notas; configure natureza, efeito, custo total, Poder, ND e alcance conforme o personagem e a campanha. Marque **Revisei...** ao concluir. Técnicas de dano exigem Poder e ND positivos; Controle/Sustentada não precisam de parâmetros de dano. A revisão é específica às novas cópias do catálogo; técnicas manuais anteriores continuam disponíveis.
+
+Poder, ND e alcance ficam inicialmente em 0 para indicar configuração pendente. A tabela de dano da p. 201 refere o status do cavaleiro, que pode diferir da classe da técnica. Um custo exclusivamente numérico é transcrito para o campo Custo; custos variáveis ou compostos permanecem no campo textual e deixam o número em 0 até a configuração. Naturezas múltiplas deixam o seletor vazio. Efeitos que não correspondem a uma única ativação de Dano/Controle/Sustentada começam como **Especial / aplicação manual**.
+
+O bloqueio acontece antes do diálogo, da rolagem e do gasto de recursos. Depois da revisão, custo positivo e natureza válida são obrigatórios; para dano, Poder e ND positivos também. A marcação não automatiza aprendizado, requisitos, slots, sustentação, estados ou outros efeitos. Os requisitos gerais de aprendizagem remetem à p. 199; os específicos permanecem transcritos.
+
+**Consultar Big Bangs relacionados** abre referências gerais do catálogo, respeitando suas permissões. Essas referências não substituem as regras específicas da técnica, não somam custos e não aplicam efeitos. Redações sem correspondência literal continuam no texto e nos metadados, sem criar componentes fictícios. A Exclamação de Athena conserva aplicação manual mesmo após qualquer revisão, pois requer três cavaleiros e testes cooperativos.
+
+A colação das 88 ocorrências de combinações foi refeita usando os limites corretos das 166 técnicas, preservando páginas e contextos. IDs e descrições principais dos catálogos anteriores foram mantidos.
 
 ## Ocorrências com condições diferentes
 

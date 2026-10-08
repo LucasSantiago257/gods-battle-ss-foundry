@@ -1,11 +1,11 @@
-Versão **0.4.0** para FoundryVTT 13 build 350.
+Versão **0.5.0** para FoundryVTT 13 build 350.
 
-- **700 Items em oito compêndios**. Novo catálogo com 47 Big Bangs (quatro primordiais e 43 extras) e 12 incrementos das listas do livro.
-- Atalho na aba Técnicas para importar componentes; leitura das regras, requisitos, custos e benefícios por graduação. Exemplos de acesso a Big Bangs na aventura disponíveis como ocorrências complementares.
-- Apoiar conserva custo 0 CE e ocupa um slot; Controle Cósmico conserva graduação única. Graduações ilustradas conferidas visualmente e transcritas.
-- Catálogos anteriores e seus IDs preservados. Fichas, cópias e compêndios do mundo mantêm seus dados.
+- **866 Items em nove compêndios**. Novo catálogo com 165 entradas da lista de técnicas e Exclamação de Athena, incluindo custos, requisitos, páginas, natureza e descrição completa.
+- Atalho na aba Técnicas, botão Conferir nas cópias pendentes e consulta dos Big Bangs relacionados. A revisão bloqueia ativação, rolagem e gastos enquanto os parâmetros não estiverem configurados.
+- Custos variáveis, múltiplas naturezas, efeitos especiais e a manobra cooperativa são preservados sem valores arbitrários. Poder, ND e alcance 0 indicam configuração pendente; técnicas anteriores mantêm seus dados.
+- Ocorrências de combinações auditadas com os limites corretos dos títulos, incluindo cabeçalho quebrado e elementos entre parênteses. Os catálogos anteriores mantêm IDs e descrições principais.
 
-Componentes são referências: composição de técnicas, custos, benefícios e efeitos são ajustados manualmente. Esta entrega não inclui ainda o catálogo das técnicas prontas. Testes locais e de bancos não substituem validação no servidor Foundry.
+Efeitos específicos, aquisição, sustentação e dano ao defensor continuam manuais. Exclamação de Athena não usa ativação genérica. Testes locais e de bancos não substituem validação no servidor Foundry.
 
-Para atualizar: encerre o mundo, use **Sistemas de Jogo → Atualizar**, confirme **0.4.0** e reinicie o mundo. Manifesto estável:
+Para atualizar: encerre o mundo, use **Sistemas de Jogo → Atualizar**, confirme **0.5.0** e reinicie o mundo. Manifesto estável:
 https://github.com/LucasSantiago257/gods-battle-ss-foundry/releases/latest/download/system.json

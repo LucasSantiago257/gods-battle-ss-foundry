@@ -11,7 +11,8 @@ export const CATALOG_PACKS = [
   {name: "poderes-divinos", label: "Poderes e Habilidades Divinas — A Batalha dos Deuses", sources: ["abilities-divinities"]},
   {name: "cosmos-divinos", label: "Cosmos Divinos — A Batalha dos Deuses", sources: ["divine-cosmos"]},
   {name: "sentidos-auras", label: "Sentidos e Auras — A Batalha dos Deuses", sources: ["senses", "auras"]},
-  {name: "componentes-tecnicas", label: "Big Bangs e Incrementos — A Batalha dos Deuses", sources: ["bigbangs", "increments"]}
+  {name: "componentes-tecnicas", label: "Big Bangs e Incrementos — A Batalha dos Deuses", sources: ["bigbangs", "increments"]},
+  {name: "tecnicas", label: "Técnicas — A Batalha dos Deuses", sources: ["techniques"]}
 ];
 
 export async function openCatalog(name = "habilidades") {

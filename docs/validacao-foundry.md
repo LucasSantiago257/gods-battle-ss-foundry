@@ -50,3 +50,11 @@ Estes passos requerem o Foundry real; os testes automatizados não os substituem
 1. Na aba Técnicas, abra Big Bangs e Incrementos. Confira 47 Big Bangs e 12 incrementos; abra Apoiar (0 CE e 1 slot), Cosmo Residual (regra contínua e exemplo de aventura) e Controle Cósmico (graduação única).
 2. Arraste um Big Bang e um incremento para a ficha. Confira seus grupos, descrição e origem. Editar graduação/notas da cópia não modifica o catálogo; importar não modifica CE, técnica ou bônus.
 3. Abra uma técnica antiga: custo, componentes e parâmetros devem continuar iguais. Registre a composição e ajuste o custo manualmente antes de ativar.
+
+## Catálogo de técnicas 0.5.0
+
+1. Abra Técnicas do livro e confira 166 entradas em cinco pastas. Compare Execução Aurora (Ar) e Aniquilação Aurora (Ar); os textos e páginas devem ser separados.
+2. Arraste uma técnica de dano: a ficha mostra Conferir. Tentar ativação programática antes da revisão não deve abrir diálogo, rolar nem gastar CE. Configure natureza, custo, Poder e ND, marque a revisão e ative normalmente.
+3. Apenas marcar a revisão com Poder/ND 0 ou custo 0 deve continuar bloqueando. Veneno começa com natureza vazia e custo textual; escolher a natureza e configurar o custo é obrigatório.
+4. Escudo Entrópico mantém aplicação manual e custos 2/3/4 descritos. Exclamação de Athena permanece manual, sem botão de ativação genérica.
+5. Abra Big Bangs relacionados como observador autorizado; restrinja as permissões do pack e confirme que o link não abre o documento. Cópias editadas e técnicas antigas mantêm seus dados e funcionamento.

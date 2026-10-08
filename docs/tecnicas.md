@@ -17,3 +17,9 @@ O cartão apresenta dano completo na falha; metade do dano corporal e nenhum dan
 **O cartão não altera PV do defensor ou da armadura.** Confira proteções, Big Bangs e exceções antes de aplicar manualmente. Alcance, ações, aprendizado, estados, duração, sustentação por turno e recuperação são manuais. Controle/sustentação não recebe dano corporal genérico. As mensagens seguem a visibilidade de rolagens do Foundry.
 
 A ativação impede cliques duplicados no mesmo cliente e verifica mudanças de recursos antes de salvar. Evite ativar simultaneamente o mesmo cavaleiro em clientes diferentes. Se o chat falhar depois do desconto, a notificação informa que os recursos já foram gastos; confira a ficha antes de repetir.
+
+## Importar técnicas do livro (0.5.0)
+
+O catálogo de Técnicas possui 166 entradas, organizadas por origem. Arraste uma para a ficha e use **Conferir**. Revise natureza, efeito, custo total, Poder/ND quando houver dano, alcance e regras específicas; marque a revisão ao terminar. Campos numéricos pendentes usam 0 e custos variáveis permanecem descritos em texto. A revisão é exigida somente pelas cópias do novo catálogo; técnicas anteriores continuam funcionando.
+
+Consultar Big Bangs relacionados abre referências gerais sem modificar a cópia. Efeitos próprios da técnica prevalecem e continuam manuais. Exclamação de Athena é cooperativa e não habilita o botão de ativação genérica. A seção [compêndios](compendios.md) detalha as convenções.

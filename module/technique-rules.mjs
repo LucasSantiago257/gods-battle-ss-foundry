@@ -1,7 +1,18 @@
 import {NATURES, ATTRIBUTES} from "./config.mjs";
 import {testParameters, classify} from "./rules.mjs";
 
-export const EFFECT_KINDS = {damage: "Dano", control: "Controle", sustained: "Sustentada"};
+export const EFFECT_KINDS = {damage: "Dano", control: "Controle", sustained: "Sustentada", manual: "Especial / aplicação manual"};
+export function techniqueReadiness(item) {
+  const reference = item?.flags?.["gods-battle-ss"]?.source?.reference, s = item?.system;
+  if (reference?.manualOnly) return "Técnica cooperativa ou especial: aplique os testes e efeitos manualmente conforme a descrição.";
+  if (!reference?.reviewRequired) return s?.effectKind === "manual" ? "Esta técnica usa aplicação manual." : null;
+  if (!s.techniqueReviewed) return "Abra a cópia, configure os parâmetros e marque a revisão antes de ativar a técnica do catálogo.";
+  if (!NATURES[s.nature]) return "Selecione a natureza desta cópia antes de ativar.";
+  if (!EFFECT_KINDS[s.effectKind] || s.effectKind === "manual") return "Configure um efeito compatível ou aplique esta técnica manualmente.";
+  if (!Number.isSafeInteger(s.cost) || s.cost < 1) return "Configure o custo total da técnica; 0 indica custo pendente no catálogo.";
+  if (s.effectKind === "damage" && (!Number.isSafeInteger(s.power) || s.power < 1 || !Number.isSafeInteger(s.damageLevel) || s.damageLevel < 1)) return "Configure Poder e Nível de Dano antes de ativar.";
+  return null;
+}
 const integer = (value, label, min = 0) => {
   if (!Number.isSafeInteger(value) || value < min) throw Error(`${label}: informe um número inteiro válido.`);
   return value;
@@ -14,7 +25,7 @@ export function techniqueParameters(system, technique, options = {}) {
   const advantage = options.advantage ?? 0, bonus = options.bonus ?? 0;
   if (![-1, 0, 1].includes(advantage) || !Number.isFinite(bonus)) throw Error("Modificadores inválidos.");
   const effectKind = technique.effectKind ?? "damage";
-  if (!EFFECT_KINDS[effectKind]) throw Error("Big Bang primordial inválido.");
+  if (!EFFECT_KINDS[effectKind] || effectKind === "manual") throw Error("Big Bang primordial inválido ou de aplicação manual.");
   const cost = integer(integer(technique.cost, "Custo") + integer(technique.costExtra, "CE fixa adicional") + extra + elevate, "Custo total");
   const skill = system.skills.asterism;
   // p. 193/198: Asterismo acompanha a natureza da técnica usada, com ajuste manual preservado.
@@ -50,7 +61,7 @@ export function techniqueOutcome(system, technique, parameters, total) {
   const outcome = classify(total, parameters.difficulty);
   const success = total >= parameters.difficulty;
   const critical = total > parameters.difficulty + 10;
-  const damageLevel = integer(technique.damageLevel, "Nível de Dano", 1) + parameters.elevate + (critical ? 1 : 0);
+  const damageLevel = parameters.effectKind === "damage" ? integer(technique.damageLevel, "Nível de Dano", 1) + parameters.elevate + (critical ? 1 : 0) : 0;
   const damage = parameters.effectKind === "damage"
     ? Math.max(0, damageLevel * integer(technique.power, "Nível de Poder") + system.profile.level + system.combat.damageBonus) : 0;
   const armorDamage = parameters.effectKind !== "damage" ? 0 : damageLevel > 20 ? 100 : damageLevel > 10 ? 70

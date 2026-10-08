@@ -56,6 +56,15 @@ if (!bookHtml.includes("Fotógrafo de Cosmo") || !bookHtml.includes("Sensitivo")
 bookContext.bookReference.occurrences[0].text = unsafe;
 if (templates["content.hbs"](bookContext).includes(unsafe)) throw Error("Referência de livro não escapada.");
 const bookSvg = Buffer.from(await readFile("assets/cosmos.svg")).toString("base64");
+const techniqueEntry = JSON.parse(await readFile("data/catalog/techniques.json", "utf8")).find(e => e.name === "Veneno");
+const techniqueContext = await new ContentSheet({...techniqueEntry, system: {...content(), ...techniqueEntry.system}, parent: {type: "knight"}, isOwner: true})._prepareContext({});
+const techniqueHtml = templates["content.hbs"](techniqueContext);
+if (techniqueHtml.includes('data-action="useTechnique"') || !techniqueHtml.includes("marque a revisão") || !techniqueHtml.includes('data-action="openReference"')) throw Error("Revisão e referências de técnica não renderizadas.");
+const originalUUID = techniqueContext.bookReference.references[0].uuid;
+techniqueContext.bookReference.references[0].uuid = unsafe;
+if (templates["content.hbs"](techniqueContext).includes(unsafe)) throw Error("UUID de referência não escapado.");
+techniqueContext.bookReference.references[0].uuid = originalUUID;
+await writeFile("dist/technique-book-preview.html", `<!doctype html><html lang="pt-BR"><meta charset="utf-8"><style>${css}body{background:#07101e;font-family:Segoe UI,sans-serif;padding:24px}.gods-battle{width:620px;height:760px;margin:auto;overflow:hidden}*{box-sizing:border-box}</style><body><main class="gods-battle">${techniqueHtml.replaceAll("systems/gods-battle-ss/assets/cosmos.svg", `data:image/svg+xml;base64,${bookSvg}`)}</main></body></html>`);
 await writeFile("dist/book-preview.html", `<!doctype html><html lang="pt-BR"><meta charset="utf-8"><style>${css}body{background:#07101e;font-family:Segoe UI,sans-serif;padding:24px}.gods-battle{width:620px;height:760px;margin:auto;overflow:hidden}*{box-sizing:border-box}</style><body><main class="gods-battle">${bookHtml.replaceAll("systems/gods-battle-ss/assets/cosmos.svg", `data:image/svg+xml;base64,${bookSvg}`)}</main></body></html>`);
 await writeFile("dist/chat-preview.html", `<!doctype html><html lang="pt-BR"><meta charset="utf-8"><style>${css}body{font-family:Segoe UI,sans-serif;background:#eee;padding:24px}.battle-chat{background:white;max-width:360px;padding:16px;margin:16px;border:1px solid #777}.technique-description{white-space:pre-wrap;overflow-wrap:anywhere}</style><body>${attackCard}${resistanceCard}</body></html>`);
 const svg = await readFile("assets/cosmos.svg", "utf8");

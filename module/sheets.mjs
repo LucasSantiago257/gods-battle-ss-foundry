@@ -2,7 +2,7 @@ import {SYSTEM_ID, ATTRIBUTES, STYLES, SKILLS, FIGHTING, NATURES, ARMORS, ITEM_T
 import {rollTest} from "./rolls.mjs";
 import {createStarterCompendium} from "./starter.mjs";
 import {useTechnique} from "./techniques.mjs";
-import {EFFECT_KINDS} from "./technique-rules.mjs";
+import {EFFECT_KINDS, techniqueReadiness} from "./technique-rules.mjs";
 import {ABILITY_KINDS, openCatalog} from "./catalog.mjs";
 
 export function field(name, label, value, choices, type = "number", hint = "") {
@@ -51,7 +51,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
     const t = (path, label, value) => tf(`system.${path}`, label, value);
     const groups = Object.fromEntries(Object.entries(ITEM_TYPES).map(([type, label]) => [type, {type, label, items: []}]));
     for (const item of this.actor.items.contents.toSorted((a, b) => a.sort - b.sort)) groups[item.type]?.items.push({id: item.id, uuid: item.uuid, name: item.name, img: item.img, equipped: item.system.equipped,
-      isArmor: item.type === "armor", isTechnique: item.type === "technique", uses: item.system.uses, hasUses: item.system.uses.max > 0, subtitle: item.type === "armor" ? `${ARMORS[item.system.class].label} V${item.system.version} · PV ${item.system.health.value}/${item.system.health.max} · PA ${item.system.armor.pa}` : item.type === "technique" ? `${item.system.classification} · ${EFFECT_KINDS[item.system.effectKind]} · CE ${item.system.cost + item.system.costExtra} · ND ${item.system.damageLevel}` : item.system.category,
+      isArmor: item.type === "armor", isTechnique: item.type === "technique", needsReview: item.type === "technique" && !!techniqueReadiness(item), uses: item.system.uses, hasUses: item.system.uses.max > 0, subtitle: item.type === "armor" ? `${ARMORS[item.system.class].label} V${item.system.version} · PV ${item.system.health.value}/${item.system.health.max} · PA ${item.system.armor.pa}` : item.type === "technique" ? techniqueReadiness(item) ? "Configure a cópia / confira a aplicação manual" : `${item.system.classification} · ${EFFECT_KINDS[item.system.effectKind]} · CE ${item.system.cost + item.system.costExtra} · ND ${item.system.damageLevel}` : item.system.category,
       origin: item.system.originUuid} );
     return Object.assign(context, {
       actor: this.actor, system: s, editable: this.isEditable, isGM: game.user.isGM, tabs: this._prepareTabs("primary"), groups,
@@ -125,7 +125,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
 }
 
 export class ContentSheet extends foundry.applications.api.HandlebarsApplicationMixin(foundry.applications.sheets.ItemSheetV2) {
-  static DEFAULT_OPTIONS = {classes: ["gods-battle", "content-sheet"], tag: "form", position: {width: 620, height: 760}, form: {submitOnChange: true, closeOnSubmit: false}, actions: {useTechnique: ContentSheet.activateTechnique}};
+  static DEFAULT_OPTIONS = {classes: ["gods-battle", "content-sheet"], tag: "form", position: {width: 620, height: 760}, form: {submitOnChange: true, closeOnSubmit: false}, actions: {useTechnique: ContentSheet.activateTechnique, openReference: ContentSheet.openReference}};
   static PARTS = {sheet: {template: `systems/${SYSTEM_ID}/templates/content.hbs`, scrollable: [".content-body"]}};
   async _prepareContext(options) {
     const context = await super._prepareContext(options), s = this.item.system;
@@ -135,19 +135,29 @@ export class ContentSheet extends foundry.applications.api.HandlebarsApplication
     if (this.item.type === "armor") fields.push(field("system.class", "Classe", s.class, ARMORS), n("version", "Versão (V1 a V5)"), t("constellation", "Constelação"), n("affinity", "Afinidade (penalidade)"),
       nf("system.health.value", "PV atuais da armadura", s.health.value), nf("system.health.manualMax", "PV máximo manual", s.health.manualMax, "0 usa a tabela de classe e versão."), nf("system.health.bonus", "PV extras", s.health.bonus),
       n("protectionBonus", "PA extra"), n("cosmoBonus", "CE extra"), field("system.state", "Estado", s.state, {active: "Viva", recovering: "Em recuperação", dead: "Morta"}), area("system.accessories", "Acessórios e recipiente", s.accessories));
-    if (this.item.type === "technique") fields.push(field("system.classification", "Classe da técnica", s.classification, {bronze: "Bronze", silver: "Prata", gold: "Ouro"}), field("system.nature", "Natureza", s.nature, NATURES),
+    if (this.item.type === "technique") fields.push(field("system.classification", "Classe da técnica", s.classification, {bronze: "Bronze", silver: "Prata", gold: "Ouro"}), field("system.nature", "Natureza", s.nature, {"": "Selecionar na cópia", ...NATURES}),
       field("system.effectKind", "Big Bang primordial", s.effectKind, EFFECT_KINDS),
       n("power", "Poder da técnica"), n("damageLevel", "Nível de Dano"), n("cost", "Custo publicado (já inclui Big Bangs)"), n("costExtra", "CE adicional desta cópia"), n("range", "Alcance (metros)"), t("duration", "Duração"), t("resistance", "Resistência"),
       area("system.bigbangs", "Big Bangs / componentes", s.bigbangs), area("system.increments", "Incrementos / graduações", s.increments));
     if (["ability", "divineCosmo", "bigbang", "increment", "virtue", "artifact"].includes(this.item.type)) fields.push(t("category", "Categoria / origem"), n("level", "Nível / requisito"), n("rank", "Graduação / refino"), t("action", "Ação"), t("resistance", "Resistência"), t("duration", "Duração"), t("combination", "Combinação"), n("power", "Poder equivalente"));
     if (this.item.type === "ability") fields.push(field("system.abilityKind", "Tipo", s.abilityKind, ABILITY_KINDS));
-    if (["ability", "divineCosmo", "virtue"].includes(this.item.type)) fields.push(t("costText", "Custo / consumo descrito"));
+    if (["ability", "divineCosmo", "virtue", "bigbang", "increment", "technique"].includes(this.item.type)) fields.push(t("costText", "Custo / consumo descrito"));
     fields.push(nf("system.uses.value", "Usos atuais", s.uses.value), nf("system.uses.max", "Usos máximos (0: sem contador)", s.uses.max), tf("system.uses.reset", "Recarga", s.uses.reset), area("system.description", "Descrição e efeitos", s.description), area("system.notes", "Notas desta cópia", s.notes));
     const source = this.item.flags?.[SYSTEM_ID]?.source;
+    if (this.item.type === "technique" && source?.reference?.reviewRequired && !source.reference.manualOnly) fields.unshift(field("system.techniqueReviewed", "Revisei natureza, efeito, custo, Poder, ND, alcance e regras desta cópia", s.techniqueReviewed, null, "checkbox"));
     const bookReference = source ? {description: s.description, pages: s.page, author: source.author, license: source.license,
+      references: Array.isArray(source.references) ? source.references.filter(r => /^Compendium\.gods-battle-ss\.componentes-tecnicas\.Item\.[a-f0-9]{16}$/.test(r.uuid)) : [],
       occurrences: Array.isArray(source.occurrences) ? source.occurrences.map(o => ({name: o.name, category: o.category, pages: Array.isArray(o.pages) ? o.pages.join(", ") : "", text: o.text})) : []} : null;
     return Object.assign(context, {item: this.item, editable: this.isEditable, fields, typeLabel: ITEM_TYPES[this.item.type], armor: this.item.type === "armor" ? s.armor : null,
-      technique: this.item.type === "technique" ? {cost: s.cost + s.costExtra, difficulty: 10 + s.cost + s.costExtra, damage: s.power * s.damageLevel, canActivate: this.isEditable && this.item.parent?.type === "knight"} : null, origin: s.originUuid, bookReference});
+      technique: this.item.type === "technique" ? {cost: s.cost + s.costExtra, difficulty: 10 + s.cost + s.costExtra, damage: s.power * s.damageLevel, reviewMessage: techniqueReadiness(this.item), canActivate: this.isEditable && this.item.parent?.type === "knight" && !techniqueReadiness(this.item)} : null, origin: s.originUuid, bookReference});
   }
   static async activateTechnique() {if (this.isEditable) await useTechnique(this.item.parent, this.item);}
+  static async openReference(_event, target) {
+    const uuid = target.dataset.uuid;
+    if (!/^Compendium\.gods-battle-ss\.componentes-tecnicas\.Item\.[a-f0-9]{16}$/.test(uuid)) return;
+    const pack = game.packs.get("gods-battle-ss.componentes-tecnicas");
+    if (!pack?.testUserPermission(game.user, "OBSERVER")) return ui.notifications.warn("O mestre precisa permitir a consulta deste compêndio.");
+    const document = await fromUuid(uuid);
+    if (document?.testUserPermission(game.user, "OBSERVER")) document.sheet.render(true);
+  }
 }

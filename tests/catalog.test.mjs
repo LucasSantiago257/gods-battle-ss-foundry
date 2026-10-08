@@ -19,7 +19,7 @@ test("manifesto registra todos os compêndios e todas as fontes disponíveis", a
  assert.deepEqual(manifest.packs.map(p => p.name), CATALOG_PACKS.map(p => p.name));
  for (const p of manifest.packs) {assert.equal(p.path, `packs/${p.name}`); assert.equal(p.type, "Item"); assert.equal(p.system, manifest.id);}
  assert.deepEqual((await readdir("data/catalog")).sort(), CATALOG_PACKS.flatMap(p => p.sources.map(s => `${s}.json`)).sort());
- assert.deepEqual(catalogs.map(p => p.entries.length), [129, 229, 98, 88, 34, 14, 49, 59]);
+ assert.deepEqual(catalogs.map(p => p.entries.length), [129, 229, 98, 88, 34, 14, 49, 59, 166]);
 });
 test("conteúdos importáveis têm IDs estáveis, proveniência e dados válidos sem informações pessoais", () => {
  assert.equal(new Set(all.map(e => e._id)).size, all.length);
@@ -29,7 +29,7 @@ test("conteúdos importáveis têm IDs estáveis, proveniência e dados válidos
   assert.equal(e._id, createHash("sha256").update(provenance.key).digest("hex").slice(0,16), e.name);
   assert.ok(!keys.has(provenance.key)); keys.add(provenance.key);
   assert.ok(e.name.trim() && e.system.description.trim(), e.name);
-  assert.ok(["ability", "virtue", "divineCosmo", "bigbang", "increment"].includes(e.type));
+  assert.ok(["ability", "virtue", "divineCosmo", "bigbang", "increment", "technique"].includes(e.type));
   assert.doesNotThrow(() => validateStrings(ContentData.defineSchema(), {...content(), ...e.system}), e.name);
   for (const key of ["level", "power", "cost"]) assert.ok(Number.isInteger(e.system[key]) && e.system[key]>=0);
   assert.equal(provenance.author, "Dhoko de Libra"); assert.equal(provenance.license, "CC BY-NC-SA 4.0");
@@ -110,6 +110,24 @@ test("componentes preservam exceções de custo, graduação única e regras com
  assert.match(energy.system.description,/NUNCA pode recuperar mais/);
  assert.match(increments.find(e=>e.name==="Controle sobre o Big Bang").system.description,/Só funciona em Técnicas com o Big Bang Guardar/);
  assert.ok([...bang,...increments].every(e=>!e.effects && /manual|manuais/.test(e.system.notes)));
+});
+test("técnicas preservam elementos, cabeçalho quebrado, custos variáveis e referências válidas", async () => {
+ const entries=await source("techniques"), components=await source("bigbangs");
+ assert.deepEqual(["Mentais ou Ilusórias","Físicos","Manipulação de Cosmo","Controle da Natureza","Cooperativa"].map(c=>entries.filter(e=>e.system.category===`Técnica — ${c}`).length),[27,46,47,45,1]);
+ const aurora=entries.find(e=>e.name==="Aniquilação Aurora (Ar)");
+ assert.ok(aurora);assert.deepEqual(aurora.flags["gods-battle-ss"].source.pages,[355,356,357]);
+ assert.match(aurora.system.description,/congela seu corpo e sua alma/);
+ assert.doesNotMatch(entries.find(e=>e.name==="Execução Aurora (Ar)").system.description,/ANIQUILAÇÃO AURORA/);
+ assert.equal(entries.filter(e=>e.name.startsWith("Velocidade")).length,3);
+ const poison=entries.find(e=>e.name==="Veneno");assert.equal(poison.system.nature,"");assert.equal(poison.system.cost,0);assert.match(poison.system.costText,/separadamente/);
+ const shield=entries.find(e=>e.name==="Escudo Entrópico");assert.equal(shield.system.effectKind,"manual");assert.equal(shield.system.cost,0);assert.match(shield.system.costText,/2, 3, 4/);
+ const athena=entries.find(e=>e.name==="Exclamação de Athena");assert.deepEqual(athena.flags["gods-battle-ss"].source.pages,[215,216,217]);assert.equal(athena.system.cost,8);assert.ok(athena.flags["gods-battle-ss"].source.reference.manualOnly);
+ for (const e of entries) {
+  const provenance=e.flags["gods-battle-ss"].source;
+  assert.equal(e.system.techniqueReviewed,false);assert.ok(provenance.reference.reviewRequired);
+  assert.equal(e.system.power,0);assert.equal(e.system.damageLevel,0);assert.equal(e.system.range,0);
+  assert.ok(e.system.costText.trim());assert.ok(provenance.references.every(r=>components.some(c=>r.uuid===`Compendium.gods-battle-ss.componentes-tecnicas.Item.${c._id}` && c.name===r.name)));
+ }
 });
 test("compêndios LevelDB preservam todos os Items, regras, fontes e pastas no round-trip nativo", async () => {
  const root=path.resolve("dist/catalog-tests"); await mkdir(root,{recursive:true}); const temp=await mkdtemp(path.join(root,"roundtrip-"));

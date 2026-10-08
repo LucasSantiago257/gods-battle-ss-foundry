@@ -1,10 +1,12 @@
 import {SYSTEM_ID, NATURES} from "./config.mjs";
-import {techniqueParameters, techniqueOutcome, cosmoPayment, EFFECT_KINDS} from "./technique-rules.mjs";
+import {techniqueParameters, techniqueOutcome, cosmoPayment, EFFECT_KINDS, techniqueReadiness} from "./technique-rules.mjs";
 import {evaluatePool, prepareRollMessage, rollTest} from "./rolls.mjs";
 
 const active = new WeakSet();
 export async function useTechnique(actor, item) {
   if (!actor?.isOwner || item?.parent !== actor || item.type !== "technique") return;
+  const reason = techniqueReadiness(item);
+  if (reason) return ui.notifications.warn(reason);
   if (active.has(actor)) return ui.notifications.warn("Já existe uma ativação em andamento para este cavaleiro.");
   active.add(actor);
   let paid = false;
@@ -21,6 +23,8 @@ export async function useTechnique(actor, item) {
           advantage: Number(e.advantage.value), useExtra: e.useExtra.checked, allowOverload: e.allowOverload.checked};
       }}, {action: "cancel", label: "Cancelar", callback: () => null}], rejectClose: false});
     if (!answer || typeof answer !== "object") return;
+    const changed = techniqueReadiness(item);
+    if (changed) throw Error(changed);
     const technique = item.system.toObject ? item.system.toObject() : {...item.system};
     const name = item.name;
     const parameters = techniqueParameters(actor.system, technique, answer);
