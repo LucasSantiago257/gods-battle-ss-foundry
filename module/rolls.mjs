@@ -43,7 +43,8 @@ export async function rollTest(actor, kind, key, options = {}) {
   const resistance = options.resistanceAttack ? resistancePreview(actor.system, actor.items.contents, options.resistanceAttack, result.total, answer.difficulty) : null;
   const message = await prepareRollMessage(actor, messageRoll, {label, resistance, attackName: options.resistanceAttack?.name,
     kind: kind === "resistance" ? "Resistência" : kind === "skill" ? "Perícia" : "Atributo", ...result, difficulty: answer.difficulty, outcome: classify(result.total, answer.difficulty)},
-    {flags: {test: result, difficulty: answer.difficulty, ...(resistance ? {resistance, attack: options.resistanceAttack} : {})}});
+    {flags: {test: result, difficulty: answer.difficulty, ...(resistance ? {resistance, attack: options.resistanceAttack,
+      ...(options.resistanceAttack.messageId ? {resolvedDamage:{actorUuid:actor.uuid,rootMessageId:options.resistanceAttack.messageId,body:resistance.damage,armor:resistance.armorDamage,armorId:actor.items.contents.find(i=>i.type==="armor"&&i.system.equipped&&i.system.health.value>=0&&i.system.state!=="dead")?.id??null}} : {})} : {})}});
   if (kind === "skill" && key === "asterism") await actor.update({"system.combat.asterismPenalty": result.total < answer.difficulty - 10 ? -10 : 0});
   return ChatMessage.create(message);
 }

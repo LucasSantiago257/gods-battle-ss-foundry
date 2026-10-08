@@ -62,6 +62,14 @@ Estes passos requerem o Foundry real; os testes automatizados não os substituem
 
 ## Catálogo de técnicas 0.5.0
 
+## Combate 0.8.0
+
+1. Com mestre e dois jogadores conectados, marque um alvo e role ataque/defesa. Confira acertos e fórmula de dano. Cancelar não cria rolagem nem altera recursos.
+2. Ative técnica e resista. Confira dano corporal/armadura e confirme aplicação como proprietário do defensor. Os valores anunciados devem ser debitados uma vez, incluindo frações.
+3. Dois clientes confirmam o mesmo resultado: somente uma aplicação. Observador e atacante sem propriedade do defensor não podem aplicá-lo.
+4. Desfaça a última aplicação e confira ambos os recursos. Após editar PV ou aplicar outro dano, a operação anterior deve recusar desfazer.
+5. Confira rolagens privadas/cegas. Sem mestre ativo, nenhum recurso muda. Reabra o mundo para conferir journal e solicitações pendentes.
+
 1. Abra Técnicas do livro e confira 166 entradas em cinco pastas. Compare Execução Aurora (Ar) e Aniquilação Aurora (Ar); os textos e páginas devem ser separados.
 2. Arraste uma técnica de dano: a ficha mostra Conferir. Tentar ativação programática antes da revisão não deve abrir diálogo, rolar nem gastar CE. Configure natureza, custo, Poder e ND, marque a revisão e ative normalmente.
 3. Apenas marcar a revisão com Poder/ND 0 ou custo 0 deve continuar bloqueando. Veneno começa com natureza vazia e custo textual; escolher a natureza e configurar o custo é obrigatório.

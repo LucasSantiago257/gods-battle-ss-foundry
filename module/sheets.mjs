@@ -6,6 +6,7 @@ import {EFFECT_KINDS, techniqueReadiness} from "./technique-rules.mjs";
 import {ABILITY_KINDS, openCatalog} from "./catalog.mjs";
 import {calculationSummary} from "./calculations.mjs";
 import {evaluatePassives, passiveDefinition, passiveWarnings} from "./passives.mjs";
+import {attackTarget} from "./combat.mjs";
 
 export function field(name, label, value, choices, type = "number", hint = "") {
   return {name, label, value, hint, isSelect: !!choices, isCheckbox: type === "checkbox", isTextarea: type === "textarea", isNumber: type === "number", type,
@@ -20,7 +21,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
     classes: ["gods-battle", "knight-sheet"], tag: "form", position: {width: 920, height: 800},
     form: {submitOnChange: true, closeOnSubmit: false},
     actions: {rollTest: KnightSheet.rollAction, createItem: KnightSheet.createItem, editItem: KnightSheet.editItem,
-      deleteItem: KnightSheet.deleteItem, equipArmor: KnightSheet.equipArmor, useItem: KnightSheet.useItem, useTechnique: KnightSheet.activateTechnique, openCatalog: KnightSheet.openCatalog, seedCompendium: KnightSheet.seedCompendium}
+      deleteItem: KnightSheet.deleteItem, equipArmor: KnightSheet.equipArmor, useItem: KnightSheet.useItem, useTechnique: KnightSheet.activateTechnique, attackTarget:KnightSheet.attackTarget, openCatalog: KnightSheet.openCatalog, seedCompendium: KnightSheet.seedCompendium}
   };
   static PARTS = {sheet: {template: `systems/${SYSTEM_ID}/templates/knight.hbs`, scrollable: [".sheet-body"]}};
   static TABS = {primary: {initial: "overview", tabs: [
@@ -101,6 +102,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
     return result;
   }
   static async rollAction(_event, target) { await rollTest(this.actor, target.dataset.kind, target.dataset.key); }
+  static async attackTarget() {if(this.isEditable) await attackTarget(this.actor);}
   static async activateTechnique(_event, target) {
     if (!this.isEditable) return;
     await useTechnique(this.actor, this.actor.items.get(target.closest("[data-item-id]").dataset.itemId));

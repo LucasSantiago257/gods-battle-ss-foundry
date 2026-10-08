@@ -76,7 +76,7 @@ export function renderTechniqueChat(message, html) {
     button.disabled = true;
     try {
       const actor = resistanceActor(canvas.tokens?.controlled ?? []);
-      await rollTest(actor, "resistance", NATURES[attack.nature].resistance, {difficulty: attack.powerCosmic, resistanceAttack: attack});
+      await rollTest(actor, "resistance", NATURES[attack.nature].resistance, {difficulty: attack.powerCosmic, resistanceAttack: {...attack,messageId:message.id}});
     } catch (error) {console.error(error); ui.notifications.error(error.message);}
     finally {button.disabled = false;}
   });

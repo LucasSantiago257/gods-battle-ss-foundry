@@ -1,0 +1,4 @@
+<div class="battle-chat"><span class="eyebrow">{{kind}}</span><h3>{{label}}</h3><p>Dados: {{#each results}}<span class="die">{{this}}</span> {{/each}}</p><p>Maior {{highest}} + {{tens}} × 2 − {{ones}} × 2 + {{modifier}} = <strong>{{total}}</strong></p>
+{{#if fight}}<p>Quantidade de ataques: {{fight.attack}}. Aguardando defesa.</p><button type="button" data-action="defendAttack">Defender</button>{{/if}}
+{{#if outcome}}<p>Acertos efetivos: {{outcome.hits}}.</p><p>{{outcome.hits}} × máximo(0, {{outcome.damageLevel}} nível de ataque + {{outcome.damageBonus}} bônus − {{outcome.protection}} proteção) = <strong>{{outcome.damage}} PV</strong>.</p><p>Dano físico comum não altera PV da armadura neste fluxo. Confira críticos, manobras e efeitos adicionais.</p>{{/if}}
+{{#if resolvedDamage}}<button type="button" data-action="applyDamage">Conferir e aplicar dano</button><button type="button" data-action="undoDamage">Desfazer aplicação</button>{{/if}}</div>
