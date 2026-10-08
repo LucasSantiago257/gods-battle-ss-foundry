@@ -37,3 +37,10 @@ Dano ao defensor, efeitos, requisitos e sentidos são conferidos manualmente con
 6. Reabra o mundo e confira a persistência das cópias. Modelos e compêndios anteriores do mundo devem permanecer intactos.
 
 Estes passos requerem o Foundry real; os testes automatizados não os substituem.
+
+## Auditoria 0.3.1
+
+1. Abra Sentidos e Auras pelo atalho de História e evolução. Confira 38 Auras e 11 referências de Sentidos. Importar uma delas cria Item sem modificar os campos Sentido, estágio e Aura.
+2. Abra Olho de Fogo no compêndio. Confira a descrição principal e expanda Outras ocorrências no livro: Visão Aérea deve preservar Fotógrafo de Cosmo, com página122, além da regra do índice465.
+3. Importe uma cópia e edite sua descrição. A área de leitura deve refletir essa edição, enquanto os trechos de outras ocorrências continuam como referência original. Um observador consegue ler e expandir o conteúdo, sem editar.
+4. Confira que cópias importadas na versão0.3.0 conservam seus dados. Nenhuma importação ou leitura gasta recursos nem aplica bônus automaticamente.

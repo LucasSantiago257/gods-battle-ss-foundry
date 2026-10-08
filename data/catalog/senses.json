@@ -1,0 +1,476 @@
+[
+  {
+    "_id": "b1530077824c5059",
+    "name": "6º Sentido — Despertado",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O sexto sentido se caracteriza pelo poder de um Cavaleiro em controlar plenamente todos os cinco sentidos. Também chamado de intuição, a Habilidade de captar sensibilidades do ambiente e antecipar -se a algo como instinto de sobrevivência. Os Cavaleiros de Prata  e outros guerreiros de poder semelhantes são engrandecidos por sua força por dominarem este sentido.\n\nEstágio 1: Despertado\n\nO Cavaleiro tem controle total dos 5 sentidos convencionais.\n\n• Velocidade: Mach 1 Especial:\n\n• Nível de Poder 10\n\n• Nível de Ataque 3",
+      "page": "474",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Referência do estágio (pp. 474–480). Conferir requisitos e registrar os bônus manualmente na ficha; importar não muda Sentido, estágio, nível, atributos ou recursos.",
+      "category": "6º Sentido",
+      "level": 1,
+      "abilityKind": "sense",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sense:6:1",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            474
+          ],
+          "reference": {
+            "ordinal": 6,
+            "stage": "awakened",
+            "stageNumber": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "7b13e2f1f78affb7",
+    "name": "6º Sentido — Expandido",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O sexto sentido se caracteriza pelo poder de um Cavaleiro em controlar plenamente todos os cinco sentidos. Também chamado de intuição, a Habilidade de captar sensibilidades do ambiente e antecipar -se a algo como instinto de sobrevivência. Os Cavaleiros de Prata  e outros guerreiros de poder semelhantes são engrandecidos por sua força por dominarem este sentido.\n\nEstágio 2: Expandido\n\nO Cavaleiro ultrapassa o uso dos 5 sentidos comuns e passa a confiar mais em seu instinto.\n\n• Velocidade: Mach 2",
+      "page": "474",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Referência do estágio (pp. 474–480). Conferir requisitos e registrar os bônus manualmente na ficha; importar não muda Sentido, estágio, nível, atributos ou recursos.",
+      "category": "6º Sentido",
+      "level": 1,
+      "abilityKind": "sense",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sense:6:2",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            474
+          ],
+          "reference": {
+            "ordinal": 6,
+            "stage": "expanded",
+            "stageNumber": 2
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "614b7b24fd17a6ba",
+    "name": "6º Sentido — Dominado",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O sexto sentido se caracteriza pelo poder de um Cavaleiro em controlar plenamente todos os cinco sentidos. Também chamado de intuição, a Habilidade de captar sensibilidades do ambiente e antecipar -se a algo como instinto de sobrevivência. Os Cavaleiros de Prata  e outros guerreiros de poder semelhantes são engrandecidos por sua força por dominarem este sentido.\n\nEstágio 3: Dominado\n\nApós várias batalhas o 6º Sentido se expande e com ele o Cavaleiro consegue desferir e atingir a velocidade Mach 3.\n\n• Velocidade: Mach 3 Especial:\n\n• Nível de Poder 15\n\n• Nível de Ataque 5",
+      "page": "474",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Referência do estágio (pp. 474–480). Conferir requisitos e registrar os bônus manualmente na ficha; importar não muda Sentido, estágio, nível, atributos ou recursos.",
+      "category": "6º Sentido",
+      "level": 1,
+      "abilityKind": "sense",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sense:6:3",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            474
+          ],
+          "reference": {
+            "ordinal": 6,
+            "stage": "mastered",
+            "stageNumber": 3
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "1b29c9f3beacb774",
+    "name": "6º Sentido — Pleno",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O sexto sentido se caracteriza pelo poder de um Cavaleiro em controlar plenamente todos os cinco sentidos. Também chamado de intuição, a Habilidade de captar sensibilidades do ambiente e antecipar -se a algo como instinto de sobrevivência. Os Cavaleiros de Prata  e outros guerreiros de poder semelhantes são engrandecidos por sua força por dominarem este sentido.\n\nEstágio 4: Pleno\n\nApós várias batalhas o Cavaleiro domina o 6º Sentido e com ele o Cavaleiro entra na elite dos Cavaleiros de Prata.\n\n• Velocidade: Mach 4 Especial:\n\n• Modificador Positivo de Nível + 1.\n\n• Modificador Positivo de Percepção Extrassensorial: +1",
+      "page": "474, 475",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Referência do estágio (pp. 474–480). Conferir requisitos e registrar os bônus manualmente na ficha; importar não muda Sentido, estágio, nível, atributos ou recursos.",
+      "category": "6º Sentido",
+      "level": 1,
+      "abilityKind": "sense",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sense:6:4",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            474,
+            475
+          ],
+          "reference": {
+            "ordinal": 6,
+            "stage": "full",
+            "stageNumber": 4
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "ba7540cab03aebe0",
+    "name": "7º Sentido — Despertado",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Sétimo Sentido é caracterizado pelo domínio absoluto do Cosmo latente no personagem, permitindo que ele manifeste todo o seu poder oculto. Esse poder é despertado quando um Cavaleiro atinge o máximo estágio do Cosmo, tornando-se capaz de se mover na velocidade da luz e superar os seis sentidos anteriores. Os Cavaleiros de Ouro e outros guerreiros de poder semelhante são reconhecidos por sua força ao dominar esse sentido. O Cavaleiro que ultrapassa o limite do Atributo chave para 7 pode despertar o sétimo sentido. Pré-requisito: Atributo chave 7, 20º Nível e 6º Sentido Pleno.\n\nEstágio 1: Despertado\n\n• Velocidade: Celeritas 1 Especial:\n\n• Nível de Poder 20\n\n• Nível de Ataque 10\n\n• Modificador Positivo de Nível +2.\n\n• Modificador Positivo de Percepção Extrassensorial: +2\n\n• Domínio +1",
+      "page": "475",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Referência do estágio (pp. 474–480). Conferir requisitos e registrar os bônus manualmente na ficha; importar não muda Sentido, estágio, nível, atributos ou recursos.",
+      "category": "7º Sentido",
+      "level": 20,
+      "abilityKind": "sense",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sense:7:1",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            475
+          ],
+          "reference": {
+            "ordinal": 7,
+            "stage": "awakened",
+            "stageNumber": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "36df6543f7e5d0b7",
+    "name": "7º Sentido — Expandido",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Sétimo Sentido é caracterizado pelo domínio absoluto do Cosmo latente no personagem, permitindo que ele manifeste todo o seu poder oculto. Esse poder é despertado quando um Cavaleiro atinge o máximo estágio do Cosmo, tornando-se capaz de se mover na velocidade da luz e superar os seis sentidos anteriores. Os Cavaleiros de Ouro e outros guerreiros de poder semelhante são reconhecidos por sua força ao dominar esse sentido. O Cavaleiro que ultrapassa o limite do Atributo chave para 7 pode despertar o sétimo sentido. Pré-requisito: Atributo chave 7, 20º Nível e 6º Sentido Pleno.\n\nEstágio 2: Expandido\n\nUm Cavaleiro alcança seu verdadeiro potencial quando explode seu universo interno, atingindo o sétimo sentido e superando todos os limites humanos.\n\n• Velocidade: Celeritas 2 Especial:\n\n• Modificador Positivo de Nível +2.\n\n• Modificador Positivo de Percepção Extrassensorial: +2\n\n• Domínio +2",
+      "page": "475, 476",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Referência do estágio (pp. 474–480). Conferir requisitos e registrar os bônus manualmente na ficha; importar não muda Sentido, estágio, nível, atributos ou recursos.",
+      "category": "7º Sentido",
+      "level": 20,
+      "abilityKind": "sense",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sense:7:2",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            475,
+            476
+          ],
+          "reference": {
+            "ordinal": 7,
+            "stage": "expanded",
+            "stageNumber": 2
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "5925f0aa11e59656",
+    "name": "7º Sentido — Dominado",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Sétimo Sentido é caracterizado pelo domínio absoluto do Cosmo latente no personagem, permitindo que ele manifeste todo o seu poder oculto. Esse poder é despertado quando um Cavaleiro atinge o máximo estágio do Cosmo, tornando-se capaz de se mover na velocidade da luz e superar os seis sentidos anteriores. Os Cavaleiros de Ouro e outros guerreiros de poder semelhante são reconhecidos por sua força ao dominar esse sentido. O Cavaleiro que ultrapassa o limite do Atributo chave para 7 pode despertar o sétimo sentido. Pré-requisito: Atributo chave 7, 20º Nível e 6º Sentido Pleno.\n\nEstágio 3: Dominado\n\nOs humanos que normalmente usam este sentido são os  Cavaleiros de Ouro , embora poucos outros o tenham atingido. Certos humanos usaram este Cosmo para superar a vontade de Deuses.\n\n• Velocidade: Celeritas 3 Especial:\n\n• Modificador Positivo de Nível +3.\n\n• Modificador Positivo de Percepção Extrassensorial: +3\n\n• Domínio +3\n\n• Alcança Classificação: Técnica Planetário",
+      "page": "475, 476",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Referência do estágio (pp. 474–480). Conferir requisitos e registrar os bônus manualmente na ficha; importar não muda Sentido, estágio, nível, atributos ou recursos.",
+      "category": "7º Sentido",
+      "level": 20,
+      "abilityKind": "sense",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sense:7:3",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            475,
+            476
+          ],
+          "reference": {
+            "ordinal": 7,
+            "stage": "mastered",
+            "stageNumber": 3
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "ba1665df548d6249",
+    "name": "7º Sentido — Pleno",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Sétimo Sentido é caracterizado pelo domínio absoluto do Cosmo latente no personagem, permitindo que ele manifeste todo o seu poder oculto. Esse poder é despertado quando um Cavaleiro atinge o máximo estágio do Cosmo, tornando-se capaz de se mover na velocidade da luz e superar os seis sentidos anteriores. Os Cavaleiros de Ouro e outros guerreiros de poder semelhante são reconhecidos por sua força ao dominar esse sentido. O Cavaleiro que ultrapassa o limite do Atributo chave para 7 pode despertar o sétimo sentido. Pré-requisito: Atributo chave 7, 20º Nível e 6º Sentido Pleno.\n\nEstágio 4: Pleno\n\nA razão pela qual um guerreiro derrota o outro sem uma Guerra dos Mil Dias , sendo que ambos possuem o domínio completo do 7° sentido, é o fato de quem se aproximou mais do Cosmo máximo.\n\n• Velocidade: Celeritas 4 Especial:\n\n• Modificador Positivo de Nível +4.\n\n• Modificador Positivo de Percepção Extrassensorial: +4\n\n• Domínio +4\n\n• Eleva 1 Nível de Dano das Técnicas",
+      "page": "475, 476",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Referência do estágio (pp. 474–480). Conferir requisitos e registrar os bônus manualmente na ficha; importar não muda Sentido, estágio, nível, atributos ou recursos.",
+      "category": "7º Sentido",
+      "level": 20,
+      "abilityKind": "sense",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sense:7:4",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            475,
+            476
+          ],
+          "reference": {
+            "ordinal": 7,
+            "stage": "full",
+            "stageNumber": 4
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "cbdd9758436ff400",
+    "name": "7º Sentido — Superado, Ômega",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Sétimo Sentido é caracterizado pelo domínio absoluto do Cosmo latente no personagem, permitindo que ele manifeste todo o seu poder oculto. Esse poder é despertado quando um Cavaleiro atinge o máximo estágio do Cosmo, tornando-se capaz de se mover na velocidade da luz e superar os seis sentidos anteriores. Os Cavaleiros de Ouro e outros guerreiros de poder semelhante são reconhecidos por sua força ao dominar esse sentido. O Cavaleiro que ultrapassa o limite do Atributo chave para 7 pode despertar o sétimo sentido. Pré-requisito: Atributo chave 7, 20º Nível e 6º Sentido Pleno.\n\nEstágio 5: Superado, Ômega\n\nO Cosmo máximo. Com ele o Cavaleiro entra no patamar dos Deuses abandonado o patamar Humano, conseguindo desferir e atingir a velocidade da Luz.\n\n• Velocidade: Velocidade da Luz Especial:\n\n• Nível de Poder 20\n\n• Nível de Ataque 15\n\n• Modificador Positivo de Nível +6.\n\n• Modificador Positivo de Percepção Extrassensorial: +6\n\n• Domínio + 6\n\n• Eleva 1 Nível de Dano das Técnicas\n\n• Eleva 1 Bônus aplicado\n\n• Envelhecimento tardio (2 anos igual a 1)\n\n• Inimigos que não possuem o 7º sentindo, perdem suas ações de defesa.\n\n• Desperta 1 Cosmo Divino\n\n• Alcança Classificação: Técnica Galáxia",
+      "page": "475, 477",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Referência do estágio (pp. 474–480). Conferir requisitos e registrar os bônus manualmente na ficha; importar não muda Sentido, estágio, nível, atributos ou recursos.",
+      "category": "7º Sentido",
+      "level": 20,
+      "abilityKind": "sense",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sense:7:5",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            475,
+            477
+          ],
+          "reference": {
+            "ordinal": 7,
+            "stage": "omega",
+            "stageNumber": 5
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "5e2f4ac6fb6b79ce",
+    "name": "8º Sentido — O Arayashiki",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "8º SENTIDO (O ARAYASHIKI)\n\nEsse Sentido só os Cavaleiros mais próximos dos Deuses o conseguem, esse poder faz com que o Cavaleiro possa chegar a manifestar o Cosmo Divino, mudando assim a sua Armadura para uma Armadura Divina, conseguindo operar milagres e ultrapassar a barreira entre os mundos dos mortos e o mundo dos vivos. É despertado, geralmente, após a morte. Um dos primeiros personagens da franquia a quebrar tal regra foi Shaka, o Cavaleiro de Ouro  de Virgem. Com esse sentido despertado, um Cavaleiro ou outro ser vivo é capaz de sobreviver no Mundo dos Mortos (Meikai) sem precisar, necessariamente, de itens banhados com o Ikhor, o sangue dos Deus es. É descrito como um  sentido extremamente sensível se comparado aos demais, justamente pelo fato da pessoa ser capaz de sentir o ambiente à sua volta com mais vigor, independentemente ou não de estar no Mundo dos Mortos. O Cavaleiro que ultrapassa o limite de Atributo chave para 8 pode despertar o oitavo sentido. Pré-requisito: Atributo Chave 8, 28º Nível e 7º Sentido Pleno.\n\nVantagens:\n\n• Velocidade: Velocidade da Luz+++ Especial:\n\n• Nível de Poder (Técnicas) 25\n\n• Nível de Ataque 15\n\n• Modificador Positivo de Nível + 10.\n\n• Modificador Positivo de Percepção Extrassensorial: +10\n\n• Domínio +10\n\n• Eleva 1 Nível de Dano das Técnicas\n\n• Eleva 1 Bônus Aplicado\n\n• Envelhecimento tardio (5 anos igual a 1)\n\n• Inimigos que não possuem o 7º Sentindo Pleno, perdem as Ações de Defesa\n\n• Imune a desvantagens\n\n• Entra e sai do mundo dos mortos com seu corpo físico e mantém sua memória\n\n• Barreira Divina: Personagens que não possuem 8º Sentido necessitam vencer um duelo de Cosmo para poder feri-lo.\n\n• Alcança Classificação: Técnica Galáxia e Efeitos Cósmicos Planetários",
+      "page": "479",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Referência do Sentido. Conferir os requisitos descritos e registrar bônus e exceções manualmente; importar não modifica a ficha.",
+      "category": "8º Sentido",
+      "level": 28,
+      "abilityKind": "sense",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sense:8",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            479
+          ],
+          "reference": {
+            "ordinal": 8
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "21b472decde91547",
+    "name": "9º Sentido — The Big Will",
+    "type": "ability",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "9º SENTIDO, THE BIG WILL\n\nTrata-se do Cosmo  supremo capaz de sobrepujar a vida e a morte, conhecido como  A Suprema Vontade. É um poder que permeia o universo desde o Big Bang e somente aqueles que o alcançam são chamados de Deuses. Graças a este sentido, os Deuses podem mover planetas, governá-los ou até mesmo destruí-los; O Cavaleiro que ultrapassa o limite de Atributo chave para 10 e o Atributo Sentidos para 10 desperta o nono sentido.\n\nVantagens:\n\n• Velocidade: Velocidade da Luz ++++ Especial:\n\n• Nível de Poder (Técnicas) 30\n\n• Nível de Ataque 20\n\n• Modificador Positivo de Nível + 20.\n\n• Modificador Positivo de Percepção Extrassensorial: +20\n\n• Domínio +20\n\n• Eleva 1 Bônus Aplicado\n\n• Envelhecimento tardio (50 anos igual a 1)\n\n• Pode Reencarnar a cada 200 anos\n\n• Inimigos que não possuem o 7º Sentindo Pleno, perdem suas ações de defesa\n\n• Imune a desvantagens\n\n• Aura de Vantagem (Sempre está em vantagem)\n\n• Entra e sai do mundo dos mortos com seu corpo físico e mantém sua memória\n\n• Pode atravessar o Hípermito\n\n• Barreira Divina: Personagens que não possuem 9º Sentido necessitam vencer um duelo de Cosmo para poder feri-lo.\n\n• Resistência Divina: Se falhar no teste de Resistência contra Técnicas leva metade do dano. Se Tiver sucesso não leva nenhum dano.\n\n• Alcança Classificação: Técnica Universais e Efeitos Cósmicos Galáxia",
+      "page": "480",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Referência do Sentido. Conferir os requisitos descritos e registrar bônus e exceções manualmente; importar não modifica a ficha.",
+      "category": "9º Sentido",
+      "level": 1,
+      "abilityKind": "sense",
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "sense:9",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            480
+          ],
+          "reference": {
+            "ordinal": 9
+          }
+        }
+      }
+    }
+  }
+]

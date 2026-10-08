@@ -19,7 +19,7 @@ test("manifesto registra todos os compêndios e todas as fontes disponíveis", a
  assert.deepEqual(manifest.packs.map(p => p.name), CATALOG_PACKS.map(p => p.name));
  for (const p of manifest.packs) {assert.equal(p.path, `packs/${p.name}`); assert.equal(p.type, "Item"); assert.equal(p.system, manifest.id);}
  assert.deepEqual((await readdir("data/catalog")).sort(), CATALOG_PACKS.flatMap(p => p.sources.map(s => `${s}.json`)).sort());
- assert.deepEqual(catalogs.map(p => p.entries.length), [129, 226, 98, 88, 34, 14]);
+ assert.deepEqual(catalogs.map(p => p.entries.length), [129, 229, 98, 88, 34, 14, 49]);
 });
 test("conteúdos importáveis têm IDs estáveis, proveniência e dados válidos sem informações pessoais", () => {
  assert.equal(new Set(all.map(e => e._id)).size, all.length);
@@ -60,6 +60,30 @@ test("atalhos abrem apenas compêndios conhecidos e não criam dados no mundo", 
  game.packs=new Map([["gods-battle-ss.habilidades", {render: flag=>{assert.equal(flag,true);opened++;}}]]);
  await openCatalog("../../unknown"); assert.equal(opened,0);
  await KnightSheet.openCatalog({}, {dataset:{pack:"habilidades"}}); assert.equal(opened,1);
+});
+test("referências de Sentidos e Auras distinguem estágios e não aplicam bônus ao importar", () => {
+ const entries=catalogs.find(p=>p.name==="sentidos-auras").entries;
+ assert.equal(entries.filter(e=>e.system.abilityKind==="aura").length,38);
+ const senses=entries.filter(e=>e.system.abilityKind==="sense");
+ assert.equal(senses.length,11);
+ for (const [ordinal,expected] of [[6,4],[7,5],[8,1],[9,1]]) assert.equal(senses.filter(e=>e.flags["gods-battle-ss"].source.reference.ordinal===ordinal).length,expected);
+ const omega=senses.find(e=>e.flags["gods-battle-ss"].source.reference.stage==="omega");
+ assert.match(omega.system.description,/Nível \+6/); assert.match(omega.system.description,/Desperta 1 Cosmo Divino/);
+ const ninth=senses.find(e=>e.flags["gods-battle-ss"].source.reference.ordinal===9);
+ assert.match(ninth.system.description,/Resistência Divina/); assert.doesNotMatch(ninth.system.description,/O COSMO DIVINO/);
+ assert.ok(entries.every(e=>!e.effects && e.system.cost===0 && e.system.power===0));
+});
+test("índice e ocorrência com requisitos divergentes preservam suas condições e páginas", () => {
+ const entry=catalogs.find(p=>p.name==="cosmo-especial").entries.find(e=>e.name==="Olho de Fogo");
+ assert.match(entry.system.description,/Sensitivo/);
+ const original=entry.flags["gods-battle-ss"].source.occurrences.find(o=>o.name==="Visão Aérea");
+ assert.ok(original); assert.match(original.text,/Fotógrafo de Cosmo/); assert.ok(original.pages.includes(122));
+ assert.ok(entry.flags["gods-battle-ss"].source.indexPages.includes(465));
+ assert.match(entry.system.notes,/não some condições/);
+ const variants=catalogs.find(p=>p.name==="cosmo-especial").entries.filter(e=>e.name.startsWith("Viajante das Sombras"));
+ assert.ok(variants.find(e=>e.name.endsWith("— Técnicas")).flags["gods-battle-ss"].source.occurrences.some(o=>o.category==="Técnica Prata" && /Flecha.*Sombras/i.test(o.name)));
+ assert.ok(variants.find(e=>e.name==="Viajante das Sombras").flags["gods-battle-ss"].source.occurrences.every(o=>o.category==="Asgardiano"));
+ assert.equal(catalogs.find(p=>p.name==="habilidades").entries.filter(e=>e.system.category==="Natural — Muvianos (raças)").length,3);
 });
 test("compêndios LevelDB preservam todos os Items, regras, fontes e pastas no round-trip nativo", async () => {
  const root=path.resolve("dist/catalog-tests"); await mkdir(root,{recursive:true}); const temp=await mkdtemp(path.join(root,"roundtrip-"));

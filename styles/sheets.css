@@ -69,4 +69,8 @@
 .battle-chat .chat-result {display: flex; align-items: center; gap: 12px;}.battle-chat .chat-result > strong {font-size: 30px;}
 .battle-chat {overflow-wrap: anywhere;}.battle-chat .technique-description {white-space: pre-wrap;}.battle-chat .note {font-size: 12px;}
 .gods-battle .catalog-links {display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;}.gods-battle .catalog-links button {flex: 1 1 170px;}
+.gods-battle .book-rule-view {background: var(--battle-panel); border: 1px solid var(--battle-line); border-radius: 6px; padding: 12px; margin-bottom: 14px;}
+.gods-battle .book-rule-view summary {cursor: pointer; color: var(--battle-gold); font-weight: 600; overflow-wrap: anywhere;}
+.gods-battle .book-rule-text {white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.6; margin-top: 12px;}
+.gods-battle .book-occurrence {padding: 10px 0; border-top: 1px solid var(--battle-line);}
 @media (max-width: 700px) {.gods-battle .field-grid {grid-template-columns: repeat(2, minmax(0, 1fr));}.gods-battle .attributes {gap: 5px;}.gods-battle .attribute-card {padding: 7px;}.gods-battle .combat-totals {grid-template-columns: repeat(3, 1fr);}.gods-battle .battle-header {padding: 15px;}.gods-battle .resource-strip {margin: 12px 15px;}.gods-battle .sheet-body {padding: 16px;}}

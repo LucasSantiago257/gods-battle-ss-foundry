@@ -49,6 +49,14 @@ const resistanceCard = templates["chat.hbs"]({label: "Vigor", kind: "Resistênci
 for (const html of [attackCard, templates["technique-dialog.hbs"]({name: unsafe})]) if (html.includes(unsafe)) throw Error("Texto da técnica não escapado.");
 await mkdir("dist", {recursive: true});
 const css = await readFile("styles/sheets.css", "utf8");
+const audited = JSON.parse(await readFile("data/catalog/cosmo-special.json", "utf8")).find(e => e.name === "Olho de Fogo");
+const bookContext = await new ContentSheet({...audited, system: {...content(), ...audited.system}, isOwner: false})._prepareContext({});
+const bookHtml = templates["content.hbs"](bookContext);
+if (!bookHtml.includes("Fotógrafo de Cosmo") || !bookHtml.includes("Sensitivo")) throw Error("Ocorrências auditadas não renderizadas.");
+bookContext.bookReference.occurrences[0].text = unsafe;
+if (templates["content.hbs"](bookContext).includes(unsafe)) throw Error("Referência de livro não escapada.");
+const bookSvg = Buffer.from(await readFile("assets/cosmos.svg")).toString("base64");
+await writeFile("dist/book-preview.html", `<!doctype html><html lang="pt-BR"><meta charset="utf-8"><style>${css}body{background:#07101e;font-family:Segoe UI,sans-serif;padding:24px}.gods-battle{width:620px;height:760px;margin:auto;overflow:hidden}*{box-sizing:border-box}</style><body><main class="gods-battle">${bookHtml.replaceAll("systems/gods-battle-ss/assets/cosmos.svg", `data:image/svg+xml;base64,${bookSvg}`)}</main></body></html>`);
 await writeFile("dist/chat-preview.html", `<!doctype html><html lang="pt-BR"><meta charset="utf-8"><style>${css}body{font-family:Segoe UI,sans-serif;background:#eee;padding:24px}.battle-chat{background:white;max-width:360px;padding:16px;margin:16px;border:1px solid #777}.technique-description{white-space:pre-wrap;overflow-wrap:anywhere}</style><body>${attackCard}${resistanceCard}</body></html>`);
 const svg = await readFile("assets/cosmos.svg", "utf8");
 const html = rendered.replaceAll("assets/cosmos.svg", `data:image/svg+xml;base64,${Buffer.from(svg).toString("base64")}`);
