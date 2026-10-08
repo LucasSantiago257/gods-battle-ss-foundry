@@ -1,0 +1,14 @@
+<section class="creation-guide level-guide"><h3>Evolução assistida · nível {{levelGuide.from}} → {{levelGuide.to}}</h3>
+  <p>Planeje os ganhos, confira as referências e confirme ao terminar. Rascunho salvo na ficha; nenhum ponto ou item é aplicado durante a escolha.</p>
+  {{#if levelGuide.error}}<p class="note">{{levelGuide.error}}</p>{{/if}}
+  {{> "systems/gods-battle-ss/templates/fields.hbs" fields=levelGuide.fields}}
+  <div class="catalog-links">{{#each levelGuide.choices}}<button type="button" data-action="chooseLevelItem" data-slot="{{slot}}" {{#unless @root.editable}}disabled{{/unless}}>{{label}}: {{name}}</button>{{/each}}</div>
+  <details><summary>Distribuir atributos · custo {{levelGuide.attributeSpent}} / {{levelGuide.attributeBudget}}</summary><p>Informe graduações a acrescentar. Cada graduação custa 1 ponto; a partir de graduação efetiva 5 custa 2. Limite 10. Saldos ficam guardados para evoluções seguintes.</p>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=levelGuide.attributeFields}}</details>
+  <details><summary>Distribuir perícias · {{levelGuide.skillSpent}} / {{levelGuide.skillBudget}}</summary><p>Informe graduações a acrescentar, conferindo o atributo associado. Ganho deste nível usa os Sentidos atuais antes da distribuição (p.185).</p>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=levelGuide.skillFields}}</details>
+  <details><summary>Distribuir luta · {{levelGuide.fightSpent}} / {{levelGuide.fightBudget}}</summary>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=levelGuide.fightFields}}</details>
+  <details open><summary>Comparação antes / depois</summary><div class="stat-strip">{{#each levelGuide.summary}}<div><span>{{label}}</span><strong>{{before}} → {{after}}</strong></div>{{/each}}</div><p>PV/CE atuais, XP, recursos da armadura e ajustes manuais permanecem. Saldo final: {{levelGuide.projected.progression.attributeBank}} atributos; {{levelGuide.projected.progression.skillBank}} perícias; {{levelGuide.projected.progression.fightBank}} luta.</p>
+    {{#each levelGuide.manual}}<p class="note">Conferir: {{this}}</p>{{/each}}{{#each levelGuide.warnings}}<p class="note">Pendência: {{this}}</p>{{/each}}
+    <p class="note">Referências: evolução 55–56; atributos 155; virtudes 161; perícias 184–185; técnicas 198–202; luta 408; Sentidos 473–480; experiência/status 507–509.</p>
+  </details>
+  <div class="catalog-links"><button type="button" data-action="requestLevelUp" {{#unless editable}}disabled{{/unless}}>Confirmar evolução</button><button type="button" data-action="discardLevelDraft" {{#unless editable}}disabled{{/unless}}>Descartar rascunho</button></div>
+</section>
