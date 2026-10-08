@@ -1,11 +1,11 @@
-Versão **0.3.1** para FoundryVTT 13 build 350: auditoria de ocorrências e referências adicionais do livro.
+Versão **0.4.0** para FoundryVTT 13 build 350.
 
-- **641 Items em sete compêndios**: inclui 38 Auras, 11 referências de Sentidos e três habilidades raciais adicionais dos Muvianos. Atalho para Sentidos e Auras na aba História e evolução.
-- 88 ocorrências originais de combinações preservadas junto a 71 entradas do índice, com páginas e contexto. Requisitos divergentes não são unificados: Olho de Fogo, por exemplo, conserva Sensitivo no índice e Fotógrafo de Cosmo em Visão Aérea.
-- Fichas de Items do livro mostram o texto completo em área de leitura e permitem expandir Outras ocorrências no livro para comparação. Campos editáveis continuam disponíveis na cópia.
-- IDs das entradas 0.3.0 mantidos. Fichas, cópias importadas e compêndios do mundo não são reescritos. Para obter referências novas em uma cópia antiga, confira o catálogo atualizado e importe outra cópia quando necessário.
+- **700 Items em oito compêndios**. Novo catálogo com 47 Big Bangs (quatro primordiais e 43 extras) e 12 incrementos das listas do livro.
+- Atalho na aba Técnicas para importar componentes; leitura das regras, requisitos, custos e benefícios por graduação. Exemplos de acesso a Big Bangs na aventura disponíveis como ocorrências complementares.
+- Apoiar conserva custo 0 CE e ocupa um slot; Controle Cósmico conserva graduação única. Graduações ilustradas conferidas visualmente e transcritas.
+- Catálogos anteriores e seus IDs preservados. Fichas, cópias e compêndios do mundo mantêm seus dados.
 
-Aplicação de bônus, aquisição, estágios, auras e custos especiais permanece manual. Importar uma referência não altera recursos nem o estágio do cavaleiro. A instalação real no servidor Foundry ainda precisa ser validada; há testes de cobertura, dados, comparação de condições, leitura das fichas e round-trip dos bancos.
+Componentes são referências: composição de técnicas, custos, benefícios e efeitos são ajustados manualmente. Esta entrega não inclui ainda o catálogo das técnicas prontas. Testes locais e de bancos não substituem validação no servidor Foundry.
 
-Para atualizar: encerre o mundo, use **Sistemas de Jogo → Atualizar**, confirme **0.3.1** e reinicie o mundo. Manifesto estável:
+Para atualizar: encerre o mundo, use **Sistemas de Jogo → Atualizar**, confirme **0.4.0** e reinicie o mundo. Manifesto estável:
 https://github.com/LucasSantiago257/gods-battle-ss-foundry/releases/latest/download/system.json
