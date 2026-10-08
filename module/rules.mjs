@@ -1,4 +1,5 @@
 import {ATTRIBUTE_MODS, SKILL_MODS, STYLES, SKILLS, NATURES, ARMORS, MOVEMENT, JUMP, LIFT, BREAK} from "./config.mjs";
+import {divineBonuses, healthMaximum} from "./calculations.mjs";
 
 export function attributeModifier(rank) { return ATTRIBUTE_MODS[rank] ?? 0; }
 export function skillModifier(rank) { return SKILL_MODS[rank] ?? 0; }
@@ -22,7 +23,7 @@ export function testParameters(system, kind, key, resistanceMode = "rank") {
   }
   if (kind === "resistance") {
     const a = system.attributes[key];
-    return {dice: a.value, modifier: (resistanceMode === "rank" ? a.value : a.mod) + system.combat.levelModifier + system.combat.resistanceBonus};
+    return {dice: a.value, modifier: (resistanceMode === "rank" ? a.value : a.mod) + system.combat.levelModifier + system.combat.resistanceBonus + divineBonuses(system).resistance};
   }
   throw new Error("Tipo de teste desconhecido.");
 }
@@ -48,7 +49,8 @@ export function prepareKnight(system, items = [], resistanceMode = "rank") {
   const ceGrowth = style.fastCosmo ? tableLevel - 1 : Math.floor(tableLevel / 2);
   const armor = items.find(i => i.type === "armor" && i.system.equipped && i.system.health.value >= 0 && i.system.state !== "dead");
   const av = armor ? armorValues(armor.system) : {pa: 0, ce: 0, unlimited: false};
-  const hp = style.hp + style.hpStep * (level - 1) + system.attributes.vig.value * level + system.resources.health.bonus;
+  const divine = divineBonuses(system);
+  const hp = healthMaximum(system);
   system.resources.health.max = system.resources.health.manualMax || hp;
   system.resources.cosmo.max = Math.max(0, system.attributes.cos.value + ceGrowth + av.ce + system.resources.cosmo.bonus);
   system.resources.cosmo.unlimited = av.unlimited;
@@ -63,6 +65,9 @@ export function prepareKnight(system, items = [], resistanceMode = "rank") {
   system.combat.passiveDuel = 7 + system.skills.cosmoUse.total + system.combat.levelModifier;
   system.combat.intuition = 7 + system.skills.perception.mod + system.combat.levelModifier + system.combat.attention;
   system.combat.resistances = Object.fromEntries(["vig", "vel", "sen", "cos"].map(key => [key, testParameters(system, "resistance", key, resistanceMode).modifier]));
+  system.combat.physicalDamageBonus = divine.physicalDamage;
+  system.combat.techniqueDamageBonus = divine.techniqueDamage;
+  system.combat.divineSpeed = divine.speed;
   const vel = Math.min(system.attributes.vel.value, 10), force = Math.min(system.attributes.for.value, 10);
   system.movement = {walk: MOVEMENT[vel], run: MOVEMENT[vel] * 3, jump: JUMP[vel], lift: LIFT[force], break: BREAK[force]};
   // Leitura numérica de Domínio permanece editável enquanto a divergência estiver aberta.

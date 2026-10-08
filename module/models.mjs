@@ -1,6 +1,7 @@
 import {ATTRIBUTES, SKILLS, FIGHTING, STYLES, STATUS, STAGES, NATURES, ARMORS, CONDITIONS} from "./config.mjs";
 import {EFFECT_KINDS} from "./technique-rules.mjs";
 import {ABILITY_KINDS} from "./catalog.mjs";
+import {migrateKnightSource} from "./migrations.mjs";
 const {NumberField, StringField, BooleanField, SchemaField} = foundry.data.fields;
 const num = (initial = 0, min = 0, max) => new NumberField({required: true, nullable: false, initial, integer: true, min, ...(max === undefined ? {} : {max})});
 // Listas como "Automático" usam "" como escolha válida; blank deve ser explícito.
@@ -8,12 +9,13 @@ const text = (initial = "", choices) => new StringField({required: true, nullabl
   blank: !choices || Object.hasOwn(choices, ""), initial, ...(choices ? {choices: Object.keys(choices)} : {})});
 const flag = () => new BooleanField({initial: false});
 const schema = obj => new SchemaField(obj);
-const resource = value => schema({value: num(value, -100000), max: num(value), manualMax: num(), bonus: num(0, -100000), unlimited: flag()});
+const resource = value => schema({value: new NumberField({required: true, nullable: false, initial: value, min: -100000}), max: num(value), manualMax: num(), bonus: num(0, -100000), unlimited: flag()});
 
 export class KnightData extends foundry.abstract.TypeDataModel {
+  static migrateData(source) {super.migrateData(source); return migrateKnightSource(source);}
   static defineSchema() {
     return {
-      schemaVersion: num(1, 1),
+      schemaVersion: num(2, 1), automation: schema({enabled: flag()}),
       profile: schema({level: num(1, 1, 100), style: text("saint", STYLES), status: text("bronze", STATUS), nature: text("physical", NATURES), specialization: text(),
         nationality: text(), age: text(), height: text(), weight: text(), appearance: text(), essence: text("Bom"), personality: text(), sign: text(), quality: text(), flaw: text(),
         sanctuary: text(), deity: text(), master: text(), trainingPlace: text(), biography: text(), companionUuid: text()}),
@@ -25,7 +27,7 @@ export class KnightData extends foundry.abstract.TypeDataModel {
       combat: schema({levelBonus: num(0, -100), attackBonus: num(0, -100), defenseBonus: num(0, -100), protectionBonus: num(0, -100), powerBonus: num(0, -100),
         resistanceBonus: num(0, -100), initiativeBonus: num(0, -100), domainBonus: num(0, -100), attention: num(0, -5, 5), attackLevel: num(3), damageBonus: num(), woundCategory: num(0, 0, 3), asterismPenalty: num(0, -100, 0),
         levelModifier: num(), attack: num(), defense: num(), protection: num(), cosmicPower: num(), initiative: num(), passiveEvasion: num(), passiveDuel: num(), intuition: num(),
-        domain: new NumberField({initial: 4.5}), resistances: schema({vig: num(), vel: num(), sen: num(), cos: num()})}),
+        domain: new NumberField({initial: 4.5}), physicalDamageBonus: num(), techniqueDamageBonus: num(), divineSpeed: num(), resistances: schema({vig: num(), vel: num(), sen: num(), cos: num()})}),
       movement: schema({walk: new NumberField({initial: 6}), run: new NumberField({initial: 18}), jump: new NumberField({initial: 3}), lift: num(10), break: num(5)}),
       creation: schema({training: num(8), total: num(5), budget: num(14), virtueBudget: num(2), skillBudget: num(9)}),
       conditions: schema(Object.fromEntries(Object.keys(CONDITIONS).map(k => [k, flag()]))),

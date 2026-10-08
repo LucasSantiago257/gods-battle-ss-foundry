@@ -5,7 +5,7 @@
     <div class="level-seal"><span>NÍVEL</span><strong>{{system.profile.level}}</strong></div>
   </header>
   <fieldset class="resource-strip" {{#unless editable}}disabled{{/unless}}>
-    <label class="resource health"><span>VIDA</span><div><input type="number" name="system.resources.health.value" value="{{system.resources.health.value}}" aria-label="Vida atual"><span>/ {{system.resources.health.max}}</span></div></label>
+    <label class="resource health"><span>VIDA</span><div><input type="number" step="any" name="system.resources.health.value" value="{{system.resources.health.value}}" aria-label="Vida atual"><span>/ {{system.resources.health.max}}</span></div></label>
     <label class="resource cosmo"><span>COSMO ENERGIA</span><div><input type="number" name="system.resources.cosmo.value" value="{{system.resources.cosmo.value}}" aria-label="Cosmo Energia atual"><span>/ {{#if system.resources.cosmo.unlimited}}∞{{else}}{{system.resources.cosmo.max}}{{/if}}</span></div></label>
     <label class="resource maximum"><span>COSMO MÁXIMO</span><div><input type="number" min="0" max="20" name="system.resources.maximum.value" value="{{system.resources.maximum.value}}" aria-label="Cosmo Máximo"><span>/ 20</span></div></label>
   </fieldset>
@@ -16,7 +16,7 @@
       <p class="note">Criação: 8 pontos de treino + 1 do estilo, além dos cinco atributos iniciais. Total básico {{system.creation.budget}}; ficha {{system.creation.total}}. Bônus de virtudes e exceções são registrados manualmente.</p>
       <div class="stat-strip">{{#each movement}}<div><span>{{label}}</span><strong>{{value}}</strong></div>{{/each}}</div>
       <h3>Identidade de combate e recursos</h3>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=overview}}
-      <p class="note">PV automático é provisório: PV inicial + progressão após o nível 1 + Vigor × nível + extras. Use PV máximo manual para outra interpretação. CE usa Cosmo, progressão do estilo e armadura equipada.</p>
+      <details class="calculation-ledger"><summary>Como os valores são calculados</summary>{{#each calculations}}<p><strong>{{label}}</strong>: {{text}}<br><small>Referência: {{page}}</small></p>{{/each}}</details>
     </section>
     <section class="tab {{tabs.combat.cssClass}}" data-group="primary" data-tab="combat">
       <div class="stat-strip combat-totals">{{#each totals}}<div><span>{{label}}</span><strong>{{value}}</strong></div>{{/each}}</div>
@@ -61,5 +61,5 @@
       <h3>História</h3>{{> "systems/gods-battle-ss/templates/fields.hbs" fields=biography}}
     </section>
   </div>
-  <footer class="sheet-footer">Alterações salvas ao editar · Fichas 0.5.0</footer>
+  <footer class="sheet-footer">Alterações salvas ao editar · Fichas 0.6.0</footer>
 </div>
