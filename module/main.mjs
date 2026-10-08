@@ -20,8 +20,8 @@ Hooks.once("init", async () => {
   game.godsBattle = {createStarterCompendium, openCatalog};
 });
 
-Hooks.on("preCreateActor", actor => {
+Hooks.on("preCreateActor", (actor, data = {}) => {
   if (actor.type !== "knight") return;
-  actor.updateSource({"prototypeToken.actorLink": true, "prototypeToken.bar1.attribute": "resources.health", "prototypeToken.bar2.attribute": "resources.cosmo"});
+  actor.updateSource({"system.schemaVersion": 2, "system.automation.enabled": data.system?.automation?.enabled ?? !data.system?.schemaVersion, "prototypeToken.actorLink": true, "prototypeToken.bar1.attribute": "resources.health", "prototypeToken.bar2.attribute": "resources.cosmo"});
 });
 Hooks.on("renderChatMessageHTML", renderTechniqueChat);

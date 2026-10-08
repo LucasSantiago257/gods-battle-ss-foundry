@@ -63,7 +63,7 @@ export function techniqueOutcome(system, technique, parameters, total) {
   const critical = total > parameters.difficulty + 10;
   const damageLevel = parameters.effectKind === "damage" ? integer(technique.damageLevel, "Nível de Dano", 1) + parameters.elevate + (critical ? 1 : 0) : 0;
   const damage = parameters.effectKind === "damage"
-    ? Math.max(0, damageLevel * integer(technique.power, "Nível de Poder") + system.profile.level + system.combat.damageBonus) : 0;
+    ? Math.max(0, damageLevel * integer(technique.power, "Nível de Poder") + system.profile.level + system.combat.damageBonus + (system.combat.techniqueDamageBonus ?? 0)) : 0;
   const armorDamage = parameters.effectKind !== "damage" ? 0 : damageLevel > 20 ? 100 : damageLevel > 10 ? 70
     : ({bronze: 10, silver: 20, gold: 30}[technique.classification] ?? 0);
   return {outcome, success, critical, damageLevel, damage: success ? damage : 0, armorDamage: success ? armorDamage : 0,

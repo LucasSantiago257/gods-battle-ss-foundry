@@ -4,6 +4,7 @@ import {createStarterCompendium} from "./starter.mjs";
 import {useTechnique} from "./techniques.mjs";
 import {EFFECT_KINDS, techniqueReadiness} from "./technique-rules.mjs";
 import {ABILITY_KINDS, openCatalog} from "./catalog.mjs";
+import {calculationSummary} from "./calculations.mjs";
 
 export function field(name, label, value, choices, type = "number", hint = "") {
   return {name, label, value, hint, isSelect: !!choices, isCheckbox: type === "checkbox", isTextarea: type === "textarea", isNumber: type === "number", type,
@@ -55,10 +56,11 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
       origin: item.system.originUuid} );
     return Object.assign(context, {
       actor: this.actor, system: s, editable: this.isEditable, isGM: game.user.isGM, tabs: this._prepareTabs("primary"), groups,
+      calculations: calculationSummary(s, game.settings.get(SYSTEM_ID, "resistanceMode")),
       resistancePolicy: game.settings.get(SYSTEM_ID, "resistanceMode") === "rank" ? "Graduação + modificador de nível (provisório)" : "Modificador do atributo + modificador de nível",
       attributes: Object.entries(ATTRIBUTES).map(([key, label]) => ({key, label, ...s.attributes[key]})),
       overview: [f("profile.level", "Nível", s.profile.level), f("profile.style", "Estilo", s.profile.style, STYLES), f("profile.status", "Status do cavaleiro", s.profile.status, STATUS), f("profile.nature", "Natureza do Cosmo", s.profile.nature, NATURES),
-        t("profile.specialization", "Especialização", s.profile.specialization), n("resources.health.manualMax", "PV máximo manual", s.resources.health.manualMax, "0 usa o cálculo provisório por estilo e Vigor."),
+        t("profile.specialization", "Especialização", s.profile.specialization), field("system.automation.enabled", "Automatizar bônus conferidos (revise os ajustes manuais antes de ativar)", s.automation.enabled, null, "checkbox"), n("resources.health.manualMax", "PV máximo manual", s.resources.health.manualMax, "0 usa estilo, crescimento a partir do nível 2 e Vigor."),
         n("resources.health.bonus", "PV extras", s.resources.health.bonus), n("resources.cosmo.bonus", "CE extras na capacidade", s.resources.cosmo.bonus), n("resources.cosmoExtra", "CE extra acumulada", s.resources.cosmoExtra),
         n("resources.cosmoReserved", "CE reservada", s.resources.cosmoReserved, "Parte da CE atual protegida do gasto automático."), n("resources.cosmoOverload", "CE queimada além do corpo", s.resources.cosmoOverload, "Excesso acumulado: ajuste manualmente após recuperação conforme o livro.")],
       movement: [{label: "Movimento", value: `${s.movement.walk} m`}, {label: "Corrida", value: `${s.movement.run} m`}, {label: "Salto", value: `${s.movement.jump} m`}, {label: "Erguer", value: `${s.movement.lift} kg`}, {label: "Quebrar", value: `${s.movement.break} cm`}],
