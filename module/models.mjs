@@ -46,7 +46,7 @@ export class ContentData extends foundry.abstract.TypeDataModel {
       equipped: flag(), class: text("bronze", ARMORS), version: num(1, 1, 5), constellation: text(), affinity: num(0, 0, 20), state: text("active"),
       health: resource(30), protectionBonus: num(0, -100), cosmoBonus: num(0, -100), accessories: text(),
       armor: schema({hp: num(30), pa: num(3), ce: num(3), minimum: num(1), unlimited: flag()}),
-      nature: text("physical", {"": "Selecionar na cópia", ...NATURES}), classification: text("bronze"), techniqueMode:text("manual",TECHNIQUE_MODES), effectKind: text("damage", EFFECT_KINDS), power: num(10), damageLevel: num(2), cost: num(2), costExtra: num(), range: new NumberField({initial: 3, min: 0}), techniqueReviewed: flag(),
+      nature: text("physical", {"": "Selecionar na cópia", ...NATURES}), classification: text("bronze"), techniqueMode:text("manual",TECHNIQUE_MODES), effectKind: text("damage", EFFECT_KINDS), power: num(10), damageLevel: num(2), cost: num(2), costExtra: num(), range: new NumberField({initial: 3, min: 0}), techniqueReviewed: flag(), controlRounds:num(0,0,500),
       duration: text("Instantânea"), resistance: text(), bigbangs: text(), increments: text(), category: text(), level: num(1, 1), action: text(), combination: text(),
       abilityKind: text("ability", ABILITY_KINDS), costText: text(),
       uses: schema({value: num(), max: num(), reset: text("dia")}), rank: num(1, 1, 10), active: flag(), notes: text()

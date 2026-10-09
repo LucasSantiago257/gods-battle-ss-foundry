@@ -7,6 +7,7 @@ import {techniqueParameters,cosmoPayment} from "../module/technique-rules.mjs";
 import {enqueueDamageRequest} from "../module/damage.mjs";
 import {applyLevelOperation} from "../module/level-up.mjs";
 import {techniqueWithComponents,COMPONENT_RULES} from "../module/technique-components.mjs";
+import {actionHash} from "../module/action-rules.mjs";
 const ID="gods-battle-ss",clone=value=>JSON.parse(JSON.stringify(value));
 function patch(object,data){for(const[path,value]of Object.entries(data)){const parts=path.split(".");let at=object;for(const key of parts.slice(0,-1))at=at[key]??={};const last=parts.at(-1);if(last.startsWith("-="))delete at[last.slice(2)];else if(value&&typeof value==="object"&&!Array.isArray(value)&&at[last]&&typeof at[last]==="object")merge(at[last],value);else at[last]=clone(value);}}
 function merge(to,from){for(const[key,value]of Object.entries(from)){if(value&&typeof value==="object"&&!Array.isArray(value)&&to[key]&&typeof to[key]==="object")merge(to[key],value);else to[key]=clone(value);}}
@@ -28,6 +29,17 @@ function runtime(){
  const request=(id="requestA",change={},user=owner)=>{const chosen={...options,...change.options},parameters=techniqueParameters(actor.system,techniqueWithComponents(item),chosen),data={actorUuid:actor.uuid,itemId:item.id,itemUuid:item.uuid,baseline:activationState(actor,item),options:chosen,expectedPayment:cosmoPayment(actor.system,parameters.cost,chosen),targetUuid:null,rollMode:"publicroll",...change};const message=doc({id,author:user,whisper:[user.id,gm.id],flags:{[ID]:{techniqueRequest:data}}});messages.set(id,message);return message;};
  return{gm,owner,other,outsider,actor,item,stats,controls,updates,renders,notices,messages,targets,options,request,execute:async message=>{game.user=gm;await executeTechniqueRequest(message,message.author.id);}};
 }
+test("Controle publicado conserva duração e hash opaco de origem sem revelar roll no Actor",async()=>{
+ for(const mode of ["publicroll","blindroll"]){const r=runtime();r.item.system.effectKind="control";r.item.system.classification="gold";
+ const combat={uuid:"Combat.test",started:true,round:3,combatants:{contents:[{id:"hero",actor:r.actor}]}};game.combat=combat;game.combats={contents:[combat]};
+ const m=r.request("control",{rollMode:mode});await r.execute(m);const attack=m.flags[ID].attack,operation=r.actor.flags[ID].techniqueOperations.control;
+ assert.equal(attack.control.baseRounds,4);assert.equal(attack.control.start.round,3);assert.equal(attack.itemUuid,r.item.uuid);assert.equal(operation.controlAttackSignature,actionHash(attack));assert.equal(operation.card,undefined);assert.equal(operation.control,undefined);assert.equal(operation.rolls,undefined);assert.equal(operation.status,"paid");
+ assert.equal(r.renders.at(-1).context.control.baseRounds,4);assert.equal(r.stats.payments,1);assert.equal(r.stats.rolls,1);
+ }
+});
+test("mudar rodada de Controle durante rolagem invalida pagamento",async()=>{
+ const r=runtime();r.item.system.effectKind="control";const combat={uuid:"Combat.test",started:true,round:1,combatants:{contents:[{id:"hero",actor:r.actor}]}};game.combat=combat;game.combats={contents:[combat]};const m=r.request();r.controls.beforeRoll=async()=>{combat.round=2;};await r.execute(m);assert.equal(r.stats.payments,0);assert.equal(m.flags[ID].techniqueResponse.status,"interrupted");
+});
 test("envio é privado e não rola/gasta no jogador; pendência e ausência de mestre bloqueiam",async()=>{
  const r=runtime(),baseline=activationState(r.actor,r.item),payment=cosmoPayment(r.actor.system,2,r.options);
  const m=await submitTechniqueActivation(r.actor,r.item,{baseline,options:r.options,payment,rollMode:"blindroll"});assert.deepEqual(m.whisper,["owner","gm"]);assert.equal(m.blind,true);assert.equal(r.stats.rolls,0);assert.equal(r.stats.payments,0);assert.equal(pendingTechnique(r.actor),true);

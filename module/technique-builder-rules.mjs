@@ -41,7 +41,7 @@ export function composeTechnique(system,draft,entries=[],otherTechniqueCount=0) 
  manual.push("Conferir mestre/armadura que ensina, aprovação e seis meses de desenvolvimento por slot (pp.199/222). Criar o Item não comprova aprendizado.");
  const range=draft.range===0?tier.range:draft.range;if(!Number.isFinite(range)||range<0)throw Error("Alcance inválido.");
  const duration=draft.duration?.trim()|| (draft.primary==="damage"?"Instantânea":`Turno da ação + ${tier.cost-1}`);
- const technique={techniqueMode:draft.techniqueMode,classification:draft.classification,nature:draft.nature,effectKind,cost,costExtra:fixed,damageLevel:integer(draft.damageLevel??0,"ND manual"),power:integer(draft.power??0,"Poder manual",1000),range,duration};
+ const technique={controlRounds:integer(draft.controlRounds??0,"Duração de Controle",500),techniqueMode:draft.techniqueMode,classification:draft.classification,nature:draft.nature,effectKind,cost,costExtra:fixed,damageLevel:integer(draft.damageLevel??0,"ND manual"),power:integer(draft.power??0,"Poder manual",1000),range,duration};
  const effective=effectiveTechnique(system,technique);if(effectKind==="damage"&&(effective.damageLevel<1||effective.power<1))throw Error("Dano exige ND e Poder positivos.");
  const preview=effectKind==="manual"?null:activationPreview(system,technique);
  const blueprint=structuredClone(draft);delete blueprint.id;delete blueprint.baseline;

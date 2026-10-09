@@ -8,6 +8,7 @@ import {techniqueSetupUpdates,setupTechnique} from "../module/technique-setup.mj
 import {installTechniquePreview} from "../module/technique-ui.mjs";
 import {rollTest} from "../module/rolls.mjs";
 import {executeTechniqueRequest,notifyTechniqueResponse} from "../module/technique-activation.mjs";
+import {controlDuration} from "../module/control-rules.mjs";
 
 const system = () => {const s = knight(); s.skills.asterism.value = 2; s.resources.cosmo.value = 10; return prepareKnight(s);};
 test("Asterismo usa natureza da técnica e respeita associação manual", () => {
@@ -200,6 +201,11 @@ test("resistência pelo chat usa dificuldade informada e não altera PV", async 
   await rollTest(r.actor, "resistance", "vig", {difficulty: 15, resistanceAttack: {name: "Ataque", damage: 20, armorDamage: 10, powerCosmic: 15}});
   assert.ok(r.sent[0].flags["gods-battle-ss"].resistance); assert.equal(r.actor.system.resources.health.value, before); assert.equal(r.updates.length, 0);
 });
+test("resistência de Controle publica duração sem gerar journal de dano zero",async()=>{
+ const r=runtime({faces:[5]});foundry.applications.api.DialogV2.wait=async()=>({bonus:0,advantage:0,difficulty:1});const before=structuredClone(r.actor.system);
+ const attack={name:"Controle",effectKind:"control",messageId:"root",targetUuid:r.actor.uuid,powerCosmic:20,damage:0,armorDamage:0,control:controlDuration({effectKind:"control",classification:"gold"})};
+ await rollTest(r.actor,"resistance","vig",{difficulty:20,resistanceAttack:attack});const f=r.sent[0].flags["gods-battle-ss"];assert.equal(f.resolvedDamage,undefined);assert.equal(f.controlResolution.rootMessageId,"root");assert.equal(f.controlResolution.rounds,8);assert.equal(f.controlResolution.retryCost,2);assert.equal(r.renders.at(-1).context.resistance.control.doubleDuration,true);assert.deepEqual(r.actor.system,before);assert.equal(r.updates.length,0);
+});
 
 test("modo por status acompanha Bronze/Prata/Ouro, preserva manual e não promove pelo nível",()=>{
  const s=system(),t={...content(),power:77,damageLevel:9,techniqueMode:"status"},original=structuredClone(t);
@@ -236,6 +242,10 @@ test("configuração conserva parâmetros manuais, notas e custo completo do liv
  assert.equal(techniqueSetupUpdates(r.actor,r.item,{...setupAnswer,techniqueMode:"manual"})["system.power"],77);
  for(const change of [{cost:0},{cost:1.5},{nature:""},{range:-1}])assert.throws(()=>techniqueSetupUpdates(r.actor,r.item,{...setupAnswer,...change}));
  r.item.flags={"gods-battle-ss":{source:{reference:{manualOnly:true}}}};assert.throws(()=>techniqueSetupUpdates(r.actor,r.item,setupAnswer),/cooperativa/);
+ });
+test("configuração da cópia salva duração de Controle sem exigir notas",()=>{
+ const r=runtime(),updates=techniqueSetupUpdates(r.actor,r.item,{...setupAnswer,effectKind:"control",controlRounds:7});assert.equal(updates["system.controlRounds"],7);
+ for(const controlRounds of [-1,0.5,501])assert.throws(()=>techniqueSetupUpdates(r.actor,r.item,{...setupAnswer,effectKind:"control",controlRounds}));
 });
 test("configuração cancelada ou cópia alterada não grava; revisão salva só a cópia",async()=>{
  const r=runtime(),changes=[];r.item.isOwner=true;r.item.update=async data=>changes.push(data);

@@ -1,3 +1,4 @@
+import {renderControlChat} from "./control.mjs";
 import {SYSTEM_ID, ITEM_TYPES} from "./config.mjs";
 import {KnightData, ContentData} from "./models.mjs";
 import {BattleActor, BattleItem} from "./documents.mjs";
@@ -36,6 +37,7 @@ Hooks.on("preCreateActor", (actor, data = {}) => {
 });
 Hooks.on("renderChatMessageHTML", renderTechniqueChat);
 Hooks.on("renderChatMessageHTML",renderCombatChat);
+Hooks.on("renderChatMessageHTML",renderControlChat);
 Hooks.on("createChatMessage",enqueueDamageRequest);
 Hooks.on("createChatMessage",enqueueLevelRequest);
 Hooks.on("createChatMessage",enqueueTechniqueRequest);

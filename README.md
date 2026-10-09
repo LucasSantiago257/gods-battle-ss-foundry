@@ -18,7 +18,7 @@
 
 Para exercitar o combate, abra **Compêndios → Fichas de teste — Combate**. A versão 0.9.2 acrescenta Santo, Guardião e Sábia com armadura, técnica e recursos preenchidos. Como mestre, **Combate → Importar grupo de teste** cria as fichas ausentes em uma pasta própria e preserva as cópias existentes. Veja [o exercício passo a passo](docs/fichas-teste.md).
 
-Fichas, compêndios e ativação de técnicas do sistema UmD10+, com destino ao **FoundryVTT 13 build 350**. Versão **0.17.1, em desenvolvimento**. A criação de personagens na versão 0.1.1 foi confirmada pelo usuário no servidor; a nova automação ainda precisa ser validada dentro do Foundry.
+Fichas, compêndios e ativação de técnicas do sistema UmD10+, com destino ao **FoundryVTT 13 build 350**. Versão **0.18.0, em desenvolvimento**. A criação de personagens na versão 0.1.1 foi confirmada pelo usuário no servidor; a nova automação ainda precisa ser validada dentro do Foundry.
 
 O sistema inclui **866 entradas em nove compêndios nativos**, com descrições, requisitos, origem e páginas do livro. Na aba **Poderes**, os atalhos abrem os catálogos para arrastar itens à ficha. Acrescenta 166 técnicas para consulta e configuração, com atalhos na aba Técnicas. As cópias do catálogo exigem revisão antes de gastar CE; custos variáveis, efeitos especiais e Exclamação de Athena permanecem manuais. A ficha permite abrir os Big Bangs relacionados para consulta. Os Items do livro mostram a descrição completa em uma área de leitura. Consulte a [cobertura e o uso dos compêndios](docs/compendios.md). Para atualizar, encerre o mundo e use **Sistemas de Jogo → Atualizar**; depois inicie o mundo e recarregue a página.
 
@@ -55,7 +55,7 @@ Consulte o [guia de instalação por manifesto](docs/instalacao-manifesto.md). C
 
 ## Instalação manual no servidor
 
-1. Extraia o ZIP `gods-battle-ss-0.17.1.zip`. Ele contém a pasta `gods-battle-ss`.
+1. Extraia o ZIP `gods-battle-ss-0.18.0.zip`. Ele contém a pasta `gods-battle-ss`.
 2. Com o servidor Foundry parado, envie essa pasta para `<pasta de dados>/Data/systems/gods-battle-ss/`. `system.json` deve ficar diretamente nessa pasta, sem uma pasta intermediária.
 3. Reinicie o Foundry e crie um **mundo de teste** escolhendo “Saint Seiya — A Batalha dos Deuses”.
 4. Crie um Actor do tipo **Cavaleiro**. Edite o nome, atributos, estilo e recursos. As alterações são salvas ao editar os campos.
@@ -73,6 +73,8 @@ Nenhuma credencial deve ser colocada em `system.json`.
 - PV: `PV inicial + incremento × (nível − 1) + Vigor × nível + extras`, com incremento a partir do nível 2 conforme a campanha. Há campo de máximo manual. Atributos divinos e os efeitos pessoais conferidos são calculados quando a automação está habilitada.
 - Tabelas de ações e CE dos estilos são aplicadas até nível 20; depois desse ponto, use os ajustes. Alterar nível não promove status nem altera sentido automaticamente.
 - Os bônus de sentidos, Domínio, Nível de Ataque, afinidade e efeitos especiais são registrados manualmente. A ficha mostra essas separações.
+
+Controle calcula duração e permite registrar o resultado de resistência pública na ficha alvo. Veja [guia de Controle](docs/controle.md); estados e novas tentativas permanecem manuais.
 
 ## Limites desta entrega
 

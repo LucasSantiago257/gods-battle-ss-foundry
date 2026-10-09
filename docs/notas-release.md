@@ -1,4 +1,6 @@
-Versão **0.17.1** para FoundryVTT 13 build 350.
+Versão **0.18.0** para FoundryVTT 13 build 350.
+
+0.18.0 acrescenta duração de Controle por classe (2/3/4 rodadas incluindo ativação), substituição explícita na cópia e duplicação em falha crítica da resistência. Cartão público de resistência falha permite ao mestre registrar o prazo no alvo original; começo congelado na ativação, histórico e conferência por rodada na aba Combate. Cartões privados/antigos usam registro manual. Não cria dano zero, estados ou bloqueios, nem cobra novas resistências automaticamente. Notas opcionais; catálogos e recursos preservados. Validação:251 testes locais, módulos/templates e prévias; servidor13.350 ainda pendente. Ver controle.md.
 
 0.17.1 simplifica a interface por pedido de Lucas: remove declarações de leitura/revisão e aceite de exceções; justificativas tornam-se notas opcionais em criação, evolução, técnicas, dano, ações, efeitos e condições. Pendências de campanha são informativas. Parâmetros numéricos, escolhas de cálculo, permissões, proteção contra repetição e mudança de estado continuam validados. Recuperações oferecem ações concretas sem checkbox de declaração. Campos/flags históricos preservados, sem migração de fichas ou catálogos. Validação:230 testes locais, módulos/templates e prévias; servidor13.350 ainda pendente.
 

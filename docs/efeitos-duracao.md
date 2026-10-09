@@ -38,3 +38,6 @@ Brasas acrescenta resolução periódica assistida a um componente, além dos qu
 Próximos grupos: efeitos de condições com contribuições derivadas reversíveis; duração/testes próprios de Controle; Dreno com definição de destino da CE e reservas; Sustentada/Residual com duelos, custo/tempo e testes de libertação. A fonte p.225 exige oposição para Sustentada, e p.227 descreve retirada de CE por Dreno sem estabelecer neste trecho transferência ao usuário: não inventar restauração/transferência. Duração varia por técnica (p.233), e a relação entre eventos de fim e dano periódico precisa ser definida antes de cobrança automática.
 
 Fonte: pp.225,227,233. Autor: Dhoko de Libra; licença/atribuição em [ATTRIBUTION.md](../ATTRIBUTION.md). Sem reprodução de páginas/imagens do livro no pacote. Testes locais/previews não confirmam execução no Foundry13.350 real.
+
+
+Na 0.18.0, Controle possui duração por classe ou parâmetro personalizado e vínculo da resistência pública à ficha alvo. Estados e novas resistências permanecem manuais. Veja [Controle](controle.md).
