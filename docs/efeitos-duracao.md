@@ -44,3 +44,6 @@ Na 0.18.0, Controle possui duração por classe ou parâmetro personalizado e v�
 
 
 Na 0.18.1, as janelas do mestre para condições, efeitos, Controle, ajustes e recuperações não ocupam a fila enquanto aguardam sua decisão. Outros pagamentos podem prosseguir; a confirmação entra na fila para revalidar os dados e gravar. Se os dados conferidos mudarem, reabra a operação com a situação atual. A gravação continua coordenada no cliente do mestre, sem bloqueio global do servidor.
+
+
+Controle vinculado permite na0.19.0 nova resistência genérica pública processada pelo mestre, com custo1/2CE, resultado e encerramento opcional no mesmo pagamento. Recuperação pelo journal de efeitos conserva recursos e publica o mesmo cartão. Exceções de estados e resultados privados permanecem manuais. Ver controle.md.

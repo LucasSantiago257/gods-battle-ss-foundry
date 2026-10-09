@@ -1,0 +1,9 @@
+<div class="battle-chat">
+  <h3>Nova resistência · {{name}}</h3><p>{{actor.name}} · {{label}} · rodada {{round}}</p>
+  <div class="chat-result"><strong>{{total}}</strong><span>{{outcome}}<br>Dificuldade {{difficulty}}</span></div>
+  <p>{{#each results}}{{this}} {{/each}} · modificador {{modifier}}</p>
+  <p>Pagamento registrado: {{cost}} CE. {{#if unlimited}}CE ilimitada.{{else}}{{fromCurrent}} CE atual + {{fromExtra}} CE extra.{{/if}}</p>
+  <p>{{#if end}}Este registro de Controle foi encerrado.{{else}}{{#if success}}Resistência bem-sucedida; prazo mantido conforme aplicação escolhida.{{else}}Falha; o prazo original continua.{{/if}}{{/if}} Estados manuais e condições assistidas são conferidos separadamente.</p>
+  {{#if conditionSummary}}<p>{{conditionSummary}}</p>{{/if}}{{#if reason}}<p>{{reason}}</p>{{/if}}
+  <small>Livro: p.206–208. Tentativa genérica, sem resolver exceções de estados.</small>
+</div>
