@@ -1,3 +1,4 @@
+import {controlDuration,controlResistance} from "./control-rules.mjs";
 import {NATURES, ATTRIBUTES} from "./config.mjs";
 import {testParameters, classify} from "./rules.mjs";
 import {componentOptions} from "./technique-components.mjs";
@@ -52,7 +53,7 @@ export function techniqueParameters(system, technique, options = {}) {
   const modifier = (trained ? skill.mod + system.attributes[attribute].mod + skill.bonus + (skill.effectBonus ?? 0) : 0)
     + (system.combat.asterismPenalty ?? 0) + bonus + advantage * 2;
   const pool=conditionPool(system,Math.max(1,base.dice+advantage),modifier,{maxDice:5});
-  return {cost, difficulty: 10 + cost, components,attribute, attributeLabel: ATTRIBUTES[attribute],conditionSummary:conditionSummary(system),
+  return {cost, difficulty: 10 + cost, control:controlDuration(technique),components,attribute, attributeLabel: ATTRIBUTES[attribute],conditionSummary:conditionSummary(system),
     dice: pool.dice, modifier:pool.modifier, elevate, condense, effectKind, baseDamageLevel:technique.damageLevel,power:technique.power,
     powerCosmic: system.combat.cosmicPower + (effectKind === "damage" ? 0 : elevate)};
 }
@@ -96,7 +97,7 @@ export function resistancePreview(system, items, attack, total, difficulty = att
   const outcome = classify(total, difficulty);
   const armor = items.find(i => i.type === "armor" && i.system.equipped && i.system.health.value >= 0 && i.system.state !== "dead");
   const multiplier = total > difficulty + 10 ? 0 : total >= difficulty ? 0.5 : total < difficulty - 10 ? 2 : 1;
-  return {outcome, damage: attack.damage * multiplier * (armor ? 1 : 2),
+  return {control:controlResistance(attack,total),outcome, damage: attack.damage * multiplier * (armor ? 1 : 2),
     armorDamage: armor && total < difficulty ? attack.armorDamage : 0,
     unarmored: !armor, effectsResisted: total >= difficulty, doubleDuration: total < difficulty - 10};
 }

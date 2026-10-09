@@ -11,6 +11,10 @@ const lookup=key=>{const doc=catalog.find(d=>d.flags[ID].source.key===key);asser
 const entries=(...keys)=>keys.map((key,i)=>({slot:`slot${String(i).padStart(12,"0")}`,doc:lookup(key),rank:1}));
 const system=()=>{const s=knight();s.profile.level=25;s.profile.status="gold";s.skills.cosmoUse.value=3;s.skills.training.value=3;s.resources.cosmo.value=20;s.skills.asterism.value=3;return prepareKnight(s);};
 const draft=changes=>({name:"Fulgor",classification:"gold",nature:"physical",primary:"damage",techniqueMode:"status",power:77,damageLevel:9,range:0,duration:"",description:"Criação da campanha",extraSlots:0,extraCost:0,reviewed:true,incrementReviewed:true,...changes});
+test("construtor conserva duração personalizada de Controle e recusa números inválidos",()=>{
+ const p=composeTechnique(system(),draft({primary:"control",controlRounds:7}));assert.equal(p.technique.controlRounds,7);assert.equal(techniqueParameters(system(),{...content(),...p.technique}).control.baseRounds,7);
+ for(const controlRounds of [-1,1.5,501])assert.throws(()=>composeTechnique(system(),draft({primary:"control",controlRounds})));
+});
 test("composições reproduzem os três custos de exemplo da p.223",()=>{
  for(const [tier,primary,keys,cost]of [["silver","control",["bigbang:extra:Inibir Sentidos"],4],["gold","control",["bigbang:primordial:Dano","bigbang:extra:Assumir Querido"],6],["gold","damage",["bigbang:extra:Esgotar","bigbang:extra:Conjunto","bigbang:extra:Finalizador"],7]]){
   const p=composeTechnique(system(),draft({classification:tier,primary}),entries(...keys));assert.equal(p.cost,cost);assert.equal(p.difficulty,10+cost);assert.equal(p.used,keys.length);assert.equal(p.canApply,true);

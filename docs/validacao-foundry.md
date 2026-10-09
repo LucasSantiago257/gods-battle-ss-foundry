@@ -192,3 +192,13 @@ Iniciativa/simultaneidade, alcance, movimento parcial/total, manobras e efeitos 
 5. Cancelar, repetir registro ativo, mudar estado/propriedade/mestre durante diálogo/rolagem e ensaiar reconexão: não duplicar registros ou publicar/cobrar confirmação antiga. Recuperar operação central preparada pelos controles existentes; não presumir CAS do servidor.
 6. Copiar ficha/token para UUID independente: histórico estrangeiro avisa e não aplica a parcela original; encerrar só na cópia e registrar nova condição conferida. Conferir que modos privados/cegos não copiaram dados de rolagem para o Actor.
 7. Conferir zero mudança dos866Items e IDs/recursos das fichas de exercício. Outros estados e todas as marcações antigas permanecem de aplicação manual. Só registrar compatibilidade verificada após executar no servidor real com mestre e jogadores.
+
+
+## Controle — 0.18.0
+
+- Em encontro iniciado, marcar alvo e ativar Controle Bronze/Prata/Ouro: base2/3/4 incluindo rodada inicial. Substituir duração na cópia/construtor e conferir prévia/cartão.
+- Resistir em PC, PC−10 e PC−11: sem efeito, prazo normal e dobrado. Sem botão de dano zero.
+- Como mestre, registrar duração pública sem notas/aceite. Registrar depois de avançar rodadas não reinicia prazo. Conferir atrasos individualmente e expirar/encerrar sem alterar PV/CE/ações/condições.
+- Duplo clique/dois mestres, cancelamento, mudança de rodada durante diálogo, cópia/token, combatente substituído, outra ficha e operação interrompida: nenhum registro duplicado ou custo extra.
+- Privado/cego/self e cartão antigo: sem vínculo automático; registro manual disponível. Não divulgar roll privado no Actor.
+- Nova resistência/pagamento, estados e regras excepcionais continuam manuais. Testar no core13.350 antes de confirmar compatibilidade.

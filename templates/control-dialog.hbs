@@ -1,0 +1,7 @@
+<div class="control-dialog"><p><strong>{{name}}</strong> → <strong>{{targetName}}</strong>. Origem: ativação e resistência públicas vinculadas.</p>
+<p>Duração base {{baseRounds}} rodadas; resultado sugere <strong>{{rounds}}</strong>{{#if doubleDuration}} após falha crítica na resistência{{/if}}. A contagem inclui a rodada da ativação: <strong>{{startRound}}</strong>. Rodada atual: {{currentRound}}.</p>
+<label>Duração final em rodadas<input type="number" name="rounds" min="1" max="1000" value="{{rounds}}"></label>
+<label>Efeito / ordens / estado (opcional)<textarea name="description" maxlength="2000"></textarea></label>
+<label>Notas (opcional)<textarea name="reason" maxlength="2000"></textarea></label>
+<p>O registro acompanha a duração em Combate → Efeitos com duração. Cada rodada é registrada pelo mestre; não aplica dano, muda estados ou bloqueia ações automaticamente.</p>
+<p>Nova tentativa em turno posterior custa {{retryCost}} CE, conforme a classe. A rolagem, o pagamento e exceções de estados específicos continuam manuais. Encerrar remove somente este registro; não cura nem restaura recursos.</p></div>

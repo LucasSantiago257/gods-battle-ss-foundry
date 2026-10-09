@@ -5,7 +5,8 @@
 <div class="form-group"><label>Natureza utilizada</label><select name="nature">{{#each natures}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></div>
 <div class="form-group"><label>Efeito primordial</label><select name="effectKind">{{#each effects}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></div>
 <div class="form-group"><label>Cálculo de dano</label><select name="techniqueMode">{{#each modes}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></div>
-<div class="form-group"><label>Custo total publicado (inclui componentes)</label><input name="cost" type="number" min="1" step="1" value="{{cost}}"></div>
+<div class="form-group"><label>Duração de Controle em rodadas (0: padrão da classe)<input name="controlRounds" type="number" min="0" max="500" value="{{controlRounds}}"></label><p>Usado somente no primordial Controle. Bronze: 2, Prata: 3, Ouro: 4, incluindo a rodada da ativação. Prazo personalizado substitui a tabela; resistência com falha crítica dobra a duração.</p>
+<label>Custo total publicado (inclui componentes)</label><input name="cost" type="number" min="1" step="1" value="{{cost}}"></div>
 <div class="form-group"><label>CE fixa adicional da cópia</label><input name="costExtra" type="number" min="0" step="1" value="{{costExtra}}"></div>
 <div class="form-group"><label>ND manual (usado no modo manual)</label><input name="damageLevel" type="number" min="0" step="1" value="{{damageLevel}}"></div>
 <div class="form-group"><label>Poder manual (usado no modo manual)</label><input name="power" type="number" min="0" step="1" value="{{power}}"></div>

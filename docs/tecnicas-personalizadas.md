@@ -34,3 +34,6 @@ Fonte: *Saint Seiya — A Batalha dos Deuses*, Dhoko de Libra, edição interna4
 Validação local usa testes de regras/contratos e prévia dos templates. Execução real no Foundry13 build350, especialmente salvamento dos campos e permissões, ainda precisa seguir [o roteiro de validação](validacao-foundry.md).
 
 Desde0.15.0, após concluir composição com primordial Dano, Configurar permite aderir ao primeiro grupo de componentes assistidos. Esgotar, Essência Alvo, Terreno Favorável e Controle sobre o Espaço calculam parcelas na ativação. Use ND/alcance base; recompor desliga a opção para nova revisão. Outros componentes ainda manuais. Ver componentes-automaticos.md.
+
+
+Na 0.18.0, Controle possui duração por classe ou parâmetro personalizado e vínculo da resistência pública à ficha alvo. Estados e novas resistências permanecem manuais. Veja [Controle](controle.md).

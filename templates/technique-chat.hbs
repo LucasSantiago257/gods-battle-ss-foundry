@@ -7,12 +7,12 @@
 {{#if actions}}<p>{{actions.cost}} ações de {{actions.pool}} gastas · rodada {{actions.round}}.</p>{{/if}}
 {{#each components.entries}}<p>{{label}} · p.{{page}} · aplicado: {{applied}}{{#if detail}} · {{detail}}{{/if}}.</p>{{/each}}{{#if components.entries}}<p>ND extra {{components.levelBonus}} · queima Esgotar {{components.extraCost}} CE · alcance {{components.range}} m. Contexto: {{componentReason}}.</p>{{/if}}{{#each components.manual}}<p class="note">{{name}} permanece manual (p.{{page}}).</p>{{/each}}
 {{#if success}}<p>Poder Cósmico: <strong>{{powerCosmic}}</strong>.</p>
-{{#if isDamage}}<p>ND {{damageLevel}} · dano corporal <strong>{{damage}}</strong> · dano à armadura <strong>{{armorDamage}}</strong> (antes da resistência).</p>{{else}}<p>Controle / sustentação: confira a duração e os efeitos descritos na técnica.</p>{{/if}}
+{{#if isDamage}}<p>ND {{damageLevel}} · dano corporal <strong>{{damage}}</strong> · dano à armadura <strong>{{armorDamage}}</strong> (antes da resistência).</p>{{else}}<p>{{#if control}}Controle: duração base <strong>{{control.baseRounds}} rodadas</strong>, incluindo a ativação.{{else}}Sustentação: duração e oposição conforme a técnica.{{/if}}</p>{{/if}}
 {{#if isDamage}}<p>{{damageLevel}} ND × {{power}} Poder + nível {{userLevel}} + bônus {{damageBonus}}.</p>{{/if}}
 {{#if critical}}<p>Sucesso crítico.{{#if isDamage}} +1 ND já incluído no cálculo de dano.{{/if}} Confira os efeitos especiais.</p>{{/if}}
 <button type="button" data-action="resistTechnique">{{#if targetName}}Resistir com o alvo marcado{{else}}Resistir com o cavaleiro selecionado{{/if}}</button>
 {{else}}<p>A técnica falhou; não causa dano nem efeitos.</p>{{/if}}
 {{#if nextPenalty}}<p>Falha crítica: −10 no próximo teste de Asterismo.</p>{{/if}}
 {{#if description}}<p class="technique-description">{{description}}</p>{{/if}}
-<p class="note">Resista pelo botão; o resultado permite confirmar a aplicação do dano e desfazer. Ações, alcance, duração e efeitos especiais exigem conferência.</p></div>
+<p class="note">Resista pelo botão. {{#if control}}Uma resistência falha permite ao mestre registrar a duração no alvo de um encontro iniciado. Estados e novas resistências são manuais.{{else}}O resultado permite confirmar a aplicação do dano e desfazer. Alcance, duração e efeitos especiais exigem conferência.{{/if}}</p></div>
 {{#if conditionSummary}}<p class="note">{{conditionSummary}}</p>{{/if}}

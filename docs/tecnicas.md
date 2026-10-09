@@ -34,3 +34,6 @@ Consultar Big Bangs relacionados abre referências gerais sem modificar a cópia
 
 Técnicas → Adicionar abre o construtor com rascunho persistente, classe, primordial, componentes e graduações. Slots, custo, dificuldade e parâmetros genéricos são calculados; requisitos e efeitos especiais exigem revisão. Veja tecnicas-personalizadas.md. A CE fixa já inclui os tipos de incrementos selecionados: em Condensar, conte apenas virtudes adicionais ainda não incluídas.
 
+
+
+Na 0.18.0, Controle possui duração por classe ou parâmetro personalizado e vínculo da resistência pública à ficha alvo. Estados e novas resistências permanecem manuais. Veja [Controle](controle.md).
