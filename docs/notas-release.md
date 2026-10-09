@@ -1,4 +1,11 @@
-Versão **0.18.1** para FoundryVTT 13 build 350.
+Versão **0.19.0** para FoundryVTT 13 build 350.
+
+## 0.19.0 — nova resistência paga de Controle
+
+Na ficha alvo, o mestre pode rolar a nova resistência genérica nas rodadas posteriores de Controle:1CE Bronze/Prata,2CE Ouro, dificuldade original, atributo/bônus/condições atuais. A ação pública confirma pagamento único e pode encerrar só o registro em sucesso; falha mantém prazo, estados manuais ficam preservados. CE extra opcional, reserva mantida, sem queimar PV. Um resultado por registro/rodada, sem repetição por cliques ou retrocesso.
+
+Journal de efeitos e fila comum guardam preparo, pagamento e publicação do mesmo cartão; recuperação não cobra nem rola novamente. Janela sem bloqueio da fila; notas opcionais, sem aceite. Registros antigos escolhem atributo sem migração. Exceções de Dominado/Medo e resultados privados permanecem manuais. Livro p.206–208/394–395 conferido.283 testes locais, JS/templates e prévias; compêndios/IDs/schema3 preservados. Validação Foundry13.350 real pendente.
+
 
 0.18.1 corrige o bloqueio da fila enquanto o mestre responde às janelas de condições, efeitos, Controle, ajustes de ações e recuperações. As decisões ficam fora da fila; ao confirmar, o sistema revalida os dados e serializa a gravação. Uma janela aberta em outra ficha deixa pagamentos e publicações prosseguirem. Confirmações desatualizadas continuam recusadas; cancelamento não altera recursos, não repete rolagens e não adiciona justificativas/aceites. Catálogos e fichas preservados, sem migração. Validação:262 testes locais e módulos/templates; servidor13.350 ainda pendente.
 

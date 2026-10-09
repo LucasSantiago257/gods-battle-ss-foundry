@@ -1,3 +1,4 @@
+import {canRetryControl,recoverControlRetry} from "./control-retry.mjs";
 import {optionalNote} from "./form-values.mjs";
 import {SYSTEM_ID} from "./config.mjs";
 import {isPrimaryGM,runMasterOperation,assertNoTechniqueInterruption} from "./master-queue.mjs";
@@ -16,14 +17,14 @@ async function guard(actor,baseline,operationId=null) {
  available(actor,operationId);
 }
 const effectSnapshot=(actor,key)=>({health:actor.system.resources.health.value,record:structuredClone(effectRecords(actor)[key])});
-export const effectOperationContext=actor=>Object.entries(actor.flags?.[SYSTEM_ID]?.effectOperations??{}).map(([id,r])=>({id,...r,canReview:game.user.isGM&&r.status==="prepared"})).filter(r=>r.status==="prepared");
+export const effectOperationContext=actor=>Object.entries(actor.flags?.[SYSTEM_ID]?.effectOperations??{}).map(([id,r])=>({id,...r,canReview:game.user.isGM&&(r.status==="prepared"||r.kind==="controlRetry"&&r.status==="applied"&&!r.published)})).filter(r=>r.status==="prepared"||r.kind==="controlRetry"&&r.status==="applied"&&!r.published);
 export function effectSources() {
  const actors=new Map();for(const actor of [...(game.actors?.contents??[]),...(globalThis.canvas?.tokens?.placeables??[]).map(t=>t.actor),...(game.combats?.contents??[]).flatMap(c=>(c.combatants?.contents??[]).map(m=>m.actor))])if(actor?.uuid)actors.set(actor.uuid,actor);
  const sources=[];for(const actor of actors.values())for(const item of actor.items?.contents??[])try{const source=brasasSource(item);sources.push({...source,label:`${actor.name} · ${item.name} · ${source.damage} PV/rodada`,baseline:effectSourceState(item)});}catch{/* Somente composições canônicas aptas. */}
  return sources.toSorted((a,b)=>a.label.localeCompare(b.label));
 }
 export function effectSheetContext(actor) {
- return Object.entries(effectRecords(actor)).map(([id,record])=>({id,...record,...effectView(actor,record),canEnd:game.user.isGM&&record.status==="active",canResolve:game.user.isGM&&effectView(actor,record).canResolve,ticks:Object.values(record.ticks??{}).toSorted((a,b)=>a.round-b.round)})).toSorted((a,b)=>b.time-a.time);
+ return Object.entries(effectRecords(actor)).map(([id,record])=>({id,...record,...effectView(actor,record),canRetryControl:canRetryControl(actor,id),controlRetries:Object.values(record.controlRetries??{}).toSorted((a,b)=>a.round-b.round),canEnd:game.user.isGM&&record.status==="active",canResolve:game.user.isGM&&effectView(actor,record).canResolve,ticks:Object.values(record.ticks??{}).toSorted((a,b)=>a.round-b.round)})).toSorted((a,b)=>b.time-a.time);
 }
 export function effectDialogContext(actor) {
  const context=encounterForEffect(actor);
@@ -83,6 +84,7 @@ export async function endEffect(actor,key) {
  });
 }
 export async function recoverEffect(actor,key) {
+ if(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind==="controlRetry")return recoverControlRetry(actor,key);
  if(!isPrimaryGM())throw Error("Somente o mestre responsável pode recuperar efeitos.");safeKey(key);
   const operation=actor.flags?.[SYSTEM_ID]?.effectOperations?.[key];if(operation?.status!=="prepared")throw Error("Não há resolução interrompida.");
  const baseline=effectState(actor);

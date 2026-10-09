@@ -42,7 +42,7 @@ test("resistência elimina Controle em DC; falha crítica estrita dobra duraçã
 });
 test("vínculo é canônico mesmo se ordem dos campos mudar",()=>{assert.equal(sameControlAttack({a:1,b:{c:2}},{b:{c:2},a:1}),true);assert.equal(sameControlAttack({a:1},{a:2}),false);});
 test("registro sem notas ou aceite preserva ficha e congela rodada da ativação",async()=>{
- const f=fixture({critical:true}),before=structuredClone(f.actor.system);f.combat.round=4;const record=await f.create();assert.deepEqual(f.actor.system,before);assert.equal(f.actor.flags[ID].unrelated,"preservar");assert.equal(record.rounds,6);assert.equal(record.firstRound,2);assert.equal(record.lastRound,7);assert.equal(record.damage,0);assert.equal(record.reason,"");assert.equal(record.controlOrigin.doubleDuration,true);assert.equal(record.controlOrigin.rootMessageId,f.root.id);assert.equal(effectView(f.actor,record).overdue,true);
+ const f=fixture({critical:true}),before=structuredClone(f.actor.system);f.combat.round=4;const record=await f.create();assert.deepEqual(f.actor.system,before);assert.equal(f.actor.flags[ID].unrelated,"preservar");assert.equal(record.rounds,6);assert.equal(record.firstRound,2);assert.equal(record.lastRound,7);assert.equal(record.damage,0);assert.equal(record.reason,"");assert.equal(record.controlOrigin.doubleDuration,true);assert.equal(record.controlOrigin.rootMessageId,f.root.id);assert.equal(record.controlOrigin.nature,"mental");assert.equal(effectView(f.actor,record).overdue,true);
  assert.equal(f.renders[0].context.rounds,6);assert.equal(f.actor.updates.length,1);
 });
 test("duração ajustável não reinicia prazo; rodadas históricas não causam dano ou estados",async()=>{

@@ -1,0 +1,13 @@
+<div class="gods-battle control-retry-dialog">
+  <p><strong>{{name}}</strong> · {{targetName}} · rodada {{round}}. Prazo até {{lastRound}}.</p>
+  <p>Custo: <strong>{{cost}} CE</strong> · dificuldade: <strong>{{difficulty}}</strong> (Poder Cósmico original).</p>
+  <p>CE atual {{current}} · reservada {{reserved}} · extra {{extra}}. {{#if unlimited}}Armadura com CE ilimitada: registra a tentativa sem reduzir CE.{{/if}}</p>
+  <p class="note">O mestre rola em nome do alvo. Resultado público no chat e histórico da ficha. Esta é a tentativa genérica das p.206–208; resistências após dano, bônus cumulativos e estados das p.394–395 são conferidos separadamente.</p>
+  <label>Atributo de resistência<select name="attribute"><option value="">Escolher atributo</option>{{#each attributes}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+  <label>Modificador da situação<input name="bonus" type="number" step="any" value="0" min="-10000" max="10000"></label>
+  <label>Vantagem / desvantagem<select name="advantage"><option value="0">Normal</option><option value="1">Vantagem (+1 dado, +2)</option><option value="-1">Desvantagem (-1 dado, -2)</option></select></label>
+  <label class="field check-field"><span>Usar CE extra primeiro</span><input name="useExtra" type="checkbox"></label>
+  <label>Ao resistir<select name="onSuccess"><option value="end">Encerrar este registro de Controle</option><option value="keep">Registrar resultado e manter o prazo</option></select></label>
+  <p class="note">Cobra uma vez, mesmo em falha. Falhar não reinicia nem dobra o prazo. Encerrar afeta somente este registro; marcações de estado e condições assistidas são mantidas. CE reservada não é gasta e não há queima de PV.</p>
+  <label>Notas (opcional)<textarea name="reason" maxlength="2000"></textarea></label>
+</div>

@@ -207,3 +207,10 @@ Iniciativa/simultaneidade, alcance, movimento parcial/total, manobras e efeitos 
 ## Fila e decisões humanas — 0.18.1
 
 Com mestre e dois jogadores: manter aberta uma janela do mestre para condição/efeito/Controle/ajuste/recuperação; ativar técnica ou solicitar dano de outra ficha. O pagamento/publicação deve prosseguir antes de fechar a janela. Cancelar não muda recursos; confirmar revalida e grava uma vez. Alterar a ficha/rodada/origem ou trocar mestre enquanto a janela está aberta deve impedir a confirmação antiga. Testar duas confirmações sobre a mesma origem e falha antes/depois de gravação: preservar deduplicação e journals. Os formulários continuam os mesmos, sem nova declaração ou justificativa obrigatória.
+
+
+## Resistência paga de Controle — 0.19.0
+
+No encontro de teste, registre Controle público vinculado na rodada1 e avance à2 ainda dentro do prazo. Mestre→ficha alvo→Efeitos com duração→Nova resistência de Controle. Confira dificuldade e atributo; em cópia antiga sem natureza selecione atributo. Cancele e confira que não rolou/gastou. Role público e gaste1CE (Bronze/Prata) ou2CE(Ouro); confira cartão, um pagamento e histórico. Repita clique/retroceda: não repetir pagamento. Na rodada seguinte, nova tentativa válida se ativa. Sucesso com Encerrar muda só esse registro; Manter prazo conserva-o. Falha não aumenta prazo. Estados, parcelas assistidas, PV, reservas e ações preservados. Teste CE insuficiente, reservada, extra escolhida e ilimitada.
+
+Dois clientesGM, troca de mestre, token vinculado/não vinculado e reconexão: preparação interrompida bloqueia gastos; pagamento concluído recupera o mesmo cartão. Mudança de ficha/rodada durante janela/roll recusa valores antigos. Cartão apagado/alterado exige encerramento manual sem restaurar recursos. A ação é pública mesmo se o modo geral estiver privado/cego, conforme texto e botão explícitos; fluxo privado continua manual. Encontro/ficha substituído e duração expirada não recebem nova tentativa. Validar exceções de estados separadamente, sem presumir+10/Medo automático. Não preencher compatibilidade verificada antes desses ensaios reais.
