@@ -37,3 +37,6 @@ Dois tipos de estado têm parcelas numéricas assistidas neste marco. Incapacita
 Desorientado permanece manual: pp.393–394 descrevem perda de dados, tabela de−4 e falha crítica de−6, cujo acúmulo por sentido deve ser esclarecido. Paralisado permite Cosmo mas retira movimento/luta (pp.395–396), exigindo distinguir técnicas/Ações de Cosmo das reservas antes de bloquear ações. Amedrontado envolve posição e vantagens cumulativas; Atordoado, Surpreso, morte e Sufocado precisam de eventos/testes/duração próprios. Não implementar esses estados por equivalência com uma penalidade genérica.
 
 Fonte: pp.393–398. Autor: Dhoko de Libra; atribuição/licença em [ATTRIBUTION.md](../ATTRIBUTION.md). Foundry13.350 real ainda precisa ser validado com mestre e jogadores; os testes locais não confirmam o servidor.
+
+
+Na 0.18.1, as janelas do mestre para condições, efeitos, Controle, ajustes e recuperações não ocupam a fila enquanto aguardam sua decisão. Outros pagamentos podem prosseguir; a confirmação entra na fila para revalidar os dados e gravar. Se os dados conferidos mudarem, reabra a operação com a situação atual. A gravação continua coordenada no cliente do mestre, sem bloqueio global do servidor.

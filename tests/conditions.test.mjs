@@ -1,3 +1,5 @@
+import {holdDecisionOutsideQueue} from "./held-dialog.mjs";
+import {runMasterOperation} from "../module/master-queue.mjs";
 import test from "node:test";
 import assert from "node:assert/strict";
 import {knight,content} from "./foundry-stub.mjs";
@@ -75,4 +77,11 @@ test("registrar e encerrar sem justificativa ou aceite preserva recursos e ajust
 });
 test("callback de registro não depende de elementos de aceite removidos",async()=>{
  const f=fixture();foundry.applications.api.DialogV2.wait=async options=>options.buttons[0].callback(null,{form:{elements:Object.fromEntries(Object.entries({key:"tired",count:"1",origin:"",details:"",until:"",reason:""}).map(([k,value])=>[k,{value}]))}});const r=await registerCondition(f.actor);assert.equal(r.count,1);assert.equal(r.reviewedManual,true);assert.equal(f.actor.system.automation.conditionModifier,-2);
+});
+
+test("janelas de registrar/encerrar condição não ocupam fila enquanto abertas",async()=>{
+ const f=fixture();await holdDecisionOutsideQueue(()=>registerCondition(f.actor),{during:()=>assert.equal(f.actor.updates.length,0)});const record=await f.create();const count=f.actor.updates.length;await holdDecisionOutsideQueue(()=>endCondition(f.actor,record.id),{during:()=>assert.equal(f.actor.updates.length,count)});assert.equal(conditionRecords(f.actor)[record.id].status,"active");
+});
+test("condição revalida ficha na fila após outra operação durante diálogo",async()=>{
+ const f=fixture();await assert.rejects(holdDecisionOutsideQueue(()=>registerCondition(f.actor),{answer:f.definition,during:async()=>{await runMasterOperation(()=>{f.actor.system.resources.health.value=11;});}}),/mudou/);assert.equal(f.actor.updates.length,0);assert.equal(f.actor.system.resources.health.value,11);
 });

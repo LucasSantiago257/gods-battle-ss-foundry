@@ -1,4 +1,6 @@
-Versão **0.18.0** para FoundryVTT 13 build 350.
+Versão **0.18.1** para FoundryVTT 13 build 350.
+
+0.18.1 corrige o bloqueio da fila enquanto o mestre responde às janelas de condições, efeitos, Controle, ajustes de ações e recuperações. As decisões ficam fora da fila; ao confirmar, o sistema revalida os dados e serializa a gravação. Uma janela aberta em outra ficha deixa pagamentos e publicações prosseguirem. Confirmações desatualizadas continuam recusadas; cancelamento não altera recursos, não repete rolagens e não adiciona justificativas/aceites. Catálogos e fichas preservados, sem migração. Validação:262 testes locais e módulos/templates; servidor13.350 ainda pendente.
 
 0.18.0 acrescenta duração de Controle por classe (2/3/4 rodadas incluindo ativação), substituição explícita na cópia e duplicação em falha crítica da resistência. Cartão público de resistência falha permite ao mestre registrar o prazo no alvo original; começo congelado na ativação, histórico e conferência por rodada na aba Combate. Cartões privados/antigos usam registro manual. Não cria dano zero, estados ou bloqueios, nem cobra novas resistências automaticamente. Notas opcionais; catálogos e recursos preservados. Validação:251 testes locais, módulos/templates e prévias; servidor13.350 ainda pendente. Ver controle.md.
 

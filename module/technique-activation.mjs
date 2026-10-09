@@ -120,11 +120,11 @@ export async function executeTechniqueRequest(message,userId) {
 export function enqueueTechniqueRequest(message,_options,userId) {if(!isPrimaryGM()||!flags(message).techniqueRequest)return;return runMasterOperation(()=>executeTechniqueRequest(message,userId));}
 export async function reviewTechniqueOperation(actor,key) {
  if(!isPrimaryGM())throw Error("A revisão exige o mestre responsável.");
- return runMasterOperation(async()=>{
   const r=flags(actor).techniqueOperations?.[key];if(!r||!['prepared','paid'].includes(r.status)||r.cardPublished)throw Error("Não há registro interrompido para liberar.");
-  const baseline=hash(r),message=r.actorUuid===actor.uuid?game.messages.get(r.requestId):null;if(flags(message).techniqueResponse?.status==="published")throw Error("O cartão já foi publicado; conserve o registro de pagamento.");
-  const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Liberar após reparo manual"},content:"<p>Confira CE, PV, excesso acumulado e penalidade de Asterismo. Esta ação encerra a solicitação sem restaurar recursos, publicar resultado ou repetir a rolagem. Faça os ajustes manuais necessários antes de confirmar.</p><label>Notas (opcional)<textarea name=\"reason\"></textarea></label>",buttons:[{action:"review",label:"Encerrar sem alterar recursos",callback:(_e,b)=>({reason:b.form.elements.reason.value})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
-  if(!answer)return;
+ const baseline=hash(r),message=r.actorUuid===actor.uuid?game.messages.get(r.requestId):null;if(flags(message).techniqueResponse?.status==="published")throw Error("O cartão já foi publicado; conserve o registro de pagamento.");
+ const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Liberar após reparo manual"},content:"<p>Confira CE, PV, excesso acumulado e penalidade de Asterismo. Esta ação encerra a solicitação sem restaurar recursos, publicar resultado ou repetir a rolagem. Faça os ajustes manuais necessários antes de confirmar.</p><label>Notas (opcional)<textarea name=\"reason\"></textarea></label>",buttons:[{action:"review",label:"Encerrar sem alterar recursos",callback:(_e,b)=>({reason:b.form.elements.reason.value})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
+ if(!answer)return;
+ return runMasterOperation(async()=>{
   optionalNote(answer.reason);
   if(!isPrimaryGM()||hash(flags(actor).techniqueOperations?.[key])!==baseline)throw Error("Mestre ou registro mudou durante a conferência.");
   const wasPaid=r.status==="paid";
@@ -143,12 +143,12 @@ export function notifyTechniqueResponse(message,changes=null) {
 }
 export async function recoverTechniqueOperation(actor,key) {
  if(!isPrimaryGM())throw Error("A recuperação exige o mestre responsável.");
- return runMasterOperation(async()=>{
   const r=flags(actor).techniqueOperations?.[key];if(!r||!['prepared','paid'].includes(r.status))throw Error("Não há ativação pendente para conferir.");
-  if(r.actorUuid!==actor.uuid)throw Error("Este registro veio de outra cópia da ficha. Confira manualmente e encerre somente o registro desta cópia.");
-  const recordSignature=hash(r);
-  const message=game.messages.get(r.requestId);
-  if(!await foundry.applications.api.DialogV2.confirm({window:{title:"Conferir ativação interrompida"},content:"<p>Conferir o registro? Pagamento completo republica o mesmo resultado, sem cobrar ou rolar novamente. Se os valores ainda forem os anteriores, encerra a solicitação sem gastar. Valores diferentes exigem reparo manual.</p>"}))return;
+ if(r.actorUuid!==actor.uuid)throw Error("Este registro veio de outra cópia da ficha. Confira manualmente e encerre somente o registro desta cópia.");
+ const recordSignature=hash(r);
+ const message=game.messages.get(r.requestId);
+ if(!await foundry.applications.api.DialogV2.confirm({window:{title:"Conferir ativação interrompida"},content:"<p>Conferir o registro? Pagamento completo republica o mesmo resultado, sem cobrar ou rolar novamente. Se os valores ainda forem os anteriores, encerra a solicitação sem gastar. Valores diferentes exigem reparo manual.</p>"}))return;
+ return runMasterOperation(async()=>{
   if(!isPrimaryGM()||hash(flags(actor).techniqueOperations?.[key])!==recordSignature)throw Error("Mestre ou registro mudou; confira novamente.");
   if(r.status==="paid"){if(!message)throw Error("Cartão removido: pagamento permanece registrado. Confira manualmente; não repetir a ativação.");await publishStored(message,actor,r);return;}
   if(matches(actor,r.before)){

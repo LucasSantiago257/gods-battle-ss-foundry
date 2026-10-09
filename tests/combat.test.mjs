@@ -1,3 +1,5 @@
+import {holdDecisionOutsideQueue} from "./held-dialog.mjs";
+import {runMasterOperation} from "../module/master-queue.mjs";
 import test from "node:test";
 import assert from "node:assert/strict";
 import {knight,content} from "./foundry-stub.mjs";
@@ -63,4 +65,12 @@ test('mestre recusa aplicar resistência de outra ficha a técnica com alvo vinc
  assert.match(wrong.flags[ID].damageResponse.error,/alvo marcado/);
  game.messages.get('attack').flags[ID].attack.targetUuid=actor.uuid;
  const correct=request('correct');await executeDamageRequest(correct,'p');assert.equal(correct.flags[ID].damageResponse.ok,true);assert.equal(actor.system.resources.health.value,89.5);
+});
+
+test("recuperação de dano não ocupa fila durante confirmação e conserva cancelamento",async()=>{
+ const {actor,armor}=fixture(),r={...damageSnapshot(actor,10.5,10,armor.id),status:"prepared",direction:"apply",previousKey:null};actor.flags[ID]={damageOperations:{attack:r}};armor.system.health.value=r.after.armor;
+ await holdDecisionOutsideQueue(()=>recoverDamageOperation(actor,"attack"),{confirm:true});assert.equal(actor.system.resources.health.value,100);assert.equal(armor.system.health.value,r.after.armor);assert.equal(r.status,"prepared");
+});
+test("recuperação de dano recusa mestre ou registro alterados enquanto aberta",async()=>{
+ for(const change of [f=>game.user=f.player,f=>f.actor.flags[ID].damageOperations.attack.body=99,f=>f.actor.system.resources.health.value=77]){const f=fixture(),r={...damageSnapshot(f.actor,10.5,10,f.armor.id),status:"prepared",direction:"apply",previousKey:null};f.actor.flags[ID]={damageOperations:{attack:r}};await assert.rejects(holdDecisionOutsideQueue(()=>recoverDamageOperation(f.actor,"attack"),{confirm:true,answer:true,during:async()=>{await runMasterOperation(()=>change(f));}}),/mudou/);assert.equal(r.status,"prepared");assert.equal(f.armor.system.health.value,30);}
 });

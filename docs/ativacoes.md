@@ -32,3 +32,6 @@ APIs oficiais utilizadas: [ChatMessage e applyRollMode](https://foundryvtt.com/a
 Ao duplicar/exportar uma ficha que contenha registro interrompido, a recuperação não altera o cartão da original. O mestre deve conferir e encerrar manualmente somente o registro da cópia antes de novas ativações; seus recursos são preservados.
 
 Desde0.14.0, em encontro com controle habilitado, a técnica paga também toda a reserva intacta escolhida de ataque ou defesa, na mesma gravação do Actor. Falha também consome. O registro inclui reserva/quantidade/rodada; recuperação não repete esse gasto. Fora de encontro habilitado não há consumo de ações. Ver acoes.md.
+
+
+Na 0.18.1, as janelas do mestre para condições, efeitos, Controle, ajustes e recuperações não ocupam a fila enquanto aguardam sua decisão. Outros pagamentos podem prosseguir; a confirmação entra na fila para revalidar os dados e gravar. Se os dados conferidos mudarem, reabra a operação com a situação atual. A gravação continua coordenada no cliente do mestre, sem bloqueio global do servidor.

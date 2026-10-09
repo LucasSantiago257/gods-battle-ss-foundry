@@ -1,3 +1,5 @@
+import {holdDecisionOutsideQueue} from "./held-dialog.mjs";
+import {runMasterOperation} from "../module/master-queue.mjs";
 import test from "node:test";
 import assert from "node:assert/strict";
 import {knight,content} from "./foundry-stub.mjs";
@@ -76,4 +78,11 @@ test("movimento sem descrição consome uma ação e não altera CE",async()=>{
 });
 test("ajuste válido sem justificativa conserva valores e rejeita notas inválidas",async()=>{
  const r=runtime();game.user=r.gm;r.control.answer={values:{attack:1,defense:2,movement:0,reaction:1}};await adjustActions(r.actor);assert.equal(actionView(r.actor).remaining.attack,1);assert.equal(Object.values(r.actor.flags[ID].actionAdjustments)[0].reason,"");const before=clone(r.actor.flags[ID].actionUsage);r.control.answer={values:{attack:2,defense:2,movement:0,reaction:1},reason:42};await assert.rejects(adjustActions(r.actor),/Notas/);assert.deepEqual(r.actor.flags[ID].actionUsage,before);
+});
+
+test("ajuste, toggle, recuperação e revisão de ações não seguram fila nos diálogos",async()=>{
+ const r=runtime();game.user=r.gm;await holdDecisionOutsideQueue(()=>adjustActions(r.actor));await holdDecisionOutsideQueue(()=>toggleActionControl(),{confirm:true});r.control.publishFail=true;const m=r.request();await r.execute(m);assert.equal(r.actor.flags[ID].actionOperations[m.id].status,"paid");await holdDecisionOutsideQueue(()=>recoverAction(r.actor,m.id),{confirm:true});await holdDecisionOutsideQueue(()=>reviewAction(r.actor,m.id));assert.equal(r.actor.flags[ID].actionOperations[m.id].status,"paid");
+});
+test("ajuste de reservas revalida gasto que ocorreu durante escolha",async()=>{
+ const r=runtime();game.user=r.gm;await assert.rejects(holdDecisionOutsideQueue(()=>adjustActions(r.actor),{answer:{values:{attack:3,defense:3,movement:1,reaction:1}},during:async()=>{await runMasterOperation(()=>patch(r.actor,actionPlan(r.actor,"attack",1,{operationId:"other"}).updates));}}),/mudou/);assert.equal(actionView(r.actor).remaining.attack,2);
 });

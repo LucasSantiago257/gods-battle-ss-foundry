@@ -22,3 +22,6 @@ Cartões antigos sem os novos metadados, resultados privados/cegos/self, encontr
 Estados como Dominado, Medo e Desorientado, limitações de ações, resistência após sofrer dano e suas exceções (p.394–395) permanecem manuais. A referência genérica de novas tentativas não substitui essas regras. Sustentação, Cosmo Residual, oposição e seus custos periódicos ficam para próximos marcos.
 
 Rodada do Foundry representa o turno coletivo nesta integração. Classe configurada como fonte da tabela é uma convenção explícita diante de Apoiar/evolução; ajustar a duração quando necessário. Limites de 500/1000 são guardas técnicas, não limites do livro. Fila no cliente do mestre, sem transação global no servidor. Testes locais e prévias não substituem validação no Foundry 13.350.
+
+
+Na 0.18.1, as janelas do mestre para condições, efeitos, Controle, ajustes e recuperações não ocupam a fila enquanto aguardam sua decisão. Outros pagamentos podem prosseguir; a confirmação entra na fila para revalidar os dados e gravar. Se os dados conferidos mudarem, reabra a operação com a situação atual. A gravação continua coordenada no cliente do mestre, sem bloqueio global do servidor.

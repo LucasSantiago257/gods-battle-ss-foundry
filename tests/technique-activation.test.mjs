@@ -1,3 +1,5 @@
+import {holdDecisionOutsideQueue} from "./held-dialog.mjs";
+import {registerCondition} from "../module/conditions.mjs";
 import test from "node:test";
 import assert from "node:assert/strict";
 import {knight,content} from "./foundry-stub.mjs";
@@ -134,4 +136,13 @@ test("mestre calcula condições no Asterismo sem duplicar pagamento ou mudar da
 });
 test("registro de condição alterado durante Asterismo bloqueia pagamento",async()=>{
  const r=runtime(),m=r.request();r.controls.beforeRoll=()=>{r.actor.flags[ID]??={};r.actor.flags[ID].conditionEffects={fatigue:{actorUuid:r.actor.uuid,status:"active",key:"tired",count:2,ruleVersion:1,reviewedManual:true}};};await r.execute(m);assert.equal(r.stats.payments,0);assert.equal(r.actor.system.resources.cosmo.value,10);assert.equal(m.flags[ID].techniqueResponse.status,"interrupted");
+});
+
+test("recuperar e encerrar técnica deixam fila livre durante decisão humana",async()=>{
+ const r=runtime(),m=r.request();r.controls.publishFail=true;await r.execute(m);const cost=r.actor.system.resources.cosmo.value;await holdDecisionOutsideQueue(()=>recoverTechniqueOperation(r.actor,m.id),{confirm:true});await holdDecisionOutsideQueue(()=>reviewTechniqueOperation(r.actor,m.id));assert.equal(r.actor.system.resources.cosmo.value,cost);assert.equal(r.stats.rolls,1);assert.equal(r.stats.payments,1);
+});
+test("janela de condição de outra ficha não impede pagar e publicar técnica",async()=>{
+ const r=runtime(),target={uuid:"Actor.other",name:"Outro cavaleiro",type:"knight",isOwner:true,system:knight(),flags:{},items:{contents:[]},async update(data){patch(this,data);}};r.targets.set(target.uuid,target);foundry.utils={randomID:()=>"conditionTest001"};game.user=r.gm;const request=r.request("whileOpen");
+ await holdDecisionOutsideQueue(()=>registerCondition(target),{answer:{key:"tired",count:1},during:async()=>{await enqueueTechniqueRequest(request,{},r.owner.id);assert.equal(r.actor.system.resources.cosmo.value,8);assert.equal(request.flags[ID].techniqueResponse.status,"published");assert.equal(target.flags[ID],undefined);}});
+ assert.equal(target.flags[ID].conditionEffects[Object.keys(target.flags[ID].conditionEffects)[0]].count,1);assert.equal(r.stats.rolls,1);assert.equal(r.stats.payments,1);
 });
