@@ -1,6 +1,7 @@
 import {ATTRIBUTE_MODS, SKILL_MODS, STYLES, SKILLS, NATURES, ARMORS, MOVEMENT, JUMP, LIFT, BREAK} from "./config.mjs";
 import {divineBonuses, healthMaximum} from "./calculations.mjs";
 import {evaluatePassives, effectiveAttribute} from "./passives.mjs";
+import {conditionTotals,conditionPool} from "./condition-rules.mjs";
 
 export function attributeModifier(rank) { return ATTRIBUTE_MODS[rank] ?? 0; }
 export function skillModifier(rank) { return SKILL_MODS[rank] ?? 0; }
@@ -16,15 +17,16 @@ export function resolvePool(results, modifier = 0) {
   const ones = results.filter(n => n === 1).length;
   return {results, highest: Math.max(...results), tens, ones, modifier, total: Math.max(...results) + tens * 2 - ones * 2 + modifier};
 }
-export function testParameters(system, kind, key, resistanceMode = "rank", {technique = false} = {}) {
-  if (kind === "attribute") return {dice: effectiveAttribute(system,key), modifier: system.attributes[key].mod + (key === "sen" ? system.automation.testSen ?? 0 : 0)};
+export function testParameters(system, kind, key, resistanceMode = "rank", {technique = false,conditions=true} = {}) {
+  const apply=p=>conditions?conditionPool(system,p.dice,p.modifier,{maxDice:kind==="skill"?5:100}):p;
+  if (kind === "attribute") return apply({dice: effectiveAttribute(system,key), modifier: system.attributes[key].mod + (key === "sen" ? system.automation.testSen ?? 0 : 0)});
   if (kind === "skill") {
     const skill = system.skills[key];
-    return {dice: Math.max(1, Math.min(skill.value, 5)), modifier: skill.value ? skill.total : 0};
+    return apply({dice: Math.max(1, Math.min(skill.value, 5)), modifier: skill.value ? skill.total : 0});
   }
   if (kind === "resistance") {
     const a = system.attributes[key];
-    return {dice: effectiveAttribute(system,key), modifier: (resistanceMode === "rank" ? effectiveAttribute(system,key) : a.mod) + system.combat.levelModifier + system.combat.resistanceBonus + divineBonuses(system).resistance + (system.automation.resistanceBonus ?? 0) + (technique ? key === "cos" ? system.automation.resistanceCos ?? 0 : key === "sen" ? system.automation.resistanceSen ?? 0 : 0 : 0)};
+    return apply({dice: effectiveAttribute(system,key), modifier: (resistanceMode === "rank" ? effectiveAttribute(system,key) : a.mod) + system.combat.levelModifier + system.combat.resistanceBonus + divineBonuses(system).resistance + (system.automation.resistanceBonus ?? 0) + (technique ? key === "cos" ? system.automation.resistanceCos ?? 0 : key === "sen" ? system.automation.resistanceSen ?? 0 : 0 : 0)});
   }
   throw new Error("Tipo de teste desconhecido.");
 }
@@ -34,7 +36,8 @@ export function armorValues(system, multiplier = 1) {
   return {hp: system.health.manualMax || (base.hp + version * 5 + system.health.bonus) * multiplier, pa: base.pa + version + system.protectionBonus,
     ce: base.ce + system.cosmoBonus, minimum: base.min + version * 2, unlimited: system.class === "kamui"};
 }
-export function prepareKnight(system, items = [], resistanceMode = "rank") {
+export function prepareKnight(system, items = [], resistanceMode = "rank",{actorUuid,flags}={}) {
+  const conditions=conditionTotals(actorUuid,flags);system.automation.conditionModifier=conditions.modifier;system.automation.conditionDicePenalty=conditions.dice;
   const style = STYLES[system.profile.style];
   const {totals: effects} = evaluatePassives(system, items);
   Object.assign(system.automation, {healthBonus: effects.health ?? 0, resistanceBonus: effects.resistance ?? 0, techniqueND: effects.techniqueND ?? 0, physicalDamage: effects.physicalDamage ?? 0, testSen: effects["test.sen"] ?? 0, resistanceCos: effects["resistance.cos"] ?? 0, resistanceSen: effects["resistance.sen"] ?? 0});

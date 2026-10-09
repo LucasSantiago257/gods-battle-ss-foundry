@@ -4,7 +4,7 @@ import {prepareKnight, armorValues} from "./rules.mjs";
 export class BattleActor extends Actor {
   prepareDerivedData() {
     super.prepareDerivedData();
-    if (this.type === "knight") prepareKnight(this.system, this.items.contents, game.settings.get(SYSTEM_ID, "resistanceMode"));
+    if (this.type === "knight") prepareKnight(this.system, this.items.contents, game.settings.get(SYSTEM_ID, "resistanceMode"),{actorUuid:this.uuid,flags:this.flags});
   }
   async equipArmor(item) {
     if (!this.isOwner || item.parent !== this || item.type !== "armor") return;

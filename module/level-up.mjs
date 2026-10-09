@@ -42,7 +42,7 @@ export async function levelUpContext(actor) {
  context.skillFields=Object.entries(SKILLS).map(([key,definition])=>input(`skills.${key}`,`${definition.label} · atual ${actor.system.skills[key].value}`,draft.skills?.[key]??0));
  context.fightFields=Object.entries(FIGHTING).map(([key,label])=>input(`fighting.${key}`,`${label} · atual ${actor.system.fighting[key]}`,draft.fighting?.[key]??0));
  try{
-  const data=source(actor),selected=await selectedDocuments(draft),plan=planLevel(data.system,data.items,draft,selected,game.settings.get(SYSTEM_ID,"resistanceMode"));
+  const data=source(actor),selected=await selectedDocuments(draft),plan=planLevel(data.system,data.items,draft,selected,game.settings.get(SYSTEM_ID,"resistanceMode"),{actorUuid:actor.uuid,flags:actor.flags});
   Object.assign(context,plan,{skillBudget:plan.milestones.skillPoints+(actor.system.progression.skillBank??0),attributeBudget:plan.milestones.attributePoints+(actor.system.progression.attributeBank??0),fightBudget:plan.milestones.fightPoints+(actor.system.progression.fightBank??0)});
   context.choices=[{slot:"power",label:draft.to===5?"Especialização / Melhoria":"Habilidade / Dádiva / Melhoria",name:selected.power?.name??"Pendente"}];
   if(plan.milestones.virtue)context.choices.push({slot:"virtue",label:"Nova virtude",name:selected.virtue?.name??"Pendente"});
@@ -84,7 +84,7 @@ export async function requestLevelUp(actor) {
   const draft=flag(actor,"levelDraft");if(!draft)return;
   const decision=draftSignature(draft);
   if(signature(actor)!==draft.baseline)throw Error("A ficha mudou; descarte o rascunho e recomece a revisão.");
-  const data=source(actor),plan=planLevel(data.system,data.items,draft,await selectedDocuments(draft),game.settings.get(SYSTEM_ID,"resistanceMode"));
+  const data=source(actor),plan=planLevel(data.system,data.items,draft,await selectedDocuments(draft),game.settings.get(SYSTEM_ID,"resistanceMode"),{actorUuid:actor.uuid,flags:actor.flags});
   if(!plan.canApply)throw Error("Confira os requisitos e pendências ou registre a exceção antes de concluir.");
   if(!await foundry.applications.api.DialogV2.confirm({window:{title:`Evoluir para nível ${draft.to}`},content:`<p>Confirmar ${escape(actor.name)}: nível ${draft.from} → ${draft.to}?</p><p>${plan.grants.length} cópia(s) nova(s); ${plan.rankUpdates.length} Melhoria(s) atualizada(s). PV e CE atuais, armadura, XP e ajustes manuais serão preservados. Pontos não distribuídos ficam em saldo.</p><p>${plan.warnings.length} pendência(s) registrada(s). A solicitação será processada pelo mestre ativo.</p>`}))return;
   if(signature(actor)!==draft.baseline||!flag(actor,"levelDraft")||draftSignature(flag(actor,"levelDraft"))!==decision)throw Error("A ficha ou escolhas mudaram durante a confirmação. Confira novamente.");
@@ -104,7 +104,7 @@ export async function applyLevelOperation(actor,requester) {
  const decision=draftSignature(draft);
  if(flag(actor,"levelOperation")?.status==="prepared")throw Error("Evolução interrompida exige conferência do mestre.");
  if(actor.system.creationGuide.status==="draft"||signature(actor)!==draft.baseline)throw Error("A ficha mudou; recomece a revisão.");
- const data=source(actor),plan=planLevel(data.system,data.items,draft,await selectedDocuments(draft),game.settings.get(SYSTEM_ID,"resistanceMode"));
+ const data=source(actor),plan=planLevel(data.system,data.items,draft,await selectedDocuments(draft),game.settings.get(SYSTEM_ID,"resistanceMode"),{actorUuid:actor.uuid,flags:actor.flags});
  if(!plan.canApply)throw Error("Revisão incompleta; conferir pendências.");
  if(signature(actor)!==draft.baseline||!flag(actor,"levelDraft")||draftSignature(flag(actor,"levelDraft"))!==decision)throw Error("A ficha ou escolhas mudaram durante a conferência.");
  const operation={id:draft.id,status:"prepared",from:draft.from,to:draft.to,baseline:draft.baseline,draftSignature:decision,time:Date.now(),userId:requester.id,ranks:plan.rankUpdates,summary:plan.summary,warnings:plan.warnings,manual:plan.manual,reason:draft.reason??"",choices:plan.grants.map(item=>({name:item.name,uuid:item.system.originUuid})),balances:{skills:plan.projected.progression.skillBank,attributes:plan.projected.progression.attributeBank,fighting:plan.projected.progression.fightBank}};

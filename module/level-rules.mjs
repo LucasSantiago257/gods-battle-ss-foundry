@@ -32,8 +32,8 @@ export function levelSignature(system,items) {
  let hash=14695981039346656037n;for(let i=0;i<text.length;i++)hash=BigInt.asUintN(64,(hash^BigInt(text.charCodeAt(i)))*1099511628211n);
  return hash.toString(16);
 }
-export function planLevel(system,items,draft,selected={},resistanceMode="rank") {
- system=structuredClone(system);items=structuredClone(items);prepareKnight(system,items,resistanceMode);
+export function planLevel(system,items,draft,selected={},resistanceMode="rank",conditionContext={}) {
+ system=structuredClone(system);items=structuredClone(items);prepareKnight(system,items,resistanceMode,conditionContext);
  const m=levelMilestones(system,draft),next=structuredClone(system),previewItems=structuredClone(items),updates={},warnings=[],manual=[],grants=[],rankUpdates=[];
  const set=(path,value)=>{updates[`system.${path}`]=value;const parts=path.split(".");let target=next;for(const key of parts.slice(0,-1))target=target[key];target[parts.at(-1)]=value;};
  const bank=key=>integer(system.progression[key]??0,key);
@@ -80,7 +80,7 @@ export function planLevel(system,items,draft,selected={},resistanceMode="rank") 
  }
  if(fightSpent>bank("fightBank")+m.fightPoints)throw Error("Distribuição excede os pontos de luta disponíveis.");
  set("progression.skillBank",bank("skillBank")+m.skillPoints-skillSpent);set("progression.attributeBank",bank("attributeBank")+m.attributePoints-attributeSpent);set("progression.fightBank",bank("fightBank")+m.fightPoints-fightSpent);
- prepareKnight(next,previewItems,resistanceMode);
+ prepareKnight(next,previewItems,resistanceMode,conditionContext);
  if(m.sense){
   const advanced=next.sense.ordinal>m.sense.ordinal||next.sense.ordinal===m.sense.ordinal&&stages.indexOf(next.sense.stage)>=stages.indexOf(m.sense.stage);
   if(draft.advanceSense&&!advanced){
@@ -99,7 +99,7 @@ export function planLevel(system,items,draft,selected={},resistanceMode="rank") 
  if(system.profile.level>20&&(system.progression.epicActions??0)!==system.profile.level-20)warnings.push("Níveis anteriores acima de 20 foram registrados fora do assistente; conferir ajustes prévios de ações/CE. Não há concessão retroativa.");
  if(Object.values(selected).some(Boolean)&&!draft.reviewedContent)warnings.push("Confirme leitura dos requisitos e escolhas dos itens selecionados.");
  if(manual.length&&!draft.reviewedManual)warnings.push("Confirme a revisão dos ganhos que exigem aplicação manual.");
- prepareKnight(next,previewItems,resistanceMode);
+ prepareKnight(next,previewItems,resistanceMode,conditionContext);
  for(const[key,skill]of Object.entries(next.skills))if((draft.skills?.[key]??0)>0&&skill.value>effectiveAttribute(next,skill.attribute))warnings.push(`${SKILLS[key].label} supera o atributo associado; confira exceção.`);
  const unique=[...new Set(warnings)];
  return {milestones:m,updates,grants,rankUpdates,projected:next,warnings:unique,manual,attributeSpent,skillSpent,fightSpent,

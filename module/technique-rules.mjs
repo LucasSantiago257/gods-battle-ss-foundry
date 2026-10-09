@@ -1,6 +1,7 @@
 import {NATURES, ATTRIBUTES} from "./config.mjs";
 import {testParameters, classify} from "./rules.mjs";
 import {componentOptions} from "./technique-components.mjs";
+import {conditionPool,conditionSummary} from "./condition-rules.mjs";
 
 export const EFFECT_KINDS = {damage: "Dano", control: "Controle", sustained: "Sustentada", manual: "Especial / aplicação manual"};
 export const TECHNIQUE_MODES={manual:"Parâmetros manuais da cópia",status:"ND e Poder pelo status do usuário (p.201)"};
@@ -47,12 +48,13 @@ export function techniqueParameters(system, technique, options = {}) {
   // p. 193/198: Asterismo acompanha a natureza da técnica usada, com ajuste manual preservado.
   const attribute = skill.associated || nature.key;
   if (!ATTRIBUTES[attribute]) throw Error("Atributo de Asterismo inválido.");
-  const base = testParameters(system, "skill", "asterism");
+  const base = testParameters(system, "skill", "asterism","rank",{conditions:false});
   const trained = skill.value > 0;
   const modifier = (trained ? skill.mod + system.attributes[attribute].mod + skill.bonus + (skill.effectBonus ?? 0) : 0)
     + (system.combat.asterismPenalty ?? 0) + bonus + advantage * 2;
-  return {cost, difficulty: 10 + cost, components,attribute, attributeLabel: ATTRIBUTES[attribute],
-    dice: Math.max(1, Math.min(5, base.dice + advantage)), modifier, elevate, condense, effectKind, baseDamageLevel:technique.damageLevel,power:technique.power,
+  const pool=conditionPool(system,Math.max(1,base.dice+advantage),modifier,{maxDice:5});
+  return {cost, difficulty: 10 + cost, components,attribute, attributeLabel: ATTRIBUTES[attribute],conditionSummary:conditionSummary(system),
+    dice: pool.dice, modifier:pool.modifier, elevate, condense, effectKind, baseDamageLevel:technique.damageLevel,power:technique.power,
     powerCosmic: system.combat.cosmicPower + (effectKind === "damage" ? 0 : elevate)};
 }
 export function cosmoPayment(system, cost, {useExtra = true, allowOverload = false} = {}) {
