@@ -15,6 +15,7 @@ import {recoverDamageOperation} from "./damage.mjs";
 import {recoverTechniqueOperation,reviewTechniqueOperation} from "./technique-activation.mjs";
 import {actionSheetContext,toggleActionControl,consumeAction,adjustActions,recoverAction,reviewAction} from "./actions.mjs";
 import {componentProfile,componentState} from "./technique-components.mjs";
+import {effectSheetContext,effectOperationContext,registerEffect,resolveEffect,endEffect,recoverEffect} from "./effects.mjs";
 import {openTestActors,importTestActors} from "./combat-examples.mjs";
 import {beginLevelUp,levelUpContext,chooseLevelItem,discardLevelDraft,requestLevelUp,clearInterruptedLevel} from "./level-up.mjs";
 
@@ -30,7 +31,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
   static DEFAULT_OPTIONS = {
     classes: ["gods-battle", "knight-sheet"], tag: "form", position: {width: 920, height: 800},
     form: {submitOnChange: true, closeOnSubmit: false},
-    actions: {rollTest: KnightSheet.rollAction, createItem: KnightSheet.createItem, editItem: KnightSheet.editItem,
+    actions: {recoverEffect:KnightSheet.recoverEffect,registerEffect:KnightSheet.registerEffect,resolveEffect:KnightSheet.resolveEffect,endEffect:KnightSheet.endEffect,rollTest: KnightSheet.rollAction, createItem: KnightSheet.createItem, editItem: KnightSheet.editItem,
       deleteItem: KnightSheet.deleteItem, equipArmor: KnightSheet.equipArmor, useItem: KnightSheet.useItem, useTechnique: KnightSheet.activateTechnique, setupTechnique:KnightSheet.setupTechnique,attackTarget:KnightSheet.attackTarget,recoverTechnique:KnightSheet.recoverTechnique,reviewTechnique:KnightSheet.reviewTechnique,toggleActions:KnightSheet.toggleActions,consumeAction:KnightSheet.consumeAction,adjustActions:KnightSheet.adjustActions,recoverAction:KnightSheet.recoverAction,reviewAction:KnightSheet.reviewAction,
       beginCreation:KnightSheet.beginCreation,guideStep:KnightSheet.guideStep,chooseCreationItem:KnightSheet.chooseCreationItem,applyInitialStyle:KnightSheet.applyInitialStyle,finishCreation:KnightSheet.finishCreation,recoverDamage:KnightSheet.recoverDamage,openCatalog: KnightSheet.openCatalog, seedCompendium: KnightSheet.seedCompendium,openTestActors:KnightSheet.openTestActors,importTestActors:KnightSheet.importTestActors,beginLevelUp:KnightSheet.beginLevelUp,chooseLevelItem:KnightSheet.chooseLevelItem,discardLevelDraft:KnightSheet.discardLevelDraft,requestLevelUp:KnightSheet.requestLevelUp,clearInterruptedLevel:KnightSheet.clearInterruptedLevel}
   };
@@ -78,7 +79,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
       calculations: calculationSummary(s, game.settings.get(SYSTEM_ID, "resistanceMode")),
       passiveLedger: evaluatePassives(s,this.actor.items.contents).ledger,
       damageLedger:Object.entries(this.actor.flags?.[SYSTEM_ID]?.damageOperations??{}).map(([key,r])=>({key,...r,statusLabel:{applied:"Aplicado",undone:"Desfeito",prepared:"Interrompido",repair:"Revisão necessária",failed:"Não aplicado"}[r.status]??r.status,canRecover:game.user.isGM&&["prepared","repair"].includes(r.status)})).toSorted((a,b)=>b.time-a.time).slice(0,20),
-      techniqueLedger,
+      techniqueLedger,persistentEffects:effectSheetContext(this.actor),effectInterruptions:effectOperationContext(this.actor),
       creationGuide: s.creationGuide.status==="draft" ? {...creationReview(s,this.actor.items.contents,this.actor.name),step:s.creationGuide.step,current:CREATION_STEPS[s.creationGuide.step-1],steps:CREATION_STEPS.map((step,index)=>({...step,index:index+1,active:index+1===s.creationGuide.step})),
         fields:[field("system.creationGuide.extraSkill","Perícia livre do estilo",s.creationGuide.extraSkill,{"":"Selecionar",...Object.fromEntries(Object.entries(SKILLS).map(([key,def])=>[key,def.label]))}),field("system.creationGuide.fightChoice","Santo / Asgardiano: luta inicial",s.creationGuide.fightChoice,{punch:"Soco",kick:"Chute"}),field("system.creationGuide.acceptExceptions","Aceitar pendências como exceções da campanha",s.creationGuide.acceptExceptions,null,"checkbox"),tf("system.creationGuide.exceptionReason","Justificativa das exceções",s.creationGuide.exceptionReason),field("system.creationGuide.initializeResources","Preencher PV e CE atuais ao concluir",s.creationGuide.initializeResources,null,"checkbox")]} : null,
       canBeginCreation:this.isEditable && s.profile.level===1 && s.creationGuide.status==="",
@@ -125,6 +126,10 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
     return result;
   }
   static async rollAction(_event, target) { await rollTest(this.actor, target.dataset.kind, target.dataset.key); }
+  static async registerEffect() {try{await registerEffect(this.actor);}catch(error){ui.notifications.error(`${error.message} Confira o registro antes de repetir.`);}}
+  static async resolveEffect(_event,target) {try{await resolveEffect(this.actor,target.dataset.effect);}catch(error){ui.notifications.error(`${error.message} Confira o registro antes de repetir.`);}}
+  static async endEffect(_event,target) {try{await endEffect(this.actor,target.dataset.effect);}catch(error){ui.notifications.error(error.message);}}
+  static async recoverEffect(_event,target) {try{await recoverEffect(this.actor,target.dataset.operation);}catch(error){ui.notifications.error(error.message);}}
   static async attackTarget() {if(this.isEditable) await attackTarget(this.actor);}
   static async toggleActions() {try{await toggleActionControl();}catch(error){ui.notifications.error(error.message);}}
   static async consumeAction(_event,target) {if(this.isEditable)try{await consumeAction(this.actor,target.dataset.pool);}catch(error){ui.notifications.error(error.message);}}
