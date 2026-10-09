@@ -1,5 +1,6 @@
 import {NATURES, ATTRIBUTES} from "./config.mjs";
 import {testParameters, classify} from "./rules.mjs";
+import {componentOptions} from "./technique-components.mjs";
 
 export const EFFECT_KINDS = {damage: "Dano", control: "Controle", sustained: "Sustentada", manual: "Especial / aplicação manual"};
 export const TECHNIQUE_MODES={manual:"Parâmetros manuais da cópia",status:"ND e Poder pelo status do usuário (p.201)"};
@@ -40,7 +41,8 @@ export function techniqueParameters(system, technique, options = {}) {
   if (![-1, 0, 1].includes(advantage) || !Number.isFinite(bonus)) throw Error("Modificadores inválidos.");
   const effectKind = technique.effectKind ?? "damage";
   if (!EFFECT_KINDS[effectKind] || effectKind === "manual") throw Error("Big Bang primordial inválido ou de aplicação manual.");
-  const cost = integer(integer(technique.cost, "Custo") + integer(technique.costExtra, "CE fixa adicional") + extra + elevate + condense, "Custo total");
+  const components=componentOptions(technique,options);
+  const cost = integer(integer(technique.cost, "Custo") + integer(technique.costExtra, "CE fixa adicional") + extra + elevate + condense + components.extraCost, "Custo total");
   const skill = system.skills.asterism;
   // p. 193/198: Asterismo acompanha a natureza da técnica usada, com ajuste manual preservado.
   const attribute = skill.associated || nature.key;
@@ -49,7 +51,7 @@ export function techniqueParameters(system, technique, options = {}) {
   const trained = skill.value > 0;
   const modifier = (trained ? skill.mod + system.attributes[attribute].mod + skill.bonus + (skill.effectBonus ?? 0) : 0)
     + (system.combat.asterismPenalty ?? 0) + bonus + advantage * 2;
-  return {cost, difficulty: 10 + cost, attribute, attributeLabel: ATTRIBUTES[attribute],
+  return {cost, difficulty: 10 + cost, components,attribute, attributeLabel: ATTRIBUTES[attribute],
     dice: Math.max(1, Math.min(5, base.dice + advantage)), modifier, elevate, condense, effectKind, baseDamageLevel:technique.damageLevel,power:technique.power,
     powerCosmic: system.combat.cosmicPower + (effectKind === "damage" ? 0 : elevate)};
 }
@@ -76,7 +78,7 @@ export function techniqueOutcome(system, technique, parameters, total) {
   const outcome = classify(total, parameters.difficulty);
   const success = total >= parameters.difficulty;
   const critical = total > parameters.difficulty + 10;
-  const damageLevel = parameters.effectKind === "damage" ? integer(technique.damageLevel, "Nível de Dano", 1) + parameters.elevate + (system.automation?.techniqueND ?? 0) + (critical ? 1 : 0) : 0;
+  const damageLevel = parameters.effectKind === "damage" ? integer(technique.damageLevel, "Nível de Dano", 1) + parameters.elevate + (parameters.components?.levelBonus??0) + (system.automation?.techniqueND ?? 0) + (critical ? 1 : 0) : 0;
   const damage = parameters.effectKind === "damage"
     ? Math.max(0, damageLevel * integer(technique.power, "Nível de Poder") + system.profile.level + system.combat.damageBonus + (system.combat.techniqueDamageBonus ?? 0)) : 0;
   const armorDamage = parameters.effectKind !== "damage" ? 0 : damageLevel > 20 ? 100 : damageLevel > 10 ? 70

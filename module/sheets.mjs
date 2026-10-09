@@ -14,6 +14,7 @@ import {beginCreation,chooseCreationItem,applyInitialStyle,finishCreation} from 
 import {recoverDamageOperation} from "./damage.mjs";
 import {recoverTechniqueOperation,reviewTechniqueOperation} from "./technique-activation.mjs";
 import {actionSheetContext,toggleActionControl,consumeAction,adjustActions,recoverAction,reviewAction} from "./actions.mjs";
+import {componentProfile,componentState} from "./technique-components.mjs";
 import {openTestActors,importTestActors} from "./combat-examples.mjs";
 import {beginLevelUp,levelUpContext,chooseLevelItem,discardLevelDraft,requestLevelUp,clearInterruptedLevel} from "./level-up.mjs";
 
@@ -207,9 +208,9 @@ export class ContentSheet extends foundry.applications.api.HandlebarsApplication
     let technique=null;
     if(this.item.type==="technique"){
       let effective=s,reviewMessage=techniqueReadiness(this.item);
-      try{effective=effectiveTechnique(this.item.parent?.system,s);}catch(error){reviewMessage=error.message;}
+      let components;try{effective=effectiveTechnique(this.item.parent?.system,s);components=componentProfile(this.item);}catch(error){reviewMessage=error.message;}
       const user=this.item.parent?.system;
-      technique={cost:s.cost+s.costExtra,difficulty:10+s.cost+s.costExtra,damage:s.effectKind==="damage"?effective.power*(effective.damageLevel+(user?.automation?.techniqueND??0))+(user?.profile.level??0)+(user?.combat.damageBonus??0)+(user?.combat.techniqueDamageBonus??0):0,
+      technique={components,componentEnabled:componentState(this.item).enabled,cost:s.cost+s.costExtra,difficulty:10+s.cost+s.costExtra,damage:s.effectKind==="damage"?effective.power*(effective.damageLevel+(user?.automation?.techniqueND??0))+(user?.profile.level??0)+(user?.combat.damageBonus??0)+(user?.combat.techniqueDamageBonus??0):0,
         includesUser:!!user,reviewMessage,canActivate:this.isEditable&&this.item.parent?.type==="knight"&&!reviewMessage,canSetup:this.isEditable&&this.item.parent?.type==="knight"&&!source?.reference?.manualOnly};
     }
     return Object.assign(context, {item: this.item, editable: this.isEditable, fields, typeLabel: ITEM_TYPES[this.item.type], armor: this.item.type === "armor" ? s.armor : null,

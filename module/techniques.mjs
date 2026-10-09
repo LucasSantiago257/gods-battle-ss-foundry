@@ -5,6 +5,7 @@ import {activationFormOptions,installTechniquePreview} from "./technique-ui.mjs"
 import {activationState,submitTechniqueActivation,techniqueRollMode,pendingTechnique} from "./technique-activation.mjs";
 import {primaryGM,assertNoTechniqueInterruption} from "./master-queue.mjs";
 import {actionView,techniqueActionPlan} from "./action-rules.mjs";
+import {techniqueWithComponents} from "./technique-components.mjs";
 
 const active = new WeakSet();
 export function techniqueTarget(targets=game.user.targets??[]) {
@@ -23,13 +24,14 @@ export async function useTechnique(actor, item) {
     if(!primaryGM()?.active)throw Error("É necessário um mestre ativo para processar a ativação.");
     assertNoTechniqueInterruption(actor);if(pendingTechnique(actor))throw Error("Já existe uma solicitação desta ficha aguardando processamento. Confira o chat antes de repetir.");
     const target=techniqueTarget(),baseline=activationState(actor,item),rollMode=techniqueRollMode();
+    const effective=techniqueWithComponents(item),profile=effective.componentProfile;
     const content = await foundry.applications.handlebars.renderTemplate(`systems/${SYSTEM_ID}/templates/technique-dialog.hbs`, {
       name: item.name, cost: item.system.cost + item.system.costExtra, current: actor.system.resources.cosmo.value,
       extra: actor.system.resources.cosmoExtra, reserve: actor.system.resources.cosmoReserved,
-      penalty: actor.system.combat.asterismPenalty, unlimited: actor.system.resources.cosmo.unlimited,targetName:target?.name,actions:actionView(actor)
+      penalty: actor.system.combat.asterismPenalty, unlimited: actor.system.resources.cosmo.unlimited,targetName:target?.name,actions:actionView(actor),components:profile,hasExhaust:profile.rules.some(r=>r.kind==="exhaust"),hasEssence:profile.rules.some(r=>r.kind==="essence"),hasTerrain:profile.rules.some(r=>r.kind==="terrain")
     });
     const answer = await foundry.applications.api.DialogV2.wait({window: {title: "Ativar técnica"}, content,
-      render:(_event,dialog)=>installTechniquePreview(dialog.form??dialog.element.querySelector("form"),actor.system,item.system,actor),
+      render:(_event,dialog)=>installTechniquePreview(dialog.form??dialog.element.querySelector("form"),actor.system,effective,actor),
       buttons: [{action: "activate", label: "Gastar CE e rolar", default: true, callback: (_event, button) => {
         return activationFormOptions(button.form);
       }}, {action: "cancel", label: "Cancelar", callback: () => null}], rejectClose: false});
@@ -39,7 +41,8 @@ export async function useTechnique(actor, item) {
     if (changed) throw Error(changed);
     const options={extra:0,elevate:0,condense:0,bonus:0,advantage:0,useExtra:true,allowOverload:false,...answer};
     techniqueActionPlan(actor,options,"preview");
-    const parameters = techniqueParameters(actor.system, item.system, options);
+    if(options.oppositeEssence&&!target)throw Error("Essência Alvo exige um alvo marcado.");
+    const parameters = techniqueParameters(actor.system, effective, options);
     let payment = cosmoPayment(actor.system, parameters.cost, options);
     if (payment.lifeDamage) {
       const confirmed = await foundry.applications.api.DialogV2.confirm({window: {title: "Queimar além do limite do corpo"},

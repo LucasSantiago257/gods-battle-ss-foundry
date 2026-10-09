@@ -7,7 +7,7 @@
 3. Combate: ataque/defesa comuns, dano confirmado, fila por mestre ativo, journal, desfazer e recuperação explícita de operações interrompidas. Críticos específicos de luta, manobras avançadas e condições permanecem manuais. Consumo básico de ações foi entregue em0.14.0.
 4. Criação: assistente de nível 1 em seis etapas, rascunho persistente, benefício do estilo uma vez, importação sem substituir cópias, orçamentos, limites e registro de exceções. Schema 3 conserva fichas anteriores em edição normal.
 
-Validação local: 173 testes, round-trip de 866 Items e três Atores com itens embutidos, templates/JavaScript e empacotamento. A prévia de fichas é conferida no Edge. Esses testes usam um contrato mínimo da API; execução no servidor Foundry 13.350 continua pendente. Ver roteiro validacao-foundry.md.
+Validação local: 186 testes, round-trip de 866 Items e três Atores com itens embutidos, templates/JavaScript e empacotamento. A prévia de fichas é conferida no Edge. Esses testes usam um contrato mínimo da API; execução no servidor Foundry 13.350 continua pendente. Ver roteiro validacao-foundry.md.
 
 0.9.2 inclui fichas de exercício de combate e importação preservando cópias existentes; instruções em fichas-teste.md.
 
@@ -34,3 +34,5 @@ Preservar IDs/proveniência dos compêndios e todas as cópias editadas do mundo
 
 
 0.14.0 entrega reservas por rodada, quantidades confirmadas no ataque/defesa, gasto inteiro na técnica junto com CE, Movimento/Reação registrados, ajustes justificados e recuperação idempotente. Convenção explícita: rodada=turno coletivo; vez não repõe e não bloqueia defesa/reação. Ver acoes.md. Próximo marco: primeiro grupo de Big Bangs/incrementos com efeitos executáveis inequívocos; iniciar por auditoria das regras e cobertura. Iniciativa/simultaneidade, manobras, movimento parcial/total, medição, condições e efeitos de reação ainda manuais.
+
+0.15.0 entrega o primeiro grupo de quatro componentes assistidos por composição salva, com revisão opcional, parâmetros contextuais, custo variável, ND/alcance e auditoria no cartão. Ver componentes-automaticos.md. Não altera a cobertura pessoal358 nem distribui imagens/PDF. Próximo passo: efeitos persistentes com aplicação/revisão/expiração, após esclarecer duração/sustentação e economia de movimentos; Controle Atômico e Controle sobre as Estrelas têm pontos de interpretação documentados.
