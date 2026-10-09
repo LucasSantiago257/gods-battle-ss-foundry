@@ -151,3 +151,14 @@ Use mestre e dois jogadores em mundo de teste13.350, com cópia preservada das f
 12. Copie ficha com registro interrompido: recuperar não deve tocar original. Encerrar após revisão deve liberar só a cópia. Ataques de outra rodada exigem resolução manual; concluir defesas antes de avançar.
 
 Iniciativa/simultaneidade, alcance, movimento parcial/total, manobras e efeitos próprios de poderes permanecem conferidos; não registrar automação integral como validada.
+
+
+## Componentes assistidos 0.15.0 — validação pendente
+
+1. Crie técnica personalizada com primordial Dano, Esgotar, Essência Alvo, Terreno Favorável (ambiente especificado) e Espaço com graduação conferida. Confira aprendizagem/Mestre e custos fixos no construtor.
+2. Configure ND/alcance base e habilite o grupo explicitamente. Técnica antiga/campo livre não deve conceder efeitos. Recriar composição deve desligar a opção; desmarcar mantém parâmetros/cópias/notas.
+3. Na ativação confira custo/dificuldade sem opções. Escolha2 aumentos de Esgotar: +4CE e+2ND. Espaço grau3: +4,5m, sem nova cobrança da graduação no custo fixo.
+4. Marque Essência/Terreno: sem justificativa deve bloquear. Essência sem alvo deve recusar antes de gasto. Com contexto conferido, cada um soma1ND; não deduzir Essência de textos.
+5. Confirme como jogador: mestre deve recalcular, pagar uma vez e publicar parcelas/fontes/contexto. Conferir resistência/dano, falha/crítico e opções CE extra/reserva/ilimitada/queima PV.
+6. Altere composição/adesão durante prévia/rolagem e confira recusa sem cobrar parâmetros novos. Dois clientes/reconexão/falha de cartão devem preservar gasto e recuperar mesmo resultado.
+7. Componentes adicionais como Brasas devem aparecer como manuais sem aplicar efeito; Controle/Sustentada/mistos/Residual fora do grupo. Alcance numérico não mede a cena ou aplica penalidades.

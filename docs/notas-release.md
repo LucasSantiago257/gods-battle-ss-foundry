@@ -1,4 +1,6 @@
-Versão **0.14.0** para FoundryVTT 13 build 350.
+Versão **0.15.0** para FoundryVTT 13 build 350.
+
+0.15.0 acrescenta cálculo assistido, com adesão explícita, para Esgotar (+1ND/2CE), Essência Alvo e Terreno Favorável (+1ND após contexto confirmado), e Controle sobre o Espaço (+1,5/3/4,5m). Usa IDs/chaves/graduações da composição salva de técnica personalizada com primordial Dano; não interpreta nomes livres nem altera cópias antigas. A prévia/cartão mostram parcelas/referências e o mestre recalcula o pagamento variável. Configuração/desligamento e recomposição preservam parâmetros, notas e recursos. Outros componentes, estados, duração e geometria continuam manuais. Ver componentes-automaticos.md; validação real pendente.
 
 0.14.0 acrescenta controle de ações por encontro, habilitado pelo mestre. Ataque/defesa confirmam quantidades e usam as ações escolhidas na fórmula; técnicas consomem toda a reserva intacta de ataque ou defesa junto com o pagamento de CE/PV, inclusive em falha. Reservas repostas por rodada, sem reposição ao trocar a vez, defesas/reações fora da vez e registros de Movimento/Reação. Ajustes justificados, deduplicação, fila comum, histórico e recuperação do mesmo resultado. Combate acima de5 concede ações extras com automação avançada ligada; ajustes antigos permanecem e devem ser conferidos. Preserva recursos, cópias e compêndios. Iniciativa, movimento parcial/total, alcance, manobras e efeitos específicos permanecem conferidos. Ver acoes.md e validar no servidor.
 
