@@ -1,5 +1,7 @@
 # Componentes assistidos — 0.15.0
 
+Desde0.16.0, Brasas também possui acompanhamento periódico confirmado pelo mestre, em fluxo separado. Veja [efeitos com duração](efeitos-duracao.md); os quatro cálculos deste guia permanecem iguais.
+
 Este primeiro grupo calcula quatro componentes de **técnicas personalizadas com primordial Dano** e composição salva no construtor. Não interpreta nomes escritos nos campos livres nem ativa efeitos de todas as técnicas do catálogo.
 
 | Componente | Parte calculada | Conferência necessária |

@@ -1,0 +1,15 @@
+<div class="persistent-effect-dialog">
+<p>Alvo: <strong>{{targetName}}</strong> · rodada atual {{round}}. O mestre registra o efeito após conferir ativação, resistência e duração. Não cobra a técnica novamente.</p>
+<label>Tipo<select name="kind"><option value="brasas">Brasas · dano periódico assistido</option><option value="manual">Anotação de efeito / condição manual</option></select></label>
+<label>Técnica com Brasas<select name="sourceUuid"><option value="">Escolher cópia com composição salva</option>{{#each sources}}<option value="{{itemUuid}}">{{label}}</option>{{/each}}</select></label>
+{{#unless sources.length}}<p class="note">Nenhuma técnica personalizada pronta com Brasas foi localizada. Use uma anotação manual ou conclua a composição.</p>{{/unless}}
+<p class="note">Brasas: Bronze 5, Prata 10, Ouro 15 PV por turno (p.225), conforme a classificação da cópia. Bônus de ND não alteram essa parcela. A rodada do Foundry representa o turno coletivo. Outros modificadores/imunidades precisam ser conferidos antes de aplicar.</p>
+<label>Nome da anotação manual<input name="label" type="text" maxlength="120"></label>
+<label>Referência da anotação manual<input name="page" type="text" maxlength="120" placeholder="Página / regra conferida"></label>
+<label>Rodadas de duração final<input name="rounds" type="number" min="1" max="1000" value="1"></label>
+<label>Primeira aplicação / conferência<select name="firstOffset"><option value="1">Na próxima rodada</option><option value="0">Nesta rodada</option></select></label>
+<label>Descrição do efeito / condição<textarea name="description" maxlength="2000"></textarea></label>
+<label>Revisão: duração, resistência e contexto<textarea name="reason" maxlength="2000"></textarea></label>
+<label><input type="checkbox" name="checked">Conferi que o efeito permanece, sua duração final e quando ocorre a primeira aplicação. Autorizo que estes detalhes fiquem visíveis na ficha do alvo.</label>
+<p class="note">Sem leitura automática de texto, aplicação de condição ou dano ao avançar a rodada. Cada rodada é confirmada separadamente; cancelar preserva todos os recursos. Anotações manuais não aplicam bônus, bloqueios, dano ou CE.</p>
+</div>

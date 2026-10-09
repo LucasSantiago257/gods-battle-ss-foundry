@@ -1,4 +1,6 @@
-Versão **0.15.0** para FoundryVTT 13 build 350.
+Versão **0.16.0** para FoundryVTT 13 build 350.
+
+0.16.0 acrescenta registro de efeitos com origem/alvo/duração e acompanhamento por rodada na aba Combate. Brasas de técnica personalizada com composição canônica oferece parcela base por classe e dano final confirmado pelo mestre; cada rodada recebe histórico e a duração é concluída após a última resolução/dispensa. Avançar rodada não cobra automaticamente. Anotações de condições permanecem manuais e não alteram bônus/caixas existentes. PV e journal da rodada são gravados juntos, com fila compartilhada, verificação de alterações e recuperação explícita de interrupções sem repetir dano. Cancelamentos, cópias, recursos e catálogos preservados. Não implementa Sustentada/Residual/Dreno ou todas as condições. Ver efeitos-duracao.md; validação real pendente.
 
 0.15.0 acrescenta cálculo assistido, com adesão explícita, para Esgotar (+1ND/2CE), Essência Alvo e Terreno Favorável (+1ND após contexto confirmado), e Controle sobre o Espaço (+1,5/3/4,5m). Usa IDs/chaves/graduações da composição salva de técnica personalizada com primordial Dano; não interpreta nomes livres nem altera cópias antigas. A prévia/cartão mostram parcelas/referências e o mestre recalcula o pagamento variável. Configuração/desligamento e recomposição preservam parâmetros, notas e recursos. Outros componentes, estados, duração e geometria continuam manuais. Ver componentes-automaticos.md; validação real pendente.
 
