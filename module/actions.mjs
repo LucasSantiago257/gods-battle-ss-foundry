@@ -107,10 +107,10 @@ export async function resumeActionRequests(){if(isPrimaryGM())for(const m of gam
 export function notifyActionResponse(message,changes){if(changes&&!changes[`flags.${SYSTEM_ID}.actionResponse`]&&!changes.flags?.[SYSTEM_ID]?.actionResponse)return;const r=f(message).actionResponse;if(r&&author(message)===game.user.id)(r.status==="published"?ui.notifications.info:ui.notifications.warn)(r.text);}
 export async function recoverAction(actor,key) {
  if(!isPrimaryGM())throw Error("Somente o mestre responsável pode recuperar ações.");
- return runMasterOperation(async()=>{
   const record=f(actor).actionOperations?.[key],baseline=actionHash(record);if(!record||!["prepared","paid"].includes(record.status))throw Error("Nenhuma operação pendente.");
-  if(record.actorUuid!==actor.uuid)throw Error("Registro veio de outra ficha. Encerre após revisão manual apenas nesta cópia.");
-  if(!await foundry.applications.api.DialogV2.confirm({window:{title:"Conferir ação interrompida"},content:"<p>Conferir gasto registrado e recuperar o mesmo cartão? Não consome nem rola outra vez. Estado divergente exige ajuste/revisão manual.</p>"}))return;
+ if(record.actorUuid!==actor.uuid)throw Error("Registro veio de outra ficha. Encerre após revisão manual apenas nesta cópia.");
+ if(!await foundry.applications.api.DialogV2.confirm({window:{title:"Conferir ação interrompida"},content:"<p>Conferir gasto registrado e recuperar o mesmo cartão? Não consome nem rola outra vez. Estado divergente exige ajuste/revisão manual.</p>"}))return;
+ return runMasterOperation(async()=>{
   if(!isPrimaryGM()||actionHash(f(actor).actionOperations?.[key])!==baseline)throw Error("Registro ou mestre mudou.");
   const message=game.messages.get(record.requestId);
   if(record.status==="paid"){if(!message)throw Error("Cartão removido. Gasto permanece registrado; revise manualmente.");await publish(message,actor,record);return;}
@@ -125,11 +125,12 @@ export async function recoverAction(actor,key) {
 }
 export async function reviewAction(actor,key) {
  if(!isPrimaryGM())throw Error("Somente o mestre responsável pode revisar ações.");
- return runMasterOperation(async()=>{
   const r=f(actor).actionOperations?.[key],baseline=actionHash(r);if(!r||!['prepared','paid'].includes(r.status)||r.published)throw Error("Não há ação interrompida para revisar.");
-  const message=r.actorUuid===actor.uuid?game.messages.get(r.requestId):null;if(f(message).actionResponse?.status==="published")throw Error("A ação já foi publicada.");
-  const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Encerrar ação após revisão manual"},content:"<p>Confira o gasto e faça o ajuste necessário. Encerrar conserva todas as reservas atuais e não cria resultado.</p><label>Notas (opcional)<textarea name=\"reason\"></textarea></label>",buttons:[{action:"review",label:"Registrar revisão",callback:(_e,b)=>({reason:b.form.elements.reason.value})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
-  if(!answer)return;optionalNote(answer.reason);
+ const message=r.actorUuid===actor.uuid?game.messages.get(r.requestId):null;if(f(message).actionResponse?.status==="published")throw Error("A ação já foi publicada.");
+ const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Encerrar ação após revisão manual"},content:"<p>Confira o gasto e faça o ajuste necessário. Encerrar conserva todas as reservas atuais e não cria resultado.</p><label>Notas (opcional)<textarea name=\"reason\"></textarea></label>",buttons:[{action:"review",label:"Registrar revisão",callback:(_e,b)=>({reason:b.form.elements.reason.value})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
+ if(!answer)return;
+ return runMasterOperation(async()=>{
+  optionalNote(answer.reason);
   if(!isPrimaryGM()||actionHash(f(actor).actionOperations?.[key])!==baseline)throw Error("Mestre ou registro mudou.");
   await actor.update({[`flags.${SYSTEM_ID}.actionOperations.${key}.status`]:"reviewed",[`flags.${SYSTEM_ID}.actionOperations.${key}.review`]:{reason:optionalNote(answer.reason),userId:game.user.id,time:Date.now()}});
   if(message)await message.update({[`flags.${SYSTEM_ID}.-=actionRequest`]:null,[`flags.${SYSTEM_ID}.-=actionPrepared`]:null,[`flags.${SYSTEM_ID}.actionResponse`]:{status:"reviewed",text:"Ação encerrada após revisão manual."},content:"<p>Ação encerrada após revisão manual; reservas preservadas.</p>"});
@@ -137,10 +138,10 @@ export async function reviewAction(actor,key) {
 }
 export async function toggleActionControl() {
  if(!isPrimaryGM())throw Error("Somente o mestre responsável pode alterar o controle de ações.");
- return runMasterOperation(async()=>{
   const combat=game.combat;if(!combat)throw Error("Abra um encontro no rastreador de combate.");
-  const enabled=!!f(combat).actionControl?.enabled,baseline=actionHash({round:combat.round,control:f(combat).actionControl});
-  if(!await foundry.applications.api.DialogV2.confirm({window:{title:enabled?"Desativar controle de ações":"Ativar controle de ações"},content:enabled?"<p>Desativar neste encontro? Novas rolagens não consumirão reservas. Registros existentes são conservados; operações interrompidas ainda exigem revisão.</p>":"<p>Ativar neste encontro? Todos os participantes recebem reservas novas nesta rodada. Ataques/defesas confirmam quantidades; técnicas gastam toda a reserva escolhida. Mudar a rodada repõe reservas; mudar a vez não. PV e CE são preservados.</p>"}))return;
+ const enabled=!!f(combat).actionControl?.enabled,baseline=actionHash({round:combat.round,control:f(combat).actionControl});
+ if(!await foundry.applications.api.DialogV2.confirm({window:{title:enabled?"Desativar controle de ações":"Ativar controle de ações"},content:enabled?"<p>Desativar neste encontro? Novas rolagens não consumirão reservas. Registros existentes são conservados; operações interrompidas ainda exigem revisão.</p>":"<p>Ativar neste encontro? Todos os participantes recebem reservas novas nesta rodada. Ataques/defesas confirmam quantidades; técnicas gastam toda a reserva escolhida. Mudar a rodada repõe reservas; mudar a vez não. PV e CE são preservados.</p>"}))return;
+ return runMasterOperation(async()=>{
   if(!isPrimaryGM()||game.combat!==combat||actionHash({round:combat.round,control:f(combat).actionControl})!==baseline)throw Error("Encontro ou mestre mudou.");
   await combat.update({[`flags.${SYSTEM_ID}.actionControl`]:{enabled:!enabled,epoch:foundry.utils.randomID(),userId:game.user.id,time:Date.now()}});
  });
@@ -154,11 +155,12 @@ export async function consumeAction(actor,pool) {
 }
 export async function adjustActions(actor) {
  if(!isPrimaryGM())throw Error("Somente o mestre responsável ajusta ações.");
- return runMasterOperation(async()=>{
   const view=actionView(actor),baseline=combatActionState(actor);if(!view.enabled)throw Error("Controle de ações não está ativo.");
-  const fields=Object.entries(ACTION_LABELS).map(([key,label])=>`<label>${label} disponíveis (máximo ${view.maxima[key]})<input name="${key}" type="number" min="0" max="${view.maxima[key]}" value="${view.remaining[key]}"></label>`).join("");
-  const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Ajustar reservas de ações"},content:`<p>Revisão do mestre para exceções/efeitos conferidos. Não concede virtudes nem aplica efeitos. Operações interrompidas devem ser encerradas após o reparo.</p>${fields}<label>Notas (opcional)<textarea name="reason"></textarea></label>`,buttons:[{action:"adjust",label:"Registrar ajuste",callback:(_e,b)=>({values:Object.fromEntries(Object.keys(ACTION_LABELS).map(key=>[key,Number(b.form.elements[key].value)])),reason:b.form.elements.reason.value})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
-  if(!answer)return;if(!isPrimaryGM()||combatActionState(actor)!==baseline)throw Error("Mestre, rodada ou ações mudou.");
+ const fields=Object.entries(ACTION_LABELS).map(([key,label])=>`<label>${label} disponíveis (máximo ${view.maxima[key]})<input name="${key}" type="number" min="0" max="${view.maxima[key]}" value="${view.remaining[key]}"></label>`).join("");
+ const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Ajustar reservas de ações"},content:`<p>Revisão do mestre para exceções/efeitos conferidos. Não concede virtudes nem aplica efeitos. Operações interrompidas devem ser encerradas após o reparo.</p>${fields}<label>Notas (opcional)<textarea name="reason"></textarea></label>`,buttons:[{action:"adjust",label:"Registrar ajuste",callback:(_e,b)=>({values:Object.fromEntries(Object.keys(ACTION_LABELS).map(key=>[key,Number(b.form.elements[key].value)])),reason:b.form.elements.reason.value})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
+ if(!answer)return;
+ return runMasterOperation(async()=>{
+  if(!isPrimaryGM()||combatActionState(actor)!==baseline)throw Error("Mestre, rodada ou ações mudou.");
   optionalNote(answer.reason);
   const spent={};for(const key of Object.keys(ACTION_LABELS)){const value=answer.values[key];if(!Number.isSafeInteger(value)||value<0||value>view.maxima[key])throw Error("Disponibilidade fora dos limites da ficha.");spent[key]=view.maxima[key]-value;}
   const id=foundry.utils.randomID(),after={actorUuid:actor.uuid,context:view.context,spent,last:id};

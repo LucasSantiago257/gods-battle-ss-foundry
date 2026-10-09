@@ -1,4 +1,4 @@
-# Próximos desafios — após 0.18.0
+# Próximos desafios — após 0.18.1
 
 Prioridade atual definida por Lucas: gameplay. Já existem fichas, catálogos para arrastar, criação/evolução assistidas, personagens de exercício, ataque/defesa, resistência, dano confirmado com desfazer, configuração/prévia de técnicas, composição personalizada e pagamento central compartilhado com dano/evolução. Isso permite exercitar o fluxo básico; não significa automação integral do livro ou validação do servidor.
 
@@ -26,3 +26,8 @@ A fila central cobre técnicas, dano e evolução desde0.13.0. Confirmar concorr
 
 Resistência mantém duas interpretações documentadas/configuráveis. Também pendem a Virtude Extra do Artista e detalhes de criação/companhia do Domador. Ambiguidades adicionais devem ser registradas com página e consequência; não inferir bônus, promoção ou requisitos ausentes. Efeitos manuais continuam acessíveis enquanto essas decisões aguardam.
 
+
+
+## Atrito da fila corrigido na 0.18.1
+
+Decisões humanas de condições/efeitos/Controle/ajustes/recuperação passam a ocorrer fora da fila. A gravação permanece serializada e revalidada. Corrige U01 do mapa de atritos da0.18.0; não muda a sequência de novas regras nem implementa todos os ajustes de UX sugeridos. Próximo marco mecânico continua novas resistências pagas de Controle/encerramento, com exceções do livro conferidas.

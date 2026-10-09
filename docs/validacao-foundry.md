@@ -202,3 +202,8 @@ Iniciativa/simultaneidade, alcance, movimento parcial/total, manobras e efeitos 
 - Duplo clique/dois mestres, cancelamento, mudança de rodada durante diálogo, cópia/token, combatente substituído, outra ficha e operação interrompida: nenhum registro duplicado ou custo extra.
 - Privado/cego/self e cartão antigo: sem vínculo automático; registro manual disponível. Não divulgar roll privado no Actor.
 - Nova resistência/pagamento, estados e regras excepcionais continuam manuais. Testar no core13.350 antes de confirmar compatibilidade.
+
+
+## Fila e decisões humanas — 0.18.1
+
+Com mestre e dois jogadores: manter aberta uma janela do mestre para condição/efeito/Controle/ajuste/recuperação; ativar técnica ou solicitar dano de outra ficha. O pagamento/publicação deve prosseguir antes de fechar a janela. Cancelar não muda recursos; confirmar revalida e grava uma vez. Alterar a ficha/rodada/origem ou trocar mestre enquanto a janela está aberta deve impedir a confirmação antiga. Testar duas confirmações sobre a mesma origem e falha antes/depois de gravação: preservar deduplicação e journals. Os formulários continuam os mesmos, sem nova declaração ou justificativa obrigatória.

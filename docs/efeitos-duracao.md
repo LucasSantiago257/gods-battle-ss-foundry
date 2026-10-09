@@ -41,3 +41,6 @@ Fonte: pp.225,227,233. Autor: Dhoko de Libra; licença/atribuição em [ATTRIBUT
 
 
 Na 0.18.0, Controle possui duração por classe ou parâmetro personalizado e vínculo da resistência pública à ficha alvo. Estados e novas resistências permanecem manuais. Veja [Controle](controle.md).
+
+
+Na 0.18.1, as janelas do mestre para condições, efeitos, Controle, ajustes e recuperações não ocupam a fila enquanto aguardam sua decisão. Outros pagamentos podem prosseguir; a confirmação entra na fila para revalidar os dados e gravar. Se os dados conferidos mudarem, reabra a operação com a situação atual. A gravação continua coordenada no cliente do mestre, sem bloqueio global do servidor.

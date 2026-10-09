@@ -31,12 +31,12 @@ export function effectDialogContext(actor) {
 }
 export async function registerEffect(actor) {
  available(actor);
+ const baseline=effectState(actor),context=effectDialogContext(actor);
+ const content=await foundry.applications.handlebars.renderTemplate(`systems/${SYSTEM_ID}/templates/effect-dialog.hbs`,context);
+ await guard(actor,baseline);
+ const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Registrar efeito com duração"},content,buttons:[{action:"save",label:"Conferir e registrar",callback:(_e,b)=>{const f=b.form.elements;return {kind:f.kind.value,sourceUuid:f.sourceUuid.value,label:f.label.value,page:f.page.value,rounds:Number(f.rounds.value),firstOffset:Number(f.firstOffset.value),reason:f.reason.value,description:f.description.value};}},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
+ if(!answer)return;
  return runMasterOperation(async()=>{
-  available(actor);const baseline=effectState(actor),context=effectDialogContext(actor);
-  const content=await foundry.applications.handlebars.renderTemplate(`systems/${SYSTEM_ID}/templates/effect-dialog.hbs`,context);
-  await guard(actor,baseline);
-  const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Registrar efeito com duração"},content,buttons:[{action:"save",label:"Conferir e registrar",callback:(_e,b)=>{const f=b.form.elements;return {kind:f.kind.value,sourceUuid:f.sourceUuid.value,label:f.label.value,page:f.page.value,rounds:Number(f.rounds.value),firstOffset:Number(f.firstOffset.value),reason:f.reason.value,description:f.description.value};}},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
-  if(!answer)return;
   let source=null,sourceItem=null,selected=null;
   if(answer.kind==="brasas") {
    selected=context.sources.find(s=>s.itemUuid===answer.sourceUuid);if(!selected)throw Error("Escolha uma técnica válida da lista.");
@@ -53,13 +53,14 @@ export async function registerEffect(actor) {
 }
 export async function resolveEffect(actor,key) {
  available(actor);safeKey(key);
+ const record=effectRecords(actor)[key];if(!record)throw Error("Efeito ausente.");
+ const view=effectView(actor,record);if(!view.canResolve)throw Error(view.state);
+ effectTickPlan(actor,record,{checked:true,reason:"Prévia sem aplicação"});
+ const baseline=effectState(actor),html=`<p>${escape(record.label)} · rodada ${view.nextRound} · ${record.damage} PV previstos. PV atuais: ${actor.system.resources.health.value}.</p>${view.overdue?"<p>Rodada atrasada: confirme o que aconteceu; nenhuma rodada foi cobrada automaticamente.</p>":""}<p>Aplicar afeta somente PV corporais. Anotações manuais apenas registram a passagem da rodada. Armadura, CE, ações e condições permanecem conferidas separadamente.</p><label>Dano corporal final, após ajustes conferidos<input type="number" name="damage" min="0" max="1000000" step="any" value="${record.damage}" ${record.kind==="manual"?"readonly":""}></label><label><input type="checkbox" name="skip">Registrar rodada sem dano/efeito (dispensa conferida)</label><label>Notas (opcional)<textarea name="reason" maxlength="2000"></textarea></label>`;
+ const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Resolver rodada do efeito"},content:html,buttons:[{action:"resolve",label:"Registrar esta rodada",callback:(_e,b)=>({skip:b.form.elements.skip.checked,damage:Number(b.form.elements.damage.value),reason:b.form.elements.reason.value})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
+ if(!answer)return;
  return runMasterOperation(async()=>{
-  available(actor);const record=effectRecords(actor)[key];if(!record)throw Error("Efeito ausente.");
-  const view=effectView(actor,record);if(!view.canResolve)throw Error(view.state);
-  effectTickPlan(actor,record,{checked:true,reason:"Prévia sem aplicação"});
-  const baseline=effectState(actor),html=`<p>${escape(record.label)} · rodada ${view.nextRound} · ${record.damage} PV previstos. PV atuais: ${actor.system.resources.health.value}.</p>${view.overdue?"<p>Rodada atrasada: confirme o que aconteceu; nenhuma rodada foi cobrada automaticamente.</p>":""}<p>Aplicar afeta somente PV corporais. Anotações manuais apenas registram a passagem da rodada. Armadura, CE, ações e condições permanecem conferidas separadamente.</p><label>Dano corporal final, após ajustes conferidos<input type="number" name="damage" min="0" max="1000000" step="any" value="${record.damage}" ${record.kind==="manual"?"readonly":""}></label><label><input type="checkbox" name="skip">Registrar rodada sem dano/efeito (dispensa conferida)</label><label>Notas (opcional)<textarea name="reason" maxlength="2000"></textarea></label>`;
-  const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Resolver rodada do efeito"},content:html,buttons:[{action:"resolve",label:"Registrar esta rodada",callback:(_e,b)=>({skip:b.form.elements.skip.checked,damage:Number(b.form.elements.damage.value),reason:b.form.elements.reason.value})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
-  if(!answer)return;await guard(actor,baseline);const plan=effectTickPlan(actor,record,answer),operationId=safeKey(foundry.utils.randomID());
+  await guard(actor,baseline);const plan=effectTickPlan(actor,record,answer),operationId=safeKey(foundry.utils.randomID());
   const tick={...plan.tick,operationId,userId:game.user.id,time:Date.now()};
   const afterRecord={...record,ticks:{...record.ticks,[`round${tick.round}`]:tick},status:plan.status};
   const operation={status:"prepared",actorUuid:actor.uuid,effectId:key,round:tick.round,before:effectSnapshot(actor,key),after:{health:plan.after,record:afterRecord},userId:game.user.id,time:Date.now()};
@@ -73,20 +74,22 @@ export async function resolveEffect(actor,key) {
 }
 export async function endEffect(actor,key) {
  available(actor);safeKey(key);
+ const record=effectRecords(actor)[key];if(!record||record.status!=="active")throw Error("Não há efeito ativo para encerrar.");const baseline=effectState(actor);
+ const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Encerrar efeito após revisão"},content:`<p>${escape(record.label)}. Encerrar conserva PV, CE, ações e condições manuais. Não desfaz dano nem resolve rodadas pendentes. Em cópia, encerra somente o registro local.</p><label>Notas (opcional)<textarea name="reason" maxlength="2000"></textarea></label>`,buttons:[{action:"end",label:"Encerrar",callback:(_e,b)=>b.form.elements.reason.value},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
+ if(answer===null||answer===undefined)return;
  return runMasterOperation(async()=>{
-  available(actor);const record=effectRecords(actor)[key];if(!record||record.status!=="active")throw Error("Não há efeito ativo para encerrar.");const baseline=effectState(actor);
-  const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Encerrar efeito após revisão"},content:`<p>${escape(record.label)}. Encerrar conserva PV, CE, ações e condições manuais. Não desfaz dano nem resolve rodadas pendentes. Em cópia, encerra somente o registro local.</p><label>Notas (opcional)<textarea name="reason" maxlength="2000"></textarea></label>`,buttons:[{action:"end",label:"Encerrar",callback:(_e,b)=>b.form.elements.reason.value},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
-  if(answer===null||answer===undefined)return;optionalNote(answer);await guard(actor,baseline);
+  optionalNote(answer);await guard(actor,baseline);
   await actor.update({[`flags.${SYSTEM_ID}.persistentEffects.${key}.status`]:"ended",[`flags.${SYSTEM_ID}.persistentEffects.${key}.end`]:{reason:optionalNote(answer),userId:game.user.id,time:Date.now()}});
  });
 }
 export async function recoverEffect(actor,key) {
  if(!isPrimaryGM())throw Error("Somente o mestre responsável pode recuperar efeitos.");safeKey(key);
- return runMasterOperation(async()=>{
   const operation=actor.flags?.[SYSTEM_ID]?.effectOperations?.[key];if(operation?.status!=="prepared")throw Error("Não há resolução interrompida.");
-  const baseline=effectState(actor);
-  const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Conferir efeito interrompido"},content:"<p>Conferir os registros anterior/posterior sem gastar ou restaurar PV? Valores divergentes ou registro de outra ficha exigem reparo manual antes de encerrar. Nenhuma rolagem ou rodada será repetida.</p><label>Notas (opcional)<textarea name=\"reason\" maxlength=\"2000\"></textarea></label>",buttons:[{action:"review",label:"Recuperar pelo registro",callback:(_e,b)=>({reason:b.form.elements.reason.value,repaired:false})},{action:"close",label:"Encerrar sem alterar PV",callback:(_e,b)=>({reason:b.form.elements.reason.value,repaired:true})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
-  if(!answer)return;optionalNote(answer.reason);
+ const baseline=effectState(actor);
+ const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Conferir efeito interrompido"},content:"<p>Conferir os registros anterior/posterior sem gastar ou restaurar PV? Valores divergentes ou registro de outra ficha exigem reparo manual antes de encerrar. Nenhuma rolagem ou rodada será repetida.</p><label>Notas (opcional)<textarea name=\"reason\" maxlength=\"2000\"></textarea></label>",buttons:[{action:"review",label:"Recuperar pelo registro",callback:(_e,b)=>({reason:b.form.elements.reason.value,repaired:false})},{action:"close",label:"Encerrar sem alterar PV",callback:(_e,b)=>({reason:b.form.elements.reason.value,repaired:true})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
+ if(!answer)return;
+ return runMasterOperation(async()=>{
+  optionalNote(answer.reason);
   if(!isPrimaryGM()||!actor.isOwner||effectState(actor)!==baseline)throw Error("Mestre, ficha ou registro mudou.");
   const current=effectSnapshot(actor,operation.effectId),own=operation.actorUuid===actor.uuid;
   const status=own&&actionHash(current)===actionHash(operation.after)?"applied":own&&actionHash(current)===actionHash(operation.before)?"failed":answer.repaired?"reviewed":null;

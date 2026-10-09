@@ -1,3 +1,5 @@
+import {holdDecisionOutsideQueue} from "./held-dialog.mjs";
+import {runMasterOperation} from "../module/master-queue.mjs";
 import test from "node:test";
 import assert from "node:assert/strict";
 import {readFile} from "node:fs/promises";
@@ -87,4 +89,11 @@ test("alterações após awaits da fonte ou do journal preparado impedem conclui
 });
 test("efeito e rodada aceitam notas vazias sem aceite e aplicam uma vez",async()=>{
  const f=fixture(),r=await f.create({reason:"",checked:false,firstOffset:0,rounds:2});f.answers.push({skip:false,damage:2.5});const tick=await resolveEffect(f.actor,r.id);assert.equal(tick.reason,"");assert.equal(f.actor.system.resources.health.value,97.5);await assert.rejects(resolveEffect(f.actor,r.id),/próxima/);f.answers.push("");await endEffect(f.actor,r.id);assert.equal(f.actor.system.resources.health.value,97.5);assert.equal(effectRecords(f.actor)[r.id].end.reason,"");
+});
+
+test("registro, rodada, encerramento e recuperação de efeito deixam fila livre no diálogo",async()=>{
+ const f=fixture();await holdDecisionOutsideQueue(()=>registerEffect(f.actor));const record=await f.create({kind:"manual",label:"Prazo de exercício",firstOffset:0});await holdDecisionOutsideQueue(()=>resolveEffect(f.actor,record.id));await holdDecisionOutsideQueue(()=>endEffect(f.actor,record.id));f.answers.push({});await resolveEffect(f.actor,record.id);const [id,op]=Object.entries(f.actor.flags[ID].effectOperations)[0];op.status="prepared";const before=structuredClone(f.actor.system);await holdDecisionOutsideQueue(()=>recoverEffect(f.actor,id));assert.deepEqual(f.actor.system,before);assert.equal(op.status,"prepared");
+});
+test("rodada confirmada depois de mudança na ficha não aplica dano antigo",async()=>{
+ const f=fixture(),record=await f.create({firstOffset:0});await assert.rejects(holdDecisionOutsideQueue(()=>resolveEffect(f.actor,record.id),{answer:{},during:async()=>{await runMasterOperation(()=>{f.actor.system.resources.health.value=77;});}}),/mudou/);assert.equal(f.actor.system.resources.health.value,77);assert.equal(Object.keys(effectRecords(f.actor)[record.id].ticks).length,0);
 });

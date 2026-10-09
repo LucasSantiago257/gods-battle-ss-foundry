@@ -34,14 +34,14 @@ export async function controlSource(message,actor) {
 }
 export async function registerControl(message) {
  if(!isPrimaryGM())throw Error("Somente o mestre responsável pode registrar Controle.");
- return runMasterOperation(async()=>{
   const actor=await fromUuid(flags(message).controlResolution?.actorUuid);available(actor);
-  const baseline=effectState(actor),source=await controlSource(message,actor);
-  if(effectState(actor)!==baseline)throw Error("A ficha mudou. Abra o registro novamente.");
-  const content=await foundry.applications.handlebars.renderTemplate(`systems/${SYSTEM_ID}/templates/control-dialog.hbs`,{name:source.attack.name,targetName:actor.name,classification:source.control.classification,rounds:source.control.rounds,baseRounds:source.control.baseRounds,doubleDuration:source.control.doubleDuration,startRound:source.start.round,currentRound:source.context.round,retryCost:source.control.retryCost});
-  const guard=async()=>{available(actor);const current=await controlSource(message,actor);if(effectState(actor)!==baseline||current.signature!==source.signature)throw Error("Ficha, origem, resistência ou rodada mudou. Abra o registro novamente.");available(actor);};await guard();
-  const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Registrar Controle no alvo"},content,buttons:[{action:"register",label:"Registrar duração",default:true,callback:(_e,b)=>({rounds:Number(b.form.elements.rounds.value),description:b.form.elements.description.value,reason:b.form.elements.reason.value})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
-  if(!answer)return;
+ const baseline=effectState(actor),source=await controlSource(message,actor);
+ if(effectState(actor)!==baseline)throw Error("A ficha mudou. Abra o registro novamente.");
+ const content=await foundry.applications.handlebars.renderTemplate(`systems/${SYSTEM_ID}/templates/control-dialog.hbs`,{name:source.attack.name,targetName:actor.name,classification:source.control.classification,rounds:source.control.rounds,baseRounds:source.control.baseRounds,doubleDuration:source.control.doubleDuration,startRound:source.start.round,currentRound:source.context.round,retryCost:source.control.retryCost});
+ const guard=async()=>{available(actor);const current=await controlSource(message,actor);if(effectState(actor)!==baseline||current.signature!==source.signature)throw Error("Ficha, origem, resistência ou rodada mudou. Abra o registro novamente.");available(actor);};await guard();
+ const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Registrar Controle no alvo"},content,buttons:[{action:"register",label:"Registrar duração",default:true,callback:(_e,b)=>({rounds:Number(b.form.elements.rounds.value),description:b.form.elements.description.value,reason:b.form.elements.reason.value})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
+ if(!answer)return;
+ return runMasterOperation(async()=>{
   if(!Number.isSafeInteger(answer.rounds)||answer.rounds<1||answer.rounds>1000)throw Error("Informe duração inteira de 1 a 1000 rodadas.");
   const description=optionalNote(answer.description),reason=optionalNote(answer.reason);await guard();
   const id=foundry.utils.randomID();if(!/^[a-zA-Z0-9]{1,32}$/.test(id))throw Error("Identificador de efeito inválido.");

@@ -1,3 +1,4 @@
+import {actionHash} from "./action-rules.mjs";
 import {optionalNote} from "./form-values.mjs";
 import {SYSTEM_ID} from "./config.mjs";
 import {damageSnapshot,snapshotMatches,canReadChat} from "./combat-rules.mjs";
@@ -99,14 +100,18 @@ export async function resumeDamageRequests() {
   for(const message of game.messages.contents) if(message.flags?.[SYSTEM_ID]?.damageRequest && !message.flags?.[SYSTEM_ID]?.damageResponse) await enqueueDamageRequest(message,{},message.author?.id??message.user?.id);
 }
 export async function recoverDamageOperation(actor,key) {
-  if(!game.user.isGM || primaryGM()?.id!==game.user.id)throw Error('A recuperação deve ser feita pelo mestre responsável pelas aplicações.');
-  return runMasterOperation(async()=>{
+ if(!game.user.isGM || primaryGM()?.id!==game.user.id)throw Error('A recuperação deve ser feita pelo mestre responsável pelas aplicações.');
+ assertNoTechniqueInterruption(actor);
+   const r=actor.flags?.[SYSTEM_ID]?.damageOperations?.[key];
+   if(!r || !['prepared','repair'].includes(r.status))throw Error('Não há operação interrompida para recuperar.');
+   const from=r.direction==='undo'?'after':'before',to=r.direction==='undo'?'before':'after',armor=r.armorId?actor.items.get(r.armorId):null;
+   if(r.armorId&&!armor)throw Error('Armadura do registro não está na ficha.');
+   const recoveryState=()=>actionHash({uuid:actor.uuid,system:actor.system,record:actor.flags?.[SYSTEM_ID]?.damageOperations?.[key],armorUuid:actor.items.get(r.armorId)?.uuid,armor:actor.items.get(r.armorId)?.system});
+   const baseline=recoveryState();
+   if(!await foundry.applications.api.DialogV2.confirm({window:{title:'Conferir operação interrompida'},content:'<p>Recuperar somente se os valores atuais coincidirem com o registro? Se houver alterações posteriores, ajuste os recursos manualmente antes de liberar a operação.</p>'}))return;
+ return runMasterOperation(async()=>{
+    if(!game.user.isGM||primaryGM()?.id!==game.user.id||recoveryState()!==baseline)throw Error("Mestre, ficha ou registro mudou. Abra a recuperação novamente.");
     assertNoTechniqueInterruption(actor);
-    const r=actor.flags?.[SYSTEM_ID]?.damageOperations?.[key];
-    if(!r || !['prepared','repair'].includes(r.status))throw Error('Não há operação interrompida para recuperar.');
-    const from=r.direction==='undo'?'after':'before',to=r.direction==='undo'?'before':'after',armor=r.armorId?actor.items.get(r.armorId):null;
-    if(r.armorId&&!armor)throw Error('Armadura do registro não está na ficha.');
-    if(!await foundry.applications.api.DialogV2.confirm({window:{title:'Conferir operação interrompida'},content:'<p>Recuperar somente se os valores atuais coincidirem com o registro? Se houver alterações posteriores, ajuste os recursos manualmente antes de liberar a operação.</p>'}))return;
     if(snapshotMatches(actor,r,to)) {
       await actor.update({[`flags.${SYSTEM_ID}.damageOperations.${key}.status`]:r.direction==='undo'?'undone':'applied',[`flags.${SYSTEM_ID}.damageLast`]:r.direction==='undo'?r.previousKey:key});return;
     }

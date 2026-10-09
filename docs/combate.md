@@ -19,3 +19,6 @@ Pagamento/rolagem de técnicas agora compartilha a fila do mestre ativo com dano
 ## Ações por rodada 0.14.0
 
 Controle habilitado por encontro em Combate → Ativar controle de ações. Ataque/defesa escolhem quantidade disponível e gastam pela fila do mestre; técnicas escolhem reserva inteira de ataque ou defesa, paga junto com CE/PV. Trocar a vez não repõe; trocar a rodada abre reservas novas sem mudar recursos. Movimento/Reação têm registro separado. O histórico permite recuperar o mesmo resultado e o mestre pode ajustar com notas opcionais. Ver acoes.md para convenção de turno coletivo, interrupções, tokens e limites.
+
+
+Na 0.18.1, as janelas do mestre para condições, efeitos, Controle, ajustes e recuperações não ocupam a fila enquanto aguardam sua decisão. Outros pagamentos podem prosseguir; a confirmação entra na fila para revalidar os dados e gravar. Se os dados conferidos mudarem, reabra a operação com a situação atual. A gravação continua coordenada no cliente do mestre, sem bloqueio global do servidor.

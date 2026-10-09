@@ -41,3 +41,6 @@ O mestre responsável processa ações na mesma fila de técnicas, dano e evolu�
 Não há desfazer genérico do uso de ações. Fila do cliente mestre não equivale a bloqueio global do servidor: edições diretas, macros e testes genéricos continuam fora da coordenação. Mudanças conhecidas durante a prévia/rolagem são conferidas antes do gasto. Validação real no Foundry13.350, com dois clientes e tokens vinculados/não vinculados, continua pendente.
 
 Fontes: livro V49.1.1, pp.200,403–408,415–416,419,422. Autor: Dhoko de Libra; atribuição/licença em [ATTRIBUTION.md](../ATTRIBUTION.md). A correspondência entre turno coletivo e rodada é a convenção explícita da integração; não exige aguardar a vez para defender/reagir. APIs: [Combat](https://foundryvtt.com/api/v13/classes/foundry.documents.Combat.html), [preUpdateDocument](https://foundryvtt.com/api/v13/functions/hookEvents.preUpdateDocument.html). Ver [roteiro de validação](validacao-foundry.md).
+
+
+Na 0.18.1, as janelas do mestre para condições, efeitos, Controle, ajustes e recuperações não ocupam a fila enquanto aguardam sua decisão. Outros pagamentos podem prosseguir; a confirmação entra na fila para revalidar os dados e gravar. Se os dados conferidos mudarem, reabra a operação com a situação atual. A gravação continua coordenada no cliente do mestre, sem bloqueio global do servidor.

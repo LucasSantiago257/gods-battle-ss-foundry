@@ -1,3 +1,5 @@
+import {holdDecisionOutsideQueue} from "./held-dialog.mjs";
+import {runMasterOperation} from "../module/master-queue.mjs";
 import test from "node:test";
 import assert from "node:assert/strict";
 import {knight} from "./foundry-stub.mjs";
@@ -78,4 +80,9 @@ test("fila e resposta perdida após gravação impedem duplicação",async()=>{
 test("edição posterior da técnica não reescreve duração histórica",async()=>{const f=fixture();f.caster.items={contents:[]};const source=await controlSource(f.resistance,f.actor);assert.equal(source.control.rounds,3);const record=await f.create();assert.equal(record.controlOrigin.itemUuid,f.attack.itemUuid);});
 test("botão de registro é oculto em cartões privados e para jogadores",()=>{
  for(const change of [f=>game.user=f.player,f=>f.root.whisper=["gm"],f=>f.resistance.blind=true]){const f=fixture();change(f);let removed=false;renderControlChat(f.resistance,{querySelector:()=>({remove(){removed=true;},addEventListener(){throw Error("Não pode registrar");}})});assert.equal(removed,true);}
+});
+
+test("registro de Controle deixa fila livre e recusa origem alterada enquanto aberto",async()=>{
+ const f=fixture();await holdDecisionOutsideQueue(()=>registerControl(f.resistance),{during:()=>assert.equal(f.actor.updates.length,0)});assert.equal(f.actor.updates.length,0);
+ await assert.rejects(holdDecisionOutsideQueue(()=>registerControl(f.resistance),{answer:{rounds:3},during:async()=>{await runMasterOperation(()=>{f.resistance.flags[ID].difficulty=21;});}}),/inválido|alterado/);assert.equal(f.actor.updates.length,0);
 });
