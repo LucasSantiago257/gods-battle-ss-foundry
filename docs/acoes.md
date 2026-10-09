@@ -27,7 +27,7 @@ Movimento é um registro da declaração, não uma medição da cena ou aplicaç
 
 ## Ajustes e interrupções
 
-**Ajustar reservas · mestre** permite informar disponibilidade de cada reserva entre zero e o máximo da ficha, com justificativa. Registra antes/depois sem mudar os máximos ou conceder poderes. Para bônus que aumentam o máximo, ajuste os campos correspondentes da ficha após conferir a regra; gasto já realizado permanece. Para uma exceção de técnica entre ações, o mestre deve conferir a virtude e registrar o ajuste da reserva escolhida antes da nova confirmação.
+**Ajustar reservas · mestre** permite informar disponibilidade de cada reserva entre zero e o máximo da ficha, com notas opcionais. Registra antes/depois sem mudar os máximos ou conceder poderes. Para bônus que aumentam o máximo, ajuste os campos correspondentes da ficha após conferir a regra; gasto já realizado permanece. Para uma exceção de técnica entre ações, o mestre deve conferir a virtude e registrar o ajuste da reserva escolhida antes da nova confirmação.
 
 O mestre responsável processa ações na mesma fila de técnicas, dano e evolução. Solicitações desatualizadas, repetidas ou feitas sem propriedade são recusadas. Fichas vinculadas com mais de um combatente no mesmo encontro, ou participantes de dois encontros habilitados, exigem resolver a ambiguidade; tokens/fichas independentes têm reservas próprias. Copiar uma ficha não transfere seu gasto para a identidade nova.
 
@@ -35,7 +35,7 @@ O mestre responsável processa ações na mesma fila de técnicas, dano e evolu�
 
 - Ação paga com falha de publicação: **Conferir gasto / recuperar cartão** republica o mesmo resultado, sem consumir ou rolar novamente, mesmo após mudanças posteriores nas reservas.
 - Ação preparada/interrompida: bloqueia novas ações, técnicas e alterações automatizadas de dano/evolução até conferência. Se o estado coincide com o anterior, encerra sem gasto; se coincide com o posterior completo, reconhece o gasto e recupera o cartão.
-- Reservas divergentes/cartão removido ou alterado: faça o reparo necessário e **Encerrar após revisão manual**, com confirmação e justificativa. Essa revisão conserva as reservas atuais e não cria resultado. O ajuste do mestre permanece disponível para o reparo.
+- Reservas divergentes/cartão removido ou alterado: faça o reparo necessário e **Encerrar após revisão manual**, sem declaração ou justificativa obrigatória. Essa revisão conserva as reservas atuais e não cria resultado. O ajuste do mestre permanece disponível para o reparo.
 - Registro interrompido copiado: recuperar recusa modificar a solicitação original. Revise e encerre somente o registro da cópia.
 
 Não há desfazer genérico do uso de ações. Fila do cliente mestre não equivale a bloqueio global do servidor: edições diretas, macros e testes genéricos continuam fora da coordenação. Mudanças conhecidas durante a prévia/rolagem são conferidas antes do gasto. Validação real no Foundry13.350, com dois clientes e tokens vinculados/não vinculados, continua pendente.

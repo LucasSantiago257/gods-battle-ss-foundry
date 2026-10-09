@@ -1,3 +1,4 @@
+import {optionalNote} from "./form-values.mjs";
 import {SYSTEM_ID,FIGHTING} from "./config.mjs";
 import {actionHash,actionContext,actionView,actionPlan,rawActionUsage,actionSignature,ACTION_LABELS} from "./action-rules.mjs";
 import {primaryGM,isPrimaryGM,runMasterOperation,assertNoTechniqueInterruption} from "./master-queue.mjs";
@@ -70,7 +71,7 @@ export async function executeActionRequest(message,userId) {
    dice=actor.system.fighting[options.fighting];pool="attack";label=`${FIGHTING[options.fighting]} contra ${target.name}`;
   }else if(options.kind==="defend"){
    ({root,fight}=await rootAttack(options,user,actor));dice=actor.system.fighting.defense;pool="defense";label=actor.name;
-  }else{pool=options.pool;label=ACTION_LABELS[pool];if(!["movement","reaction"].includes(pool)||typeof options.reason!=="string"||!options.reason.trim()||options.reason.length>2000)throw Error("Registre o uso de Movimento/Reação e uma descrição de até2000 caracteres.");}
+  }else{pool=options.pool;label=ACTION_LABELS[pool];if(!["movement","reaction"].includes(pool)||(options.reason!==undefined&&typeof options.reason!=="string")||(options.reason?.length??0)>2000)throw Error("Uso de Movimento/Reação ou descrição inválida.");}
   if(dice!==undefined&&(!Number.isInteger(dice)||dice<1||dice>5))throw Error("Configure graduação de luta entre1 e5.");
   guard(message,request,user,actor,signature);
   const plan=actionPlan(actor,pool,options.amount,{operationId:message.id});
@@ -127,10 +128,10 @@ export async function reviewAction(actor,key) {
  return runMasterOperation(async()=>{
   const r=f(actor).actionOperations?.[key],baseline=actionHash(r);if(!r||!['prepared','paid'].includes(r.status)||r.published)throw Error("Não há ação interrompida para revisar.");
   const message=r.actorUuid===actor.uuid?game.messages.get(r.requestId):null;if(f(message).actionResponse?.status==="published")throw Error("A ação já foi publicada.");
-  const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Encerrar ação após revisão manual"},content:"<p>Confira o gasto e faça o ajuste necessário. Encerrar conserva todas as reservas atuais e não cria resultado.</p><label>Justificativa<textarea name=\"reason\"></textarea></label><label><input type=\"checkbox\" name=\"checked\">Conferi e reparei as ações.</label>",buttons:[{action:"review",label:"Registrar revisão",callback:(_e,b)=>({reason:b.form.elements.reason.value,checked:b.form.elements.checked.checked})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
-  if(!answer)return;if(!answer.checked||typeof answer.reason!=="string"||!answer.reason.trim()||answer.reason.length>2000)throw Error("Confirme a revisão e uma justificativa de até2000 caracteres.");
+  const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Encerrar ação após revisão manual"},content:"<p>Confira o gasto e faça o ajuste necessário. Encerrar conserva todas as reservas atuais e não cria resultado.</p><label>Notas (opcional)<textarea name=\"reason\"></textarea></label>",buttons:[{action:"review",label:"Registrar revisão",callback:(_e,b)=>({reason:b.form.elements.reason.value})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
+  if(!answer)return;optionalNote(answer.reason);
   if(!isPrimaryGM()||actionHash(f(actor).actionOperations?.[key])!==baseline)throw Error("Mestre ou registro mudou.");
-  await actor.update({[`flags.${SYSTEM_ID}.actionOperations.${key}.status`]:"reviewed",[`flags.${SYSTEM_ID}.actionOperations.${key}.review`]:{reason:answer.reason.trim(),userId:game.user.id,time:Date.now()}});
+  await actor.update({[`flags.${SYSTEM_ID}.actionOperations.${key}.status`]:"reviewed",[`flags.${SYSTEM_ID}.actionOperations.${key}.review`]:{reason:optionalNote(answer.reason),userId:game.user.id,time:Date.now()}});
   if(message)await message.update({[`flags.${SYSTEM_ID}.-=actionRequest`]:null,[`flags.${SYSTEM_ID}.-=actionPrepared`]:null,[`flags.${SYSTEM_ID}.actionResponse`]:{status:"reviewed",text:"Ação encerrada após revisão manual."},content:"<p>Ação encerrada após revisão manual; reservas preservadas.</p>"});
  });
 }
@@ -148,7 +149,7 @@ export async function consumeAction(actor,pool) {
  const view=actionView(actor),baseline=combatActionState(actor);if(!view.enabled)throw Error("Ative o controle de ações no encontro iniciado.");
  if(!["movement","reaction"].includes(pool))throw Error("Reserva inválida.");
  if(view.remaining[pool]<1)throw Error(`Nenhuma ação de ${ACTION_LABELS[pool]} disponível nesta rodada.`);
- const reason=await foundry.applications.api.DialogV2.wait({window:{title:`Usar ${ACTION_LABELS[pool]}`},content:`<p>Disponível: ${view.remaining[pool]}. Registra uma ação; efeito, deslocamento e CE são conferidos separadamente.</p><label>Descrição do uso<textarea name="reason"></textarea></label>`,buttons:[{action:"use",label:"Confirmar uso",callback:(_e,b)=>b.form.elements.reason.value},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});if(reason===null)return;
+ const reason=await foundry.applications.api.DialogV2.wait({window:{title:`Usar ${ACTION_LABELS[pool]}`},content:`<p>Disponível: ${view.remaining[pool]}. Registra uma ação; efeito, deslocamento e CE são conferidos separadamente.</p><label>Descrição (opcional)<textarea name="reason"></textarea></label>`,buttons:[{action:"use",label:"Confirmar uso",callback:(_e,b)=>b.form.elements.reason.value},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});if(reason===null)return;
  return submitCombatAction(actor,{kind:"consume",pool,amount:1,reason},baseline);
 }
 export async function adjustActions(actor) {
@@ -156,12 +157,12 @@ export async function adjustActions(actor) {
  return runMasterOperation(async()=>{
   const view=actionView(actor),baseline=combatActionState(actor);if(!view.enabled)throw Error("Controle de ações não está ativo.");
   const fields=Object.entries(ACTION_LABELS).map(([key,label])=>`<label>${label} disponíveis (máximo ${view.maxima[key]})<input name="${key}" type="number" min="0" max="${view.maxima[key]}" value="${view.remaining[key]}"></label>`).join("");
-  const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Ajustar reservas de ações"},content:`<p>Revisão do mestre para exceções/efeitos conferidos. Não concede virtudes nem aplica efeitos. Operações interrompidas devem ser encerradas após o reparo.</p>${fields}<label>Justificativa<textarea name="reason"></textarea></label>`,buttons:[{action:"adjust",label:"Registrar ajuste",callback:(_e,b)=>({values:Object.fromEntries(Object.keys(ACTION_LABELS).map(key=>[key,Number(b.form.elements[key].value)])),reason:b.form.elements.reason.value})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
+  const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Ajustar reservas de ações"},content:`<p>Revisão do mestre para exceções/efeitos conferidos. Não concede virtudes nem aplica efeitos. Operações interrompidas devem ser encerradas após o reparo.</p>${fields}<label>Notas (opcional)<textarea name="reason"></textarea></label>`,buttons:[{action:"adjust",label:"Registrar ajuste",callback:(_e,b)=>({values:Object.fromEntries(Object.keys(ACTION_LABELS).map(key=>[key,Number(b.form.elements[key].value)])),reason:b.form.elements.reason.value})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
   if(!answer)return;if(!isPrimaryGM()||combatActionState(actor)!==baseline)throw Error("Mestre, rodada ou ações mudou.");
-  if(typeof answer.reason!=="string"||!answer.reason.trim()||answer.reason.length>2000)throw Error("Justifique o ajuste em até2000 caracteres.");
+  optionalNote(answer.reason);
   const spent={};for(const key of Object.keys(ACTION_LABELS)){const value=answer.values[key];if(!Number.isSafeInteger(value)||value<0||value>view.maxima[key])throw Error("Disponibilidade fora dos limites da ficha.");spent[key]=view.maxima[key]-value;}
   const id=foundry.utils.randomID(),after={actorUuid:actor.uuid,context:view.context,spent,last:id};
-  await actor.update({[`flags.${SYSTEM_ID}.actionUsage`]:after,[`flags.${SYSTEM_ID}.actionAdjustments.${id}`]:{before:rawActionUsage(actor),after,reason:answer.reason.trim(),userId:game.user.id,time:Date.now()}});
+  await actor.update({[`flags.${SYSTEM_ID}.actionUsage`]:after,[`flags.${SYSTEM_ID}.actionAdjustments.${id}`]:{before:rawActionUsage(actor),after,reason:optionalNote(answer.reason),userId:game.user.id,time:Date.now()}});
  });
 }
 export function actionSheetContext(actor) {

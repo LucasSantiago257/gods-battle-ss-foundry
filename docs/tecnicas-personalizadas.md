@@ -5,8 +5,8 @@ Na ficha do cavaleiro, abra **Técnicas → Adicionar**. A nova cópia abre o co
 1. Informe nome, classe (Bronze/Prata/Ouro), natureza e Big Bang primordial: Dano, Controle, Sustentada ou Cosmo Residual.
 2. Escolha ND/Poder pelo status do usuário ou valores manuais. Classe da técnica, status do cavaleiro e classe da armadura são parâmetros distintos. O modo automático não promove o cavaleiro e não presume tabelas para status Divino/Deus.
 3. Use **Adicionar Big Bang / incremento** para selecionar os componentes do compêndio. A referência abre para leitura; a composição conserva UUID, regras, requisitos, página, atribuição, graduação e a escolha anotada. Escolher aqui não acrescenta uma virtude ao personagem.
-4. Confira os slots, CE, dificuldade e prévia de dano. Alcance 0 e duração vazia usam os padrões da classe/primordial. CE fixa extra registra custos especiais conferidos; slots além da classe exigem conferência e justificativa.
-5. Revise requisitos, mestre/armadura que ensina e desenvolvimento. Resolva as pendências ou registre exceções aprovadas na campanha com justificativa. Marque a revisão e clique em **Concluir composição**; a confirmação grava os parâmetros e o histórico na própria cópia.
+4. Confira os slots, CE, dificuldade e prévia de dano. Alcance 0 e duração vazia usam os padrões da classe/primordial. CE fixa extra registra custos especiais conferidos; slots além da classe aparecem nas informações da composição.
+5. Revise requisitos, mestre/armadura que ensina e desenvolvimento. As pendências são informativas e as notas opcionais. Clique em **Concluir composição**; a confirmação grava os parâmetros e o histórico na própria cópia.
 
 O rascunho salva ao editar. Pode fechar/reabrir a ficha; uma nova tentativa de adicionar técnica retoma o rascunho existente. Durante a composição, a ativação fica bloqueada. **Descartar rascunho** conserva a técnica e seus parâmetros anteriores; uma técnica nova permanece manual até ser configurada. Concluir conserva PV/CE atuais, armadura, notas, origem e ID do Item. Cancelar a confirmação não altera parâmetros. Mudanças na ficha/composição durante a confirmação exigem nova conferência.
 

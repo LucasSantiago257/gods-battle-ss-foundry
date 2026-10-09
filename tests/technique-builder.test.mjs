@@ -27,14 +27,14 @@ test("classe determina slots/custo/alcance; status do usuário determina dano",(
  const manual=composeTechnique(s,draft({techniqueMode:"manual"}));assert.equal(manual.preview.normal.damage,718);assert.equal(manual.technique.power,77);
  s.profile.status="divine";assert.throws(()=>composeTechnique(s,draft()),/status exige/);
 });
-test("requisitos, slots, tipos e revisão exigem conferência ou exceção justificada",()=>{
+test("requisitos e capacidade são informativos, sem declarações de revisão",()=>{
  const s=system();s.profile.level=1;s.skills.training.value=0;
- assert.equal(composeTechnique(s,draft()).canApply,false);
+ assert.equal(composeTechnique(s,draft()).canApply,true);
  const e=entries(...catalog.filter(d=>d.flags[ID].source.key.startsWith("bigbang:extra:")).slice(0,3).map(d=>d.flags[ID].source.key));
- const p=composeTechnique(system(),draft({classification:"bronze"}),e);assert.equal(p.canApply,false);assert.match(p.warnings.join(" "),/3\/2/);
+ const p=composeTechnique(system(),draft({classification:"bronze"}),e);assert.equal(p.canApply,true);assert.match(p.warnings.join(" "),/3\/2/);
  assert.equal(composeTechnique(system(),draft({classification:"bronze",allowExceptions:true,reason:"Técnica secreta aprovada"}),e).canApply,true);
- assert.equal(composeTechnique(system(),draft({reviewed:false,allowExceptions:true,reason:"Exceção"})).canApply,false);
- const inc=entries(...catalog.filter(d=>d.type==="increment").slice(0,4).map(d=>d.flags[ID].source.key));assert.equal(composeTechnique(system(),draft(),inc).canApply,false);
+ assert.equal(composeTechnique(system(),draft({reviewed:false,allowExceptions:true,reason:"Exceção"})).canApply,true);
+ const inc=entries(...catalog.filter(d=>d.type==="increment").slice(0,4).map(d=>d.flags[ID].source.key));assert.equal(composeTechnique(system(),draft(),inc).canApply,true);
  assert.match(composeTechnique(system(),draft({incrementReviewed:false}),inc).warnings.join(" "),/Mestre/);
  assert.match(composeTechnique(system(),draft(),[],99).warnings.join(" "),/Quantidade/);
 });
@@ -61,7 +61,7 @@ function runtime(){
 async function ready(r){await beginTechniqueBuilder(r.item);Object.assign(r.item.flags[ID].techniqueDraft,draft());return r.item.flags[ID].techniqueDraft;}
 test("rascunho salva/retoma sem alterar parâmetros e impede ativação",async()=>{
  const r=runtime(),before=structuredClone(r.item.system);await beginTechniqueBuilder(r.item);await beginTechniqueBuilder(r.item);assert.equal(r.updates.length,1);assert.deepEqual(r.item.system,before);assert.match(techniqueReadiness(r.item),/rascunho/);
- const c=await techniqueBuilderContext(r.item);assert.ok(c.fields.some(f=>f.name.endsWith(".primary")));assert.ok(c.preview);assert.equal(c.canApply,false);
+ const c=await techniqueBuilderContext(r.item);assert.ok(c.fields.some(f=>f.name.endsWith(".primary")));assert.ok(c.preview);assert.equal(c.canApply,true);
 });
 test("conclusão é uma gravação atômica da cópia; conserva recursos, IDs, notas/origem e histórico",async()=>{
  const r=runtime(),d=await ready(r),before=structuredClone(r.actor.system),id=r.item.id;d.components={component0000001:{uuid:componentUuid("02cba36e32fda2f8"),rank:1,detail:"Escolha narrativa"}};

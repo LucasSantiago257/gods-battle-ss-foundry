@@ -1,3 +1,4 @@
+import {optionalNote} from "./form-values.mjs";
 import {SYSTEM_ID} from "./config.mjs";
 import {damageSnapshot,snapshotMatches,canReadChat} from "./combat-rules.mjs";
 import {defendAttack} from "./combat.mjs";
@@ -19,10 +20,10 @@ export async function requestDamage(message,action="apply") {
     const snapshot=damageSnapshot(actor,r.body,r.armor,r.armorId);
     let override=null;
     if(action==="apply") {
-      const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Conferir aplicação de dano"},content:`<p>PV corporais: ${snapshot.before.health}; PV da armadura: ${snapshot.before.armor??"sem dano à armadura"}.</p><label>Dano corporal<input name="body" type="number" step="any" min="0" value="${r.body}"></label><label>Dano à armadura<input name="armor" type="number" step="any" min="0" value="${r.armor}"></label><label>Motivo de ajuste, se houver<input name="reason" type="text"></label>`,buttons:[{action:"apply",label:"Confirmar aplicação",default:true,callback:(_e,b)=>({body:Number(b.form.elements.body.value),armor:Number(b.form.elements.armor.value),reason:b.form.elements.reason.value})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
+      const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Conferir aplicação de dano"},content:`<p>PV corporais: ${snapshot.before.health}; PV da armadura: ${snapshot.before.armor??"sem dano à armadura"}.</p><label>Dano corporal<input name="body" type="number" step="any" min="0" value="${r.body}"></label><label>Dano à armadura<input name="armor" type="number" step="any" min="0" value="${r.armor}"></label><label>Notas (opcional)<input name="reason" type="text"></label>`,buttons:[{action:"apply",label:"Confirmar aplicação",default:true,callback:(_e,b)=>({body:Number(b.form.elements.body.value),armor:Number(b.form.elements.armor.value),reason:b.form.elements.reason.value})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
       if (!answer) return;
       damageSnapshot(actor,answer.body,answer.armor,r.armorId);
-      if(answer.body!==r.body || answer.armor!==r.armor) {if(!answer.reason.trim())throw Error("Informe o motivo do ajuste.");override=answer;}
+      if(answer.body!==r.body || answer.armor!==r.armor) {optionalNote(answer.reason);override=answer;}
     } else if(!await foundry.applications.api.DialogV2.confirm({window:{title:"Desfazer aplicação"},content:"<p>Restaurar os valores anteriores? Alterações posteriores impedem o desfazer.</p>"})) return;
     return await ChatMessage.create({content:"<p>Solicitação de dano enviada ao mestre. Aguarde a confirmação no registro.</p>",whisper:[...new Set([game.user.id,gm.id])],flags:{[SYSTEM_ID]:{damageRequest:{messageId:message.id,action,expected:snapshot.before,override}}}});
   } finally {localBusy.delete(message.id);}
@@ -53,7 +54,7 @@ export async function executeDamageRequest(message,userId) {
     } else {
       if(previous?.status==="applied") throw Error("Este ataque já teve dano aplicado a este defensor.");
       const values=request.override??{body:r.body,armor:r.armor};
-      if(request.override && (!request.override.reason?.trim() || request.override.reason.length>2000)) throw Error("Ajuste sem justificativa válida.");
+      if(request.override)optionalNote(request.override.reason);
       const snapshot=damageSnapshot(actor,values.body,values.armor,r.armorId);
       if(JSON.stringify(snapshot.before)!==JSON.stringify(request.expected)) throw Error("Os recursos mudaram desde a confirmação. Confira novamente.");
       record={...snapshot,status:"prepared",direction:"apply",requestId:message.id,userId,reason:request.override?.reason??"",previousKey:actor.flags?.[SYSTEM_ID]?.damageLast??null,time:Date.now()};

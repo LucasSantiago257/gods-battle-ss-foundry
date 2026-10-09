@@ -54,8 +54,8 @@ export async function finishCreation(actor) {
  busy.add(actor);
  try {
   const review=creationReview(actor.system,actor.items.contents,actor.name);
-  if(!review.canFinish)return ui.notifications.warn('Confira as pendências ou registre uma exceção antes de concluir.');
-  if(!await foundry.applications.api.DialogV2.confirm({window:{title:'Concluir criação'},content:`<p>Concluir a revisão? ${review.warnings.length} pendência(s) ${review.warnings.length?'registrada(s) como exceção.':''}</p><p>${actor.system.creationGuide.initializeResources?'PV e CE atuais serão preenchidos até seus máximos.':'Os recursos atuais serão preservados.'} Nenhum item será reimportado.</p>`}))return;
+  if(!review.canFinish)return ui.notifications.warn('Não foi possível concluir a criação.');
+  if(!await foundry.applications.api.DialogV2.confirm({window:{title:'Concluir criação'},content:`<p>Concluir criação? ${review.warnings.length} pendência(s) na ficha.</p><p>${actor.system.creationGuide.initializeResources?'PV e CE atuais serão preenchidos até seus máximos.':'Os recursos atuais serão preservados.'} Nenhum item será reimportado.</p>`}))return;
   const current=creationReview(actor.system,actor.items.contents,actor.name);if(!current.canFinish)throw Error('A ficha mudou durante a revisão. Confira novamente.');
   const updates={'system.creationGuide.status':'complete',[`flags.${SYSTEM_ID}.creationReview`]:{time:Date.now(),userId:game.user.id,warnings:current.warnings,reason:actor.system.creationGuide.exceptionReason}};
   if(actor.system.creationGuide.initializeResources)Object.assign(updates,{'system.resources.health.value':actor.system.resources.health.max,'system.resources.cosmo.value':actor.system.resources.cosmo.max});

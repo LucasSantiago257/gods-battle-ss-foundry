@@ -93,17 +93,15 @@ export function planLevel(system,items,draft,selected={},resistanceMode="rank",c
  if(m.to%10===0)manual.push("Conferir Determinação/Orgulho, Poder Cósmico e eventual troca de virtude; não alterados automaticamente (pp.55,161).");
  if(m.technique)manual.push("A técnica importada precisa de configuração/revisão na cópia antes de ativar (pp.198–202). Nível não promove status ou armadura (p.508).");
  if(system.profile.style==="beastmaster")manual.push("Conferir evolução sincronizada da besta; a ficha do companheiro não é alterada (p.117).");
- if(system.progression.xp<m.xp)warnings.push(`Experiência ${system.progression.xp}; tabela pede ${m.xp} para nível ${m.to} (p.507). Avanço por decisão do mestre exige justificativa.`);
+ if(system.progression.xp<m.xp)warnings.push(`Experiência ${system.progression.xp}; tabela pede ${m.xp} para nível ${m.to} (p.507). Avanço disponível por decisão da campanha.`);
  if(m.to>=11&&system.profile.status==="bronze"&&m.powerKind==="ability")warnings.push("Ainda Bronze: conferir restrição de treinamento das habilidades sem mudança de status e exceções da p.509.");
  if(m.route==="aesir"&&system.profile.style!=="asgardian")warnings.push("Aesir segue treinamento Asgardiano até nível 20 (p.550). Conferir exceção.");
  if(system.profile.level>20&&(system.progression.epicActions??0)!==system.profile.level-20)warnings.push("Níveis anteriores acima de 20 foram registrados fora do assistente; conferir ajustes prévios de ações/CE. Não há concessão retroativa.");
- if(Object.values(selected).some(Boolean)&&!draft.reviewedContent)warnings.push("Confirme leitura dos requisitos e escolhas dos itens selecionados.");
- if(manual.length&&!draft.reviewedManual)warnings.push("Confirme a revisão dos ganhos que exigem aplicação manual.");
  prepareKnight(next,previewItems,resistanceMode,conditionContext);
  for(const[key,skill]of Object.entries(next.skills))if((draft.skills?.[key]??0)>0&&skill.value>effectiveAttribute(next,skill.attribute))warnings.push(`${SKILLS[key].label} supera o atributo associado; confira exceção.`);
  const unique=[...new Set(warnings)];
  return {milestones:m,updates,grants,rankUpdates,projected:next,warnings:unique,manual,attributeSpent,skillSpent,fightSpent,
-  canApply:!unique.length||!!(draft.acceptExceptions&&draft.reason?.trim()),summary:[
+  canApply:true,summary:[
    {label:"Nível",before:system.profile.level,after:next.profile.level},{label:"PV máximos",before:system.resources.health.max,after:next.resources.health.max},{label:"CE máxima",before:system.resources.cosmo.max,after:next.resources.cosmo.max},
    {label:"Ações de ataque",before:system.combat.attack,after:next.combat.attack},{label:"Ações de defesa",before:system.combat.defense,after:next.combat.defense},{label:"Modificador de nível",before:system.combat.levelModifier,after:next.combat.levelModifier},
    {label:"Virtudes disponíveis",before:system.creation.virtueBudget,after:next.creation.virtueBudget}

@@ -37,7 +37,7 @@ export async function levelUpContext(actor) {
  const prefix=`flags.${SYSTEM_ID}.levelDraft`;
  const input=(path,label,value,type="number",choices)=>({name:`${prefix}.${path}`,label,value,type,isNumber:type==="number",isCheckbox:type==="checkbox",isTextarea:type==="textarea",isSelect:!!choices,choices:choices?Object.entries(choices).map(([key,label])=>({value:key,label,selected:value===key})):undefined});
  if(draft.to>20)context.fields.push(input("evolution","Evolução dos níveis 21–30",draft.evolution,"text",{"":"Selecionar",...Object.fromEntries(Object.entries(EVOLUTIONS).map(([key,value])=>[key,value.label]))}));
- context.fields.push(input("advanceSense","Aplicar estágio de Sentido se houver marco, preservando estágios superiores",draft.advanceSense,"checkbox"),input("reviewedContent","Conferi descrições, requisitos e escolhas do conteúdo selecionado",draft.reviewedContent,"checkbox"),input("reviewedManual","Conferi os ganhos que exigem revisão manual",draft.reviewedManual,"checkbox"),input("acceptExceptions","Registrar pendências como exceções autorizadas da campanha",draft.acceptExceptions,"checkbox"),input("reason","Justificativa das pendências / decisão do mestre",draft.reason,"textarea"));
+ context.fields.push(input("advanceSense","Aplicar estágio de Sentido se houver marco, preservando estágios superiores",draft.advanceSense,"checkbox"),input("reason","Notas (opcional)",draft.reason,"textarea"));
  context.attributeFields=Object.entries(ATTRIBUTES).map(([key,label])=>input(`attributes.${key}`,`${label} · atual ${actor.system.attributes[key].value}`,draft.attributes?.[key]??0));
  context.skillFields=Object.entries(SKILLS).map(([key,definition])=>input(`skills.${key}`,`${definition.label} · atual ${actor.system.skills[key].value}`,draft.skills?.[key]??0));
  context.fightFields=Object.entries(FIGHTING).map(([key,label])=>input(`fighting.${key}`,`${label} · atual ${actor.system.fighting[key]}`,draft.fighting?.[key]??0));
@@ -85,7 +85,7 @@ export async function requestLevelUp(actor) {
   const decision=draftSignature(draft);
   if(signature(actor)!==draft.baseline)throw Error("A ficha mudou; descarte o rascunho e recomece a revisão.");
   const data=source(actor),plan=planLevel(data.system,data.items,draft,await selectedDocuments(draft),game.settings.get(SYSTEM_ID,"resistanceMode"),{actorUuid:actor.uuid,flags:actor.flags});
-  if(!plan.canApply)throw Error("Confira os requisitos e pendências ou registre a exceção antes de concluir.");
+  if(!plan.canApply)throw Error("Parâmetros da evolução inválidos.");
   if(!await foundry.applications.api.DialogV2.confirm({window:{title:`Evoluir para nível ${draft.to}`},content:`<p>Confirmar ${escape(actor.name)}: nível ${draft.from} → ${draft.to}?</p><p>${plan.grants.length} cópia(s) nova(s); ${plan.rankUpdates.length} Melhoria(s) atualizada(s). PV e CE atuais, armadura, XP e ajustes manuais serão preservados. Pontos não distribuídos ficam em saldo.</p><p>${plan.warnings.length} pendência(s) registrada(s). A solicitação será processada pelo mestre ativo.</p>`}))return;
   if(signature(actor)!==draft.baseline||!flag(actor,"levelDraft")||draftSignature(flag(actor,"levelDraft"))!==decision)throw Error("A ficha ou escolhas mudaram durante a confirmação. Confira novamente.");
   return ChatMessage.create({content:"<p>Solicitação de evolução enviada ao mestre. Aguarde a confirmação na ficha.</p>",whisper:[...new Set([game.user.id,gm.id])],flags:{[SYSTEM_ID]:{levelRequest:{actorUuid:actor.uuid,draftId:draft.id,baseline:draft.baseline,draftSignature:decision}}}});
@@ -150,6 +150,6 @@ export async function resumeLevelRequests() {
 }
 export async function clearInterruptedLevel(actor) {
  if(primaryGM()?.id!==game.user.id||flag(actor,"levelOperation")?.status!=="prepared")return;
- if(!await foundry.applications.api.DialogV2.confirm({window:{title:"Conferir evolução interrompida"},content:"<p>Confira nível, pontos e itens do registro, reparando manualmente o que já foi aplicado. Liberar não remove itens nem restaura valores. Depois abra um novo rascunho sobre os dados conferidos.</p><p>Confirmar que a revisão foi concluída?</p>"}))return;
+ if(!await foundry.applications.api.DialogV2.confirm({window:{title:"Conferir evolução interrompida"},content:"<p>Confira nível, pontos e itens do registro, reparando manualmente o que já foi aplicado. Liberar não remove itens nem restaura valores. Depois abra um novo rascunho sobre os dados conferidos.</p><p>Encerrar sem alterar nível, pontos ou itens?</p>"}))return;
  await actor.update({[`flags.${SYSTEM_ID}.levelOperation.status`] : "reviewed",[`flags.${SYSTEM_ID}.-=levelDraft`]:null});
 }

@@ -1,3 +1,14 @@
+# Validação atual de interface — 0.17.1
+
+Criação, evolução, técnicas, dano, ações, efeitos e condições não exigem justificativas nem declarações de aceite. As seções abaixo também documentam versões anteriores; suas antigas exigências de justificativa/revisão por checkbox foram substituídas.
+
+1. Abra criação/evolução e técnica personalizada: não devem existir caixas de aceite de exceções ou declaração de leitura. Informações de requisitos/XP/slots não bloqueiam concluir. Distribuição matemática inválida de pontos na evolução continua sendo rejeitada.
+2. Configure técnica sem marca de revisão: parâmetros válidos permitem ativar; custo/natureza/ND inválidos continuam pendentes. Escolher componentes e contexto continua alterando o cálculo.
+3. Aplique dano ajustado, use Movimento/Reação e ajuste reservas sem notas. Conferir limites, pagamento único e histórico.
+4. Registre/encerre condição e efeito com notas vazias. Conferir contribuição/dano uma vez; duração de efeito continua explícita; condição sem prazo permanece Até encerrar.
+5. Recupere interrupções: recuperação pelo registro mantém comparação before/after. Encerrar sem alterar recursos é ação explícita, sem checkbox de declaração. Cancelar, falta de permissão e estado alterado não aplicam mudanças.
+6. Confira cópias antigas: notas, recursos, flags e itens permanecem. Efeitos pessoais seguem Automação/Aplicar efeitos/Melhoria ativa; requisitos são informações. Não exigir aceite antigo.
+
 # Validação no Foundry 13 build 350
 
 Estado: o usuário confirmou a criação e funcionamento das fichas 0.1.1 no servidor. A ativação 0.2.0 tem testes locais; sua execução dentro do Foundry precisa ser confirmada. Use um mundo de teste e preserve um backup antes de atualizar.
