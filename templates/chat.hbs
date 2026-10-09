@@ -1,4 +1,5 @@
 <div class="battle-chat"><span class="eyebrow">{{kind}}</span><h3>{{label}}</h3><p>Dados: {{#each results}}<span class="die">{{this}}</span> {{/each}}</p><p>Maior {{highest}} + {{tens}} × 2 − {{ones}} × 2 + modificador {{modifier}}</p><div class="chat-result"><strong>{{total}}</strong><span>{{outcome}}<br>Dificuldade {{difficulty}}</span></div>
+{{#if conditionSummary}}<p class="note">{{conditionSummary}}</p>{{/if}}
 {{#if resistance}}<h4>Contra {{attackName}}</h4><p>Dano corporal após resistência: <strong>{{resistance.damage}}</strong>; dano à armadura: <strong>{{resistance.armorDamage}}</strong>.</p>
 {{#if resistance.unarmored}}<p>Sem armadura viva equipada: dano corporal dobrado, já incluído.</p>{{/if}}
 {{#if resistance.effectsResisted}}<p>Efeitos adicionais resistidos.</p>{{else}}<p>Confira os efeitos adicionais da técnica.{{#if resistance.doubleDuration}} Falha crítica: duração dos efeitos dobrada.{{/if}}</p>{{/if}}

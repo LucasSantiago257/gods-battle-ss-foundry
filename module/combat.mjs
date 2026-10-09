@@ -4,6 +4,7 @@ import {physicalDamage} from "./combat-rules.mjs";
 import {actionView,actionHash} from "./action-rules.mjs";
 import {submitCombatAction,combatActionState} from "./actions.mjs";
 import {assertNoTechniqueInterruption} from "./master-queue.mjs";
+import {conditionPool,conditionSummary,conditionSignature} from "./condition-rules.mjs";
 const escaped = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const busy=new WeakSet();
 export async function attackTarget(actor) {
@@ -23,9 +24,12 @@ export async function attackTarget(actor) {
     if(view.enabled)return await submitCombatAction(actor,{kind:"attack",fighting:answer.kind,bonus:answer.bonus,amount:answer.amount,targetUuid:target.uuid},baseline);
     const dice=actor.system.fighting[answer.kind];
     if (!FIGHTING[answer.kind] || answer.kind==="defense" || !Number.isInteger(dice) || dice<1 || dice>5 || !Number.isFinite(answer.bonus)) throw Error("Escolha uma habilidade de luta com graduação entre 1 e 5.");
-    const {result,messageRoll}=await evaluatePool(dice,actor.system.combat.attack+actor.system.combat.levelModifier+answer.bonus);
+    const conditionBaseline=conditionSignature(actor),pool=conditionPool(actor.system,dice,actor.system.combat.attack+actor.system.combat.levelModifier+answer.bonus,{maxDice:5});
+    const {result,messageRoll}=await evaluatePool(pool.dice,pool.modifier);
+    if(conditionSignature(actor)!==conditionBaseline)throw Error("Condições mudaram durante o ataque; confira a situação antes de repetir.");
     const fight={attackerUuid:actor.uuid,targetUuid:target.uuid,kind:answer.kind,attack:result.total,damageLevel:actor.system.combat.attackLevel,damageBonus:actor.system.combat.damageBonus+actor.system.combat.physicalDamageBonus};
-    const message=await prepareRollMessage(actor,messageRoll,{label:`${FIGHTING[answer.kind]} contra ${target.name}`,kind:"Ataque",...result,fight},{template:"combat-chat",flags:{fight}});
+    const message=await prepareRollMessage(actor,messageRoll,{label:`${FIGHTING[answer.kind]} contra ${target.name}`,kind:"Ataque",...result,fight,conditionSummary:conditionSummary(actor.system)},{template:"combat-chat",flags:{fight}});
+    if(conditionSignature(actor)!==conditionBaseline)throw Error("Condições mudaram antes de publicar o ataque.");
     return await ChatMessage.create(message);
   } catch(error) {ui.notifications.error(error.message);} finally {busy.delete(actor);}
 }
@@ -47,10 +51,13 @@ export async function defendAttack(message) {
     if(combatActionState(actor)!==baseline||actionHash(message.flags?.[SYSTEM_ID]?.fight)!==fightHash)throw Error("Ficha, ataque, rodada ou ações mudaram. Abra a defesa novamente.");
     if(view.enabled)return await submitCombatAction(actor,{kind:"defend",rootId:message.id,fightHash,bonus:answer.bonus,amount:answer.amount},baseline);
     if (!Number.isFinite(answer.bonus)) throw Error("Modificador inválido.");
-    const {result,messageRoll}=await evaluatePool(grade,actor.system.combat.defense+actor.system.combat.levelModifier+answer.bonus);
+    const conditionBaseline=conditionSignature(actor),pool=conditionPool(actor.system,grade,actor.system.combat.defense+actor.system.combat.levelModifier+answer.bonus,{maxDice:5});
+    const {result,messageRoll}=await evaluatePool(pool.dice,pool.modifier);
+    if(conditionSignature(actor)!==conditionBaseline)throw Error("Condições mudaram durante a defesa; confira a situação antes de repetir.");
     const outcome=physicalDamage(fight.attack,result.total,{...fight,protection:actor.system.combat.protection});
     const resolvedDamage={actorUuid:actor.uuid,rootMessageId:message.id,body:outcome.damage,armor:0,armorId:null};
-    const data=await prepareRollMessage(actor,messageRoll,{label:actor.name,kind:"Defesa",...result,outcome,resolvedDamage},{template:"combat-chat",flags:{resolvedDamage}});
+    const data=await prepareRollMessage(actor,messageRoll,{label:actor.name,kind:"Defesa",...result,outcome,resolvedDamage,conditionSummary:conditionSummary(actor.system)},{template:"combat-chat",flags:{resolvedDamage}});
+    if(conditionSignature(actor)!==conditionBaseline)throw Error("Condições mudaram antes de publicar a defesa.");
     return await ChatMessage.create(data);
   } finally {busy.delete(actor);}
 }

@@ -1,5 +1,7 @@
 # Efeitos com duração — 0.16.0
 
+Desde0.17.0, [condições assistidas](condicoes-assistidas.md) oferece parcelas de Cansado/membros debilitados em registros próprios, até recuperação conferida. As anotações deste guia continuam manuais e não se convertem em condições automaticamente.
+
 Na ficha do alvo, **Combate → Efeitos com duração → Registrar efeito · mestre** acompanha origem, duração e resolução por rodada. É uma operação explícita do mestre responsável, na fila compartilhada com ações, técnicas, dano e evolução. Não registra ou aplica efeitos ao abrir o mundo ou avançar o rastreador.
 
 ## Brasas assistidas

@@ -5,6 +5,7 @@ import {levelSignature} from "./level-rules.mjs";
 import {primaryGM,isPrimaryGM,runMasterOperation,assertNoTechniqueInterruption} from "./master-queue.mjs";
 import {actionSignature,rawActionUsage,techniqueActionPlan} from "./action-rules.mjs";
 import {componentState,techniqueWithComponents} from "./technique-components.mjs";
+import {conditionSignature} from "./condition-rules.mjs";
 const flags=doc=>doc?.flags?.[SYSTEM_ID]??{};
 const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const hash=value=>levelSignature({},[{_id:"activation",value}]);
@@ -12,7 +13,7 @@ const author=message=>message.author?.id??message.user?.id;
 const validActor=uuid=>typeof uuid==="string"&&uuid.length<=256&&/^(Actor|Scene)\.[a-zA-Z0-9.]+$/.test(uuid);
 const modes=new Set(["publicroll","gmroll","blindroll","selfroll"]);
 export const techniqueRollMode=()=>{const mode=game.settings.get("core","rollMode");if(!modes.has(mode))throw Error("Visibilidade de rolagem inválida.");return mode;};
-export const activationState=(actor,item)=>hash({actorUuid:actor.uuid,system:actor.system.toObject?actor.system.toObject(false):actor.system,itemId:item.id,name:item.name,item:item.system.toObject?item.system.toObject():item.system,review:flags(item).source?.reference,draft:flags(item).techniqueDraft,last:flags(actor).techniqueLast??null,actions:actionSignature(actor),components:componentState(item)});
+export const activationState=(actor,item)=>hash({actorUuid:actor.uuid,system:actor.system.toObject?actor.system.toObject(false):actor.system,itemId:item.id,name:item.name,item:item.system.toObject?item.system.toObject():item.system,review:flags(item).source?.reference,draft:flags(item).techniqueDraft,last:flags(actor).techniqueLast??null,actions:actionSignature(actor),components:componentState(item),conditions:conditionSignature(actor)});
 export function paymentSnapshot(actor) {const r=actor.system.resources;return {health:r.health.value,current:r.cosmo.value,extra:r.cosmoExtra,reserved:r.cosmoReserved,overload:r.cosmoOverload,unlimited:r.cosmo.unlimited,penalty:actor.system.combat.asterismPenalty,last:flags(actor).techniqueLast??null,actions:rawActionUsage(actor)};}
 const matches=(actor,snapshot)=>{const current=paymentSnapshot(actor);if(!Object.hasOwn(snapshot,"actions"))delete current.actions;return hash(current)===hash(snapshot);};
 function available(actor) {

@@ -3,11 +3,12 @@ import {actionHash,actionContext,actionView,actionPlan,rawActionUsage,actionSign
 import {primaryGM,isPrimaryGM,runMasterOperation,assertNoTechniqueInterruption} from "./master-queue.mjs";
 import {evaluatePool,prepareRollMessage} from "./rolls.mjs";
 import {physicalDamage} from "./combat-rules.mjs";
+import {conditionPool,conditionSummary,conditionSignature} from "./condition-rules.mjs";
 const f=doc=>doc?.flags?.[SYSTEM_ID]??{};
 const author=m=>m.author?.id??m.user?.id;
 const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const modes=new Set(["publicroll","gmroll","blindroll","selfroll"]);
-export const combatActionState=actor=>actionHash({actorUuid:actor.uuid,system:actor.system.toObject?actor.system.toObject(false):actor.system,actions:actionSignature(actor)});
+export const combatActionState=actor=>actionHash({actorUuid:actor.uuid,system:actor.system.toObject?actor.system.toObject(false):actor.system,actions:actionSignature(actor),conditions:conditionSignature(actor)});
 function available(actor) {
  assertNoTechniqueInterruption(actor);
  if(f(actor).levelOperation?.status==="prepared"||Object.values(f(actor).damageOperations??{}).some(r=>["prepared","repair"].includes(r.status)))throw Error("Há operação interrompida de dano/evolução. Confira antes de gastar ações.");
@@ -78,14 +79,15 @@ export async function executeActionRequest(message,userId) {
   let card;
   if(options.kind==="consume")card={content:`<p>${escape(label)}: ${plan.cost} ação. ${escape(options.reason)}</p>`,rolls:[],whisper:[user.id,primaryGM().id],blind:false};
   else {
-   const {result,messageRoll}=await evaluatePool(dice,plan.cost+actor.system.combat.levelModifier+(options.bonus??0));
+   const pool=conditionPool(actor.system,dice,plan.cost+actor.system.combat.levelModifier+(options.bonus??0),{maxDice:5});
+   const {result,messageRoll}=await evaluatePool(pool.dice,pool.modifier);
    guard(message,request,user,actor,signature);
    if(options.kind==="attack"){
     fight={attackerUuid:actor.uuid,targetUuid:target.uuid,kind:options.fighting,attack:result.total,damageLevel:actor.system.combat.attackLevel,damageBonus:actor.system.combat.damageBonus+actor.system.combat.physicalDamageBonus,actionContext:plan.view.context};
-    card=await prepareRollMessage(actor,messageRoll,{label,kind:"Ataque",...result,fight,actions:{cost:plan.cost,pool:ACTION_LABELS[pool],round:plan.view.context.round}},{template:"combat-chat",rollMode:request.rollMode,flags:{fight}});
+    card=await prepareRollMessage(actor,messageRoll,{label,kind:"Ataque",...result,fight,conditionSummary:conditionSummary(actor.system),actions:{cost:plan.cost,pool:ACTION_LABELS[pool],round:plan.view.context.round}},{template:"combat-chat",rollMode:request.rollMode,flags:{fight}});
    }else{
     const outcome=physicalDamage(fight.attack,result.total,{...fight,protection:actor.system.combat.protection}),resolvedDamage={actorUuid:actor.uuid,rootMessageId:root.id,body:outcome.damage,armor:0,armorId:null};
-    card=await prepareRollMessage(actor,messageRoll,{label,kind:"Defesa",...result,outcome,resolvedDamage,actions:{cost:plan.cost,pool:ACTION_LABELS[pool],round:plan.view.context.round}},{template:"combat-chat",rollMode:request.rollMode,flags:{resolvedDamage}});
+    card=await prepareRollMessage(actor,messageRoll,{label,kind:"Defesa",...result,outcome,resolvedDamage,conditionSummary:conditionSummary(actor.system),actions:{cost:plan.cost,pool:ACTION_LABELS[pool],round:plan.view.context.round}},{template:"combat-chat",rollMode:request.rollMode,flags:{resolvedDamage}});
    }
    if(request.rollMode==="selfroll")card.whisper=[user.id];card.blind=request.rollMode==="blindroll";card.whisper??=[];card.rolls=card.rolls.map(r=>r.toJSON());
   }
