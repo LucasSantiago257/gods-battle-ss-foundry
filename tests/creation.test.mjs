@@ -30,10 +30,10 @@ test('benefícios iniciais de todos os estilos aplicam uma vez e não sobrescrev
  for(const style of Object.keys(INITIAL_STYLES)){const s=knight();s.profile.style=style;const updates=initialStyleChanges(s);patch({system:s},updates);assert.deepEqual(initialStyleChanges(s),{});}
  const s=knight();s.fighting.punch=4;const updates=initialStyleChanges(s);assert.equal(Object.keys(updates).some(k=>k.startsWith('system.fighting.')),false);
 });
-test('orçamento excedido e perícia acima do atributo exigem exceção registrada',()=>{
+test('orçamento e perícia fora do padrão são informações sem aceite obrigatório',()=>{
  const a=fixture();a.system.attributes.for.value=6;a.system.skills.mythology.value=5;prepareKnight(a.system,a.items.contents);
- let r=creationReview(a.system,a.items.contents,a.name);assert.equal(r.canFinish,false);assert.ok(r.warnings.some(w=>w.includes('supera')));
- a.system.creationGuide.acceptExceptions=true;assert.equal(creationReview(a.system,a.items.contents,a.name).canFinish,false);
+ let r=creationReview(a.system,a.items.contents,a.name);assert.equal(r.canFinish,true);assert.ok(r.warnings.some(w=>w.includes('supera')));
+ a.system.creationGuide.acceptExceptions=true;assert.equal(creationReview(a.system,a.items.contents,a.name).canFinish,true);
  a.system.creationGuide.exceptionReason='Personagem aprovado para campanha especial';assert.equal(creationReview(a.system,a.items.contents,a.name).canFinish,true);
 });
 test('retomar não aplica estilo e confirmar registro não soma atributos',()=>{

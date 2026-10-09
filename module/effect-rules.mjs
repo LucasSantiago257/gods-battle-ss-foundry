@@ -17,9 +17,9 @@ export function brasasSource(item) {
 }
 const text=(value,label,max,required=true)=>{if(typeof value!=="string"||value.length>max||required&&!value.trim())throw Error(`${label}: preencha até ${max} caracteres.`);return value.trim();};
 export function effectDefinition(answer,source=null) {
- if(!answer?.checked||!["brasas","manual"].includes(answer.kind))throw Error("Confirme a revisão do efeito, resistência e duração.");
+ if(!["brasas","manual"].includes(answer?.kind))throw Error("Escolha um tipo de efeito válido.");
  if(!Number.isSafeInteger(answer.rounds)||answer.rounds<1||answer.rounds>1000||![0,1].includes(answer.firstOffset))throw Error("Informe duração de1 a1000 rodadas e escolha a primeira aplicação.");
- const reason=text(answer.reason,"Revisão",2000),description=text(answer.description??"","Descrição",2000,false);
+ const reason=text(answer.reason??"","Notas",2000,false),description=text(answer.description??"","Descrição",2000,false);
  if(answer.kind==="brasas") {if(!source)throw Error("Escolha uma técnica personalizada com Brasas.");return {kind:"brasas",label:"Brasas",rounds:answer.rounds,firstOffset:answer.firstOffset,reason,description,page:source.page,damage:source.damage,source};}
  return {kind:"manual",label:text(answer.label,"Nome",120),rounds:answer.rounds,firstOffset:answer.firstOffset,reason,description,page:text(answer.page??"","Referência",120,false),damage:0,source:null};
 }
@@ -48,8 +48,8 @@ export function effectState(actor) {
  return actionHash({uuid:actor.uuid,system:actor.system,flags:actor.flags??{},openCombat:game.combat?.uuid,combats:(game.combats?.contents??[]).map(c=>({uuid:c.uuid,started:c.started,round:c.round,members:(c.combatants?.contents??[]).map(m=>({id:m.id,actor:m.actor?.uuid}))}))});
 }
 export function effectTickPlan(actor,record,{skip=false,reason,checked,damage:finalDamage=record.damage}={}) {
- if(!checked||typeof skip!=="boolean")throw Error("Confirme a revisão desta rodada.");
- reason=text(reason,"Motivo da resolução",2000);
+ if(typeof skip!=="boolean")throw Error("Opção de rodada inválida.");
+ reason=text(reason??"","Notas",2000,false);
  const view=effectView(actor,record);if(!view.canResolve)throw Error(view.state);
  if(record.kind==="brasas"&&(record.source?.componentUuid!==componentUuid(BRASAS.id)||record.damage!==BRASAS.damage[record.source?.classification])||record.kind==="manual"&&record.damage!==0||!["brasas","manual"].includes(record.kind))throw Error("Parcela do efeito alterada ou inválida. Revise o registro.");
  if(!Number.isFinite(finalDamage)||finalDamage<0||finalDamage>1000000)throw Error("Dano final inválido.");

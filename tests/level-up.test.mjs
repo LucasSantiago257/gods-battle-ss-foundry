@@ -82,9 +82,9 @@ test("Melhoria atualiza graduação sem duplicar cópia e bloqueia sexta aquisi�
  const duplicate={...gift(),system:{...gift().system,originUuid:gift().uuid,notes:"Notas editadas"}};
  const repeated=planLevel(system(),[duplicate],draft(system()),{power:gift()});assert.equal(repeated.grants.length,0);assert.match(repeated.warnings.join(),/já existe/);assert.equal(duplicate.system.notes,"Notas editadas");
 });
-test("pendências precisam de justificativa e assinatura ignora somente metadados voláteis",()=>{
- const s=system();s.progression.xp=0;const d=draft(s),p=planLevel(s,[],d);assert.equal(p.canApply,false);
- d.acceptExceptions=true;assert.equal(planLevel(s,[],d).canApply,false);d.reason="Avanço aprovado pelo mestre";assert.equal(planLevel(s,[],d).canApply,true);
+test("pendências são informativas e assinatura ignora somente metadados voláteis",()=>{
+ const s=system();s.progression.xp=0;const d=draft(s),p=planLevel(s,[],d);assert.equal(p.canApply,true);
+ d.acceptExceptions=true;assert.equal(planLevel(s,[],d).canApply,true);d.reason="Avanço aprovado pelo mestre";assert.equal(planLevel(s,[],d).canApply,true);
  const item={_id:"i",system:{rank:1},_stats:{modifiedTime:1}};const before=levelSignature(s,[item]);item._stats.modifiedTime=2;assert.equal(levelSignature(s,[item]),before);item.system.rank=2;assert.notEqual(levelSignature(s,[item]),before);
 });
 test("rascunho persiste, cancelar não concede e ficha alterada exige nova revisão",async()=>{

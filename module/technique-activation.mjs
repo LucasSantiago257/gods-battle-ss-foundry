@@ -1,3 +1,4 @@
+import {optionalNote} from "./form-values.mjs";
 import {SYSTEM_ID} from "./config.mjs";
 import {techniqueParameters,techniqueOutcome,cosmoPayment,techniqueReadiness,EFFECT_KINDS} from "./technique-rules.mjs";
 import {evaluatePool,prepareRollMessage} from "./rolls.mjs";
@@ -120,13 +121,13 @@ export async function reviewTechniqueOperation(actor,key) {
  return runMasterOperation(async()=>{
   const r=flags(actor).techniqueOperations?.[key];if(!r||!['prepared','paid'].includes(r.status)||r.cardPublished)throw Error("Não há registro interrompido para liberar.");
   const baseline=hash(r),message=r.actorUuid===actor.uuid?game.messages.get(r.requestId):null;if(flags(message).techniqueResponse?.status==="published")throw Error("O cartão já foi publicado; conserve o registro de pagamento.");
-  const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Liberar após reparo manual"},content:"<p>Confira CE, PV, excesso acumulado e penalidade de Asterismo. Esta ação encerra a solicitação sem restaurar recursos, publicar resultado ou repetir a rolagem. Faça os ajustes manuais necessários antes de confirmar.</p><label>Motivo e reparos feitos<textarea name=\"reason\"></textarea></label><label><input type=\"checkbox\" name=\"reviewed\">Conferi e reparei a ficha; desejo encerrar esta solicitação.</label>",buttons:[{action:"review",label:"Registrar revisão e encerrar",callback:(_e,b)=>({reason:b.form.elements.reason.value,reviewed:b.form.elements.reviewed.checked})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
+  const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Liberar após reparo manual"},content:"<p>Confira CE, PV, excesso acumulado e penalidade de Asterismo. Esta ação encerra a solicitação sem restaurar recursos, publicar resultado ou repetir a rolagem. Faça os ajustes manuais necessários antes de confirmar.</p><label>Notas (opcional)<textarea name=\"reason\"></textarea></label>",buttons:[{action:"review",label:"Encerrar sem alterar recursos",callback:(_e,b)=>({reason:b.form.elements.reason.value})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
   if(!answer)return;
-  if(!answer.reviewed||typeof answer.reason!=="string"||!answer.reason.trim()||answer.reason.length>2000)throw Error("Confirme o reparo e registre uma justificativa de até2000 caracteres.");
+  optionalNote(answer.reason);
   if(!isPrimaryGM()||hash(flags(actor).techniqueOperations?.[key])!==baseline)throw Error("Mestre ou registro mudou durante a conferência.");
   const wasPaid=r.status==="paid";
-  await actor.update({[`flags.${SYSTEM_ID}.techniqueOperations.${key}.status`]:"reviewed",[`flags.${SYSTEM_ID}.techniqueOperations.${key}.review`]:{reason:answer.reason.trim(),previousStatus:r.status,userId:game.user.id,time:Date.now()}});
-  if(message)await message.update({[`flags.${SYSTEM_ID}.-=techniquePrepared`]:null,[`flags.${SYSTEM_ID}.-=techniqueRequest`]:null,[`flags.${SYSTEM_ID}.techniqueResponse`]:{ok:false,status:"reviewed",paid:wasPaid,text:"Ativação encerrada após reparo manual registrado pelo mestre."},content:`<p>Solicitação encerrada após revisão manual: ${escape(answer.reason.trim())}. Nenhum recurso foi restaurado automaticamente.</p>`});
+  await actor.update({[`flags.${SYSTEM_ID}.techniqueOperations.${key}.status`]:"reviewed",[`flags.${SYSTEM_ID}.techniqueOperations.${key}.review`]:{reason:optionalNote(answer.reason),previousStatus:r.status,userId:game.user.id,time:Date.now()}});
+  if(message)await message.update({[`flags.${SYSTEM_ID}.-=techniquePrepared`]:null,[`flags.${SYSTEM_ID}.-=techniqueRequest`]:null,[`flags.${SYSTEM_ID}.techniqueResponse`]:{ok:false,status:"reviewed",paid:wasPaid,text:"Ativação encerrada após reparo manual registrado pelo mestre."},content:`<p>Solicitação encerrada após revisão manual: ${escape(optionalNote(answer.reason))}. Nenhum recurso foi restaurado automaticamente.</p>`});
  });
 }
 export async function resumeTechniqueRequests() {

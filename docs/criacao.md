@@ -8,7 +8,7 @@ Escolher conteúdo inicial importa do compêndio uma cópia independente. També
 
 Treino disponível: 8 pontos, separado dos cinco atributos básicos e do ponto do estilo. Pontos iniciais de perícias: (2 + Sentidos efetivos) × 3. A revisão verifica graduações iniciais, limites de perícia pelo atributo, duas virtudes, categoria do estilo, habilidade inicial, equipamento, natureza e requisitos básicos da técnica. Bônus de virtudes estruturadas conservam a graduação básica e não consomem treino.
 
-Pendências são avisos; para concluir com exceções, marque a opção e escreva uma justificativa. Cada Item conserva sua própria conferência de requisitos para ativar efeitos. Artista mantém aviso sobre Virtude Extra (p.92) frente às duas virtudes gerais (p.161). Domador mantém aviso de companheiro e detalhes que ainda exigem interpretação. Essas divergências não concedem benefícios fictícios.
+Pendências são avisos informativos; concluir não exige justificativa nem aceite de exceções. As escolhas de cada Item continuam disponíveis para definir seus efeitos. Artista mantém aviso sobre Virtude Extra (p.92) frente às duas virtudes gerais (p.161). Domador mantém aviso de companheiro e detalhes que ainda exigem interpretação. Essas divergências não concedem benefícios fictícios.
 
 Preencher PV e CE atuais ao concluir vem habilitado em novas fichas e pode ser desligado. Concluir salva a revisão e suas exceções, não reimporta itens nem repete benefícios. Armaduras não são curadas pelo assistente. Personagens antigos conservam edição normal e recursos; podem abrir a revisão de nível 1 voluntariamente. Migração de schema para 3 preserva escolhas anteriores, sem ativar o assistente nas fichas existentes.
 

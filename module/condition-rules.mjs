@@ -23,8 +23,9 @@ export function conditionSummary(system) {
  return modifier||dice?`Condições assistidas: ${modifier} no modificador; −${dice} dado(s), mínimo da jogada preservado. Referências: pp.393/397.`:"";
 }
 export function conditionDefinition(answer) {
- const rule=CONDITION_RULES[answer?.key];if(!rule||!answer.reviewedManual||!Number.isSafeInteger(answer.count)||answer.count<1||answer.count>1000)throw Error("Escolha a condição, quantidade inteira e confirme a revisão dos ajustes manuais.");
+ const rule=CONDITION_RULES[answer?.key];if(!rule||!Number.isSafeInteger(answer.count)||answer.count<1||answer.count>1000)throw Error("Escolha uma condição e uma quantidade inteira de 1 a 1000.");
  const result={key:answer.key,label:rule.label,page:rule.page,count:answer.count,ruleVersion:1,reviewedManual:true};
- for(const [key,max,required] of [["reason",2000,true],["origin",500,false],["details",2000,false],["until",1000,true]]){const value=answer[key]??"";if(typeof value!=="string"||value.length>max||required&&!value.trim())throw Error(`Preencha ${key} em até ${max} caracteres.`);result[key]=value.trim();}
+ for(const [key,max,required] of [["reason",2000,false],["origin",500,false],["details",2000,false],["until",1000,false]]){const value=answer[key]??"";if(typeof value!=="string"||value.length>max||required&&!value.trim())throw Error(`Preencha ${key} em até ${max} caracteres.`);result[key]=value.trim();}
+ result.until ||= "Até encerrar";
  return result;
 }

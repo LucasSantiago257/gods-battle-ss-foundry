@@ -24,16 +24,15 @@ export function composeTechnique(system,draft,entries=[],otherTechniqueCount=0) 
  }
  const bangs=components.filter(c=>c.type==="bigbang"),increments=components.filter(c=>c.type==="increment"),capacity=tier.cost+extraSlots;
  const used=bangs.length,cost=tier.cost+bangs.reduce((sum,c)=>sum+c.cost,0),fixed=increments.length+extraCost;
- if(used>capacity)warnings.push(`Slots extras ${used}/${capacity}: técnica secreta ou aumento de capacidade exige justificativa (p.223).`);
+ if(used>capacity)warnings.push(`Slots extras ${used}/${capacity}: técnica secreta ou aumento de capacidade altera a capacidade usual (p.223).`);
  if(extraSlots)warnings.push("Slots além da classe exigem conferir Virtude Adicionar Big Bang ou exceção da campanha.");
  if(increments.length>3)warnings.push("Mais de três tipos de incrementos: conferir limite da p.217 e exceção da campanha.");
- if(increments.length&&!draft.incrementReviewed)warnings.push("Confira aquisição de Mestre, tipos e graduações dos incrementos do personagem (p.217). Escolher no construtor não concede a virtude.");
+ if(increments.length)warnings.push("Confira aquisição de Mestre, tipos e graduações dos incrementos do personagem (p.217). Escolher no construtor não concede a virtude.");
  if(increments.some(c=>c.rank>Math.min(3,1+Math.floor(Math.max(0,system.profile.level-1)/10))))warnings.push("Graduação do incremento acima da progressão usual: conferir avanço a cada dez níveis e aquisição (p.217).");
  const minLevel={bronze:1,silver:11,gold:21}[draft.classification],skillRank={bronze:1,silver:2,gold:3}[draft.classification];
  if(system.profile.level<minLevel||system.skills.cosmoUse.value<skillRank||system.skills.training.value<skillRank)warnings.push(`Aprendizado ${primary.label}/${draft.classification}: conferir nível${minLevel}, Utilização do Cosmo${skillRank} e Treinamento${skillRank} (p.199).`);
  if(draft.nature!==system.profile.nature)warnings.push("Natureza diferente da principal: conferir Dois Cosmos/aprendizado (p.198).");
  if(otherTechniqueCount+1>(system.attributes.cos.effective??system.attributes.cos.value))warnings.push("Quantidade de técnicas supera Cosmo; conferir capacidade e aprendizado (p.201).");
- if(!draft.reviewed)warnings.push("Confirme a revisão da composição, requisitos, efeitos e desenvolvimento.");
  const mixed=bangs.some(c=>c.key.startsWith("bigbang:primordial:"));
  const effectKind=draft.primary==="residual"||mixed?"manual":draft.primary;
  if(effectKind==="manual")manual.push("Cosmo Residual ou primordiais mistos exigem resolução própria. Esta composição mantém aplicação manual (pp.223–225).");
@@ -47,5 +46,5 @@ export function composeTechnique(system,draft,entries=[],otherTechniqueCount=0) 
  const preview=effectKind==="manual"?null:activationPreview(system,technique);
  const blueprint=structuredClone(draft);delete blueprint.id;delete blueprint.baseline;
  return {technique,components,primary:{...primary,uuid:componentUuid(primary.id)},cost,fixed,totalCost:cost+fixed,difficulty:10+cost+fixed,capacity,used,warnings,manual,preview,
-  canApply:!!draft.reviewed&&(!warnings.length||!!(draft.allowExceptions&&draft.reason?.trim())),blueprint,updates:{name:draft.name.trim(),...Object.fromEntries(Object.entries(technique).map(([field,value])=>[`system.${field}`,value])),"system.description":draft.description??"","system.bigbangs":[`Primordial: ${primary.label}`,...bangs.map(c=>c.name)].join("\n"),"system.increments":increments.map(c=>`${c.name} · graduação${c.rank}`).join("\n"),"system.techniqueReviewed":true}};
+  canApply:true,blueprint,updates:{name:draft.name.trim(),...Object.fromEntries(Object.entries(technique).map(([field,value])=>[`system.${field}`,value])),"system.description":draft.description??"","system.bigbangs":[`Primordial: ${primary.label}`,...bangs.map(c=>c.name)].join("\n"),"system.increments":increments.map(c=>`${c.name} · graduação${c.rank}`).join("\n"),"system.techniqueReviewed":true}};
 }

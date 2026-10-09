@@ -20,7 +20,7 @@ export const INITIAL_STYLES={
 export function initialStyleChanges(system,{recordOnly=false}={}) {
  const key=system.profile.style,style=STYLES[key],initial=INITIAL_STYLES[key];
  if(system.creationGuide.styleApplied) {
-  if(system.creationGuide.styleApplied!==key) throw Error('O estilo foi alterado após aplicar benefícios. Revise os pontos manualmente antes de aceitar a exceção.');
+  if(system.creationGuide.styleApplied!==key) throw Error('O estilo foi alterado após aplicar benefícios. Revise os pontos manualmente antes de aplicar novamente.');
   return {};
  }
  const updates={'system.creationGuide.styleApplied':key};
@@ -51,7 +51,7 @@ export function creationReview(system,items=[],name='') {
  if(virtues.length!==2)warnings.push(`Confira as duas virtudes iniciais; a ficha tem ${virtues.length}.`);
  if(!virtues.some(i=>i.system.category==='Geral'))warnings.push('Escolha uma virtude Geral inicial.');
  if(initial.virtue!=='Livre'&&!virtues.some(i=>i.system.category===initial.virtue))warnings.push(`O estilo inicia com uma virtude de ${initial.virtue}.`);
- if(system.profile.style==='artist')warnings.push('Artista: conferir a expressão Virtude Extra da p.92 com a regra geral de duas virtudes da p.161; registrar exceção se aplicável.');
+ if(system.profile.style==='artist')warnings.push('Artista: conferir a expressão Virtude Extra da p.92 com a regra geral de duas virtudes da p.161. ');
  if(!armors.length)warnings.push('Escolha a armadura inicial.');
  if(armors.length&&!armors.some(i=>i.system.equipped))warnings.push('A armadura inicial ainda não está equipada.');
  if(!techniques.length)warnings.push('Escolha uma técnica inicial.');
@@ -60,5 +60,5 @@ export function creationReview(system,items=[],name='') {
  if(techniques.length && (system.skills.cosmoUse.value<1 || system.skills.training.value<1))warnings.push('Técnica Bronze requer Utilização do Cosmo e Treinamento 1; conferir p.199.');
  for(const item of items)warnings.push(...passiveWarnings(system,item).map(w=>`${item.name}: ${w}`));
  if(system.profile.style==='beastmaster')warnings.push('Bestas ainda não têm ficha própria; confira companheiro, luta inicial e perícias do estilo manualmente.');
- return {trainingSpent:spent,trainingRemaining:8-spent,skillBudget,skillSpent,skillRemaining:skillBudget-skillSpent,warnings:[...new Set(warnings)],canFinish:!warnings.length || !!(guide.acceptExceptions&&guide.exceptionReason.trim()),initial};
+ return {trainingSpent:spent,trainingRemaining:8-spent,skillBudget,skillSpent,skillRemaining:skillBudget-skillSpent,warnings:[...new Set(warnings)],canFinish:true,initial};
 }

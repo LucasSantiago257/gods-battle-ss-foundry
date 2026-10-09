@@ -21,7 +21,7 @@ export function evaluatePassives(s, items = []) {
   for (const item of items) {
     const d = passiveDefinition(item); if (!d) continue;
     const warnings = passiveWarnings(s, item, d);
-    const reason = !s.automation?.enabled ? "Automação da ficha desativada" : item.system.rulesEnabled === false ? "Efeitos da cópia desativados" : warnings.length && !item.system.rulesAccepted ? warnings.join(" ") : d.requiresActive && !item.system.active ? "Ative a melhoria após conferir a ação" : null;
+    const reason = !s.automation?.enabled ? "Automação da ficha desativada" : item.system.rulesEnabled === false ? "Efeitos da cópia desativados" : d.requiresActive && !item.system.active ? "Ative a melhoria após conferir a ação" : null;
     const entry = {id: item.id, name: item.name, status: d.status, reason: reason || d.reason, warnings, contributions: []}; ledger.push(entry);
     if (reason || !d.rules.length) continue;
     const key = item.flags["gods-battle-ss"].source.key;

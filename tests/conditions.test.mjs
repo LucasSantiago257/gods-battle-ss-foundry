@@ -27,8 +27,8 @@ function fixture(){
 test("checkbox antigo e anotações não ativam condições; só registros conferidos próprios",()=>{
  const f=fixture();assert.equal(conditionTotals(f.actor.uuid,f.actor.flags).modifier,0);const r={...f.definition,actorUuid:f.actor.uuid,ruleVersion:1,status:"active"};f.actor.flags[ID].conditionEffects={valid:r,copy:{...r,actorUuid:"Actor.original"},manual:{...r,key:"paralyzed"},notReviewed:{...r,reviewedManual:false}};const total=conditionTotals(f.actor.uuid,f.actor.flags);assert.equal(total.modifier,-4);assert.equal(total.dice,0);assert.equal(total.warnings.length,3);f.actor.flags[ID].conditionEffects.valid.count=NaN;assert.equal(conditionTotals(f.actor.uuid,f.actor.flags).modifier,0);
 });
-test("quantidade, recuperação e adesão exigem conferência sem inferência de nomes",()=>{
- const f=fixture();for(const invalid of [{key:"dead"},{count:0},{count:1.2},{count:1001},{until:""},{reason:""},{reviewedManual:false}])assert.throws(()=>conditionDefinition({...f.definition,...invalid}));assert.equal(conditionDefinition(f.definition).page,"393");assert.equal(conditionDefinition({...f.definition,key:"incapacitated"}).page,"397");
+test("condição exige quantidade válida, aceita notas vazias sem declarações",()=>{
+ const f=fixture();for(const invalid of [{key:"dead"},{count:0},{count:1.2},{count:1001},{reason:42},{until:"x".repeat(1001)}])assert.throws(()=>conditionDefinition({...f.definition,...invalid}));assert.equal(conditionDefinition(f.definition).page,"393");assert.equal(conditionDefinition({...f.definition,key:"incapacitated"}).page,"397");
 });
 test("registro altera apenas parcelas derivadas, preserva PV/CE e ajustes manuais",async()=>{
  const f=fixture(),before=structuredClone(f.actor.system);const r=await f.create();assert.equal(r.count,2);assert.equal(f.actor.system.automation.conditionModifier,-4);assert.deepEqual(f.actor.system.resources,before.resources);assert.deepEqual(f.actor.system.attributes,before.attributes);assert.deepEqual(f.actor.system.skills,before.skills);assert.deepEqual(f.actor.system.conditions,before.conditions);assert.equal(f.actor.flags[ID].preserve,"notas");
@@ -69,4 +69,10 @@ test("testes genéricos e resistência aplicam uma vez e preservam modo privado"
 });
 test("condição alterada durante prévia/teste genérico não publica resultado antigo",async()=>{
  for(const stage of ["dialog","roll"]){const f=fixture(),r=await f.create();f.cards.length=0;const change=()=>{conditionRecords(f.actor)[r.id].status="ended";f.refresh();};if(stage==="dialog")f.answers.push(()=>{change();return {difficulty:10,bonus:0,advantage:0};});else{f.answers.push({difficulty:10,bonus:0,advantage:0});const evaluate=Roll.prototype.evaluate;Roll.prototype.evaluate=async function(){const result=await evaluate.call(this);if(this.formula.includes("d10"))change();return result;};}await rollTest(f.actor,"skill","asterism");assert.equal(f.cards.filter(x=>x.rolls).length,0);assert.ok(f.notices.some(x=>x.includes("condições")));if(stage==="dialog")assert.equal(f.formulas.length,0);}
+});
+test("registrar e encerrar sem justificativa ou aceite preserva recursos e ajustes",async()=>{
+ const f=fixture(),before=structuredClone(f.actor.system.resources);const r=await f.create({reason:"",until:"",reviewedManual:false});assert.equal(r.until,"Até encerrar");assert.equal(r.reason,"");assert.equal(f.actor.system.automation.conditionModifier,-4);f.answers.push("");await endCondition(f.actor,r.id);assert.equal(f.actor.system.automation.conditionModifier,0);assert.deepEqual(f.actor.system.resources,before);assert.equal(conditionRecords(f.actor)[r.id].end.reason,"");
+});
+test("callback de registro não depende de elementos de aceite removidos",async()=>{
+ const f=fixture();foundry.applications.api.DialogV2.wait=async options=>options.buttons[0].callback(null,{form:{elements:Object.fromEntries(Object.entries({key:"tired",count:"1",origin:"",details:"",until:"",reason:""}).map(([k,value])=>[k,{value}]))}});const r=await registerCondition(f.actor);assert.equal(r.count,1);assert.equal(r.reviewedManual,true);assert.equal(f.actor.system.automation.conditionModifier,-2);
 });

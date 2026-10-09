@@ -9,10 +9,10 @@ Na ficha, **Combate → Condições assistidas → Registrar condição assistid
 
 ## Registrar e encerrar
 
-1. Como mestre, escolha condição e quantidade cumulativa final. Informe origem/contexto, detalhes (membros afetados), critério/prazo de encerramento e motivo da revisão. Não exige combate aberto: cansaço ou lesão podem persistir fora da luta.
-2. Confira e retire somente parcelas da mesma condição já lançadas manualmente em modificadores/diálogos. Confirme a adesão. Não há correção automática dos ajustes antigos; manter o mesmo −2 manual e assistido duplicaria a penalidade.
+1. Como mestre, escolha condição e quantidade cumulativa final. Informe origem/contexto, detalhes (membros afetados), critério/prazo de encerramento e notas, se desejar. Todos os textos são opcionais; duração vazia usa Até encerrar. Não exige combate aberto: cansaço ou lesão podem persistir fora da luta.
+2. Confira e retire somente parcelas da mesma condição já lançadas manualmente em modificadores/diálogos. Clique em Aplicar condição; não há caixa de aceite. Não há correção automática dos ajustes antigos; manter o mesmo −2 manual e assistido duplicaria a penalidade.
 3. As parcelas entram em atributos, perícias, resistências, Asterismo de técnicas e ataque/defesa, inclusive fora do controle de ações. Prévia/cartão indicam a contribuição; resistências derivadas exibem o modificador resultante. As graduações e os modificadores base editáveis permanecem iguais.
-4. Após recuperação conferida, **Encerrar condição após revisão**, com motivo, remove apenas a contribuição daquele registro. PV, CE, máximos, armadura, XP, notas, caixas de estado e ajustes manuais permanecem. Não oferece cura, repouso automático ou desfazer de dano.
+4. Após recuperação conferida, **Encerrar condição**, sem motivo obrigatório, remove apenas a contribuição daquele registro. PV, CE, máximos, armadura, XP, notas, caixas de estado e ajustes manuais permanecem. Não oferece cura, repouso automático ou desfazer de dano.
 
 É permitido um registro ativo próprio por tipo. Para mudar a quantidade, encerre/revise o registro anterior e registre o novo total; histórico é conservado. Cansado e membros debilitados podem coexistir e suas parcelas são somadas uma vez. Duplicatas ou dados inválidos são sinalizados e não concedem parcelas adicionais. O limite1–1000 é uma guarda técnica de entrada, não máximo de dias/membros estabelecido pelo livro.
 
@@ -26,7 +26,7 @@ As perícias e os atributos da ficha mostram bases preservadas; a seção de con
 
 ## Histórico, cópias e revisão
 
-Registros guardam origem narrativa, tipo, quantidade, referência, critério de término, revisão e autor/data, sem copiar dados de rolagens privadas/cegas. O mestre autoriza que esses detalhes fiquem visíveis na ficha. Estados históricos ativos até revisão não expiram por fechar o mundo ou excluir o encontro; fim de luta/descanso precisa ser confirmado no registro.
+Registros guardam origem narrativa, tipo, quantidade, referência, critério de término, revisão e autor/data, sem copiar dados de rolagens privadas/cegas. Detalhes opcionais registrados pelo mestre ficam visíveis na ficha conforme suas permissões. Estados históricos ativos até revisão não expiram por fechar o mundo ou excluir o encontro; fim de luta/descanso precisa ser confirmado no registro.
 
 Uma ficha/token com UUID próprio não recebe automaticamente a penalidade de registros copiados de outro UUID. Aviso identifica o histórico estrangeiro; encerrar afeta apenas a cópia, depois registre nela o estado conferido. Cancelar conserva tudo. Mudanças de registro durante prévia/rolagem invalidam a confirmação antiga; em operações centrais preparadas, use a recuperação existente. A fila coordena o cliente do mestre; edição direta/macros e testes genéricos continuam fora de uma transação global do servidor.
 

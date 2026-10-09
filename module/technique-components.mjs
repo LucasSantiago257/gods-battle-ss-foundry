@@ -1,3 +1,4 @@
+import {optionalNote} from "./form-values.mjs";
 import {SYSTEM_ID} from "./config.mjs";
 export const COMPONENT_RULES={
  "69e4c648b940a68e":{key:"bigbang:extra:Esgotar",label:"Esgotar",page:"228",kind:"exhaust"},
@@ -30,7 +31,7 @@ export function componentOptions(technique,options={}) {
  if(!Number.isSafeInteger(exhaust)||exhaust<0||typeof essence!=="boolean"||typeof terrain!=="boolean")throw Error("Parâmetros de componentes inválidos.");
  const has=kind=>profile.enabled&&profile.rules.some(r=>r.kind===kind);
  if(exhaust&&!has("exhaust")||essence&&!has("essence")||terrain&&!has("terrain"))throw Error("A técnica não possui esse componente automático habilitado.");
- if((essence||terrain)&&(typeof options.componentReason!=="string"||!options.componentReason.trim()||options.componentReason.length>1000))throw Error("Justifique a Essência contrária/ambiente favorável conferido em até1000 caracteres.");
+ optionalNote(options.componentReason,1000);
  const levelBonus=exhaust+(essence?1:0)+(terrain?1:0),extraCost=exhaust*2,rangeBonus=has("space")?profile.rules.find(r=>r.kind==="space").rank*1.5:0;
  return {levelBonus,extraCost,rangeBonus,range:(technique.range??0)+rangeBonus,entries:profile.rules?.map(r=>({...r,applied:r.kind==="exhaust"?exhaust:r.kind==="essence"?Number(essence):r.kind==="terrain"?Number(terrain):rangeBonus}))??[],manual:profile.manual??[]};
 }

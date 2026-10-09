@@ -19,7 +19,7 @@ Na aba **Combate → Histórico de ativações de técnicas**, consulte os últi
 - **Paga e publicada:** pagamento registrado e cartão disponível. Reprocessar a mesma solicitação não cobra nem rola novamente.
 - **Paga · conferir cartão:** recursos foram gastos, mas a publicação falhou. **Conferir pagamento / recuperar cartão** publica o resultado já armazenado no mesmo documento, preservando recursos alterados depois. A retomada ao abrir o mundo ou mudar o mestre também tenta essa publicação.
 - **Interrompida · conferir pagamento:** não há repetição automática. Novas ativações, dano e evolução dessa ficha aguardam conferência. Se os recursos ainda forem os anteriores, a recuperação encerra sem cobrar; se coincidirem com o estado posterior completo, reconhece o pagamento e recupera o cartão. Não restaura valores silenciosamente.
-- **Recursos diferentes / cartão removido ou alterado:** confira e repare manualmente. **Encerrar após reparo manual** exige confirmação e justificativa, registra a revisão e encerra a solicitação. Não restaura CE/PV, não rola e não publica um resultado novo.
+- **Recursos diferentes / cartão removido ou alterado:** confira e repare manualmente. **Encerrar após reparo manual** permite notas opcionais, registra a revisão e encerra a solicitação. Não restaura CE/PV, não rola e não publica um resultado novo.
 
 Somente o mestre responsável pode recuperar/liberar. Cancelar a conferência conserva o registro. Troca de mestre e reconexão não repetem uma ativação preparada; dados já pagos continuam pagos. Não repetir a técnica apenas porque o cartão demorou ou não apareceu: confira o registro primeiro. Não há desfazer automático de ativação paga; reparos de pagamento são revisados manualmente.
 

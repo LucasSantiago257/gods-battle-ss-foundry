@@ -31,7 +31,7 @@ test("composição mista, duplicata, rascunho e graduação inválida ficam manu
  const f=fixture(),components=f.item.flags[ID].techniqueConstructionHistory.saved.components;components.push({...components[0]});assert.throws(()=>brasasSource(f.item));components.pop();components.push({key:"bigbang:primordial:Controle"});assert.throws(()=>brasasSource(f.item));components.pop();f.item.flags[ID].techniqueDraft={};assert.throws(()=>brasasSource(f.item));
 });
 test("duração, início e revisão são explícitos e não interpretados pelo texto",()=>{
- const f=fixture(),source=brasasSource(f.item);for(const invalid of [{rounds:0},{rounds:1.5},{rounds:1001},{firstOffset:2},{reason:""},{checked:false},{kind:"invalid"}])assert.throws(()=>effectDefinition({...f.definition,...invalid},source));
+ const f=fixture(),source=brasasSource(f.item);for(const invalid of [{rounds:0},{rounds:1.5},{rounds:1001},{firstOffset:2},{reason:42},{reason:"x".repeat(2001)},{kind:"invalid"}])assert.throws(()=>effectDefinition({...f.definition,...invalid},source));
  const d=effectDefinition({...f.definition,kind:"manual",label:"Paralisia conferida",page:"regra de campanha"});assert.equal(d.damage,0);assert.equal(d.source,null);
 });
 test("registro preserva recursos, condições, flags antigas e duração final",async()=>{
@@ -70,7 +70,7 @@ test("falha antes da gravação não gasta; falha após gravação não duplica 
 });
 test("operações interrompidas e dados adulterados não geram gasto",async()=>{
  const f=fixture(),record=await f.create({firstOffset:0});for(const flag of ["actionOperations","techniqueOperations","damageOperations"]){f.actor.flags[ID][flag]={pending:{status:"prepared"}};await assert.rejects(resolveEffect(f.actor,record.id),/interrompid/);delete f.actor.flags[ID][flag];}
- record.damage=999;assert.throws(()=>effectTickPlan(f.actor,record,{...f.resolution}),/alterada/);record.damage=10;assert.throws(()=>effectTickPlan(f.actor,record,{...f.resolution,damage:NaN}),/inválido/);assert.throws(()=>effectTickPlan(f.actor,record,{...f.resolution,reason:""}));record.firstRound=0;assert.equal(effectView(f.actor,record).canResolve,false);assert.equal(f.actor.system.resources.health.value,100);
+ record.damage=999;assert.throws(()=>effectTickPlan(f.actor,record,{...f.resolution}),/alterada/);record.damage=10;assert.throws(()=>effectTickPlan(f.actor,record,{...f.resolution,damage:NaN}),/inválido/);assert.equal(effectTickPlan(f.actor,record,{...f.resolution,reason:""}).tick.reason,"");record.firstRound=0;assert.equal(effectView(f.actor,record).canResolve,false);assert.equal(f.actor.system.resources.health.value,100);
 });
 test("duas confirmações concorrentes não pagam duas vezes a mesma rodada",async()=>{
  const f=fixture(),record=await f.create({firstOffset:0,rounds:1});f.answers.push(f.resolution,f.resolution);const results=await Promise.allSettled([resolveEffect(f.actor,record.id),resolveEffect(f.actor,record.id)]);assert.equal(results.filter(r=>r.status==="fulfilled").length,1);assert.equal(f.actor.system.resources.health.value,90);assert.equal(Object.keys(effectRecords(f.actor)[record.id].ticks).length,1);
@@ -84,4 +84,7 @@ test("recuperação divergente/copias requer reparo expresso e conserva PV atuai
 test("alterações após awaits da fonte ou do journal preparado impedem concluir",async()=>{
  const f=fixture();let sourceResolved=false;fromUuid=async uuid=>{if(uuid===f.item.uuid){sourceResolved=true;return f.item;}if(sourceResolved)f.item.system.classification="gold";return f.actor;};await assert.rejects(f.create(),/alterada/);assert.equal(f.actor.updates.length,0);
  const g=fixture(),record=await g.create({firstOffset:0}),update=g.actor.update.bind(g.actor);g.actor.update=async data=>{await update(data);if(Object.keys(data).some(p=>p.startsWith(`flags.${ID}.effectOperations.`)))g.actor.system.resources.health.value=77;};g.answers.push(g.resolution);await assert.rejects(resolveEffect(g.actor,record.id),/mudou/);assert.equal(g.actor.system.resources.health.value,77);assert.equal(Object.keys(effectRecords(g.actor)[record.id].ticks).length,0);assert.throws(()=>assertNoTechniqueInterruption(g.actor),/efeito interrompida/);
+});
+test("efeito e rodada aceitam notas vazias sem aceite e aplicam uma vez",async()=>{
+ const f=fixture(),r=await f.create({reason:"",checked:false,firstOffset:0,rounds:2});f.answers.push({skip:false,damage:2.5});const tick=await resolveEffect(f.actor,r.id);assert.equal(tick.reason,"");assert.equal(f.actor.system.resources.health.value,97.5);await assert.rejects(resolveEffect(f.actor,r.id),/próxima/);f.answers.push("");await endEffect(f.actor,r.id);assert.equal(f.actor.system.resources.health.value,97.5);assert.equal(effectRecords(f.actor)[r.id].end.reason,"");
 });

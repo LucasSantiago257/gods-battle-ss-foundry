@@ -121,14 +121,13 @@ test("ativação cobra uma vez, envia mesmo total e respeita privacidade", async
   assert.equal(r.sent[0].rollMode, "gmroll"); assert.equal(r.sent[0].rolls[0].total, r.renders.at(-1).context.total);
   assert.ok(r.sent[0].flags["gods-battle-ss"].attack);
 });
-test("técnica importada exige revisão e parâmetros válidos antes de abrir ativação", async () => {
+test("técnica importada exige parâmetros válidos sem declaração de revisão", async () => {
  const r=runtime();
  r.item.flags={"gods-battle-ss":{source:{reference:{reviewRequired:true}}}};
  r.item.system={...r.item.system,power:0,damageLevel:0,cost:0};
  await useTechnique(r.actor,r.item);
  assert.equal(r.renders.length,0); assert.equal(r.evaluations(),0); assert.equal(r.updates.length,0);
- assert.match(r.notices[0],/marque a revisão/);
- r.item.system.techniqueReviewed=true;
+ assert.match(r.notices[0],/custo total/);
  assert.match(techniqueReadiness(r.item),/custo total/);
  r.item.system.cost=2;assert.match(techniqueReadiness(r.item),/Poder e Nível/);
  r.item.system.power=10;r.item.system.damageLevel=2;r.item.system.nature="";
@@ -223,9 +222,9 @@ test("condensar soma uma vez ao custo, prévia não gasta e controle eleva somen
  const threshold=activationPreview(s,t);assert.equal(threshold.normal.armorDamage,10);assert.equal(threshold.critical.armorDamage,70);
  assert.throws(()=>techniqueParameters(s,t,{condense:-1}));assert.throws(()=>techniqueParameters(s,t,{condense:0.5}));
 });
-test("catálogo automático exige revisão e custo, sem exigir ND/Poder manuais",()=>{
+test("catálogo automático exige custo, sem aceite nem ND/Poder manuais",()=>{
  const item={parent:{type:"knight",system:system()},system:{...content(),techniqueMode:"status",cost:3,power:0,damageLevel:0},flags:{"gods-battle-ss":{source:{reference:{reviewRequired:true}}}}};
- assert.match(techniqueReadiness(item),/marque a revisão/);item.system.techniqueReviewed=true;assert.equal(techniqueReadiness(item),null);
+ assert.equal(techniqueReadiness(item),null);item.system.techniqueReviewed=false;assert.equal(techniqueReadiness(item),null);
  item.system.cost=0;assert.match(techniqueReadiness(item),/custo total/);item.system.cost=3;item.parent.system.profile.status="god";
  assert.match(techniqueReadiness(item),/status exige/);
 });
@@ -235,7 +234,7 @@ test("configuração conserva parâmetros manuais, notas e custo completo do liv
  assert.equal(updates["system.cost"],3);assert.equal(updates["system.costExtra"],1);assert.equal(updates["system.techniqueReviewed"],true);
  assert.equal(updates["system.power"],undefined);assert.equal(updates["system.damageLevel"],undefined);assert.equal(updates["system.notes"],undefined);assert.deepEqual(r.item.system,before);
  assert.equal(techniqueSetupUpdates(r.actor,r.item,{...setupAnswer,techniqueMode:"manual"})["system.power"],77);
- for(const change of [{reviewed:false},{cost:0},{cost:1.5},{nature:""},{range:-1}])assert.throws(()=>techniqueSetupUpdates(r.actor,r.item,{...setupAnswer,...change}));
+ for(const change of [{cost:0},{cost:1.5},{nature:""},{range:-1}])assert.throws(()=>techniqueSetupUpdates(r.actor,r.item,{...setupAnswer,...change}));
  r.item.flags={"gods-battle-ss":{source:{reference:{manualOnly:true}}}};assert.throws(()=>techniqueSetupUpdates(r.actor,r.item,setupAnswer),/cooperativa/);
 });
 test("configuração cancelada ou cópia alterada não grava; revisão salva só a cópia",async()=>{

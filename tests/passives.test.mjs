@@ -25,9 +25,9 @@ test("virtudes explicitamente repetíveis acumulam e bônus manuais permanecem",
  const s=knight();s.automation.enabled=true;s.combat.attackBonus=3;
  const key='virtue:COMBATE:COMBO';prepareKnight(s,[item(key,'a'),item(key,'b')]);assert.equal(s.combat.attack,8);
 });
-test("pré-requisito mantém item sem efeito até regularização ou exceção",()=>{
+test("pré-requisitos informam sem declaração; efeitos seguem opção de aplicação",()=>{
  const s=knight();s.automation.enabled=true;const v=item('sage:ability:3:DANÇARINO');s.skills.asterism.value=2;
- prepareKnight(s,[v]);assert.equal(s.skills.asterism.effectBonus,0);
+ prepareKnight(s,[v]);assert.equal(s.skills.asterism.effectBonus,2);
  v.system.rulesAccepted=true;prepareKnight(s,[v]);assert.equal(s.skills.asterism.effectBonus,2);
 });
 test("modificadores do mesmo tipo não acumulam; virtude e habilidade somam",()=>{

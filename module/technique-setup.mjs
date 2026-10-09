@@ -12,7 +12,6 @@ export function techniqueSetupContext(actor,item) {
 }
 export function techniqueSetupUpdates(actor,item,answer) {
  if(item.flags?.[SYSTEM_ID]?.source?.reference?.manualOnly)throw Error("Técnica cooperativa exige aplicação manual.");
- if(!answer.reviewed)throw Error("Confirme a leitura das regras e dos requisitos desta cópia.");
  if(!TECHNIQUE_TIERS[answer.classification]||!NATURES[answer.nature]||!EFFECT_KINDS[answer.effectKind]||!TECHNIQUE_MODES[answer.techniqueMode])throw Error("Escolha classe, natureza, efeito e modo válidos.");
  for(const [key,min] of [["cost",1],["costExtra",0],["damageLevel",0],["power",0]])if(!Number.isSafeInteger(answer[key])||answer[key]<min)throw Error(`${key}: informe uma graduação/custo inteiro válido.`);
  if(!Number.isFinite(answer.range)||answer.range<0)throw Error("Alcance inválido.");
@@ -31,8 +30,8 @@ export async function setupTechnique(item) {
  busy.add(item);
  try{
   const baseline=itemState(item),content=await foundry.applications.handlebars.renderTemplate(`systems/${SYSTEM_ID}/templates/technique-setup.hbs`,techniqueSetupContext(actor,item));
-  const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Configurar técnica para combate"},content,buttons:[{action:"configure",label:"Salvar configuração revisada",default:true,callback:(_e,b)=>{
-   const e=b.form.elements;return {classification:e.classification.value,nature:e.nature.value,effectKind:e.effectKind.value,techniqueMode:e.techniqueMode.value,cost:Number(e.cost.value),costExtra:Number(e.costExtra.value),range:Number(e.range.value),power:Number(e.power.value),damageLevel:Number(e.damageLevel.value),reviewed:e.reviewed.checked,componentAutomation:e.componentAutomation?.checked??false};
+  const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Configurar técnica para combate"},content,buttons:[{action:"configure",label:"Salvar configuração",default:true,callback:(_e,b)=>{
+   const e=b.form.elements;return {classification:e.classification.value,nature:e.nature.value,effectKind:e.effectKind.value,techniqueMode:e.techniqueMode.value,cost:Number(e.cost.value),costExtra:Number(e.costExtra.value),range:Number(e.range.value),power:Number(e.power.value),damageLevel:Number(e.damageLevel.value),componentAutomation:e.componentAutomation?.checked??false};
   }},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
   if(!answer)return;
   if(!actor.isOwner||!item.isOwner||!actor.items.get(item.id)||itemState(item)!==baseline)throw Error("A cópia mudou durante a configuração. Confira novamente.");

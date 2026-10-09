@@ -2,7 +2,7 @@
 
 Na Visão geral, Automatizar bônus conferidos habilita cálculos derivados. Revise bônus manuais antes de ativar em uma ficha existente. Nas cópias de habilidades/virtudes, Aplicar os efeitos conferidos permite desligar o benefício sem remover o item. Melhoria exige marcar sua ativação depois de conferir a ação necessária; custos, duração e uso por turno permanecem manuais.
 
-Cada Item mostra sua cobertura e pendências. A aba Poderes explica as contribuições usadas ou suprimidas. Aquisição é permitida mesmo com requisitos pendentes; os efeitos ficam suspensos até corrigir a condição ou marcar Aceitar exceção. Nível de aquisição registra restrições que se aplicam somente no momento de escolher uma virtude.
+Cada Item mostra sua cobertura e pendências. A aba Poderes explica as contribuições usadas ou suprimidas. Aquisição é permitida mesmo com requisitos pendentes; os requisitos ficam visíveis como informações, sem suspender efeitos por falta de uma declaração. As opções de aplicar efeitos e ativar Melhorias continuam controlando as contribuições. Nível de aquisição registra restrições que se aplicam somente no momento de escolher uma virtude.
 
 Aumento de Atributo permite escolher dois pontos, inclusive no mesmo atributo. Esses pontos alteram a graduação efetiva e seus cálculos, conservando a graduação básica editável. Benefícios que precisam de opções adicionais não são aplicados silenciosamente.
 

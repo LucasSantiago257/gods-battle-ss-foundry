@@ -19,7 +19,6 @@ export function techniqueReadiness(item) {
   const reference = item?.flags?.["gods-battle-ss"]?.source?.reference, s = item?.system;
   if (reference?.manualOnly) return "Técnica cooperativa ou especial: aplique os testes e efeitos manualmente conforme a descrição.";
   if (!reference?.reviewRequired) return s?.effectKind === "manual" ? "Esta técnica usa aplicação manual." : null;
-  if (!s.techniqueReviewed) return "Abra a cópia, configure os parâmetros e marque a revisão antes de ativar a técnica do catálogo.";
   if (!NATURES[s.nature]) return "Selecione a natureza desta cópia antes de ativar.";
   if (!EFFECT_KINDS[s.effectKind] || s.effectKind === "manual") return "Configure um efeito compatível ou aplique esta técnica manualmente.";
   if (!Number.isSafeInteger(s.cost) || s.cost < 1) return "Configure o custo total da técnica; 0 indica custo pendente no catálogo.";
