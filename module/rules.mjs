@@ -1,6 +1,7 @@
 import {ATTRIBUTE_MODS, SKILL_MODS, STYLES, SKILLS, NATURES, ARMORS, MOVEMENT, JUMP, LIFT, BREAK} from "./config.mjs";
 import {divineBonuses, healthMaximum} from "./calculations.mjs";
 import {evaluatePassives, effectiveAttribute} from "./passives.mjs";
+import {depositCapacity} from "./cosmo-deposit-rules.mjs";
 import {conditionTotals,conditionPool} from "./condition-rules.mjs";
 
 export function attributeModifier(rank) { return ATTRIBUTE_MODS[rank] ?? 0; }
@@ -61,7 +62,8 @@ export function prepareKnight(system, items = [], resistanceMode = "rank",{actor
   const divine = divineBonuses(system);
   const hp = healthMaximum(system);
   system.resources.health.max = system.resources.health.manualMax || hp;
-  system.resources.cosmo.max = Math.max(0, effectiveAttribute(system,"cos") + ceGrowth + av.ce + system.resources.cosmo.bonus);
+  system.automation.cosmoDeposit = depositCapacity(actorUuid,flags);
+  system.resources.cosmo.max = Math.max(0, effectiveAttribute(system,"cos") + ceGrowth + av.ce + system.resources.cosmo.bonus - system.automation.cosmoDeposit);
   system.resources.cosmo.unlimited = av.unlimited;
   system.resources.maximum.max = 20;
   system.combat.levelModifier = level + system.progression.legend + system.sense.levelBonus + system.combat.levelBonus;

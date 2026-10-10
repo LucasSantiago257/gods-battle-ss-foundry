@@ -1,3 +1,4 @@
+import {recoverCosmoDeposit} from "./cosmo-deposits.mjs";
 import {canResistResidual,recoverResidualResistance} from "./residual-resistance.mjs";
 import {recoverResidual} from "./residual.mjs";
 import {canOpposeSustained,recoverOpposition} from "./sustained-opposition.mjs";
@@ -88,6 +89,7 @@ export async function endEffect(actor,key) {
  });
 }
 export async function recoverEffect(actor,key) {
+ if(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind==="cosmoEscrow")return recoverCosmoDeposit(actor,key);
  if(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind==="residualResistance")return recoverResidualResistance(actor,key);
  if(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind==="residualDeposit")return recoverResidual(actor,key);
  if(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind==="sustainOpposition")return recoverOpposition(actor,key);

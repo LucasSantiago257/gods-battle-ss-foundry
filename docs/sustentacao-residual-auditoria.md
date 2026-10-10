@@ -50,3 +50,8 @@ Vínculo a anotação inicial/Controle ativo, técnica própria Residual, dois c
 ## Implementado na0.23.0: resistência ao Residual
 
 Valor fixo da preparação, resistência atual do alvo, perfil cumulativo explícito conservado por registro: dias desde primeiro teste, quantidade de tentativas anteriores ou valor final da mesa. Perfis são convenções para ambiguidade225, não regra universal inferida. Dia inteiro declarado; nenhuma conversão relógio/rodada nem avanço automático. Repetições após falha são confirmadas no mesmo dia; sucesso>=CD encerra somente registro no usuário, sem alterar alvo/condições ou cobrarCE. Histórico e recuperação conservam teste/dias, validam matemática/CD/ordem/permissões. [Contrato](resistencia-residual.md). Depósitos/devolução e exceções continuam pendentes.
+
+
+## Implementado na0.24.0: depósitos específicos e retorno
+
+Rosa281–282:5 retornam após cessação; Ataúde357–358:1 por ataúde volta ao quebrar; Eir553:5 retornam após consumo. Painel por objeto com origem própria, perfil explícito somente saldo ou saldo+capacidade, congelado; custos/preparo/testes/estados separados. Regras gerais443–446 não formalizam permanente versus capacidade; perfis são convenções, não perda de atributo. Eir usa o termoCosmo e demanda essa distinção. Marcas125/130/Fadas298/305 dependem de contrato de ativos; perdas irreversíveis102/464/637/643 não são devolução. Fonte da capacidade445 e recuperação446 relidas. [Contrato e limitações](depositos-ce.md).

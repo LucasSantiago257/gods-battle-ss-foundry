@@ -1,8 +1,12 @@
 # Saint Seiya — A Batalha dos Deuses para FoundryVTT
 
-**Combate → Efeitos com duração → Preparar Cosmo Residual · mestre** calcula o segundo Asterismo e congela PC + excesso no usuário, com resultado público e recuperação. Dificuldade final explícita; efeito inicial registrado no alvo. Resistência usa dia da campanha e perfil cumulativo explícitos, com falha repetível e sucesso encerrando só o registro. Ativação, ações parciais e depósitos específicos continuam manuais. Veja [resistência ao Residual](docs/resistencia-residual.md). Veja [Cosmo Residual](docs/cosmo-residual.md).
+**Combate → Depósitos de Cosmo Energia → Depositar CE em objeto · mestre** registra depósitos específicos de Rosa/Pólen, Ataúde e Benção de Eir, com perfil de saldo/capacidade escolhido pela mesa e devolução única pelo evento do objeto. Veja [depósitos de CE](docs/depositos-ce.md).
+
+**Combate → Efeitos com duração → Preparar Cosmo Residual · mestre** calcula o segundo Asterismo e congela PC + excesso no usuário, com resultado público e recuperação. Dificuldade final explícita; efeito inicial registrado no alvo. Resistência usa dia da campanha e perfil cumulativo explícitos, com falha repetível e sucesso encerrando só o registro. Ativação e ações parciais continuam manuais; depósitos de três origens usam o painel específico. Veja [resistência ao Residual](docs/resistencia-residual.md). Veja [Cosmo Residual](docs/cosmo-residual.md).
 
 **Combate → Condições assistidas → Registrar condição assistida · mestre** aplica parcelas conferidas de Cansado e membros debilitados às rolagens, com origem, quantidade e recuperação explícita. Encerrar remove somente essas parcelas; caixas de estados, ajustes e recursos manuais permanecem. Veja [condições assistidas](docs/condicoes-assistidas.md).
+
+**Combate → Depósitos de Cosmo Energia → Depositar CE em objeto · mestre** registra depósitos específicos de Rosa/Pólen, Ataúde e Benção de Eir, com perfil de saldo/capacidade escolhido pela mesa e devolução única pelo evento do objeto. Veja [depósitos de CE](docs/depositos-ce.md).
 
 **Combate → Efeitos com duração → Registrar efeito · mestre** acompanha origem, alvo e duração. Brasas de técnica personalizada recebe dano periódico confirmado por rodada; outros estados podem ser anotados sem alterar condições ou bônus manuais. Histórico e recuperação conservam recursos. Veja [efeitos com duração](docs/efeitos-duracao.md).
 

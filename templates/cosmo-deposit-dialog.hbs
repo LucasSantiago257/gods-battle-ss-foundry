@@ -1,0 +1,7 @@
+<p>CE atual {{current}} · máximo {{maximum}}. Ativação e preparo são conferidos separadamente.</p>
+<label>Origem na ficha<select name="itemUuid">{{#each sources}}<option value="{{itemUuid}}">{{name}} · {{amount}} CE · p. {{page}}</option>{{/each}}</select></label>
+{{#each sources}}<p class="note">{{name}}: {{preparation}} Devolução: {{event}}.</p>{{/each}}
+<label>Objeto (jardim, ataúde ou fruto)<input name="object" maxlength="120" placeholder="Ex.: Jardim da entrada norte" required></label>
+<label>Como a mesa trata CE permanente<select name="mode"><option value="">Escolha o tratamento do saldo e limite</option>{{#each modes}}<option value="{{value}}">{{label}}</option>{{/each}}</select></label>
+<p class="note">O perfil fica conservado neste depósito. O gasto usa CE atual livre; reserva e CE extra permanecem disponíveis nos seus próprios campos.</p>
+<label>Notas (opcional)<textarea name="reason" maxlength="2000"></textarea></label>
