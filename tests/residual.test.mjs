@@ -1,0 +1,92 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import {knight,content} from "./foundry-stub.mjs";
+import {prepareKnight} from "../module/rules.mjs";
+import {residualSource,residualInitial,residualPool,residualParameters,residualOutcome} from "../module/residual-rules.mjs";
+import {depositResidual,recoverResidual} from "../module/residual.mjs";
+import {effectSheetContext,effectOperationContext,recoverEffect,endEffect} from "../module/effects.mjs";
+import {effectView} from "../module/effect-rules.mjs";
+import {techniqueParameters,techniqueReadiness} from "../module/technique-rules.mjs";
+import {assertNoTechniqueInterruption} from "../module/master-queue.mjs";
+import {holdDecisionOutsideQueue} from "./held-dialog.mjs";
+const ID="gods-battle-ss",clone=structuredClone;
+function patch(obj,data){for(const [key,value]of Object.entries(data)){const parts=key.split(".");let o=obj;for(const p of parts.slice(0,-1))o=o[p]??={};const last=parts.at(-1);if(last.startsWith("-="))delete o[last.slice(2)];else o[last]=clone(last==="rolls"?value.map(r=>r.toJSON?r.toJSON():r):value);}}
+function fixture(){
+ const gm={id:"gm",isGM:true,active:true},player={id:"p",isGM:false},messages=new Map(),answers=[],stats={rolls:0,records:0,published:0},controls={faces:[8,6,4],roll:null,render:null,write:null,message:null,create:null,read:null},renders=[];
+ const system=()=>{const s=knight();s.profile.level=5;for(const key of Object.keys(s.attributes))s.attributes[key].value=2;s.skills.asterism.value=3;s.skills.combat.value=1;prepareKnight(s);s.resources.health.value=90;s.resources.cosmo.value=7;s.resources.cosmoExtra=3;s.resources.cosmoReserved=2;s.conditions.afraid=true;return s;};
+ const actor={uuid:"Actor.payer",id:"payer",name:"Usuário",type:"knight",isOwner:true,system:system(),flags:{[ID]:{unrelated:"conservar"}},async update(data){await controls.write?.(data,"before");patch(this,data);if(Object.keys(data).some(k=>k.startsWith(`flags.${ID}.persistentEffects.`)))stats.records++;await controls.write?.(data,"after");return this;}};
+ const item={uuid:"Actor.payer.Item.tech",id:"tech",name:"Ataúde de exercício",type:"technique",parent:actor,isOwner:true,system:{...content(),effectKind:"residual",nature:"physical",classification:"gold"},flags:{}};actor.items={contents:[item],get:id=>actor.items.contents.find(i=>i.id===id)};
+ const initial={id:"initial",actorUuid:"Actor.target",kind:"manual",damage:0,label:"Prisão de exercício",firstRound:2,lastRound:5,status:"active",rounds:4,ticks:{},combatUuid:"Combat.test",combatantId:"target",time:1};
+ const target={uuid:"Actor.target",id:"target",name:"Alvo",type:"knight",isOwner:true,system:system(),items:{contents:[]},flags:{[ID]:{persistentEffects:{initial},unrelated:"target"}}};
+ const combat={uuid:"Combat.test",started:true,round:3,combatants:{contents:[{id:"payer",actor},{id:"target",actor:target}]}};
+ globalThis.game={user:gm,users:{activeGM:gm},combat,combats:{contents:[combat]},messages:{get:id=>messages.get(id)},settings:{get:()=>"rank"}};globalThis.fromUuid=async uuid=>{await controls.read?.(uuid);return uuid===actor.uuid?actor:uuid===target.uuid?target:uuid===item.uuid?item:null;};
+ let n=0;foundry.utils={randomID:()=>`res${++n}`};foundry.applications.api.DialogV2={wait:async()=>{const a=answers.shift();return typeof a==="function"?a():a??null;}};foundry.applications.handlebars={renderTemplate:async(path,context)=>{renders.push({path,context});await controls.render?.(path,context);return "<p>Residual</p>";}};foundry.dice={terms:{OperatorTerm:class{constructor(data){Object.assign(this,data);}}}};
+ globalThis.Roll=class{constructor(formula){this.formula=formula;}async evaluate(){if(this.formula.includes("d10")){stats.rolls++;await controls.roll?.(stats.rolls);this.dice=[{results:controls.faces.map(result=>({result}))}];this.terms=[{number:Math.max(...controls.faces)}];}else this.terms=[{number:Number(this.formula)}];return this;}static fromTerms(terms){const total=terms[0].number+(terms[1].operator==="+"?1:-1)*terms[2].number;return {total,toJSON:()=>({total,terms:clone(terms)})};}static fromData(data){return {...data,toJSON:()=>clone(data)};}};
+ globalThis.ChatMessage={getSpeaker:({actor})=>({actor:actor.id,alias:actor.name}),applyRollMode:(data,mode)=>{assert.equal(mode,"publicroll");data.whisper=[];data.blind=false;},async create(data){await controls.create?.(data,"before");const m={...clone(data),id:`message${messages.size+1}`,author:gm,async update(change){await controls.message?.(this,change,"before");patch(this,change);if(change.rolls)stats.published++;await controls.message?.(this,change,"after");return this;}};messages.set(m.id,m);await controls.create?.(m,"after");return m;}};
+ const answer={itemUuid:item.uuid,selection:`${target.uuid}|initial`,difficulty:13,powerCosmic:41,bonus:7,reason:""};
+ return {actor,target,item,initial,combat,gm,player,answers,messages,controls,stats,renders,answer,record:()=>Object.values(actor.flags[ID].persistentEffects??{}).at(-1),operation:()=>Object.entries(actor.flags[ID].effectOperations??{}).at(-1),async deposit(change={}){answers.push({...answer,...change});return depositResidual(actor);},async recover(close=false){answers.push({reason:"",close});return recoverEffect(actor,this.operation()[0]);}};
+}
+test("Residual reproduz22−13=9 e41+9=50, guarda CD fixa sem cobrar CE ou alterar alvo",async()=>{
+ const f=fixture(),before=clone(f.actor.system),targetSystem=clone(f.target.system),targetFlags=clone(f.target.flags);const r=await f.deposit();assert.equal(r.residual.total,22);assert.equal(r.residual.excess,9);assert.equal(r.residual.value,50);assert.equal(r.status,"active");assert.deepEqual(f.actor.system,before);assert.deepEqual(f.target.system,targetSystem);assert.deepEqual(f.target.flags,targetFlags);assert.equal(f.stats.rolls,1);assert.equal(f.stats.published,1);assert.equal(f.actor.flags[ID].unrelated,"conservar");f.actor.system.combat.cosmicPower=99;f.combat.round=100;assert.equal(f.record().residual.value,50);assert.equal(effectView(f.actor,f.record()).canResolve,false);assert.equal(effectView(f.actor,f.record()).state,"Cosmo Residual fixo · 50");
+});
+test("sucesso igual à dificuldade fixa PC sem excesso; falha não cria efeito e crítica dá−10",async()=>{
+ assert.deepEqual(residualOutcome(13,13,41),{success:true,excess:0,value:41,penalty:0});assert.equal(residualOutcome(3,13,41).penalty,0);assert.equal(residualOutcome(2,13,41).penalty,-10);
+ for(const difficulty of [23,33]){const f=fixture();const r=await f.deposit({difficulty});assert.equal(r.status,"failed");assert.equal(r.residual.value,null);assert.equal(f.actor.system.combat.asterismPenalty,difficulty===33?-10:0);assert.equal(effectView(f.actor,r).state,"Segundo Asterismo falhou");assert.equal(effectSheetContext(f.actor)[0].canEnd,false);assert.equal(f.target.flags[ID].persistentEffects.initial.status,"active");await assert.rejects(f.deposit(),/registrado|Registre/);assert.equal(f.stats.rolls,1);}
+});
+test("Asterismo usa atributo da natureza, associação explícita, efeitos e condições uma vez",()=>{
+ const f=fixture(),s=f.actor.system;assert.equal(residualPool(s,"physical",0).modifier,7);s.combat.asterismPenalty=-10;s.skills.asterism.effectBonus=2;s.automation.conditionDicePenalty=1;s.automation.conditionModifier=-3;let p=residualPool(s,"physical",7);assert.equal(p.dice,2);assert.equal(p.modifier,3);assert.equal(p.penalty,-10);s.skills.asterism.associated="vel";s.attributes.vel.mod=9;p=residualPool(s,"physical",7);assert.equal(p.attribute,"vel");assert.equal(p.modifier,8);s.skills.asterism.value=0;p=residualPool(s,"physical",0);assert.equal(p.dice,1);assert.equal(p.base,0);
+});
+test("penalidade pendente consumida atomicamente com registro e nenhuma reserva de ação",async()=>{
+ const f=fixture();f.actor.system.combat.asterismPenalty=-10;f.actor.flags[ID].actionUsage={actorUuid:f.actor.uuid,spent:{attack:1,movement:1}};const before=clone(f.actor.flags[ID].actionUsage);const r=await f.deposit({bonus:17});assert.equal(r.residual.total,22);assert.equal(f.actor.system.combat.asterismPenalty,0);assert.deepEqual(f.actor.flags[ID].actionUsage,before);assert.equal(f.actor.system.resources.cosmo.value,7);
+});
+test("fonte canônica do construtor aceita Residual manual; rascunhos/mistos/outros não",()=>{
+ const f=fixture();f.item.system.effectKind="manual";const canonical={primary:{uuid:`Compendium.${ID}.componentes-tecnicas.Item.49b31d7e766c2fd9`},components:[]};f.item.flags[ID]={techniqueConstructionId:"saved",techniqueConstructionHistory:{saved:canonical}};assert.equal(residualSource(f.actor,f.item).itemUuid,f.item.uuid);canonical.components.push({key:"bigbang:primordial:Controle"});assert.throws(()=>residualSource(f.actor,f.item));f.item.flags[ID].techniqueDraft={};assert.throws(()=>residualSource(f.actor,f.item));f.item.flags={};assert.throws(()=>residualSource(f.actor,f.item));f.item.system.effectKind="residual";assert.match(techniqueReadiness(f.item),/segundo Asterismo/);assert.throws(()=>techniqueParameters(f.actor.system,f.item.system),/manual/);
+});
+test("dificuldade e PC explícitos, bônus finitos e notas opcionais validados antes de rolar",async()=>{
+ for(const change of [{difficulty:NaN},{difficulty:-1},{difficulty:1000001},{powerCosmic:NaN},{powerCosmic:-1},{powerCosmic:1000001},{bonus:NaN},{bonus:10001},{reason:1},{reason:"x".repeat(2001)},{itemUuid:"other"},{selection:"other"}]){const f=fixture();await assert.rejects(f.deposit(change));assert.equal(f.stats.rolls,0);assert.equal(f.operation(),undefined);}
+ const f=fixture();assert.throws(()=>residualParameters(f.actor.system,"physical",{}));assert.throws(()=>residualOutcome(Infinity,13,41));assert.throws(()=>residualOutcome(2000000,0,1000000));await depositResidual(f.actor);assert.equal(f.operation(),undefined);
+});
+test("janela inicial inclui turno seguinte à ativação instantânea de um turno e recusa atrasos",async()=>{
+ const f=fixture();f.initial.lastRound=2;await f.deposit();assert.equal(f.stats.rolls,1);
+ for(const mutate of [f=>f.initial.lastRound=1,f=>f.initial.firstRound=4,f=>f.combat.round=6,f=>f.initial.actorUuid="Actor.copy",f=>f.initial.status="ended",f=>f.initial.kind="brasas",f=>f.initial.damage=5,f=>f.initial.combatantId="changed",f=>f.initial.controlOrigin={itemUuid:"Other.Item"}]){const f=fixture();mutate(f);await assert.rejects(f.deposit());assert.equal(f.stats.rolls,0);}
+});
+test("registro ativo e retrocesso bloqueiam nova tentativa; encerrado não reaplica na mesma rodada",async()=>{
+ const f=fixture();await f.deposit();await assert.rejects(f.deposit());f.answers.length=0;f.answers.push("");await endEffect(f.actor,f.record().id);assert.equal(f.record().status,"ended");assert.equal(f.actor.system.resources.cosmo.value,7);await assert.rejects(f.deposit());f.combat.round=4;await f.deposit();assert.equal(f.stats.rolls,2);f.combat.round=3;await assert.rejects(f.deposit());
+});
+test("mestre, permissões, encontro, cópias, identidade e pendências protegidos",async()=>{
+ for(const mutate of [f=>game.user=f.player,f=>game.users.activeGM={id:"other",active:true},f=>f.actor.isOwner=false,f=>f.target.isOwner=false,f=>f.item.isOwner=false,f=>f.item.parent={uuid:"Actor.other"},f=>f.combat.started=false,f=>f.combat.combatants.contents.push({id:"duplicate",actor:f.target}),f=>f.actor.flags[ID].levelOperation={status:"prepared"},f=>f.actor.flags[ID].damageOperations={pending:{status:"repair"}},f=>f.target.flags[ID].actionOperations={pending:{status:"prepared"}}]){const f=fixture();mutate(f);await assert.rejects(f.deposit());assert.equal(f.stats.rolls,0);}
+});
+test("diálogos de depósito e recuperação deixam fila livre",async()=>{
+ const f=fixture();await holdDecisionOutsideQueue(()=>depositResidual(f.actor));f.controls.roll=async()=>{throw Error("Falha");};await assert.rejects(f.deposit());await holdDecisionOutsideQueue(()=>recoverResidual(f.actor,f.operation()[0]));assert.equal(f.operation()[1].status,"prepared");
+});
+test("duplo clique aplica um segundo teste, um registro e uma publicação",async()=>{
+ const f=fixture(),r=await Promise.allSettled([f.deposit(),f.deposit()]);assert.equal(r.filter(x=>x.status==="fulfilled").length,1);assert.equal(f.stats.rolls,1);assert.equal(f.stats.records,1);assert.equal(f.stats.published,1);
+});
+test("alterações no diálogo, render, Roll e leituras finais impedem gravação desatualizada",async()=>{
+ for(const point of ["dialog","render","roll","lastRead"]){for(const mutate of [f=>f.actor.system.resources.health.value=5,f=>f.initial.label="Mudou",f=>f.item.system.nature="mental",f=>f.item.isOwner=false,f=>f.combat.round++,f=>f.target.isOwner=false]){const f=fixture();if(point==="dialog")f.answers.push(()=>{mutate(f);return f.answer;});if(point==="render")f.controls.render=async()=>mutate(f);if(point==="roll")f.controls.roll=async()=>mutate(f);if(point==="lastRead")f.controls.read=async uuid=>{if(f.stats.rolls&&uuid===f.target.uuid)mutate(f);};await assert.rejects(point==="dialog"?depositResidual(f.actor):f.deposit());assert.equal(f.stats.records,0);assert.equal(f.stats.published,0);}}
+});
+test("falha incompleta prepara pendência e recuperação descarta sem repetir teste",async()=>{
+ for(const point of ["roll","create"]){const f=fixture();f.controls[point]=async()=>{throw Error("Falha");};await assert.rejects(f.deposit());assert.equal(effectOperationContext(f.actor).length,1);assert.throws(()=>assertNoTechniqueInterruption(f.actor),/interrompida/);f.controls[point]=null;const count=f.stats.rolls;await f.recover();assert.equal(f.operation()[1].status,"failed");assert.equal(f.stats.rolls,count);assert.equal(f.stats.records,0);assert.equal(f.actor.system.combat.asterismPenalty,0);}
+});
+test("resultado completo anterior recupera registro e mesmo cartão sem Roll novo",async()=>{
+ const f=fixture();f.controls.write=async(data,p)=>{if(p==="before"&&Object.keys(data).some(k=>k.startsWith(`flags.${ID}.persistentEffects.`)))throw Error("Falha antes de aplicar");};await assert.rejects(f.deposit());assert.ok(f.operation()[1].after);assert.equal(f.operation()[1].status,"prepared");f.controls.write=null;await f.recover();assert.equal(f.record().residual.value,50);assert.equal(f.stats.rolls,1);assert.equal(f.stats.records,1);assert.equal(f.stats.published,1);
+});
+test("recuperação anterior recusa alterações e conserva ajustes ao encerrar só pendência",async()=>{
+ for(const mutate of [f=>f.actor.system.combat.asterismPenalty=-10,f=>f.actor.system.resources.cosmo.value=4,f=>f.initial.label="Mudou",f=>f.item.system.cost=8,f=>f.combat.round++]){const f=fixture();f.controls.write=async(data,p)=>{if(p==="before"&&Object.keys(data).some(k=>k.startsWith(`flags.${ID}.persistentEffects.`)))throw Error("Falha");};await assert.rejects(f.deposit());f.controls.write=null;mutate(f);await assert.rejects(f.recover());await f.recover(true);assert.equal(f.operation()[1].status,"reviewed");assert.equal(f.stats.records,0);assert.equal(f.stats.rolls,1);}
+});
+test("resultado aplicado e resposta perdida publicam uma vez após ajustes posteriores",async()=>{
+ for(const phase of ["before","after"]){const f=fixture();f.controls.message=async(_m,data,p)=>{if(data.rolls&&p===phase)throw Error("Falha publicar");};await assert.rejects(f.deposit());assert.equal(f.operation()[1].status,"applied");f.controls.message=null;f.actor.system.resources.cosmo.value=5;f.target.system.resources.health.value=1;f.combat.round++;await f.recover();assert.equal(f.stats.rolls,1);assert.equal(f.stats.published,1);assert.equal(f.actor.system.resources.cosmo.value,5);assert.equal(f.record().residual.value,50);assert.equal(effectOperationContext(f.actor).length,0);}
+ const f=fixture();f.controls.write=async(data,p)=>{if(p==="after"&&Object.keys(data).some(k=>k.startsWith(`flags.${ID}.persistentEffects.`)))throw Error("Resposta perdida");};await assert.rejects(f.deposit());f.controls.write=null;await f.recover();assert.equal(f.stats.records,1);assert.equal(f.stats.rolls,1);assert.equal(f.stats.published,1);
+});
+test("cartão editado, removido, autoria e cópia não repetem nem cobram",async()=>{
+ for(const kind of ["edited","removed","author","copy"]){const f=fixture();f.controls.message=async()=>{throw Error("Falha");};await assert.rejects(f.deposit());f.controls.message=null;const m=f.messages.get(f.operation()[1].messageId);if(kind==="edited")m.flags[ID].residualPrepared.card.content="Changed";if(kind==="removed")f.messages.delete(m.id);if(kind==="author")m.author={id:"other"};if(kind==="copy")f.actor.uuid="Actor.copy";await assert.rejects(f.recover());await f.recover(true);assert.equal(f.operation()[1].status,"reviewed");assert.equal(f.stats.rolls,1);assert.equal(f.actor.system.resources.cosmo.value,7);}
+});
+test("cartão alterado antes de aplicar bloqueia o registro; não publica resultado incompleto",async()=>{
+ for(const kind of ["author","edited","removed"]){const f=fixture();f.controls.create=async(m,p)=>{if(p==="after"){if(kind==="author")m.author={id:"other"};if(kind==="edited")m.flags[ID].residualPrepared.card.content="Changed";if(kind==="removed")f.messages.delete(m.id);}};await assert.rejects(f.deposit());assert.equal(f.stats.records,0);assert.equal(f.stats.published,0);assert.equal(f.actor.system.combat.asterismPenalty,0);}
+});
+test("cartão explicitamente público e registro não oferecem aplicação de dano/rodada",async()=>{
+ const f=fixture();game.settings.get=()=>"blindroll";await f.deposit();const m=[...f.messages.values()][0];assert.deepEqual(m.whisper,[]);assert.equal(m.blind,false);assert.equal(m.rolls.length,1);assert.equal(m.flags[ID].residualPrepared,undefined);assert.equal(m.flags[ID].residualResolution.actorUuid,f.actor.uuid);assert.equal(m.flags[ID].attack,undefined);assert.equal(m.flags[ID].resolvedDamage,undefined);const v=effectSheetContext(f.actor)[0];assert.equal(v.isResidual,true);assert.equal(v.canResolve,false);assert.equal(v.canEnd,true);
+});
+test("recuperação cancelada e stale não muda pendência",async()=>{
+ const f=fixture();f.controls.roll=async()=>{throw Error("Falha");};await assert.rejects(f.deposit());f.controls.roll=null;await recoverResidual(f.actor,f.operation()[0]);assert.equal(f.operation()[1].status,"prepared");await assert.rejects(holdDecisionOutsideQueue(()=>recoverResidual(f.actor,f.operation()[0]),{answer:{reason:"",close:true},during:()=>{f.actor.system.resources.cosmo.value=5;}}),/mudou/);assert.equal(f.operation()[1].status,"prepared");assert.equal(f.stats.rolls,1);
+});

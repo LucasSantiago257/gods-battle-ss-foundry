@@ -1,4 +1,10 @@
-Versão **0.21.0** para FoundryVTT 13 build 350.
+Versão **0.22.0** para FoundryVTT 13 build 350.
+
+## 0.22.0 — segundo Asterismo e valor fixo de Cosmo Residual
+
+Mestre vincula técnica Residual a efeito inicial registrado e rola o segundo Asterismo público. Dificuldade e PC finais explícitos; excesso calculado, valor Residual congelado e próxima penalidade registrada junto. Sucesso iguala ou supera dificuldade; falha não cria efeito. Prazo inicial, duplicação e retrocesso conferidos; diário de recuperação conserva o mesmo resultado sem Roll/custo novo.
+
+Registro fica no usuário; alvo, condições, CE/PV e ações conservados. Ativação inicial, ações de Cosmo/Movimento Parcial, resistências diárias, objetos e depósitos específicos continuam manuais.20 novos testes (349 totais), fontes/templates/manifesto e prévias locais. Foundry13.350 real pendente. Ver [Cosmo Residual](cosmo-residual.md).
 
 ## 0.21.0 — oposição genérica de Sustentada
 

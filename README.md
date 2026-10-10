@@ -1,5 +1,7 @@
 # Saint Seiya — A Batalha dos Deuses para FoundryVTT
 
+**Combate → Efeitos com duração → Preparar Cosmo Residual · mestre** calcula o segundo Asterismo e congela PC + excesso no usuário, com resultado público e recuperação. Dificuldade final explícita; efeito inicial registrado no alvo. Ativação, ações parciais, resistências diárias e depósitos específicos continuam manuais. Veja [Cosmo Residual](docs/cosmo-residual.md).
+
 **Combate → Condições assistidas → Registrar condição assistida · mestre** aplica parcelas conferidas de Cansado e membros debilitados às rolagens, com origem, quantidade e recuperação explícita. Encerrar remove somente essas parcelas; caixas de estados, ajustes e recursos manuais permanecem. Veja [condições assistidas](docs/condicoes-assistidas.md).
 
 **Combate → Efeitos com duração → Registrar efeito · mestre** acompanha origem, alvo e duração. Brasas de técnica personalizada recebe dano periódico confirmado por rodada; outros estados podem ser anotados sem alterar condições ou bônus manuais. Histórico e recuperação conservam recursos. Veja [efeitos com duração](docs/efeitos-duracao.md).

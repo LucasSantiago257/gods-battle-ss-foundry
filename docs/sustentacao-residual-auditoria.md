@@ -40,3 +40,8 @@ Esta é uma proposta de divisão do trabalho dentro da prioridade gameplay já a
 Registro/pagamento dos passos1–2 entregues na0.20.0 com um alvo e apenas escrita no pagador. Perfil por rodada ou recarga única, recarga atual sem cobrança retroativa e rodada coletiva são convenções operacionais declaradas. Não são inferidas como regra universal. Passos3–5, estados/removal automáticos e múltiplos alvos continuam pendentes.
 
 Passo3 parcialmente entregue na0.21.0: oposição genérica sem débito adicional, dois participantes distintos, pública pelo mestre; empate ativo repete, igualdade passiva resiste, alternativos são perfis de campanha. Tabela188/perícia3=+3 preservada; exemplo383 usa+6 e fica documentado como divergência, sem alterar todas as fichas. Recuperação somente no usuário, sem doisActors escritos. Passos4–5,boostCE/ações/efeitos próprios e privacidade/jogadores continuam pendentes.
+
+
+## Implementado na0.22.0: segundo Asterismo de Residual
+
+Vínculo a anotação inicial/Controle ativo, técnica própria Residual, dois cavaleiros distintos e janela durante duração ou turno seguinte à ativação; dificuldade e PC finais explícitos. Excesso e PC fixos, sem cobrar CE adicional/depósito nem substituir ação de Cosmo + Movimento Parcial por reserva inteira. Falha/penalidade seguem Asterismo genérico, diário recupera sem repetir. Um registro no usuário conserva alvo/efeito inicial, privacidade anterior, catálogos e cópias. [Contrato publicado](cosmo-residual.md). Dias/bônus por tentativa versus dia, depósitos/preparo e objetos permanecem pendentes. O limite de uma tentativa por rodada/efeito inicial é convenção de coordenação do fluxo, não regra universal de toda técnica.
