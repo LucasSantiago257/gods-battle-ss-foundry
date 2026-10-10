@@ -1,4 +1,10 @@
-Versão **0.20.0** para FoundryVTT 13 build 350.
+Versão **0.21.0** para FoundryVTT 13 build 350.
+
+## 0.21.0 — oposição genérica de Sustentada
+
+Após recarga vigente, mestre resolve oposição pública por atributo chave, Utilização do Cosmo ativa ou alvo passivo. Nível e condições de cada participante calculados uma vez; maior total ativo vence, igualdade passiva resiste. Empate segue regra do perfil ou escolha da mesa; derrota pode encerrar só este registro, conservando pagamentos, recursos e condições.
+
+Dois resultados/um cartão rastreados no journal do usuário; recuperação publica ou registra o mesmo resultado sem novas rolagens/cobranças, com revalidação de participantes e rodada. Não escreve no alvo, não cobra CE adicional nem executa efeitos completos da manobra.21 novos testes,329 totais, módulos/templates e prévias; Foundry13.350 real pendente. Ver oposicao-sustentada.md.
 
 ## 0.20.0 — duração e recarga de Sustentada no usuário
 

@@ -1,0 +1,8 @@
+<div class="battle-chat">
+<h3>Oposição · {{name}}</h3><p>{{profileLabel}} · {{attributeLabel}} · rodada {{round}} · tentativa {{attempt}}</p>
+<div class="chat-result"><strong>{{payer.total}} × {{target.total}}</strong><span>{{outcome}}</span></div>
+<p><strong>{{payerName}}</strong>: {{#each payer.results}}{{this}} {{/each}} · modificador final {{payer.modifier}} (base {{payer.base}}, nível {{payer.level}}, bônus {{payer.bonus}}).{{#if payer.conditionSummary}} {{payer.conditionSummary}}{{/if}}</p>
+<p><strong>{{targetName}}</strong>: {{#if target.passive}}passivo{{else}}{{#each target.results}}{{this}} {{/each}}{{/if}} · modificador final {{target.modifier}} (base {{target.base}}, nível {{target.level}}, bônus {{target.bonus}}).{{#if target.conditionSummary}} {{target.conditionSummary}}{{/if}}</p>
+<p>{{#if end}}Este registro de Sustentada foi encerrado.{{else}}{{#if repeat}}Empate: repita a oposição no mesmo registro.{{else}}Registro conservado.{{/if}}{{/if}} Condições, dano e efeitos específicos continuam conferidos na mesa.</p>
+{{#if reason}}<p>{{reason}}</p>{{/if}}<small>Livro: p.225/382/421–422. Resultado público; sem nova cobrança de CE.</small>
+</div>
