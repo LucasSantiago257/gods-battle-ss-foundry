@@ -1,4 +1,4 @@
-# Próximos desafios — após 0.23.0
+# Próximos desafios — após 0.24.0
 
 Prioridade atual definida por Lucas: gameplay. Já existem fichas, catálogos para arrastar, criação/evolução assistidas, personagens de exercício, ataque/defesa, resistência, dano confirmado com desfazer, configuração/prévia de técnicas, composição personalizada e pagamento central compartilhado com dano/evolução. Isso permite exercitar o fluxo básico; não significa automação integral do livro ou validação do servidor.
 
@@ -44,3 +44,8 @@ Auditoria de fontes para Sustentada/Residual concluída na0.19.1: ver [regras, e
 ## Após0.23.0: resistência ao Residual entregue; depósitos específicos pendentes
 
 [Resistência ao valor fixo](resistencia-residual.md) calcula teste e cumulativo com perfis explícitos; dias da campanha informados, sem calendário real/rodadas. Sucesso encerra registro sem alterar alvo, condições ou depósitos. Próximo contrato: depósitos deCE e devolução, exclusivamente conforme cada técnica (Rosa Diabólica/Pólen281–282), distinguindo custo consumido, reserva e redução permanente de máximo. Conferir cancelamento, encerramento, sucessos, múltiplos depósitos/objetos e recuperação antes de automatizar. Ações de Cosmo/Movimento Parcial, objetos/múltiplos alvos, exceções de Sustentada/estados/ações, jogador/privado, armaduras/artefatos/auditoria final e15UX propostos continuam pendentes.
+
+
+## Após0.24.0: depósitos específicos entregues; próximos contratos
+
+[Depósitos/devolução de CE](depositos-ce.md) para Rosa/Pólen, Ataúde e Eir: quantidade e evento congelados, saldo/capacidade escolhidos, objetos independentes, diário e retorno único. CE permanente não tem semântica universal inferida; preparo, ativação e estados seguem separados. Próximo grupo: exceções concretas de Controle/Sustentada/Residual e contribuições reversíveis de estados, começando por mapear gatilhos do livro (sem automatizar morte/ilusão sem contrato). Ações Cosmo/Movimento Parcial e manobras completas ainda precisam representação própria. Marcas/Fadas com custos permanentes, sobrevivência em Ataúde, objetos da cena/múltiplos alvos, execução por jogador/privada, armaduras/artefatos e auditoria final de cobertura continuam pendentes. Validar13.350 no servidor com dois clientes antes de afirmar compatibilidade verificada.

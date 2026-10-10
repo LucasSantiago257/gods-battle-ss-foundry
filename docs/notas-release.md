@@ -1,4 +1,8 @@
-Versão **0.23.0** para FoundryVTT 13 build 350.
+Versão **0.24.0** para FoundryVTT 13 build 350.
+
+## 0.24.0 — depósitos e devolução de CE em objetos
+
+Rosa/Pólen5, Ataúde1 e Eir5 têm registros específicos, perfil explícito de CE atual ou atual+capacidade, parcelas derivadas e retorno único pelo evento da fonte. Custos de ativação, requisitos, estados e testes de Residual seguem separados. Ajustes posteriores, reservas/extra/PV/atributos e cópias preservados; diário recupera sem repetir débito/crédito.20 novos testes (393 totais), sem validação real no servidor. Ver [depósitos de CE](depositos-ce.md).
 
 ## 0.23.0 — resistência ao Cosmo Residual e dias da campanha
 
