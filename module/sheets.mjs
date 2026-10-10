@@ -150,7 +150,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
   static async endCondition(_event,target) {try{await endCondition(this.actor,target.dataset.condition);}catch(error){ui.notifications.error(error.message);}}
   static async attackTarget() {if(this.isEditable) await attackTarget(this.actor);}
   static async toggleActions() {try{await toggleActionControl();}catch(error){ui.notifications.error(error.message);}}
-  static async consumeAction(_event,target) {if(this.isEditable)try{await consumeAction(this.actor,target.dataset.pool);}catch(error){ui.notifications.error(error.message);}}
+  static async consumeAction(_event,target) {if(this.isEditable)try{await consumeAction(this.actor,target.dataset.pool,target.dataset.movementMode);}catch(error){ui.notifications.error(error.message);}}
   static async adjustActions() {try{await adjustActions(this.actor);}catch(error){ui.notifications.error(error.message);}}
   static async recoverAction(_event,target) {try{await recoverAction(this.actor,target.dataset.operation);}catch(error){ui.notifications.error(error.message);}}
   static async reviewAction(_event,target) {try{await reviewAction(this.actor,target.dataset.operation);}catch(error){ui.notifications.error(error.message);}}
