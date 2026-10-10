@@ -1,4 +1,4 @@
-# Cosmo Residual — segundo Asterismo
+# Cosmo Residual — preparação e resistência
 
 Desde0.22.0, ficha do usuário → Combate → Efeitos com duração → Preparar Cosmo Residual · mestre. Este marco calcula e congela o segundo teste descrito nas pp.224–225. A ativação inicial e suas exigências específicas são resolvidas na mesa.
 
@@ -15,7 +15,7 @@ Asterismo usa sua graduação (1–5 dados, um dado se sem treino), modificador 
 
 Sucesso exige resultado igual ou superior à dificuldade. Excesso = resultado − dificuldade; Residual = PC final + excesso. Exemplo do livro:22 −13 =9; PC41 +9 =50. A dificuldade fixa50 é preservada se nível, PC ou técnica mudarem depois. Igualdade no segundo Asterismo cria Residual sem excesso. Falha não cria Residual ativo. Falha abaixo da dificuldade−10 deixa penalidade−10 no próximo Asterismo; outros resultados limpam a penalidade pendente, seguindo o teste genérico existente. Registro e próxima penalidade são gravados juntos.
 
-O alvo se liberta igualando ou superando o Residual. Resistências diárias, dias da campanha, bônus cumulativo e novas tentativas ainda são manuais. A p.225 combina “a cada novo teste” com “por dia”; nenhum contador automático por rodada/minutos reais ou interpretação silenciosa foi introduzido. O registro Residual não expira com o prazo inicial nem exige presença do usuário no encontro depois de criado; Encerrar Residual conserva o histórico e recursos.
+O alvo se liberta igualando ou superando o Residual. Desde0.23.0, [resistência assistida](resistencia-residual.md) usa dia da campanha e perfil cumulativo explícitos, com novas tentativas confirmadas após falha. Exigências específicas permanecem manuais. A p.225 combina “a cada novo teste” com “por dia”; nenhum contador automático por rodada/minutos reais ou interpretação silenciosa foi introduzido. O registro Residual não expira com o prazo inicial nem exige presença do usuário no encontro depois de criado; Encerrar Residual conserva o histórico e recursos.
 
 ## Custos, efeitos e recuperação
 

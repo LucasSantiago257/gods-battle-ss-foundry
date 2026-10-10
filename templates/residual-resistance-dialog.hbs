@@ -1,0 +1,11 @@
+<p><strong>{{name}}</strong> · {{targetName}} resiste ao Residual de {{payerName}} · dificuldade fixa <strong>{{difficulty}}</strong> · tentativa {{attempt}}.</p>
+<label>Perfil do bônus cumulativo<select name="profile">{{#each profiles}}<option value="{{value}}">{{label}}</option>{{/each}}</select></label>
+{{#if fixedProfile}}<p class="note">Perfil conservado desde o primeiro teste.{{#if hasFirstDay}} Primeiro dia registrado: {{firstDay}}.{{/if}}</p>{{/if}}
+<label>Dia da campanha<input name="day" type="number" min="0" max="1000000" step="1" value="{{day}}" required></label>
+<label>Atributo de resistência<select name="attribute">{{#each attributes}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+<label>Bônus adicional<input name="bonus" type="number" min="-10000" max="10000" step="any" value="0"></label>
+<label>Vantagem<select name="advantage"><option value="0">Normal</option><option value="1">Vantagem</option><option value="-1">Desvantagem</option></select></label>
+<label>Bônus cumulativo final (perfil informado pela mesa)<input name="cumulativeBonus" type="number" min="0" max="1000000" step="1" value="0"></label>
+<p class="note">Dias: +1 por dia decorrido desde o primeiro teste; novas tentativas no mesmo dia mantêm o bônus. Tentativas: +1 por tentativa anterior, inclusive no mesmo dia. Manual: usa o bônus cumulativo informado. A p.225 menciona testes seguidos e bônus por dia; escolha o perfil da campanha. O dia é informado por você, sem avanço pelo relógio ou rodada.</p>
+<p class="note">Igualar ou superar o Residual encerra só este registro no usuário. Condições e efeito inicial no alvo continuam conferidos na mesa. Sem cobrança de CE, depósito ou dano. Falha conserva o Residual e permite outra tentativa confirmada.</p>
+<label>Notas (opcional)<textarea name="reason" maxlength="2000"></textarea></label>

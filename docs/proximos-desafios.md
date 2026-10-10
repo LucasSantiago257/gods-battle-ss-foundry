@@ -1,4 +1,4 @@
-# Próximos desafios — após 0.22.0
+# Próximos desafios — após 0.23.0
 
 Prioridade atual definida por Lucas: gameplay. Já existem fichas, catálogos para arrastar, criação/evolução assistidas, personagens de exercício, ataque/defesa, resistência, dano confirmado com desfazer, configuração/prévia de técnicas, composição personalizada e pagamento central compartilhado com dano/evolução. Isso permite exercitar o fluxo básico; não significa automação integral do livro ou validação do servidor.
 
@@ -39,3 +39,8 @@ Auditoria de fontes para Sustentada/Residual concluída na0.19.1: ver [regras, e
 ## Após0.22.0: Residual registrado, dias e depósitos pendentes
 
 [Segundo Asterismo e PC fixo](cosmo-residual.md) publicados com vínculo ao efeito inicial e recuperação. Próximo contrato: resistência ao valor fixo, dias da campanha e perfil explícito para bônus cumulativo/tentativas (ambiguidade p.225), sem usar rodada como dia. Depois, depósitos permanentes e devolução ao encerrar apenas para técnicas com valores/regras próprios, como Rosa Diabólica/Pólen281–282. Objetos e múltiplos alvos precisam representação própria. Ação de Cosmo + Movimento Parcial224 não está representada pela reserva inteira atual; permanece manual. Exceções de Sustentada, condições/ações específicas, execução por jogador/privada, armaduras/artefatos e auditoria final dos catálogos continuam pendentes.
+
+
+## Após0.23.0: resistência ao Residual entregue; depósitos específicos pendentes
+
+[Resistência ao valor fixo](resistencia-residual.md) calcula teste e cumulativo com perfis explícitos; dias da campanha informados, sem calendário real/rodadas. Sucesso encerra registro sem alterar alvo, condições ou depósitos. Próximo contrato: depósitos deCE e devolução, exclusivamente conforme cada técnica (Rosa Diabólica/Pólen281–282), distinguindo custo consumido, reserva e redução permanente de máximo. Conferir cancelamento, encerramento, sucessos, múltiplos depósitos/objetos e recuperação antes de automatizar. Ações de Cosmo/Movimento Parcial, objetos/múltiplos alvos, exceções de Sustentada/estados/ações, jogador/privado, armaduras/artefatos/auditoria final e15UX propostos continuam pendentes.
