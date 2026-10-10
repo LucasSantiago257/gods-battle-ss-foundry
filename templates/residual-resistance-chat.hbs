@@ -1,0 +1,5 @@
+<div class="battle-chat"><h3>Resistência ao Residual · {{name}}</h3><p>{{targetName}} contra o Residual de {{payerName}} · dia {{day}} · tentativa {{attempt}}.</p>
+<div class="chat-result"><strong>{{total}}</strong><span>{{#if resisted}}Alvo se libertou · registro encerrado{{else}}Residual conservado{{/if}}</span></div>
+<p>Dificuldade fixa {{difficulty}} · {{attributeLabel}} · dados {{#each results}}{{this}} {{/each}} · modificador final {{modifier}} (resistência base {{base}}, bônus {{bonus}}, vantagem {{advantage}}, cumulativo +{{cumulativeBonus}}). {{conditionSummary}}</p>
+<p>{{profileLabel}} · primeiro dia {{firstDay}}. {{#if resisted}}Somente este registro no usuário foi encerrado.{{else}}Outra tentativa pode ser confirmada; não houve repetição automática.{{/if}} Condições e efeito inicial no alvo permanecem manuais.</p>
+{{#if reason}}<p>{{reason}}</p>{{/if}}<small>Livro de Caio Carvalho Santiago, pp.224–225. Resultado público; sem cobrança de CE, depósito ou aplicação de dano.</small></div>

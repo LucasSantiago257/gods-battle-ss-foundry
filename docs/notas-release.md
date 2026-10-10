@@ -1,4 +1,10 @@
-Versão **0.22.0** para FoundryVTT 13 build 350.
+Versão **0.23.0** para FoundryVTT 13 build 350.
+
+## 0.23.0 — resistência ao Cosmo Residual e dias da campanha
+
+Mestre rola resistência do alvo contra valor Residual fixo, com dia informado e perfil cumulativo conservado: dias desde o primeiro teste, tentativas ou bônus final da mesa. Falha permite nova tentativa confirmada; igualdade/sucesso encerra só o registro no usuário. Funciona fora do combate, sem cobrar CE, alterar alvo/condições ou recalcularPC.
+
+Histórico e recuperação mantêm resultado/contador únicos, sem repetirRoll ou restaurar recursos; proteções de permissões, identidade, matemática, prévia alterada e publicação.24 novos testes (373 totais) e prévias locais. Depósitos específicos/ações parciais permanecem manuais; Foundry13.350 real pendente. Ver [resistência ao Residual](resistencia-residual.md).
 
 ## 0.22.0 — segundo Asterismo e valor fixo de Cosmo Residual
 

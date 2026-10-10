@@ -1,3 +1,4 @@
+import {resistResidual} from "./residual-resistance.mjs";
 import {depositResidual} from "./residual.mjs";
 import {opposeSustained} from "./sustained-opposition.mjs";
 import {registerSustained,paySustained} from "./sustained.mjs";
@@ -36,7 +37,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
   static DEFAULT_OPTIONS = {
     classes: ["gods-battle", "knight-sheet"], tag: "form", position: {width: 920, height: 800},
     form: {submitOnChange: true, closeOnSubmit: false},
-    actions: {depositResidual:KnightSheet.depositResidual,opposeSustained:KnightSheet.opposeSustained,registerSustained:KnightSheet.registerSustained,paySustained:KnightSheet.paySustained,retryControl:KnightSheet.retryControl,registerCondition:KnightSheet.registerCondition,endCondition:KnightSheet.endCondition,recoverEffect:KnightSheet.recoverEffect,registerEffect:KnightSheet.registerEffect,resolveEffect:KnightSheet.resolveEffect,endEffect:KnightSheet.endEffect,rollTest: KnightSheet.rollAction, createItem: KnightSheet.createItem, editItem: KnightSheet.editItem,
+    actions: {resistResidual:KnightSheet.resistResidual,depositResidual:KnightSheet.depositResidual,opposeSustained:KnightSheet.opposeSustained,registerSustained:KnightSheet.registerSustained,paySustained:KnightSheet.paySustained,retryControl:KnightSheet.retryControl,registerCondition:KnightSheet.registerCondition,endCondition:KnightSheet.endCondition,recoverEffect:KnightSheet.recoverEffect,registerEffect:KnightSheet.registerEffect,resolveEffect:KnightSheet.resolveEffect,endEffect:KnightSheet.endEffect,rollTest: KnightSheet.rollAction, createItem: KnightSheet.createItem, editItem: KnightSheet.editItem,
       deleteItem: KnightSheet.deleteItem, equipArmor: KnightSheet.equipArmor, useItem: KnightSheet.useItem, useTechnique: KnightSheet.activateTechnique, setupTechnique:KnightSheet.setupTechnique,attackTarget:KnightSheet.attackTarget,recoverTechnique:KnightSheet.recoverTechnique,reviewTechnique:KnightSheet.reviewTechnique,toggleActions:KnightSheet.toggleActions,consumeAction:KnightSheet.consumeAction,adjustActions:KnightSheet.adjustActions,recoverAction:KnightSheet.recoverAction,reviewAction:KnightSheet.reviewAction,
       beginCreation:KnightSheet.beginCreation,guideStep:KnightSheet.guideStep,chooseCreationItem:KnightSheet.chooseCreationItem,applyInitialStyle:KnightSheet.applyInitialStyle,finishCreation:KnightSheet.finishCreation,recoverDamage:KnightSheet.recoverDamage,openCatalog: KnightSheet.openCatalog, seedCompendium: KnightSheet.seedCompendium,openTestActors:KnightSheet.openTestActors,importTestActors:KnightSheet.importTestActors,beginLevelUp:KnightSheet.beginLevelUp,chooseLevelItem:KnightSheet.chooseLevelItem,discardLevelDraft:KnightSheet.discardLevelDraft,requestLevelUp:KnightSheet.requestLevelUp,clearInterruptedLevel:KnightSheet.clearInterruptedLevel}
   };
@@ -131,6 +132,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
     return result;
   }
   static async rollAction(_event, target) { await rollTest(this.actor, target.dataset.kind, target.dataset.key); }
+  static async resistResidual(_event,target) {try{await resistResidual(this.actor,target.dataset.effect);}catch(error){ui.notifications.error(`${error.message} Confira o histórico antes de repetir.`);}}
   static async depositResidual() {try{await depositResidual(this.actor);}catch(error){ui.notifications.error(`${error.message} Confira o histórico antes de repetir.`);}}
   static async opposeSustained(_event,target) {try{await opposeSustained(this.actor,target.dataset.effect);}catch(error){ui.notifications.error(`${error.message} Confira o histórico antes de repetir.`);}}
   static async registerSustained() {try{await registerSustained(this.actor);}catch(error){ui.notifications.error(error.message);}}

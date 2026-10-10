@@ -45,3 +45,8 @@ Passo3 parcialmente entregue na0.21.0: oposição genérica sem débito adiciona
 ## Implementado na0.22.0: segundo Asterismo de Residual
 
 Vínculo a anotação inicial/Controle ativo, técnica própria Residual, dois cavaleiros distintos e janela durante duração ou turno seguinte à ativação; dificuldade e PC finais explícitos. Excesso e PC fixos, sem cobrar CE adicional/depósito nem substituir ação de Cosmo + Movimento Parcial por reserva inteira. Falha/penalidade seguem Asterismo genérico, diário recupera sem repetir. Um registro no usuário conserva alvo/efeito inicial, privacidade anterior, catálogos e cópias. [Contrato publicado](cosmo-residual.md). Dias/bônus por tentativa versus dia, depósitos/preparo e objetos permanecem pendentes. O limite de uma tentativa por rodada/efeito inicial é convenção de coordenação do fluxo, não regra universal de toda técnica.
+
+
+## Implementado na0.23.0: resistência ao Residual
+
+Valor fixo da preparação, resistência atual do alvo, perfil cumulativo explícito conservado por registro: dias desde primeiro teste, quantidade de tentativas anteriores ou valor final da mesa. Perfis são convenções para ambiguidade225, não regra universal inferida. Dia inteiro declarado; nenhuma conversão relógio/rodada nem avanço automático. Repetições após falha são confirmadas no mesmo dia; sucesso>=CD encerra somente registro no usuário, sem alterar alvo/condições ou cobrarCE. Histórico e recuperação conservam teste/dias, validam matemática/CD/ordem/permissões. [Contrato](resistencia-residual.md). Depósitos/devolução e exceções continuam pendentes.
