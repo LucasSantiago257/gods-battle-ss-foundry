@@ -1,12 +1,12 @@
 # Sustentação, Cosmo Residual e oposição — auditoria para implementação
 
-Estado após0.19.1: resistência de efeito sem dano indevido entregue; cobrança recorrente, duelos e Cosmo Residual continuam manuais. Esta auditoria usa o livro V49.1.1, com atribuição em ATTRIBUTION.md. As regras abaixo são paráfrases; nenhuma página, imagem ou dado da cópia foi incorporado ao pacote. O documento orienta os próximos marcos, sem transformar propostas em regras novas.
+Estado após0.20.0: resistência sem dano indevido, registro da fase inicial e recarga assistida entregues. Frequência de recarga é perfil explícito da mesa; duelos e Cosmo Residual continuam manuais. Ver sustentada.md. Esta auditoria usa o livro V49.1.1, com atribuição em ATTRIBUTION.md. As regras abaixo são paráfrases; nenhuma página, imagem ou dado da cópia foi incorporado ao pacote. O documento orienta os próximos marcos, sem transformar propostas em regras novas.
 
 ## Contratos distintos
 
 | Fonte | Regra conferida | Consequência para a implementação |
 |---|---|---|
-| p.205 | Controle dura2/3/4turnos conforme classe, contando ativação. Após a duração normal, Sustentada pode continuar mediante recarga de1CE até libertação ou falta de CE. | Distinguir fase inicial e manutenção; cobrar o usuário da técnica, não o alvo; não usar a tabela de nova resistência de Controle1/1/2CE como custo de manutenção. |
+| p.205 | Controle dura2/3/4turnos conforme classe, contando ativação. Após a duração normal, Sustentada pode continuar mediante recarga de1CE até libertação ou falta de CE. | Distinguir fase inicial e manutenção; frequência não está detalhada nessa passagem:0.20.0 oferece perfis de campanha por rodada/recarga única, sem impor um deles como regra universal. Cobrar o usuário da técnica, não o alvo; não usar a tabela de nova resistência de Controle1/1/2CE como custo de manutenção. |
 | p.225 | Sustentada prolonga o efeito enquanto o usuário vence teste resistido de Duelo de Cosmos ou atributo chave, à escolha do usuário. | Resolver oposição e pagamento com contextos explícitos; custo pago não constitui vitória nem aplicação automática de estado/dano. |
 | p.382–383 | Teste resistido de atributo/perícia soma modificador de nível; maior total vence. Empate genérico repete, salvo regra específica. Pode queimarCE para+2por ponto. | Não reutilizar teste genérico sem a parcela de nível. Tratar empate sem decidir vencedor automaticamente. Boost pago, decisão e resultado rastreáveis. |
 | p.421–422 | Duelo de Cosmos usa Utilização do Cosmo com CE queimada; possui efeitos próprios e opção passiva baseada em7+total da perícia+modificador de nível+ajustes. | A p.382 dá+2porCE enquanto a manobra descreve adição de CE queimada. Não fixar multiplicador sem um perfil/decisão de campanha explícitos. Preservar as consequências específicas e distinguir duelo ativo de passivo. |
@@ -36,3 +36,5 @@ Estado após0.19.1: resistência de efeito sem dano indevido entregue; cobrança
 5. Residual com segundo Asterismo, excesso ePCcongelados; calendário/dias/counters explícitos; objetos e exceções só após contrato próprio. Inicialmente manter o perfil diário manual e não inferir bônus acumulado da passagem real de tempo.
 
 Esta é uma proposta de divisão do trabalho dentro da prioridade gameplay já autorizada. As ambiguidades de multiplicador de CE, empate de técnica Sustentada e repetição diária de Residual devem virar parâmetros úteis ou fluxo manual, sem justificativas obrigatórias, caixas de aceite ou regras presumidas. Não significa implementação/publicação desses cinco passos. Antes de automatizar cada perfil, conferir condições, eventos e exemplos necessários, reproduzir matemática, testar custo único/rollback/publicação e validar no Foundry13.350 real.
+
+Registro/pagamento dos passos1–2 entregues na0.20.0 com um alvo e apenas escrita no pagador. Perfil por rodada ou recarga única, recarga atual sem cobrança retroativa e rodada coletiva são convenções operacionais declaradas. Não são inferidas como regra universal. Passos3–5, estados/removal automáticos e múltiplos alvos continuam pendentes.

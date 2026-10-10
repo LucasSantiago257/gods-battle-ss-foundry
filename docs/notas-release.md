@@ -1,4 +1,10 @@
-Versão **0.19.1** para FoundryVTT 13 build 350.
+Versão **0.20.0** para FoundryVTT 13 build 350.
+
+## 0.20.0 — duração e recarga de Sustentada no usuário
+
+Registro na ficha pagadora identifica técnica pronta, alvo e duração inicial, com padrões Bronze2/Prata3/Ouro4 incluindo ativação. Após o prazo, recarga de1CE confirmada conserva CE reservada, PV, ações e condições; CE extra opcional e ilimitada rastreada. Frequência é perfil explícito da mesa (por rodada ou única até encerrar), pois a p.205 não a detalha. Oposição continua manual; pagar não vence duelo nem aplica efeito.
+
+Pagamento único com histórico, lacunas sem cobrança retroativa, fila/revalidação e recuperação de operações sem recobrar/restaurar recursos. Encerrar conserva custos anteriores. Um registro por técnica/um alvo evita duplicar cobrança; nenhuma escrita no alvo, migração ou mudança de catálogo.21 novos testes,308 totais aprovados, módulos/templates e prévias conferidos; validação real Foundry13.350 pendente. Ver sustentada.md.
 
 ## 0.19.1 — resistência de efeitos sem aplicação de dano
 

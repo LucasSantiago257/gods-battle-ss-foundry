@@ -1,0 +1,8 @@
+<p>Registre na ficha do usuário uma Sustentada já ativada e com efeito presente no alvo. O registro acompanha a recarga; a ativação, resistência e oposição são resolvidas na mesa.</p>
+<label>Técnica desta ficha<select name="itemUuid">{{#each sources}}<option value="{{itemUuid}}">{{name}} · {{classification}} · duração padrão {{defaultRounds}} rodadas</option>{{/each}}</select></label>
+<label>Alvo no encontro<select name="targetUuid">{{#each targets}}<option value="{{uuid}}">{{name}}</option>{{/each}}</select></label>
+<label>Rodada da ativação<input name="firstRound" type="number" min="1" max="{{round}}" step="1" value="{{round}}"></label>
+<label>Duração inicial final (inclui a ativação)<input name="rounds" type="number" min="1" max="1000" step="1" placeholder="Auto"></label><p class="note">Duração vazia usa o padrão da classe escolhida.</p>
+<p class="note">Padrões: Bronze 2, Prata 3, Ouro 4 rodadas (p.205). Ajuste a duração final conforme a técnica e resistência. Após esse prazo, recarga de 1 CE no usuário pelo perfil escolhido; duelo e efeitos permanecem manuais (p.225). Técnicas com dias, depósitos ou custos próprios usam seu fluxo manual.</p>
+<label>Perfil de recarga<select name="maintenanceMode"><option value="round">1 CE por rodada · perfil da mesa</option><option value="once">1 CE uma vez até encerrar · perfil da mesa</option></select></label><p class="note">A p.205 descreve recarga de 1 CE sem detalhar sua frequência; selecione a interpretação usada na mesa. A oposição da p.225 permanece necessária.</p>
+<label>Notas (opcional)<textarea name="reason" maxlength="2000"></textarea></label>

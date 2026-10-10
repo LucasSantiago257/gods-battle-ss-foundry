@@ -1,3 +1,4 @@
+import {recoverSustained} from "./sustained.mjs";
 import {canRetryControl,recoverControlRetry} from "./control-retry.mjs";
 import {optionalNote} from "./form-values.mjs";
 import {SYSTEM_ID} from "./config.mjs";
@@ -24,7 +25,7 @@ export function effectSources() {
  return sources.toSorted((a,b)=>a.label.localeCompare(b.label));
 }
 export function effectSheetContext(actor) {
- return Object.entries(effectRecords(actor)).map(([id,record])=>({id,...record,...effectView(actor,record),canRetryControl:canRetryControl(actor,id),controlRetries:Object.values(record.controlRetries??{}).toSorted((a,b)=>a.round-b.round),canEnd:game.user.isGM&&record.status==="active",canResolve:game.user.isGM&&effectView(actor,record).canResolve,ticks:Object.values(record.ticks??{}).toSorted((a,b)=>a.round-b.round)})).toSorted((a,b)=>b.time-a.time);
+ return Object.entries(effectRecords(actor)).map(([id,record])=>({id,...record,...effectView(actor,record),isSustained:record.kind==="sustained",sustainModeLabel:record.sustain?.mode==="once"?"única até encerrar":"por rodada",canRetryControl:canRetryControl(actor,id),controlRetries:Object.values(record.controlRetries??{}).toSorted((a,b)=>a.round-b.round),canPay:game.user.isGM&&isPrimaryGM()&&effectView(actor,record).canPay&&!Object.values(actor.flags?.[SYSTEM_ID]?.effectOperations??{}).some(r=>r.status==="prepared"),sustainPayments:Object.values(record.sustain?.payments??{}).toSorted((a,b)=>a.round-b.round),canEnd:game.user.isGM&&record.status==="active",canResolve:game.user.isGM&&effectView(actor,record).canResolve,ticks:Object.values(record.ticks??{}).toSorted((a,b)=>a.round-b.round)})).toSorted((a,b)=>b.time-a.time);
 }
 export function effectDialogContext(actor) {
  const context=encounterForEffect(actor);
@@ -84,6 +85,7 @@ export async function endEffect(actor,key) {
  });
 }
 export async function recoverEffect(actor,key) {
+ if(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind==="sustainPayment")return recoverSustained(actor,key);
  if(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind==="controlRetry")return recoverControlRetry(actor,key);
  if(!isPrimaryGM())throw Error("Somente o mestre responsável pode recuperar efeitos.");safeKey(key);
   const operation=actor.flags?.[SYSTEM_ID]?.effectOperations?.[key];if(operation?.status!=="prepared")throw Error("Não há resolução interrompida.");

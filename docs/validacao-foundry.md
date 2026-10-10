@@ -219,3 +219,10 @@ Dois clientesGM, troca de mestre, token vinculado/não vinculado e reconexão: p
 ## Efeito Sustentado sem dano —0.19.1
 
 Ative cópia de Sustentada em mundo de teste e resista pelo cartão. Em sucesso/falha/falha crítica, confira texto de efeito sem botão de aplicar/desfazer dano ou journal de dano zero; recursos intactos pela resistência. Controle antigo sem metadados usa conferência manual de duração. Cartões antigos explicitamente sem dano recusam nova aplicação, inclusive substituição; histórico anterior continua permitindo desfazer quando for última aplicação e valores coincidirem. Teste origem de efeito com resultado legado sem classificação própria. Dano genuíno e cartão legado sem tipo seguem regras anteriores. Manutenção/oposição/Residual permanecem manuais.
+
+
+## Sustentada0.20.0 — recarga no pagador
+
+Em encontro iniciado, configure uma Sustentada na ficha do usuário, resolva ativação/resistência na mesa e registre técnica/alvo em Combate. Duração vazia: Bronze2, Prata3, Ouro4 incluindo ativação; teste ajuste final e dois perfis de recarga. Na fase inicial, pagar indisponível. Primeira manutenção cobra1CE do usuário, conservando alvo/PV/reserva/condições/ações; teste extra com CE atual toda reservada e ilimitada. Duplo clique/retrocesso não recobram; rodada seguinte paga apenas no perfil por rodada. No perfil único, futuras rodadas mantêm registro sem novas cobranças.
+
+Avance com lacuna: nenhuma cobrança automática; confirmação registra só recarga atual e lacuna sem custos retroativos. Confira oposição manual, depois encerrar sem reembolso. Rejeite fonte removida/rascunho, múltiplos registros da mesma técnica, alvo/combatente substituído, cópia, outro mestre e alterações enquanto diálogo está aberto. Deixe diálogo aberto e pague outra ficha: fila deve continuar livre. Interrompa antes/após Actor.update: preparação exige Conferir efeito; before encerra sem gasto, after reconhece pago, divergência/cópia conservam ajustes. Catálogos/fichas antigas intactos, sem journal de dano ou marca aplicada no alvo. Requer ensaio real no Foundry13.350 com dois clientes, não declarar compatibilidade verificada apenas por testes locais.
