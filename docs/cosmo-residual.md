@@ -19,7 +19,7 @@ O alvo se liberta igualando ou superando o Residual. Desde0.23.0, [resistência 
 
 ## Custos, efeitos e recuperação
 
-Este segundo teste não cobra novamente a ativação, não queima CE adicional e não representa depósito permanente. Ação de Cosmo + Movimento Parcial (p.224) é manual: as reservas atuais de ataque/defesa e Movimento inteiro não representam esse custo. Não debitar todas as ações nem um Movimento inteiro por suposição. Rosa Diabólica/Pólen e outras técnicas com depósitos, preparo ou condições específicas exigem contrato próprio. Campo de bônus não cobra CE.
+Este segundo teste não cobra novamente a ativação, não queima CE adicional e não representa depósito permanente. Na0.26.0, com controle de ações ativo no mesmo encontro, Ação de Cosmo + Movimento Parcial (p.224) registra um uso de Cosmo e uma parcela de movimento junto ao resultado e à penalidade. Movimento deve estar disponível; inclusive falha consome a parcela. Ataque/defesa e CE são conservados. Sem controle ativo, ações continuam conferidas na mesa. Não repetir esses registros pelos botões separados. Registros/diários antigos conservam o contrato anterior, sem cobranças retroativas. Rosa Diabólica/Pólen e outras técnicas com depósitos, preparo ou condições específicas exigem contrato próprio. Campo de bônus não cobra CE.
 
 Somente o usuário recebe registro e próxima penalidade. Ficha alvo, anotação inicial, PV, armadura, CE/reserva/extra, ações e condições não são alterados. A ficha do alvo mantém a anotação histórica inicial; consulte o registro Residual no usuário para a continuidade e resistência. Não estenda a anotação inicial para simular dias; seus controles por rodada continuam próprios. Objetos, autouso, múltiplos alvos, exigências sem um efeito inicial registrado e execução por jogadores/privada continuam manuais.
 
@@ -28,3 +28,8 @@ O mestre responsável confirma fora da fila; gravações são serializadas e rev
 Recuperar mesmo resultado não repete Roll/custo. Preparação incompleta com estado anterior é descartada; resultado completo anterior só é registrado se participantes, técnica, sistema e rodada conservarem o estado. Registro aplicado recupera somente publicação, preservando ajustes posteriores. Cópias, cartão/autoria alterados ou divergências conservam dados e podem encerrar apenas a pendência. Cartão privado órfão antes de salvarID não deve ser publicado manualmente. Fila do clienteGM não éCAS/transação do servidor. Foundry13.350 real ainda precisa de ensaio.
 
 Fontes: livro V49.1.1 de Caio Carvalho Santiago, pp.224–225; [atribuição](../ATTRIBUTION.md), [auditoria](sustentacao-residual-auditoria.md). Sem PDF, imagens do livro ou dados pessoais no pacote.
+
+
+## Recuperação do consumo de ações na0.26.0
+
+Diário novo congela ações antes/depois e contexto do controle. Uma gravação aplica ações, resultado, próxima penalidade e status. Interrupção antes recupera o mesmo resultado e consumo somente se ações/contexto/fichas ainda coincidem; depois reconhece o resultado e republica sem novo consumo, mesmo após outra rodada. Estado divergente preserva ajustes e exige encerrar só a pendência. Legados sem actionRuleVersion2 conservam recuperação sem consumo novo. Confirmar no servidor13.350 com dois clientes antes de marcar compatibilidade verificada.

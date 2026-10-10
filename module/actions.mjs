@@ -1,6 +1,6 @@
 import {optionalNote} from "./form-values.mjs";
 import {SYSTEM_ID,FIGHTING} from "./config.mjs";
-import {actionHash,actionContext,actionView,actionPlan,rawActionUsage,actionSignature,ACTION_LABELS} from "./action-rules.mjs";
+import {actionHash,actionContext,actionView,actionPlan,rawActionUsage,actionSignature,ACTION_LABELS,ACTION_RESERVES,consumeActionPlan} from "./action-rules.mjs";
 import {primaryGM,isPrimaryGM,runMasterOperation,assertNoTechniqueInterruption} from "./master-queue.mjs";
 import {evaluatePool,prepareRollMessage} from "./rolls.mjs";
 import {physicalDamage} from "./combat-rules.mjs";
@@ -64,21 +64,21 @@ export async function executeActionRequest(message,userId) {
   const options=request.options,signature=actionHash(request);guard(message,request,user,actor,signature);
   if(!options||!["attack","defend","consume"].includes(options.kind))throw Error("Tipo de ação inválido.");
   if(!Number.isFinite(options.bonus??0)||Math.abs(options.bonus??0)>10000)throw Error("Modificador inválido.");
-  let target,root,fight,dice,pool,label;
+  let target,root,fight,dice,pool,label,consumePlan;
   if(options.kind==="attack"){
    if(!FIGHTING[options.fighting]||options.fighting==="defense")throw Error("Habilidade de ataque inválida.");
    target=await fromUuid(options.targetUuid);if(target?.type!=="knight"||target.uuid!==options.targetUuid)throw Error("Alvo indisponível.");
    dice=actor.system.fighting[options.fighting];pool="attack";label=`${FIGHTING[options.fighting]} contra ${target.name}`;
   }else if(options.kind==="defend"){
    ({root,fight}=await rootAttack(options,user,actor));dice=actor.system.fighting.defense;pool="defense";label=actor.name;
-  }else{pool=options.pool;label=ACTION_LABELS[pool];if(!["movement","reaction"].includes(pool)||(options.reason!==undefined&&typeof options.reason!=="string")||(options.reason?.length??0)>2000)throw Error("Uso de Movimento/Reação ou descrição inválida.");}
+  }else{consumePlan=consumeActionPlan(actor,options,message.id);pool=options.pool;label=consumePlan.label;optionalNote(options.reason);}
   if(dice!==undefined&&(!Number.isInteger(dice)||dice<1||dice>5))throw Error("Configure graduação de luta entre1 e5.");
   guard(message,request,user,actor,signature);
-  const plan=actionPlan(actor,pool,options.amount,{operationId:message.id});
-  let record={status:"prepared",actorUuid:actor.uuid,userId,requestId:message.id,kind:options.kind,rootId:root?.id??null,pool,cost:plan.cost,label,time:Date.now(),before:plan.before,after:plan.after,reason:options.reason??""};
+  const plan=consumePlan??actionPlan(actor,pool,options.amount,{operationId:message.id});
+  let record={status:"prepared",actorUuid:actor.uuid,userId,requestId:message.id,kind:options.kind,rootId:root?.id??null,pool,cost:plan.cost,label,time:Date.now(),before:plan.before,after:plan.after,reason:optionalNote(options.reason),...(consumePlan?{actionRuleVersion:2,movementMode:consumePlan.movementMode}: {})};
   await actor.update({[`flags.${SYSTEM_ID}.actionOperations.${message.id}`]:record});guard(message,request,user,actor,signature);
   let card;
-  if(options.kind==="consume")card={content:`<p>${escape(label)}: ${plan.cost} ação. ${escape(options.reason)}</p>`,rolls:[],whisper:[user.id,primaryGM().id],blind:false};
+  if(options.kind==="consume")card={content:`<p>${escape(label)}: ${pool==="movement"?`${plan.cost} parcela(s)`:`${plan.cost} uso`}. ${escape(options.reason??"")}</p>`,rolls:[],whisper:[user.id,primaryGM().id],blind:false};
   else {
    const pool=conditionPool(actor.system,dice,plan.cost+actor.system.combat.levelModifier+(options.bonus??0),{maxDice:5});
    const {result,messageRoll}=await evaluatePool(pool.dice,pool.modifier);
@@ -146,28 +146,28 @@ export async function toggleActionControl() {
   await combat.update({[`flags.${SYSTEM_ID}.actionControl`]:{enabled:!enabled,epoch:foundry.utils.randomID(),userId:game.user.id,time:Date.now()}});
  });
 }
-export async function consumeAction(actor,pool) {
+export async function consumeAction(actor,pool,movementMode="partial") {
  const view=actionView(actor),baseline=combatActionState(actor);if(!view.enabled)throw Error("Ative o controle de ações no encontro iniciado.");
- if(!["movement","reaction"].includes(pool))throw Error("Reserva inválida.");
- if(view.remaining[pool]<1)throw Error(`Nenhuma ação de ${ACTION_LABELS[pool]} disponível nesta rodada.`);
- const reason=await foundry.applications.api.DialogV2.wait({window:{title:`Usar ${ACTION_LABELS[pool]}`},content:`<p>Disponível: ${view.remaining[pool]}. Registra uma ação; efeito, deslocamento e CE são conferidos separadamente.</p><label>Descrição (opcional)<textarea name="reason"></textarea></label>`,buttons:[{action:"use",label:"Confirmar uso",callback:(_e,b)=>b.form.elements.reason.value},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});if(reason===null)return;
- return submitCombatAction(actor,{kind:"consume",pool,amount:1,reason},baseline);
+ if(!["movement","reaction","cosmo"].includes(pool))throw Error("Reserva inválida.");
+ const options={kind:"consume",pool,amount:1,...(pool==="movement"?{movementMode}:{})},plan=consumeActionPlan(actor,options,"preview");
+ const reason=await foundry.applications.api.DialogV2.wait({window:{title:`Registrar ${plan.label}`},content:`<p>${pool==="cosmo"?`Já registradas nesta rodada: ${view.cosmoUses}. Sem limite numérico de ações; CE e requisitos são conferidos pelo poder.`:`Disponíveis: ${view.remaining[pool]} / ${view.maxima[pool]}. Este uso registra ${plan.cost} ${pool==="movement"?"parcela(s) de movimento":"reação"}.`} Efeito, metros e custos são conferidos separadamente.</p><label>Descrição (opcional)<textarea name="reason"></textarea></label>`,buttons:[{action:"use",label:"Confirmar uso",callback:(_e,b)=>b.form.elements.reason.value},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});if(reason===null)return;
+ return submitCombatAction(actor,{...options,reason},baseline);
 }
 export async function adjustActions(actor) {
  if(!isPrimaryGM())throw Error("Somente o mestre responsável ajusta ações.");
   const view=actionView(actor),baseline=combatActionState(actor);if(!view.enabled)throw Error("Controle de ações não está ativo.");
- const fields=Object.entries(ACTION_LABELS).map(([key,label])=>`<label>${label} disponíveis (máximo ${view.maxima[key]})<input name="${key}" type="number" min="0" max="${view.maxima[key]}" value="${view.remaining[key]}"></label>`).join("");
- const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Ajustar reservas de ações"},content:`<p>Revisão do mestre para exceções/efeitos conferidos. Não concede virtudes nem aplica efeitos. Operações interrompidas devem ser encerradas após o reparo.</p>${fields}<label>Notas (opcional)<textarea name="reason"></textarea></label>`,buttons:[{action:"adjust",label:"Registrar ajuste",callback:(_e,b)=>({values:Object.fromEntries(Object.keys(ACTION_LABELS).map(key=>[key,Number(b.form.elements[key].value)])),reason:b.form.elements.reason.value})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
+ const fields=ACTION_RESERVES.map(key=>{const label=ACTION_LABELS[key];return `<label>${label} disponíveis (máximo ${view.maxima[key]})<input name="${key}" type="number" min="0" max="${view.maxima[key]}" value="${view.remaining[key]}"></label>`;}).join("");
+ const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Ajustar reservas de ações"},content:`<p>Revisão do mestre para exceções/efeitos conferidos. Não concede virtudes nem aplica efeitos. Operações interrompidas devem ser encerradas após o reparo.</p>${fields}<label>Notas (opcional)<textarea name="reason"></textarea></label>`,buttons:[{action:"adjust",label:"Registrar ajuste",callback:(_e,b)=>({values:Object.fromEntries(ACTION_RESERVES.map(key=>[key,Number(b.form.elements[key].value)])),reason:b.form.elements.reason.value})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
  if(!answer)return;
  return runMasterOperation(async()=>{
   if(!isPrimaryGM()||combatActionState(actor)!==baseline)throw Error("Mestre, rodada ou ações mudou.");
   optionalNote(answer.reason);
-  const spent={};for(const key of Object.keys(ACTION_LABELS)){const value=answer.values[key];if(!Number.isSafeInteger(value)||value<0||value>view.maxima[key])throw Error("Disponibilidade fora dos limites da ficha.");spent[key]=view.maxima[key]-value;}
-  const id=foundry.utils.randomID(),after={actorUuid:actor.uuid,context:view.context,spent,last:id};
+  const spent={};for(const key of ACTION_RESERVES){const value=answer.values[key];if(!Number.isSafeInteger(value)||value<0||value>view.maxima[key])throw Error("Disponibilidade fora dos limites da ficha.");spent[key]=view.maxima[key]-value;}
+  const id=foundry.utils.randomID(),after={ruleVersion:2,actorUuid:actor.uuid,context:view.context,spent,cosmoUses:view.cosmoUses,movementTotal:false,last:id};
   await actor.update({[`flags.${SYSTEM_ID}.actionUsage`]:after,[`flags.${SYSTEM_ID}.actionAdjustments.${id}`]:{before:rawActionUsage(actor),after,reason:optionalNote(answer.reason),userId:game.user.id,time:Date.now()}});
  });
 }
 export function actionSheetContext(actor) {
- try{const view=actionView(actor);return {...view,entries:Object.entries(ACTION_LABELS).map(([key,label])=>({key,label,max:view.maxima[key],spent:view.spent[key],remaining:view.remaining[key]})),canToggle:!!game.combat,controlEnabled:!!f(game.combat).actionControl?.enabled};}catch(error){return {error:error.message};}
+ try{const view=actionView(actor);return {...view,entries:ACTION_RESERVES.map(key=>({key,label:ACTION_LABELS[key],max:view.maxima[key],spent:view.spent[key],remaining:view.remaining[key]})),canToggle:!!game.combat,controlEnabled:!!f(game.combat).actionControl?.enabled};}catch(error){return {error:error.message};}
 }
 export function refreshActionSheets(){for(const actor of game.actors?.contents??[])for(const app of Object.values(actor.apps??{}))if(app.rendered)app.render();for(const token of globalThis.canvas?.tokens?.placeables??[])for(const app of Object.values(token.actor?.apps??{}))if(app.rendered)app.render();}

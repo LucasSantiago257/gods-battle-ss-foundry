@@ -1,8 +1,6 @@
 # Saint Seiya — A Batalha dos Deuses para FoundryVTT
 
-**Combate → Depósitos de Cosmo Energia → Depositar CE em objeto · mestre** registra depósitos específicos de Rosa/Pólen, Ataúde e Benção de Eir, com perfil de saldo/capacidade escolhido pela mesa e devolução única pelo evento do objeto. Veja [depósitos de CE](docs/depositos-ce.md).
-
-**Combate → Efeitos com duração → Preparar Cosmo Residual · mestre** calcula o segundo Asterismo e congela PC + excesso no usuário, com resultado público e recuperação. Dificuldade final explícita; efeito inicial registrado no alvo. Resistência usa dia da campanha e perfil cumulativo explícitos, com falha repetível e sucesso encerrando só o registro. Ativação e ações parciais continuam manuais; depósitos de três origens usam o painel específico. Veja [resistência ao Residual](docs/resistencia-residual.md). Veja [Cosmo Residual](docs/cosmo-residual.md).
+**Combate → Efeitos com duração → Preparar Cosmo Residual · mestre** calcula o segundo Asterismo e congela PC + excesso no usuário, com resultado público e recuperação. Dificuldade final explícita; efeito inicial registrado no alvo. Resistência usa dia da campanha e perfil cumulativo explícitos, com falha repetível e sucesso encerrando só o registro. Ativação inicial continua manual; com controle ativo, o segundo teste registra Ação de Cosmo + um Movimento Parcial junto ao resultado; depósitos de três origens usam o painel específico. Veja [resistência ao Residual](docs/resistencia-residual.md). Veja [Cosmo Residual](docs/cosmo-residual.md).
 
 **Combate → Condições assistidas → Registrar condição assistida · mestre** aplica parcelas de Cansado, membros debilitados e Desorientado às rolagens. **Ajustar condição** altera a quantidade no mesmo registro, preservando histórico e recursos. Encerrar remove somente essas parcelas; caixas de estados, ajustes e recursos manuais permanecem. Veja [condições assistidas](docs/condicoes-assistidas.md).
 
@@ -12,7 +10,7 @@
 
 **Configurar → Automatizar este grupo de componentes** habilita Esgotar, Essência Alvo, Terreno Favorável e Controle sobre o Espaço em técnicas personalizadas com composição salva. A ativação calcula ND/custo/alcance e registra o contexto conferido; outros componentes continuam manuais. Veja [componentes assistidos](docs/componentes-automaticos.md).
 
-**Combate → Ativar controle de ações no encontro aberto** habilita reservas por rodada: ataque/defesa com quantidade confirmada, técnica usando toda a reserva escolhida, Movimento/Reação com registro de uso e ajustes do mestre com motivo. Trocar a vez não repõe; trocar a rodada repõe sem alterar PV/CE. Veja [ações e rodadas](docs/acoes.md).
+**Combate → Ativar controle de ações no encontro aberto** habilita reservas por rodada: ataque/defesa com quantidade confirmada, técnica usando toda a reserva escolhida, Movimento Parcial/Total, Reação e Ação de Cosmo com registro de uso e ajustes do mestre com notas opcionais. Movimento parcial tem máximo igual à Velocidade efetiva; Cosmo não recebe limite arbitrário de ações. Trocar a vez não repõe; trocar a rodada repõe sem alterar PV/CE. Veja [ações e rodadas](docs/acoes.md).
 
 **Ativar** agora envia o pagamento para a fila do mestre ativo, compartilhada com dano e evolução. A mesma solicitação recebe o cartão de resultado; concorrência, interrupção e recuperação não repetem cobrança/rolagem. Consulte [pagamento central e recuperação](docs/ativacoes.md). É necessário um mestre conectado.
 
@@ -24,7 +22,7 @@
 
 Para exercitar o combate, abra **Compêndios → Fichas de teste — Combate**. A versão 0.9.2 acrescenta Santo, Guardião e Sábia com armadura, técnica e recursos preenchidos. Como mestre, **Combate → Importar grupo de teste** cria as fichas ausentes em uma pasta própria e preserva as cópias existentes. Veja [o exercício passo a passo](docs/fichas-teste.md).
 
-Fichas, compêndios e ativação de técnicas do sistema UmD10+, com destino ao **FoundryVTT 13 build 350**. Versão **0.21.0, em desenvolvimento**. A criação de personagens na versão 0.1.1 foi confirmada pelo usuário no servidor; a nova automação ainda precisa ser validada dentro do Foundry.
+Fichas, compêndios e ativação de técnicas do sistema UmD10+, com destino ao **FoundryVTT 13 build 350**. Versão **0.26.0, em desenvolvimento**. A criação de personagens na versão 0.1.1 foi confirmada pelo usuário no servidor; a nova automação ainda precisa ser validada dentro do Foundry.
 
 O sistema inclui **866 entradas em nove compêndios nativos**, com descrições, requisitos, origem e páginas do livro. Na aba **Poderes**, os atalhos abrem os catálogos para arrastar itens à ficha. Acrescenta 166 técnicas para consulta e configuração, com atalhos na aba Técnicas. As cópias do catálogo exigem revisão antes de gastar CE; custos variáveis, efeitos especiais e Exclamação de Athena permanecem manuais. A ficha permite abrir os Big Bangs relacionados para consulta. Os Items do livro mostram a descrição completa em uma área de leitura. Consulte a [cobertura e o uso dos compêndios](docs/compendios.md). Para atualizar, encerre o mundo e use **Sistemas de Jogo → Atualizar**; depois inicie o mundo e recarregue a página.
 
