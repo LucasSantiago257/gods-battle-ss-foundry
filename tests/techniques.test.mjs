@@ -290,3 +290,11 @@ test("resistência usa PC do cartão e recusa ficha diferente do alvo",async()=>
  assert.equal(r.sent[0].flags["gods-battle-ss"].difficulty,15);assert.equal(r.updates.length,0);
  await assert.rejects(()=>rollTest(r.actor,"resistance","vig",{difficulty:15,resistanceAttack:{targetUuid:"Actor.other"}}),/alvo marcado/);
 });
+
+test("resistência de Sustentada e Controle legado separa efeito de dano mesmo com números herdados",()=>{
+ const s=system();for(const effectKind of ["sustained","control","manual","unknown"]){for(const [total,resisted]of [[9,false],[10,false],[19,false],[20,true],[31,true]]){const r=resistancePreview(s,[],{effectKind,damage:50,armorDamage:30,powerCosmic:20},total);assert.equal(r.application,effectKind);assert.equal(r.isSustained,effectKind==="sustained");assert.equal(r.effectsResisted,resisted);assert.equal(r.doubleDuration,total<10);assert.equal(r.damage,undefined);assert.equal(r.armorDamage,undefined);assert.ok(r.manualEffect);}}
+ for(const effectKind of [undefined,"damage"]){const r=resistancePreview(s,[],{effectKind,damage:10,armorDamage:30,powerCosmic:20},5);assert.equal(r.application,"damage");assert.equal(r.damage,40);}
+});
+test("resistência de Sustentada e Controle sem metadados não publica resolvedDamage nem altera recursos",async()=>{
+ for(const effectKind of ["sustained","control","manual"]){const r=runtime({faces:[5]});foundry.applications.api.DialogV2.wait=async()=>({bonus:0,advantage:0,difficulty:1});const before=structuredClone(r.actor.system);await rollTest(r.actor,"resistance","vig",{difficulty:20,resistanceAttack:{name:"Efeito",effectKind,messageId:"root",targetUuid:r.actor.uuid,powerCosmic:20,damage:50,armorDamage:30}});const f=r.sent[0].flags["gods-battle-ss"];assert.equal(f.difficulty,20);assert.equal(f.resolvedDamage,undefined);assert.equal(f.controlResolution,undefined);assert.ok(f.resistance.manualEffect);assert.deepEqual(r.actor.system,before);assert.equal(r.updates.length,0);}
+});

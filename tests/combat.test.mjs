@@ -4,7 +4,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {knight,content} from "./foundry-stub.mjs";
 import {physicalDamage,damageSnapshot,snapshotMatches,canReadChat} from "../module/combat-rules.mjs";
-import {executeDamageRequest,enqueueDamageRequest,recoverDamageOperation} from "../module/damage.mjs";
+import {executeDamageRequest,enqueueDamageRequest,recoverDamageOperation,requestDamage} from "../module/damage.mjs";
 const ID='gods-battle-ss';
 function patch(obj,data) {for(const [path,value] of Object.entries(data)){const parts=path.split('.');let o=obj;for(const key of parts.slice(0,-1))o=o[key]??={};o[parts.at(-1)]=structuredClone(value);}}
 function fixture() {
@@ -73,4 +73,11 @@ test("recuperação de dano não ocupa fila durante confirmação e conserva can
 });
 test("recuperação de dano recusa mestre ou registro alterados enquanto aberta",async()=>{
  for(const change of [f=>game.user=f.player,f=>f.actor.flags[ID].damageOperations.attack.body=99,f=>f.actor.system.resources.health.value=77]){const f=fixture(),r={...damageSnapshot(f.actor,10.5,10,f.armor.id),status:"prepared",direction:"apply",previousKey:null};f.actor.flags[ID]={damageOperations:{attack:r}};await assert.rejects(holdDecisionOutsideQueue(()=>recoverDamageOperation(f.actor,"attack"),{confirm:true,answer:true,during:async()=>{await runMasterOperation(()=>change(f));}}),/mudou/);assert.equal(r.status,"prepared");assert.equal(f.armor.system.health.value,30);}
+});
+
+test('cartão legado de efeito ou origem sem dano não cria journal nem aceita substituição de PV',async()=>{
+ for(const effectKind of ['control','sustained','manual']){for(const origin of ['source','root']){const f=fixture();if(origin==='source'){f.source.flags[ID].attack={effectKind};f.source.isContentVisible=true;await assert.rejects(requestDamage(f.source),/sem dano/);}else game.messages.set('attack',{flags:{[ID]:{attack:{effectKind,targetUuid:f.actor.uuid}}}});const req=f.request();req.flags[ID].damageRequest.override={body:30,armor:20,reason:''};await executeDamageRequest(req,'p');assert.equal(f.actor.system.resources.health.value,100);assert.equal(f.armor.system.health.value,30);assert.equal(f.actor.flags[ID]?.damageOperations,undefined);assert.equal(req.flags[ID].damageResponse.ok,false);}}
+});
+test('desfazer dano já aplicado antes da correção preserva o histórico legado de efeitos',async()=>{
+ const f=fixture();await executeDamageRequest(f.request(),'p');assert.equal(f.actor.system.resources.health.value,89.5);f.source.flags[ID].attack={effectKind:'sustained'};game.messages.set('attack',{flags:{[ID]:{attack:{effectKind:'sustained',targetUuid:f.actor.uuid}}}});await executeDamageRequest(f.request('legacyUndo','undo'),'p');assert.equal(f.actor.system.resources.health.value,100);assert.equal(f.armor.system.health.value,30);assert.equal(f.actor.flags[ID].damageOperations.attack.status,'undone');await executeDamageRequest(f.request('again'),'p');assert.equal(f.actor.system.resources.health.value,100);
 });

@@ -1,4 +1,11 @@
-Versão **0.19.0** para FoundryVTT 13 build 350.
+Versão **0.19.1** para FoundryVTT 13 build 350.
+
+## 0.19.1 — resistência de efeitos sem aplicação de dano
+
+Sustentada e Controle antigo sem metadados agora mostram resistência de efeito, sem botão/journal de dano zero ou campos de dano herdados. O mestre confere duração/oposição pela técnica. A aplicação de dano também recusa cartões antigos explicitamente de Controle/Sustentada/Especial e suas origens, inclusive substituições; desfazer aplicações anteriores continua disponível com as proteções existentes. Cartões legados de dano sem classificação permanecem compatíveis. Não muda o pagamento de ativação, recursos, fichas ou compêndios.
+
+Auditoria de Sustentada/Residual documenta recarga genérica de1CE (p.205), duelo/empates, distinção de dano à armadura1/2/3 por turno e regras específicas de dias/CE permanente. Essas regras ainda são manuais; não implanta cobrança automática nem fluxo Residual/duelos.287 testes locais, módulos/templates e prévias aprovados; validação real Foundry13.350 pendente. Ver sustentacao-residual-auditoria.md.
+
 
 ## 0.19.0 — nova resistência paga de Controle
 

@@ -6,7 +6,9 @@ import {defendAttack} from "./combat.mjs";
 import {primaryGM,runMasterOperation,assertNoTechniqueInterruption} from "./master-queue.mjs";
 export {primaryGM} from "./master-queue.mjs";
 const localBusy=new Set();
-function resolution(message) {
+function resolution(message,{allowEffectDamage=false}={}) {
+  const effect=message.flags?.[SYSTEM_ID]?.attack?.effectKind;
+  if(!allowEffectDamage&&effect&&effect!=="damage")throw Error("Este cartão resolve um efeito sem dano. Use a aplicação específica da técnica; nenhum PV será alterado por esta resistência.");
   const r=message.flags?.[SYSTEM_ID]?.resolvedDamage;
   if (!r || !/^[a-zA-Z0-9_-]+$/.test(r.rootMessageId) || ![r.body,r.armor].every(n=>Number.isFinite(n)&&n>=0)) throw Error("Cartão de dano inválido; resolva o combate novamente.");
   return r;
@@ -16,7 +18,7 @@ export async function requestDamage(message,action="apply") {
   const gm=primaryGM();if(!gm?.active) return ui.notifications.warn("É necessário um mestre ativo para aplicar ou desfazer dano.");
   localBusy.add(message.id);
   try {
-    const r=resolution(message),actor=await fromUuid(r.actorUuid);
+    const r=resolution(message,{allowEffectDamage:action==="undo"}),actor=await fromUuid(r.actorUuid);
     if (!actor?.isOwner) throw Error("Somente o mestre ou proprietário do defensor pode aplicar dano.");
     const snapshot=damageSnapshot(actor,r.body,r.armor,r.armorId);
     let override=null;
@@ -39,8 +41,9 @@ export async function executeDamageRequest(message,userId) {
   try {
     const source=game.messages.get(request.messageId);
     if (!source || !canReadChat(requester,source) || !["apply","undo"].includes(request.action)) throw Error("Solicitação sem acesso ao resultado.");
-    const r=resolution(source);actor=await fromUuid(r.actorUuid);
+    const r=resolution(source,{allowEffectDamage:request.action==="undo"});actor=await fromUuid(r.actorUuid);
     const root=game.messages.get(r.rootMessageId),techniqueTarget=root?.flags?.[SYSTEM_ID]?.attack?.targetUuid;
+    if(request.action==="apply"&&root?.flags?.[SYSTEM_ID]?.attack?.effectKind&&root.flags[SYSTEM_ID].attack.effectKind!=="damage")throw Error("A origem desta resistência resolve efeito sem dano. Use o fluxo específico da técnica.");
     if(techniqueTarget&&techniqueTarget!==r.actorUuid)throw Error("A resistência não pertence ao alvo marcado da técnica.");
     if(actor?.type!=="knight" || !actor.testUserPermission(requester,"OWNER")) throw Error("Sem permissão para alterar o defensor.");
     assertNoTechniqueInterruption(actor);
