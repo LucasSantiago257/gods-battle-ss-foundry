@@ -1,3 +1,4 @@
+import {registerSustained,paySustained} from "./sustained.mjs";
 import {retryControl} from "./control-retry.mjs";
 import {SYSTEM_ID, ATTRIBUTES, STYLES, SKILLS, FIGHTING, NATURES, ARMORS, ITEM_TYPES, STATUS, STAGES, CONDITIONS} from "./config.mjs";
 import {rollTest} from "./rolls.mjs";
@@ -33,7 +34,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
   static DEFAULT_OPTIONS = {
     classes: ["gods-battle", "knight-sheet"], tag: "form", position: {width: 920, height: 800},
     form: {submitOnChange: true, closeOnSubmit: false},
-    actions: {retryControl:KnightSheet.retryControl,registerCondition:KnightSheet.registerCondition,endCondition:KnightSheet.endCondition,recoverEffect:KnightSheet.recoverEffect,registerEffect:KnightSheet.registerEffect,resolveEffect:KnightSheet.resolveEffect,endEffect:KnightSheet.endEffect,rollTest: KnightSheet.rollAction, createItem: KnightSheet.createItem, editItem: KnightSheet.editItem,
+    actions: {registerSustained:KnightSheet.registerSustained,paySustained:KnightSheet.paySustained,retryControl:KnightSheet.retryControl,registerCondition:KnightSheet.registerCondition,endCondition:KnightSheet.endCondition,recoverEffect:KnightSheet.recoverEffect,registerEffect:KnightSheet.registerEffect,resolveEffect:KnightSheet.resolveEffect,endEffect:KnightSheet.endEffect,rollTest: KnightSheet.rollAction, createItem: KnightSheet.createItem, editItem: KnightSheet.editItem,
       deleteItem: KnightSheet.deleteItem, equipArmor: KnightSheet.equipArmor, useItem: KnightSheet.useItem, useTechnique: KnightSheet.activateTechnique, setupTechnique:KnightSheet.setupTechnique,attackTarget:KnightSheet.attackTarget,recoverTechnique:KnightSheet.recoverTechnique,reviewTechnique:KnightSheet.reviewTechnique,toggleActions:KnightSheet.toggleActions,consumeAction:KnightSheet.consumeAction,adjustActions:KnightSheet.adjustActions,recoverAction:KnightSheet.recoverAction,reviewAction:KnightSheet.reviewAction,
       beginCreation:KnightSheet.beginCreation,guideStep:KnightSheet.guideStep,chooseCreationItem:KnightSheet.chooseCreationItem,applyInitialStyle:KnightSheet.applyInitialStyle,finishCreation:KnightSheet.finishCreation,recoverDamage:KnightSheet.recoverDamage,openCatalog: KnightSheet.openCatalog, seedCompendium: KnightSheet.seedCompendium,openTestActors:KnightSheet.openTestActors,importTestActors:KnightSheet.importTestActors,beginLevelUp:KnightSheet.beginLevelUp,chooseLevelItem:KnightSheet.chooseLevelItem,discardLevelDraft:KnightSheet.discardLevelDraft,requestLevelUp:KnightSheet.requestLevelUp,clearInterruptedLevel:KnightSheet.clearInterruptedLevel}
   };
@@ -128,6 +129,8 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
     return result;
   }
   static async rollAction(_event, target) { await rollTest(this.actor, target.dataset.kind, target.dataset.key); }
+  static async registerSustained() {try{await registerSustained(this.actor);}catch(error){ui.notifications.error(error.message);}}
+  static async paySustained(_event,target) {try{await paySustained(this.actor,target.dataset.effect);}catch(error){ui.notifications.error(`${error.message} Confira o histórico antes de repetir.`);}}
   static async registerEffect() {try{await registerEffect(this.actor);}catch(error){ui.notifications.error(`${error.message} Confira o registro antes de repetir.`);}}
   static async retryControl(_event,target) {try{await retryControl(this.actor,target.dataset.effect);}catch(error){ui.notifications.error(`${error.message} Confira o histórico antes de repetir.`);}}
   static async resolveEffect(_event,target) {try{await resolveEffect(this.actor,target.dataset.effect);}catch(error){ui.notifications.error(`${error.message} Confira o registro antes de repetir.`);}}

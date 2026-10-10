@@ -1,3 +1,4 @@
+import {sustainedView} from "./sustained-rules.mjs";
 import {SYSTEM_ID} from "./config.mjs";
 import {actionHash} from "./action-rules.mjs";
 import {componentUuid} from "./technique-builder-rules.mjs";
@@ -38,6 +39,7 @@ export function nextEffectRound(record) {
 export function effectView(actor,record) {
  if(record.actorUuid!==actor.uuid)return {record,state:"Cópia de outra ficha · encerrar/recriar após revisão",foreign:true,canResolve:false};
  if(record.status!=="active")return {record,state:record.status==="expired"?"Duração concluída":"Encerrado pelo mestre",canResolve:false};
+ if(record.kind==="sustained"){try{const v=sustainedView(actor,record);return {...v,isSustained:true,canResolve:false};}catch(error){return {record,isSustained:true,state:error.message,canResolve:false,canPay:false};}}
  let context;try{context=encounterForEffect(actor,record.combatUuid);}catch(error){return {record,state:"Pausado · encontro/ficha indisponível",detail:error.message,canResolve:false};}
  if(context.combatantId!==record.combatantId)return {record,state:"Pausado · combatente do registro foi substituído",canResolve:false};
  let nextRound;try{nextRound=nextEffectRound(record);}catch(error){return {record,state:error.message,canResolve:false};}if(nextRound===null)return {record,state:"Duração concluída · conferir registro",canResolve:false};

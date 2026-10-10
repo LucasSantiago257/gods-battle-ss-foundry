@@ -1,0 +1,6 @@
+<p><strong>{{name}}</strong> · alvo {{targetName}} · rodada {{round}}.</p>
+<p>Pagador: {{payerName}}. Recarga: 1 CE{{#if isOnce}} · única até encerrar{{else}} · perfil por rodada{{/if}}. CE atual {{current}}, reservada {{reserved}}, extra {{extra}}{{#if unlimited}} · CE ilimitada{{/if}}.</p>
+{{#if gap}}<p class="note">Lacuna nas rodadas {{gap.first}} a {{gap.last}}. Esta ação registra a recarga atual pelo perfil escolhido e a lacuna sem cobrar retroativamente. Confira na mesa se o efeito continuou; encerre o registro se cessou.</p>{{/if}}
+<label><input type="checkbox" name="useExtra">Usar CE extra primeiro</label>
+<p class="note">A recarga não resolve nem vence oposição, não causa dano e não aplica condições. A técnica continua conforme o resultado do duelo; se o alvo se libertar, encerre o registro. A falta de CE impede pagar e permite encerrar sem gasto.</p>
+<label>Notas (opcional)<textarea name="reason" maxlength="2000"></textarea></label>
