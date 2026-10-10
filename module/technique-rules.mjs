@@ -95,9 +95,11 @@ export function activationPreview(system,technique,options={}) {
 }
 export function resistancePreview(system, items, attack, total, difficulty = attack.powerCosmic) {
   const outcome = classify(total, difficulty);
+  const control=controlResistance(attack,total);
+  if(attack.effectKind&&attack.effectKind!=="damage")return {application:attack.effectKind,outcome,effectsResisted:total>=difficulty,doubleDuration:total<difficulty-10,control,isSustained:attack.effectKind==="sustained",manualEffect:!control?(EFFECT_KINDS[attack.effectKind]??"Efeito especial"):null};
   const armor = items.find(i => i.type === "armor" && i.system.equipped && i.system.health.value >= 0 && i.system.state !== "dead");
   const multiplier = total > difficulty + 10 ? 0 : total >= difficulty ? 0.5 : total < difficulty - 10 ? 2 : 1;
-  return {control:controlResistance(attack,total),outcome, damage: attack.damage * multiplier * (armor ? 1 : 2),
+  return {application:"damage",control,outcome, damage: attack.damage * multiplier * (armor ? 1 : 2),
     armorDamage: armor && total < difficulty ? attack.armorDamage : 0,
     unarmored: !armor, effectsResisted: total >= difficulty, doubleDuration: total < difficulty - 10};
 }

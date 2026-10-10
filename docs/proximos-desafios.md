@@ -1,4 +1,4 @@
-# Próximos desafios — após 0.19.0
+# Próximos desafios — após 0.19.1
 
 Prioridade atual definida por Lucas: gameplay. Já existem fichas, catálogos para arrastar, criação/evolução assistidas, personagens de exercício, ataque/defesa, resistência, dano confirmado com desfazer, configuração/prévia de técnicas, composição personalizada e pagamento central compartilhado com dano/evolução. Isso permite exercitar o fluxo básico; não significa automação integral do livro ou validação do servidor.
 
@@ -31,3 +31,6 @@ Resistência mantém duas interpretações documentadas/configuráveis. Também 
 ## Atrito da fila corrigido na 0.18.1
 
 Decisões humanas de condições/efeitos/Controle/ajustes/recuperação passam a ocorrer fora da fila. A gravação permanece serializada e revalidada. Corrige U01 do mapa de atritos da0.18.0; não muda a sequência de novas regras nem implementa todos os ajustes de UX sugeridos. Nova resistência paga de Controle/encerramento entregue na0.19.0, com exceções do livro conferidas e mantidas manuais; próximo grupo é sustentação/oposição.
+
+
+Auditoria de fontes para Sustentada/Residual concluída na0.19.1: ver [regras, exceções e contratos](sustentacao-residual-auditoria.md). A resistência desses efeitos não gera aplicação de dano. Manutenção genérica1CE é distinta do dano à armadura1/2/3; dupla resistência/oposição, empate, dias e depósitos precisam dos perfis descritos antes de automatizar.
