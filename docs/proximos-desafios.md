@@ -1,4 +1,4 @@
-# Próximos desafios — após 0.21.0
+# Próximos desafios — após 0.22.0
 
 Prioridade atual definida por Lucas: gameplay. Já existem fichas, catálogos para arrastar, criação/evolução assistidas, personagens de exercício, ataque/defesa, resistência, dano confirmado com desfazer, configuração/prévia de técnicas, composição personalizada e pagamento central compartilhado com dano/evolução. Isso permite exercitar o fluxo básico; não significa automação integral do livro ou validação do servidor.
 
@@ -33,4 +33,9 @@ Resistência mantém duas interpretações documentadas/configuráveis. Também 
 Decisões humanas de condições/efeitos/Controle/ajustes/recuperação passam a ocorrer fora da fila. A gravação permanece serializada e revalidada. Corrige U01 do mapa de atritos da0.18.0; não muda a sequência de novas regras nem implementa todos os ajustes de UX sugeridos. Nova resistência paga de Controle/encerramento entregue na0.19.0, com exceções do livro conferidas e mantidas manuais; próximo grupo é sustentação/oposição.
 
 
-Auditoria de fontes para Sustentada/Residual concluída na0.19.1: ver [regras, exceções e contratos](sustentacao-residual-auditoria.md). A resistência desses efeitos não gera aplicação de dano. Registro/recarga1CE com frequência escolhida foram entregues na0.20.0; oposição genérica pública entregue na0.21.0; Residual e exceções permanecem manuais. Recarga1CE é distinta do dano à armadura1/2/3; dupla resistência/oposição, empate, dias e depósitos precisam dos perfis descritos antes de automatizar.
+Auditoria de fontes para Sustentada/Residual concluída na0.19.1: ver [regras, exceções e contratos](sustentacao-residual-auditoria.md). A resistência desses efeitos não gera aplicação de dano. Registro/recarga1CE com frequência escolhida foram entregues na0.20.0; oposição genérica pública entregue na0.21.0; segundo Asterismo/valor fixo de Residual entregue na0.22.0; resistências diárias, depósitos e exceções permanecem manuais. Recarga1CE é distinta do dano à armadura1/2/3; dupla resistência/oposição, empate, dias e depósitos precisam dos perfis descritos antes de automatizar.
+
+
+## Após0.22.0: Residual registrado, dias e depósitos pendentes
+
+[Segundo Asterismo e PC fixo](cosmo-residual.md) publicados com vínculo ao efeito inicial e recuperação. Próximo contrato: resistência ao valor fixo, dias da campanha e perfil explícito para bônus cumulativo/tentativas (ambiguidade p.225), sem usar rodada como dia. Depois, depósitos permanentes e devolução ao encerrar apenas para técnicas com valores/regras próprios, como Rosa Diabólica/Pólen281–282. Objetos e múltiplos alvos precisam representação própria. Ação de Cosmo + Movimento Parcial224 não está representada pela reserva inteira atual; permanece manual. Exceções de Sustentada, condições/ações específicas, execução por jogador/privada, armaduras/artefatos e auditoria final dos catálogos continuam pendentes.

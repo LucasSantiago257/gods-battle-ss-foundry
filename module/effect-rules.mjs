@@ -38,6 +38,7 @@ export function nextEffectRound(record) {
 }
 export function effectView(actor,record) {
  if(record.actorUuid!==actor.uuid)return {record,state:"Cópia de outra ficha · encerrar/recriar após revisão",foreign:true,canResolve:false};
+ if(record.kind==="residual"){const r=record.residual;return {record,isResidual:true,canResolve:false,state:record.status==="failed"?"Segundo Asterismo falhou":record.status!=="active"?"Residual encerrado":Number.isFinite(r?.value)&&r.value>=0?`Cosmo Residual fixo · ${r.value}`:"Residual inválido · revisar",detail:"Resistências diárias e efeitos específicos conferidos na mesa. Prazo inicial não expira este registro; encerrar ao libertar o alvo."};}
  if(record.status!=="active")return {record,state:record.status==="expired"?"Duração concluída":"Encerrado pelo mestre",canResolve:false};
  if(record.kind==="sustained"){try{const v=sustainedView(actor,record);return {...v,isSustained:true,canResolve:false};}catch(error){return {record,isSustained:true,state:error.message,canResolve:false,canPay:false};}}
  let context;try{context=encounterForEffect(actor,record.combatUuid);}catch(error){return {record,state:"Pausado · encontro/ficha indisponível",detail:error.message,canResolve:false};}

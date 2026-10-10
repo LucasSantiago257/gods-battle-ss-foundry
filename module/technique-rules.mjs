@@ -4,7 +4,7 @@ import {testParameters, classify} from "./rules.mjs";
 import {componentOptions} from "./technique-components.mjs";
 import {conditionPool,conditionSummary} from "./condition-rules.mjs";
 
-export const EFFECT_KINDS = {damage: "Dano", control: "Controle", sustained: "Sustentada", manual: "Especial / aplicação manual"};
+export const EFFECT_KINDS = {damage: "Dano", control: "Controle", sustained: "Sustentada", residual: "Cosmo Residual · segundo Asterismo assistido", manual: "Especial / aplicação manual"};
 export const TECHNIQUE_MODES={manual:"Parâmetros manuais da cópia",status:"ND e Poder pelo status do usuário (p.201)"};
 export const TECHNIQUE_TIERS={bronze:{cost:2,damageLevel:2,power:10,range:3},silver:{cost:3,damageLevel:3,power:15,range:4.5},gold:{cost:4,damageLevel:4,power:20,range:6}};
 export function effectiveTechnique(system,technique) {
@@ -17,6 +17,7 @@ export function effectiveTechnique(system,technique) {
 }
 export function techniqueReadiness(item) {
   if(item?.flags?.["gods-battle-ss"]?.techniqueDraft)return "Conclua ou descarte o rascunho de composição antes de ativar esta técnica.";
+  if(item?.system?.effectKind==="residual")return "Ativação inicial manual; prepare o segundo Asterismo em Combate → Preparar Cosmo Residual.";
   const reference = item?.flags?.["gods-battle-ss"]?.source?.reference, s = item?.system;
   if (reference?.manualOnly) return "Técnica cooperativa ou especial: aplique os testes e efeitos manualmente conforme a descrição.";
   if (!reference?.reviewRequired) return s?.effectKind === "manual" ? "Esta técnica usa aplicação manual." : null;
@@ -41,7 +42,7 @@ export function techniqueParameters(system, technique, options = {}) {
   const advantage = options.advantage ?? 0, bonus = options.bonus ?? 0;
   if (![-1, 0, 1].includes(advantage) || !Number.isFinite(bonus)) throw Error("Modificadores inválidos.");
   const effectKind = technique.effectKind ?? "damage";
-  if (!EFFECT_KINDS[effectKind] || effectKind === "manual") throw Error("Big Bang primordial inválido ou de aplicação manual.");
+  if (!EFFECT_KINDS[effectKind] || ["manual","residual"].includes(effectKind)) throw Error("Big Bang primordial inválido ou de aplicação manual.");
   const components=componentOptions(technique,options);
   const cost = integer(integer(technique.cost, "Custo") + integer(technique.costExtra, "CE fixa adicional") + extra + elevate + condense + components.extraCost, "Custo total");
   const skill = system.skills.asterism;

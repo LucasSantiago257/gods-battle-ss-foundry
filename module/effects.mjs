@@ -1,3 +1,4 @@
+import {recoverResidual} from "./residual.mjs";
 import {canOpposeSustained,recoverOpposition} from "./sustained-opposition.mjs";
 import {recoverSustained} from "./sustained.mjs";
 import {canRetryControl,recoverControlRetry} from "./control-retry.mjs";
@@ -19,14 +20,14 @@ async function guard(actor,baseline,operationId=null) {
  available(actor,operationId);
 }
 const effectSnapshot=(actor,key)=>({health:actor.system.resources.health.value,record:structuredClone(effectRecords(actor)[key])});
-export const effectOperationContext=actor=>Object.entries(actor.flags?.[SYSTEM_ID]?.effectOperations??{}).map(([id,r])=>({id,...r,canReview:game.user.isGM&&(r.status==="prepared"||["controlRetry","sustainOpposition"].includes(r.kind)&&r.status==="applied"&&!r.published)})).filter(r=>r.status==="prepared"||["controlRetry","sustainOpposition"].includes(r.kind)&&r.status==="applied"&&!r.published);
+export const effectOperationContext=actor=>Object.entries(actor.flags?.[SYSTEM_ID]?.effectOperations??{}).map(([id,r])=>({id,...r,canReview:game.user.isGM&&(r.status==="prepared"||["controlRetry","sustainOpposition","residualDeposit"].includes(r.kind)&&r.status==="applied"&&!r.published)})).filter(r=>r.status==="prepared"||["controlRetry","sustainOpposition","residualDeposit"].includes(r.kind)&&r.status==="applied"&&!r.published);
 export function effectSources() {
  const actors=new Map();for(const actor of [...(game.actors?.contents??[]),...(globalThis.canvas?.tokens?.placeables??[]).map(t=>t.actor),...(game.combats?.contents??[]).flatMap(c=>(c.combatants?.contents??[]).map(m=>m.actor))])if(actor?.uuid)actors.set(actor.uuid,actor);
  const sources=[];for(const actor of actors.values())for(const item of actor.items?.contents??[])try{const source=brasasSource(item);sources.push({...source,label:`${actor.name} · ${item.name} · ${source.damage} PV/rodada`,baseline:effectSourceState(item)});}catch{/* Somente composições canônicas aptas. */}
  return sources.toSorted((a,b)=>a.label.localeCompare(b.label));
 }
 export function effectSheetContext(actor) {
- return Object.entries(effectRecords(actor)).map(([id,record])=>({id,...record,...effectView(actor,record),isSustained:record.kind==="sustained",sustainModeLabel:record.sustain?.mode==="once"?"única até encerrar":"por rodada",oppositionRound:game.combat?.round,canOppose:canOpposeSustained(actor,id),sustainOppositions:Object.values(record.sustain?.oppositions??{}).toSorted((a,b)=>a.round-b.round||a.attempt-b.attempt),canRetryControl:canRetryControl(actor,id),controlRetries:Object.values(record.controlRetries??{}).toSorted((a,b)=>a.round-b.round),canPay:game.user.isGM&&isPrimaryGM()&&effectView(actor,record).canPay&&!Object.values(actor.flags?.[SYSTEM_ID]?.effectOperations??{}).some(r=>r.status==="prepared"),sustainPayments:Object.values(record.sustain?.payments??{}).toSorted((a,b)=>a.round-b.round),canEnd:game.user.isGM&&record.status==="active",canResolve:game.user.isGM&&effectView(actor,record).canResolve,ticks:Object.values(record.ticks??{}).toSorted((a,b)=>a.round-b.round)})).toSorted((a,b)=>b.time-a.time);
+ return Object.entries(effectRecords(actor)).map(([id,record])=>({id,...record,...effectView(actor,record),isResidual:record.kind==="residual",isSustained:record.kind==="sustained",sustainModeLabel:record.sustain?.mode==="once"?"única até encerrar":"por rodada",oppositionRound:game.combat?.round,canOppose:canOpposeSustained(actor,id),sustainOppositions:Object.values(record.sustain?.oppositions??{}).toSorted((a,b)=>a.round-b.round||a.attempt-b.attempt),canRetryControl:canRetryControl(actor,id),controlRetries:Object.values(record.controlRetries??{}).toSorted((a,b)=>a.round-b.round),canPay:game.user.isGM&&isPrimaryGM()&&effectView(actor,record).canPay&&!Object.values(actor.flags?.[SYSTEM_ID]?.effectOperations??{}).some(r=>r.status==="prepared"),sustainPayments:Object.values(record.sustain?.payments??{}).toSorted((a,b)=>a.round-b.round),canEnd:game.user.isGM&&record.status==="active",canResolve:game.user.isGM&&effectView(actor,record).canResolve,ticks:Object.values(record.ticks??{}).toSorted((a,b)=>a.round-b.round)})).toSorted((a,b)=>b.time-a.time);
 }
 export function effectDialogContext(actor) {
  const context=encounterForEffect(actor);
@@ -86,6 +87,7 @@ export async function endEffect(actor,key) {
  });
 }
 export async function recoverEffect(actor,key) {
+ if(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind==="residualDeposit")return recoverResidual(actor,key);
  if(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind==="sustainOpposition")return recoverOpposition(actor,key);
  if(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind==="sustainPayment")return recoverSustained(actor,key);
  if(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind==="controlRetry")return recoverControlRetry(actor,key);
