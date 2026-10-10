@@ -55,3 +55,8 @@ Valor fixo da preparação, resistência atual do alvo, perfil cumulativo explí
 ## Implementado na0.24.0: depósitos específicos e retorno
 
 Rosa281–282:5 retornam após cessação; Ataúde357–358:1 por ataúde volta ao quebrar; Eir553:5 retornam após consumo. Painel por objeto com origem própria, perfil explícito somente saldo ou saldo+capacidade, congelado; custos/preparo/testes/estados separados. Regras gerais443–446 não formalizam permanente versus capacidade; perfis são convenções, não perda de atributo. Eir usa o termoCosmo e demanda essa distinção. Marcas125/130/Fadas298/305 dependem de contrato de ativos; perdas irreversíveis102/464/637/643 não são devolução. Fonte da capacidade445 e recuperação446 relidas. [Contrato e limitações](depositos-ce.md).
+
+
+## Estado parcial0.25.0: Desorientado393–394
+
+Perda sensorial confirmada aplica−4×sentidos e perda1d×sentidos; campo final opcional substitui total de modificador, não dados. Critical−6semânticacumulativa indefinida requer total informado, sem regra silenciosa. Registro não executa resistência, cobrança técnica, morte/ilusão, prazo ou a perda progressiva Rosa/InibirSentidos. Quantidade editável com histórico e recursos preservados. Paralisado395–396 permite Cosmo e retira movimento/luta; bloquear exige representar açãoCosmo/MovimentoParcial. Atordoado396 perdeuma rodada, resistênciaVigorCD10+dano/10 após +70%PVemumturno; agregado/origem/danoefetivofracionário/arredondamento requerem contrato antes de aplicar. Surpreso393 perde iniciativa/açãoatual. Sufocado396/Vigorturnos/10×progressão e morte397–398 não são penalidades genéricas; seguem pendentes.

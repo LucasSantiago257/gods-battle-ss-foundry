@@ -5,7 +5,7 @@ import assert from "node:assert/strict";
 import {knight,content} from "./foundry-stub.mjs";
 import {prepareKnight,testParameters} from "../module/rules.mjs";
 import {conditionTotals,conditionPool,conditionDefinition,conditionRecords} from "../module/condition-rules.mjs";
-import {registerCondition,endCondition,conditionSheetContext} from "../module/conditions.mjs";
+import {registerCondition,editCondition,endCondition,conditionSheetContext} from "../module/conditions.mjs";
 import {rollTest} from "../module/rolls.mjs";
 import {techniqueParameters,activationPreview} from "../module/technique-rules.mjs";
 import {planLevel} from "../module/level-rules.mjs";
@@ -84,4 +84,67 @@ test("janelas de registrar/encerrar condição não ocupam fila enquanto abertas
 });
 test("condição revalida ficha na fila após outra operação durante diálogo",async()=>{
  const f=fixture();await assert.rejects(holdDecisionOutsideQueue(()=>registerCondition(f.actor),{answer:f.definition,during:async()=>{await runMasterOperation(()=>{f.actor.system.resources.health.value=11;});}}),/mudou/);assert.equal(f.actor.updates.length,0);assert.equal(f.actor.system.resources.health.value,11);
+});
+
+function changingFixture(){
+ const f=fixture(),hooks={},stats={writes:0},write=f.actor.update.bind(f.actor);f.hooks=hooks;f.stats=stats;
+ f.actor.update=async data=>{await hooks.write?.(data,"before");await write(data);stats.writes++;await hooks.write?.(data,"after");};
+ globalThis.fromUuid=async uuid=>{await hooks.read?.(uuid);return uuid===f.actor.uuid?f.actor:null;};
+ const render=foundry.applications.handlebars.renderTemplate;foundry.applications.handlebars.renderTemplate=async(p,c)=>{await hooks.render?.(p,c);return render(p,c);};
+ f.current=id=>conditionRecords(f.actor)[id];f.edit=async(id,changes={})=>{f.answers.push({...f.current(id),...changes});return editCondition(f.actor,id);};return f;
+}
+test("Desorientado da tabela reduz −4 e um dado por sentido uma vez em todos os testes",async()=>{
+ const f=changingFixture(),before=[testParameters(f.actor.system,"attribute","vig"),testParameters(f.actor.system,"skill","sports"),testParameters(f.actor.system,"resistance","vig")],s=structuredClone(f.actor.system);await f.create({key:"disoriented",count:2,reason:"",details:"Audição e olfato"});const totals=conditionTotals(f.actor.uuid,f.actor.flags);assert.equal(totals.modifier,-8);assert.equal(totals.dice,2);for(const [i,kind,key]of [[0,"attribute","vig"],[1,"skill","sports"],[2,"resistance","vig"]]){const p=testParameters(f.actor.system,kind,key);assert.equal(p.modifier,before[i].modifier-8);assert.equal(p.dice,Math.max(1,before[i].dice-2));}assert.deepEqual(f.actor.system.resources,s.resources);assert.deepEqual(f.actor.system.attributes,s.attributes);assert.equal(totals.entries[0].page,"393–394");
+});
+test("modificador final de Desorientado substitui tabela sem multiplicar nem retirar dados a mais",async()=>{
+ const f=changingFixture(),r=await f.create({key:"disoriented",count:3,modifierOverride:-6});assert.equal(f.actor.system.automation.conditionModifier,-6);assert.equal(f.actor.system.automation.conditionDicePenalty,3);await f.edit(r.id,{count:2});assert.equal(f.actor.system.automation.conditionModifier,-6);assert.equal(f.actor.system.automation.conditionDicePenalty,2);await f.edit(r.id,{modifierOverride:null});assert.equal(f.actor.system.automation.conditionModifier,-8);assert.equal(f.actor.system.automation.conditionDicePenalty,2);assert.equal(f.current(r.id).revision,2);
+});
+test("Cansado/membros/Desorientado coexistem e somam sem cortar os limites combinados",async()=>{
+ const f=changingFixture();await f.create({key:"tired",count:1000});await f.create({key:"incapacitated",count:1000});await f.create({key:"disoriented",count:6,modifierOverride:-100});assert.equal(f.actor.system.automation.conditionModifier,-4100);assert.equal(f.actor.system.automation.conditionDicePenalty,1006);assert.deepEqual(conditionPool(f.actor.system,5,8),{dice:1,modifier:-4092});assert.equal(conditionPool(f.actor.system,0,8).dice,0);assert.equal(f.actor.system.resources.health.value,17.5);
+});
+test("quantidade de sentidos e modificador final inválidos, chaves herdadas e nulos são guardados",async()=>{
+ for(const change of [{count:0},{count:7},{count:1.5},{modifierOverride:NaN},{modifierOverride:1},{modifierOverride:-101},{modifierOverride:-6.5},{modifierOverride:"-6"},{key:"constructor"},{key:"toString"}]){const f=changingFixture();await assert.rejects(f.create({key:"disoriented",count:1,...change}));assert.equal(f.stats.writes,0);}
+ const f=changingFixture();f.actor.flags[ID].conditionEffects={bad:{...f.definition,status:"active",actorUuid:f.actor.uuid,ruleVersion:1,key:"constructor"},nil:null,legacy:{...f.definition,key:"disoriented",count:1,status:"active",actorUuid:f.actor.uuid,ruleVersion:1}};f.refresh();assert.equal(f.actor.system.automation.conditionModifier,0);assert.equal(conditionTotals(f.actor.uuid,f.actor.flags).warnings.length,2);assert.equal(conditionSheetContext(f.actor).records.length,3);
+});
+test("Ajustar substitui quantidade e mantém ID/origem inicial/autoria, com antes/depois no histórico",async()=>{
+ for(const key of ["tired","incapacitated","disoriented"]){const f=changingFixture(),r=await f.create({key,count:1}),resources=structuredClone(f.actor.system.resources),initialTime=f.current(r.id).time;await f.edit(r.id,{count:2,details:"Novo detalhe",reason:""});const current=f.current(r.id),h=Object.values(current.revisions)[0];assert.equal(current.count,2);assert.equal(current.revision,1);assert.equal(current.userId,"gm");assert.equal(current.time,initialTime);assert.equal(h.before.count,1);assert.equal(h.after.count,2);assert.equal(h.after.reason,"");assert.equal(Object.keys(conditionRecords(f.actor)).length,1);assert.equal(current.status,"active");assert.deepEqual(f.actor.system.resources,resources);assert.equal(conditionSheetContext(f.actor).records[0].canEdit,true);}
+});
+test("recuperação parcial de sentidos muda parcelas; recuperação completa encerra só registro",async()=>{
+ const f=changingFixture(),base=testParameters(f.actor.system,"attribute","vig"),r=await f.create({key:"disoriented",count:3});await f.edit(r.id,{count:1});assert.equal(f.actor.system.automation.conditionModifier,-4);assert.equal(f.actor.system.automation.conditionDicePenalty,1);f.answers.push("");await endCondition(f.actor,r.id);assert.deepEqual(testParameters(f.actor.system,"attribute","vig"),base);assert.equal(f.current(r.id).revision,1);assert.equal(f.current(r.id).end.reason,"");assert.equal(f.actor.system.conditions.tired,true);
+});
+test("ajuste vazio ou cancelado não escreve nem aumenta histórico; tipo não pode mudar",async()=>{
+ const f=changingFixture(),r=await f.create({key:"disoriented",count:2});const writes=f.stats.writes;await f.edit(r.id);assert.equal(f.stats.writes,writes);await editCondition(f.actor,r.id);assert.equal(f.stats.writes,writes);await assert.rejects(f.edit(r.id,{key:"tired"}),/tipo/);assert.equal(f.current(r.id).count,2);assert.equal(f.current(r.id).revision,undefined);await assert.rejects(f.edit(r.id,{count:0}));
+});
+test("duplo clique do mesmo ajuste só grava uma revisão e uma quantidade final",async()=>{
+ const f=changingFixture(),r=await f.create({key:"disoriented",count:1});const outcomes=await Promise.allSettled([f.edit(r.id,{count:3}),f.edit(r.id,{count:3})]);assert.equal(outcomes.filter(x=>x.status==="fulfilled").length,1);assert.equal(f.current(r.id).revision,1);assert.equal(f.current(r.id).count,3);assert.equal(f.stats.writes,2);
+});
+test("ajuste e registro recusam alterações durante render/diálogo/última leitura e troca conjunta deGM",async()=>{
+ for(const point of ["render","dialog","read"]){for(const mutate of [f=>f.actor.system.resources.cosmo.value=2,f=>f.actor.isOwner=false,f=>{const gm={id:"gm2",isGM:true,active:true};game.user=gm;game.users.activeGM=gm;},f=>f.current("condition1").count=3]){const f=changingFixture(),r=await f.create({key:"disoriented",count:1});const answer={...f.current(r.id),count:2};if(point==="render")f.hooks.render=async()=>mutate(f);if(point==="dialog")f.answers.push(()=>{mutate(f);return answer;});if(point==="read")f.hooks.read=async()=>mutate(f);await assert.rejects(point==="dialog"?editCondition(f.actor,r.id):f.edit(r.id,{count:2}),/mudou|mestre responsável/);assert.equal(f.stats.writes,1);assert.equal(f.current(r.id).revision,undefined);}}
+ const f=changingFixture();f.hooks.render=async()=>{const gm={id:"gm2",isGM:true,active:true};game.user=gm;game.users.activeGM=gm;};await assert.rejects(f.create({key:"disoriented",count:1}),/mudou/);assert.equal(f.stats.writes,0);
+});
+test("mestre/ownership/cópia/pendências/encerrado e duplicados não recebem ajuste",async()=>{
+ for(const mutate of [f=>game.user=f.player,f=>f.actor.isOwner=false,f=>f.actor.uuid="Actor.copy",f=>f.current("condition1").status="ended",...['techniqueOperations','actionOperations','effectOperations','damageOperations','levelOperation'].map(g=>f=>f.actor.flags[ID][g]=g==="levelOperation"?{status:"prepared"}:{pending:{status:"prepared"}})]){const f=changingFixture(),r=await f.create({key:"disoriented",count:1});mutate(f);await assert.rejects(f.edit(r.id,{count:2}));assert.equal(f.stats.writes,1);assert.equal(conditionSheetContext(f.actor).records[0].canEdit,false);}
+ const f=changingFixture(),r=await f.create();conditionRecords(f.actor).duplicate=structuredClone(f.current(r.id));await assert.rejects(f.edit(r.id,{count:3}),/duplicadas/);assert.equal(f.stats.writes,1);
+});
+test("ajustes e encerramento não ocupam fila enquanto esperam escolha",async()=>{
+ const f=changingFixture(),r=await f.create({key:"disoriented",count:1});await holdDecisionOutsideQueue(()=>editCondition(f.actor,r.id));assert.equal(f.stats.writes,1);await assert.rejects(holdDecisionOutsideQueue(()=>editCondition(f.actor,r.id),{answer:{...f.current(r.id),count:2},during:()=>{f.actor.system.resources.health.value=1;}}),/mudou/);assert.equal(f.current(r.id).count,1);
+});
+test("falha antes/depois de Actor.update deixa condição anterior ou ajuste único reconhecível",async()=>{
+ for(const point of ["before","after"]){const f=changingFixture(),r=await f.create({key:"disoriented",count:1});f.hooks.write=async(_d,p)=>{if(p===point)throw Error("Falha de resposta");};await assert.rejects(f.edit(r.id,{count:2}));assert.equal(f.current(r.id).count,point==="before"?1:2);f.hooks.write=null;await f.edit(r.id,{count:2});assert.equal(f.current(r.id).count,2);assert.equal(f.current(r.id).revision,1);assert.equal(Object.keys(f.current(r.id).revisions).length,1);assert.equal(f.actor.system.resources.health.value,17.5);}
+});
+test("histórico divergente, ordem, quantidade e chaves inválidas não são sobrescritos",async()=>{
+ for(const mutate of [r=>r.revision=2,r=>r.count=3,r=>Object.values(r.revisions)[0].before.count=0,r=>Object.values(r.revisions)[0].after.key="incapacitated",r=>Object.values(r.revisions)[0].revision=2,r=>r.revisions['bad.key']=Object.values(r.revisions)[0]]){const f=changingFixture(),r=await f.create({key:"disoriented",count:1});await f.edit(r.id,{count:2});mutate(f.current(r.id));await assert.rejects(f.edit(r.id,{count:4}));assert.equal(f.stats.writes,2);assert.equal(conditionSheetContext(f.actor).records[0].canEdit,false);}
+});
+test("vários ajustes encadeiam matemática e evolução conserva a última parcela sem curar",async()=>{
+ const f=changingFixture(),r=await f.create({key:"disoriented",count:1});await f.edit(r.id,{count:3});await f.edit(r.id,{count:2,modifierOverride:-6});const history=Object.values(f.current(r.id).revisions);assert.deepEqual(history[1].before,history[0].after);const draft={id:"abcdefghijklmnop",from:1,to:2,attributes:{},skills:{},fighting:{}};const plan=planLevel(f.actor.system,[],draft,{},"rank",{actorUuid:f.actor.uuid,flags:f.actor.flags});assert.equal(plan.projected.automation.conditionModifier,-6);assert.equal(plan.projected.automation.conditionDicePenalty,2);assert.equal(plan.projected.resources.health.value,17.5);assert.equal(f.current(r.id).revision,2);
+});
+test("Asterismo e testes privados recebem Desorientado uma vez sem dano/CE automático",async()=>{
+ const f=changingFixture(),tech=content(),before=techniqueParameters(f.actor.system,tech,{advantage:1});await f.create({key:"disoriented",count:2});const after=techniqueParameters(f.actor.system,tech,{advantage:1});assert.equal(after.dice,Math.max(1,before.dice-2));assert.equal(after.modifier,before.modifier-8);assert.equal(after.cost,before.cost);assert.equal(after.difficulty,before.difficulty);f.cards.length=0;f.answers.push({difficulty:10,bonus:0,advantage:0});const sent=await rollTest(f.actor,"resistance","vig");assert.equal(sent.rollMode,"blindroll");const card=f.cards.find(x=>x.modifier!==undefined);assert.equal(card.modifier,testParameters(f.actor.system,"resistance","vig").modifier);assert.equal(f.actor.system.resources.cosmo.value,8);
+});
+test("callback de ajuste aceita campos mecânicos e notas vazias, sem declarações",async()=>{
+ const f=changingFixture(),r=await f.create({key:"disoriented",count:1});foundry.applications.api.DialogV2.wait=async options=>options.buttons[0].callback(null,{form:{elements:Object.fromEntries(Object.entries({key:"disoriented",count:"2",modifierOverride:"-6",origin:"",details:"",until:"",reason:""}).map(([k,value])=>[k,{value}]))}});await editCondition(f.actor,r.id);assert.equal(f.current(r.id).modifierOverride,-6);assert.equal(f.current(r.id).count,2);assert.equal(f.current(r.id).reason,"");assert.equal(f.current(r.id).until,"Até encerrar");
+});
+
+test("histórico renderizado mostra mudança de modificador mesmo com a mesma quantidade",async()=>{
+ const f=changingFixture(),r=await f.create({key:"disoriented",count:2});await f.edit(r.id,{modifierOverride:-6});const row=conditionSheetContext(f.actor).records[0];assert.equal(row.revisions[0].beforeModifier,-8);assert.equal(row.revisions[0].afterModifier,-6);assert.equal(row.revisions[0].beforeDice,2);assert.equal(row.revisions[0].afterDice,2);row.revisions[0].after=null;assert.doesNotThrow(()=>conditionSheetContext(f.actor));f.current(r.id).revisions.bad=null;assert.equal(conditionSheetContext(f.actor).records[0].canEdit,false);assert.match(conditionSheetContext(f.actor).records[0].editWarning,/inconsistente/);
 });

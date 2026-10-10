@@ -15,7 +15,7 @@ export class KnightData extends foundry.abstract.TypeDataModel {
   static migrateData(source) {super.migrateData(source); return migrateKnightSource(source);}
   static defineSchema() {
     return {
-      schemaVersion: num(3, 1), automation: schema({enabled: new BooleanField({initial:true}), healthBonus: num(), resistanceBonus: num(), techniqueND: num(), physicalDamage: num(), testSen: num(), resistanceCos: num(), resistanceSen: num(),cosmoDeposit:num(),conditionModifier:num(0,-4000,0),conditionDicePenalty:num(0,0,1000)}),
+      schemaVersion: num(3, 1), automation: schema({enabled: new BooleanField({initial:true}), healthBonus: num(), resistanceBonus: num(), techniqueND: num(), physicalDamage: num(), testSen: num(), resistanceCos: num(), resistanceSen: num(),cosmoDeposit:num(),conditionModifier:num(0,-4100,0),conditionDicePenalty:num(0,0,1006)}),
       profile: schema({level: num(1, 1, 100), style: text("saint", STYLES), status: text("bronze", STATUS), nature: text("physical", NATURES), specialization: text(),
         nationality: text(), age: text(), height: text(), weight: text(), appearance: text(), essence: text("Bom"), personality: text(), sign: text(), quality: text(), flaw: text(),
         sanctuary: text(), deity: text(), master: text(), trainingPlace: text(), biography: text(), companionUuid: text()}),

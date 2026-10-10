@@ -1,8 +1,12 @@
-<div class="condition-dialog"><p>Ficha: <strong>{{name}}</strong>. Aplicação explícita do mestre; caixas de condição existentes não são convertidas automaticamente.</p>
-<label>Condição<select name="key">{{#each rules}}<option value="{{key}}">{{label}} · p.{{page}}</option>{{/each}}</select></label>
-<label>Quantidade cumulativa conferida<input type="number" name="count" value="1" min="1" max="1000"></label>
-<p class="note">Cansado: −2 por dia/nível conferido em testes. Incapacitado: −2 e perda de1 dado por membro debilitado em testes. A quantidade não cresce automaticamente. Limites de uso do membro e demais ações continuam sob conferência.</p>
-<label>Origem / contexto<input type="text" name="origin" maxlength="500"></label><label>Membros / detalhes<textarea name="details" maxlength="2000"></textarea></label>
-<label>Duração / encerramento (opcional)<textarea name="until" maxlength="1000" placeholder="Após descanso, fim da luta ou prazo confirmado pelo mestre"></textarea></label>
-<label>Notas (opcional)<textarea name="reason" maxlength="2000"></textarea></label>
-<p class="note">Encerre pelo registro após a recuperação conferida. Não cura, não cobra CE, não marca/desmarca condições e não decide automaticamente descanso, dano localizado ou resistência. Outros estados seguem manuais.</p></div>
+<div class="condition-dialog"><p>Ficha: <strong>{{name}}</strong>. Quantidade e duração são informadas pelo mestre.</p>
+{{#if editing}}<p>Condição: <strong>{{label}}</strong>.</p><input type="hidden" name="key" value="{{key}}">{{else}}<label>Condição<select name="key">{{#each rules}}<option value="{{key}}">{{label}} · p.{{page}}</option>{{/each}}</select></label>{{/if}}
+<label>Quantidade final: dias de cansaço, membros ou sentidos perdidos<input type="number" name="count" value="{{count}}" min="1" max="{{maxCount}}"></label>
+<p class="note">Cansado: −2 por dia. Membros debilitados: −2 e perda de1 dado por membro. Desorientado: −4 e perda de1 dado por sentido (1–6). A quantidade não cresce pelo relógio.</p>
+{{#if showModifier}}<label>Desorientado: modificador final (opcional)<input type="number" name="modifierOverride" value="{{modifierOverride}}" min="-100" max="0" placeholder="Vazio: −4 por sentido"></label>
+<p class="note">Para falha crítica ou outra interpretação da mesa, informe o total final (ex.: −6). Ele substitui −4 por sentido; perda de dados continua igual à quantidade. Outras condições ignoram este campo.</p>{{/if}}
+<details><summary>Origem, duração e notas (opcional)</summary>
+<label>Origem / contexto (opcional)<input type="text" name="origin" value="{{origin}}" maxlength="500"></label><label>Membros / sentidos / detalhes (opcional)<textarea name="details" maxlength="2000">{{details}}</textarea></label>
+<label>Duração / encerramento (opcional)<textarea name="until" maxlength="1000" placeholder="Após descanso, fim da luta ou fim do efeito">{{until}}</textarea></label>
+<label>Notas (opcional)<textarea name="reason" maxlength="2000">{{reason}}</textarea></label>
+</details><p>Duração: {{#if until}}{{until}}{{else}}Até encerrar{{/if}}.</p>
+<p class="note">Ajustar substitui as parcelas atuais deste registro. Use Encerrar após recuperação completa. Testes de resistência e efeitos específicos são resolvidos separadamente.</p></div>
