@@ -1,0 +1,9 @@
+<p><strong>{{name}}</strong> · {{payerName}} contra {{targetName}} · rodada {{round}} · tentativa {{attempt}}.</p>
+<label>Perfil<select name="profile">{{#each profiles}}<option value="{{value}}">{{label}}</option>{{/each}}</select></label>
+<label>Atributo chave (perfil de atributo)<select name="attribute">{{#each attributes}}<option value="{{value}}">{{label}}</option>{{/each}}</select></label>
+<label>Bônus adicional do usuário<input name="payerBonus" type="number" min="-10000" max="10000" step="any" value="0"></label>
+<label>Bônus adicional do alvo<input name="targetBonus" type="number" min="-10000" max="10000" step="any" value="0"></label>
+<label>Empate<select name="tie"><option value="auto">Regra do perfil: ativo repete / passivo resiste</option><option value="repeat">Repetir teste · ajuste da mesa</option><option value="keep">Manter registro · perfil da mesa</option><option value="end">Encerrar registro · perfil da mesa</option></select></label>
+<label>Se o alvo vencer<select name="onLoss"><option value="end">Encerrar esta Sustentada</option><option value="keep">Manter registro para aplicação manual</option></select></label>
+<p class="note">O perfil ativo soma o modificador de nível de cada participante. Alvo passivo usa 7 + total de Utilização do Cosmo + nível + ajustes (p.422). A recarga já registrada não será cobrada novamente. Queima adicional de CE, ações e consequências específicas continuam resolvidas na mesa; bônus aqui não debita CE.</p>
+<label>Notas (opcional)<textarea name="reason" maxlength="2000"></textarea></label>

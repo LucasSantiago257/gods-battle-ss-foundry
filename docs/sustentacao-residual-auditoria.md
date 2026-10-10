@@ -1,6 +1,6 @@
 # Sustentação, Cosmo Residual e oposição — auditoria para implementação
 
-Estado após0.20.0: resistência sem dano indevido, registro da fase inicial e recarga assistida entregues. Frequência de recarga é perfil explícito da mesa; duelos e Cosmo Residual continuam manuais. Ver sustentada.md. Esta auditoria usa o livro V49.1.1, com atribuição em ATTRIBUTION.md. As regras abaixo são paráfrases; nenhuma página, imagem ou dado da cópia foi incorporado ao pacote. O documento orienta os próximos marcos, sem transformar propostas em regras novas.
+Estado após0.21.0: resistência sem dano indevido, registro da fase inicial e recarga assistida entregues. Frequência de recarga é perfil explícito da mesa; oposição genérica pública por atributo/Cosmo ativo/passivo entregue na0.21.0. QueimaCEadicional, efeitos completos do duelo e Cosmo Residual continuam manuais. Ver sustentada.md e oposicao-sustentada.md. Esta auditoria usa o livro V49.1.1, com atribuição em ATTRIBUTION.md. As regras abaixo são paráfrases; nenhuma página, imagem ou dado da cópia foi incorporado ao pacote. O documento orienta os próximos marcos, sem transformar propostas em regras novas.
 
 ## Contratos distintos
 
@@ -38,3 +38,5 @@ Estado após0.20.0: resistência sem dano indevido, registro da fase inicial e r
 Esta é uma proposta de divisão do trabalho dentro da prioridade gameplay já autorizada. As ambiguidades de multiplicador de CE, empate de técnica Sustentada e repetição diária de Residual devem virar parâmetros úteis ou fluxo manual, sem justificativas obrigatórias, caixas de aceite ou regras presumidas. Não significa implementação/publicação desses cinco passos. Antes de automatizar cada perfil, conferir condições, eventos e exemplos necessários, reproduzir matemática, testar custo único/rollback/publicação e validar no Foundry13.350 real.
 
 Registro/pagamento dos passos1–2 entregues na0.20.0 com um alvo e apenas escrita no pagador. Perfil por rodada ou recarga única, recarga atual sem cobrança retroativa e rodada coletiva são convenções operacionais declaradas. Não são inferidas como regra universal. Passos3–5, estados/removal automáticos e múltiplos alvos continuam pendentes.
+
+Passo3 parcialmente entregue na0.21.0: oposição genérica sem débito adicional, dois participantes distintos, pública pelo mestre; empate ativo repete, igualdade passiva resiste, alternativos são perfis de campanha. Tabela188/perícia3=+3 preservada; exemplo383 usa+6 e fica documentado como divergência, sem alterar todas as fichas. Recuperação somente no usuário, sem doisActors escritos. Passos4–5,boostCE/ações/efeitos próprios e privacidade/jogadores continuam pendentes.

@@ -19,3 +19,5 @@ Preparação bloqueia novos gastos pelo mesmo mecanismo de técnicas/ações/efe
 O registro fica somente no pagador. Não escreve no alvo nem copia rolagens privadas. Não há cartão público, oposição automática, dano recorrente ou aplicação/remoção de estado. Condições manuais, históricos de dano, ajustes e fontes congeladas são preservados; encerrar não restitui CE. A técnica pode ser editada depois do registro sem reescrever o histórico. Regras específicas de aprisionamento, danos por turno, dias ou depósitos não são deduzidas da descrição. A fila do mestre é do cliente, sem transação/CAS no servidor. Validação Foundry13.350 real permanece pendente.
 
 Ver [auditoria de fontes e próximos contratos](sustentacao-residual-auditoria.md). Livro V49.1.1, atribuição em [ATTRIBUTION.md](../ATTRIBUTION.md), pp.205/225. Próximo marco: oposição com participantes e perfis de atributo/Cosmo/empate explicitados, seguido de Cosmo Residual.
+
+Desde0.21.0, a oposição genérica pública após recarga pode ser resolvida pelo [fluxo específico](oposicao-sustentada.md). As menções anteriores a oposição manual delimitam a0.20.0; estados, dano e exceções continuam manuais.
