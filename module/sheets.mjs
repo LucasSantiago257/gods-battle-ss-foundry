@@ -22,7 +22,7 @@ import {recoverTechniqueOperation,reviewTechniqueOperation} from "./technique-ac
 import {actionSheetContext,toggleActionControl,consumeAction,adjustActions,recoverAction,reviewAction} from "./actions.mjs";
 import {componentProfile,componentState} from "./technique-components.mjs";
 import {effectSheetContext,effectOperationContext,registerEffect,resolveEffect,endEffect,recoverEffect} from "./effects.mjs";
-import {conditionSheetContext,registerCondition,endCondition} from "./conditions.mjs";
+import {conditionSheetContext,registerCondition,editCondition,endCondition} from "./conditions.mjs";
 import {openTestActors,importTestActors} from "./combat-examples.mjs";
 import {beginLevelUp,levelUpContext,chooseLevelItem,discardLevelDraft,requestLevelUp,clearInterruptedLevel} from "./level-up.mjs";
 
@@ -38,7 +38,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
   static DEFAULT_OPTIONS = {
     classes: ["gods-battle", "knight-sheet"], tag: "form", position: {width: 920, height: 800},
     form: {submitOnChange: true, closeOnSubmit: false},
-    actions: {depositCosmo:KnightSheet.depositCosmo,returnCosmo:KnightSheet.returnCosmo,resistResidual:KnightSheet.resistResidual,depositResidual:KnightSheet.depositResidual,opposeSustained:KnightSheet.opposeSustained,registerSustained:KnightSheet.registerSustained,paySustained:KnightSheet.paySustained,retryControl:KnightSheet.retryControl,registerCondition:KnightSheet.registerCondition,endCondition:KnightSheet.endCondition,recoverEffect:KnightSheet.recoverEffect,registerEffect:KnightSheet.registerEffect,resolveEffect:KnightSheet.resolveEffect,endEffect:KnightSheet.endEffect,rollTest: KnightSheet.rollAction, createItem: KnightSheet.createItem, editItem: KnightSheet.editItem,
+    actions: {depositCosmo:KnightSheet.depositCosmo,returnCosmo:KnightSheet.returnCosmo,resistResidual:KnightSheet.resistResidual,depositResidual:KnightSheet.depositResidual,opposeSustained:KnightSheet.opposeSustained,registerSustained:KnightSheet.registerSustained,paySustained:KnightSheet.paySustained,retryControl:KnightSheet.retryControl,registerCondition:KnightSheet.registerCondition,editCondition:KnightSheet.editCondition,endCondition:KnightSheet.endCondition,recoverEffect:KnightSheet.recoverEffect,registerEffect:KnightSheet.registerEffect,resolveEffect:KnightSheet.resolveEffect,endEffect:KnightSheet.endEffect,rollTest: KnightSheet.rollAction, createItem: KnightSheet.createItem, editItem: KnightSheet.editItem,
       deleteItem: KnightSheet.deleteItem, equipArmor: KnightSheet.equipArmor, useItem: KnightSheet.useItem, useTechnique: KnightSheet.activateTechnique, setupTechnique:KnightSheet.setupTechnique,attackTarget:KnightSheet.attackTarget,recoverTechnique:KnightSheet.recoverTechnique,reviewTechnique:KnightSheet.reviewTechnique,toggleActions:KnightSheet.toggleActions,consumeAction:KnightSheet.consumeAction,adjustActions:KnightSheet.adjustActions,recoverAction:KnightSheet.recoverAction,reviewAction:KnightSheet.reviewAction,
       beginCreation:KnightSheet.beginCreation,guideStep:KnightSheet.guideStep,chooseCreationItem:KnightSheet.chooseCreationItem,applyInitialStyle:KnightSheet.applyInitialStyle,finishCreation:KnightSheet.finishCreation,recoverDamage:KnightSheet.recoverDamage,openCatalog: KnightSheet.openCatalog, seedCompendium: KnightSheet.seedCompendium,openTestActors:KnightSheet.openTestActors,importTestActors:KnightSheet.importTestActors,beginLevelUp:KnightSheet.beginLevelUp,chooseLevelItem:KnightSheet.chooseLevelItem,discardLevelDraft:KnightSheet.discardLevelDraft,requestLevelUp:KnightSheet.requestLevelUp,clearInterruptedLevel:KnightSheet.clearInterruptedLevel}
   };
@@ -145,6 +145,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
   static async resolveEffect(_event,target) {try{await resolveEffect(this.actor,target.dataset.effect);}catch(error){ui.notifications.error(`${error.message} Confira o registro antes de repetir.`);}}
   static async endEffect(_event,target) {try{await endEffect(this.actor,target.dataset.effect);}catch(error){ui.notifications.error(error.message);}}
   static async recoverEffect(_event,target) {try{await recoverEffect(this.actor,target.dataset.operation);}catch(error){ui.notifications.error(error.message);}}
+  static async editCondition(_event,target) {try{await editCondition(this.actor,target.dataset.condition);}catch(error){ui.notifications.error(error.message);}}
   static async registerCondition() {try{await registerCondition(this.actor);}catch(error){ui.notifications.error(error.message);}}
   static async endCondition(_event,target) {try{await endCondition(this.actor,target.dataset.condition);}catch(error){ui.notifications.error(error.message);}}
   static async attackTarget() {if(this.isEditable) await attackTarget(this.actor);}

@@ -1,4 +1,8 @@
-Versão **0.24.0** para FoundryVTT 13 build 350.
+Versão **0.25.0** para FoundryVTT 13 build 350.
+
+## 0.25.0 — sentidos perdidos e ajustes de condições
+
+Desorientado aplica−4 e perda de1dado por sentido confirmado, com campo opcional de modificador final para falha crítica/convenção da mesa. Cansado, membros debilitados e sentidos perdidos podem ser ajustados no mesmo registro, com antes/depois e confirmação protegida contra alteração de estado/GM/UUID. Sem encerrar/recriar, novos custos, justificativas ou aceites.17 testes novos,410 totais e prévias locais; servidor13.350 pendente. [Condições assistidas](condicoes-assistidas.md).
 
 ## 0.24.0 — depósitos e devolução de CE em objetos
 

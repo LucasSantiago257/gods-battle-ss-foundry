@@ -1,4 +1,4 @@
-# Próximos desafios — após 0.24.0
+# Próximos desafios — após 0.25.0
 
 Prioridade atual definida por Lucas: gameplay. Já existem fichas, catálogos para arrastar, criação/evolução assistidas, personagens de exercício, ataque/defesa, resistência, dano confirmado com desfazer, configuração/prévia de técnicas, composição personalizada e pagamento central compartilhado com dano/evolução. Isso permite exercitar o fluxo básico; não significa automação integral do livro ou validação do servidor.
 
@@ -49,3 +49,8 @@ Auditoria de fontes para Sustentada/Residual concluída na0.19.1: ver [regras, e
 ## Após0.24.0: depósitos específicos entregues; próximos contratos
 
 [Depósitos/devolução de CE](depositos-ce.md) para Rosa/Pólen, Ataúde e Eir: quantidade e evento congelados, saldo/capacidade escolhidos, objetos independentes, diário e retorno único. CE permanente não tem semântica universal inferida; preparo, ativação e estados seguem separados. Próximo grupo: exceções concretas de Controle/Sustentada/Residual e contribuições reversíveis de estados, começando por mapear gatilhos do livro (sem automatizar morte/ilusão sem contrato). Ações Cosmo/Movimento Parcial e manobras completas ainda precisam representação própria. Marcas/Fadas com custos permanentes, sobrevivência em Ataúde, objetos da cena/múltiplos alvos, execução por jogador/privada, armaduras/artefatos e auditoria final de cobertura continuam pendentes. Validar13.350 no servidor com dois clientes antes de afirmar compatibilidade verificada.
+
+
+## Após0.25.0: Desorientado parcial e ajuste de condições
+
+Sentidos perdidos passam a aplicar modificador/perda de dados conferidos; campo final explícito resolve outra interpretação da falha crítica. Ajustar condição evita encerrar/recriar Cansado/membros/sentidos e conserva histórico/recursos. [Contrato](condicoes-assistidas.md). Resistências próprias e gatilhos/duração/progressão de cada técnica seguem separados. Próximo grupo concreto: Atordoado/Paralisado/Surpreso e reserva de Ação de Cosmo/Movimento Parcial, com representação própria antes de bloquear ações ou inferir execução de técnicas. Auditar dano acumulado por turno/limiar70% e duração de uma rodada, sem automatizar morte ou dano ilusório por equivalente. Privado/jogador, distância/áreas/multialvos, marcas/Fadas/sobrevivênciaAtaúde, armaduras/artefatos/auditoriafinalcatálogo permanecem pendentes.
