@@ -8,10 +8,12 @@ export const ACTION_RESERVES=Object.freeze(["attack","defense","movement","react
 const data=doc=>doc?.flags?.[SYSTEM_ID]??{};
 export function actionRestrictions(actor) {
  const paralyzed=hasActiveCondition(actor?.uuid,actor?.flags,"paralyzed");
- return {paralyzed,movement:paralyzed,attack:paralyzed,defense:paralyzed};
+ const stunned=hasActiveCondition(actor?.uuid,actor?.flags,"stunned");
+ return {paralyzed,stunned,movement:paralyzed||stunned,attack:paralyzed||stunned,defense:paralyzed||stunned,cosmo:stunned,reaction:stunned,technique:stunned};
 }
 export function assertActionAllowed(actor,pool) {
  const restrictions=actionRestrictions(actor);
+ if(restrictions.stunned&&["movement","attack","defense","cosmo","reaction","technique"].includes(pool))throw Error("Atordoado perde a rodada inteira se recuperando (p. 396); nenhuma ação é permitida.");
  if(pool==="movement"&&restrictions.movement)throw Error("Paralisado impede ações de movimento (p. 395–396). Ação de Cosmo continua permitida.");
  if(["attack","defense"].includes(pool)&&restrictions[pool])throw Error(`Paralisado impede ações de ${ACTION_LABELS[pool].toLowerCase()} (p. 395–396). Ação de Cosmo continua permitida.`);
 }
@@ -40,7 +42,7 @@ export function actionView(actor) {
 }
 export function actionSignature(actor) {return actionHash({context:actionContext(actor),usage:rawActionUsage(actor)});}
 export function actionPlan(actor,pool,amount,{all=false,operationId}={}) {
- if(["attack","defense","movement"].includes(pool))assertActionAllowed(actor,pool);
+ if(["attack","defense","movement","cosmo","reaction"].includes(pool))assertActionAllowed(actor,pool);
  const view=actionView(actor);if(!view.enabled)return {view,updates:{},before:rawActionUsage(actor),after:rawActionUsage(actor),cost:0};
  if(!Object.hasOwn(ACTION_LABELS,pool))throw Error("Escolha uma reserva de ações válida.");
  if(pool==="cosmo"){
@@ -71,6 +73,7 @@ export function residualActionPlan(actor,id){
  return {...plan,after,updates:{[`flags.${SYSTEM_ID}.actionUsage`]:after},actionLabel:"1 Ação de Cosmo + 1 Movimento Parcial"};
 }
 export function techniqueActionPlan(actor,options,id) {
+ assertActionAllowed(actor,"technique");
  if(["attack","defense"].includes(options?.actionPool))assertActionAllowed(actor,options.actionPool);
  if(!actionContext(actor))return actionPlan(actor,null,0,{operationId:id});
  if(!["attack","defense"].includes(options.actionPool))throw Error("Escolha todas as ações de ataque ou todas as ações de defesa para esta técnica.");
