@@ -1,4 +1,8 @@
-Versão **0.25.0** para FoundryVTT 13 build 350.
+Versão **0.26.0** para FoundryVTT 13 build 350.
+
+## 0.26.0 — Movimento Parcial/Total e ações de Cosmo
+
+Movimento tem parcelas pela Velocidade efetiva; parcial usa uma e total exige reserva intacta. Ação de Cosmo tem contador de registros sem limite arbitrário, custos/efeitos do poder separados. Segundo Asterismo de Residual registra Cosmo+parcela com resultado/penalidade, inclusive falha, sem repetirCE ou gastar luta. Legados/ajustes/cópias e recuperação preservados.19 testes novos,429 totais; Foundry13.350 real pendente. Ver [ações](acoes.md) e [Residual](cosmo-residual.md).
 
 ## 0.25.0 — sentidos perdidos e ajustes de condições
 

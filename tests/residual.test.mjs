@@ -5,6 +5,8 @@ import {prepareKnight} from "../module/rules.mjs";
 import {residualSource,residualInitial,residualPool,residualParameters,residualOutcome} from "../module/residual-rules.mjs";
 import {depositResidual,recoverResidual} from "../module/residual.mjs";
 import {effectSheetContext,effectOperationContext,recoverEffect,endEffect} from "../module/effects.mjs";
+import {actionView,actionPlan,actionSignature} from "../module/action-rules.mjs";
+import {effectState} from "../module/effect-rules.mjs";
 import {effectView} from "../module/effect-rules.mjs";
 import {techniqueParameters,techniqueReadiness} from "../module/technique-rules.mjs";
 import {assertNoTechniqueInterruption} from "../module/master-queue.mjs";
@@ -89,4 +91,36 @@ test("cartão explicitamente público e registro não oferecem aplicação de da
 });
 test("recuperação cancelada e stale não muda pendência",async()=>{
  const f=fixture();f.controls.roll=async()=>{throw Error("Falha");};await assert.rejects(f.deposit());f.controls.roll=null;await recoverResidual(f.actor,f.operation()[0]);assert.equal(f.operation()[1].status,"prepared");await assert.rejects(holdDecisionOutsideQueue(()=>recoverResidual(f.actor,f.operation()[0]),{answer:{reason:"",close:true},during:()=>{f.actor.system.resources.cosmo.value=5;}}),/mudou/);assert.equal(f.operation()[1].status,"prepared");assert.equal(f.stats.rolls,1);
+});
+
+
+function controlledResidual(){const f=fixture();f.combat.flags={[ID]:{actionControl:{enabled:true,epoch:"first"}}};return f;}
+test("Residual controlado registra Cosmo e uma parcela junto ao efeito, sem luta/CE/PV",async()=>{
+ const f=controlledResidual(),before=clone(f.actor.system),target=clone(f.target.flags),writes=[];f.controls.write=async d=>{writes.push(d);};const r=await f.deposit();assert.equal(r.residual.value,50);assert.equal(actionView(f.actor).remaining.movement,1);assert.equal(actionView(f.actor).cosmoUses,1);assert.equal(actionView(f.actor).remaining.attack,actionView(f.actor).maxima.attack);assert.equal(actionView(f.actor).remaining.defense,actionView(f.actor).maxima.defense);assert.deepEqual(f.actor.system,before);assert.deepEqual(f.target.flags,target);
+ const atomic=writes.find(d=>Object.keys(d).some(k=>k.startsWith(`flags.${ID}.persistentEffects.`)));assert.ok(atomic[`flags.${ID}.actionUsage`]);assert.ok(Object.hasOwn(atomic,"system.combat.asterismPenalty"));assert.equal(f.operation()[1].before.actions,null);assert.equal(f.operation()[1].after.actions.spent.movement,1);assert.equal(f.renders.at(-1).context.actions.remaining,1);
+});
+test("Residual falho também consome uma parcela/Cosmo, sem custo de ativação repetido",async()=>{
+ const f=controlledResidual();await f.deposit({difficulty:33});assert.equal(f.record().status,"failed");assert.equal(f.actor.system.combat.asterismPenalty,-10);assert.equal(actionView(f.actor).remaining.movement,1);assert.equal(actionView(f.actor).cosmoUses,1);assert.equal(f.actor.system.resources.cosmo.value,7);assert.equal(f.stats.rolls,1);
+});
+test("Residual recusa movimento esgotado e legado total antes do teste",async()=>{
+ for(const old of [false,true]){const f=controlledResidual();if(old)f.actor.flags[ID].actionUsage={actorUuid:f.actor.uuid,context:actionView(f.actor).context,spent:{movement:1}};else patch(f.actor,actionPlan(f.actor,"movement",0,{all:true,operationId:"total"}).updates);await assert.rejects(f.deposit(),/insuficientes/);assert.equal(f.stats.rolls,0);assert.equal(f.stats.records,0);assert.equal(f.operation(),undefined);}
+});
+test("Residual revalida parcelas e ativação do controle no diálogo/render/Roll",async()=>{
+ for(const stage of ["dialog","render","roll"]){const f=controlledResidual(),mutate=()=>patch(f.actor,actionPlan(f.actor,"movement",1,{operationId:"other"}).updates);if(stage==="dialog")f.answers.push(()=>{mutate();return f.answer;});else f.controls[stage]=mutate;await assert.rejects(f.deposit(),/mudou|mudaram/);assert.equal(f.stats.records,0);assert.equal(actionView(f.actor).remaining.movement,1);assert.equal(actionView(f.actor).cosmoUses,0);}
+ const f=fixture();f.answers.push(()=>{f.combat.flags={[ID]:{actionControl:{enabled:true,epoch:"activated"}}};return f.answer;});await assert.rejects(f.deposit(),/mudou/);assert.equal(f.stats.rolls,0);assert.equal(actionView(f.actor).cosmoUses,0);
+});
+test("Residual interrompido antes/depois recupera ações atômicas uma única vez",async()=>{
+ for(const phase of ["before","after"]){const f=controlledResidual();f.controls.write=async(d,p)=>{if(p===phase&&Object.keys(d).some(k=>k.startsWith(`flags.${ID}.persistentEffects.`)))throw Error("Falha");};await assert.rejects(f.deposit());assert.equal(actionView(f.actor).remaining.movement,phase==="before"?2:1);f.controls.write=null;await f.recover();assert.equal(actionView(f.actor).remaining.movement,1);assert.equal(actionView(f.actor).cosmoUses,1);assert.equal(f.stats.rolls,1);assert.equal(f.stats.records,1);assert.equal(f.stats.published,1);}
+});
+test("recuperar Residual anterior recusa ações divergentes/troca de controle e conserva ajuste",async()=>{
+ for(const kind of ["actions","epoch"]){const f=controlledResidual();f.controls.write=async(d,p)=>{if(p==="before"&&Object.keys(d).some(k=>k.startsWith(`flags.${ID}.persistentEffects.`)))throw Error("Falha");};await assert.rejects(f.deposit());f.controls.write=null;if(kind==="actions")patch(f.actor,actionPlan(f.actor,"reaction",1,{operationId:"manual"}).updates);else f.combat.flags[ID].actionControl.epoch="changed";const usage=clone(f.actor.flags[ID].actionUsage??null);await assert.rejects(f.recover());await f.recover(true);assert.deepEqual(f.actor.flags[ID].actionUsage??null,usage);assert.equal(f.stats.records,0);assert.equal(f.stats.rolls,1);}
+});
+test("Residual aplicado republica após outra rodada sem restaurar parcelas ou contador",async()=>{
+ const f=controlledResidual();f.controls.message=async(_m,d,p)=>{if(d.rolls&&p==="before")throw Error("Publicação");};await assert.rejects(f.deposit());f.controls.message=null;f.combat.round++;f.combat.flags[ID].actionControl.epoch="next";patch(f.actor,actionPlan(f.actor,"cosmo",1,{operationId:"later"}).updates);const current=clone(f.actor.flags[ID].actionUsage);await f.recover();assert.deepEqual(f.actor.flags[ID].actionUsage,current);assert.equal(actionView(f.actor).remaining.movement,2);assert.equal(actionView(f.actor).cosmoUses,1);assert.equal(f.stats.rolls,1);assert.equal(f.stats.published,1);
+});
+test("journal Residual legado recupera mesmo resultado sem introduzir consumo de ações",async()=>{
+ const f=fixture();f.controls.write=async(d,p)=>{if(p==="before"&&Object.keys(d).some(k=>k.startsWith(`flags.${ID}.persistentEffects.`)))throw Error("Falha");};await assert.rejects(f.deposit());f.controls.write=null;const op=f.operation()[1];delete op.actionRuleVersion;delete op.actionsEnabled;delete op.casterActionState;delete op.before.actions;delete op.after.actions;op.targetState=effectState(f.target);f.combat.flags={[ID]:{actionControl:{enabled:true,epoch:"now"}}};await f.recover();assert.equal(f.record().residual.value,50);assert.equal(f.actor.flags[ID].actionUsage,undefined);assert.equal(actionView(f.actor).remaining.movement,2);assert.equal(f.stats.rolls,1);
+});
+test("dois Residuais da mesma prévia não duplicam parcela, contador ou resultado",async()=>{
+ const f=controlledResidual();f.answers.push({...f.answer},{...f.answer});const results=await Promise.allSettled([depositResidual(f.actor),depositResidual(f.actor)]);assert.equal(results.filter(r=>r.status==="fulfilled").length,1);assert.equal(f.stats.rolls,1);assert.equal(actionView(f.actor).remaining.movement,1);assert.equal(actionView(f.actor).cosmoUses,1);
 });

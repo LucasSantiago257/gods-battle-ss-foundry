@@ -1,4 +1,4 @@
-# Próximos desafios — após 0.25.0
+# Próximos desafios — após 0.26.0
 
 Prioridade atual definida por Lucas: gameplay. Já existem fichas, catálogos para arrastar, criação/evolução assistidas, personagens de exercício, ataque/defesa, resistência, dano confirmado com desfazer, configuração/prévia de técnicas, composição personalizada e pagamento central compartilhado com dano/evolução. Isso permite exercitar o fluxo básico; não significa automação integral do livro ou validação do servidor.
 
@@ -54,3 +54,10 @@ Auditoria de fontes para Sustentada/Residual concluída na0.19.1: ver [regras, e
 ## Após0.25.0: Desorientado parcial e ajuste de condições
 
 Sentidos perdidos passam a aplicar modificador/perda de dados conferidos; campo final explícito resolve outra interpretação da falha crítica. Ajustar condição evita encerrar/recriar Cansado/membros/sentidos e conserva histórico/recursos. [Contrato](condicoes-assistidas.md). Resistências próprias e gatilhos/duração/progressão de cada técnica seguem separados. Próximo grupo concreto: Atordoado/Paralisado/Surpreso e reserva de Ação de Cosmo/Movimento Parcial, com representação própria antes de bloquear ações ou inferir execução de técnicas. Auditar dano acumulado por turno/limiar70% e duração de uma rodada, sem automatizar morte ou dano ilusório por equivalente. Privado/jogador, distância/áreas/multialvos, marcas/Fadas/sobrevivênciaAtaúde, armaduras/artefatos/auditoriafinalcatálogo permanecem pendentes.
+
+
+## Após0.26.0: Movimento Parcial/Total e Ação de Cosmo
+
+Parcelas de movimento iguais à Velocidade efetiva, total intacto e contador de Cosmo sem reserva arbitrária estão representados. Segundo Asterismo de Residual registra parcela+Cosmo atomicamente com resultado/penalidade; não cobra CE outra vez, nem reservas de luta. Legados/cópias/ajustes/recuperação preservados. Metros/penalidades de corrida/salto e execução de outros poderes continuam manuais. [Contrato de ações](acoes.md).
+
+Próximo grupo: estados que bloqueiam ações, em contrato explícito separado das caixas antigas. Paralisado395–396 deve permitir Cosmo e impedir luta/movimento, sem confundir toda técnica com ataque; Movendo299 e outras ações compostas ainda exigem representação própria. Atordoado depende do agregado por turno/limiar70%PV/CD fracionária e prazo de uma rodada. Surpreso depende de iniciativa/ação atual. Jogador/privado, distância/áreas/multialvos, marcas/Fadas/sobrevivênciaAtaúde, armaduras/artefatos e auditoriafinal permanecem pendentes. Catálogos intactos; Foundry13.350 real pendente.

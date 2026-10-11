@@ -4,8 +4,8 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {knight,content} from "./foundry-stub.mjs";
 import {prepareKnight} from "../module/rules.mjs";
-import {actionView,actionPlan,actionHash,stampCombatRound,techniqueActionPlan} from "../module/action-rules.mjs";
-import {combatActionState,submitCombatAction,enqueueActionRequest,executeActionRequest,recoverAction,reviewAction,adjustActions,toggleActionControl,resumeActionRequests} from "../module/actions.mjs";
+import {actionView,actionPlan,actionHash,stampCombatRound,techniqueActionPlan,consumeActionPlan,residualActionPlan} from "../module/action-rules.mjs";
+import {combatActionState,submitCombatAction,enqueueActionRequest,executeActionRequest,recoverAction,reviewAction,adjustActions,toggleActionControl,resumeActionRequests,consumeAction} from "../module/actions.mjs";
 import {activationState,executeTechniqueRequest,recoverTechniqueOperation} from "../module/technique-activation.mjs";
 import {techniqueParameters,cosmoPayment} from "../module/technique-rules.mjs";
 import {assertNoTechniqueInterruption} from "../module/master-queue.mjs";
@@ -85,4 +85,44 @@ test("ajuste, toggle, recuperação e revisão de ações não seguram fila nos 
 });
 test("ajuste de reservas revalida gasto que ocorreu durante escolha",async()=>{
  const r=runtime();game.user=r.gm;await assert.rejects(holdDecisionOutsideQueue(()=>adjustActions(r.actor),{answer:{values:{attack:3,defense:3,movement:1,reaction:1}},during:async()=>{await runMasterOperation(()=>patch(r.actor,actionPlan(r.actor,"attack",1,{operationId:"other"}).updates));}}),/mudou/);assert.equal(actionView(r.actor).remaining.attack,2);
+});
+
+
+test("movimento parcial usa Velocidade efetiva, permite usos sucessivos e conserva luta/recursos",async()=>{
+ const r=runtime();r.actor.system.attributes.vel.value=3;prepareKnight(r.actor.system);const before=clone(r.actor.system);assert.equal(actionView(r.actor).maxima.movement,3);
+ for(let n=0;n<3;n++){const m=r.request({kind:"consume",pool:"movement",movementMode:"partial",amount:1},`partial${n}`);await r.execute(m);assert.equal(actionView(r.actor).remaining.movement,2-n);assert.equal(r.actor.flags[ID].actionOperations[m.id].movementMode,"partial");}
+ const m=r.request({kind:"consume",pool:"movement",movementMode:"partial",amount:1},"excess");await r.execute(m);assert.equal(m.flags[ID].actionResponse.status,"failed");assert.equal(r.stats.rolls,0);assert.deepEqual(r.actor.system,before);assert.equal(actionView(r.actor).remaining.attack,3);assert.equal(actionView(r.actor).remaining.defense,3);assert.equal(actionView(r.actor).remaining.reaction,1);r.round(2);assert.equal(actionView(r.actor).remaining.movement,3);
+});
+test("movimento total exige reserva intacta e continua fechado após aumento de Velocidade",async()=>{
+ const r=runtime();r.actor.system.attributes.vel.effective=3;const partial=consumeActionPlan(r.actor,{pool:"movement",amount:1,movementMode:"partial"},"p");patch(r.actor,partial.updates);assert.throws(()=>consumeActionPlan(r.actor,{pool:"movement",amount:1,movementMode:"total"},"t"),/intacta/);
+ r.round(2);const m=r.request({kind:"consume",pool:"movement",movementMode:"total",amount:1});await r.execute(m);assert.equal(actionView(r.actor).remaining.movement,0);assert.equal(r.actor.flags[ID].actionOperations[m.id].cost,3);r.actor.system.attributes.vel.effective=5;assert.equal(actionView(r.actor).remaining.movement,0);assert.throws(()=>residualActionPlan(r.actor,"res"),/insuficientes/);assert.equal(r.stats.rolls,0);
+});
+test("movimento legado fechado é conservado em nova gravação sem reescrever o histórico",()=>{
+ const r=runtime();r.actor.system.attributes.vel.effective=3;const context=actionView(r.actor).context,old={actorUuid:r.actor.uuid,context,spent:{attack:1,defense:0,movement:1,reaction:0},last:"old"};r.actor.flags[ID]={actionUsage:clone(old)};assert.equal(actionView(r.actor).remaining.movement,0);assert.deepEqual(r.actor.flags[ID].actionUsage,old);
+ const next=actionPlan(r.actor,"cosmo",1,{operationId:"new"});assert.deepEqual(next.before,old);patch(r.actor,next.updates);assert.equal(r.actor.flags[ID].actionUsage.ruleVersion,2);assert.equal(r.actor.flags[ID].actionUsage.movementTotal,true);r.actor.system.attributes.vel.effective=4;assert.equal(actionView(r.actor).remaining.movement,0);assert.equal(actionView(r.actor).spent.attack,1);r.round(2);assert.equal(actionView(r.actor).remaining.movement,4);
+});
+test("Ações de Cosmo registram múltiplos usos sem reservar quantidade arbitrária nem gastar CE",async()=>{
+ const r=runtime();r.actor.system.resources.cosmo.value=0;r.actor.system.resources.cosmoExtra=7;r.actor.system.resources.cosmoReserved=3;const before=clone(r.actor.system),max=actionView(r.actor).maxima;
+ for(let n=0;n<4;n++){const m=r.request({kind:"consume",pool:"cosmo",amount:1},`cosmo${n}`);await r.execute(m);assert.equal(actionView(r.actor).cosmoUses,n+1);assert.equal(m.flags[ID].actionResponse.status,"published");}
+ assert.deepEqual(r.actor.system,before);assert.deepEqual(actionView(r.actor).maxima,max);assert.deepEqual(actionView(r.actor).spent,{attack:0,defense:0,movement:0,reaction:0});assert.equal(r.stats.rolls,0);r.combat.turn++;assert.equal(actionView(r.actor).cosmoUses,4);r.round(2);assert.equal(actionView(r.actor).cosmoUses,0);
+});
+test("nova semântica recusa quantidade/mode/protótipos/notas inválidos antes de qualquer uso",async()=>{
+ for(const options of [{pool:"cosmo",amount:0},{pool:"cosmo",amount:2},{pool:"constructor",amount:1},{pool:"movement",amount:1,movementMode:"half"},{pool:"reaction",amount:1,movementMode:"partial"},{pool:"cosmo",amount:1,reason:42}]){const r=runtime(),m=r.request({kind:"consume",...options});await r.execute(m);assert.equal(r.stats.paid,0);assert.equal(r.stats.rolls,0);assert.equal(m.flags[ID].actionResponse.status,"failed");}
+ const r=runtime();assert.throws(()=>actionPlan(r.actor,"constructor",1),/válida/);r.actor.system.attributes.vel.effective=0;assert.throws(()=>consumeActionPlan(r.actor,{pool:"movement",amount:1,movementMode:"partial"}),/insuficientes/);assert.equal(consumeActionPlan(r.actor,{pool:"cosmo",amount:1}).cost,1);
+});
+test("copiar ficha não herda usos parciais ou contador de Cosmo",()=>{
+ const r=runtime();r.actor.system.attributes.vel.effective=3;patch(r.actor,residualActionPlan(r.actor,"res").updates);const copied={...r.actor,uuid:"Actor.copy",flags:clone(r.actor.flags)};r.combat.combatants.contents.push({id:"copy",actor:copied});assert.equal(actionView(copied).remaining.movement,3);assert.equal(actionView(copied).cosmoUses,0);assert.equal(actionView(r.actor).remaining.movement,2);assert.equal(actionView(r.actor).cosmoUses,1);
+});
+test("ajuste de movimento reabre parcelas explicitamente e conserva contador de Cosmo",async()=>{
+ const r=runtime();game.user=r.gm;r.actor.system.attributes.vel.effective=3;patch(r.actor,consumeActionPlan(r.actor,{pool:"movement",amount:1,movementMode:"total"},"total").updates);patch(r.actor,actionPlan(r.actor,"cosmo",1,{operationId:"cosmo"}).updates);r.control.answer={values:{attack:3,defense:3,movement:2,reaction:1}};await adjustActions(r.actor);assert.equal(actionView(r.actor).remaining.movement,2);assert.equal(actionView(r.actor).movementTotal,false);assert.equal(actionView(r.actor).cosmoUses,1);assert.equal(Object.values(r.actor.flags[ID].actionAdjustments)[0].reason,"");
+});
+test("confirmações de Movimento/Cosmo deixam fila livre; cancelamento e estado alterado conservam reservas",async()=>{
+ const r=runtime();game.user=r.gm;await holdDecisionOutsideQueue(()=>consumeAction(r.actor,"movement","partial"));await holdDecisionOutsideQueue(()=>consumeAction(r.actor,"cosmo"));assert.equal(r.messages.size,0);r.control.answer="";const m=await consumeAction(r.actor,"movement","partial");assert.equal(m.flags[ID].actionRequest.options.movementMode,"partial");await r.execute(m);assert.equal(actionView(r.actor).remaining.movement,0);
+ const s=runtime();game.user=s.gm;await assert.rejects(holdDecisionOutsideQueue(()=>consumeAction(s.actor,"cosmo"),{answer:"",during:()=>patch(s.actor,actionPlan(s.actor,"reaction",1,{operationId:"other"}).updates)}),/mudaram/);assert.equal(actionView(s.actor).cosmoUses,0);assert.equal(s.messages.size,0);
+});
+test("dois pedidos de movimento parcial da mesma prévia usam somente uma parcela",async()=>{
+ const r=runtime();r.actor.system.attributes.vel.effective=3;const a=r.request({kind:"consume",pool:"movement",movementMode:"partial",amount:1},"one"),b=r.request({kind:"consume",pool:"movement",movementMode:"partial",amount:1},"two",r.actor,r.other);game.user=r.gm;await Promise.all([enqueueActionRequest(a,{},r.owner.id),enqueueActionRequest(b,{},r.other.id)]);assert.equal(r.stats.paid,1);assert.equal(actionView(r.actor).remaining.movement,2);assert.equal(b.flags[ID].actionResponse.status,"failed");
+});
+test("movimento/Cosmo interrompidos recuperam antes/depois sem duplicação ou Roll",async()=>{
+ for(const pool of ["movement","cosmo"])for(const phase of ["before","after"]){const r=runtime();r.actor.system.attributes.vel.effective=3;const m=r.request({kind:"consume",pool,amount:1,...(pool==="movement"?{movementMode:"partial"}:{})});r.control.saveFail=phase;await r.execute(m);r.control.saveFail=null;await recoverAction(r.actor,m.id);assert.equal(r.stats.rolls,0);assert.equal(actionView(r.actor).cosmoUses,pool==="cosmo"&&phase==="after"?1:0);assert.equal(actionView(r.actor).remaining.movement,pool==="movement"&&phase==="after"?2:3);assert.equal(m.flags[ID].actionResponse.status,phase==="after"?"published":"failed");}
 });
