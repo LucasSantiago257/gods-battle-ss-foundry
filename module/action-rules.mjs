@@ -1,10 +1,20 @@
 import {SYSTEM_ID} from "./config.mjs";
 import {effectiveAttribute} from "./passives.mjs";
 import {levelSignature} from "./level-rules.mjs";
+import {hasActiveCondition} from "./condition-rules.mjs";
 export const actionHash=value=>levelSignature({},[{_id:"actions",value}]);
 export const ACTION_LABELS=Object.freeze({attack:"Ataque",defense:"Defesa",movement:"Movimento parcial",reaction:"Reação",cosmo:"Ação de Cosmo"});
 export const ACTION_RESERVES=Object.freeze(["attack","defense","movement","reaction"]);
 const data=doc=>doc?.flags?.[SYSTEM_ID]??{};
+export function actionRestrictions(actor) {
+ const paralyzed=hasActiveCondition(actor?.uuid,actor?.flags,"paralyzed");
+ return {paralyzed,movement:paralyzed,attack:paralyzed,defense:paralyzed};
+}
+export function assertActionAllowed(actor,pool) {
+ const restrictions=actionRestrictions(actor);
+ if(pool==="movement"&&restrictions.movement)throw Error("Paralisado impede ações de movimento (p. 395–396). Ação de Cosmo continua permitida.");
+ if(["attack","defense"].includes(pool)&&restrictions[pool])throw Error(`Paralisado impede ações de ${ACTION_LABELS[pool].toLowerCase()} (p. 395–396). Ação de Cosmo continua permitida.`);
+}
 export const rawActionUsage=actor=>structuredClone(data(actor).actionUsage??null);
 // A rodada do Foundry representa o turno coletivo do livro. Mudar a vez não repõe reservas.
 export function actionContext(actor) {
@@ -26,10 +36,11 @@ export function actionView(actor) {
  const spent=Object.fromEntries(ACTION_RESERVES.map(key=>[key,same?key==="movement"&&movementTotal?Math.max(maxima.movement,Number(raw.spent?.movement)||0):Math.max(0,Number(raw.spent?.[key])||0):0]));
  const remaining=Object.fromEntries(Object.keys(maxima).map(key=>[key,Math.max(0,maxima[key]-spent[key])]));
  const cosmoUses=same?Math.max(0,Number(raw.cosmoUses)||0):0;
- return {context,maxima,spent,remaining,cosmoUses,movementTotal,enabled:!!context};
+ return {context,maxima,spent,remaining,cosmoUses,movementTotal,restrictions:actionRestrictions(actor),enabled:!!context};
 }
 export function actionSignature(actor) {return actionHash({context:actionContext(actor),usage:rawActionUsage(actor)});}
 export function actionPlan(actor,pool,amount,{all=false,operationId}={}) {
+ if(["attack","defense","movement"].includes(pool))assertActionAllowed(actor,pool);
  const view=actionView(actor);if(!view.enabled)return {view,updates:{},before:rawActionUsage(actor),after:rawActionUsage(actor),cost:0};
  if(!Object.hasOwn(ACTION_LABELS,pool))throw Error("Escolha uma reserva de ações válida.");
  if(pool==="cosmo"){
@@ -60,6 +71,7 @@ export function residualActionPlan(actor,id){
  return {...plan,after,updates:{[`flags.${SYSTEM_ID}.actionUsage`]:after},actionLabel:"1 Ação de Cosmo + 1 Movimento Parcial"};
 }
 export function techniqueActionPlan(actor,options,id) {
+ if(["attack","defense"].includes(options?.actionPool))assertActionAllowed(actor,options.actionPool);
  if(!actionContext(actor))return actionPlan(actor,null,0,{operationId:id});
  if(!["attack","defense"].includes(options.actionPool))throw Error("Escolha todas as ações de ataque ou todas as ações de defesa para esta técnica.");
  return actionPlan(actor,options.actionPool,0,{all:true,operationId:id});
@@ -67,3 +79,4 @@ export function techniqueActionPlan(actor,options,id) {
 export function stampCombatRound(combat,changes) {
  if(Object.hasOwn(changes,"round")&&changes.round!==combat.round)changes[`flags.${SYSTEM_ID}.actionControl.epoch`]=foundry.utils.randomID();
 }
+

@@ -1,4 +1,4 @@
-# Ações e rodadas — 0.26.0
+# Ações e rodadas — 0.27.0
 
 Como mestre, abra um encontro no rastreador de combate, adicione os tokens e inicie o combate. Na ficha, **Combate → Ativar controle de ações no encontro aberto** habilita o controle para esse encontro após confirmação. O controle começa desligado; encontros existentes e fichas fora de encontros habilitados mantêm rolagens sem consumir reservas. É necessário um mestre conectado para processar usos de ações.
 
@@ -11,6 +11,8 @@ Nesta integração, **uma rodada do Foundry representa o turno coletivo de comba
 Retroceder a rodada também abre um novo ciclo de reservas; não desfaz ações, dano ou pagamento anteriores. Desativar/reativar o controle abre reservas novas após confirmação. Faça isso conscientemente para corrigir o encontro. Uma ficha adicionada depois recebe suas reservas do ciclo atual. Ao encerrar/remover o encontro ou seu combatente, novas rolagens ficam fora do controle; registros e operações interrompidas são conservados.
 
 Defesa e reação podem ocorrer fora da vez do personagem. Ataques/técnicas não são bloqueados pelo cursor de iniciativa, para permitir declarações e resolução simultânea; a mesa continua conferindo a sequência. Iniciativa, desempates por Velocidade/velocidade superada e simultaneidade permanecem conferidos pelo mestre; este marco não substitui essas regras por uma rolagem aleatória.
+
+Paralisado (pp.395–396) bloqueia ataques, defesas e movimento, mas preserva Ação de Cosmo e Reação. O bloqueio é revalidado antes da rolagem/gravação. Técnicas só são identificadas como ações de luta quando o fluxo está com controle ativo e o usuário seleciona Ataque/Defesa; fora dele, a classificação ainda é manual. O sistema não assume que toda técnica é Ataque.
 
 ## Ataque, defesa e técnica
 
@@ -52,3 +54,4 @@ Fontes: livro V49.1.1, pp.200,224,386–387,403–408,415–416,419,422. Autor: 
 
 
 Na 0.18.1, as janelas do mestre para condições, efeitos, Controle, ajustes e recuperações não ocupam a fila enquanto aguardam sua decisão. Outros pagamentos podem prosseguir; a confirmação entra na fila para revalidar os dados e gravar. Se os dados conferidos mudarem, reabra a operação com a situação atual. A gravação continua coordenada no cliente do mestre, sem bloqueio global do servidor.
+

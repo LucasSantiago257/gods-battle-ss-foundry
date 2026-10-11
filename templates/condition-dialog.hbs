@@ -1,7 +1,7 @@
 <div class="condition-dialog"><p>Ficha: <strong>{{name}}</strong>. Quantidade e duração são informadas pelo mestre.</p>
 {{#if editing}}<p>Condição: <strong>{{label}}</strong>.</p><input type="hidden" name="key" value="{{key}}">{{else}}<label>Condição<select name="key">{{#each rules}}<option value="{{key}}">{{label}} · p.{{page}}</option>{{/each}}</select></label>{{/if}}
-<label>Quantidade final: dias de cansaço, membros ou sentidos perdidos<input type="number" name="count" value="{{count}}" min="1" max="{{maxCount}}"></label>
-<p class="note">Cansado: −2 por dia. Membros debilitados: −2 e perda de1 dado por membro. Desorientado: −4 e perda de1 dado por sentido (1–6). A quantidade não cresce pelo relógio.</p>
+{{#unless isActionState}}<label>Quantidade final (Paralisado: 1; demais conforme a condição)<input type="number" name="count" value="{{count}}" min="1" max="{{maxCount}}"></label>
+<p class="note">Cansado: −2 por dia. Membros debilitados: −2 e perda de1 dado por membro. Desorientado: −4 e perda de1 dado por sentido (1–6). A quantidade não cresce pelo relógio.</p>{{else}}<input type="hidden" name="count" value="1"><p class="note">Paralisado bloqueia ações de movimento e de luta; Ação de Cosmo continua permitida (pp. 395–396). O mestre registra o estado e informa sua duração.</p>{{/unless}}
 {{#if showModifier}}<label>Desorientado: modificador final (opcional)<input type="number" name="modifierOverride" value="{{modifierOverride}}" min="-100" max="0" placeholder="Vazio: −4 por sentido"></label>
 <p class="note">Para falha crítica ou outra interpretação da mesa, informe o total final (ex.: −6). Ele substitui −4 por sentido; perda de dados continua igual à quantidade. Outras condições ignoram este campo.</p>{{/if}}
 <details><summary>Origem, duração e notas (opcional)</summary>
@@ -10,3 +10,4 @@
 <label>Notas (opcional)<textarea name="reason" maxlength="2000">{{reason}}</textarea></label>
 </details><p>Duração: {{#if until}}{{until}}{{else}}Até encerrar{{/if}}.</p>
 <p class="note">Ajustar substitui as parcelas atuais deste registro. Use Encerrar após recuperação completa. Testes de resistência e efeitos específicos são resolvidos separadamente.</p></div>
+

@@ -1,7 +1,7 @@
 import {SYSTEM_ID,FIGHTING} from "./config.mjs";
 import {evaluatePool,prepareRollMessage} from "./rolls.mjs";
 import {physicalDamage} from "./combat-rules.mjs";
-import {actionView,actionHash} from "./action-rules.mjs";
+import {actionView,actionHash,assertActionAllowed} from "./action-rules.mjs";
 import {submitCombatAction,combatActionState} from "./actions.mjs";
 import {assertNoTechniqueInterruption} from "./master-queue.mjs";
 import {conditionPool,conditionSummary,conditionSignature} from "./condition-rules.mjs";
@@ -14,7 +14,7 @@ export async function attackTarget(actor) {
   const target=targets[0].actor;
   busy.add(actor);
   try {
-    assertNoTechniqueInterruption(actor);const view=actionView(actor),baseline=combatActionState(actor);
+    assertNoTechniqueInterruption(actor);assertActionAllowed(actor,"attack");const view=actionView(actor),baseline=combatActionState(actor);
     if(view.enabled&&view.remaining.attack<1)throw Error("Nenhuma ação de ataque disponível nesta rodada.");
     const choices=Object.entries(FIGHTING).filter(([key])=>key!=="defense").map(([key,label])=>`<option value="${key}">${label} (${actor.system.fighting[key]})</option>`).join("");
     const actions=view.enabled?`<label>Ações de ataque a usar (${view.remaining.attack} disponíveis)<input name="amount" type="number" min="1" max="${view.remaining.attack}" value="${view.remaining.attack}"></label><p>Confirmar consome a quantidade escolhida e usa esse valor na fórmula, além dos dados e modificador de nível.</p>`:"<p>Fora de encontro com controle ativo: não gasta reservas; usa o total de ações da ficha na fórmula.</p>";
@@ -41,7 +41,7 @@ export async function defendAttack(message) {
   if (busy.has(actor)) return;
   busy.add(actor);
   try {
-    assertNoTechniqueInterruption(actor);const view=actionView(actor),baseline=combatActionState(actor),fightHash=actionHash(fight);
+    assertNoTechniqueInterruption(actor);assertActionAllowed(actor,"defense");const view=actionView(actor),baseline=combatActionState(actor),fightHash=actionHash(fight);
     if(view.enabled&&view.remaining.defense<1)throw Error("Nenhuma ação de defesa disponível nesta rodada.");
     const grade=actor.system.fighting.defense;
     if (grade<1) throw Error("Configure a graduação de Esquiva/Bloqueio antes de defender.");
@@ -61,3 +61,4 @@ export async function defendAttack(message) {
     return await ChatMessage.create(data);
   } finally {busy.delete(actor);}
 }
+
