@@ -1,5 +1,5 @@
 import {SYSTEM_ID} from "./config.mjs";
-export const CONDITION_RULES=Object.freeze({tired:Object.freeze({label:"Cansado",page:"393",modifier:-2,dice:0,maxCount:1000,unit:"dias / níveis de cansaço"}),incapacitated:Object.freeze({label:"Incapacitado · membro debilitado",page:"397",modifier:-2,dice:1,maxCount:1000,unit:"membros debilitados"}),disoriented:Object.freeze({label:"Desorientado · sentidos perdidos",page:"393–394",modifier:-4,dice:1,maxCount:6,unit:"sentidos perdidos"}),paralyzed:Object.freeze({label:"Paralisado",page:"395–396",modifier:0,dice:0,maxCount:1,unit:"estado"})});
+export const CONDITION_RULES=Object.freeze({tired:Object.freeze({label:"Cansado",page:"393",modifier:-2,dice:0,maxCount:1000,unit:"dias / níveis de cansaço"}),incapacitated:Object.freeze({label:"Incapacitado · membro debilitado",page:"397",modifier:-2,dice:1,maxCount:1000,unit:"membros debilitados"}),disoriented:Object.freeze({label:"Desorientado · sentidos perdidos",page:"393–394",modifier:-4,dice:1,maxCount:6,unit:"sentidos perdidos"}),paralyzed:Object.freeze({label:"Paralisado",page:"395–396",modifier:0,dice:0,maxCount:1,unit:"estado"}),stunned:Object.freeze({label:"Atordoado",page:"396",modifier:0,dice:0,maxCount:1,unit:"estado"})});
 export const conditionRecords=actor=>actor.flags?.[SYSTEM_ID]?.conditionEffects??{};
 export const conditionSignature=actor=>JSON.stringify({uuid:actor.uuid,records:conditionRecords(actor)});
 export function conditionNumbers(key,count,modifierOverride=null){
@@ -18,7 +18,7 @@ export function conditionTotals(actorUuid,flags={}) {
   if(r?.status!=="active")continue;
   if(!validCondition(actorUuid,r)){warnings.push({id,label:r.label??"Condição",reason:"Registro inválido ou copiado de outra ficha; aplicação manual."});continue;}
   const rule=CONDITION_RULES[r.key];if(used.has(r.key)){warnings.push({id,label:rule.label,reason:"Duplicata ativa da mesma condição; conferir com o mestre."});continue;}
-  used.add(r.key);const entry={id,key:r.key,label:rule.label,page:rule.page,count:r.count,actionState:r.key==="paralyzed",...conditionNumbers(r.key,r.count,r.modifierOverride)};entries.push(entry);modifier+=entry.modifier;dice+=entry.dice;
+  used.add(r.key);const entry={id,key:r.key,label:rule.label,page:rule.page,count:r.count,actionState:["paralyzed","stunned"].includes(r.key),...conditionNumbers(r.key,r.count,r.modifierOverride)};entries.push(entry);modifier+=entry.modifier;dice+=entry.dice;
  }
  return {modifier,dice,entries,warnings};
 }
