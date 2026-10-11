@@ -1,7 +1,27 @@
+import {SYSTEM_ID} from "./config.mjs";
 export function physicalDamage(attack, defense, {damageLevel, damageBonus = 0, protection = 0}) {
   if (![attack,defense,damageLevel,damageBonus,protection].every(Number.isFinite)) throw Error("Valores de combate inválidos.");
   const hits = Math.max(0,attack-defense);
   return {hits,damageLevel,damageBonus,protection,damage: hits * Math.max(0,damageLevel+damageBonus-protection),armorDamage:0};
+}
+export function damageTurnSnapshot(actor, combats=globalThis.game?.combats?.contents??[]) {
+  const matches=combats.filter(combat=>combat?.started&&(combat.combatants?.contents??[]).some(c=>c.actor?.uuid===actor?.uuid));
+  if(matches.length!==1)return null;
+  const combat=matches[0],round=combat.round,maximumHealth=actor.system.resources.health.max,epoch=combat.flags?.[SYSTEM_ID]?.actionControl?.epoch??"initial";
+  if(typeof combat.uuid!=="string"||!Number.isSafeInteger(round)||round<1||!Number.isFinite(maximumHealth)||maximumHealth<=0||typeof epoch!=="string")return null;
+  return {combatUuid:combat.uuid,round,epoch,maximumHealth};
+}
+export function damageTurnSummary(operations, turn) {
+  if(!turn||!Array.isArray(operations)||operations.length>100000||!Number.isFinite(turn.maximumHealth)||turn.maximumHealth<=0)return null;
+  const same=r=>r?.turnSnapshot?.combatUuid===turn.combatUuid&&r.turnSnapshot.round===turn.round&&r.turnSnapshot.epoch===turn.epoch;
+  let bodyDamage=0;
+  for(const r of operations){
+    if(!same(r)||r.status!=="applied"||r.direction!=="apply")continue;
+    if(!Number.isFinite(r.body)||r.body<0||r.body>1000000)return null;
+    bodyDamage+=r.body;
+  }
+  const threshold=turn.maximumHealth*.7;
+  return {combatUuid:turn.combatUuid,round:turn.round,epoch:turn.epoch,bodyDamage,maximumHealth:turn.maximumHealth,threshold,exceeded:bodyDamage>threshold,atThreshold:bodyDamage===threshold,remaining:Math.max(0,threshold-bodyDamage)};
 }
 export function damageSnapshot(actor, body, armorDamage, armorId) {
   if (![body,armorDamage].every(n=>Number.isFinite(n)&&n>=0&&n<=1000000)) throw Error("Dano inválido.");
@@ -21,3 +41,4 @@ export function canReadChat(user,message) {
   const recipients=(message.whisper??[]).map(u=>typeof u==="string"?u:u.id);
   return !recipients.length || recipients.includes(user.id) || author===user.id;
 }
+
