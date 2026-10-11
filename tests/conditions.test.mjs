@@ -32,6 +32,11 @@ test("checkbox antigo e anotações não ativam condições; só registros confe
 test("condição exige quantidade válida, aceita notas vazias sem declarações",()=>{
  const f=fixture();for(const invalid of [{key:"dead"},{count:0},{count:1.2},{count:1001},{reason:42},{until:"x".repeat(1001)}])assert.throws(()=>conditionDefinition({...f.definition,...invalid}));assert.equal(conditionDefinition(f.definition).page,"393");assert.equal(conditionDefinition({...f.definition,key:"incapacitated"}).page,"397");const paralyzed=conditionDefinition({...f.definition,key:"paralyzed",count:1});assert.equal(paralyzed.page,"395–396");assert.equal(conditionTotals(f.actor.uuid,{[ID]:{conditionEffects:{p:{...paralyzed,actorUuid:f.actor.uuid,status:"active"}}}}).modifier,0);assert.throws(()=>conditionDefinition({...f.definition,key:"paralyzed",count:2}));
 });
+
+test("Atordoado é um estado único sem penalidade numérica; o registro mantém duração e pode ser encerrado",async()=>{
+ const f=fixture(),definition=conditionDefinition({...f.definition,key:"stunned",count:1});assert.equal(definition.page,"396");assert.equal(conditionTotals(f.actor.uuid,{[ID]:{conditionEffects:{s:{...definition,actorUuid:f.actor.uuid,status:"active"}}}}).modifier,0);
+ const r=await f.create({key:"stunned",count:1,until:"Uma rodada completa, conferida pelo mestre"});assert.equal(r.key,"stunned");assert.equal(conditionSheetContext(f.actor).records[0].isActionState,true);assert.equal(f.actor.system.automation.conditionModifier,0);f.answers.push("");await endCondition(f.actor,r.id);assert.equal(conditionRecords(f.actor)[r.id].status,"ended");
+});
 test("registro altera apenas parcelas derivadas, preserva PV/CE e ajustes manuais",async()=>{
  const f=fixture(),before=structuredClone(f.actor.system);const r=await f.create();assert.equal(r.count,2);assert.equal(f.actor.system.automation.conditionModifier,-4);assert.deepEqual(f.actor.system.resources,before.resources);assert.deepEqual(f.actor.system.attributes,before.attributes);assert.deepEqual(f.actor.system.skills,before.skills);assert.deepEqual(f.actor.system.conditions,before.conditions);assert.equal(f.actor.flags[ID].preserve,"notas");
 });
