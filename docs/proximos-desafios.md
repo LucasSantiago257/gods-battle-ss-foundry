@@ -66,3 +66,16 @@ Paralisado pp.395–396 entregue parcialmente na0.27.0: bloqueia ataque, defesa 
 
 As validações do estado ocorrem no fluxo de rolagem/gravação e antes de consumir parcelas; registros de Paralisado são próprios da ficha. Resistência, gatilho, CD, custos de novas tentativas e duração até efeito/recuperação não são simulados. Reações permanecem permitidas por não estarem classificadas como luta ou movimento neste contrato. Técnicas executadas sem controle ativo de ações ainda não carregam classe de ação, então não se infere bloqueio nem exceção. Próximo contrato: Atordoado com acúmulo de dano por turno; conferir arredondamento para CD10 + dano/10 e significado operacional de perder uma rodada antes da implementação.
 
+## Auditoria do próximo marco — Atordoado (fonte conferida em 2026-10-11)
+
+A regra geral está em p.396. O gatilho usa dano recebido acima de 70% dos PV totais em um turno; exatamente 70% não ultrapassa o limiar. Ao gatilho, o alvo faz TAP de Vigor para evitar Atordoado; CD = 10 + 1/10 do dano. Falhar aplica o estado, que toma uma rodada completa para se recuperar. A técnica Big Bang Atordoar é outro gatilho (chance definida por técnica) e não deve ser confundida com este limiar geral. O estado decorrente de elevar dano acima do Vigor na tabela p.419 é uma regra diferente.
+
+Contrato de implementação proposto, mantendo as convenções já documentadas em `action-rules.mjs`: acumular somente dano corporal efetivamente aplicado ao PV (após mitigação de armadura) ao longo da rodada coletiva do Foundry, comparar estritamente `sum > maximumHealth * 0.70`, e emitir no máximo uma resistência por ator/combate/rodada. O primeiro cruzamento é o que dispara o teste; CD conserva o valor matemático sem arredondamento (`10 + sum / 10`), pois a fonte não especifica arredondamento. Um registro de dano por combate/rodada deve integrar o journal de aplicar/desfazer para evitar duplicação em recuperação e para reabrir corretamente após undo.
+
+Convenção operacional proposta para “uma rodada inteira”: se falhar, bloquear todas as ações do cavaleiro até que passe sua próxima ativação completa no rastreador, incluindo movimento, luta, Cosmo e reação; então expirar o bloqueio. A fonte não define a relação com ordem de iniciativa nem o que ocorre sem combate; manter ativação/iniciativa ausente como manual. O próximo código precisa marcar o intervalo por combatant/epoch e testar os casos em que o dano ocorre antes ou depois da ativação do alvo. Não introduzir arredondamento, imunidade, resistência repetida ou efeito colateral de armadura sem fonte. Teste de Vigor deve poder ocorrer mesmo sob o bloqueio; nunca consumir ação para a resistência.
+
+
+## Após 0.28.0 — Atordoado parcial
+
+O registro assistido e a barreira de ações de Atordoado foram publicados. O sistema não detecta dano acumulado, não rola TAP Vigor/CD e não encerra automaticamente a condição após a rodada. Próximo passo: agregar dano corporal aplicado no turno coletivo do Foundry, cruzar estritamente 70% dos PV totais, calcular CD decimal sem arredondar e resolver a resistência uma vez, integrando o registro ao journal de aplicar/desfazer/recovery. Depois, expirar a barreira na ativação completa correta; testar antes/depois da vez do alvo e ausência de iniciativa. Não misturar Big Bang Atordoar nem a tabela de dano por elevar Vigor.
+
