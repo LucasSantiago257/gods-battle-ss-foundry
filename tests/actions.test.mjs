@@ -135,3 +135,12 @@ test("Paralisado bloqueia luta/movimento, permite Cosmo e não altera reservas n
  r.actor.flags[ID].conditionEffects.p.status="ended";assert.doesNotThrow(()=>assertActionAllowed(r.actor,"movement"));assert.equal(actionView(r.actor).restrictions.paralyzed,false);
 });
 
+test("Atordoado bloqueia movimento, luta, Cosmo, reação e técnicas antes de gastar ou rolar",async()=>{
+ const r=runtime(),rule=conditionDefinition({key:"stunned",count:1});r.actor.flags[ID]={conditionEffects:{s:{...rule,actorUuid:r.actor.uuid,status:"active"}}};prepareKnight(r.actor.system,r.actor.items.contents,"rank",{actorUuid:r.actor.uuid,flags:r.actor.flags});
+ const restrictions=actionView(r.actor).restrictions;for(const key of ["movement","attack","defense","cosmo","reaction","technique"])assert.equal(restrictions[key],true);
+ for(const pool of ["movement","attack","defense","cosmo","reaction","technique"])assert.throws(()=>assertActionAllowed(r.actor,pool),/Atordoado/);
+ assert.throws(()=>consumeActionPlan(r.actor,{kind:"consume",pool:"cosmo",amount:1},"cosmo"),/Atordoado/);assert.throws(()=>consumeActionPlan(r.actor,{kind:"consume",pool:"reaction",amount:1},"reaction"),/Atordoado/);assert.throws(()=>techniqueActionPlan(r.actor,{actionPool:"attack"},"tech"),/Atordoado/);
+ const before=clone(r.actor.system),message=r.request({kind:"attack",fighting:"punch",targetUuid:r.target.uuid,amount:1,bonus:0},"stunnedAttack");game.user=r.gm;await r.execute(message);assert.equal(message.flags[ID].actionResponse.status,"failed");assert.equal(r.stats.rolls,0);assert.equal(r.stats.paid,0);assert.deepEqual(r.actor.system,before);
+ r.actor.flags[ID].conditionEffects.s.status="ended";assert.equal(actionView(r.actor).restrictions.stunned,false);assert.doesNotThrow(()=>consumeActionPlan(r.actor,{kind:"consume",pool:"cosmo",amount:1},"cosmo"));
+});
+
