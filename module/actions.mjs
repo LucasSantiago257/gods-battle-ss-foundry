@@ -170,7 +170,7 @@ export async function adjustActions(actor) {
  });
 }
 export function actionSheetContext(actor) {
- try{const view=actionView(actor);return {...view,entries:ACTION_RESERVES.map(key=>({key,label:ACTION_LABELS[key],max:view.maxima[key],spent:view.spent[key],remaining:view.remaining[key],blocked:!!view.restrictions[key]})),canToggle:!!game.combat,controlEnabled:!!f(game.combat).actionControl?.enabled};}catch(error){return {error:error.message};}
+ try{const view=actionView(actor);return {...view,entries:ACTION_RESERVES.map(key=>({key,label:ACTION_LABELS[key],max:view.maxima[key],spent:view.spent[key],remaining:view.remaining[key],blocked:!!view.restrictions[key],blockedReason:view.restrictions.stunned?"Atordoado":"Paralisado"})),canToggle:!!game.combat,controlEnabled:!!f(game.combat).actionControl?.enabled};}catch(error){return {error:error.message};}
 }
 export function refreshActionSheets(){for(const actor of game.actors?.contents??[])for(const app of Object.values(actor.apps??{}))if(app.rendered)app.render();for(const token of globalThis.canvas?.tokens?.placeables??[])for(const app of Object.values(token.actor?.apps??{}))if(app.rendered)app.render();}
 
