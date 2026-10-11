@@ -1,7 +1,7 @@
 import {actionHash} from "./action-rules.mjs";
 import {optionalNote} from "./form-values.mjs";
 import {SYSTEM_ID} from "./config.mjs";
-import {damageSnapshot,snapshotMatches,canReadChat} from "./combat-rules.mjs";
+import {damageSnapshot,snapshotMatches,canReadChat,damageTurnSnapshot} from "./combat-rules.mjs";
 import {defendAttack} from "./combat.mjs";
 import {primaryGM,runMasterOperation,assertNoTechniqueInterruption} from "./master-queue.mjs";
 export {primaryGM} from "./master-queue.mjs";
@@ -61,7 +61,8 @@ export async function executeDamageRequest(message,userId) {
       if(request.override)optionalNote(request.override.reason);
       const snapshot=damageSnapshot(actor,values.body,values.armor,r.armorId);
       if(JSON.stringify(snapshot.before)!==JSON.stringify(request.expected)) throw Error("Os recursos mudaram desde a confirmação. Confira novamente.");
-      record={...snapshot,status:"prepared",direction:"apply",requestId:message.id,userId,reason:request.override?.reason??"",previousKey:actor.flags?.[SYSTEM_ID]?.damageLast??null,time:Date.now()};
+      const turn=damageTurnSnapshot(actor),turnSnapshot=turn&&r.turnSnapshot&&actionHash(turn)===actionHash(r.turnSnapshot)?turn:null;
+      record={...snapshot,turnSnapshot,status:"prepared",direction:"apply",requestId:message.id,userId,reason:request.override?.reason??"",previousKey:actor.flags?.[SYSTEM_ID]?.damageLast??null,time:Date.now()};
     }
     await actor.update({[`flags.${SYSTEM_ID}.damageOperations.${key}`]:record});
     if(primaryGM()?.id!==game.user.id) throw Error("Mestre responsável mudou durante a operação.");
@@ -130,3 +131,4 @@ export function renderCombatChat(message,html) {
     button.addEventListener("click",async()=>{button.disabled=true;try{await callback();}catch(error){ui.notifications.error(error.message);}finally{button.disabled=false;}});
   }
 }
+
