@@ -1,4 +1,12 @@
-Versão **0.26.0** para FoundryVTT 13 build 350.
+Versão **0.27.0** para FoundryVTT 13 build 350.
+
+## 0.27.0 — Paralisado e bloqueios de ação
+
+- Novo registro assistido de Paralisado por ficha, com origem/duração opcionais, p.395–396.
+- Bloqueia ataques, defesas e movimentos na validação e nos botões; mantém Ações de Cosmo e Reação disponíveis.
+- Com controle de reservas, técnicas que selecionam Ataque/Defesa e Cosmo Residual também respeitam o bloqueio.
+- Resistência, CD, novas tentativas e término do estado permanecem conferidos pelo mestre; sem automação de duração.
+- Validação manual fora do controle de ações: classificação de ação de técnicas específicas continua pendente.
 
 ## 0.26.0 — Movimento Parcial/Total e ações de Cosmo
 
@@ -84,3 +92,4 @@ A revisão 0.9.1 atualiza os guias de compêndios e técnicas para descrever os 
 - Mantidos os 866 Items e nove compêndios, com IDs, descrições e proveniência.
 
 Testes locais e integração contínua verificam regras, permissões, falhas de gravação, concorrência e empacotamento. Execução no Foundry real permanece pendente; siga validacao-foundry.md. Manobras avançadas, condições, recuperação e automação integral dos poderes continuam pendentes.
+

@@ -1,4 +1,4 @@
-# Condições assistidas — 0.25.0
+# Condições assistidas — 0.27.0
 
 Na ficha, **Combate → Condições assistidas → Registrar condição assistida · mestre** aplica parcelas numéricas de Cansado, de membros debilitados em Incapacitado e de sentidos perdidos em Desorientado. Ajustar condição muda a quantidade no mesmo registro, com histórico, sem encerrar/recriar. Registro explícito do mestre responsável, na fila comum; não converte marcações antigas nem interpreta nomes/descrições de poderes.
 
@@ -7,6 +7,13 @@ Na ficha, **Combate → Condições assistidas → Registrar condição assistid
 | Cansado · p.393 | −2 por dia/nível de cansaço registrado em testes | Até descanso confirmado pelo mestre. Quantidade não cresce pelo relógio ou ao avançar rodada. |
 | Desorientado · pp.393–394 | Tabela: −4 e perda de1 dado por sentido perdido; modificador final opcional substitui somente a penalidade. | Até o efeito causador terminar, conferido na mesa. Não resolve resistência nem progressão de perda de sentidos. |
 | Incapacitado: membro debilitado · p.397 | −2 e perda de1 dado por membro conferido em testes | Registrar membros, resultado de resistência e prazo correto; encerramento explícito após recuperação. Não decide dano localizado nem restringe uso de membros automaticamente. |
+| Paralisado · pp.395–396 | Bloqueia movimento e ações de luta monitorados pelo sistema; Ação de Cosmo permanece disponível. | Mestre encerra após resistência/efeito, conforme a mesa. O sistema não inicia resistência nem determina duração. |
+
+## Paralisado e ações — 0.27.0
+
+O mestre registra Paralisado pela mesma janela, com quantidade fixa em1. O estado fica associado ao UUID da ficha e aparece com a referência das pp.395–396. Enquanto ativo, o sistema recusa Movimento Parcial/Total, ataques e defesas, inclusive quando não há controle de reservas no encontro. Com controle ativo, também bloqueia técnicas para as quais a ativação seleciona reserva de Ataque ou Defesa e o Asterismo de Cosmo Residual, que exige Movimento Parcial. Ação de Cosmo e Reação continuam liberadas. Os botões de movimento/ataque mostram o bloqueio; a validação também ocorre no processamento central antes de rolar ou pagar.
+
+O livro prevê resistência para evitar/encerrar Paralisado; CD, atributo, custo de novas tentativas e término por efeito são conferidos pelo mestre. Encerrar remove apenas esse bloqueio, sem recuperar ações já gastas, alterar PV/CE ou mudar caixas antigas. A cópia de outra ficha não ativa o registro. Técnicas fora do controle de ações não trazem uma classificação mecânica de ação no sistema; sua categoria e exceções continuam manuais. Isso evita tratar automaticamente toda técnica como Ataque.
 
 ## Registrar e encerrar
 
@@ -54,3 +61,4 @@ Histórico preserva sequência e antes/depois; divergência ou duplicata ativa e
 17 novos testes (410 totais). As358 entradas pessoais e866Items do catálogo não foram reclassificados como automáticos: aplicação de condições é um contrato separado, parcial. Ver [roteiro de validação](validacao-foundry.md).
 
 Desorientado usa contrato de regra2; Cansado/membros mantêm regra1. Anotações antigas com o tipo Desorientado mas contrato1/ausente continuam sem parcela e precisam ser registradas pelo fluxo atual. Não converter registros antes desconhecidos só porque o nome passou a existir. A versão do esquema geral permanece3.
+

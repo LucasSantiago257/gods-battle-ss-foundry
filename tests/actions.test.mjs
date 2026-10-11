@@ -4,11 +4,12 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {knight,content} from "./foundry-stub.mjs";
 import {prepareKnight} from "../module/rules.mjs";
-import {actionView,actionPlan,actionHash,stampCombatRound,techniqueActionPlan,consumeActionPlan,residualActionPlan} from "../module/action-rules.mjs";
+import {actionView,actionPlan,actionHash,stampCombatRound,techniqueActionPlan,consumeActionPlan,residualActionPlan,assertActionAllowed} from "../module/action-rules.mjs";
 import {combatActionState,submitCombatAction,enqueueActionRequest,executeActionRequest,recoverAction,reviewAction,adjustActions,toggleActionControl,resumeActionRequests,consumeAction} from "../module/actions.mjs";
 import {activationState,executeTechniqueRequest,recoverTechniqueOperation} from "../module/technique-activation.mjs";
 import {techniqueParameters,cosmoPayment} from "../module/technique-rules.mjs";
 import {assertNoTechniqueInterruption} from "../module/master-queue.mjs";
+import {conditionDefinition} from "../module/condition-rules.mjs";
 import {attackTarget,defendAttack} from "../module/combat.mjs";
 const ID="gods-battle-ss",clone=x=>x===undefined?undefined:JSON.parse(JSON.stringify(x));
 function patch(object,data){for(const[path,value]of Object.entries(data)){const keys=path.split(".");let at=object;for(const key of keys.slice(0,-1))at=at[key]??={};if(keys.at(-1).startsWith("-="))delete at[keys.at(-1).slice(2)];else at[keys.at(-1)]=clone(value);}}
@@ -126,3 +127,11 @@ test("dois pedidos de movimento parcial da mesma prévia usam somente uma parcel
 test("movimento/Cosmo interrompidos recuperam antes/depois sem duplicação ou Roll",async()=>{
  for(const pool of ["movement","cosmo"])for(const phase of ["before","after"]){const r=runtime();r.actor.system.attributes.vel.effective=3;const m=r.request({kind:"consume",pool,amount:1,...(pool==="movement"?{movementMode:"partial"}:{})});r.control.saveFail=phase;await r.execute(m);r.control.saveFail=null;await recoverAction(r.actor,m.id);assert.equal(r.stats.rolls,0);assert.equal(actionView(r.actor).cosmoUses,pool==="cosmo"&&phase==="after"?1:0);assert.equal(actionView(r.actor).remaining.movement,pool==="movement"&&phase==="after"?2:3);assert.equal(m.flags[ID].actionResponse.status,phase==="after"?"published":"failed");}
 });
+test("Paralisado bloqueia luta/movimento, permite Cosmo e não altera reservas nem recursos",async()=>{
+ const r=runtime(),rule=conditionDefinition({key:"paralyzed",count:1});r.actor.flags[ID]??={};r.actor.flags[ID].conditionEffects={p:{...rule,actorUuid:r.actor.uuid,status:"active"}};r.actor.system.attributes.vel.effective=3;
+ assert.throws(()=>assertActionAllowed(r.actor,"movement"),/Paralisado.*Cosmo continua permitida/);assert.throws(()=>actionPlan(r.actor,"attack",1),/Paralisado/);assert.throws(()=>actionPlan(r.actor,"defense",1),/Paralisado/);assert.throws(()=>techniqueActionPlan(r.actor,{actionPool:"attack"},"tech"),/Paralisado/);assert.throws(()=>residualActionPlan(r.actor,"residual"),/Paralisado/);
+ const before=clone(r.actor.system),cosmo=actionPlan(r.actor,"cosmo",1,{operationId:"cosmo"});assert.equal(cosmo.cost,1);assert.equal(actionView(r.actor).restrictions.paralyzed,true);assert.equal(actionView(r.actor).remaining.movement,3);assert.deepEqual(r.actor.system,before);
+ const msg=r.request({kind:"attack",fighting:"punch",targetUuid:r.target.uuid,amount:1,bonus:0},"paralyzedAttack");game.user=r.gm;await r.execute(msg);assert.equal(msg.flags[ID].actionResponse.status,"failed");assert.equal(r.stats.rolls,0);assert.equal(r.stats.paid,0);
+ r.actor.flags[ID].conditionEffects.p.status="ended";assert.doesNotThrow(()=>assertActionAllowed(r.actor,"movement"));assert.equal(actionView(r.actor).restrictions.paralyzed,false);
+});
+

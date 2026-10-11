@@ -1,6 +1,6 @@
 import {optionalNote} from "./form-values.mjs";
 import {SYSTEM_ID,FIGHTING} from "./config.mjs";
-import {actionHash,actionContext,actionView,actionPlan,rawActionUsage,actionSignature,ACTION_LABELS,ACTION_RESERVES,consumeActionPlan} from "./action-rules.mjs";
+import {actionHash,actionContext,actionView,actionPlan,rawActionUsage,actionSignature,ACTION_LABELS,ACTION_RESERVES,consumeActionPlan,assertActionAllowed} from "./action-rules.mjs";
 import {primaryGM,isPrimaryGM,runMasterOperation,assertNoTechniqueInterruption} from "./master-queue.mjs";
 import {evaluatePool,prepareRollMessage} from "./rolls.mjs";
 import {physicalDamage} from "./combat-rules.mjs";
@@ -66,10 +66,12 @@ export async function executeActionRequest(message,userId) {
   if(!Number.isFinite(options.bonus??0)||Math.abs(options.bonus??0)>10000)throw Error("Modificador inválido.");
   let target,root,fight,dice,pool,label,consumePlan;
   if(options.kind==="attack"){
+   assertActionAllowed(actor,"attack");
    if(!FIGHTING[options.fighting]||options.fighting==="defense")throw Error("Habilidade de ataque inválida.");
    target=await fromUuid(options.targetUuid);if(target?.type!=="knight"||target.uuid!==options.targetUuid)throw Error("Alvo indisponível.");
    dice=actor.system.fighting[options.fighting];pool="attack";label=`${FIGHTING[options.fighting]} contra ${target.name}`;
   }else if(options.kind==="defend"){
+   assertActionAllowed(actor,"defense");
    ({root,fight}=await rootAttack(options,user,actor));dice=actor.system.fighting.defense;pool="defense";label=actor.name;
   }else{consumePlan=consumeActionPlan(actor,options,message.id);pool=options.pool;label=consumePlan.label;optionalNote(options.reason);}
   if(dice!==undefined&&(!Number.isInteger(dice)||dice<1||dice>5))throw Error("Configure graduação de luta entre1 e5.");
@@ -168,6 +170,7 @@ export async function adjustActions(actor) {
  });
 }
 export function actionSheetContext(actor) {
- try{const view=actionView(actor);return {...view,entries:ACTION_RESERVES.map(key=>({key,label:ACTION_LABELS[key],max:view.maxima[key],spent:view.spent[key],remaining:view.remaining[key]})),canToggle:!!game.combat,controlEnabled:!!f(game.combat).actionControl?.enabled};}catch(error){return {error:error.message};}
+ try{const view=actionView(actor);return {...view,entries:ACTION_RESERVES.map(key=>({key,label:ACTION_LABELS[key],max:view.maxima[key],spent:view.spent[key],remaining:view.remaining[key],blocked:!!view.restrictions[key]})),canToggle:!!game.combat,controlEnabled:!!f(game.combat).actionControl?.enabled};}catch(error){return {error:error.message};}
 }
 export function refreshActionSheets(){for(const actor of game.actors?.contents??[])for(const app of Object.values(actor.apps??{}))if(app.rendered)app.render();for(const token of globalThis.canvas?.tokens?.placeables??[])for(const app of Object.values(token.actor?.apps??{}))if(app.rendered)app.render();}
+
