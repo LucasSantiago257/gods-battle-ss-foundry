@@ -3,6 +3,7 @@ import {resolvePool, testParameters, classify} from "./rules.mjs";
 import {resistancePreview} from "./technique-rules.mjs";
 import {assertNoTechniqueInterruption} from "./master-queue.mjs";
 import {conditionPool,conditionSummary,conditionSignature} from "./condition-rules.mjs";
+import {damageTurnSnapshot} from "./combat-rules.mjs";
 
 export async function evaluatePool(dice, modifier) {
   if (!Number.isInteger(dice) || dice < 1 || dice > 100 || !Number.isFinite(modifier)) throw Error("Parada ou modificador inválido.");
@@ -52,8 +53,9 @@ export async function rollTest(actor, kind, key, options = {}) {
   const message = await prepareRollMessage(actor, messageRoll, {label, resistance, attackName: options.resistanceAttack?.name,
     kind: kind === "resistance" ? "Resistência" : kind === "skill" ? "Perícia" : "Atributo", ...result,conditionSummary:conditionSummary(actor.system), difficulty: answer.difficulty, outcome: classify(result.total, answer.difficulty)},
     {flags: {test: result, difficulty: answer.difficulty, ...(resistance ? {resistance, attack: options.resistanceAttack,
-      ...(resistance.control?{controlResolution:{actorUuid:actor.uuid,rootMessageId:options.resistanceAttack.messageId,...resistance.control}}:{}),...(resistance.application==="damage"&&options.resistanceAttack.messageId ? {resolvedDamage:{actorUuid:actor.uuid,rootMessageId:options.resistanceAttack.messageId,body:resistance.damage,armor:resistance.armorDamage,armorId:actor.items.contents.find(i=>i.type==="armor"&&i.system.equipped&&i.system.health.value>=0&&i.system.state!=="dead")?.id??null}} : {})} : {})}});
+      ...(resistance.control?{controlResolution:{actorUuid:actor.uuid,rootMessageId:options.resistanceAttack.messageId,...resistance.control}}:{}),...(resistance.application==="damage"&&options.resistanceAttack.messageId ? {resolvedDamage:{actorUuid:actor.uuid,rootMessageId:options.resistanceAttack.messageId,body:resistance.damage,armor:resistance.armorDamage,armorId:actor.items.contents.find(i=>i.type==="armor"&&i.system.equipped&&i.system.health.value>=0&&i.system.state!=="dead")?.id??null,turnSnapshot:options.resistanceAttack.turnSnapshot??damageTurnSnapshot(actor)}} : {})} : {})}});
   if(!actor.isOwner||conditionSignature(actor)!==conditionBaseline)return ui.notifications.warn("As condições mudaram antes de publicar o teste.");
   if (kind === "skill" && key === "asterism") {try{assertNoTechniqueInterruption(actor);}catch(error){return ui.notifications.warn(error.message);}await actor.update({"system.combat.asterismPenalty": result.total < answer.difficulty - 10 ? -10 : 0});}
   return ChatMessage.create(message);
 }
+
