@@ -1,6 +1,6 @@
-# Condições assistidas — 0.27.0
+# Condições assistidas — 0.28.0
 
-Na ficha, **Combate → Condições assistidas → Registrar condição assistida · mestre** aplica parcelas numéricas de Cansado, de membros debilitados em Incapacitado e de sentidos perdidos em Desorientado. Ajustar condição muda a quantidade no mesmo registro, com histórico, sem encerrar/recriar. Registro explícito do mestre responsável, na fila comum; não converte marcações antigas nem interpreta nomes/descrições de poderes.
+Na ficha, **Combate → Condições assistidas → Registrar condição assistida · mestre** aplica parcelas numéricas de Cansado, de membros debilitados em Incapacitado e de sentidos perdidos em Desorientado. Também registra Paralisado e Atordoado para bloquear ações monitoradas. Ajustar condição muda a quantidade no mesmo registro, com histórico, sem encerrar/recriar. Registro explícito do mestre responsável, na fila comum; não converte marcações antigas nem interpreta nomes/descrições de poderes.
 
 | Regra conferida | Parcela nas rolagens | Recuperação/duração |
 |---|---|---|
@@ -8,6 +8,7 @@ Na ficha, **Combate → Condições assistidas → Registrar condição assistid
 | Desorientado · pp.393–394 | Tabela: −4 e perda de1 dado por sentido perdido; modificador final opcional substitui somente a penalidade. | Até o efeito causador terminar, conferido na mesa. Não resolve resistência nem progressão de perda de sentidos. |
 | Incapacitado: membro debilitado · p.397 | −2 e perda de1 dado por membro conferido em testes | Registrar membros, resultado de resistência e prazo correto; encerramento explícito após recuperação. Não decide dano localizado nem restringe uso de membros automaticamente. |
 | Paralisado · pp.395–396 | Bloqueia movimento e ações de luta monitorados pelo sistema; Ação de Cosmo permanece disponível. | Mestre encerra após resistência/efeito, conforme a mesa. O sistema não inicia resistência nem determina duração. |
+| Atordoado · p.396 | Não aplica modificador numérico; bloqueia movimento, luta, Cosmo, reação e técnicas monitoradas enquanto ativo. | O mestre confere dano >70% dos PV totais no turno, teste de Vigor e fim da rodada; gatilho, rolagem e expiração ainda são manuais. |
 
 ## Paralisado e ações — 0.27.0
 
@@ -61,4 +62,11 @@ Histórico preserva sequência e antes/depois; divergência ou duplicata ativa e
 17 novos testes (410 totais). As358 entradas pessoais e866Items do catálogo não foram reclassificados como automáticos: aplicação de condições é um contrato separado, parcial. Ver [roteiro de validação](validacao-foundry.md).
 
 Desorientado usa contrato de regra2; Cansado/membros mantêm regra1. Anotações antigas com o tipo Desorientado mas contrato1/ausente continuam sem parcela e precisam ser registradas pelo fluxo atual. Não converter registros antes desconhecidos só porque o nome passou a existir. A versão do esquema geral permanece3.
+
+
+## Atordoado e bloqueios de ação — 0.28.0
+
+O mestre registra Atordoado depois de conferir o gatilho (>70% dos PV totais recebidos em uma rodada) e o teste de Vigor. Enquanto o registro estiver ativo, as ações monitoradas de movimento, luta, Cosmo e reação, além da ativação de técnicas, são recusadas antes de rolagem ou gasto. O registro não aplica penalidades numéricas. O mestre encerra após a rodada completa de recuperação indicada na fonte.
+
+Este marco automatiza a persistência/negação de ações, não o rastreamento de dano entre ataques, o teste de Vigor ou a expiração automática. Se não houver combate com iniciativa ativa, o período também precisa ser acompanhado pelo mestre. Excluir um registro afeta só a ficha indicada; PV, CE e gastos anteriores ficam intactos.
 
