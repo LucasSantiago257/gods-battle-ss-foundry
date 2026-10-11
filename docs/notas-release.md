@@ -1,4 +1,12 @@
-Versão **0.27.0** para FoundryVTT 13 build 350.
+Versão **0.28.0** para FoundryVTT 13 build 350.
+
+## 0.28.0 — Estado Atordoado (parcial)
+
+- Novo estado assistido Atordoado, persistente na ficha e referenciado à p.396.
+- Enquanto ativo, bloqueia movimento, ataque, defesa, Ação de Cosmo, Reação e ativação monitorada de técnicas antes de rolar ou gastar recursos.
+- Aplicar o gatilho (>70% dos PV totais recebidos em uma rodada), teste de Vigor/CD e encerrar após a rodada ainda são decisões manuais do mestre.
+- Paralisado e demais condições, fichas e compêndios preservados.
+
 
 ## 0.27.0 — Paralisado e bloqueios de ação
 
