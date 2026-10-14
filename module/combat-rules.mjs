@@ -18,7 +18,7 @@ export function damageTurnSummary(operations, turn) {
   const decimal=value=>{
     const [coefficient,exponentText="0"]=String(value).toLowerCase().split("e"), exponent=Number(exponentText);
     const [whole,fraction=""]=coefficient.split("."), digits=`${whole}${fraction}`, scale=fraction.length-exponent;
-    if(!Number.isInteger(exponent)||Math.abs(exponent)>20||!/^\\d+$/.test(digits))throw Error("Precisão decimal inválida.");
+    if(!Number.isInteger(exponent)||Math.abs(exponent)>20||!/^\d+$/.test(digits))throw Error("Precisão decimal inválida.");
     return scale<0?{n:BigInt(digits)*10n**BigInt(-scale),scale:0}:{n:BigInt(digits),scale};
   };
   const damage=[];let scale=decimal(turn.maximumHealth).scale;
