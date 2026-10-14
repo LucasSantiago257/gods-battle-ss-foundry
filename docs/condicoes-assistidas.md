@@ -1,4 +1,4 @@
-# Condições assistidas — 0.29.0
+# Condições assistidas — 0.30.0
 
 Na ficha, **Combate → Condições assistidas → Registrar condição assistida · mestre** aplica parcelas numéricas de Cansado, de membros debilitados em Incapacitado e de sentidos perdidos em Desorientado. Também registra Paralisado e Atordoado para bloquear ações monitoradas. Ajustar condição muda a quantidade no mesmo registro, com histórico, sem encerrar/recriar. Registro explícito do mestre responsável, na fila comum; não converte marcações antigas nem interpreta nomes/descrições de poderes.
 
@@ -64,11 +64,11 @@ Histórico preserva sequência e antes/depois; divergência ou duplicata ativa e
 Desorientado usa contrato de regra2; Cansado/membros mantêm regra1. Anotações antigas com o tipo Desorientado mas contrato1/ausente continuam sem parcela e precisam ser registradas pelo fluxo atual. Não converter registros antes desconhecidos só porque o nome passou a existir. A versão do esquema geral permanece3.
 
 
-## Atordoado e bloqueios de ação — 0.28.0–0.29.0
+## Atordoado e bloqueios de ação — 0.28.0–0.30.0
 
 O mestre registra Atordoado depois de conferir o gatilho (>70% dos PV totais recebidos em uma rodada) e o teste de Vigor. Enquanto o registro estiver ativo, as ações monitoradas de movimento, luta, Cosmo e reação, além da ativação de técnicas, são recusadas antes de rolagem ou gasto. O registro não aplica penalidades numéricas. O mestre encerra após a rodada completa de recuperação indicada na fonte.
 
-Na 0.29.0, resultados de ataque capturam encontro/rodada/época e PV totais. A aplicação confirmada soma apenas dano corporal aplicado no mesmo contexto; dano à armadura não entra. O desfazer troca o status do journal e retira o dano do total. O limiar matemático é estritamente `bodyDamage > maximumHealth × 0.70`; atingir exatamente 70% não o ultrapassa. A ficha informa o valor acumulado e, ao cruzar, lembra que o teste de Vigor deve ser resolvido.
+Na 0.29.0, resultados de ataque capturam encontro/rodada/época e PV totais. A aplicação confirmada soma apenas dano corporal aplicado no mesmo contexto; dano à armadura não entra. O desfazer troca o status do journal e retira o dano do total. O limiar matemático é estritamente `bodyDamage > maximumHealth × 0.70`; atingir exatamente 70% não o ultrapassa. Na 0.30.0, ao cruzar, a ficha calcula e exibe `CD = 10 + dano/10`, sem arredondamento.
 
 Acompanhamento só é automático quando o cartão possui contexto consistente com um encontro iniciado e o alvo é participante único. Contexto antigo/ausente, múltiplos encontros, PV totais alterados no período ou dano fora de combate permanecem manuais. O sistema ainda não rola TAP/CD, registra Atordoado após falha nem expira o bloqueio depois da ativação seguinte. Excluir um registro afeta só a ficha indicada; PV, CE e gastos anteriores ficam intactos.
 
