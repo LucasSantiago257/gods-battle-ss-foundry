@@ -1,4 +1,4 @@
-# Condições assistidas — 0.28.0
+# Condições assistidas — 0.29.0
 
 Na ficha, **Combate → Condições assistidas → Registrar condição assistida · mestre** aplica parcelas numéricas de Cansado, de membros debilitados em Incapacitado e de sentidos perdidos em Desorientado. Também registra Paralisado e Atordoado para bloquear ações monitoradas. Ajustar condição muda a quantidade no mesmo registro, com histórico, sem encerrar/recriar. Registro explícito do mestre responsável, na fila comum; não converte marcações antigas nem interpreta nomes/descrições de poderes.
 
@@ -8,7 +8,7 @@ Na ficha, **Combate → Condições assistidas → Registrar condição assistid
 | Desorientado · pp.393–394 | Tabela: −4 e perda de1 dado por sentido perdido; modificador final opcional substitui somente a penalidade. | Até o efeito causador terminar, conferido na mesa. Não resolve resistência nem progressão de perda de sentidos. |
 | Incapacitado: membro debilitado · p.397 | −2 e perda de1 dado por membro conferido em testes | Registrar membros, resultado de resistência e prazo correto; encerramento explícito após recuperação. Não decide dano localizado nem restringe uso de membros automaticamente. |
 | Paralisado · pp.395–396 | Bloqueia movimento e ações de luta monitorados pelo sistema; Ação de Cosmo permanece disponível. | Mestre encerra após resistência/efeito, conforme a mesa. O sistema não inicia resistência nem determina duração. |
-| Atordoado · p.396 | Não aplica modificador numérico; bloqueia movimento, luta, Cosmo, reação e técnicas monitoradas enquanto ativo. | O mestre confere dano >70% dos PV totais no turno, teste de Vigor e fim da rodada; gatilho, rolagem e expiração ainda são manuais. |
+| Atordoado · p.396 | Não aplica modificador numérico; bloqueia movimento, luta, Cosmo, reação e técnicas monitoradas enquanto ativo. | Dano corporal aplicado é agregado por combate/rodada e o limiar estrito >70% é sinalizado. Teste de Vigor/CD, registro após falha e fim da rodada ainda são manuais. |
 
 ## Paralisado e ações — 0.27.0
 
@@ -64,9 +64,11 @@ Histórico preserva sequência e antes/depois; divergência ou duplicata ativa e
 Desorientado usa contrato de regra2; Cansado/membros mantêm regra1. Anotações antigas com o tipo Desorientado mas contrato1/ausente continuam sem parcela e precisam ser registradas pelo fluxo atual. Não converter registros antes desconhecidos só porque o nome passou a existir. A versão do esquema geral permanece3.
 
 
-## Atordoado e bloqueios de ação — 0.28.0
+## Atordoado e bloqueios de ação — 0.28.0–0.29.0
 
 O mestre registra Atordoado depois de conferir o gatilho (>70% dos PV totais recebidos em uma rodada) e o teste de Vigor. Enquanto o registro estiver ativo, as ações monitoradas de movimento, luta, Cosmo e reação, além da ativação de técnicas, são recusadas antes de rolagem ou gasto. O registro não aplica penalidades numéricas. O mestre encerra após a rodada completa de recuperação indicada na fonte.
 
-Este marco automatiza a persistência/negação de ações, não o rastreamento de dano entre ataques, o teste de Vigor ou a expiração automática. Se não houver combate com iniciativa ativa, o período também precisa ser acompanhado pelo mestre. Excluir um registro afeta só a ficha indicada; PV, CE e gastos anteriores ficam intactos.
+Na 0.29.0, resultados de ataque capturam encontro/rodada/época e PV totais. A aplicação confirmada soma apenas dano corporal aplicado no mesmo contexto; dano à armadura não entra. O desfazer troca o status do journal e retira o dano do total. O limiar matemático é estritamente `bodyDamage > maximumHealth × 0.70`; atingir exatamente 70% não o ultrapassa. A ficha informa o valor acumulado e, ao cruzar, lembra que o teste de Vigor deve ser resolvido.
+
+Acompanhamento só é automático quando o cartão possui contexto consistente com um encontro iniciado e o alvo é participante único. Contexto antigo/ausente, múltiplos encontros, PV totais alterados no período ou dano fora de combate permanecem manuais. O sistema ainda não rola TAP/CD, registra Atordoado após falha nem expira o bloqueio depois da ativação seguinte. Excluir um registro afeta só a ficha indicada; PV, CE e gastos anteriores ficam intactos.
 

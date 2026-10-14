@@ -1,4 +1,12 @@
-Versão **0.28.0** para FoundryVTT 13 build 350.
+Versão **0.29.0** para FoundryVTT 13 build 350.
+
+## 0.29.0 — Acompanhamento do limiar de Atordoado
+
+- Cartões de ataque/dano guardam encontro, rodada, época e PV totais do alvo no momento do ataque.
+- A ficha soma somente dano corporal aplicado naquela rodada; dano à armadura é excluído e desfazer remove a parcela do total.
+- O limiar usa `dano > 70% dos PV totais`; igualdade não dispara. A ficha mostra progresso e sinaliza quando o teste de Vigor deve ser feito.
+- O teste de Vigor/CD, o registro do estado após falha e a expiração após uma rodada ainda são manuais. Danos sem contexto confiável de encontro seguem a conferência manual.
+- Dois testes novos de agregação/contexto (434 totais esperados). Foundry hospedado não validado.
 
 ## 0.28.0 — Estado Atordoado (parcial)
 

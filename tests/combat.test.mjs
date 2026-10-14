@@ -3,7 +3,7 @@ import {runMasterOperation} from "../module/master-queue.mjs";
 import test from "node:test";
 import assert from "node:assert/strict";
 import {knight,content} from "./foundry-stub.mjs";
-import {physicalDamage,damageSnapshot,snapshotMatches,canReadChat} from "../module/combat-rules.mjs";
+import {physicalDamage,damageSnapshot,snapshotMatches,canReadChat,damageTurnSnapshot,damageTurnSummary} from "../module/combat-rules.mjs";
 import {executeDamageRequest,enqueueDamageRequest,recoverDamageOperation,requestDamage} from "../module/damage.mjs";
 const ID='gods-battle-ss';
 function patch(obj,data) {for(const [path,value] of Object.entries(data)){const parts=path.split('.');let o=obj;for(const key of parts.slice(0,-1))o=o[key]??={};o[parts.at(-1)]=structuredClone(value);}}
@@ -25,6 +25,29 @@ test('snapshot preserva frações e detecta alterações de PV e armadura',()=>{
  const {actor,armor}=fixture();const snapshot=damageSnapshot(actor,10.5,10,armor.id);
  assert.equal(snapshot.after.health,89.5);assert.ok(snapshotMatches(actor,snapshot,'before'));
  armor.system.health.value=29;assert.equal(snapshotMatches(actor,snapshot,'before'),false);
+});
+test("dano de Atordoado soma apenas dano corporal aplicado na mesma rodada e cruza o limiar estritamente",()=>{
+ const turn={combatUuid:"Combat.a",round:2,epoch:"e2",maximumHealth:100},ops=[
+  {status:"applied",direction:"apply",body:60,armorDamage:90,turnSnapshot:turn},
+  {status:"applied",direction:"apply",body:10,turnSnapshot:{...turn}},
+  {status:"undone",direction:"apply",body:15,turnSnapshot:turn},
+  {status:"applied",direction:"apply",body:40,turnSnapshot:{...turn,round:1}},
+  {status:"applied",direction:"undo",body:50,turnSnapshot:turn}
+ ];
+ const exact=damageTurnSummary(ops,turn);assert.equal(exact.bodyDamage,70);assert.equal(exact.threshold,70);assert.equal(exact.exceeded,false);assert.equal(exact.remaining,0);
+ ops.push({status:"applied",direction:"apply",body:.1,turnSnapshot:turn});const crossed=damageTurnSummary(ops,turn);assert.equal(crossed.bodyDamage,70.1);assert.equal(crossed.exceeded,true);assert.equal(crossed.remaining,0);
+});
+test("snapshot de limiar exige exatamente um encontro iniciado com PV totais válidos",()=>{
+ const actor={uuid:"Actor.a",system:{resources:{health:{max:100}}}},combat={uuid:"Combat.a",started:true,round:3,flags:{[ID]:{actionControl:{epoch:"turn3"}}},combatants:{contents:[{actor}]}};
+ assert.deepEqual(damageTurnSnapshot(actor,[combat]),{combatUuid:"Combat.a",round:3,epoch:"turn3",maximumHealth:100});
+ assert.equal(damageTurnSnapshot(actor,[combat,combat]),null);assert.equal(damageTurnSnapshot(actor,[{...combat,started:false}]),null);
+ assert.equal(damageTurnSnapshot(actor,[{...combat,combatants:{contents:[{actor},{actor}]}}]),null);
+});
+test("sumário recusa snapshots com PV totais divergentes e soma frações sem erro binário",()=>{
+ const turn={combatUuid:"Combat.a",round:2,epoch:"e",maximumHealth:100};
+ const repeated=Array.from({length:100},()=>({status:"applied",direction:"apply",body:.7,turnSnapshot:turn}));
+ const summary=damageTurnSummary(repeated,turn);assert.equal(summary.bodyDamage,70);assert.equal(summary.exceeded,false);assert.equal(summary.atThreshold,true);
+ assert.equal(damageTurnSummary([{...repeated[0],turnSnapshot:{...turn,maximumHealth:200}}],turn).bodyDamage,0);
 });
 test('mensagens privadas e cegas não concedem acesso por solicitação forjada',()=>{
  const {player,gm}=fixture();assert.equal(canReadChat(player,{blind:true}),false);assert.equal(canReadChat(gm,{blind:true}),true);
@@ -81,3 +104,4 @@ test('cartão legado de efeito ou origem sem dano não cria journal nem aceita s
 test('desfazer dano já aplicado antes da correção preserva o histórico legado de efeitos',async()=>{
  const f=fixture();await executeDamageRequest(f.request(),'p');assert.equal(f.actor.system.resources.health.value,89.5);f.source.flags[ID].attack={effectKind:'sustained'};game.messages.set('attack',{flags:{[ID]:{attack:{effectKind:'sustained',targetUuid:f.actor.uuid}}}});await executeDamageRequest(f.request('legacyUndo','undo'),'p');assert.equal(f.actor.system.resources.health.value,100);assert.equal(f.armor.system.health.value,30);assert.equal(f.actor.flags[ID].damageOperations.attack.status,'undone');await executeDamageRequest(f.request('again'),'p');assert.equal(f.actor.system.resources.health.value,100);
 });
+
