@@ -41,6 +41,13 @@ test("snapshot de limiar exige exatamente um encontro iniciado com PV totais vá
  const actor={uuid:"Actor.a",system:{resources:{health:{max:100}}}},combat={uuid:"Combat.a",started:true,round:3,flags:{[ID]:{actionControl:{epoch:"turn3"}}},combatants:{contents:[{actor}]}};
  assert.deepEqual(damageTurnSnapshot(actor,[combat]),{combatUuid:"Combat.a",round:3,epoch:"turn3",maximumHealth:100});
  assert.equal(damageTurnSnapshot(actor,[combat,combat]),null);assert.equal(damageTurnSnapshot(actor,[{...combat,started:false}]),null);
+ assert.equal(damageTurnSnapshot(actor,[{...combat,combatants:{contents:[{actor},{actor}]}}]),null);
+});
+test("sumário recusa snapshots com PV totais divergentes e soma frações sem erro binário",()=>{
+ const turn={combatUuid:"Combat.a",round:2,epoch:"e",maximumHealth:100};
+ const repeated=Array.from({length:100},()=>({status:"applied",direction:"apply",body:.7,turnSnapshot:turn}));
+ const summary=damageTurnSummary(repeated,turn);assert.equal(summary.bodyDamage,70);assert.equal(summary.exceeded,false);assert.equal(summary.atThreshold,true);
+ assert.equal(damageTurnSummary([{...repeated[0],turnSnapshot:{...turn,maximumHealth:200}}],turn).bodyDamage,0);
 });
 test('mensagens privadas e cegas não concedem acesso por solicitação forjada',()=>{
  const {player,gm}=fixture();assert.equal(canReadChat(player,{blind:true}),false);assert.equal(canReadChat(gm,{blind:true}),true);
