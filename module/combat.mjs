@@ -55,7 +55,7 @@ export async function defendAttack(message) {
     const {result,messageRoll}=await evaluatePool(pool.dice,pool.modifier);
     if(conditionSignature(actor)!==conditionBaseline)throw Error("Condições mudaram durante a defesa; confira a situação antes de repetir.");
     const outcome=physicalDamage(fight.attack,result.total,{...fight,protection:actor.system.combat.protection});
-    const resolvedDamage={actorUuid:actor.uuid,rootMessageId:message.id,body:outcome.damage,armor:0,armorId:null,turnSnapshot:fight.turnSnapshot??damageTurnSnapshot(actor)};
+    const resolvedDamage={actorUuid:actor.uuid,rootMessageId:message.id,body:outcome.damage,armor:0,armorId:null,turnSnapshot:Object.hasOwn(fight,"turnSnapshot")?fight.turnSnapshot:damageTurnSnapshot(actor)};
     const data=await prepareRollMessage(actor,messageRoll,{label:actor.name,kind:"Defesa",...result,outcome,resolvedDamage,conditionSummary:conditionSummary(actor.system)},{template:"combat-chat",flags:{resolvedDamage}});
     if(conditionSignature(actor)!==conditionBaseline)throw Error("Condições mudaram antes de publicar a defesa.");
     return await ChatMessage.create(data);
