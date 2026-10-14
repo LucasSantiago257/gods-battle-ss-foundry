@@ -1,4 +1,4 @@
-# Próximos desafios — após 0.29.0
+# Próximos desafios — após 0.30.0
 
 Prioridade atual definida por Lucas: gameplay. Já existem fichas, catálogos para arrastar, criação/evolução assistidas, personagens de exercício, ataque/defesa, resistência, dano confirmado com desfazer, configuração/prévia de técnicas, composição personalizada e pagamento central compartilhado com dano/evolução. Isso permite exercitar o fluxo básico; não significa automação integral do livro ou validação do servidor.
 
@@ -75,7 +75,7 @@ Contrato de implementação proposto, mantendo as convenções já documentadas 
 Convenção operacional proposta para “uma rodada inteira”: se falhar, bloquear todas as ações do cavaleiro até que passe sua próxima ativação completa no rastreador, incluindo movimento, luta, Cosmo e reação; então expirar o bloqueio. A fonte não define a relação com ordem de iniciativa nem o que ocorre sem combate; manter ativação/iniciativa ausente como manual. O próximo código precisa marcar o intervalo por combatant/epoch e testar os casos em que o dano ocorre antes ou depois da ativação do alvo. Não introduzir arredondamento, imunidade, resistência repetida ou efeito colateral de armadura sem fonte. Teste de Vigor deve poder ocorrer mesmo sob o bloqueio; nunca consumir ação para a resistência.
 
 
-## Após 0.29.0 — limiar de Atordoado acompanhado
+## Após 0.30.0 — gatilho e CD de Atordoado acompanhados
 
-0.29.0 associa dano corporal aplicado ao encontro/rodada registrado no cartão, soma dano persistido ainda aplicado, retira parcelas desfeitas e exibe o cruzamento estrito de70% dos PV totais. O alvo precisa participar de um único encontro iniciado; cartas sem contexto compatível continuam manuais. Próximo passo: resolver uma TAP Vigor na CD `10 + dano/10` ao primeiro cruzamento, sem arredondamento, com operação recuperável e sem nova rolagem por replay. Depois, expirar Atordoado na ativação completa correta; testar dano antes/depois da vez do alvo e ausência de iniciativa. Não misturar Big Bang Atordoar nem a tabela de dano por elevar Vigor.
+0.29.0 associa dano corporal aplicado ao encontro/rodada registrado no cartão, soma dano persistido ainda aplicado, retira parcelas desfeitas e exibe o cruzamento estrito de70% dos PV totais. A 0.30.0 mostra a CD `10 + dano/10` sem arredondamento. O alvo precisa participar de um único encontro iniciado; cartas sem contexto compatível continuam manuais. Próximo passo: resolver uma TAP Vigor uma única vez no primeiro cruzamento, com operação recuperável e sem nova rolagem por replay; falha deve registrar Atordoado no alvo. Depois, expirar o bloqueio na ativação completa correta; testar dano antes/depois da vez do alvo e ausência de iniciativa. Não misturar Big Bang Atordoar nem a tabela de dano por elevar Vigor.
 

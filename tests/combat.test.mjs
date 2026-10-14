@@ -35,7 +35,7 @@ test("dano de Atordoado soma apenas dano corporal aplicado na mesma rodada e cru
   {status:"applied",direction:"undo",body:50,turnSnapshot:turn}
  ];
  const exact=damageTurnSummary(ops,turn);assert.equal(exact.bodyDamage,70);assert.equal(exact.threshold,70);assert.equal(exact.exceeded,false);assert.equal(exact.remaining,0);
- ops.push({status:"applied",direction:"apply",body:.1,turnSnapshot:turn});const crossed=damageTurnSummary(ops,turn);assert.equal(crossed.bodyDamage,70.1);assert.equal(crossed.exceeded,true);assert.equal(crossed.remaining,0);
+ ops.push({status:"applied",direction:"apply",body:.1,turnSnapshot:turn});const crossed=damageTurnSummary(ops,turn);assert.equal(crossed.bodyDamage,70.1);assert.equal(crossed.exceeded,true);assert.equal(crossed.remaining,0);assert.equal(crossed.difficulty,"17.01");
 });
 test("snapshot de limiar exige exatamente um encontro iniciado com PV totais válidos",()=>{
  const actor={uuid:"Actor.a",system:{resources:{health:{max:100}}}},combat={uuid:"Combat.a",started:true,round:3,flags:{[ID]:{actionControl:{epoch:"turn3"}}},combatants:{contents:[{actor}]}};

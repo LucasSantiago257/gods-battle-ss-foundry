@@ -29,8 +29,9 @@ export function damageTurnSummary(operations, turn) {
   }
   const health=decimal(turn.maximumHealth),factor=10n**BigInt(scale-health.scale);
   const bodyScaled=damage.reduce((sum,amount)=>sum+amount.n*10n**BigInt(scale-amount.scale),0n),healthScaled=health.n*factor;
-  const comparison=bodyScaled*10n-healthScaled*7n,bodyDamage=Number(bodyScaled)/10**scale,threshold=turn.maximumHealth*.7;
-  return {combatUuid:turn.combatUuid,round:turn.round,epoch:turn.epoch,bodyDamage,maximumHealth:turn.maximumHealth,threshold,exceeded:comparison>0n,atThreshold:comparison===0n,remaining:Math.max(0,threshold-bodyDamage)};
+  const comparison=bodyScaled*10n-healthScaled*7n,bodyDamage=Number(bodyScaled)/10**scale,threshold=turn.maximumHealth*.7,exceeded=comparison>0n;
+  const difficultyScaled=bodyScaled+10n*10n**BigInt(scale+1),difficultyDigits=scale+1,difficultyRaw=difficultyScaled.toString().padStart(difficultyDigits+1,"0"),difficultyFraction=difficultyRaw.slice(-difficultyDigits).replace(/0+$/,""),difficulty=difficultyFraction?`${difficultyRaw.slice(0,-difficultyDigits)}.${difficultyFraction}`:difficultyRaw.slice(0,-difficultyDigits);
+  return {combatUuid:turn.combatUuid,round:turn.round,epoch:turn.epoch,bodyDamage,maximumHealth:turn.maximumHealth,threshold,exceeded,atThreshold:comparison===0n,remaining:Math.max(0,threshold-bodyDamage),...(exceeded?{difficulty}:{})};
 }
 export function damageSnapshot(actor, body, armorDamage, armorId) {
   if (![body,armorDamage].every(n=>Number.isFinite(n)&&n>=0&&n<=1000000)) throw Error("Dano inválido.");

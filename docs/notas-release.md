@@ -1,4 +1,11 @@
-Versão **0.29.0** para FoundryVTT 13 build 350.
+Versão **0.30.0** para FoundryVTT 13 build 350.
+
+## 0.30.0 — Dificuldade assistida para TAP de Vigor
+
+- Ao ultrapassar o limiar geral de Atordoado, a ficha calcula a CD de Vigor como `10 + dano/10` usando o dano corporal agregado da rodada, sem arredondamento.
+- A regra, o gatilho e a precisão permanecem os da p.396; a interface apenas apresenta a CD calculada no contexto do encontro.
+- O jogador ainda realiza o teste; registrar Atordoado em caso de falha e encerrar após a rodada completa continuam manuais.
+- 435 testes totais; comparação decimal e contexto do encontro cobertos. Foundry hospedado não validado.
 
 ## 0.29.0 — Acompanhamento do limiar de Atordoado
 
@@ -6,7 +13,7 @@ Versão **0.29.0** para FoundryVTT 13 build 350.
 - A ficha soma somente dano corporal aplicado naquela rodada; dano à armadura é excluído e desfazer remove a parcela do total.
 - O limiar usa `dano > 70% dos PV totais`; igualdade não dispara. A ficha mostra progresso e sinaliza quando o teste de Vigor deve ser feito.
 - O teste de Vigor/CD, o registro do estado após falha e a expiração após uma rodada ainda são manuais. Danos sem contexto confiável de encontro seguem a conferência manual.
-- Dois testes novos de agregação/contexto (434 totais esperados). Foundry hospedado não validado.
+- Três testes novos de agregação/contexto no total final da versão (435 testes aprovados). Foundry hospedado não validado.
 
 ## 0.28.0 — Estado Atordoado (parcial)
 
