@@ -9,6 +9,7 @@ import {primaryGM,isPrimaryGM,runMasterOperation,assertNoTechniqueInterruption} 
 import {actionSignature,rawActionUsage,techniqueActionPlan} from "./action-rules.mjs";
 import {componentState,techniqueWithComponents} from "./technique-components.mjs";
 import {conditionSignature} from "./condition-rules.mjs";
+import {damageTurnSnapshot} from "./combat-rules.mjs";
 const flags=doc=>doc?.flags?.[SYSTEM_ID]??{};
 const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const hash=value=>levelSignature({},[{_id:"activation",value}]);
@@ -90,7 +91,7 @@ export async function executeTechniqueRequest(message,userId) {
   validateCurrent(message,request,requester,actor,item,baseline,signature);
   const {result,messageRoll}=await evaluatePool(parameters.dice,parameters.modifier);
   validateCurrent(message,request,requester,actor,item,baseline,signature);
-  const outcome=techniqueOutcome(actor.system,technique,parameters,result.total),attack={name:item.name,nature:technique.nature,effectKind:parameters.effectKind,...(parameters.control?{control:{...parameters.control,start:controlStart()},itemUuid:item.uuid}:{}),powerCosmic:parameters.powerCosmic,damage:outcome.damage,armorDamage:outcome.armorDamage,attackerUuid:actor.uuid,...(target?{targetUuid:target.uuid,targetName:target.name}:{})};
+  const outcome=techniqueOutcome(actor.system,technique,parameters,result.total),attack={name:item.name,nature:technique.nature,effectKind:parameters.effectKind,...(parameters.control?{control:{...parameters.control,start:controlStart()},itemUuid:item.uuid}:{}),powerCosmic:parameters.powerCosmic,damage:outcome.damage,armorDamage:outcome.armorDamage,attackerUuid:actor.uuid,turnSnapshot:target?damageTurnSnapshot(target):null,...(target?{targetUuid:target.uuid,targetName:target.name}:{})};
   const card=await prepareRollMessage(actor,messageRoll,{name:item.name,...result,...parameters,...outcome,payment,componentReason:options.componentReason??"",actions:actionPlan.cost?{cost:actionPlan.cost,pool:options.actionPool==="attack"?"Ataque":"Defesa",round:actionPlan.view.context.round}:null,effectLabel:EFFECT_KINDS[parameters.effectKind],description:technique.description,isDamage:parameters.effectKind==="damage",targetName:target?.name,power:parameters.power,userLevel:actor.system.profile.level,damageBonus:actor.system.combat.damageBonus+(actor.system.combat.techniqueDamageBonus??0)},
    {template:"technique-chat",rollMode:request.rollMode,flags:{technique:{itemUuid:item.uuid,...parameters,...outcome,payment:record.payment},...(outcome.success?{attack}:{})}});
   // Self roll acompanha o solicitante, não o cliente mestre que executou o teste.
