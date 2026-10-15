@@ -1,3 +1,10 @@
+## 0.33.0 — Resistência de técnica sem janela extra
+
+- Resistir no cartão da técnica rola diretamente contra o Poder Cósmico do ataque, com modificador situacional zero e vantagem normal.
+- Ajustar resistência conserva a janela de modificador e vantagem/desvantagem, com cancelamento e dificuldade vinculada ao ataque.
+- Cliques simultâneos entre os dois botões no mesmo cartão/cliente não rolam duas vezes. Permissões, alvo, condições existentes e modo de rolagem são preservados.
+- Resistir não gasta CE/ações nem aplica dano. Testes genéricos continuam com janela; nenhuma nova regra de condições. Foundry hospedado não validado.
+
 ## 0.32.0 — Efeitos ativos separados do histórico
 
 - O painel Efeitos com duração mostra Ativos e pendentes primeiro e recolhe o Histórico de efeitos, com contagens.

@@ -73,20 +73,23 @@ export async function resistanceForAttack(attack,tokens=[],character=game.user.c
  if(!actor?.isOwner||actor.type!=="knight")throw Error("Somente o mestre ou proprietário do alvo marcado pode resistir.");
  return actor;
 }
+const resistanceBusy=new WeakSet();
 export function renderTechniqueChat(message, html) {
-  const attack = message.flags?.[SYSTEM_ID]?.attack;
-  const button = html.querySelector('[data-action="resistTechnique"]');
-  if (!button) return;
-  if (!message.isContentVisible || !attack || !NATURES[attack.nature] || !Number.isFinite(attack.powerCosmic)
-    || !Number.isFinite(attack.damage) || !Number.isFinite(attack.armorDamage) || attack.damage < 0 || attack.armorDamage < 0) {
-    button.remove(); return;
+  const attack=message.flags?.[SYSTEM_ID]?.attack;
+  const buttons=[html.querySelector('[data-action="resistTechnique"]'),html.querySelector('[data-action="adjustResistance"]')].filter(Boolean);
+  if(!buttons.length)return;
+  const quickAvailable=buttons.some(button=>button.dataset?.action==="adjustResistance");
+  if(!message.isContentVisible||!attack||!NATURES[attack.nature]||!Number.isFinite(attack.powerCosmic)
+    ||!Number.isFinite(attack.damage)||!Number.isFinite(attack.armorDamage)||attack.damage<0||attack.armorDamage<0){
+    for(const button of buttons)button.remove();return;
   }
-  button.addEventListener("click", async () => {
-    button.disabled = true;
-    try {
-      const actor = await resistanceForAttack(attack,globalThis.canvas?.tokens?.controlled ?? []);
-      await rollTest(actor, "resistance", NATURES[attack.nature].resistance, {difficulty: attack.powerCosmic, resistanceAttack: {...attack,messageId:message.id}});
-    } catch (error) {console.error(error); ui.notifications.error(error.message);}
-    finally {button.disabled = false;}
+  for(const button of buttons)button.addEventListener("click",async()=>{
+    if(resistanceBusy.has(message)||!message.isContentVisible)return;
+    resistanceBusy.add(message);for(const item of buttons)item.disabled=true;
+    try{
+      const actor=await resistanceForAttack(attack,globalThis.canvas?.tokens?.controlled??[]);
+      await rollTest(actor,"resistance",NATURES[attack.nature].resistance,{difficulty:attack.powerCosmic,resistanceAttack:{...attack,messageId:message.id},quick:quickAvailable&&button.dataset.action==="resistTechnique"});
+    }catch(error){console.error(error);ui.notifications.error(error.message);}
+    finally{resistanceBusy.delete(message);for(const item of buttons)item.disabled=false;}
   });
 }

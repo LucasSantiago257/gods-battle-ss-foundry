@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {knight, content} from "./foundry-stub.mjs";
-import {prepareKnight} from "../module/rules.mjs";
+import {prepareKnight,testParameters} from "../module/rules.mjs";
 import {techniqueParameters, techniqueOutcome, cosmoPayment, resistancePreview, techniqueReadiness,effectiveTechnique,activationPreview} from "../module/technique-rules.mjs";
 import {useTechnique, resistanceActor, renderTechniqueChat,techniqueTarget,resistanceForAttack} from "../module/techniques.mjs";
 import {techniqueSetupUpdates,setupTechnique} from "../module/technique-setup.mjs";
@@ -183,7 +183,7 @@ test("defensor selecionado precisa ser único e proprietário; personagem é alt
   assert.throws(() => resistanceActor([{actor:a}, {actor:a}], a)); assert.throws(() => resistanceActor([{actor:{...a,isOwner:false}}], a));
 });
 test("mensagem oculta ou ataque inválido não oferecem resistência", () => {
-  let removed = 0; const html = {querySelector: () => ({remove: () => removed++})};
+  let removed = 0; const html = {querySelector: selector => selector.includes("resistTechnique") ? {remove: () => removed++} : null};
   renderTechniqueChat({isContentVisible: false, flags: {}}, html);
   renderTechniqueChat({isContentVisible: true, flags: {"gods-battle-ss": {attack: {nature: "physical", damage: NaN}}}}, html);
   assert.equal(removed, 2);
@@ -297,4 +297,52 @@ test("resistência de Sustentada e Controle legado separa efeito de dano mesmo c
 });
 test("resistência de Sustentada e Controle sem metadados não publica resolvedDamage nem altera recursos",async()=>{
  for(const effectKind of ["sustained","control","manual"]){const r=runtime({faces:[5]});foundry.applications.api.DialogV2.wait=async()=>({bonus:0,advantage:0,difficulty:1});const before=structuredClone(r.actor.system);await rollTest(r.actor,"resistance","vig",{difficulty:20,resistanceAttack:{name:"Efeito",effectKind,messageId:"root",targetUuid:r.actor.uuid,powerCosmic:20,damage:50,armorDamage:30}});const f=r.sent[0].flags["gods-battle-ss"];assert.equal(f.difficulty,20);assert.equal(f.resolvedDamage,undefined);assert.equal(f.controlResolution,undefined);assert.ok(f.resistance.manualEffect);assert.deepEqual(r.actor.system,before);assert.equal(r.updates.length,0);}
+});
+
+
+function resistanceButtons(){
+ const buttons=Object.fromEntries(['resistTechnique','adjustResistance'].map(action=>[action,{dataset:{action},disabled:false,removed:false,remove(){this.removed=true;},addEventListener(_event,callback){this.click=callback;}}]));
+ return {buttons,querySelector:selector=>buttons[/data-action="([^"]+)"/.exec(selector)?.[1]]??null};
+}
+function resistanceCard(actor,id='quickCard'){
+ return {id,isContentVisible:true,flags:{'gods-battle-ss':{attack:{name:'Ataque de exercício',nature:'physical',targetUuid:actor.uuid,powerCosmic:15,damage:20,armorDamage:10,effectKind:'damage'}}}};
+}
+
+test('resistir rapido usa PC e alvo do cartao sem dialogo, custo ou dano',async()=>{
+ const r=runtime(),html=resistanceButtons(),message=resistanceCard(r.actor),before=structuredClone(r.actor.system);
+ foundry.applications.api.DialogV2.wait=async()=>{throw Error('Janela inesperada');};
+ renderTechniqueChat(message,html);await html.buttons.resistTechnique.click();
+ assert.equal(r.evaluations(),1);assert.equal(r.sent.length,1);assert.equal(r.sent[0].flags['gods-battle-ss'].difficulty,15);
+ assert.equal(r.sent[0].flags['gods-battle-ss'].resolvedDamage.rootMessageId,message.id);assert.equal(r.sent[0].flags['gods-battle-ss'].resolvedDamage.actorUuid,r.actor.uuid);
+ assert.equal(r.sent[0].rollMode,'gmroll');assert.deepEqual(r.actor.system,before);assert.equal(r.updates.length,0);assert.deepEqual(r.notices,[]);
+});
+
+test('ajustar resistencia permite bonus e vantagem, preserva PC e cancelar nao rola',async()=>{
+ const r=runtime(),html=resistanceButtons();let dialogs=0;
+ foundry.applications.api.DialogV2.wait=async()=>{dialogs++;return null;};renderTechniqueChat(resistanceCard(r.actor),html);
+ await html.buttons.adjustResistance.click();assert.equal(dialogs,1);assert.equal(r.evaluations(),0);
+ foundry.applications.api.DialogV2.wait=async()=>({difficulty:999,bonus:3,advantage:1});await html.buttons.adjustResistance.click();
+ assert.equal(r.evaluations(),1);assert.equal(r.sent[0].flags['gods-battle-ss'].difficulty,15);assert.equal(r.sent[0].flags['gods-battle-ss'].test.modifier,testParameters(r.actor.system,'resistance','vig','rank',{technique:true}).modifier+5);
+});
+
+test('resistencia rapida e ajustada compartilham bloqueio durante solicitacao',async()=>{
+ const r=runtime(),html=resistanceButtons(),message=resistanceCard(r.actor);let release;
+ globalThis.fromUuid=async()=>{await new Promise(resolve=>{release=resolve;});return r.actor;};renderTechniqueChat(message,html);
+ const pending=html.buttons.resistTechnique.click();assert.equal(html.buttons.resistTechnique.disabled,true);assert.equal(html.buttons.adjustResistance.disabled,true);
+ await html.buttons.adjustResistance.click();release();await pending;
+ assert.equal(r.evaluations(),1);assert.equal(r.sent.length,1);assert.equal(html.buttons.adjustResistance.disabled,false);
+});
+
+test('cartao oculto remove ambos botoes e perda de propriedade impede resistencia rapida',async()=>{
+ const r=runtime(),html=resistanceButtons(),message=resistanceCard(r.actor);message.isContentVisible=false;renderTechniqueChat(message,html);
+ assert.equal(html.buttons.resistTechnique.removed,true);assert.equal(html.buttons.adjustResistance.removed,true);assert.equal(r.evaluations(),0);
+ const visible=resistanceButtons();message.isContentVisible=true;r.actor.isOwner=false;renderTechniqueChat(message,visible);await visible.buttons.resistTechnique.click();assert.equal(r.evaluations(),0);assert.equal(r.sent.length,0);assert.match(r.notices.at(-1),/proprietário/);
+});
+
+
+test('cartao antigo sem botao de ajuste conserva a janela de resistencia',async()=>{
+ const r=runtime(),html=resistanceButtons();delete html.buttons.adjustResistance;let dialogs=0;
+ foundry.applications.api.DialogV2.wait=async()=>{dialogs++;return {difficulty:15,bonus:2,advantage:0};};
+ renderTechniqueChat(resistanceCard(r.actor),html);await html.buttons.resistTechnique.click();
+ assert.equal(dialogs,1);assert.equal(r.evaluations(),1);assert.equal(r.sent[0].flags['gods-battle-ss'].test.modifier,testParameters(r.actor.system,'resistance','vig','rank',{technique:true}).modifier+2);
 });
