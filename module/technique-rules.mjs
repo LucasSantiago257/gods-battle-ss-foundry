@@ -56,7 +56,7 @@ export function techniqueParameters(system, technique, options = {}) {
   const pool=conditionPool(system,Math.max(1,base.dice+advantage),modifier,{maxDice:5});
   return {cost, difficulty: 10 + cost, control:controlDuration(technique),components,attribute, attributeLabel: ATTRIBUTES[attribute],conditionSummary:conditionSummary(system),
     dice: pool.dice, modifier:pool.modifier, elevate, condense, effectKind, baseDamageLevel:technique.damageLevel,power:technique.power,
-    powerCosmic: system.combat.cosmicPower + (effectKind === "damage" ? 0 : elevate)};
+    powerCosmic: system.combat.cosmicPower + (effectKind === "damage" ? 0 : elevate) + components.powerCosmicBonus};
 }
 export function cosmoPayment(system, cost, {useExtra = true, allowOverload = false} = {}) {
   integer(cost, "Custo");

@@ -1,3 +1,10 @@
+## 0.34.0 — Controle sobre as Estrelas no Poder Cósmico
+
+- O incremento canônico de graduação 1/2/3 soma +1/+2/+3 PC em técnicas personalizadas de Dano com o grupo de componentes atualizado pela configuração.
+- Prévia, cartão e dificuldade de resistência usam o PC final; ND, dano e custo fixo permanecem preservados.
+- Cópias anteriores não recebem o bônus silenciosamente: precisam salvar Configurar com o grupo ligado. Desligar conserva parâmetros base e recursos.
+- Recuperação conserva o mesmo PC e pagamento. Sem novas condições ou alteração dos catálogos. Foundry hospedado não validado.
+
 ## 0.33.0 — Resistência de técnica sem janela extra
 
 - Resistir no cartão da técnica rola diretamente contra o Poder Cósmico do ataque, com modificador situacional zero e vantagem normal.

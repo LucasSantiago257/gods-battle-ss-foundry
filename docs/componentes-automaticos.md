@@ -1,3 +1,11 @@
+# Controle sobre as Estrelas — 0.34.0
+
+Em técnicas personalizadas de Dano com composição salva e componentes habilitados na configuração atual, Controle sobre as Estrelas (p.219) soma +1/+2/+3 ao Poder Cósmico pela graduação. A prévia, o cartão e a dificuldade da resistência usam esse PC final. O incremento não acrescenta ND, dano corporal ou dano à armadura e não cobra novamente o Condensar já incluído no custo fixo da composição. A implementação cobre o bônus numérico da tabela; não cria uma nova regra de remoção de PA a partir do texto descritivo.
+
+Cópias com o grupo habilitado antes desta versão conservam o PC anterior: Estrelas continua manual até salvar Configurar com o grupo ligado. A configuração lista os componentes e explica o novo cálculo. Confira eventuais bônus equivalentes lançados manualmente. Desligar o grupo ou recompor conserva bases, recursos, notas e histórico. A versão interna do grupo fica na cópia, sem migração automática.
+
+O processamento do mestre recalcula o bônus da composição canônica; recuperação conserva o mesmo PC e pagamento. Não automatiza outros incrementos ou primordiais mistos, Controle e Sustentada.
+
 # Componentes assistidos — 0.15.0
 
 Desde0.16.0, Brasas também possui acompanhamento periódico confirmado pelo mestre, em fluxo separado. Veja [efeitos com duração](efeitos-duracao.md); os quatro cálculos deste guia permanecem iguais.
