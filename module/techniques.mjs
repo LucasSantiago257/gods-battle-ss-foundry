@@ -78,6 +78,7 @@ export function renderTechniqueChat(message, html) {
   const attack=message.flags?.[SYSTEM_ID]?.attack;
   const buttons=[html.querySelector('[data-action="resistTechnique"]'),html.querySelector('[data-action="adjustResistance"]')].filter(Boolean);
   if(!buttons.length)return;
+  const quickAvailable=buttons.some(button=>button.dataset?.action==="adjustResistance");
   if(!message.isContentVisible||!attack||!NATURES[attack.nature]||!Number.isFinite(attack.powerCosmic)
     ||!Number.isFinite(attack.damage)||!Number.isFinite(attack.armorDamage)||attack.damage<0||attack.armorDamage<0){
     for(const button of buttons)button.remove();return;
@@ -87,7 +88,7 @@ export function renderTechniqueChat(message, html) {
     resistanceBusy.add(message);for(const item of buttons)item.disabled=true;
     try{
       const actor=await resistanceForAttack(attack,globalThis.canvas?.tokens?.controlled??[]);
-      await rollTest(actor,"resistance",NATURES[attack.nature].resistance,{difficulty:attack.powerCosmic,resistanceAttack:{...attack,messageId:message.id},quick:button.dataset.action==="resistTechnique"});
+      await rollTest(actor,"resistance",NATURES[attack.nature].resistance,{difficulty:attack.powerCosmic,resistanceAttack:{...attack,messageId:message.id},quick:quickAvailable&&button.dataset.action==="resistTechnique"});
     }catch(error){console.error(error);ui.notifications.error(error.message);}
     finally{resistanceBusy.delete(message);for(const item of buttons)item.disabled=false;}
   });
