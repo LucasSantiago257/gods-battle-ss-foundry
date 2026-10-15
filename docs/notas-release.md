@@ -1,3 +1,10 @@
+## 0.32.0 — Efeitos ativos separados do histórico
+
+- O painel Efeitos com duração mostra Ativos e pendentes primeiro e recolhe o Histórico de efeitos, com contagens.
+- Registros concluídos, encerrados ou com segundo Asterismo falho conservam detalhes e histórico. Efeitos pausados, cópias e estados desconhecidos continuam visíveis na área principal.
+- Notas vazias deixam de ocupar uma linha; Encerrar efeito mantém a ação existente, sem declaração obrigatória.
+- Não altera custos, prazos, resolução, recuperação, condições, catálogos ou cópias. Foundry hospedado não validado.
+
 ## 0.31.0 — Aplicação direta do dano calculado
 
 - Ataques físicos e resistências de técnicas de dano oferecem Aplicar dano com os valores corporais e da armadura no botão, sem abrir outra janela numérica.
