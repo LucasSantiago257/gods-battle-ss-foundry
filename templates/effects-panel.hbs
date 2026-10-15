@@ -1,0 +1,5 @@
+<section class="persistent-effects"><h3>Efeitos com duração</h3>{{#if isGM}}<button type="button" data-action="registerEffect">Registrar efeito · mestre</button><button type="button" data-action="registerSustained">Registrar Sustentada no pagador · mestre</button><button type="button" data-action="depositResidual">Preparar Cosmo Residual · mestre</button>{{/if}}<p class="note">Dano por rodada exige conferência do mestre. Avançar rodadas não aplica dano nem dias de Residual. Anotações não alteram condições, bônus ou CE.</p><h4>Ativos e pendentes ({{persistentEffectsPanel.active.length}})</h4>
+{{#each persistentEffectsPanel.active}}{{> "systems/gods-battle-ss/templates/effect-record.hbs"}}{{else}}<p>Nenhum efeito ativo ou pendente.</p>{{/each}}
+<details class="calculation-ledger effect-history"><summary>Histórico de efeitos ({{persistentEffectsPanel.history.length}})</summary>
+{{#each persistentEffectsPanel.history}}{{> "systems/gods-battle-ss/templates/effect-record.hbs"}}{{else}}<p>Nenhum efeito concluído ou encerrado.</p>{{/each}}
+</details></section>

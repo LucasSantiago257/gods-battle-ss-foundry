@@ -1,3 +1,9 @@
+# Painel de efeitos — 0.32.0
+
+Em Combate, Efeitos com duração separa Ativos e pendentes do Histórico de efeitos, que começa recolhido. Os dois grupos mostram suas quantidades. Registros próprios encerrados, expirados ou com segundo Asterismo falho ficam no histórico, com origem, prazo, pagamentos, resistências e rodadas preservados. Efeitos pausados, cópias de outra ficha e estados desconhecidos permanecem na área principal para conferência. Esta organização não encerra, resolve, cobra nem remove efeitos; recuperações interrompidas continuam na área própria, visíveis.
+
+As ações e permissões existentes permanecem. Notas vazias não ocupam uma linha e o botão genérico passa a se chamar Encerrar efeito. Não implementa novas condições ou expiração automática.
+
 # Efeitos com duração — 0.16.0
 
 Desde0.17.0, [condições assistidas](condicoes-assistidas.md) oferece parcelas de Cansado/membros debilitados em registros próprios, até recuperação conferida. As anotações deste guia continuam manuais e não se convertem em condições automaticamente.

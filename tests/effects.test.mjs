@@ -5,7 +5,7 @@ import assert from "node:assert/strict";
 import {readFile} from "node:fs/promises";
 import {knight,content} from "./foundry-stub.mjs";
 import {BRASAS,brasasSource,effectDefinition,effectView,effectTickPlan,effectRecords,nextEffectRound} from "../module/effect-rules.mjs";
-import {registerEffect,resolveEffect,endEffect,recoverEffect,effectSheetContext,effectSources} from "../module/effects.mjs";
+import {registerEffect,resolveEffect,endEffect,recoverEffect,effectSheetContext,effectPanelContext,effectSources} from "../module/effects.mjs";
 import {assertNoTechniqueInterruption} from "../module/master-queue.mjs";
 import {componentUuid} from "../module/technique-builder-rules.mjs";
 const ID="gods-battle-ss";
@@ -96,4 +96,27 @@ test("registro, rodada, encerramento e recuperação de efeito deixam fila livre
 });
 test("rodada confirmada depois de mudança na ficha não aplica dano antigo",async()=>{
  const f=fixture(),record=await f.create({firstOffset:0});await assert.rejects(holdDecisionOutsideQueue(()=>resolveEffect(f.actor,record.id),{answer:{},during:async()=>{await runMasterOperation(()=>{f.actor.system.resources.health.value=77;});}}),/mudou/);assert.equal(f.actor.system.resources.health.value,77);assert.equal(Object.keys(effectRecords(f.actor)[record.id].ticks).length,0);
+});
+
+
+test("painel conserva registros e destaca pausados, copias e estados desconhecidos",()=>{
+ const rows=[{id:'active',status:'active'},{id:'ended',status:'ended'},{id:'paused',status:'active',state:'Pausado'},{id:'expired',status:'expired'},{id:'failed',status:'failed'},{id:'copy',status:'ended',foreign:true},{id:'unknown',status:'newStatus'}];
+ const before=structuredClone(rows),panel=effectPanelContext(rows);
+ assert.deepEqual(panel.active.map(r=>r.id),['active','paused','copy','unknown']);assert.deepEqual(panel.history.map(r=>r.id),['ended','expired','failed']);assert.deepEqual(rows,before);
+ assert.equal(new Set([...panel.active,...panel.history]).size,rows.length);
+});
+
+test("painel renderiza ativos antes do historico recolhido e conserva acoes e detalhes",async()=>{
+ const {default:Handlebars}=await import('handlebars'),h=Handlebars.create();
+ h.registerPartial('systems/gods-battle-ss/templates/effect-record.hbs',await readFile('templates/effect-record.hbs','utf8'));
+ const render=h.compile(await readFile('templates/effects-panel.hbs','utf8'));
+ const active={id:'active',label:'Brasas <teste>',status:'active',state:'Aguardando',firstRound:2,lastRound:3,nextRound:2,canResolve:true,canEnd:true,ticks:[{round:1,damage:5,before:100,after:95}]};
+ const ended={id:'ended',label:'Residual antigo',status:'ended',state:'Encerrado',reason:'nota preservada',end:{reason:'terminou'}};
+ const html=render({isGM:true,persistentEffectsPanel:effectPanelContext([active,ended])});
+ const split=html.indexOf('class="calculation-ledger effect-history"');assert.ok(split>0);
+ assert.match(html.slice(0,split),/Brasas &lt;teste&gt;/);assert.doesNotMatch(html.slice(0,split),/Residual antigo/);assert.match(html.slice(split),/Residual antigo/);
+ assert.match(html,/<details class="calculation-ledger effect-history"><summary>Histórico de efeitos \(1\)/);
+ assert.match(html,/data-action="resolveEffect" data-effect="active"/);assert.match(html,/data-action="endEffect" data-effect="active"/);
+ assert.match(html,/nota preservada/);assert.match(html,/100 → 95/);assert.doesNotMatch(html,/<p>Notas: <\/p>/);
+ const empty=render({persistentEffectsPanel:effectPanelContext([])});assert.match(empty,/Nenhum efeito ativo/);assert.match(empty,/Nenhum efeito concluído/);assert.doesNotMatch(empty,/data-action="registerEffect"/);
 });
