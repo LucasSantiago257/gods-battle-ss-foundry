@@ -13,7 +13,7 @@ function resolution(message,{allowEffectDamage=false}={}) {
   if (!r || !/^[a-zA-Z0-9_-]+$/.test(r.rootMessageId) || ![r.body,r.armor].every(n=>Number.isFinite(n)&&n>=0)) throw Error("Cartão de dano inválido; resolva o combate novamente.");
   return r;
 }
-export async function requestDamage(message,action="apply") {
+export async function requestDamage(message,action="apply",{adjust=false}={}) {
   if (!message.isContentVisible || !["apply","undo"].includes(action) || localBusy.has(message.id)) return;
   const gm=primaryGM();if(!gm?.active) return ui.notifications.warn("É necessário um mestre ativo para aplicar ou desfazer dano.");
   localBusy.add(message.id);
@@ -22,12 +22,12 @@ export async function requestDamage(message,action="apply") {
     if (!actor?.isOwner) throw Error("Somente o mestre ou proprietário do defensor pode aplicar dano.");
     const snapshot=damageSnapshot(actor,r.body,r.armor,r.armorId);
     let override=null;
-    if(action==="apply") {
+    if(action==="apply"&&adjust) {
       const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Conferir aplicação de dano"},content:`<p>PV corporais: ${snapshot.before.health}; PV da armadura: ${snapshot.before.armor??"sem dano à armadura"}.</p><label>Dano corporal<input name="body" type="number" step="any" min="0" value="${r.body}"></label><label>Dano à armadura<input name="armor" type="number" step="any" min="0" value="${r.armor}"></label><label>Notas (opcional)<input name="reason" type="text"></label>`,buttons:[{action:"apply",label:"Confirmar aplicação",default:true,callback:(_e,b)=>({body:Number(b.form.elements.body.value),armor:Number(b.form.elements.armor.value),reason:b.form.elements.reason.value})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
       if (!answer) return;
       damageSnapshot(actor,answer.body,answer.armor,r.armorId);
       if(answer.body!==r.body || answer.armor!==r.armor) {optionalNote(answer.reason);override=answer;}
-    } else if(!await foundry.applications.api.DialogV2.confirm({window:{title:"Desfazer aplicação"},content:"<p>Restaurar os valores anteriores? Alterações posteriores impedem o desfazer.</p>"})) return;
+    } else if(action==="undo"&&!await foundry.applications.api.DialogV2.confirm({window:{title:"Desfazer aplicação"},content:"<p>Restaurar os valores anteriores? Alterações posteriores impedem o desfazer.</p>"})) return;
     return await ChatMessage.create({content:"<p>Solicitação de dano enviada ao mestre. Aguarde a confirmação no registro.</p>",whisper:[...new Set([game.user.id,gm.id])],flags:{[SYSTEM_ID]:{damageRequest:{messageId:message.id,action,expected:snapshot.before,override}}}});
   } finally {localBusy.delete(message.id);}
 }
@@ -125,10 +125,9 @@ export async function recoverDamageOperation(actor,key) {
   });
 }
 export function renderCombatChat(message,html) {
-  for(const [action,callback] of [["defendAttack",()=>defendAttack(message)],["applyDamage",()=>requestDamage(message,"apply")],["undoDamage",()=>requestDamage(message,"undo")]]) {
+  for(const [action,callback] of [["defendAttack",()=>defendAttack(message)],["applyDamage",()=>requestDamage(message,"apply")],["adjustDamage",()=>requestDamage(message,"apply",{adjust:true})],["undoDamage",()=>requestDamage(message,"undo")]]) {
     const button=html.querySelector(`[data-action="${action}"]`);if(!button)continue;
     if(!message.isContentVisible) {button.remove();continue;}
     button.addEventListener("click",async()=>{button.disabled=true;try{await callback();}catch(error){ui.notifications.error(error.message);}finally{button.disabled=false;}});
   }
 }
-
