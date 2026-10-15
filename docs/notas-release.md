@@ -1,3 +1,10 @@
+## 0.35.0 — Controle sobre a Destruição na resistência
+
+- Técnicas personalizadas de Dano com o grupo atualizado aplicam −1/−2/−3 no teste de resistência pela graduação do incremento (p.219).
+- Prévia e cartão mostram a parcela; resistências rápida e ajustada a incluem uma vez, conservando PC, dados, dano e custos.
+- Cópias anteriores conservam seu grupo até salvar Configurar ligado. Cartões antigos mantêm os cálculos; recuperação conserva metadados e pagamento.
+- Nenhuma nova condição, débito adicional ou alteração dos catálogos. Foundry hospedado não validado.
+
 ## 0.34.0 — Controle sobre as Estrelas no Poder Cósmico
 
 - O incremento canônico de graduação 1/2/3 soma +1/+2/+3 PC em técnicas personalizadas de Dano com o grupo de componentes atualizado pela configuração.

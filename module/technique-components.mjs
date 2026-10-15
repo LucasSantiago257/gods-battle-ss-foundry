@@ -4,6 +4,7 @@ export const COMPONENT_RULES={
  "69e4c648b940a68e":{key:"bigbang:extra:Esgotar",label:"Esgotar",page:"228",kind:"exhaust"},
  "b7b2a3b6f95c71fe":{key:"bigbang:extra:Essência Alvo",label:"Essência Alvo",page:"228",kind:"essence"},
  "83665b3c116a7f30":{key:"bigbang:extra:Terreno Favorável",label:"Terreno Favorável",page:"230",kind:"terrain"},
+ "de15bef11745f7c2":{key:"increment:Controle sobre s Destruição",label:"Controle sobre a Destruição",page:"219",kind:"destruction",introduced:3},
  "1c0a9862d3c417fd":{key:"increment:Controle sobre as Estrelas",label:"Controle sobre as Estrelas",page:"219",kind:"stars",introduced:2},
  "5f24c377be178c53":{key:"increment:Controle sobre o Espaço",label:"Controle sobre o Espaço",page:"217–218",kind:"space"}
 };
@@ -11,7 +12,7 @@ export function componentState(item) {const f=item.flags?.[SYSTEM_ID]??{};return
 export function componentProfile(item,{enabled=componentState(item).enabled,ruleVersion=componentState(item).ruleVersion}={}) {
  const state=componentState(item),record=state.construction;
  if(!enabled)return {enabled:false,rules:[],manual:[]};
- if(![1,2].includes(ruleVersion))throw Error("Grupo de componentes inválido. Configure a técnica novamente.");
+ if(![1,2,3].includes(ruleVersion))throw Error("Grupo de componentes inválido. Configure a técnica novamente.");
  if(!record||!Array.isArray(record.components)||record.primary?.uuid!==`Compendium.${SYSTEM_ID}.componentes-tecnicas.Item.13841831d802c5be`||item.system.effectKind!=="damage"||record.components.some(c=>c.key?.startsWith("bigbang:primordial:")))throw Error("Este grupo automático exige composição salva com primordial Dano. Outros efeitos continuam manuais.");
  const seen=new Set(),rules=[],manual=[];
  for(const c of record.components){
@@ -19,7 +20,7 @@ export function componentProfile(item,{enabled=componentState(item).enabled,rule
   if(!rule||(rule.introduced??1)>ruleVersion){manual.push({name:c.name,page:c.page});continue;}
   if(c.uuid!==`Compendium.${SYSTEM_ID}.componentes-tecnicas.Item.${id}`||c.key!==rule.key||seen.has(id))throw Error("Referência de componente automático inválida/repetida. Refaça a composição.");
   seen.add(id);
-  const increment=["space","stars"].includes(rule.kind);
+  const increment=["space","stars","destruction"].includes(rule.kind);
   if(c.type!==(increment?"increment":"bigbang")||!Number.isInteger(c.rank)||c.rank<1||c.rank>(increment?3:1))throw Error("Tipo/graduação de componente inválida.");
   if(rule.kind==="terrain"&&!c.detail?.trim())throw Error("Especifique o ambiente de Terreno Favorável no construtor antes de automatizar.");
   rules.push({...rule,id,rank:c.rank,detail:c.detail??""});
@@ -37,5 +38,14 @@ export function componentOptions(technique,options={}) {
  optionalNote(options.componentReason,1000);
  const levelBonus=exhaust+(essence?1:0)+(terrain?1:0),extraCost=exhaust*2,rangeBonus=has("space")?profile.rules.find(r=>r.kind==="space").rank*1.5:0;
  const powerCosmicBonus=has("stars")?profile.rules.find(r=>r.kind==="stars").rank:0;
- return {levelBonus,extraCost,rangeBonus,powerCosmicBonus,range:(technique.range??0)+rangeBonus,entries:profile.rules?.map(r=>({...r,applied:r.kind==="exhaust"?exhaust:r.kind==="essence"?Number(essence):r.kind==="terrain"?Number(terrain):r.kind==="stars"?powerCosmicBonus:rangeBonus}))??[],manual:profile.manual??[]};
+ const destruction=has("destruction")?profile.rules.find(r=>r.kind==="destruction"):null;
+ const resistanceModifier=destruction?-destruction.rank:0,resistanceComponent=destruction?{version:1,id:destruction.id,key:destruction.key,rank:destruction.rank,modifier:resistanceModifier}:null;
+ return {levelBonus,extraCost,rangeBonus,powerCosmicBonus,resistanceModifier,resistanceComponent,range:(technique.range??0)+rangeBonus,entries:profile.rules?.map(r=>({...r,applied:r.kind==="exhaust"?exhaust:r.kind==="essence"?Number(essence):r.kind==="terrain"?Number(terrain):r.kind==="stars"?powerCosmicBonus:r.kind==="destruction"?resistanceModifier:rangeBonus}))??[],manual:profile.manual??[]};
+}
+
+export function attackResistanceComponent(attack) {
+ const saved=attack?.componentResistance;if(saved==null)return null;
+ const id="de15bef11745f7c2",rule=COMPONENT_RULES[id];
+ if(attack.effectKind!=="damage"||saved.version!==1||saved.id!==id||saved.key!==rule.key||!Number.isInteger(saved.rank)||saved.rank<1||saved.rank>3||saved.modifier!==-saved.rank)throw Error("Componente de resistência inválido no cartão. Resolva a técnica novamente.");
+ return {label:rule.label,page:rule.page,modifier:saved.modifier,rank:saved.rank};
 }
