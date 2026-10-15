@@ -33,7 +33,7 @@ export async function rollTest(actor, kind, key, options = {}) {
   const pendingPenalty = kind === "skill" && key === "asterism" ? actor.system.combat.asterismPenalty ?? 0 : 0;
   parameters.modifier += pendingPenalty;
   const difficulty = Number.isFinite(options.difficulty) ? options.difficulty : 10;
-  const answer = await foundry.applications.api.DialogV2.wait({window: {title: `${kind === "resistance" ? "Resistência: " : ""}${label}`},
+  const answer = options.quick===true ? {difficulty,bonus:0,advantage:0} : await foundry.applications.api.DialogV2.wait({window: {title: `${kind === "resistance" ? "Resistência: " : ""}${label}`},
     content: `<div class="form-group"><label>Dificuldade${options.resistanceAttack?" · Poder Cósmico do ataque":""}</label><input name="dc" type="number" value="${difficulty}" step="1" ${options.resistanceAttack?"readonly":""}></div>
       <div class="form-group"><label>Modificador da situação</label><input name="bonus" type="number" value="0" step="1"></div>
       <div class="form-group"><label>Vantagem / desvantagem</label><select name="advantage"><option value="0">Normal</option><option value="1">Vantagem (+1 dado, +2)</option><option value="-1">Desvantagem (-1 dado, -2)</option></select></div>
@@ -58,4 +58,3 @@ export async function rollTest(actor, kind, key, options = {}) {
   if (kind === "skill" && key === "asterism") {try{assertNoTechniqueInterruption(actor);}catch(error){return ui.notifications.warn(error.message);}await actor.update({"system.combat.asterismPenalty": result.total < answer.difficulty - 10 ? -10 : 0});}
   return ChatMessage.create(message);
 }
-
