@@ -4,6 +4,7 @@ import {resistancePreview} from "./technique-rules.mjs";
 import {assertNoTechniqueInterruption} from "./master-queue.mjs";
 import {conditionPool,conditionSummary,conditionSignature} from "./condition-rules.mjs";
 import {damageTurnSnapshot} from "./combat-rules.mjs";
+import {attackResistanceComponent} from "./technique-components.mjs";
 
 export async function evaluatePool(dice, modifier) {
   if (!Number.isInteger(dice) || dice < 1 || dice > 100 || !Number.isFinite(modifier)) throw Error("Parada ou modificador inválido.");
@@ -29,32 +30,34 @@ export async function rollTest(actor, kind, key, options = {}) {
   const label = kind === "skill" ? SKILLS[key]?.label : ATTRIBUTES[key];
   if (!label) return;
   const conditionBaseline=conditionSignature(actor);
+  const resistanceBaseline=JSON.stringify(options.resistanceAttack??null),resistanceUnchanged=()=>JSON.stringify(options.resistanceAttack??null)===resistanceBaseline;
   const parameters = testParameters(actor.system, kind, key, game.settings.get(SYSTEM_ID, "resistanceMode"), {technique:!!options.resistanceAttack,conditions:false});
   const pendingPenalty = kind === "skill" && key === "asterism" ? actor.system.combat.asterismPenalty ?? 0 : 0;
-  parameters.modifier += pendingPenalty;
+  const componentResistance=options.resistanceAttack?attackResistanceComponent(options.resistanceAttack):null;
+  parameters.modifier += pendingPenalty+(componentResistance?.modifier??0);
   const difficulty = Number.isFinite(options.difficulty) ? options.difficulty : 10;
   const answer = options.quick===true ? {difficulty,bonus:0,advantage:0} : await foundry.applications.api.DialogV2.wait({window: {title: `${kind === "resistance" ? "Resistência: " : ""}${label}`},
     content: `<div class="form-group"><label>Dificuldade${options.resistanceAttack?" · Poder Cósmico do ataque":""}</label><input name="dc" type="number" value="${difficulty}" step="1" ${options.resistanceAttack?"readonly":""}></div>
       <div class="form-group"><label>Modificador da situação</label><input name="bonus" type="number" value="0" step="1"></div>
       <div class="form-group"><label>Vantagem / desvantagem</label><select name="advantage"><option value="0">Normal</option><option value="1">Vantagem (+1 dado, +2)</option><option value="-1">Desvantagem (-1 dado, -2)</option></select></div>
-      <p>${parameters.dice}d10; modificador base ${parameters.modifier >= 0 ? "+" : ""}${parameters.modifier}.</p><p>${conditionSummary(actor.system)}</p>`,
+      <p>${parameters.dice}d10; modificador base ${parameters.modifier >= 0 ? "+" : ""}${parameters.modifier}.</p>${componentResistance?`<p>Controle sobre a Destruição: ${componentResistance.modifier} no teste, já incluído (p.219).</p>`:""}<p>${conditionSummary(actor.system)}</p>`,
     buttons: [{action: "roll", label: "Rolar", default: true, callback: (_event, button) => {
       const form = button.form;
       return {difficulty: Number(form.elements.dc.value), bonus: Number(form.elements.bonus.value), advantage: Number(form.elements.advantage.value)};
     }}, {action: "cancel", label: "Cancelar", callback: () => null}], rejectClose: false});
   if (!answer || typeof answer !== "object") return;
-  if(!actor.isOwner||conditionSignature(actor)!==conditionBaseline)return ui.notifications.warn("As condições mudaram durante a prévia. Abra o teste novamente.");
+  if(!actor.isOwner||conditionSignature(actor)!==conditionBaseline||!resistanceUnchanged())return ui.notifications.warn("A técnica ou as condições mudaram durante a prévia. Abra o teste novamente.");
   if(options.resistanceAttack)answer.difficulty=difficulty;
   if (!Object.values(answer).every(Number.isFinite) || ![-1, 0, 1].includes(answer.advantage)) return ui.notifications.warn("Informe valores numéricos válidos.");
   const pool=conditionPool(actor.system,Math.max(1,parameters.dice+answer.advantage),parameters.modifier+answer.bonus+answer.advantage*2,{maxDice:kind==="skill"?5:100});
   const {result, messageRoll} = await evaluatePool(pool.dice,pool.modifier);
-  if(!actor.isOwner||conditionSignature(actor)!==conditionBaseline)return ui.notifications.warn("As condições mudaram durante o teste. Confira a situação antes de rolar novamente.");
+  if(!actor.isOwner||conditionSignature(actor)!==conditionBaseline||!resistanceUnchanged())return ui.notifications.warn("A técnica ou as condições mudaram durante o teste. Confira a situação antes de rolar novamente.");
   const resistance = options.resistanceAttack ? resistancePreview(actor.system, actor.items.contents, options.resistanceAttack, result.total, answer.difficulty) : null;
-  const message = await prepareRollMessage(actor, messageRoll, {label, resistance, attackName: options.resistanceAttack?.name,
+  const message = await prepareRollMessage(actor, messageRoll, {label, resistance, componentResistance, attackName: options.resistanceAttack?.name,
     kind: kind === "resistance" ? "Resistência" : kind === "skill" ? "Perícia" : "Atributo", ...result,conditionSummary:conditionSummary(actor.system), difficulty: answer.difficulty, outcome: classify(result.total, answer.difficulty)},
     {flags: {test: result, difficulty: answer.difficulty, ...(resistance ? {resistance, attack: options.resistanceAttack,
       ...(resistance.control?{controlResolution:{actorUuid:actor.uuid,rootMessageId:options.resistanceAttack.messageId,...resistance.control}}:{}),...(resistance.application==="damage"&&options.resistanceAttack.messageId ? {resolvedDamage:{actorUuid:actor.uuid,rootMessageId:options.resistanceAttack.messageId,body:resistance.damage,armor:resistance.armorDamage,armorId:actor.items.contents.find(i=>i.type==="armor"&&i.system.equipped&&i.system.health.value>=0&&i.system.state!=="dead")?.id??null,turnSnapshot:Object.hasOwn(options.resistanceAttack,"turnSnapshot")?options.resistanceAttack.turnSnapshot:damageTurnSnapshot(actor)}} : {})} : {})}});
-  if(!actor.isOwner||conditionSignature(actor)!==conditionBaseline)return ui.notifications.warn("As condições mudaram antes de publicar o teste.");
+  if(!actor.isOwner||conditionSignature(actor)!==conditionBaseline||!resistanceUnchanged())return ui.notifications.warn("A técnica ou as condições mudaram antes de publicar o teste.");
   if (kind === "skill" && key === "asterism") {try{assertNoTechniqueInterruption(actor);}catch(error){return ui.notifications.warn(error.message);}await actor.update({"system.combat.asterismPenalty": result.total < answer.difficulty - 10 ? -10 : 0});}
   return ChatMessage.create(message);
 }
