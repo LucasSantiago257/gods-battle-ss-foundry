@@ -105,3 +105,52 @@ test('desfazer dano já aplicado antes da correção preserva o histórico legad
  const f=fixture();await executeDamageRequest(f.request(),'p');assert.equal(f.actor.system.resources.health.value,89.5);f.source.flags[ID].attack={effectKind:'sustained'};game.messages.set('attack',{flags:{[ID]:{attack:{effectKind:'sustained',targetUuid:f.actor.uuid}}}});await executeDamageRequest(f.request('legacyUndo','undo'),'p');assert.equal(f.actor.system.resources.health.value,100);assert.equal(f.armor.system.health.value,30);assert.equal(f.actor.flags[ID].damageOperations.attack.status,'undone');await executeDamageRequest(f.request('again'),'p');assert.equal(f.actor.system.resources.health.value,100);
 });
 
+
+test('aplicar dano calculado envia valores originais sem dialogo e so o mestre grava',async()=>{
+ const f=fixture(),sent=[];f.actor.isOwner=true;f.source.isContentVisible=true;
+ foundry.applications.api.DialogV2={wait:async()=>{throw Error('dialogo inesperado');},confirm:async()=>{throw Error('confirmacao inesperada');}};
+ globalThis.ChatMessage={create:async data=>{sent.push(data);return data;}};
+ await requestDamage(f.source);assert.equal(sent.length,1);
+ const data=sent[0].flags[ID].damageRequest;assert.equal(data.action,'apply');assert.equal(data.override,null);assert.equal(data.messageId,'result');assert.deepEqual(data.expected,{health:100,armor:30});
+ assert.equal(f.actor.system.resources.health.value,100);assert.equal(f.armor.system.health.value,30);
+ const req={id:'direct',author:f.gm,flags:sent[0].flags,async update(d){patch(this,d);}};
+ await executeDamageRequest(req,'gm');assert.equal(f.actor.system.resources.health.value,89.5);assert.equal(f.armor.system.health.value,20);
+ await executeDamageRequest(req,'gm');assert.equal(f.actor.system.resources.health.value,89.5);
+});
+
+test('ajustar dano conserva substituicao e cancelar nao envia solicitacao',async()=>{
+ const f=fixture(),sent=[];f.actor.isOwner=true;f.source.isContentVisible=true;
+ globalThis.ChatMessage={create:async data=>{sent.push(data);return data;}};
+ foundry.applications.api.DialogV2={wait:async()=>null};
+ await requestDamage(f.source,'apply',{adjust:true});assert.equal(sent.length,0);
+ foundry.applications.api.DialogV2.wait=async()=>({body:7.25,armor:2,reason:''});
+ await requestDamage(f.source,'apply',{adjust:true});assert.deepEqual(sent[0].flags[ID].damageRequest.override,{body:7.25,armor:2,reason:''});
+ const req={id:'adjust',author:f.gm,flags:sent[0].flags,async update(d){patch(this,d);}};
+ await executeDamageRequest(req,'gm');assert.equal(f.actor.system.resources.health.value,92.75);assert.equal(f.armor.system.health.value,28);
+});
+
+test('dano direto recusa resultado oculto e ficha sem propriedade antes de enviar',async()=>{
+ const f=fixture();let sent=0;globalThis.ChatMessage={create:async()=>{sent++;}};
+ f.actor.isOwner=true;f.source.isContentVisible=false;await requestDamage(f.source);assert.equal(sent,0);
+ f.source.isContentVisible=true;f.actor.isOwner=false;await assert.rejects(requestDamage(f.source),/proprietario|proprietário/);assert.equal(sent,0);
+});
+
+test('dano direto suprime clique concorrente e mestre recusa snapshot alterado',async()=>{
+ const f=fixture();f.actor.isOwner=true;f.source.isContentVisible=true;let release,sent=0,data;
+ globalThis.ChatMessage={create:async d=>{sent++;data=d;await new Promise(r=>{release=r;});}};
+ const pending=requestDamage(f.source);await new Promise(r=>setImmediate(r));await requestDamage(f.source);assert.equal(sent,1);release();await pending;
+ f.actor.system.resources.health.value=80;
+ const req={id:'staleDirect',author:f.gm,flags:data.flags,async update(d){patch(this,d);}};
+ await executeDamageRequest(req,'gm');assert.equal(req.flags[ID].damageResponse.ok,false);assert.equal(f.actor.system.resources.health.value,80);assert.equal(f.armor.system.health.value,30);
+});
+
+
+test('cartoes mostram valores de dano calculado e efeito sem dano nao oferece aplicacao',async()=>{
+ const {readFile}=await import('node:fs/promises'),{default:Handlebars}=await import('handlebars');
+ const technique=Handlebars.compile(await readFile(new URL('../templates/chat.hbs',import.meta.url),'utf8'));
+ const physical=Handlebars.compile(await readFile(new URL('../templates/combat-chat.hbs',import.meta.url),'utf8'));
+ const tech=technique({resistance:{damage:10.5,armorDamage:2.5}}),fight=physical({resolvedDamage:{body:21,armor:0}});
+ assert.match(tech,/Aplicar dano: 10\.5 PV · 2\.5 armadura/);assert.match(fight,/Aplicar dano: 21 PV · 0 armadura/);
+ for(const html of [tech,fight]){assert.match(html,/data-action="adjustDamage"/);assert.match(html,/data-action="undoDamage"/);}
+ for(const resistance of [{manualEffect:'Sustentada'},{control:{resisted:true}}])assert.doesNotMatch(technique({resistance}),/data-action="applyDamage"/);
+});
