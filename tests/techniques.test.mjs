@@ -338,3 +338,11 @@ test('cartao oculto remove ambos botoes e perda de propriedade impede resistenci
  assert.equal(html.buttons.resistTechnique.removed,true);assert.equal(html.buttons.adjustResistance.removed,true);assert.equal(r.evaluations(),0);
  const visible=resistanceButtons();message.isContentVisible=true;r.actor.isOwner=false;renderTechniqueChat(message,visible);await visible.buttons.resistTechnique.click();assert.equal(r.evaluations(),0);assert.equal(r.sent.length,0);assert.match(r.notices.at(-1),/proprietário/);
 });
+
+
+test('cartao antigo sem botao de ajuste conserva a janela de resistencia',async()=>{
+ const r=runtime(),html=resistanceButtons();delete html.buttons.adjustResistance;let dialogs=0;
+ foundry.applications.api.DialogV2.wait=async()=>{dialogs++;return {difficulty:15,bonus:2,advantage:0};};
+ renderTechniqueChat(resistanceCard(r.actor),html);await html.buttons.resistTechnique.click();
+ assert.equal(dialogs,1);assert.equal(r.evaluations(),1);assert.equal(r.sent[0].flags['gods-battle-ss'].test.modifier,testParameters(r.actor.system,'resistance','vig','rank',{technique:true}).modifier+2);
+});
