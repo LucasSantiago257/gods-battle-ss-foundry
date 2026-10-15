@@ -1,3 +1,10 @@
+## 0.31.0 — Aplicação direta do dano calculado
+
+- Ataques físicos e resistências de técnicas de dano oferecem Aplicar dano com os valores corporais e da armadura no botão, sem abrir outra janela numérica.
+- Ajustar dano mantém o formulário de exceções e notas opcionais; Desfazer continua separado, com confirmação e conferência dos recursos.
+- A aplicação continua explícita, processada pelo mestre ativo e protegida por permissões, acesso ao cartão, contexto, cobrança única e recuperação.
+- Nenhuma nova regra de condições. Catálogos e cópias preservados. Foundry hospedado não validado.
+
 Versão **0.30.0** para FoundryVTT 13 build 350.
 
 ## 0.30.0 — Dificuldade assistida para TAP de Vigor
@@ -115,4 +122,3 @@ A revisão 0.9.1 atualiza os guias de compêndios e técnicas para descrever os 
 - Mantidos os 866 Items e nove compêndios, com IDs, descrições e proveniência.
 
 Testes locais e integração contínua verificam regras, permissões, falhas de gravação, concorrência e empacotamento. Execução no Foundry real permanece pendente; siga validacao-foundry.md. Manobras avançadas, condições, recuperação e automação integral dos poderes continuam pendentes.
-
