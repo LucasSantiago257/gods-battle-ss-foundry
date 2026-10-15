@@ -1,3 +1,9 @@
+# Controle sobre a Destruição — 0.35.0
+
+O incremento canônico de graduação 1/2/3 aplica −1/−2/−3 ao teste de resistência contra a técnica de Dano, conforme p.219. O mestre congela a parcela no cartão da ativação. Resistência rápida e ajustada incluem a penalidade uma vez, mostrando-a como já incluída; o modificador situacional continua disponível para outras parcelas. O PC, a quantidade de dados, ND, dano e custos permanecem os calculados pelas outras regras.
+
+Cópias com grupos anteriores conservam seus cálculos até salvar Configurar com o grupo ligado. O novo grupo interno versão3 mantém Estrelas e acrescenta Destruição; não migra fichas ou interpreta nomes livres. O efeito é somente sobre o teste daquela técnica: não cria condição persistente ou alteração no alvo. Cartões antigos sem metadados mantêm resistência anterior; metadados incompatíveis são recusados antes de rolar. Recuperar publicação conserva a mesma parcela e pagamento. A chave original do catálogo conserva o erro de título do livro: increment:Controle sobre s Destruição; o nome exibido permanece corrigido.
+
 # Controle sobre as Estrelas — 0.34.0
 
 Em técnicas personalizadas de Dano com composição salva e componentes habilitados na configuração atual, Controle sobre as Estrelas (p.219) soma +1/+2/+3 ao Poder Cósmico pela graduação. A prévia, o cartão e a dificuldade da resistência usam esse PC final. O incremento não acrescenta ND, dano corporal ou dano à armadura e não cobra novamente o Condensar já incluído no custo fixo da composição. A implementação cobre o bônus numérico da tabela; não cria uma nova regra de remoção de PA a partir do texto descritivo.
