@@ -346,3 +346,27 @@ test('cartao antigo sem botao de ajuste conserva a janela de resistencia',async(
  renderTechniqueChat(resistanceCard(r.actor),html);await html.buttons.resistTechnique.click();
  assert.equal(dialogs,1);assert.equal(r.evaluations(),1);assert.equal(r.sent[0].flags['gods-battle-ss'].test.modifier,testParameters(r.actor.system,'resistance','vig','rank',{technique:true}).modifier+2);
 });
+
+
+const destructionComponent=rank=>({version:1,id:'de15bef11745f7c2',key:'increment:Controle sobre s Destruição',rank,modifier:-rank});
+test('resistencia rapida e ajustada aplicam Destruição uma vez sem alterar PC ou recursos',async()=>{
+ for(const rank of [1,2,3])for(const quick of [true,false]){const r=runtime(),before=structuredClone(r.actor.system),attack={...resistanceCard(r.actor).flags['gods-battle-ss'].attack,componentResistance:destructionComponent(rank),messageId:'destruction'};
+ foundry.applications.api.DialogV2.wait=async()=>({difficulty:999,bonus:0,advantage:0});await rollTest(r.actor,'resistance','vig',{difficulty:15,resistanceAttack:attack,quick});
+ assert.equal(r.sent[0].flags['gods-battle-ss'].test.modifier,testParameters(r.actor.system,'resistance','vig','rank',{technique:true}).modifier-rank);assert.equal(r.sent[0].flags['gods-battle-ss'].difficulty,15);assert.equal(r.renders.at(-1).context.componentResistance.modifier,-rank);assert.deepEqual(r.actor.system,before);assert.equal(r.updates.length,0);
+ }
+});
+
+test('metadados invalidos de Destruição recusam teste antes de rolar',async()=>{
+ for(const patch of [{rank:4,modifier:-4},{modifier:-99},{id:'outro'},{key:'outro'},{version:99}]){const r=runtime(),attack={...resistanceCard(r.actor).flags['gods-battle-ss'].attack,componentResistance:{...destructionComponent(1),...patch}};await assert.rejects(rollTest(r.actor,'resistance','vig',{difficulty:15,resistanceAttack:attack,quick:true}),/Componente de resistência inválido/);assert.equal(r.evaluations(),0);assert.equal(r.sent.length,0);}
+});
+
+
+test('Destruição alterada na janela ou na rolagem nao publica resistencia antiga',async()=>{
+ for(const phase of ['dialog','roll']){const r=runtime(),attack={...resistanceCard(r.actor).flags['gods-battle-ss'].attack,componentResistance:destructionComponent(1)},before=structuredClone(r.actor.system);
+ const mutate=()=>attack.componentResistance=destructionComponent(2);
+ if(phase==='dialog')foundry.applications.api.DialogV2.wait=async()=>{mutate();return {difficulty:15,bonus:0,advantage:0};};
+ else{const evaluate=Roll.prototype.evaluate;Roll.prototype.evaluate=async function(){const result=await evaluate.call(this);if(this.formula.includes('d10'))mutate();return result;};}
+ await rollTest(r.actor,'resistance','vig',{difficulty:15,resistanceAttack:attack,quick:phase==='roll'});
+ assert.equal(r.sent.length,0);assert.equal(r.evaluations(),phase==='dialog'?0:1);assert.deepEqual(r.actor.system,before);assert.match(r.notices.at(-1),/mudaram/);
+ }
+});
