@@ -1,3 +1,9 @@
+# Resistência rápida — 0.33.0
+
+No cartão da técnica, Resistir com o alvo marcado (ou cavaleiro selecionado, para cartões sem alvo) rola diretamente usando o Poder Cósmico do ataque como dificuldade, modificador situacional zero e vantagem normal. A natureza continua definindo o atributo de resistência; parcelas da ficha e condições já implementadas continuam no cálculo. Ajustar resistência abre a janela para modificador e vantagem/desvantagem; a dificuldade permanece vinculada ao ataque. Cancelar não rola.
+
+Os dois botões compartilham proteção contra clique simultâneo no mesmo cartão/cliente. A resistência continua sem aplicar dano ou gastar CE/ações; o resultado oferece a aplicação explícita de dano quando couber. Permissões, visibilidade, alvo e modo de rolagem permanecem no fluxo existente. Testes genéricos pela ficha continuam abrindo sua janela. Nenhuma nova condição é implementada.
+
 # Ativar técnicas e resistir — 0.13.0
 
 **Configurar** na lista de técnicas (ou **Configurar técnica para combate** na cópia) reúne natureza, classe, efeito, custo completo, alcance e modo de dano. Confira a descrição e marque a revisão. A configuração altera somente esta cópia; conserva notas, proveniência e parâmetros manuais quando o modo automático é escolhido. Cancelar não grava.
