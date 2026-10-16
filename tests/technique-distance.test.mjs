@@ -58,3 +58,54 @@ test("botão atualiza distância do alvo original sem mudar recursos ou parâmet
   f.target.isVisible=false;button.click();assert.match(output.textContent,/manual/);assert.equal(activate.disabled,false);assert.deepEqual(system,before);
  }finally{globalThis.canvas=oldCanvas;}
 });
+
+import {distanceSnapshot,validatedDistanceContext,previewDistanceSnapshot} from "../module/technique-distance.mjs";
+import {distanceReduction} from "../module/distance-rules.mjs";
+import {activationPreview,techniqueParameters} from "../module/technique-rules.mjs";
+import {rangeScene} from "./distance-stub.mjs";
+test("redução por faixas iniciadas de1,5m, tolerância só numérica",()=>{
+ for(const [distance,levels] of [[0,0],[3,0],[3.000001,1],[4.5,1],[4.500001,2],[6,2],[6+1e-10,2]])assert.equal(distanceReduction({effectKind:"damage"},{range:3},{distanceSnapshot:{version:1,distance}}).levels,levels);
+ for(const distance of [-1,NaN,Infinity,1e10])assert.throws(()=>distanceReduction({effectKind:"damage"},{range:3},{distanceSnapshot:{version:1,distance}}));
+ assert.equal(distanceReduction({effectKind:"damage"},{range:0}),null);
+ assert.throws(()=>distanceReduction({effectKind:"control"},{range:3},{distanceSnapshot:{version:1,distance:6}}),/apenas primordial Dano/);
+ assert.throws(()=>distanceReduction({effectKind:"damage"},{range:0},{distanceSnapshot:{version:1,distance:6}}),/alcance positivo/);
+});
+test("ND reduzido entra uma vez no dano normal/crítico sem alterar Asterismo/CE/PC",()=>{
+ const system=prepareKnight(knight());system.resources.cosmo.value=20;
+ const technique={...content(),range:3,damageLevel:5},plain=activationPreview(system,technique),reduced=activationPreview(system,technique,{distanceSnapshot:{version:1,distance:6}});
+ assert.equal(reduced.normal.damageLevel,3);assert.equal(reduced.critical.damageLevel,4);assert.equal(reduced.normal.damage,31);assert.equal(reduced.critical.damage,41);
+ for(const key of ["cost","difficulty","modifier","powerCosmic"])assert.equal(reduced.parameters[key],plain.parameters[key]);assert.deepEqual(reduced.payment,plain.payment);
+ assert.throws(()=>techniqueParameters(system,{...technique,damageLevel:2},{distanceSnapshot:{version:1,distance:6}}),/abaixo de1/);
+});
+test("alcance de Espaço e elevação de ND compensam distância sem gravar a cópia",()=>{
+ const system=prepareKnight(knight()),t={...content(),range:3,damageLevel:3,componentProfile:{enabled:true,rules:[{kind:"space",rank:2}],manual:[]}},before=structuredClone(t);
+ const p=techniqueParameters(system,t,{distanceSnapshot:{version:1,distance:7.5},elevate:1});assert.equal(p.distance.range,6);assert.equal(p.distance.levels,1);assert.deepEqual(t,before);
+});
+test("snapshot de documentos independe do canvas e valida origem, alvo e cena",async()=>{
+ const actor={uuid:"Actor.a"},other={uuid:"Actor.b"},f=rangeScene(actor,other),snap=distanceSnapshot(f.source,f.target),oldFrom=globalThis.fromUuid,oldScenes=game.scenes;
+ globalThis.fromUuid=async uuid=>[f.source,f.target].find(t=>t.uuid===uuid);game.scenes=new Map([[f.scene.id,f.scene]]);
+ try{assert.equal(snap.distance,6);const reordered=Object.fromEntries(Object.entries(snap).reverse());const context=await validatedDistanceContext(reordered,actor,other,{isGM:false});context.validate();f.target.x+=1;assert.throws(context.validate,/mudaram/);f.target.x-=1;f.source.actor=other;assert.throws(context.validate,/Origem/);}finally{globalThis.fromUuid=oldFrom;game.scenes=oldScenes;}
+});
+
+import {activationFormOptions} from "../module/technique-ui.mjs";
+test("opção de distância altera a prévia e removê-la recupera dano original",()=>{
+ const actor={uuid:"Actor.a"},other={uuid:"Actor.b"},f=rangeScene(actor,other),system=prepareKnight(knight());system.resources.cosmo.value=10;actor.system=system;actor.flags={};
+ const old=globalThis.canvas,source={actor,isVisible:true,document:f.source,center:f.source.getCenterPoint()},target={actor:other,isVisible:true,document:f.target,center:f.target.getCenterPoint()};
+ globalThis.canvas={ready:true,scene:f.scene,grid:f.scene.grid,tokens:{placeables:[source,target],controlled:[source]}};
+ try{
+  const outputs=Object.fromEntries(["damage","error","distance","distanceReduction"].map(key=>[key,{dataset:{techniquePreview:key}}])),listeners={},button={};
+  const form={elements:{applyDistance:{checked:false}},querySelectorAll:()=>Object.values(outputs),querySelector:s=>s.includes("activate")?button:null,addEventListener:(key,fn)=>listeners[key]=fn};
+  installTechniquePreview(form,system,{...content(),range:3,damageLevel:5},actor,target);assert.equal(outputs.damage.textContent,"51");assert.equal(activationFormOptions(form).distanceSnapshot,undefined);
+  form.elements.applyDistance.checked=true;listeners.input();assert.equal(outputs.damage.textContent,"31");assert.match(outputs.distanceReduction.textContent,/−2 ND/);assert.match(outputs.distance.textContent,/redução de ND calculada/);assert.equal(activationFormOptions(form).distanceSnapshot.distance,6);
+  target.center={x:999,y:0};listeners.input();assert.match(outputs.distance.textContent,/6 m entre centros/);assert.equal(outputs.damage.textContent,"31");
+  const sent=activationFormOptions(form);sent.distanceSnapshot.distance=0;assert.equal(form.distanceSnapshot.distance,6);
+  form.elements.applyDistance.checked=false;listeners.input();assert.equal(outputs.damage.textContent,"51");assert.equal(form.distanceSnapshot,undefined);assert.equal(button.disabled,false);
+  form.elements.applyDistance.checked=true;target.isVisible=false;listeners.input();assert.equal(button.disabled,true);assert.match(outputs.error.textContent,/manual/);assert.throws(()=>activationFormOptions(form),/Atualize/);
+ }finally{globalThis.canvas=old;}
+});
+
+test("redução atravessa escala de armadura antes do crítico sem duplicar",()=>{
+ const system=prepareKnight(knight());system.resources.cosmo.value=10;
+ const result=activationPreview(system,{...content(),range:3,damageLevel:11,classification:"bronze"},{distanceSnapshot:{version:1,distance:4.5}});
+ assert.equal(result.normal.damageLevel,10);assert.equal(result.normal.armorDamage,10);assert.equal(result.critical.damageLevel,11);assert.equal(result.critical.armorDamage,70);
+});
