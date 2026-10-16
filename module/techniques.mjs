@@ -23,6 +23,7 @@ export async function useTechnique(actor, item) {
   try {
     if(!primaryGM()?.active)throw Error("É necessário um mestre ativo para processar a ativação.");
     assertNoTechniqueInterruption(actor);if(pendingTechnique(actor))throw Error("Já existe uma solicitação desta ficha aguardando processamento. Confira o chat antes de repetir.");
+    const targetToken=[...(game.user.targets??[])][0]??null;
     const target=techniqueTarget(),baseline=activationState(actor,item),rollMode=techniqueRollMode();
     const effective=techniqueWithComponents(item),profile=effective.componentProfile;
     const content = await foundry.applications.handlebars.renderTemplate(`systems/${SYSTEM_ID}/templates/technique-dialog.hbs`, {
@@ -31,7 +32,7 @@ export async function useTechnique(actor, item) {
       penalty: actor.system.combat.asterismPenalty, unlimited: actor.system.resources.cosmo.unlimited,targetName:target?.name,actions:actionView(actor),components:profile,hasExhaust:profile.rules.some(r=>r.kind==="exhaust"),hasEssence:profile.rules.some(r=>r.kind==="essence"),hasTerrain:profile.rules.some(r=>r.kind==="terrain")
     });
     const answer = await foundry.applications.api.DialogV2.wait({window: {title: "Ativar técnica"}, content,
-      render:(_event,dialog)=>installTechniquePreview(dialog.form??dialog.element.querySelector("form"),actor.system,effective,actor),
+      render:(_event,dialog)=>installTechniquePreview(dialog.form??dialog.element.querySelector("form"),actor.system,effective,actor,targetToken),
       buttons: [{action: "activate", label: "Gastar CE e rolar", default: true, callback: (_event, button) => {
         return activationFormOptions(button.form);
       }}, {action: "cancel", label: "Cancelar", callback: () => null}], rejectClose: false});
