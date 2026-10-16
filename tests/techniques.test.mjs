@@ -256,7 +256,7 @@ test("configuração cancelada ou cópia alterada não grava; revisão salva só
 });
 test("prévia responde a elevação/condensação e pagamento, sem tocar recursos",()=>{
  const s=system(),before=structuredClone(s),listeners={},outputs=Object.fromEntries(["cost","difficulty","damage","error"].map(key=>[key,{dataset:{techniquePreview:key},textContent:""}])),button={disabled:false};
- const form={elements:{extra:{value:0},elevate:{value:0},condense:{value:0},bonus:{value:0},advantage:{value:0},useExtra:{checked:true},allowOverload:{checked:false}},querySelectorAll:()=>Object.values(outputs),querySelector:()=>button,addEventListener:(key,callback)=>listeners[key]=callback};
+ const form={elements:{extra:{value:0},elevate:{value:0},condense:{value:0},bonus:{value:0},advantage:{value:0},useExtra:{checked:true},allowOverload:{checked:false}},querySelectorAll:()=>Object.values(outputs),querySelector:selector=>selector.includes("activate")?button:null,addEventListener:(key,callback)=>listeners[key]=callback};
  installTechniquePreview(form,s,content());assert.equal(outputs.difficulty.textContent,"12");assert.equal(outputs.damage.textContent,"21");
  form.elements.elevate.value=2;form.elements.condense.value=1;listeners.input();assert.equal(outputs.cost.textContent,"5 CE");assert.equal(outputs.difficulty.textContent,"15");assert.equal(outputs.damage.textContent,"41");
  form.elements.extra.value=20;listeners.change();assert.equal(button.disabled,true);assert.match(outputs.error.textContent,/insuficiente/);
