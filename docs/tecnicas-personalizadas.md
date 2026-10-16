@@ -1,3 +1,9 @@
+# Seleção de componentes — 0.36.0
+
+Adicionar Big Bang / incremento abre busca por nome ou página, sem distinção de maiúsculas e acentos, e filtro de tipo. A regra e os requisitos do selecionado aparecem na própria janela como texto. Componentes já incluídos e o primordial atual ficam fora da lista. Sem resultados, Adicionar fica indisponível; limpar a busca recupera a lista.
+
+Adicionar altera somente o rascunho e não abre outra ficha automaticamente. A leitura completa continua nos detalhes do componente e em Abrir referência por escolha do usuário. Cancelar conserva composição e recursos. Propriedade, permissão de consulta, documento e duplicatas são conferidos antes de gravar; nenhuma regra, custo, graduação ou automação de efeito muda por pesquisar ou selecionar.
+
 # Criar técnicas personalizadas
 
 Na ficha do cavaleiro, abra **Técnicas → Adicionar**. A nova cópia abre o construtor. Para recompor uma técnica personalizada existente, abra seu Item e clique em **Construir técnica personalizada**. Técnicas importadas do livro continuam usando **Configurar técnica para combate**, preservando suas referências.

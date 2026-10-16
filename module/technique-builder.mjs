@@ -2,6 +2,7 @@ import {SYSTEM_ID,NATURES} from "./config.mjs";
 import {TECHNIQUE_TIERS,TECHNIQUE_MODES} from "./technique-rules.mjs";
 import {PRIMORDIALS,componentUuid,validComponentUuid,composeTechnique} from "./technique-builder-rules.mjs";
 import {levelSignature} from "./level-rules.mjs";
+import {installComponentPicker} from "./component-picker.mjs";
 const busy=new WeakSet(),actorBusy=new WeakSet();
 const flags=item=>item.flags?.[SYSTEM_ID]??{};
 export const techniqueConstruction=item=>{const f=flags(item);return f.techniqueConstructionHistory?.[f.techniqueConstructionId]??null;};
@@ -56,17 +57,22 @@ export async function techniqueBuilderContext(item) {
 }
 export async function addTechniqueComponent(item) {
  if(!own(item)||busy.has(item))return;const draft=flags(item).techniqueDraft;if(!draft)return;
- busy.add(item);
+ const actor=item.parent;busy.add(item);
  try{
   const pack=game.packs.get(`${SYSTEM_ID}.componentes-tecnicas`);if(!pack?.testUserPermission(game.user,"OBSERVER"))throw Error("O mestre precisa permitir consulta ao compêndio.");
-  const index=await pack.getIndex({fields:["type","system.page"]}),entries=index.contents.filter(e=>["bigbang","increment"].includes(e.type)).toSorted((a,b)=>a.name.localeCompare(b.name,"pt-BR"));
-  const options=entries.map(e=>`<option value="${e._id}">${escape(e.name)} · p.${escape(e.system.page)}</option>`).join("");
-  const selected=await foundry.applications.api.DialogV2.wait({window:{title:"Adicionar Big Bang ou incremento"},content:`<label>Componente<select name="component">${options}</select></label><p>Big Bangs extras ocupam slots; incrementos usam aquisição/graduação do personagem. Leia a referência antes de concluir.</p>`,buttons:[{action:"add",label:"Adicionar e abrir referência",default:true,callback:(_e,b)=>b.form.elements.component.value},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
-  if(!selected)return;if(!entries.some(e=>e._id===selected))throw Error("Escolha inválida.");
-  const current=flags(item).techniqueDraft;if(!current||current.id!==draft.id)throw Error("Rascunho mudou.");
-  const uuid=componentUuid(selected);if(uuid===componentUuid(PRIMORDIALS[current.primary].id)||Object.values(current.components??{}).some(c=>c.uuid===uuid))throw Error("Este Big Bang/incremento já está selecionado.");
-  const doc=await pack.getDocument(selected);if(flags(item).techniqueDraft?.id!==draft.id)throw Error("Rascunho mudou.");
-  await item.update({[`flags.${SYSTEM_ID}.techniqueDraft.components.${foundry.utils.randomID()}`]:{uuid,rank:1,detail:""},[`flags.${SYSTEM_ID}.techniqueDraft.reviewed`]:false});doc.sheet.render(true);
+  const index=await pack.getIndex({fields:["type","system.page","system.description","system.requirements"]});
+  const blocked=new Set([componentUuid(PRIMORDIALS[draft.primary].id),...Object.values(draft.components??{}).map(c=>c.uuid)]);
+  const entries=index.contents.filter(e=>["bigbang","increment"].includes(e.type)&&validComponentUuid(componentUuid(e._id))&&!blocked.has(componentUuid(e._id))).toSorted((a,b)=>a.name.localeCompare(b.name,"pt-BR"));
+  const check=()=>{if(!own(item)||item.parent!==actor||actor.items.get(item.id)!==item||flags(item).techniqueDraft?.id!==draft.id||!pack.testUserPermission(game.user,"OBSERVER"))throw Error("Ficha, rascunho ou permissão mudou. Abra a seleção novamente.");};
+  check();if(!entries.length)throw Error("Nenhum componente disponível para adicionar.");
+  const content=await foundry.applications.handlebars.renderTemplate(`systems/${SYSTEM_ID}/templates/component-picker.hbs`,{entries});check();
+  const selected=await foundry.applications.api.DialogV2.wait({window:{title:"Adicionar Big Bang ou incremento"},content,render:(_event,dialog)=>installComponentPicker(dialog.form??dialog.element.querySelector("form"),entries),buttons:[{action:"add",label:"Adicionar à composição",default:true,callback:(_e,b)=>b.form.elements.component.value},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
+  if(!selected)return;check();const uuid=componentUuid(selected);
+  const duplicate=()=>{const current=flags(item).techniqueDraft;if(uuid===componentUuid(PRIMORDIALS[current.primary].id)||Object.values(current.components??{}).some(c=>c.uuid===uuid))throw Error("Este Big Bang/incremento já está selecionado.");};
+  duplicate();if(!entries.some(e=>e._id===selected))throw Error("Escolha inválida.");
+  const doc=await pack.getDocument(selected);check();duplicate();
+  if(!doc||doc.uuid!==uuid||!["bigbang","increment"].includes(doc.type))throw Error("Componente não encontrado ou alterado. Abra a seleção novamente.");
+  await item.update({[`flags.${SYSTEM_ID}.techniqueDraft.components.${foundry.utils.randomID()}`]:{uuid,rank:1,detail:""},[`flags.${SYSTEM_ID}.techniqueDraft.reviewed`]:false});
  }catch(error){ui.notifications.error(error.message);}finally{busy.delete(item);}
 }
 export async function removeTechniqueComponent(item,slot) {

@@ -1,3 +1,10 @@
+## 0.36.0 — Busca e leitura de componentes na composição
+
+- O seletor de Big Bangs/incrementos busca por nome ou página e filtra por tipo, com leitura da regra e requisitos na mesma janela.
+- Componentes já escolhidos ficam fora da lista; busca sem resultado impede adicionar. Adicionar mantém a referência acessível, sem abrir outra ficha automaticamente.
+- Cancelamento, propriedade, permissão, identidade do documento e duplicatas são conferidos antes da gravação. Custos, recursos, condições e catálogos preservados.
+- Foundry hospedado não validado.
+
 ## 0.35.0 — Controle sobre a Destruição na resistência
 
 - Técnicas personalizadas de Dano com o grupo atualizado aplicam −1/−2/−3 no teste de resistência pela graduação do incremento (p.219).
