@@ -1,0 +1,6 @@
+<label>Buscar por nome ou página<input type="search" name="componentSearch" autocomplete="off" placeholder="Ex.: destruição"></label>
+<label>Tipo<select name="componentType"><option value="all">Todos</option><option value="bigbang">Big Bangs</option><option value="increment">Incrementos</option></select></label>
+<p data-component-count role="status">{{entries.length}} componente(s) disponível(is)</p>
+<label>Componente<select name="component" size="7" style="height:180px;width:100%">{{#each entries}}<option value="{{_id}}">{{name}} · p.{{system.page}}</option>{{/each}}</select></label>
+<section><h3 data-component-title>Regra do componente</h3><div data-component-description style="white-space:pre-wrap;max-height:240px;overflow:auto"></div><p data-component-requirements></p></section>
+<p>Adicionar altera apenas o rascunho. Big Bangs extras ocupam slots; incrementos usam a graduação do personagem. Componentes já selecionados não aparecem na lista.</p>
