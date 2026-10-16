@@ -159,3 +159,43 @@ test("mestre congela Destruição no cartao e recupera sem nova cobranca ou alte
  const r=runtime();enableComponents(r);const m=r.request('destruction');r.controls.publishFail=true;await r.execute(m);const ce=r.actor.system.resources.cosmo.value;
  r.controls.publishFail=false;await recoverTechniqueOperation(r.actor,m.id);assert.equal(m.flags[ID].attack.componentResistance.modifier,-1);assert.equal(m.flags[ID].attack.componentResistance.rank,1);assert.equal(r.stats.payments,1);assert.equal(r.stats.rolls,1);assert.equal(r.actor.system.resources.cosmo.value,ce);
 });
+
+import {distanceSnapshot} from "../module/technique-distance.mjs";
+import {rangeScene} from "./distance-stub.mjs";
+function rangeRuntime(r){
+ const defender={uuid:"Actor.defender",name:"Defensor",type:"knight",system:prepareKnight(knight()),flags:{}};r.targets.set(defender.uuid,defender);
+ const f=rangeScene(r.actor,defender);r.targets.set(f.source.uuid,f.source);r.targets.set(f.target.uuid,f.target);game.scenes=new Map([[f.scene.id,f.scene]]);
+ r.item.system.range=3;r.item.system.damageLevel=8;
+ return {...f,defender,snapshot:distanceSnapshot(f.source,f.target)};
+}
+test("distância é validada pelo mestre e reduz dano uma vez com cobrança única",async()=>{
+ const r=runtime(),f=rangeRuntime(r),m=r.request("range",{targetUuid:f.defender.uuid,options:{...r.options,distanceSnapshot:f.snapshot}});
+ await r.execute(m);assert.equal(r.stats.payments,1,m.flags[ID].techniqueResponse?.text);assert.equal(r.stats.rolls,1);const parameters=m.flags[ID].technique;
+ assert.equal(parameters.distance.levels,2);assert.equal(parameters.damageLevel,6);assert.equal(m.flags[ID].attack.damage,61);assert.equal(r.renders.at(-1).context.distance.distance,6);
+ assert.equal(r.actor.flags[ID].techniqueOperations.range.distance.levels,2);assert.equal(r.actor.flags[ID].techniqueOperations.range.distanceSnapshot,undefined);
+ await r.execute(m);assert.equal(r.stats.payments,1);assert.equal(r.stats.rolls,1);
+});
+test("medida forjada/desatualizada ou tokens/grade inválidos não rolam nem cobram",async()=>{
+ for(const kind of ["distance","origin","target","scale","diagonal","size","units","position","elevation","hidden","removed","permission","scenePermission","sceneRemoved"]){
+  const r=runtime(),f=rangeRuntime(r),m=r.request("range",{targetUuid:f.defender.uuid,options:{...r.options,distanceSnapshot:f.snapshot}});
+  if(kind==="distance")m.flags[ID].techniqueRequest.options.distanceSnapshot.distance=0;
+  if(kind==="origin")f.source.actor=f.defender;if(kind==="target")f.target.actor=r.actor;
+  if(kind==="scale")f.scene.grid.distance=3;if(kind==="diagonal")f.scene.grid.diagonals=2;if(kind==="size")f.scene.grid.size=200;if(kind==="units")f.scene.grid.units="ft";
+  if(kind==="position")f.target.x+=1;if(kind==="elevation")f.target.elevation=1;if(kind==="hidden")f.target.hidden=true;if(kind==="removed")f.scene.tokens.delete(f.target.id);
+  if(kind==="permission")f.source.testUserPermission=()=>false;if(kind==="scenePermission")f.scene.testUserPermission=()=>false;if(kind==="sceneRemoved")game.scenes.clear();
+  await r.execute(m);assert.equal(r.stats.payments,0,kind);assert.equal(r.stats.rolls,0,kind);assert.equal(m.flags[ID].techniqueResponse.status,"failed",kind);
+ }
+});
+test("movimento durante rolagem ou preparação interrompe sem pagamento",async()=>{
+ for(const phase of ["roll","prepare","record"]){const r=runtime(),f=rangeRuntime(r),m=r.request("range",{targetUuid:f.defender.uuid,options:{...r.options,distanceSnapshot:f.snapshot}});
+  if(phase==="roll")r.controls.beforeRoll=async()=>{f.target.x+=10;};
+  if(phase==="prepare")r.controls.updateMessage=async(_message,change)=>{if(change[`flags.${ID}.techniquePrepared`])f.source.width=2;};
+  if(phase==="record"){const update=r.actor.update;r.actor.update=async function(change){const v=await update.call(this,change);if(change[`flags.${ID}.techniqueOperations.range`]?.after)f.target.x+=10;return v;};}
+  await r.execute(m);assert.equal(r.stats.payments,0,phase);assert.equal(m.flags[ID].techniqueResponse.status,"interrupted",phase);
+ }
+});
+test("recuperação após pagamento republica redução congelada mesmo após movimento",async()=>{
+ const r=runtime(),f=rangeRuntime(r),m=r.request("range",{targetUuid:f.defender.uuid,options:{...r.options,distanceSnapshot:f.snapshot}});r.controls.publishFail=true;await r.execute(m);assert.equal(r.stats.payments,1);assert.equal(m.flags[ID].techniqueResponse.status,"paid");
+ f.target.x=2000;r.controls.publishFail=false;foundry.applications.api.DialogV2.confirm=async()=>true;
+ await recoverTechniqueOperation(r.actor,"range");assert.equal(r.stats.payments,1);assert.equal(r.stats.rolls,1);assert.equal(m.flags[ID].attack.damage,61);assert.equal(m.flags[ID].technique.distance.distance,6);
+});

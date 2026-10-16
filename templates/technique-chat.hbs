@@ -1,5 +1,6 @@
 <div class="battle-chat"><span class="eyebrow">Técnica · {{effectLabel}}</span><h3>{{name}}</h3>
 {{#if targetName}}<p>Alvo: <strong>{{targetName}}</strong>.</p>{{/if}}
+{{#if distance}}<p>Distância {{distance.distance}} m · alcance {{distance.range}} m · −{{distance.levels}} ND já incluído (p.204). Centros dos tokens, pela grade; paredes/cobertura manuais.</p>{{/if}}
 <p>Asterismo ({{attributeLabel}}): {{#each results}}<span class="die">{{this}}</span> {{/each}} · modificador {{modifier}}</p>
 <p>Maior {{highest}} + {{tens}} × 2 − {{ones}} × 2 + {{modifier}}.</p>
 <div class="chat-result"><strong>{{total}}</strong><span>{{outcome}}<br>Dificuldade {{difficulty}}</span></div>

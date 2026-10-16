@@ -95,3 +95,8 @@ Convenção operacional proposta para “uma rodada inteira”: se falhar, bloqu
 ## Após0.37.0: prévia de distância em um alvo
 
 [Medida informativa](distancia-alcance.md) entre centros pela grade, origem inequívoca e unidade em metros, com comparação ao alcance efetivo e atualização explícita. Não altera cálculos. Próximo contrato tático: congelar/revalidar geometria na fila e aplicar redução de ND/PC uma vez conforme p.204, antes de áreas e múltiplos alvos. Elevação, paredes/cobertura, formas e alcance zero continuam manuais. Novas condições permanecem adiadas.
+
+
+## Após0.38.0: redução de ND por distância em Dano
+
+[Opção de distância na ativação](distancia-alcance.md) reduz ND por faixa iniciada de1,5m além do alcance configurado, com geometria congelada da prévia e revalidação na fila central, pagamento único e recuperação do resultado original. Mesma elevação, um alvo, metros e ND normal final pelo menos1; não inventa semântica de NDzero. Controle/Sustentada (modificador positivo do PC), piso/exceções, áreas e múltiplos alvos são os próximos contratos táticos. Novas condições seguem adiadas.
