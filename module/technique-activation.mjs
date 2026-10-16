@@ -1,3 +1,4 @@
+import {validatedDistanceContext} from "./technique-distance.mjs";
 import {controlTimeline,controlStart} from "./control-rules.mjs";
 import {actionHash} from "./action-rules.mjs";
 import {optionalNote} from "./form-values.mjs";
@@ -37,7 +38,8 @@ async function response(message,status,text,paid=false) {
  const next={ok:status==="published",status,text,paid};if(hash(flags(message).techniqueResponse)===hash(next))return;
  await message.update({[`flags.${SYSTEM_ID}.techniqueResponse`]:next,...(status==="published"?{}:{content:`<p>${escape(text)}</p>`})});
 }
-function validateCurrent(message,request,requester,actor,item,baseline,signature) {
+function validateCurrent(message,request,requester,actor,item,baseline,signature,distanceContext=null) {
+ distanceContext?.validate();
  if(!isPrimaryGM())throw Error("Mestre responsável mudou durante a ativação.");
  if(author(message)!==requester.id||hash(flags(message).techniqueRequest)!==signature)throw Error("A solicitação foi alterada durante o processamento.");
  if(!actor.testUserPermission(requester,"OWNER")||!actor.items.get(item.id)||item.parent!==actor||item.uuid!==request.itemUuid)throw Error("Sem permissão ou técnica removida.");
@@ -75,22 +77,23 @@ export async function executeTechniqueRequest(message,userId) {
   available(actor);
   const item=actor.items.get(request.itemId);
   if(item?.type!=="technique"||item.parent!==actor||item.uuid!==request.itemUuid)throw Error("Técnica não pertence ao cavaleiro.");
-  const baseline=activationState(actor,item),signature=hash(request);
+  const baseline=activationState(actor,item),signature=hash(request);let distanceContext=null;
   if(baseline!==request.baseline)throw Error("A ficha ou técnica mudou desde a confirmação. Abra uma nova ativação.");
-  validateCurrent(message,request,requester,actor,item,baseline,signature);
+  validateCurrent(message,request,requester,actor,item,baseline,signature,distanceContext);
   const options=request.options;if(!options||typeof options.useExtra!=="boolean"||typeof options.allowOverload!=="boolean")throw Error("Opções de pagamento inválidas.");
   const actionPlan=techniqueActionPlan(actor,options,message.id);
   const technique=techniqueWithComponents(item),parameters=techniqueParameters(actor.system,technique,options),payment=cosmoPayment(actor.system,parameters.cost,options);
   if(hash(payment)!==hash(request.expectedPayment))throw Error("O pagamento mudou; confirme os valores novamente.");
   let target=null;if(request.targetUuid){if(!validActor(request.targetUuid))throw Error("Alvo inválido.");target=await fromUuid(request.targetUuid);if(target?.type!=="knight"||target.uuid!==request.targetUuid)throw Error("O alvo não está mais disponível.");}
+  distanceContext=await validatedDistanceContext(options.distanceSnapshot,actor,target,requester);
   if(options.oppositeEssence&&!target)throw Error("Essência Alvo exige um alvo marcado e sua Essência contrária conferida.");
-  validateCurrent(message,request,requester,actor,item,baseline,signature);
+  validateCurrent(message,request,requester,actor,item,baseline,signature,distanceContext);
   const before=paymentSnapshot(actor);
-  record={status:"prepared",actorUuid:actor.uuid,requestId:message.id,userId,name:item.name,itemUuid:item.uuid,baseline,requestSignature:signature,before,payment:Object.fromEntries(Object.entries(payment).filter(([key])=>key!=="updates")),time:Date.now(),rollMode:request.rollMode,actionCost:actionPlan.cost,actionPool:options.actionPool??null,actionContext:actionPlan.view.context,components:parameters.components,componentReason:options.componentReason??""};
+  record={status:"prepared",actorUuid:actor.uuid,requestId:message.id,userId,name:item.name,itemUuid:item.uuid,baseline,requestSignature:signature,before,payment:Object.fromEntries(Object.entries(payment).filter(([key])=>key!=="updates")),time:Date.now(),rollMode:request.rollMode,actionCost:actionPlan.cost,actionPool:options.actionPool??null,actionContext:actionPlan.view.context,components:parameters.components,...(parameters.distance?{distance:parameters.distance}:{}),componentReason:options.componentReason??""};
   await actor.update({[`flags.${SYSTEM_ID}.techniqueOperations.${message.id}`]:record});
-  validateCurrent(message,request,requester,actor,item,baseline,signature);
+  validateCurrent(message,request,requester,actor,item,baseline,signature,distanceContext);
   const {result,messageRoll}=await evaluatePool(parameters.dice,parameters.modifier);
-  validateCurrent(message,request,requester,actor,item,baseline,signature);
+  validateCurrent(message,request,requester,actor,item,baseline,signature,distanceContext);
   const outcome=techniqueOutcome(actor.system,technique,parameters,result.total),attack={name:item.name,nature:technique.nature,effectKind:parameters.effectKind,...(parameters.control?{control:{...parameters.control,start:controlStart()},itemUuid:item.uuid}:{}),powerCosmic:parameters.powerCosmic,...(parameters.components.resistanceComponent?{componentResistance:parameters.components.resistanceComponent}:{}),damage:outcome.damage,armorDamage:outcome.armorDamage,attackerUuid:actor.uuid,turnSnapshot:target?damageTurnSnapshot(target):null,...(target?{targetUuid:target.uuid,targetName:target.name}:{})};
   const card=await prepareRollMessage(actor,messageRoll,{name:item.name,...result,...parameters,...outcome,payment,componentReason:options.componentReason??"",actions:actionPlan.cost?{cost:actionPlan.cost,pool:options.actionPool==="attack"?"Ataque":"Defesa",round:actionPlan.view.context.round}:null,effectLabel:EFFECT_KINDS[parameters.effectKind],description:technique.description,isDamage:parameters.effectKind==="damage",targetName:target?.name,power:parameters.power,userLevel:actor.system.profile.level,damageBonus:actor.system.combat.damageBonus+(actor.system.combat.techniqueDamageBonus??0)},
    {template:"technique-chat",rollMode:request.rollMode,flags:{technique:{itemUuid:item.uuid,...parameters,...outcome,payment:record.payment},...(outcome.success?{attack}:{})}});
@@ -98,14 +101,14 @@ export async function executeTechniqueRequest(message,userId) {
   if(request.rollMode==="selfroll")card.whisper=[userId];
   card.blind=request.rollMode==="blindroll";card.whisper??=[];
   card.rolls=card.rolls.map(roll=>roll.toJSON());const prepared={card};
-  validateCurrent(message,request,requester,actor,item,baseline,signature);
+  validateCurrent(message,request,requester,actor,item,baseline,signature,distanceContext);
   await message.update({[`flags.${SYSTEM_ID}.techniquePrepared`]:prepared});
-  validateCurrent(message,request,requester,actor,item,baseline,signature);
+  validateCurrent(message,request,requester,actor,item,baseline,signature,distanceContext);
   const after={...before,current:payment.updates["system.resources.cosmo.value"]??before.current,extra:payment.updates["system.resources.cosmoExtra"]??before.extra,overload:payment.updates["system.resources.cosmoOverload"]??before.overload,health:payment.updates["system.resources.health.value"]??before.health,penalty:outcome.nextPenalty,last:message.id,actions:actionPlan.after};
   record={...record,after,preparedSignature:hash(prepared),...(parameters.control?{controlAttackSignature:actionHash(attack)}:{})};
   await actor.update({[`flags.${SYSTEM_ID}.techniqueOperations.${message.id}`]:record});
-  validateCurrent(message,request,requester,actor,item,baseline,signature);
-  if(request.targetUuid){const current=await fromUuid(request.targetUuid);if(current?.type!=="knight"||current.uuid!==request.targetUuid)throw Error("O alvo mudou ou não está mais disponível.");validateCurrent(message,request,requester,actor,item,baseline,signature);}
+  validateCurrent(message,request,requester,actor,item,baseline,signature,distanceContext);
+  if(request.targetUuid){const current=await fromUuid(request.targetUuid);if(current?.type!=="knight"||current.uuid!==request.targetUuid)throw Error("O alvo mudou ou não está mais disponível.");validateCurrent(message,request,requester,actor,item,baseline,signature,distanceContext);}
   if(!matches(actor,before)||hash(flags(message).techniquePrepared)!==record.preparedSignature)throw Error("Recursos ou cartão mudaram antes do pagamento. Confira o registro.");
   await actor.update({...payment.updates,...actionPlan.updates,"system.combat.asterismPenalty":outcome.nextPenalty,[`flags.${SYSTEM_ID}.techniqueLast`]:message.id,[`flags.${SYSTEM_ID}.techniqueOperations.${message.id}`]:{...record,status:"paid"}});
   record=flags(actor).techniqueOperations[message.id];
