@@ -1,5 +1,7 @@
 # Saint Seiya — A Batalha dos Deuses para FoundryVTT
 
+**Ativar → Atualizar medida** mostra distância entre os centros dos tokens pela grade da cena e compara com o alcance configurado. Unidades em metros, mesma elevação e origem inequívoca; outros casos pedem medição manual. Penalidades, paredes e áreas ainda manuais. Veja [distância e alcance](docs/distancia-alcance.md).
+
 **Combate → Efeitos com duração → Preparar Cosmo Residual · mestre** calcula o segundo Asterismo e congela PC + excesso no usuário, com resultado público e recuperação. Dificuldade final explícita; efeito inicial registrado no alvo. Resistência usa dia da campanha e perfil cumulativo explícitos, com falha repetível e sucesso encerrando só o registro. Ativação inicial continua manual; com controle ativo, o segundo teste registra Ação de Cosmo + um Movimento Parcial junto ao resultado; depósitos de três origens usam o painel específico. Veja [resistência ao Residual](docs/resistencia-residual.md). Veja [Cosmo Residual](docs/cosmo-residual.md).
 
 **Combate → Condições assistidas → Registrar condição assistida · mestre** aplica parcelas de Cansado, membros debilitados e Desorientado às rolagens, bloqueia ações de Paralisado e, para Atordoado, bloqueia movimento, luta, Cosmo, reação e técnicas monitoradas. O dano corporal confirmado é acompanhado por encontro/rodada; ao superar estritamente 70% dos PV totais, a ficha sinaliza que é hora de fazer o teste de Vigor. O teste e o registro/encerramento do estado ainda são manuais. Veja [condições assistidas](docs/condicoes-assistidas.md).
