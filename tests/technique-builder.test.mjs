@@ -6,6 +6,7 @@ import {prepareKnight} from "../module/rules.mjs";
 import {composeTechnique,componentUuid} from "../module/technique-builder-rules.mjs";
 import {beginTechniqueBuilder,createPersonalTechnique,techniqueBuilderContext,techniqueConstruction,addTechniqueComponent,removeTechniqueComponent,discardTechniqueBuilder,finishTechniqueBuilder} from "../module/technique-builder.mjs";
 import {techniqueParameters,techniqueReadiness} from "../module/technique-rules.mjs";
+import {componentPickerRows} from "../module/component-picker.mjs";
 const ID="gods-battle-ss",catalog=[...JSON.parse(await readFile("data/catalog/bigbangs.json","utf8")),...JSON.parse(await readFile("data/catalog/increments.json","utf8"))];
 const lookup=key=>{const doc=catalog.find(d=>d.flags[ID].source.key===key);assert.ok(doc,key);return {...structuredClone(doc),uuid:componentUuid(doc._id)};};
 const entries=(...keys)=>keys.map((key,i)=>({slot:`slot${String(i).padStart(12,"0")}`,doc:lookup(key),rank:1}));
@@ -51,6 +52,7 @@ test("primordiais mistos/Residual são manuais; entradas inválidas não compõe
  e[0].doc.uuid="Actor.injection";assert.throws(()=>composeTechnique(system(),draft(),e));
 });
 function runtime(){
+ foundry.applications.handlebars={renderTemplate:async()=>"seleção"};
  const notices=[],updates=[];globalThis.ui={notifications:{warn:t=>notices.push(t),error:t=>notices.push(t)}};game.user={id:"owner",isGM:false};
  let serial=0;foundry.utils={randomID:()=>`random${String(++serial).padStart(10,"0")}`};foundry.applications.api.DialogV2={confirm:async()=>true,wait:async()=>null};
  const docs=new Map(catalog.map(d=>[componentUuid(d._id),{...structuredClone(d),uuid:componentUuid(d._id),toObject:()=>structuredClone(d),sheet:{render:()=>{}}}]));
@@ -92,3 +94,28 @@ test("criação evita duplo clique e retoma rascunho existente; descarte não ap
  await ready(r);foundry.applications.api.DialogV2.confirm=async()=>{r.item.flags[ID].techniqueDraft.id="new";return true;};await discardTechniqueBuilder(r.item);assert.ok(r.item.flags[ID].techniqueDraft);assert.match(r.notices.at(-1),/mudou/);
 });
 
+
+
+test("busca de componentes preserva IDs e encontra nome sem acentos, tipo e pagina",()=>{
+ const before=structuredClone(catalog),rows=componentPickerRows(catalog,'DESTRUICAO','increment');assert.ok(rows.some(c=>c._id==='de15bef11745f7c2'));assert.ok(rows.every(c=>c.type==='increment'));
+ assert.ok(componentPickerRows(catalog,'estrelas 219','increment').some(c=>c._id==='1c0a9862d3c417fd'));assert.equal(componentPickerRows(catalog,'sem correspondencia').length,0);assert.deepEqual(catalog,before);
+});
+
+test("seletor omite escolhidos e cancelar preserva rascunho e recursos",async()=>{
+ const r=runtime(),d=await ready(r),before=structuredClone(r.actor.system);d.components={existing:{uuid:componentUuid('02cba36e32fda2f8'),rank:1,detail:''}};let context;
+ foundry.applications.handlebars.renderTemplate=async(_path,c)=>{context=c;return 'seleção';};await addTechniqueComponent(r.item);
+ assert.ok(context.entries.length>0);assert.ok(!context.entries.some(e=>e._id==='13841831d802c5be'||e._id==='02cba36e32fda2f8'));assert.equal(r.updates.length,1);assert.deepEqual(r.actor.system,before);assert.equal(Object.keys(d.components).length,1);
+});
+
+test("adicionar componente nao abre referencia automaticamente nem altera recursos",async()=>{
+ const r=runtime(),d=await ready(r),before=structuredClone(r.actor.system),pack=game.packs.get(`${ID}.componentes-tecnicas`),read=pack.getDocument.bind(pack);let opened=0;
+ pack.getDocument=async id=>{const doc=await read(id);doc.sheet.render=()=>{opened++;};return doc;};foundry.applications.api.DialogV2.wait=async()=>'02cba36e32fda2f8';await addTechniqueComponent(r.item);
+ assert.equal(Object.values(d.components)[0].uuid,componentUuid('02cba36e32fda2f8'));assert.equal(opened,0);assert.deepEqual(r.actor.system,before);
+});
+
+test("permissao ou documento alterado na consulta nao grava componente",async()=>{
+ for(const mode of ['owner','permission','missing']){const r=runtime(),d=await ready(r),pack=game.packs.get(`${ID}.componentes-tecnicas`),read=pack.getDocument.bind(pack);foundry.applications.api.DialogV2.wait=async()=>'02cba36e32fda2f8';
+ pack.getDocument=async id=>{if(mode==='owner')r.item.isOwner=false;if(mode==='permission')pack.testUserPermission=()=>false;return mode==='missing'?null:read(id);};await addTechniqueComponent(r.item);
+ assert.equal(Object.keys(d.components).length,0);assert.equal(r.updates.length,1);assert.match(r.notices.at(-1),/mudou|não encontrado/);
+ }
+});
