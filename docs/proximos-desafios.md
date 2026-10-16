@@ -1,5 +1,17 @@
 # Próximos desafios — após 0.30.0
 
+## Prioridade vigente — decisão de Lucas em 14/10/2026
+
+Lucas priorizou os pontos 2, 3, 4, 5 e 6 do mapa `work/mapa-sistema-0.30.0.md`, excluindo o foco em condições. Esta decisão substitui a recomendação anterior de concluir Atordoado primeiro e a ordem histórica abaixo.
+
+1. Simplificar ataque → defesa/resistência → dano: cartão com alvo, resultado e valor calculado, aplicação direta, Ajustar e Desfazer separados; ações rápidas com ajustes opcionais.
+2. No ponto 3, trabalhar apenas o painel e a duração de efeitos: ativos separados do histórico, prazos claros e menos conferências sem decisão útil. Adiar novos gatilhos, resistências, bloqueios e recuperação de condições, inclusive Atordoado, Paralisado e Surpreso.
+3. Ampliar Big Bangs/incrementos executáveis e melhorar construção/configuração das técnicas, começando pelos cálculos e efeitos que não dependam de novas condições.
+4. Implementar distância, áreas e múltiplos alvos, com prévia e resolução individual, sem repetir custos/dano.
+5. Completar exceções de poderes avançados de Sustentada/Residual, Marcas, Fadas e Ataúde, preservando regras e adiando a automação de condições associadas.
+
+Preservar as condições já entregues e suas proteções. Validar cada marco com testes adequados; validação no servidor continua transversal e não foi presumida. Não retomar Atordoado apenas por ser o próximo passo nas seções históricas.
+
 Prioridade atual definida por Lucas: gameplay. Já existem fichas, catálogos para arrastar, criação/evolução assistidas, personagens de exercício, ataque/defesa, resistência, dano confirmado com desfazer, configuração/prévia de técnicas, composição personalizada e pagamento central compartilhado com dano/evolução. Isso permite exercitar o fluxo básico; não significa automação integral do livro ou validação do servidor.
 
 ## Sequência recomendada
@@ -79,3 +91,7 @@ Convenção operacional proposta para “uma rodada inteira”: se falhar, bloqu
 
 0.29.0 associa dano corporal aplicado ao encontro/rodada registrado no cartão, soma dano persistido ainda aplicado, retira parcelas desfeitas e exibe o cruzamento estrito de70% dos PV totais. A 0.30.0 mostra a CD `10 + dano/10` sem arredondamento. O alvo precisa participar de um único encontro iniciado; cartas sem contexto compatível continuam manuais. Próximo passo: resolver uma TAP Vigor uma única vez no primeiro cruzamento, com operação recuperável e sem nova rolagem por replay; falha deve registrar Atordoado no alvo. Depois, expirar o bloqueio na ativação completa correta; testar dano antes/depois da vez do alvo e ausência de iniciativa. Não misturar Big Bang Atordoar nem a tabela de dano por elevar Vigor.
 
+
+## Após0.37.0: prévia de distância em um alvo
+
+[Medida informativa](distancia-alcance.md) entre centros pela grade, origem inequívoca e unidade em metros, com comparação ao alcance efetivo e atualização explícita. Não altera cálculos. Próximo contrato tático: congelar/revalidar geometria na fila e aplicar redução de ND/PC uma vez conforme p.204, antes de áreas e múltiplos alvos. Elevação, paredes/cobertura, formas e alcance zero continuam manuais. Novas condições permanecem adiadas.
