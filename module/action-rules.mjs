@@ -74,6 +74,13 @@ export function residualActionPlan(actor,id){
 }
 export function techniqueActionPlan(actor,options,id) {
  assertActionAllowed(actor,"technique");
+ if(options?.areaTargets!==undefined){
+  assertActionAllowed(actor,"attack");assertActionAllowed(actor,"defense");const view=actionView(actor),before=rawActionUsage(actor);
+  if(!view.enabled)return {view,before,after:before,updates:{},cost:0};
+  if(view.spent.attack||view.spent.defense||view.maxima.attack<1||view.maxima.defense<1)throw Error("Área exige todas as reservas de ataque e defesa intactas (pp.210/404).");
+  const after={ruleVersion:2,actorUuid:actor.uuid,context:view.context,spent:{...view.spent,attack:view.maxima.attack,defense:view.maxima.defense},cosmoUses:view.cosmoUses,movementTotal:view.movementTotal,last:id};
+  return {view,before,after,cost:view.maxima.attack+view.maxima.defense,updates:{[`flags.${SYSTEM_ID}.actionUsage`]:after},area:true};
+ }
  if(["attack","defense"].includes(options?.actionPool))assertActionAllowed(actor,options.actionPool);
  if(!actionContext(actor))return actionPlan(actor,null,0,{operationId:id});
  if(!["attack","defense"].includes(options.actionPool))throw Error("Escolha todas as ações de ataque ou todas as ações de defesa para esta técnica.");
@@ -82,4 +89,3 @@ export function techniqueActionPlan(actor,options,id) {
 export function stampCombatRound(combat,changes) {
  if(Object.hasOwn(changes,"round")&&changes.round!==combat.round)changes[`flags.${SYSTEM_ID}.actionControl.epoch`]=foundry.utils.randomID();
 }
-
