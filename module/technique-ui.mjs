@@ -1,3 +1,4 @@
+import {refreshAreaSelection,areaMeasurements} from "./area-preview.mjs";
 import {techniqueDistance,techniqueDistanceLabel,previewDistanceSnapshot} from "./technique-distance.mjs";
 import {activationPreview} from "./technique-rules.mjs";
 import {techniqueActionPlan} from "./action-rules.mjs";
@@ -14,12 +15,18 @@ export function techniquePreviewLabels(system,technique,options={}) {
 export function installTechniquePreview(form,system,technique,actor=null,targetToken=null,areaTargets=null) {
  form.areaTargets=areaTargets?structuredClone(areaTargets):null;
  if(areaTargets){const distance=form.elements.applyDistance;if(distance){distance.checked=false;distance.disabled=true;}}
- const update=()=>{
+ const update=(refresh=false)=>{
   let values;
-  try{form.distanceSnapshot=undefined;if(form.elements.applyDistance?.checked)form.distanceSnapshot=previewDistanceSnapshot(actor,targetToken);const options=activationFormOptions(form);values=techniquePreviewLabels(system,technique,options);values.distance=areaTargets?"Área: forma, alcance e distância de cada alvo conferidos na mesa; redução automática de distância indisponível neste grupo.":techniqueDistanceLabel(options.distanceSnapshot?{available:true,distance:options.distanceSnapshot.distance}:techniqueDistance(actor,targetToken),activationPreview(system,technique,options).parameters.components.range,!!options.distanceSnapshot);if(actor)techniqueActionPlan(actor,options,"preview");}catch(error){values={error:error.message};}
+  try{if(areaTargets&&refresh===true)form.areaTargets=refreshAreaSelection(form.areaTargets);form.distanceSnapshot=undefined;if(form.elements.applyDistance?.checked)form.distanceSnapshot=previewDistanceSnapshot(actor,targetToken);const options=activationFormOptions(form);values=techniquePreviewLabels(system,technique,options);values.distance=areaTargets?"Área: forma, alcance e distância de cada alvo conferidos na mesa; redução automática de distância indisponível neste grupo.":techniqueDistanceLabel(options.distanceSnapshot?{available:true,distance:options.distanceSnapshot.distance}:techniqueDistance(actor,targetToken),activationPreview(system,technique,options).parameters.components.range,!!options.distanceSnapshot);if(actor)techniqueActionPlan(actor,options,"preview");
+   if(areaTargets){
+    const rows=areaMeasurements(actor,form.areaTargets,activationPreview(system,technique,options).parameters.components.range);
+    for(const output of form.querySelectorAll("[data-area-field]")){const row=rows.find(r=>r.tokenUuid===output.dataset.areaToken);output.textContent=row?.[output.dataset.areaField]??"—";}
+    if(rows.some(r=>r.changed))values.error="Os alvos se moveram ou mudaram desde a prévia. Use Atualizar prévia da área; para trocar alvos, reabra a ativação.";
+   }}catch(error){values={error:error.message};if(areaTargets)for(const output of form.querySelectorAll("[data-area-field]"))if(output.dataset.areaField!=="name")output.textContent=output.dataset.areaField==="distanceText"?"—":"Prévia indisponível; confira os alvos.";}
   for(const output of form.querySelectorAll("[data-technique-preview]"))output.textContent=values[output.dataset.techniquePreview]??"—";
   const button=form.querySelector('[data-action="activate"]');if(button)button.disabled=!!values.error;
  };
+ form.querySelector('[data-action="refreshArea"]')?.addEventListener("click",()=>update(true));
  form.querySelector('[data-action="measureTechnique"]')?.addEventListener("click",update);
- form.addEventListener("input",update);form.addEventListener("change",update);update();return update;
+ form.addEventListener("input",update);form.addEventListener("change",update);update(true);return update;
 }
