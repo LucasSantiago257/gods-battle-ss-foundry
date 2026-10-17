@@ -271,10 +271,10 @@ test("alvo marcado vincula cartão e resistência mesmo com outro token controla
  target.isOwner=false;await assert.rejects(()=>resistanceForAttack({targetUuid:target.uuid}),/proprietário/);
  assert.throws(()=>techniqueTarget([{actor:target},{actor:target}]),/somente um alvo/);
 });
-test("múltiplos alvos bloqueiam antes de rolar ou gastar CE",async()=>{
+test("tokens duplicados da mesma ficha bloqueiam área antes de rolar ou gastar CE",async()=>{
  const r=runtime();game.user.targets=new Set([{actor:r.actor},{actor:r.actor}]);await useTechnique(r.actor,r.item);
  assert.equal(r.evaluations(),0);assert.equal(r.updates.length,0);assert.equal(r.renders.length,0);
- assert.match(r.notices.at(-1),/somente um alvo/);game.user.targets=new Set();
+ assert.match(r.notices.at(-1),/mesma ficha/);game.user.targets=new Set();
 });
 test("mudança na técnica durante diálogo ou status durante rolagem invalida pagamento",async()=>{
  const old=console.error;console.error=()=>{};
@@ -369,4 +369,19 @@ test('Destruição alterada na janela ou na rolagem nao publica resistencia anti
  await rollTest(r.actor,'resistance','vig',{difficulty:15,resistanceAttack:attack,quick:phase==='roll'});
  assert.equal(r.sent.length,0);assert.equal(r.evaluations(),phase==='dialog'?0:1);assert.deepEqual(r.actor.system,before);assert.match(r.notices.at(-1),/mudaram/);
  }
+});
+
+import {rangeScene} from "./distance-stub.mjs";
+test("ativação com dois tokens visíveis entra na manobra e envia custo único",async()=>{
+ const r=runtime();r.actor.system.skills.asterism.value=3;prepareKnight(r.actor.system);
+ const enemy={uuid:"Actor.enemy",name:"Enemy",type:"knight"},other={uuid:"Actor.other",name:"Other",type:"knight"},f=rangeScene(r.actor,enemy),second={...f.target,id:"other",uuid:"Scene.range.Token.other",actor:other};f.scene.tokens.set(second.id,second);game.scenes=new Map([[f.scene.id,f.scene]]);
+ game.user.targets=new Set([f.target,second].map(document=>({document,actor:document.actor,isVisible:true})));globalThis.fromUuid=async uuid=>[r.actor,enemy,other,f.target,second].find(d=>d.uuid===uuid);
+ await useTechnique(r.actor,r.item);assert.equal(r.evaluations(),1);assert.equal(r.updates.length,1);assert.equal(r.actor.system.resources.cosmo.value,6);assert.equal(r.sent[0].flags["gods-battle-ss"].attack.areaTargets.length,2);assert.equal(r.renders[0].context.areaTargets.length,2);
+});
+test("botões de área resistem com o alvo escolhido e nunca com token externo selecionado",async()=>{
+ const r=runtime(),a={uuid:"Actor.a",name:"A",type:"knight",isOwner:true,system:system(),flags:{},items:{contents:[]}},b={...a,uuid:"Actor.b",name:"B"};globalThis.fromUuid=async uuid=>uuid===a.uuid?a:uuid===b.uuid?b:null;
+ const attack={name:"Área",nature:"physical",effectKind:"damage",damage:10.5,armorDamage:10,powerCosmic:11,area:{count:2},areaTargets:[{actorUuid:a.uuid,tokenUuid:"Scene.a.Token.a",name:"A",turnSnapshot:null},{actorUuid:b.uuid,tokenUuid:"Scene.a.Token.b",name:"B",turnSnapshot:null}]};
+ const buttons=[a,b].flatMap(actor=>["resistTechnique","adjustResistance"].map(action=>({dataset:{action,areaTarget:actor.uuid},addEventListener(_event,fn){this.click=fn;},remove(){this.removed=true;}}))),message={id:"rootarea",isContentVisible:true,flags:{"gods-battle-ss":{attack}}};
+ renderTechniqueChat(message,{querySelectorAll:()=>buttons});await buttons[2].click();assert.equal(r.sent.at(-1).flags["gods-battle-ss"].resolvedDamage.actorUuid,b.uuid);assert.equal(r.sent.at(-1).flags["gods-battle-ss"].resolvedDamage.rootMessageId,message.id);
+ buttons[0].dataset.areaTarget="Actor.external";const before=r.evaluations();await buttons[0].click();assert.equal(r.evaluations(),before);assert.match(r.notices.at(-1),/não é um alvo/);
 });
