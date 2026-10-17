@@ -67,7 +67,7 @@ test("redução por faixas iniciadas de1,5m, tolerância só numérica",()=>{
  for(const [distance,levels] of [[0,0],[3,0],[3.000001,1],[4.5,1],[4.500001,2],[6,2],[6+1e-10,2]])assert.equal(distanceReduction({effectKind:"damage"},{range:3},{distanceSnapshot:{version:1,distance}}).levels,levels);
  for(const distance of [-1,NaN,Infinity,1e10])assert.throws(()=>distanceReduction({effectKind:"damage"},{range:3},{distanceSnapshot:{version:1,distance}}));
  assert.equal(distanceReduction({effectKind:"damage"},{range:0}),null);
- assert.throws(()=>distanceReduction({effectKind:"control"},{range:3},{distanceSnapshot:{version:1,distance:6}}),/apenas primordial Dano/);
+ assert.throws(()=>distanceReduction({effectKind:"residual"},{range:3},{distanceSnapshot:{version:1,distance:6}}),/exige primordial/);
  assert.throws(()=>distanceReduction({effectKind:"damage"},{range:0},{distanceSnapshot:{version:1,distance:6}}),/alcance positivo/);
 });
 test("ND reduzido entra uma vez no dano normal/crítico sem alterar Asterismo/CE/PC",()=>{
@@ -96,7 +96,7 @@ test("opção de distância altera a prévia e removê-la recupera dano original
   const outputs=Object.fromEntries(["damage","error","distance","distanceReduction"].map(key=>[key,{dataset:{techniquePreview:key}}])),listeners={},button={};
   const form={elements:{applyDistance:{checked:false}},querySelectorAll:()=>Object.values(outputs),querySelector:s=>s.includes("activate")?button:null,addEventListener:(key,fn)=>listeners[key]=fn};
   installTechniquePreview(form,system,{...content(),range:3,damageLevel:5},actor,target);assert.equal(outputs.damage.textContent,"51");assert.equal(activationFormOptions(form).distanceSnapshot,undefined);
-  form.elements.applyDistance.checked=true;listeners.input();assert.equal(outputs.damage.textContent,"31");assert.match(outputs.distanceReduction.textContent,/−2 ND/);assert.match(outputs.distance.textContent,/redução de ND calculada/);assert.equal(activationFormOptions(form).distanceSnapshot.distance,6);
+  form.elements.applyDistance.checked=true;listeners.input();assert.equal(outputs.damage.textContent,"31");assert.match(outputs.distanceReduction.textContent,/−2 ND/);assert.match(outputs.distance.textContent,/redução calculada/);assert.equal(activationFormOptions(form).distanceSnapshot.distance,6);
   target.center={x:999,y:0};listeners.input();assert.match(outputs.distance.textContent,/6 m entre centros/);assert.equal(outputs.damage.textContent,"31");
   const sent=activationFormOptions(form);sent.distanceSnapshot.distance=0;assert.equal(form.distanceSnapshot.distance,6);
   form.elements.applyDistance.checked=false;listeners.input();assert.equal(outputs.damage.textContent,"51");assert.equal(form.distanceSnapshot,undefined);assert.equal(button.disabled,false);
@@ -108,4 +108,48 @@ test("redução atravessa escala de armadura antes do crítico sem duplicar",()=
  const system=prepareKnight(knight());system.resources.cosmo.value=10;
  const result=activationPreview(system,{...content(),range:3,damageLevel:11,classification:"bronze"},{distanceSnapshot:{version:1,distance:4.5}});
  assert.equal(result.normal.damageLevel,10);assert.equal(result.normal.armorDamage,10);assert.equal(result.critical.damageLevel,11);assert.equal(result.critical.armorDamage,70);
+});
+
+test("Controle/Sustentada reduzem apenas PC e preservam Asterismo, custo e duração",()=>{
+ const system=prepareKnight(knight());system.resources.cosmo.value=20;
+ for(const effectKind of ["control","sustained"]){
+  const t={...content(),effectKind,range:3},plain=activationPreview(system,t,{elevate:3}),reduced=activationPreview(system,t,{elevate:3,distanceSnapshot:{version:1,distance:6}});
+  assert.equal(reduced.parameters.powerCosmic,plain.parameters.powerCosmic-2);assert.equal(reduced.parameters.distance.powerCosmic,true);assert.equal(reduced.normal.damage,0);assert.equal(reduced.critical.damage,0);assert.deepEqual(reduced.parameters.control,plain.parameters.control);
+  for(const key of ["cost","difficulty","modifier"])assert.equal(reduced.parameters[key],plain.parameters[key]);assert.deepEqual(reduced.payment,plain.payment);
+ }
+});
+test("base10 + Modificador de Nível é preservada; bônus negativo não é inventado",()=>{
+ const system=prepareKnight(knight()),t={...content(),effectKind:"control",range:3},snapshot={version:1,distance:6};
+ const baseline=10+system.combat.levelModifier;
+ assert.throws(()=>techniqueParameters(system,t,{distanceSnapshot:snapshot}),/modificador positivo/);
+ const exact=techniqueParameters(system,t,{elevate:2,distanceSnapshot:snapshot});assert.equal(exact.powerCosmic,baseline);
+ assert.throws(()=>techniqueParameters(system,t,{elevate:1,distanceSnapshot:snapshot}),/modificador positivo/);
+ const far={version:1,distance:1e8};assert.throws(()=>techniqueParameters(system,t,{elevate:2,distanceSnapshot:far}),/modificador positivo/);
+ system.combat.cosmicPower=baseline-2;assert.equal(techniqueParameters(system,t,{distanceSnapshot:{version:1,distance:3}}).powerCosmic,baseline-2);
+});
+test("bônus de níveis/ajustes e Elevar integram a parcela positiva sem reduzir ficha",()=>{
+ const s=knight();s.profile.level=25;s.combat.powerBonus=-1;const system=prepareKnight(s),before=structuredClone(system),t={...content(),effectKind:"sustained",range:3};
+ const base=10+system.combat.levelModifier;assert.equal(system.combat.cosmicPower,base+1);
+ assert.equal(techniqueParameters(system,t,{elevate:1,distanceSnapshot:{version:1,distance:6}}).powerCosmic,base);
+ assert.throws(()=>techniqueParameters(system,t,{distanceSnapshot:{version:1,distance:6}}),/modificador positivo/);assert.deepEqual(system,before);
+});
+
+import {resistancePreview} from "../module/technique-rules.mjs";
+import {techniquePreviewLabels} from "../module/technique-ui.mjs";
+test("prévia e resistência usam PC reduzido uma vez sem criar dano ou mudar prazo base",()=>{
+ const system=prepareKnight(knight());system.resources.cosmo.value=10;
+ for(const effectKind of ["control","sustained"]){const t={...content(),effectKind,range:3},options={elevate:3,distanceSnapshot:{version:1,distance:6}},p=techniqueParameters(system,t,options),labels=techniquePreviewLabels(system,t,options);
+  assert.match(labels.distanceReduction,/−2 PC já incluído/);assert.equal(labels.powerCosmic,String(system.combat.cosmicPower+1));assert.equal(labels.damage,"0");
+  const result=resistancePreview(system,[],{effectKind,powerCosmic:p.powerCosmic,control:p.control},p.powerCosmic);assert.equal(result.effectsResisted,true);assert.equal(result.application,effectKind);assert.equal(result.damage,undefined);if(effectKind==="control")assert.equal(result.control.rounds,0);
+ }
+});
+
+import Handlebars from "handlebars";
+import {readFile} from "node:fs/promises";
+test("cartão identifica PC reduzido de Controle e conserva ND dos cartões anteriores",async()=>{
+ const render=Handlebars.compile(await readFile(new URL("../templates/technique-chat.hbs",import.meta.url),"utf8"));
+ const distance={distance:6,range:3,levels:2};
+ assert.match(render({distance:{...distance,powerCosmic:true}}),/−2 PC já incluído/);
+ assert.match(render({distance}),/−2 ND já incluído/);
+ assert.doesNotMatch(render({}),/Distância/);
 });

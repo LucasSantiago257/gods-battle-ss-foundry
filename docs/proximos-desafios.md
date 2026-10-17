@@ -100,3 +100,8 @@ Convenção operacional proposta para “uma rodada inteira”: se falhar, bloqu
 ## Após0.38.0: redução de ND por distância em Dano
 
 [Opção de distância na ativação](distancia-alcance.md) reduz ND por faixa iniciada de1,5m além do alcance configurado, com geometria congelada da prévia e revalidação na fila central, pagamento único e recuperação do resultado original. Mesma elevação, um alvo, metros e ND normal final pelo menos1; não inventa semântica de NDzero. Controle/Sustentada (modificador positivo do PC), piso/exceções, áreas e múltiplos alvos são os próximos contratos táticos. Novas condições seguem adiadas.
+
+
+## Após0.39.0: distância em Controle/Sustentada
+
+A [redução por distância](distancia-alcance.md) agora desconta PC de Controle/Sustentada dentro da parcela positiva além de10+Modificador de Nível, incluindo Elevar. Snapshot e recuperação compartilhados com Dano; nenhuma nova condição. Exceder essa parcela permanece manual, sem inferir piso universal ou bônus negativo. Próximo marco tático: áreas/múltiplos alvos com custo único e resolução individual; depois exceções de poderes conforme prioridades.

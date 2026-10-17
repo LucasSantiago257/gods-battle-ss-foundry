@@ -199,3 +199,20 @@ test("recuperação após pagamento republica redução congelada mesmo após mo
  f.target.x=2000;r.controls.publishFail=false;foundry.applications.api.DialogV2.confirm=async()=>true;
  await recoverTechniqueOperation(r.actor,"range");assert.equal(r.stats.payments,1);assert.equal(r.stats.rolls,1);assert.equal(m.flags[ID].attack.damage,61);assert.equal(m.flags[ID].technique.distance.distance,6);
 });
+
+test("Controle e Sustentada publicam PC reduzido e recuperação conserva mesma resistência",async()=>{
+ for(const effectKind of ["control","sustained"]){const r=runtime(),f=rangeRuntime(r);r.item.system.effectKind=effectKind;
+  const m=r.request("rangePC",{targetUuid:f.defender.uuid,options:{...r.options,elevate:3,distanceSnapshot:f.snapshot}});r.controls.publishFail=true;
+  await r.execute(m);assert.equal(r.stats.payments,1);assert.equal(r.actor.system.resources.cosmo.value,5);assert.equal(m.flags[ID].techniqueResponse.status,"paid");
+  f.target.x=5000;r.controls.publishFail=false;foundry.applications.api.DialogV2.confirm=async()=>true;await recoverTechniqueOperation(r.actor,"rangePC");
+  assert.equal(r.stats.payments,1);assert.equal(r.stats.rolls,1);assert.equal(m.flags[ID].attack.powerCosmic,r.actor.system.combat.cosmicPower+1);assert.equal(m.flags[ID].attack.damage,0);assert.equal(m.flags[ID].attack.armorDamage,0);assert.equal(m.flags[ID].technique.distance.powerCosmic,true);
+  if(effectKind==="control")assert.equal(m.flags[ID].attack.control.baseRounds,2);
+ }
+});
+test("parcela insuficiente ou mudança de geometria em Controle não cobra",async()=>{
+ for(const change of ["bonus","move"]){const r=runtime(),f=rangeRuntime(r);r.item.system.effectKind="control";
+  const m=r.request("rangePC",{targetUuid:f.defender.uuid,options:{...r.options,elevate:3,distanceSnapshot:f.snapshot}});
+  if(change==="bonus"){m.flags[ID].techniqueRequest.options.elevate=0;m.flags[ID].techniqueRequest.expectedPayment=cosmoPayment(r.actor.system,2,r.options);}else r.controls.beforeRoll=async()=>{f.target.x+=1;};
+  await r.execute(m);assert.equal(r.stats.payments,0);assert.equal(r.actor.system.resources.cosmo.value,10);assert.equal(m.flags[ID].techniqueResponse.status,change==="bonus"?"failed":"interrupted");
+ }
+});

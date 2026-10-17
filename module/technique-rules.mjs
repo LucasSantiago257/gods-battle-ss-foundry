@@ -45,7 +45,10 @@ export function techniqueParameters(system, technique, options = {}) {
   const effectKind = technique.effectKind ?? "damage";
   if (!EFFECT_KINDS[effectKind] || ["manual","residual"].includes(effectKind)) throw Error("Big Bang primordial inválido ou de aplicação manual.");
   const components=componentOptions(technique,options),distance=distanceReduction(technique,components,options);
-  if(distance&&technique.damageLevel+elevate+components.levelBonus+(system.automation?.techniqueND??0)-distance.levels<1)throw Error("A distância reduz o ND abaixo de1. Resolva esta exceção manualmente; nenhum custo foi gasto.");
+  if(distance&&!distance.powerCosmic&&technique.damageLevel+elevate+components.levelBonus+(system.automation?.techniqueND??0)-distance.levels<1)throw Error("A distância reduz o ND abaixo de1. Resolva esta exceção manualmente; nenhum custo foi gasto.");
+  const initialPowerCosmic=system.combat.cosmicPower+(effectKind==="damage"?0:elevate)+components.powerCosmicBonus;
+  // p.206: preserve 10 + level modifier. Do not infer a negative bonus when p.204 says positive modifier.
+  if(distance?.powerCosmic&&distance.levels>0&&(!Number.isFinite(system.combat.levelModifier)||!Number.isFinite(initialPowerCosmic)||initialPowerCosmic-distance.levels<10+system.combat.levelModifier))throw Error("A distância excede o modificador positivo disponível no PC. Resolva esta exceção manualmente ou ajuste Elevar Cosmo; nenhum custo foi gasto.");
   const cost = integer(integer(technique.cost, "Custo") + integer(technique.costExtra, "CE fixa adicional") + extra + elevate + condense + components.extraCost, "Custo total");
   const skill = system.skills.asterism;
   // p. 193/198: Asterismo acompanha a natureza da técnica usada, com ajuste manual preservado.
@@ -58,7 +61,7 @@ export function techniqueParameters(system, technique, options = {}) {
   const pool=conditionPool(system,Math.max(1,base.dice+advantage),modifier,{maxDice:5});
   return {cost, difficulty: 10 + cost,...(distance?{distance}:{}), control:controlDuration(technique),components,attribute, attributeLabel: ATTRIBUTES[attribute],conditionSummary:conditionSummary(system),
     dice: pool.dice, modifier:pool.modifier, elevate, condense, effectKind, baseDamageLevel:technique.damageLevel,power:technique.power,
-    powerCosmic: system.combat.cosmicPower + (effectKind === "damage" ? 0 : elevate) + components.powerCosmicBonus};
+    powerCosmic: initialPowerCosmic - (distance?.powerCosmic?distance.levels:0)};
 }
 export function cosmoPayment(system, cost, {useExtra = true, allowOverload = false} = {}) {
   integer(cost, "Custo");
