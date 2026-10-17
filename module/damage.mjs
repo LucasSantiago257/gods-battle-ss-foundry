@@ -1,3 +1,4 @@
+import {areaMember} from "./area-rules.mjs";
 import {actionHash} from "./action-rules.mjs";
 import {optionalNote} from "./form-values.mjs";
 import {SYSTEM_ID} from "./config.mjs";
@@ -44,6 +45,7 @@ export async function executeDamageRequest(message,userId) {
     const r=resolution(source,{allowEffectDamage:request.action==="undo"});actor=await fromUuid(r.actorUuid);
     const root=game.messages.get(r.rootMessageId),techniqueTarget=root?.flags?.[SYSTEM_ID]?.attack?.targetUuid;
     if(request.action==="apply"&&root?.flags?.[SYSTEM_ID]?.attack?.effectKind&&root.flags[SYSTEM_ID].attack.effectKind!=="damage")throw Error("A origem desta resistência resolve efeito sem dano. Use o fluxo específico da técnica.");
+    areaMember(root?.flags?.[SYSTEM_ID]?.attack,r.actorUuid);
     if(techniqueTarget&&techniqueTarget!==r.actorUuid)throw Error("A resistência não pertence ao alvo marcado da técnica.");
     if(actor?.type!=="knight" || !actor.testUserPermission(requester,"OWNER")) throw Error("Sem permissão para alterar o defensor.");
     assertNoTechniqueInterruption(actor);
