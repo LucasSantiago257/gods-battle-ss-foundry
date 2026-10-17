@@ -50,7 +50,7 @@ test("botão atualiza distância do alvo original sem mudar recursos ou parâmet
  try{
   f.actor.system=system;f.actor.flags={};
   const output={dataset:{techniquePreview:"distance"}},button={addEventListener:(event,callback)=>button.click=callback},activate={};
-  const form={elements:{},querySelectorAll:()=>[output],querySelector:s=>s.includes("measureTechnique")?button:activate,addEventListener:()=>{}};
+  const form={elements:{},querySelectorAll:()=>[output],querySelector:s=>s.includes("measureTechnique")?button:s.includes("activate")?activate:null,addEventListener:()=>{}};
   installTechniquePreview(form,system,{...content(),range:3},null,f.target);assert.match(output.textContent,/coloque um token/);
   // Advisory measurement can refresh even when the actor has no combat reservations.
   installTechniquePreview(form,system,{...content(),range:3},f.actor,f.target);assert.match(output.textContent,/4,5 m/);

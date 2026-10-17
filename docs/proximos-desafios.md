@@ -110,3 +110,8 @@ A [redução por distância](distancia-alcance.md) agora desconta PC de Controle
 ## Após0.40.0: manobra de área com múltiplos alvos
 
 [Área](tecnicas-area.md) em Dano com Asterismo3: alvos marcados, custo e Asterismo únicos, dificuldade conforme exemplo p.210, dano corporal dividido, reservas de ataque+defesa, resistência/aplicação/desfazer por defensor e recuperação do cartão congelado. Formas/orientação/cobertura, alcance e redução por distância individual permanecem manuais. Próximo marco tático: prévia geométrica e distância por alvo, sem repetir custos; áreas especiais/cooperativas e exceções conforme fontes. Novas condições seguem adiadas.
+
+
+## Após0.41.0: distâncias por alvo e atualização da área
+
+A [tabela de área](tecnicas-area.md) mostra distância/situação de cada alvo e atualiza posições dos mesmos tokens, sem fechar a janela. Medição informativa, preservando custo, parcelas, identidade, fila e recuperação. Próximo contrato: geometria (cone/raio/orientação/inclusão) e combinação de distância com divisão de dano conforme pp.204/210, sem adotar ordem de cálculo silenciosa. Novas condições adiadas.

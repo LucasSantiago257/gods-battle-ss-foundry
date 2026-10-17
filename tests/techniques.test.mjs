@@ -385,3 +385,19 @@ test("botões de área resistem com o alvo escolhido e nunca com token externo s
  renderTechniqueChat(message,{querySelectorAll:()=>buttons});await buttons[2].click();assert.equal(r.sent.at(-1).flags["gods-battle-ss"].resolvedDamage.actorUuid,b.uuid);assert.equal(r.sent.at(-1).flags["gods-battle-ss"].resolvedDamage.rootMessageId,message.id);
  buttons[0].dataset.areaTarget="Actor.external";const before=r.evaluations();await buttons[0].click();assert.equal(r.evaluations(),before);assert.match(r.notices.at(-1),/não é um alvo/);
 });
+
+import {areaTargetSelection} from "../module/area-targets.mjs";
+test("prévia atualizada mantém UUIDs e envia novas posições da mesma área",async()=>{
+ const r=runtime();r.actor.system.skills.asterism.value=3;prepareKnight(r.actor.system);
+ const enemy={uuid:"Actor.enemy",name:"Enemy",type:"knight"},other={uuid:"Actor.other",name:"Other",type:"knight"},f=rangeScene(r.actor,enemy),second={...f.target,id:"other",uuid:"Scene.range.Token.other",actor:other};f.scene.tokens.set(second.id,second);game.scenes=new Map([[f.scene.id,f.scene]]);
+ const marked=[f.target,second].map(document=>({document,actor:document.actor,isVisible:true}));game.user.targets=new Set(marked);globalThis.fromUuid=async uuid=>[r.actor,enemy,other,f.target,second].find(d=>d.uuid===uuid);
+ foundry.applications.api.DialogV2.wait=async()=>{f.target.x+=100;return {areaTargets:areaTargetSelection(marked)};};
+ await useTechnique(r.actor,r.item);assert.equal(r.evaluations(),1);assert.equal(r.actor.system.resources.cosmo.value,6);assert.equal(r.sent[0].flags["gods-battle-ss"].attack.areaTargets[0].actorUuid,enemy.uuid);
+});
+test("atualizar prévia não autoriza trocar a lista original da área",async()=>{
+ const r=runtime();r.actor.system.skills.asterism.value=3;prepareKnight(r.actor.system);
+ const enemy={uuid:"Actor.enemy",name:"Enemy",type:"knight"},other={uuid:"Actor.other",name:"Other",type:"knight"},f=rangeScene(r.actor,enemy),second={...f.target,id:"other",uuid:"Scene.range.Token.other",actor:other};f.scene.tokens.set(second.id,second);
+ game.user.targets=new Set([f.target,second].map(document=>({document,actor:document.actor,isVisible:true})));
+ foundry.applications.api.DialogV2.wait=async()=>({areaTargets:[{tokenUuid:f.target.uuid,actorUuid:"Actor.substitute"},{tokenUuid:second.uuid,actorUuid:other.uuid}]});
+ await useTechnique(r.actor,r.item);assert.equal(r.evaluations(),0);assert.equal(r.updates.length,0);assert.match(r.notices.at(-1),/alvos originais/);
+});
