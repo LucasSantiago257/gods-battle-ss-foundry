@@ -216,3 +216,42 @@ test("parcela insuficiente ou mudança de geometria em Controle não cobra",asyn
   await r.execute(m);assert.equal(r.stats.payments,0);assert.equal(r.actor.system.resources.cosmo.value,10);assert.equal(m.flags[ID].techniqueResponse.status,change==="bonus"?"failed":"interrupted");
  }
 });
+
+import {areaTargetSelection} from "../module/area-targets.mjs";
+function areaRuntime(r){
+ r.actor.system.skills.asterism.value=3;prepareKnight(r.actor.system);
+ const f=rangeRuntime(r);r.item.system.damageLevel=2;
+ const defender2={...f.defender,uuid:"Actor.second",name:"Segundo",system:prepareKnight(knight()),flags:{}};
+ const second={...f.target,id:"second",uuid:"Scene.range.Token.second",actor:defender2,x:500};f.scene.tokens.set(second.id,second);r.targets.set(second.uuid,second);r.targets.set(defender2.uuid,defender2);
+ return {...f,second,defender2,selection:areaTargetSelection([f.target,second].map(document=>({document,actor:document.actor,isVisible:true})))};
+}
+test("área cobra/rola uma vez e congela parcelas e alvos no mesmo cartão",async()=>{
+ const r=runtime(),f=areaRuntime(r),m=r.request("area",{options:{...r.options,areaTargets:f.selection}});await r.execute(m);
+ assert.equal(r.stats.payments,1);assert.equal(r.stats.rolls,1);assert.equal(r.actor.system.resources.cosmo.value,6);assert.equal(m.flags[ID].technique.difficulty,16);assert.equal(m.flags[ID].attack.damage,10.5);assert.equal(m.flags[ID].attack.armorDamage,10);assert.equal(m.flags[ID].attack.areaTargets.length,2);assert.equal(m.flags[ID].attack.areaTargets[1].actorUuid,f.defender2.uuid);assert.equal(m.flags[ID].attack.targetUuid,undefined);
+ await r.execute(m);assert.equal(r.stats.payments,1);assert.equal(r.stats.rolls,1);
+});
+test("área interrompida após pagar recupera mesmo grupo mesmo após remoção de token",async()=>{
+ const r=runtime(),f=areaRuntime(r),m=r.request("area",{options:{...r.options,areaTargets:f.selection}});r.controls.publishFail=true;await r.execute(m);assert.equal(r.stats.payments,1);f.scene.tokens.delete(f.second.id);r.controls.publishFail=false;foundry.applications.api.DialogV2.confirm=async()=>true;await recoverTechniqueOperation(r.actor,"area");assert.equal(r.stats.payments,1);assert.equal(r.stats.rolls,1);assert.equal(m.flags[ID].attack.areaTargets.length,2);
+});
+test("alvo removido, trocado, oculto ou movido em área impede cobrança",async()=>{
+ for(const kind of ["removed","actor","hidden","move","duringRoll"]){const r=runtime(),f=areaRuntime(r),m=r.request("area",{options:{...r.options,areaTargets:f.selection}});
+  if(kind==="removed")f.scene.tokens.delete(f.second.id);if(kind==="actor")f.second.actor=f.defender;if(kind==="hidden")f.second.hidden=true;if(kind==="move")f.second.x++;if(kind==="duringRoll")r.controls.beforeRoll=async()=>{f.second.x++;};
+  await r.execute(m);assert.equal(r.stats.payments,0,kind);assert.equal(m.flags[ID].techniqueResponse.status,kind==="duringRoll"?"interrupted":"failed",kind);
+ }
+});
+test("falha da área ainda cobra uma vez e não publica botões de ataque",async()=>{
+ const r=runtime(),f=areaRuntime(r);r.controls.faces=[1,1];const m=r.request("area",{options:{...r.options,areaTargets:f.selection}});await r.execute(m);assert.equal(r.stats.payments,1);assert.equal(r.stats.rolls,1);assert.equal(m.flags[ID].attack,undefined);assert.equal(m.flags[ID].technique.damage,0);
+});
+
+test("área reserva ataque+defesa atomicamente e duas solicitações não cobram duas vezes",async()=>{
+ const r=runtime(),f=areaRuntime(r),combat={uuid:"Combat.area",started:true,round:1,flags:{[ID]:{actionControl:{enabled:true,epoch:"a"}}},combatants:{contents:[{id:"hero",actor:r.actor}]}};game.combats={contents:[combat]};
+ const a=r.request("areaA",{options:{...r.options,areaTargets:f.selection}}),b=r.request("areaB",{options:{...r.options,areaTargets:f.selection}});game.user=r.gm;
+ await Promise.all([enqueueTechniqueRequest(a,{},r.owner.id),enqueueTechniqueRequest(b,{},r.owner.id)]);
+ assert.equal(r.stats.payments,1);assert.equal(r.stats.rolls,1);assert.equal(r.actor.flags[ID].actionUsage.spent.attack,r.actor.system.combat.attack);assert.equal(r.actor.flags[ID].actionUsage.spent.defense,r.actor.system.combat.defense);assert.equal(b.flags[ID].techniqueResponse.status,"failed");assert.equal(r.renders.at(-1).context.actions.pool,"Ataque + Defesa");
+});
+test("área respeita modos de visibilidade e não publica coordenadas",async()=>{
+ for(const rollMode of ["publicroll","gmroll","blindroll","selfroll"]){const r=runtime(),f=areaRuntime(r),m=r.request("area",{rollMode,options:{...r.options,areaTargets:f.selection}});await r.execute(m);
+  assert.equal(m.flags[ID].attack.areaTargets[0].position,undefined);assert.equal(m.flags[ID].techniqueRequest,undefined);assert.equal(r.actor.flags[ID].techniqueOperations.area.areaTargets,undefined);
+  assert.deepEqual(m.whisper,rollMode==="publicroll"?[]:rollMode==="selfroll"?[r.owner.id]:[r.gm.id]);assert.equal(m.blind,rollMode==="blindroll");
+ }
+});
