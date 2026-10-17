@@ -77,3 +77,8 @@
 .gods-battle .creation-guide .catalog-links button {flex:1 1 120px;font-size:11px;}
 .gods-battle .calculation-ledger {margin:14px 0;overflow-wrap:anywhere;}
 @media (max-width: 700px) {.gods-battle .field-grid {grid-template-columns: repeat(2, minmax(0, 1fr));}.gods-battle .attributes {gap: 5px;}.gods-battle .attribute-card {padding: 7px;}.gods-battle .combat-totals {grid-template-columns: repeat(3, 1fr);}.gods-battle .battle-header {padding: 15px;}.gods-battle .resource-strip {margin: 12px 15px;}.gods-battle .sheet-body {padding: 16px;}}
+
+.technique-area-measurements table {width:100%; border-collapse:collapse; table-layout:fixed;}
+.technique-area-measurements th, .technique-area-measurements td {padding:0.35em; text-align:left; vertical-align:top; overflow-wrap:anywhere;}
+.technique-area-measurements th:first-child {width:35%;}
+.technique-area-measurements th:nth-child(2) {width:18%;}
