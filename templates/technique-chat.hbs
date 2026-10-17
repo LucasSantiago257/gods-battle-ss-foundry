@@ -1,6 +1,7 @@
 <div class="battle-chat"><span class="eyebrow">Técnica · {{effectLabel}}</span><h3>{{name}}</h3>
 {{#if targetName}}<p>Alvo: <strong>{{targetName}}</strong>.</p>{{/if}}
 {{#if distance}}<p>Distância {{distance.distance}} m · alcance {{distance.range}} m · −{{distance.levels}} {{#if distance.powerCosmic}}PC{{else}}ND{{/if}} já incluído (p.204). Centros dos tokens, pela grade; paredes/cobertura manuais.</p>{{/if}}
+{{#if area}}<p>Área · {{area.count}} alvos · dano corporal total {{damageTotal}} dividido em {{area.count}} parcelas de {{damage}} antes da resistência. Armadura: {{armorDamage}} por alvo. Custo e rolagem únicos (p.210).</p>{{/if}}
 <p>Asterismo ({{attributeLabel}}): {{#each results}}<span class="die">{{this}}</span> {{/each}} · modificador {{modifier}}</p>
 <p>Maior {{highest}} + {{tens}} × 2 − {{ones}} × 2 + {{modifier}}.</p>
 <div class="chat-result"><strong>{{total}}</strong><span>{{outcome}}<br>Dificuldade {{difficulty}}</span></div>
@@ -10,9 +11,9 @@
 {{#if success}}<p>Poder Cósmico: <strong>{{powerCosmic}}</strong>.{{#if components.powerCosmicBonus}} Controle sobre as Estrelas: +{{components.powerCosmicBonus}} PC, já incluído (p.219).{{/if}}</p>
 {{#if components.resistanceModifier}}<p>Controle sobre a Destruição: {{components.resistanceModifier}} no teste de resistência do alvo (p.219).</p>{{/if}}
 {{#if isDamage}}<p>ND {{damageLevel}} · dano corporal <strong>{{damage}}</strong> · dano à armadura <strong>{{armorDamage}}</strong> (antes da resistência).</p>{{else}}<p>{{#if control}}Controle: duração base <strong>{{control.baseRounds}} rodadas</strong>, incluindo a ativação.{{else}}Sustentação: duração e oposição conforme a técnica.{{/if}}</p>{{/if}}
-{{#if isDamage}}<p>{{damageLevel}} ND × {{power}} Poder + nível {{userLevel}} + bônus {{damageBonus}}.</p>{{/if}}
+{{#if isDamage}}<p>{{damageLevel}} ND × {{power}} Poder + nível {{userLevel}} + bônus {{damageBonus}}{{#if area}} = {{damageTotal}} total ÷ {{area.count}} alvos{{/if}}.</p>{{/if}}
 {{#if critical}}<p>Sucesso crítico.{{#if isDamage}} +1 ND já incluído no cálculo de dano.{{/if}} Confira os efeitos especiais.</p>{{/if}}
-<button type="button" data-action="resistTechnique">{{#if targetName}}Resistir com o alvo marcado{{else}}Resistir com o cavaleiro selecionado{{/if}}</button><button type="button" data-action="adjustResistance">Ajustar resistência</button><p class="note">Resistir usa o Poder Cósmico acima como dificuldade, sem modificador situacional nem vantagem. Ajustar resistência permite alterar esses ajustes antes de rolar.</p>
+{{#if areaTargets}}{{#each areaTargets}}<p><strong>{{name}}</strong> <button type="button" data-action="resistTechnique" data-area-target="{{actorUuid}}">Resistir</button><button type="button" data-action="adjustResistance" data-area-target="{{actorUuid}}">Ajustar resistência</button></p>{{/each}}{{else}}<button type="button" data-action="resistTechnique">{{#if targetName}}Resistir com o alvo marcado{{else}}Resistir com o cavaleiro selecionado{{/if}}</button><button type="button" data-action="adjustResistance">Ajustar resistência</button>{{/if}}<p class="note">Resistir usa o Poder Cósmico acima como dificuldade, sem modificador situacional nem vantagem. Ajustar resistência permite alterar esses ajustes antes de rolar.</p>
 {{else}}<p>A técnica falhou; não causa dano nem efeitos.</p>{{/if}}
 {{#if nextPenalty}}<p>Falha crítica: −10 no próximo teste de Asterismo.</p>{{/if}}
 {{#if description}}<p class="technique-description">{{description}}</p>{{/if}}
