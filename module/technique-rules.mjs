@@ -1,3 +1,4 @@
+import {areaRules} from "./area-rules.mjs";
 import {distanceReduction} from "./distance-rules.mjs";
 import {controlDuration,controlResistance} from "./control-rules.mjs";
 import {NATURES, ATTRIBUTES} from "./config.mjs";
@@ -44,12 +45,13 @@ export function techniqueParameters(system, technique, options = {}) {
   if (![-1, 0, 1].includes(advantage) || !Number.isFinite(bonus)) throw Error("Modificadores inválidos.");
   const effectKind = technique.effectKind ?? "damage";
   if (!EFFECT_KINDS[effectKind] || ["manual","residual"].includes(effectKind)) throw Error("Big Bang primordial inválido ou de aplicação manual.");
+  const area=areaRules(system,technique,options);
   const components=componentOptions(technique,options),distance=distanceReduction(technique,components,options);
   if(distance&&!distance.powerCosmic&&technique.damageLevel+elevate+components.levelBonus+(system.automation?.techniqueND??0)-distance.levels<1)throw Error("A distância reduz o ND abaixo de1. Resolva esta exceção manualmente; nenhum custo foi gasto.");
   const initialPowerCosmic=system.combat.cosmicPower+(effectKind==="damage"?0:elevate)+components.powerCosmicBonus;
   // p.206: preserve 10 + level modifier. Do not infer a negative bonus when p.204 says positive modifier.
   if(distance?.powerCosmic&&distance.levels>0&&(!Number.isFinite(system.combat.levelModifier)||!Number.isFinite(initialPowerCosmic)||initialPowerCosmic-distance.levels<10+system.combat.levelModifier))throw Error("A distância excede o modificador positivo disponível no PC. Resolva esta exceção manualmente ou ajuste Elevar Cosmo; nenhum custo foi gasto.");
-  const cost = integer(integer(technique.cost, "Custo") + integer(technique.costExtra, "CE fixa adicional") + extra + elevate + condense + components.extraCost, "Custo total");
+  const cost = integer(integer(technique.cost, "Custo") + integer(technique.costExtra, "CE fixa adicional") + extra + elevate + condense + components.extraCost + (area?.extraCost??0), "Custo total");
   const skill = system.skills.asterism;
   // p. 193/198: Asterismo acompanha a natureza da técnica usada, com ajuste manual preservado.
   const attribute = skill.associated || nature.key;
@@ -59,7 +61,7 @@ export function techniqueParameters(system, technique, options = {}) {
   const modifier = (trained ? skill.mod + system.attributes[attribute].mod + skill.bonus + (skill.effectBonus ?? 0) : 0)
     + (system.combat.asterismPenalty ?? 0) + bonus + advantage * 2;
   const pool=conditionPool(system,Math.max(1,base.dice+advantage),modifier,{maxDice:5});
-  return {cost, difficulty: 10 + cost,...(distance?{distance}:{}), control:controlDuration(technique),components,attribute, attributeLabel: ATTRIBUTES[attribute],conditionSummary:conditionSummary(system),
+  return {cost, difficulty: 10 + cost - (area?.extraCost??0) + (area?.difficultyExtra??0),...(area?{area}:{}),...(distance?{distance}:{}), control:controlDuration(technique),components,attribute, attributeLabel: ATTRIBUTES[attribute],conditionSummary:conditionSummary(system),
     dice: pool.dice, modifier:pool.modifier, elevate, condense, effectKind, baseDamageLevel:technique.damageLevel,power:technique.power,
     powerCosmic: initialPowerCosmic - (distance?.powerCosmic?distance.levels:0)};
 }
@@ -91,13 +93,13 @@ export function techniqueOutcome(system, technique, parameters, total) {
     ? Math.max(0, damageLevel * integer(technique.power, "Nível de Poder") + system.profile.level + system.combat.damageBonus + (system.combat.techniqueDamageBonus ?? 0)) : 0;
   const armorDamage = parameters.effectKind !== "damage" ? 0 : damageLevel > 20 ? 100 : damageLevel > 10 ? 70
     : ({bronze: 10, silver: 20, gold: 30}[technique.classification] ?? 0);
-  return {outcome, success, critical, damageLevel, damage: success ? damage : 0, armorDamage: success ? armorDamage : 0,
+  return {outcome, success, critical, damageLevel, damage: success ? damage/(parameters.area?.count??1) : 0,...(parameters.area?{damageTotal:success?damage:0}:{}), armorDamage: success ? armorDamage : 0,
     nextPenalty: total < parameters.difficulty - 10 ? -10 : 0};
 }
 export function activationPreview(system,technique,options={}) {
  const parameters=techniqueParameters(system,technique,options),normal=techniqueOutcome(system,technique,parameters,parameters.difficulty),critical=techniqueOutcome(system,technique,parameters,parameters.difficulty+11);
  let payment,error="";try{payment=cosmoPayment(system,parameters.cost,options);}catch(e){error=e.message;}
- return {parameters,normal,critical,payment,error,formula:parameters.effectKind==="damage"?`${normal.damageLevel} ND × ${parameters.power} + nível ${system.profile.level} + bônus ${system.combat.damageBonus+(system.combat.techniqueDamageBonus??0)}`:"Efeito de controle/sustentação; sem dano genérico."};
+ return {parameters,normal,critical,payment,error,formula:parameters.effectKind==="damage"?`${normal.damageLevel} ND × ${parameters.power} + nível ${system.profile.level} + bônus ${system.combat.damageBonus+(system.combat.techniqueDamageBonus??0)}${parameters.area?` · total ${normal.damageTotal}, dividido por ${parameters.area.count} alvos`:""}`:"Efeito de controle/sustentação; sem dano genérico."};
 }
 export function resistancePreview(system, items, attack, total, difficulty = attack.powerCosmic) {
   const outcome = classify(total, difficulty);

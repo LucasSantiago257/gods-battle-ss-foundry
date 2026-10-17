@@ -154,3 +154,17 @@ test('cartoes mostram valores de dano calculado e efeito sem dano nao oferece ap
  for(const html of [tech,fight]){assert.match(html,/data-action="adjustDamage"/);assert.match(html,/data-action="undoDamage"/);}
  for(const resistance of [{manualEffect:'Sustentada'},{control:{resisted:true}}])assert.doesNotMatch(technique({resistance}),/data-action="applyDamage"/);
 });
+
+test("área aplica uma parcela por defensor e desfaz um sem restaurar o outro",async()=>{
+ const f=fixture(),armor2={...f.armor,id:"armor2",system:structuredClone(f.armor.system)},second={...f.actor,uuid:"Actor.b",id:"b",system:structuredClone(f.actor.system),flags:{},items:new Map([[armor2.id,armor2]])};
+ const root={id:"attack",flags:{[ID]:{attack:{effectKind:"damage",area:{count:2},areaTargets:[{actorUuid:f.actor.uuid,tokenUuid:"Scene.a.Token.a",name:"A"},{actorUuid:second.uuid,tokenUuid:"Scene.a.Token.b",name:"B"}]}}}};game.messages.set(root.id,root);
+ const source2={...f.source,id:"result2",flags:{[ID]:{resolvedDamage:{...f.source.flags[ID].resolvedDamage,actorUuid:second.uuid,armorId:armor2.id}}}};game.messages.set(source2.id,source2);globalThis.fromUuid=async uuid=>uuid===f.actor.uuid?f.actor:second;
+ const first=f.request("first");await executeDamageRequest(first,f.player.id);assert.equal(f.actor.system.resources.health.value,89.5);
+ const next={...f.request("second"),flags:{[ID]:{damageRequest:{messageId:source2.id,action:"apply",expected:damageSnapshot(second,10.5,10,armor2.id).before,override:null}}}};await executeDamageRequest(next,f.player.id);assert.equal(second.system.resources.health.value,89.5);
+ const duplicate=f.request("duplicate");await executeDamageRequest(duplicate,f.player.id);assert.equal(f.actor.system.resources.health.value,89.5);assert.equal(duplicate.flags[ID].damageResponse.ok,false);
+ await executeDamageRequest(f.request("undo","undo"),f.player.id);assert.equal(f.actor.system.resources.health.value,100);assert.equal(second.system.resources.health.value,89.5);
+});
+test("defensor externo não pode aplicar resistência vinculada a uma área",async()=>{
+ const f=fixture();game.messages.set("attack",{flags:{[ID]:{attack:{effectKind:"damage",area:{count:2},areaTargets:[{actorUuid:"Actor.other",tokenUuid:"Scene.a.Token.b",name:"B"},{actorUuid:"Actor.third",tokenUuid:"Scene.a.Token.c",name:"C"}]}}}});
+ const request=f.request();await executeDamageRequest(request,f.player.id);assert.equal(f.actor.system.resources.health.value,100);assert.equal(request.flags[ID].damageResponse.ok,false);
+});

@@ -1,3 +1,5 @@
+import {areaTargetSelection} from "./area-targets.mjs";
+import {areaAttackFor} from "./area-rules.mjs";
 import {SYSTEM_ID, NATURES} from "./config.mjs";
 import {techniqueParameters,cosmoPayment,techniqueReadiness} from "./technique-rules.mjs";
 import {rollTest} from "./rolls.mjs";
@@ -23,16 +25,16 @@ export async function useTechnique(actor, item) {
   try {
     if(!primaryGM()?.active)throw Error("É necessário um mestre ativo para processar a ativação.");
     assertNoTechniqueInterruption(actor);if(pendingTechnique(actor))throw Error("Já existe uma solicitação desta ficha aguardando processamento. Confira o chat antes de repetir.");
-    const targetToken=[...(game.user.targets??[])][0]??null;
-    const target=techniqueTarget(),baseline=activationState(actor,item),rollMode=techniqueRollMode();
+    const targetTokens=[...(game.user.targets??[])],areaTargets=targetTokens.length>1?areaTargetSelection(targetTokens):null,targetToken=areaTargets?null:targetTokens[0]??null;
+    const target=areaTargets?null:techniqueTarget(),baseline=activationState(actor,item),rollMode=techniqueRollMode();
     const effective=techniqueWithComponents(item),profile=effective.componentProfile;
     const content = await foundry.applications.handlebars.renderTemplate(`systems/${SYSTEM_ID}/templates/technique-dialog.hbs`, {
       name: item.name, cost: item.system.cost + item.system.costExtra, current: actor.system.resources.cosmo.value,
       extra: actor.system.resources.cosmoExtra, reserve: actor.system.resources.cosmoReserved,
-      penalty: actor.system.combat.asterismPenalty, unlimited: actor.system.resources.cosmo.unlimited,targetName:target?.name,actions:actionView(actor),components:profile,hasExhaust:profile.rules.some(r=>r.kind==="exhaust"),hasEssence:profile.rules.some(r=>r.kind==="essence"),hasTerrain:profile.rules.some(r=>r.kind==="terrain")
+      penalty: actor.system.combat.asterismPenalty, unlimited: actor.system.resources.cosmo.unlimited,areaTargets,targetName:target?.name,actions:actionView(actor),components:profile,hasExhaust:profile.rules.some(r=>r.kind==="exhaust"),hasEssence:profile.rules.some(r=>r.kind==="essence"),hasTerrain:profile.rules.some(r=>r.kind==="terrain")
     });
     const answer = await foundry.applications.api.DialogV2.wait({window: {title: "Ativar técnica"}, content,
-      render:(_event,dialog)=>installTechniquePreview(dialog.form??dialog.element.querySelector("form"),actor.system,effective,actor,targetToken),
+      render:(_event,dialog)=>installTechniquePreview(dialog.form??dialog.element.querySelector("form"),actor.system,effective,actor,targetToken,areaTargets),
       buttons: [{action: "activate", label: "Gastar CE e rolar", default: true, callback: (_event, button) => {
         return activationFormOptions(button.form);
       }}, {action: "cancel", label: "Cancelar", callback: () => null}], rejectClose: false});
@@ -40,7 +42,7 @@ export async function useTechnique(actor, item) {
     if(activationState(actor,item)!==baseline)throw Error("A ficha ou técnica mudou durante a prévia. Abra a ativação novamente.");
     const changed = techniqueReadiness(item);
     if (changed) throw Error(changed);
-    const options={extra:0,elevate:0,condense:0,bonus:0,advantage:0,useExtra:true,allowOverload:false,...answer};
+    const options={extra:0,elevate:0,condense:0,bonus:0,advantage:0,useExtra:true,allowOverload:false,...answer,...(areaTargets?{areaTargets}: {})};
     techniqueActionPlan(actor,options,"preview");
     if(options.oppositeEssence&&!target)throw Error("Essência Alvo exige um alvo marcado.");
     const parameters = techniqueParameters(actor.system, effective, options);
@@ -77,7 +79,8 @@ export async function resistanceForAttack(attack,tokens=[],character=game.user.c
 const resistanceBusy=new WeakSet();
 export function renderTechniqueChat(message, html) {
   const attack=message.flags?.[SYSTEM_ID]?.attack;
-  const buttons=[html.querySelector('[data-action="resistTechnique"]'),html.querySelector('[data-action="adjustResistance"]')].filter(Boolean);
+  const areaButtons=html.querySelectorAll?[...html.querySelectorAll("[data-area-target]")]:[];
+  const buttons=areaButtons.length?areaButtons:[html.querySelector('[data-action="resistTechnique"]'),html.querySelector('[data-action="adjustResistance"]')].filter(Boolean);
   if(!buttons.length)return;
   const quickAvailable=buttons.some(button=>button.dataset?.action==="adjustResistance");
   if(!message.isContentVisible||!attack||!NATURES[attack.nature]||!Number.isFinite(attack.powerCosmic)
@@ -88,8 +91,9 @@ export function renderTechniqueChat(message, html) {
     if(resistanceBusy.has(message)||!message.isContentVisible)return;
     resistanceBusy.add(message);for(const item of buttons)item.disabled=true;
     try{
-      const actor=await resistanceForAttack(attack,globalThis.canvas?.tokens?.controlled??[]);
-      await rollTest(actor,"resistance",NATURES[attack.nature].resistance,{difficulty:attack.powerCosmic,resistanceAttack:{...attack,messageId:message.id},quick:quickAvailable&&button.dataset.action==="resistTechnique"});
+      const chosen=attack.areaTargets?areaAttackFor(attack,button.dataset.areaTarget):attack;
+      const actor=await resistanceForAttack(chosen,globalThis.canvas?.tokens?.controlled??[]);
+      await rollTest(actor,"resistance",NATURES[chosen.nature].resistance,{difficulty:chosen.powerCosmic,resistanceAttack:{...chosen,messageId:message.id},quick:quickAvailable&&button.dataset.action==="resistTechnique"});
     }catch(error){console.error(error);ui.notifications.error(error.message);}
     finally{resistanceBusy.delete(message);for(const item of buttons)item.disabled=false;}
   });

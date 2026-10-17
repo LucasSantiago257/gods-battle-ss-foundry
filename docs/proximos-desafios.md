@@ -105,3 +105,8 @@ Convenção operacional proposta para “uma rodada inteira”: se falhar, bloqu
 ## Após0.39.0: distância em Controle/Sustentada
 
 A [redução por distância](distancia-alcance.md) agora desconta PC de Controle/Sustentada dentro da parcela positiva além de10+Modificador de Nível, incluindo Elevar. Snapshot e recuperação compartilhados com Dano; nenhuma nova condição. Exceder essa parcela permanece manual, sem inferir piso universal ou bônus negativo. Próximo marco tático: áreas/múltiplos alvos com custo único e resolução individual; depois exceções de poderes conforme prioridades.
+
+
+## Após0.40.0: manobra de área com múltiplos alvos
+
+[Área](tecnicas-area.md) em Dano com Asterismo3: alvos marcados, custo e Asterismo únicos, dificuldade conforme exemplo p.210, dano corporal dividido, reservas de ataque+defesa, resistência/aplicação/desfazer por defensor e recuperação do cartão congelado. Formas/orientação/cobertura, alcance e redução por distância individual permanecem manuais. Próximo marco tático: prévia geométrica e distância por alvo, sem repetir custos; áreas especiais/cooperativas e exceções conforme fontes. Novas condições seguem adiadas.
