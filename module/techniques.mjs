@@ -1,3 +1,4 @@
+import {sameAreaSelection} from "./area-preview.mjs";
 import {areaTargetSelection} from "./area-targets.mjs";
 import {areaAttackFor} from "./area-rules.mjs";
 import {SYSTEM_ID, NATURES} from "./config.mjs";
@@ -42,7 +43,9 @@ export async function useTechnique(actor, item) {
     if(activationState(actor,item)!==baseline)throw Error("A ficha ou técnica mudou durante a prévia. Abra a ativação novamente.");
     const changed = techniqueReadiness(item);
     if (changed) throw Error(changed);
-    const options={extra:0,elevate:0,condense:0,bonus:0,advantage:0,useExtra:true,allowOverload:false,...answer,...(areaTargets?{areaTargets}: {})};
+    const updatedArea=areaTargets?(answer.areaTargets??areaTargets):null;
+    if(areaTargets&&!sameAreaSelection(areaTargets,updatedArea))throw Error("Os alvos originais da área mudaram. Reabra a ativação para escolher outro grupo.");
+    const options={extra:0,elevate:0,condense:0,bonus:0,advantage:0,useExtra:true,allowOverload:false,...answer,...(updatedArea?{areaTargets:updatedArea}: {})};
     techniqueActionPlan(actor,options,"preview");
     if(options.oppositeEssence&&!target)throw Error("Essência Alvo exige um alvo marcado.");
     const parameters = techniqueParameters(actor.system, effective, options);
