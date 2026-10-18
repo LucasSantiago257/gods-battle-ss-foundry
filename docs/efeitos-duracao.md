@@ -64,3 +64,14 @@ Brasas e anotações manuais mostram próxima rodada, fim do prazo e parcelas re
 Sustentada distingue prazo inicial (incluindo a rodada atual), manutenção coberta, recarga atual pendente e perfil de recarga única já pago. Lacunas são indicadas sem somar cobrança retroativa. A contagem de recargas é de registros pendentes, não promessa de gasto automático; pagamento, recursos disponíveis, recuperação e estado alterado continuam sendo validados pelo fluxo existente. Residual continua usando dias da campanha, sem converter rodadas em dias.
 
 Cena/combatente indisponível, registro inválido ou cópia de outra ficha mostram prazo para conferência, sem fabricar contagens. Jogadores podem ver os prazos dos registros já disponíveis na ficha, mas continuam sem ações de mestre. Essa leitura não grava flags, recursos, dano, condições ou prazos novos; não resolve automaticamente nenhuma parcela. O painel não implementa condições ou novas mecânicas de poderes. Validar também no core hospedado13.350, que não foi presumido nesta entrega.
+
+
+## Aplicar parcela e Ajustar separados — 0.46.0
+
+No registro válido de Brasas, o mestre responsável pode usar **Aplicar N PV · rodada R** para aplicar diretamente a parcela exibida, sem abrir outro diálogo. Anotações manuais oferecem **Registrar rodada R**, sem dano. **Ajustar rodada R** conserva a janela anterior para dano final diferente, dispensa da rodada e notas opcionais. A ação direta registra uma única parcela, incluindo quando está atrasada; não resolve todas as pendências do painel.
+
+O botão carrega a rodada e uma assinatura da prévia. Se ficha, PV, registro, encontro ou rodada mudarem, a aplicação é recusada até atualizar a ficha. Dois cliques simultâneos ou um botão antigo não aplicam a próxima parcela atrasada. O mestre responsável recalcula a parcela do registro; valores externos não substituem seu dano na ação direta. Registros inválidos, cópias, falta de propriedade ou mestre secundário não recebem esse atalho. Permissões e operação interrompida continuam sendo conferidas no processamento.
+
+A aplicação usa a mesma fila, journal preparado e gravação conjunta de PV/rodada/conclusão do fluxo anterior. Falha ou resposta perdida continua sendo recuperada pelo registro, sem repetir PV. Não cobra CE, não altera armadura/ações/condições e não aplica nada ao avançar o combate. Cabe ao mestre usar Ajustar quando houver imunidade, redução ou dispensa. A ação concreta substitui o diálogo de conferência do valor padrão; não exige justificativa ou aceite.
+
+Não altera a regra de Brasas, sua classificação ou duração; apenas agiliza um cálculo já publicado. Fonte da parcela: p.225; atribuição preservada no catálogo. Validação no core hospedado13.350 continua pendente, principalmente concorrência, reconexão e fichas sintéticas.
