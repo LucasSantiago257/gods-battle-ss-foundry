@@ -1,5 +1,7 @@
 # Saint Seiya — A Batalha dos Deuses para FoundryVTT
 
+**Rodadas de efeitos:** Aplicar N PV usa diretamente a parcela exibida de Brasas; Registrar rodada resolve anotações sem dano. Ajustar rodada mantém valores finais, dispensa e notas opcionais. Botões antigos e cliques simultâneos não repetem a parcela. Veja [efeitos com duração](docs/efeitos-duracao.md).
+
 **Construtor de técnicas:** cada componente mostra se possui cálculo em Ativar, rodadas assistidas ou aplicação manual, com contagem no resumo e indicação do próximo passo. A consulta preserva custos, rascunho e adesão aos efeitos. Veja [técnicas personalizadas](docs/tecnicas-personalizadas.md).
 
 **Prazos dos efeitos:** painel prioriza rodadas/recargas pendentes e mostra próximos prazos, parcelas restantes e lacunas de Sustentada. Residual continua por dias da campanha. Sem cobrança ou dano ao avançar rodadas. Veja [efeitos com duração](docs/efeitos-duracao.md).
