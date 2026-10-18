@@ -10,7 +10,8 @@ import {activationState,executeTechniqueRequest,recoverTechniqueOperation} from 
 import {techniqueParameters,cosmoPayment} from "../module/technique-rules.mjs";
 import {assertNoTechniqueInterruption} from "../module/master-queue.mjs";
 import {conditionDefinition} from "../module/condition-rules.mjs";
-import {attackTarget,defendAttack} from "../module/combat.mjs";
+import {renderCombatChat} from "../module/damage.mjs";
+import {attackTarget,defendAttack,defensePreview} from "../module/combat.mjs";
 const ID="gods-battle-ss",clone=x=>x===undefined?undefined:JSON.parse(JSON.stringify(x));
 function patch(object,data){for(const[path,value]of Object.entries(data)){const keys=path.split(".");let at=object;for(const key of keys.slice(0,-1))at=at[key]??={};if(keys.at(-1).startsWith("-="))delete at[keys.at(-1).slice(2)];else at[keys.at(-1)]=clone(value);}}
 function runtime(){
@@ -144,3 +145,49 @@ test("Atordoado bloqueia movimento, luta, Cosmo, reação e técnicas antes de g
  r.actor.flags[ID].conditionEffects.s.status="ended";assert.equal(actionView(r.actor).restrictions.stunned,false);assert.doesNotThrow(()=>consumeActionPlan(r.actor,{kind:"consume",pool:"cosmo",amount:1},"cosmo"));
 });
 
+
+test("defesa direta usa uma ação e bônus zero sem diálogo; repetição não cobra novamente",async()=>{
+ const r=runtime(),attack=r.request();await r.execute(attack);attack.isContentVisible=true;game.user=r.owner;
+ const preview=await defensePreview(attack);assert.match(preview.label,/1 ação.*rodada 1.*sem bônus/);
+ foundry.applications.api.DialogV2.wait=async()=>{throw Error("Diálogo inesperado");};
+ const options={quick:true,expectedState:preview.state,expectedFight:preview.fightHash,amount:3,bonus:50};
+ const defense=await defendAttack(attack,options);assert.equal(r.stats.rolls,1);assert.equal(defense.flags[ID].actionRequest.options.amount,1);assert.equal(defense.flags[ID].actionRequest.options.bonus,0);
+ await r.execute(defense);assert.equal(actionView(r.target).remaining.defense,2);assert.equal(r.stats.rolls,2);
+ await assert.rejects(defendAttack(attack,options),/mudaram/);assert.equal(r.stats.paid,2);
+ assert.equal(await defensePreview(attack),null);const duplicate=await defendAttack(attack,{quick:true,expectedState:combatActionState(r.target),expectedFight:actionHash(attack.flags[ID].fight)});await r.execute(duplicate);
+ assert.equal(duplicate.flags[ID].actionResponse.status,"failed");assert.equal(actionView(r.target).remaining.defense,2);assert.equal(r.stats.rolls,2);
+});
+
+test("defesa direta recusa prévia alterada, alvo sem permissão e cartão oculto",async()=>{
+ for(const change of ["round","attack","sheet","owner","hidden"]){
+  const r=runtime(),attack=r.request();await r.execute(attack);attack.isContentVisible=true;game.user=r.owner;const p=await defensePreview(attack);
+  if(change==="round")r.round(2);if(change==="attack")attack.flags[ID].fight.attack++;if(change==="sheet")r.target.system.combat.protection++;if(change==="owner")r.target.isOwner=false;if(change==="hidden")attack.isContentVisible=false;
+  const call=()=>defendAttack(attack,{quick:true,expectedState:p.state,expectedFight:p.fightHash});
+  if(change==="hidden")assert.equal(await call(),undefined);else await assert.rejects(call,/mudaram|proprietário/);
+  assert.equal(r.messages.size,1);assert.equal(r.stats.rolls,1);assert.equal(r.stats.paid,1);
+ }
+});
+
+test("prévia de defesa exige controle e graduação válidos sem alterar reservas",async()=>{
+ const r=runtime(),attack=r.request();await r.execute(attack);attack.isContentVisible=true;game.user=r.owner;
+ for(const grade of [0,6,1.5]){r.target.system.fighting.defense=grade;assert.equal(await defensePreview(attack),null);}
+ r.target.system.fighting.defense=2;r.combat.flags[ID].actionControl.enabled=false;assert.equal(await defensePreview(attack),null);
+ r.combat.flags[ID].actionControl.enabled=true;r.round(2);assert.equal(await defensePreview(attack),null);assert.equal(actionView(r.target).remaining.defense,3);
+});
+
+test("defesa direta recupera publicação perdida sem repetir dados ou ações",async()=>{
+ const r=runtime(),attack=r.request();await r.execute(attack);attack.isContentVisible=true;game.user=r.owner;const p=await defensePreview(attack);
+ const defense=await defendAttack(attack,{quick:true,expectedState:p.state,expectedFight:p.fightHash});r.control.publishFail=true;await r.execute(defense);r.control.publishFail=false;
+ await recoverAction(r.target,defense.id);assert.equal(actionView(r.target).remaining.defense,2);assert.equal(r.stats.rolls,2);assert.equal(r.stats.paid,2);assert.equal(defense.flags[ID].actionResponse.status,"published");
+});
+
+
+test("cartão atualiza prévia após recusar alteração e oculta atalho com solicitação pendente",async()=>{
+ const r=runtime(),attack=r.request();await r.execute(attack);attack.isContentVisible=true;game.user=r.owner;
+ const errors=[];ui.notifications.error=e=>errors.push(e);const buttons=new Map(["quickDefendAttack","defendAttack"].map(key=>[key,{hidden:key==="quickDefendAttack",addEventListener(_event,fn){this.click=fn;},remove(){this.removed=true;}}]));
+ const html={querySelector:selector=>buttons.get(selector.match(/data-action="([^"]+)"/)[1])};await renderCombatChat(attack,html);
+ const button=buttons.get("quickDefendAttack");assert.equal(button.hidden,false);assert.match(button.textContent,/1 ação.*rodada 1/);
+ r.target.system.combat.protection++;await button.click();assert.equal(errors.length,1);assert.equal(r.messages.size,1);assert.equal(button.hidden,false);assert.equal(button.disabled,false);
+ foundry.applications.api.DialogV2.wait=async()=>{throw Error("Diálogo inesperado");};await button.click();assert.equal(r.messages.size,2);assert.equal(button.hidden,true);assert.equal(r.stats.rolls,1);
+ const request=[...r.messages.values()].find(m=>m.flags[ID].actionRequest);await r.execute(request);assert.equal(actionView(r.target).remaining.defense,2);assert.equal(r.stats.rolls,2);
+});

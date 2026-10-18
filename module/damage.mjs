@@ -3,7 +3,7 @@ import {actionHash} from "./action-rules.mjs";
 import {optionalNote} from "./form-values.mjs";
 import {SYSTEM_ID} from "./config.mjs";
 import {damageSnapshot,snapshotMatches,canReadChat,damageTurnSnapshot} from "./combat-rules.mjs";
-import {defendAttack} from "./combat.mjs";
+import {defendAttack,defensePreview} from "./combat.mjs";
 import {primaryGM,runMasterOperation,assertNoTechniqueInterruption} from "./master-queue.mjs";
 export {primaryGM} from "./master-queue.mjs";
 const localBusy=new Set();
@@ -126,10 +126,22 @@ export async function recoverDamageOperation(actor,key) {
     await actor.update({[`flags.${SYSTEM_ID}.damageOperations.${key}.status`]:r.direction==='undo'?'applied':'failed'});
   });
 }
-export function renderCombatChat(message,html) {
-  for(const [action,callback] of [["defendAttack",()=>defendAttack(message)],["applyDamage",()=>requestDamage(message,"apply")],["adjustDamage",()=>requestDamage(message,"apply",{adjust:true})],["undoDamage",()=>requestDamage(message,"undo")]]) {
+export async function renderCombatChat(message,html) {
+  const quickButton=html.querySelector('[data-action="quickDefendAttack"]');
+  let preview=null;
+  const refresh=async()=>{
+    if(!quickButton)return;
+    quickButton.hidden=true;preview=null;
+    try{preview=await defensePreview(message);}catch{/* Unavailable previews keep the adjustable action. */}
+    if(preview){quickButton.textContent=preview.label;quickButton.hidden=false;}
+  };
+  for(const [action,callback] of [["quickDefendAttack",()=>{
+    if(!preview)throw Error("Defesa direta indisponível. Use Ajustar defesa.");
+    return defendAttack(message,{quick:true,expectedState:preview.state,expectedFight:preview.fightHash});
+  }],["defendAttack",()=>defendAttack(message)],["applyDamage",()=>requestDamage(message,"apply")],["adjustDamage",()=>requestDamage(message,"apply",{adjust:true})],["undoDamage",()=>requestDamage(message,"undo")]]) {
     const button=html.querySelector(`[data-action="${action}"]`);if(!button)continue;
     if(!message.isContentVisible) {button.remove();continue;}
-    button.addEventListener("click",async()=>{button.disabled=true;try{await callback();}catch(error){ui.notifications.error(error.message);}finally{button.disabled=false;}});
+    button.addEventListener("click",async()=>{button.disabled=true;try{await callback();}catch(error){ui.notifications.error(error.message);}finally{button.disabled=false;if(action==="quickDefendAttack")await refresh();}});
   }
+  await refresh();
 }

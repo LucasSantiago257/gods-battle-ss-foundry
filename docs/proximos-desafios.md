@@ -177,3 +177,12 @@ O atalho só aparece ao mestre responsável, com pagador/alvo próprios, saldo e
 Mantém o contrato já publicado de Sustentada: nenhuma cobrança ao avançar o combate, 1CE somente na rodada atual, lacunas registradas sem retroatividade, perfil único sem nova cobrança posterior e recarga sem vencer oposição. Alvo, PV, armadura, ações e condições permanecem no fluxo anterior. A fila, journal preparado e recuperação impedem repetir débito após falha ou resposta perdida. Não usa sobrecarga de PV para recarga sem CE livre.
 
 Essa entrega reduz passos de um pagamento já existente; não implementa novos poderes ou condições nem muda a interpretação de manutenção escolhida pela mesa. Fontes e convenções seguem [Sustentada](sustentada.md). Validar concorrência, reconexão e fichas sintéticas no core hospedado13.350, ainda não confirmado.
+
+
+## Defesa física direta — 0.48.0
+
+O cartão de ataque físico oferece **Defender com 1 ação · rodada R · sem bônus**, sem abrir um diálogo. A graduação de Esquiva/Bloqueio, modificador de nível e condições já existentes continuam entrando no cálculo. É uma escolha explícita de uma única ação da reserva de defesa, permitida fora da vez do defensor; não usa toda a reserva nem muda a regra de combate. **Ajustar defesa** conserva o diálogo anterior, com quantidade escolhida e modificador situacional. Fora de controle ativo, continua disponível esse fluxo anterior.
+
+A prévia exige propriedade, graduação válida, reserva disponível, encontro/rodada compatíveis e nenhuma solicitação pendente ou defesa já registrada para o ataque. Se ficha, ataque ou rodada mudarem após renderizar, o primeiro clique não rola nem envia solicitação; o botão atualiza sua prévia. O processamento responsável continua conferindo autoria, visibilidade, alvo, condições, quantidade, permissões e assinatura. Não muda CE, armadura ou regras de condições. Uma resposta perdida usa a recuperação existente sem novos dados ou gasto duplicado.
+
+A ação direta conserva o vínculo entre ataque original, resultado da defesa e Aplicar/Ajustar/Desfazer dano. A quantidade escolhida no diálogo ajustável mantém o comportamento anterior; não foi substituída por uma escolha automática. Cartões antigos já publicados mantêm o botão antigo até serem recriados, enquanto o novo cartão inclui o atalho. Nenhuma alteração de dados persistidos exige migração. Validação no core hospedado13.350 segue pendente.
