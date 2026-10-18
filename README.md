@@ -1,5 +1,7 @@
 # Saint Seiya — A Batalha dos Deuses para FoundryVTT
 
+**Recarga de Sustentada:** Pagar 1 CE extra/atual aplica a recarga exibida sem diálogo; Ajustar recarga mantém preferência de recursos e notas. Prévia antiga e cliques simultâneos não repetem débito. Veja [Sustentada](docs/sustentada.md).
+
 **Rodadas de efeitos:** Aplicar N PV usa diretamente a parcela exibida de Brasas; Registrar rodada resolve anotações sem dano. Ajustar rodada mantém valores finais, dispensa e notas opcionais. Botões antigos e cliques simultâneos não repetem a parcela. Veja [efeitos com duração](docs/efeitos-duracao.md).
 
 **Construtor de técnicas:** cada componente mostra se possui cálculo em Ativar, rodadas assistidas ou aplicação manual, com contagem no resumo e indicação do próximo passo. A consulta preserva custos, rascunho e adesão aos efeitos. Veja [técnicas personalizadas](docs/tecnicas-personalizadas.md).
