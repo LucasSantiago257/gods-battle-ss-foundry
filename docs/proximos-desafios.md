@@ -186,3 +186,12 @@ O cartão de ataque físico oferece **Defender com 1 ação · rodada R · sem b
 A prévia exige propriedade, graduação válida, reserva disponível, encontro/rodada compatíveis e nenhuma solicitação pendente ou defesa já registrada para o ataque. Se ficha, ataque ou rodada mudarem após renderizar, o primeiro clique não rola nem envia solicitação; o botão atualiza sua prévia. O processamento responsável continua conferindo autoria, visibilidade, alvo, condições, quantidade, permissões e assinatura. Não muda CE, armadura ou regras de condições. Uma resposta perdida usa a recuperação existente sem novos dados ou gasto duplicado.
 
 A ação direta conserva o vínculo entre ataque original, resultado da defesa e Aplicar/Ajustar/Desfazer dano. A quantidade escolhida no diálogo ajustável mantém o comportamento anterior; não foi substituída por uma escolha automática. Cartões antigos já publicados mantêm o botão antigo até serem recriados, enquanto o novo cartão inclui o atalho. Nenhuma alteração de dados persistidos exige migração. Validação no core hospedado13.350 segue pendente.
+
+
+## Consulta de efeitos e histórico — 0.49.0
+
+O painel permite buscar por nome do efeito, técnica de origem, alvo e referência de página. Termos separados por espaços são combinados; maiúsculas e acentos não fazem diferença. A seleção separa todos, ativos/pendentes, registros com parcelas ou recargas pendentes e histórico. A contagem mostra quantos registros correspondem, enquanto os totais gerais de rodadas/recargas continuam visíveis. Limpar filtros restaura a visão completa. O histórico abre quando a busca encontra registros nele ou ao escolher Histórico.
+
+Preferências ficam somente na instância da ficha e são reaplicadas ao renderizar após atualização de PV, CE ou rodadas; fechar e reabrir uma nova ficha volta ao padrão. Nenhum dado de busca vai ao Actor, Item, chat ou mundo. Campos de consulta não disparam submitOnChange da ficha, nem Enter envia o formulário. Filtrar não seleciona, encerra, paga, aplica dano ou muda permissões e regras. Registros ocultos por filtro continuam existindo; totais exibidos nos títulos são os totais gerais. “Com parcelas/recargas pendentes” usa os prazos já calculados e não promete reunir novas resistências, oposições ou condições.
+
+Não implementa novos gatilhos ou mecânicas de condições. Próximos contratos de poderes e auditoria de cobertura continuam pendentes; ambiguidades anteriores foram preservadas. A verificação em navegador isolado não substitui o core hospedado13.350.
