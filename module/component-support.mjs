@@ -3,7 +3,7 @@ const prefix="Compendium.gods-battle-ss.componentes-tecnicas.Item.";
 export function componentSupport(component,primary,mixed=false){
  const manual={kind:"manual",label:"Aplicação manual",detail:"Custo e slots são calculados; o efeito deste componente exige aplicação pela mesa."};
  if(primary!=="damage"||mixed)return {...manual,detail:"Este primordial ou composição mista não usa o grupo automático de Dano. Consulte os fluxos próprios e a referência do componente."};
- const id=component.uuid?.startsWith(prefix)?component.uuid.slice(prefix.length):null,rule=COMPONENT_RULES[id];
+ const id=typeof component.uuid==="string"&&component.uuid.startsWith(prefix)?component.uuid.slice(prefix.length):null,rule=id&&Object.hasOwn(COMPONENT_RULES,id)?COMPONENT_RULES[id]:null;
  if(rule&&component.uuid===prefix+id&&component.key===rule.key){
   const increment=["space","stars","destruction"].includes(rule.kind),valid=component.type===(increment?"increment":"bigbang")&&Number.isSafeInteger(component.rank)&&component.rank>=1&&component.rank<=(increment?3:1);
   if(valid)return {kind:"activation",label:"Cálculo disponível em Ativar",detail:rule.kind==="weaken"?"Após concluir, habilite o grupo em Configurar. Calcula a penalidade nesta resistência; extensão a outros ataques continua manual.":"Após concluir, habilite o grupo em Configurar. A ativação calcula somente a parcela descrita no grupo; opções de contexto são escolhidas ao ativar."};
