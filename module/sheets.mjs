@@ -1,3 +1,4 @@
+import {installEffectFilter} from "./effect-filter.mjs";
 import {cosmoDepositContext,depositCosmo,returnCosmo} from "./cosmo-deposits.mjs";
 import {resistResidual} from "./residual-resistance.mjs";
 import {depositResidual} from "./residual.mjs";
@@ -49,6 +50,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
   ]}};
   async _onRender(context, options) {
     await super._onRender(context, options);
+    installEffectFilter(this.element,this._effectFilter??={query:"",scope:"all"});
     const body = this.element.querySelector(".sheet-body");
     // Encaminha o payload nativo ao ActorSheetV2, sem depender de opções appv1.
     body.addEventListener("dragover", event => {if (this.isEditable) event.preventDefault();});
