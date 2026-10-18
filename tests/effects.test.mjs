@@ -120,3 +120,5 @@ test("painel renderiza ativos antes do historico recolhido e conserva acoes e de
  assert.match(html,/nota preservada/);assert.match(html,/100 → 95/);assert.doesNotMatch(html,/<p>Notas: <\/p>/);
  const empty=render({persistentEffectsPanel:effectPanelContext([])});assert.match(empty,/Nenhum efeito ativo/);assert.match(empty,/Nenhum efeito concluído/);assert.doesNotMatch(empty,/data-action="registerEffect"/);
 });
+
+test("prazos da ficha acompanham rodada para mestre e jogador sem gravar recursos ou flags",async()=>{const f=fixture(),record=await f.create(),before=structuredClone({system:f.actor.system,flags:f.actor.flags}),updates=f.actor.updates.length;f.combat.round=4;let rows=effectSheetContext(f.actor);assert.equal(rows[0].pendingRounds,2);assert.equal(effectPanelContext(rows).pendingRounds,2);game.user=f.player;rows=effectSheetContext(f.actor);assert.equal(rows[0].pendingRounds,2);assert.equal(rows[0].canResolve,false);assert.deepEqual({system:f.actor.system,flags:f.actor.flags},before);assert.equal(f.actor.updates.length,updates);assert.equal(effectRecords(f.actor)[record.id].status,"active");});

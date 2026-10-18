@@ -1,3 +1,4 @@
+import {effectDeadline} from "./effect-deadlines.mjs";
 import {recoverCosmoDeposit} from "./cosmo-deposits.mjs";
 import {canResistResidual,recoverResidualResistance} from "./residual-resistance.mjs";
 import {recoverResidual} from "./residual.mjs";
@@ -29,14 +30,14 @@ export function effectSources() {
  return sources.toSorted((a,b)=>a.label.localeCompare(b.label));
 }
 export function effectSheetContext(actor) {
- return Object.entries(effectRecords(actor)).map(([id,record])=>({id,...record,...effectView(actor,record),canResistResidual:canResistResidual(actor,id),residualResistances:Object.values(record.residual?.resistance?.attempts??{}).toSorted((a,b)=>a.attempt-b.attempt),isResidual:record.kind==="residual",isSustained:record.kind==="sustained",sustainModeLabel:record.sustain?.mode==="once"?"única até encerrar":"por rodada",oppositionRound:game.combat?.round,canOppose:canOpposeSustained(actor,id),sustainOppositions:Object.values(record.sustain?.oppositions??{}).toSorted((a,b)=>a.round-b.round||a.attempt-b.attempt),canRetryControl:canRetryControl(actor,id),controlRetries:Object.values(record.controlRetries??{}).toSorted((a,b)=>a.round-b.round),canPay:game.user.isGM&&isPrimaryGM()&&effectView(actor,record).canPay&&!Object.values(actor.flags?.[SYSTEM_ID]?.effectOperations??{}).some(r=>r.status==="prepared"),sustainPayments:Object.values(record.sustain?.payments??{}).toSorted((a,b)=>a.round-b.round),canEnd:game.user.isGM&&record.status==="active",canResolve:game.user.isGM&&effectView(actor,record).canResolve,ticks:Object.values(record.ticks??{}).toSorted((a,b)=>a.round-b.round)})).toSorted((a,b)=>b.time-a.time);
+ return Object.entries(effectRecords(actor)).map(([id,record])=>{const view=effectView(actor,record);return {id,...record,...view,...effectDeadline(view),canResistResidual:canResistResidual(actor,id),residualResistances:Object.values(record.residual?.resistance?.attempts??{}).toSorted((a,b)=>a.attempt-b.attempt),isResidual:record.kind==="residual",isSustained:record.kind==="sustained",sustainModeLabel:record.sustain?.mode==="once"?"única até encerrar":"por rodada",oppositionRound:game.combat?.round,canOppose:canOpposeSustained(actor,id),sustainOppositions:Object.values(record.sustain?.oppositions??{}).toSorted((a,b)=>a.round-b.round||a.attempt-b.attempt),canRetryControl:canRetryControl(actor,id),controlRetries:Object.values(record.controlRetries??{}).toSorted((a,b)=>a.round-b.round),canPay:game.user.isGM&&isPrimaryGM()&&view.canPay&&!Object.values(actor.flags?.[SYSTEM_ID]?.effectOperations??{}).some(r=>r.status==="prepared"),sustainPayments:Object.values(record.sustain?.payments??{}).toSorted((a,b)=>a.round-b.round),canEnd:game.user.isGM&&record.status==="active",canResolve:game.user.isGM&&view.canResolve,ticks:Object.values(record.ticks??{}).toSorted((a,b)=>a.round-b.round)};}).toSorted((a,b)=>b.time-a.time);
 }
 // Só registros próprios em estados finais conhecidos saem da área principal.
 // Cópias e estados desconhecidos precisam continuar visíveis para conferência.
 export function effectPanelContext(rows) {
  const history=[],active=[];
  for(const row of rows)(!row.foreign&&["ended","expired","failed"].includes(row.status)?history:active).push(row);
- return {active,history};
+ return {active:active.toSorted((a,b)=>(a.deadlinePriority??2)-(b.deadlinePriority??2)),history,pendingRounds:active.reduce((sum,r)=>sum+(r.pendingRounds??0),0),pendingMaintenance:active.filter(r=>r.maintenancePending).length};
 }
 export function effectDialogContext(actor) {
  const context=encounterForEffect(actor);

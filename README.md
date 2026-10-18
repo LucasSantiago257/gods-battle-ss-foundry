@@ -1,5 +1,7 @@
 # Saint Seiya — A Batalha dos Deuses para FoundryVTT
 
+**Prazos dos efeitos:** painel prioriza rodadas/recargas pendentes e mostra próximos prazos, parcelas restantes e lacunas de Sustentada. Residual continua por dias da campanha. Sem cobrança ou dano ao avançar rodadas. Veja [efeitos com duração](docs/efeitos-duracao.md).
+
 **Enfraquecer em técnicas compostas:** salvar Configurar com componentes habilitados calcula a penalidade pela graduação efetiva do atributo-chave da natureza (p.227), congelada por ativação e somada à Destruição quando presente. Resistência rápida/Ajustar usam a mesma parcela. Cópias antigas mantêm seus cálculos até configurar; extensão a outros ataques continua manual. Veja [componentes automáticos](docs/componentes-automaticos.md).
 
 **Técnicas em área:** marque dois ou mais tokens de fichas distintas e use Ativar em uma técnica de Dano com Asterismo3. Prévia calcula custo único, dificuldade e parcela corporal por alvo; cartão oferece resistência individual, aplicação e desfazer separados. A tabela compara distância e alcance por alvo; Atualizar prévia conserva o grupo nas novas posições. Forma de referência opcional desenha círculo/cone com orientação e abertura ajustáveis, comparando centros sem alterar o grupo. Acerto, cobertura e redução por distância da área continuam manuais. Veja [técnicas em área](docs/tecnicas-area.md).
