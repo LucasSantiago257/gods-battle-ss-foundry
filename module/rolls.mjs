@@ -40,7 +40,7 @@ export async function rollTest(actor, kind, key, options = {}) {
     content: `<div class="form-group"><label>Dificuldade${options.resistanceAttack?" · Poder Cósmico do ataque":""}</label><input name="dc" type="number" value="${difficulty}" step="1" ${options.resistanceAttack?"readonly":""}></div>
       <div class="form-group"><label>Modificador da situação</label><input name="bonus" type="number" value="0" step="1"></div>
       <div class="form-group"><label>Vantagem / desvantagem</label><select name="advantage"><option value="0">Normal</option><option value="1">Vantagem (+1 dado, +2)</option><option value="-1">Desvantagem (-1 dado, -2)</option></select></div>
-      <p>${parameters.dice}d10; modificador base ${parameters.modifier >= 0 ? "+" : ""}${parameters.modifier}.</p>${componentResistance?`<p>Controle sobre a Destruição: ${componentResistance.modifier} no teste, já incluído (p.219).</p>`:""}<p>${conditionSummary(actor.system)}</p>`,
+      <p>${parameters.dice}d10; modificador base ${parameters.modifier >= 0 ? "+" : ""}${parameters.modifier}.</p>${componentResistance?`<p>${componentResistance.label}: ${componentResistance.modifier} no teste, já incluído (p.${componentResistance.page}).</p>`:""}<p>${conditionSummary(actor.system)}</p>`,
     buttons: [{action: "roll", label: "Rolar", default: true, callback: (_event, button) => {
       const form = button.form;
       return {difficulty: Number(form.elements.dc.value), bonus: Number(form.elements.bonus.value), advantage: Number(form.elements.advantage.value)};

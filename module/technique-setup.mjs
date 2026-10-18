@@ -6,7 +6,7 @@ const options=(choices,value)=>Object.entries(choices).map(([key,label])=>({key,
 const itemState=item=>JSON.stringify({name:item.name,system:item.system.toObject?item.system.toObject():item.system,components:componentState(item)});
 export function techniqueSetupContext(actor,item) {
  const s=item.system,tier=TECHNIQUE_TIERS[s.classification]??TECHNIQUE_TIERS.bronze,status=TECHNIQUE_TIERS[actor.system.profile.status];
- let profile,message="";try{profile=componentProfile(item,{enabled:true,ruleVersion:3});}catch(error){message=error.message;}
+ let profile,message="";try{profile=componentProfile(item,{enabled:true,ruleVersion:4});}catch(error){message=error.message;}
  return {name:item.name,classes:options({bronze:"Bronze",silver:"Prata",gold:"Ouro"},s.classification),natures:options({"":"Selecionar",...Object.fromEntries(Object.entries(NATURES).map(([key,value])=>[key,value.label]))},s.nature),effects:options(EFFECT_KINDS,s.effectKind),modes:options(TECHNIQUE_MODES,s.techniqueMode??"manual"),
   canComponents:!!profile,componentMessage:message,components:profile,componentEnabled:componentState(item).enabled,controlRounds:s.controlRounds??0,cost:s.cost,costExtra:s.costExtra,power:s.power||status?.power||0,damageLevel:s.damageLevel||status?.damageLevel||0,range:s.range||tier.range,printedCost:item.flags?.[SYSTEM_ID]?.source?.reference?.costPrinted??s.costText,statusLabel:STATUS[actor.system.profile.status]??actor.system.profile.status,automatic:status?`ND ${status.damageLevel} · Poder ${status.power}`:"ND/Poder deste status exigem configuração manual."};
 }
@@ -18,10 +18,10 @@ export function techniqueSetupUpdates(actor,item,answer) {
  if(!Number.isFinite(answer.range)||answer.range<0)throw Error("Alcance inválido.");
  const configured=effectiveTechnique(actor.system,{...item.system,...answer});
  if(answer.effectKind==="damage"&&(configured.power<1||configured.damageLevel<1))throw Error("Dano exige ND e Poder positivos.");
- if(answer.componentAutomation){if(answer.effectKind!=="damage")throw Error("Este grupo automático exige primordial Dano.");componentProfile(item,{enabled:true,ruleVersion:3});}
+ if(answer.componentAutomation){if(answer.effectKind!=="damage")throw Error("Este grupo automático exige primordial Dano.");componentProfile(item,{enabled:true,ruleVersion:4});}
  const fields=["classification","nature","effectKind","techniqueMode","cost","costExtra","range"];
  if(answer.techniqueMode==="manual")fields.push("power","damageLevel");
- return {...Object.fromEntries(fields.map(key=>[`system.${key}`,answer[key]])),"system.controlRounds":answer.controlRounds??0,"system.techniqueReviewed":true,[`flags.${SYSTEM_ID}.componentAutomation`]:answer.componentAutomation===true,...(answer.componentAutomation?{[`flags.${SYSTEM_ID}.componentRuleVersion`]:3}:{})};
+ return {...Object.fromEntries(fields.map(key=>[`system.${key}`,answer[key]])),"system.controlRounds":answer.controlRounds??0,"system.techniqueReviewed":true,[`flags.${SYSTEM_ID}.componentAutomation`]:answer.componentAutomation===true,...(answer.componentAutomation?{[`flags.${SYSTEM_ID}.componentRuleVersion`]:4}:{})};
 }
 export async function setupTechnique(item) {
  const actor=item?.parent;

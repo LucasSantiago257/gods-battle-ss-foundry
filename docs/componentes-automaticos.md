@@ -1,3 +1,15 @@
+# Enfraquecer — 0.43.0
+
+Em técnicas personalizadas de Dano com composição canônica salva, Enfraquecer (p.227) aplica como penalidade na resistência a graduação efetiva do atributo-chave da natureza da técnica: Força/Físico, Sentidos/Mental, Velocidade/Natureza ou Cosmo/Manipulação. Usa graduação, não o modificador da tabela nem bônus situacional do Asterismo. A associação manual da perícia Asterismo não redefine a natureza do golpe. A graduação inclui os benefícios de atributos já suportados pela ficha e fica congelada na ativação paga, com nome do atributo e valor no cartão.
+
+O cálculo cobre a resistência contra **esta ativação**. Não reduz permanentemente a ficha do defensor, não cria uma condição e não estende a penalidade automaticamente a outros ataques do usuário. A formulação da p.227 menciona testes contra o PC do usuário sem estabelecer aqui duração/alcance entre técnicas: essa extensão continua manual até contrato próprio. Primordiais Controle/Sustentada/Residual e técnicas de catálogo sem composição canônica continuam fora deste grupo.
+
+Destruição e Enfraquecer, quando presentes na mesma composição, entram como parcelas negativas distintas, somadas uma vez no teste; o cartão lista ambas. O PC, os dados de resistência, ND, dano, alcance, dificuldade de Asterismo e custo fixo não recebem bônus novos por Enfraquecer. Slots já estão no custo da composição, sem nova cobrança. Resistência rápida e Ajustar usam a mesma parcela; ajustes situacionais continuam separados. Sem novas condições.
+
+Cópias com grupos1/2/3 mantêm Enfraquecer manual. Salvar Configurar com o grupo habilitado adota o grupo4; desabilitar volta ao fluxo manual, sem alterar os parâmetros base. Composição e graduação são recalculadas pelo mestre antes do pagamento; alterações durante a prévia/rolagem interrompem a operação. Recuperar resultado pago conserva a graduação original mesmo se o usuário evoluir depois, sem repetir rolagem/custo. Cartões antigos de Destruição mantêm metadados anteriores; cartões novos com ambas as parcelas validam soma, natureza, atributo, graduação, IDs/chaves e duplicatas antes de rolar.
+
+Fontes: p.227 (Enfraquecer), p.219 (Destruição), regras de natureza e Asterismo pp.193/198. Autor: Dhoko de Libra; [atribuição](../ATTRIBUTION.md). Implementação parcial explicitada acima; testes locais não confirmam execução no core hospedado13.350.
+
 # Controle sobre a Destruição — 0.35.0
 
 O incremento canônico de graduação 1/2/3 aplica −1/−2/−3 ao teste de resistência contra a técnica de Dano, conforme p.219. O mestre congela a parcela no cartão da ativação. Resistência rápida e ajustada incluem a penalidade uma vez, mostrando-a como já incluída; o modificador situacional continua disponível para outras parcelas. O PC, a quantidade de dados, ND, dano e custos permanecem os calculados pelas outras regras.
