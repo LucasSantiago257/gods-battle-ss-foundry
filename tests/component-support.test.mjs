@@ -1,0 +1,12 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import {COMPONENT_RULES} from "../module/technique-components.mjs";
+import {componentSupport,componentSupportSummary} from "../module/component-support.mjs";
+const prefix="Compendium.gods-battle-ss.componentes-tecnicas.Item.";
+const component=(id,rule)=>({uuid:prefix+id,key:rule.key,type:["space","stars","destruction"].includes(rule.kind)?"increment":"bigbang",rank:1});
+const brasas={uuid:prefix+"e63322f3195be739",key:"bigbang:extra:Brasas",type:"bigbang",rank:1};
+test("suporte segue os sete IDs/chaves implementados, sem interpretar nomes",()=>{assert.equal(Object.keys(COMPONENT_RULES).length,7);for(const[id,rule]of Object.entries(COMPONENT_RULES)){const c=component(id,rule),before=structuredClone(c);assert.equal(componentSupport(c,"damage").kind,"activation");assert.deepEqual(c,before);assert.equal(componentSupport({...c,name:rule.label,uuid:prefix+"unknown"},"damage").kind,"manual");}});
+test("Brasas indica registro separado, não aplicação automática ao ativar",()=>{const s=componentSupport(brasas,"damage");assert.equal(s.kind,"rounds");assert.match(s.detail,/não cria o registro automaticamente/);});
+test("outros primordiais e mistos não anunciam grupo de Dano",()=>{for(const primary of ["control","sustained","residual"]){assert.equal(componentSupport(brasas,primary).kind,"manual");for(const[id,rule]of Object.entries(COMPONENT_RULES))assert.equal(componentSupport(component(id,rule),primary).kind,"manual");}assert.equal(componentSupport(brasas,"damage",true).kind,"manual");});
+test("referência, tipo e graduação adulterados continuam manuais",()=>{const [id,rule]=Object.entries(COMPONENT_RULES)[0],c=component(id,rule);for(const change of [{key:"other"},{uuid:"Compendium.other.componentes-tecnicas.Item."+id},{rank:4},{type:"artifact"}])assert.equal(componentSupport({...c,...change},"damage").kind,"manual");});
+test("resumo distingue cálculo, rodadas e manual sem alterar a composição",()=>{const [id,rule]=Object.entries(COMPONENT_RULES)[0],rows=[{slot:"a",...component(id,rule)},{slot:"b",...brasas},{slot:"c",uuid:prefix+"unknown",key:"bigbang:extra:Outro"}],before=structuredClone(rows),s=componentSupportSummary(rows,"damage");assert.equal(s.activation,1);assert.equal(s.rounds,1);assert.equal(s.manual,1);assert.deepEqual(s.rows.map(r=>r.slot),["a","b","c"]);assert.deepEqual(rows,before);rows.push({slot:"mixed",key:"bigbang:primordial:Controle"});assert.equal(componentSupportSummary(rows,"damage").manual,4);});
