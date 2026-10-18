@@ -2,7 +2,7 @@ import {SYSTEM_ID,FIGHTING} from "./config.mjs";
 import {evaluatePool,prepareRollMessage} from "./rolls.mjs";
 import {physicalDamage,damageTurnSnapshot} from "./combat-rules.mjs";
 import {actionView,actionHash,assertActionAllowed} from "./action-rules.mjs";
-import {submitCombatAction,combatActionState} from "./actions.mjs";
+import {submitCombatAction,combatActionState,pendingAction} from "./actions.mjs";
 import {assertNoTechniqueInterruption} from "./master-queue.mjs";
 import {conditionPool,conditionSummary,conditionSignature} from "./condition-rules.mjs";
 const escaped = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -33,7 +33,20 @@ export async function attackTarget(actor) {
     return await ChatMessage.create(message);
   } catch(error) {ui.notifications.error(error.message);} finally {busy.delete(actor);}
 }
-export async function defendAttack(message) {
+// The direct action spends exactly one defense, never the entire reserve.
+export async function defensePreview(message) {
+  const fight=message.flags?.[SYSTEM_ID]?.fight;
+  if(!message.isContentVisible||!fight)return null;
+  const actor=await fromUuid(fight.targetUuid);
+  if(!actor?.isOwner||actor.type!=="knight")return null;
+  assertNoTechniqueInterruption(actor);assertActionAllowed(actor,"defense");
+  const view=actionView(actor);
+  if(pendingAction(actor)||Object.values(actor.flags?.[SYSTEM_ID]?.actionOperations??{}).some(r=>r.actorUuid===actor.uuid&&r.rootId===message.id&&r.kind==="defend"&&["prepared","paid"].includes(r.status)))return null;
+  if(!view.enabled||view.remaining.defense<1||!Number.isInteger(actor.system.fighting.defense)||actor.system.fighting.defense<1||actor.system.fighting.defense>5)return null;
+  if(fight.actionContext&&["combatUuid","round","epoch"].some(key=>fight.actionContext[key]!==view.context[key]))return null;
+  return {state:combatActionState(actor),fightHash:actionHash(fight),label:`Defender com 1 ação · rodada ${view.context.round} · sem bônus`};
+}
+export async function defendAttack(message,{quick=false,expectedState=null,expectedFight=null}={}) {
   const fight=message.flags?.[SYSTEM_ID]?.fight;
   if (!message.isContentVisible || !fight) return;
   const actor=await fromUuid(fight.targetUuid);
@@ -45,8 +58,9 @@ export async function defendAttack(message) {
     if(view.enabled&&view.remaining.defense<1)throw Error("Nenhuma ação de defesa disponível nesta rodada.");
     const grade=actor.system.fighting.defense;
     if (grade<1) throw Error("Configure a graduação de Esquiva/Bloqueio antes de defender.");
+    if(quick&&(quick!==true||!view.enabled||expectedState!==baseline||expectedFight!==fightHash))throw Error("Ficha, ataque, rodada ou ações mudaram. Atualize a defesa antes de rolar.");
     const content='<label>Modificador situacional<input type="number" name="bonus" value="0"></label>'+(view.enabled?`<label>Ações de defesa a usar (${view.remaining.defense} disponíveis)<input name="amount" type="number" min="1" max="${view.remaining.defense}" value="${view.remaining.defense}"></label><p>Defender é permitido fora da sua vez. Confirmar consome a quantidade escolhida.</p>`:"<p>Sem controle ativo: usa o total da ficha sem gastar reservas.</p>");
-    const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Defender ataque"},content,buttons:[{action:"roll",label:view.enabled?"Confirmar ações e rolar":"Rolar defesa",default:true,callback:(_e,b)=>({bonus:Number(b.form.elements.bonus.value),amount:Number(b.form.elements.amount?.value??0)})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
+    const answer=quick?{bonus:0,amount:1}:await foundry.applications.api.DialogV2.wait({window:{title:"Defender ataque"},content,buttons:[{action:"roll",label:view.enabled?"Confirmar ações e rolar":"Rolar defesa",default:true,callback:(_e,b)=>({bonus:Number(b.form.elements.bonus.value),amount:Number(b.form.elements.amount?.value??0)})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
     if (answer===null || answer===undefined) return;
     if(combatActionState(actor)!==baseline||actionHash(message.flags?.[SYSTEM_ID]?.fight)!==fightHash)throw Error("Ficha, ataque, rodada ou ações mudaram. Abra a defesa novamente.");
     if(view.enabled)return await submitCombatAction(actor,{kind:"defend",rootId:message.id,fightHash,bonus:answer.bonus,amount:answer.amount},baseline);
@@ -61,4 +75,3 @@ export async function defendAttack(message) {
     return await ChatMessage.create(data);
   } finally {busy.delete(actor);}
 }
-
