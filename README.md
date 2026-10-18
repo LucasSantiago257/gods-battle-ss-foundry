@@ -1,5 +1,7 @@
 # Saint Seiya — A Batalha dos Deuses para FoundryVTT
 
+**Defesa física direta:** o cartão oferece Defender com 1 ação, mostrando a rodada e sem bônus situacional. Ajustar defesa mantém quantidade e modificador livres. O mestre processa a mesma fila e recuperação, sem repetir o gasto do ataque original.
+
 **Recarga de Sustentada:** Pagar 1 CE extra/atual aplica a recarga exibida sem diálogo; Ajustar recarga mantém preferência de recursos e notas. Prévia antiga e cliques simultâneos não repetem débito. Veja [Sustentada](docs/sustentada.md).
 
 **Rodadas de efeitos:** Aplicar N PV usa diretamente a parcela exibida de Brasas; Registrar rodada resolve anotações sem dano. Ajustar rodada mantém valores finais, dispensa e notas opcionais. Botões antigos e cliques simultâneos não repetem a parcela. Veja [efeitos com duração](docs/efeitos-duracao.md).
