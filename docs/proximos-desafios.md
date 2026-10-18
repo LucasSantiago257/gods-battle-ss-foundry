@@ -115,3 +115,14 @@ A [redução por distância](distancia-alcance.md) agora desconta PC de Controle
 ## Após0.41.0: distâncias por alvo e atualização da área
 
 A [tabela de área](tecnicas-area.md) mostra distância/situação de cada alvo e atualiza posições dos mesmos tokens, sem fechar a janela. Medição informativa, preservando custo, parcelas, identidade, fila e recuperação. Próximo contrato: geometria (cone/raio/orientação/inclusão) e combinação de distância com divisão de dano conforme pp.204/210, sem adotar ordem de cálculo silenciosa. Novas condições adiadas.
+
+
+## Geometria de referência — 0.42.0
+
+Na janela de área, abra **Forma de referência (opcional)** e escolha círculo ou cone. O desenho usa o alcance efetivo como raio/comprimento e representa os centros dos tokens originais, numerados conforme a tabela; U marca a origem. Direção 0° aponta à direita e 90° abaixo. A abertura inicial de 90° é parâmetro visual ajustável, não regra extraída do livro. Círculo é uma referência disponível à mesa, não uma interpretação obrigatória da palavra “raio” da p.204. O livro cita formas e alcance, mas não se adotou um ângulo obrigatório.
+
+A referência é plana, euclidiana, em metros e na mesma elevação. A tabela continua medindo pela grade/diagonais do Foundry e pode diferir do desenho. “Centro dentro/fora da referência” não decide acerto, interseção com bordas de tokens, paredes, cobertura ou linha de visão. Não há seleção automática, filtro do grupo, template persistente na cena, alteração de CE/ações/DC/dano ou inclusão de coordenadas novas no cartão/ficha. Para mudar o grupo, reabra a ativação.
+
+**Atualizar prévia da área** conserva os mesmos UUIDs e atualiza posições, distâncias e referência. Origem ambígua, unidade/escala/alcance inválidos, parâmetros visuais incompletos ou cena indisponível deixam o desenho manual sem bloquear por si só a ativação. Tokens ocultos/externos/trocados não são desenhados; elevação diferente não é classificada como fora. Erro de atualização remove o desenho anterior. Validações já existentes de alvos, movimento, permissão e cobrança única continuam valendo.
+
+A combinação da redução individual de distância (p.204) com a divisão de dano (p.210) continua manual, sem inventar ordem de cálculo. Próximos contratos: distância por alvo com fórmula explícita; ampliar componentes executáveis e exceções de poderes sem novas condições. Validar no core hospedado13.350 seleção da origem, tokens sintéticos, atualização/movimento e permissões. A prévia Edge isolada não confirma compatibilidade do servidor.
