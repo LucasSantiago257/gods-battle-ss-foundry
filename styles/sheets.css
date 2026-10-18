@@ -92,3 +92,8 @@
 .area-reference-inside circle { fill:#c5e2b8; stroke:#284e20; stroke-width:3; }
 .area-reference-outside circle { fill:#f4d0b2; stroke:#75401a; stroke-width:3; }
 .technique-area-geometry svg text { fill:#111; font:38px sans-serif; }
+
+.gods-battle .effect-filter {display:flex; flex-wrap:wrap; gap:8px; align-items:end; margin-top:12px;}
+.gods-battle .effect-filter label {flex:1 1 180px; min-width:0;}
+.gods-battle .effect-filter input, .gods-battle .effect-filter select {width:100%;}
+.gods-battle [data-effect-record][hidden], .gods-battle .effect-history[hidden] {display:none !important;}
