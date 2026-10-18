@@ -46,7 +46,7 @@ export function techniqueParameters(system, technique, options = {}) {
   const effectKind = technique.effectKind ?? "damage";
   if (!EFFECT_KINDS[effectKind] || ["manual","residual"].includes(effectKind)) throw Error("Big Bang primordial inválido ou de aplicação manual.");
   const area=areaRules(system,technique,options);
-  const components=componentOptions(technique,options),distance=distanceReduction(technique,components,options);
+  const components=componentOptions(technique,options,system),distance=distanceReduction(technique,components,options);
   if(distance&&!distance.powerCosmic&&technique.damageLevel+elevate+components.levelBonus+(system.automation?.techniqueND??0)-distance.levels<1)throw Error("A distância reduz o ND abaixo de1. Resolva esta exceção manualmente; nenhum custo foi gasto.");
   const initialPowerCosmic=system.combat.cosmicPower+(effectKind==="damage"?0:elevate)+components.powerCosmicBonus;
   // p.206: preserve 10 + level modifier. Do not infer a negative bonus when p.204 says positive modifier.
