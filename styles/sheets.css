@@ -82,3 +82,13 @@
 .technique-area-measurements th, .technique-area-measurements td {padding:0.35em; text-align:left; vertical-align:top; overflow-wrap:anywhere;}
 .technique-area-measurements th:first-child {width:35%;}
 .technique-area-measurements th:nth-child(2) {width:18%;}
+
+.technique-area-geometry { margin:.7em 0; }
+.technique-area-geometry summary { cursor:pointer; font-weight:bold; }
+.technique-area-geometry [hidden] { display:none; }
+.technique-area-geometry svg { display:block; width:100%; max-height:320px; background:#f5f1e8; border:1px solid #827664; }
+.area-reference-shape { fill:#8db8db55; stroke:#315e85; stroke-width:4; }
+.area-reference-origin circle { fill:#ddd; stroke:#222; stroke-width:3; }
+.area-reference-inside circle { fill:#c5e2b8; stroke:#284e20; stroke-width:3; }
+.area-reference-outside circle { fill:#f4d0b2; stroke:#75401a; stroke-width:3; }
+.technique-area-geometry svg text { fill:#111; font:38px sans-serif; }
