@@ -53,3 +53,14 @@ Na 0.18.1, as janelas do mestre para condições, efeitos, Controle, ajustes e r
 
 
 Controle vinculado permite na0.19.0 nova resistência genérica pública processada pelo mestre, com custo1/2CE, resultado e encerramento opcional no mesmo pagamento. Recuperação pelo journal de efeitos conserva recursos e publica o mesmo cartão. Exceções de estados e resultados privados permanecem manuais. Ver controle.md.
+
+
+## Prazos visíveis e pendências primeiro — 0.44.0
+
+O painel Efeitos com duração mostra a quantidade de rodadas por conferir e de recargas de Sustentada pendentes. Registros com pendências ficam antes dos demais ativos; o histórico continua recolhido e preservado. O resumo de cada registro traz o prazo mesmo fechado. Detalhes com ação disponível de rodada, recarga ou oposição abrem diretamente, conservando os mesmos botões e permissões.
+
+Brasas e anotações manuais mostram próxima rodada, fim do prazo e parcelas restantes, incluindo as atrasadas. Uma parcela aplicada ou dispensada sai da contagem; retroceder o encontro não recria parcelas já registradas. Passar do prazo sem resolver mantém as rodadas pendentes, sem expirar/aplicar/dispensar automaticamente. “Rodadas pendentes” conta parcelas de registros, não rodadas únicas do encontro.
+
+Sustentada distingue prazo inicial (incluindo a rodada atual), manutenção coberta, recarga atual pendente e perfil de recarga única já pago. Lacunas são indicadas sem somar cobrança retroativa. A contagem de recargas é de registros pendentes, não promessa de gasto automático; pagamento, recursos disponíveis, recuperação e estado alterado continuam sendo validados pelo fluxo existente. Residual continua usando dias da campanha, sem converter rodadas em dias.
+
+Cena/combatente indisponível, registro inválido ou cópia de outra ficha mostram prazo para conferência, sem fabricar contagens. Jogadores podem ver os prazos dos registros já disponíveis na ficha, mas continuam sem ações de mestre. Essa leitura não grava flags, recursos, dano, condições ou prazos novos; não resolve automaticamente nenhuma parcela. O painel não implementa condições ou novas mecânicas de poderes. Validar também no core hospedado13.350, que não foi presumido nesta entrega.
