@@ -166,3 +166,14 @@ O botão carrega a rodada e uma assinatura da prévia. Se ficha, PV, registro, e
 A aplicação usa a mesma fila, journal preparado e gravação conjunta de PV/rodada/conclusão do fluxo anterior. Falha ou resposta perdida continua sendo recuperada pelo registro, sem repetir PV. Não cobra CE, não altera armadura/ações/condições e não aplica nada ao avançar o combate. Cabe ao mestre usar Ajustar quando houver imunidade, redução ou dispensa. A ação concreta substitui o diálogo de conferência do valor padrão; não exige justificativa ou aceite.
 
 Não altera a regra de Brasas, sua classificação ou duração; apenas agiliza um cálculo já publicado. Fonte da parcela: p.225; atribuição preservada no catálogo. Validação no core hospedado13.350 continua pendente, principalmente concorrência, reconexão e fichas sintéticas.
+
+
+## Recarga direta e Ajustar separados — 0.47.0
+
+O painel de Sustentada oferece **Pagar 1 CE extra/atual · rodada R**, mostrando de qual reserva será retirada a recarga. A ação direta usa CE extra primeiro; sem ela, usa somente CE atual livre, preservando a reserva. Com CE ilimitada, o botão indica **Registrar recarga ilimitada** e conserva os saldos. **Ajustar recarga** mantém o diálogo existente para escolher outra preferência de CE extra e notas opcionais. A preferência do diálogo anterior não foi alterada.
+
+O atalho só aparece ao mestre responsável, com pagador/alvo próprios, saldo e registro válidos e sem operação bloqueada. Rodada e assinatura da prévia incluem o pagador, o alvo e o registro. Qualquer mudança antes ou durante o processamento exige atualizar a ficha; um botão antigo ou cliques simultâneos não pagam a próxima rodada. Valores e preferência recebidos de fora não substituem o custo fixo/preferência explícita dessa ação direta.
+
+Mantém o contrato já publicado de Sustentada: nenhuma cobrança ao avançar o combate, 1CE somente na rodada atual, lacunas registradas sem retroatividade, perfil único sem nova cobrança posterior e recarga sem vencer oposição. Alvo, PV, armadura, ações e condições permanecem no fluxo anterior. A fila, journal preparado e recuperação impedem repetir débito após falha ou resposta perdida. Não usa sobrecarga de PV para recarga sem CE livre.
+
+Essa entrega reduz passos de um pagamento já existente; não implementa novos poderes ou condições nem muda a interpretação de manutenção escolhida pela mesa. Fontes e convenções seguem [Sustentada](sustentada.md). Validar concorrência, reconexão e fichas sintéticas no core hospedado13.350, ainda não confirmado.

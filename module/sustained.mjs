@@ -42,12 +42,19 @@ export async function registerSustained(actor){
   await actor.update({[`flags.${SYSTEM_ID}.persistentEffects.${id}`]:record});return record;
  });
 }
-export async function paySustained(actor,key){
+const quickPaymentState=(actor,key,target,round)=>actionHash({effectId:key,payer:effectState(actor),target:effectState(target),round});
+export function sustainedPaymentPreview(actor,key){
+ available(actor);keyOf(key);const plan=sustainedPaymentPlan(actor,key,{useExtra:true,reason:""});
+ if(!plan.target.isOwner)throw Error("O alvo não permite a conferência desta recarga.");
+ return {round:plan.round,signature:quickPaymentState(actor,key,plan.target,plan.round),label:plan.payment.unlimited?`Registrar recarga ilimitada · rodada ${plan.round}`:`Pagar 1 CE ${plan.payment.fromExtra?"extra":"atual"} · rodada ${plan.round}`};
+}
+export async function paySustained(actor,key,{quick=false,expectedRound=null,expectedState=null}={}){
  available(actor);keyOf(key);const preview=sustainedView(actor,effectRecords(actor)[key]??{}),baseline=effectState(actor),targetBaseline=effectState(preview.target);
  if(!preview.canPay)throw Error("Esta rodada já está coberta; retrocesso não repete a cobrança.");
- const content=await foundry.applications.handlebars.renderTemplate(`systems/${SYSTEM_ID}/templates/sustained-payment.hbs`,{name:preview.record.label,targetName:preview.record.sustain.targetName,payerName:actor.name,mode:preview.mode,isOnce:preview.mode==="once",round:preview.context.round,gap:preview.overdue?{first:preview.nextRound,last:preview.context.round-1}:null,current:actor.system.resources.cosmo.value,reserved:actor.system.resources.cosmoReserved,extra:actor.system.resources.cosmoExtra,unlimited:actor.system.resources.cosmo.unlimited});
+ if(typeof quick!=="boolean"||quick&&(!Number.isSafeInteger(expectedRound)||expectedRound!==preview.context.round||typeof expectedState!=="string"||expectedState!==quickPaymentState(actor,key,preview.target,preview.context.round)))throw Error("A prévia da recarga mudou. Atualize a ficha antes de pagar o valor exibido.");
+ const content=quick?null:await foundry.applications.handlebars.renderTemplate(`systems/${SYSTEM_ID}/templates/sustained-payment.hbs`,{name:preview.record.label,targetName:preview.record.sustain.targetName,payerName:actor.name,mode:preview.mode,isOnce:preview.mode==="once",round:preview.context.round,gap:preview.overdue?{first:preview.nextRound,last:preview.context.round-1}:null,current:actor.system.resources.cosmo.value,reserved:actor.system.resources.cosmoReserved,extra:actor.system.resources.cosmoExtra,unlimited:actor.system.resources.cosmo.unlimited});
  await guard(actor,baseline,null,preview.target,targetBaseline);
- const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Pagar recarga de Sustentada"},content,buttons:[{action:"pay",label:"Pagar 1 CE nesta rodada",default:true,callback:(_e,b)=>({useExtra:b.form.elements.useExtra.checked,reason:b.form.elements.reason.value})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
+ const answer=quick?{useExtra:true,reason:""}:await foundry.applications.api.DialogV2.wait({window:{title:"Pagar recarga de Sustentada"},content,buttons:[{action:"pay",label:"Pagar 1 CE nesta rodada",default:true,callback:(_e,b)=>({useExtra:b.form.elements.useExtra.checked,reason:b.form.elements.reason.value})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
  if(!answer)return;
  return runMasterOperation(async()=>{
   await guard(actor,baseline,null,preview.target,targetBaseline);const plan=sustainedPaymentPlan(actor,key,answer),id=keyOf(foundry.utils.randomID());if(flags(actor).effectOperations?.[id])throw Error("Identificador existente.");

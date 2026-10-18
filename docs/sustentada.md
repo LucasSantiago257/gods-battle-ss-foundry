@@ -21,3 +21,14 @@ O registro fica somente no pagador. Não escreve no alvo nem copia rolagens priv
 Ver [auditoria de fontes e próximos contratos](sustentacao-residual-auditoria.md). Livro V49.1.1, atribuição em [ATTRIBUTION.md](../ATTRIBUTION.md), pp.205/225. Próximo marco: oposição com participantes e perfis de atributo/Cosmo/empate explicitados, seguido de Cosmo Residual.
 
 Desde0.21.0, a oposição genérica pública após recarga pode ser resolvida pelo [fluxo específico](oposicao-sustentada.md). As menções anteriores a oposição manual delimitam a0.20.0; estados, dano e exceções continuam manuais.
+
+
+## Recarga direta e Ajustar separados — 0.47.0
+
+O painel de Sustentada oferece **Pagar 1 CE extra/atual · rodada R**, mostrando de qual reserva será retirada a recarga. A ação direta usa CE extra primeiro; sem ela, usa somente CE atual livre, preservando a reserva. Com CE ilimitada, o botão indica **Registrar recarga ilimitada** e conserva os saldos. **Ajustar recarga** mantém o diálogo existente para escolher outra preferência de CE extra e notas opcionais. A preferência do diálogo anterior não foi alterada.
+
+O atalho só aparece ao mestre responsável, com pagador/alvo próprios, saldo e registro válidos e sem operação bloqueada. Rodada e assinatura da prévia incluem o pagador, o alvo e o registro. Qualquer mudança antes ou durante o processamento exige atualizar a ficha; um botão antigo ou cliques simultâneos não pagam a próxima rodada. Valores e preferência recebidos de fora não substituem o custo fixo/preferência explícita dessa ação direta.
+
+Mantém o contrato já publicado de Sustentada: nenhuma cobrança ao avançar o combate, 1CE somente na rodada atual, lacunas registradas sem retroatividade, perfil único sem nova cobrança posterior e recarga sem vencer oposição. Alvo, PV, armadura, ações e condições permanecem no fluxo anterior. A fila, journal preparado e recuperação impedem repetir débito após falha ou resposta perdida. Não usa sobrecarga de PV para recarga sem CE livre.
+
+Essa entrega reduz passos de um pagamento já existente; não implementa novos poderes ou condições nem muda a interpretação de manutenção escolhida pela mesa. Fontes e convenções seguem [Sustentada](sustentada.md). Validar concorrência, reconexão e fichas sintéticas no core hospedado13.350, ainda não confirmado.
