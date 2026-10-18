@@ -144,3 +144,14 @@ Brasas e anotações manuais mostram próxima rodada, fim do prazo e parcelas re
 Sustentada distingue prazo inicial (incluindo a rodada atual), manutenção coberta, recarga atual pendente e perfil de recarga única já pago. Lacunas são indicadas sem somar cobrança retroativa. A contagem de recargas é de registros pendentes, não promessa de gasto automático; pagamento, recursos disponíveis, recuperação e estado alterado continuam sendo validados pelo fluxo existente. Residual continua usando dias da campanha, sem converter rodadas em dias.
 
 Cena/combatente indisponível, registro inválido ou cópia de outra ficha mostram prazo para conferência, sem fabricar contagens. Jogadores podem ver os prazos dos registros já disponíveis na ficha, mas continuam sem ações de mestre. Essa leitura não grava flags, recursos, dano, condições ou prazos novos; não resolve automaticamente nenhuma parcela. O painel não implementa condições ou novas mecânicas de poderes. Validar também no core hospedado13.350, que não foi presumido nesta entrega.
+
+
+## Suporte de execução no construtor — 0.45.0
+
+O resumo da composição informa quantos componentes escolhidos possuem cálculo disponível em Ativar, quantos usam rodadas assistidas e quantos permanecem manuais. Cada componente mostra essa indicação mesmo fechado e explica o passo seguinte ao abrir sua referência. A informação acompanha IDs/chaves canônicos e o primordial escolhido; nomes livres não anunciam automação.
+
+Os sete componentes do grupo de Dano são identificados como cálculo disponível após concluir e habilitar em Configurar: Esgotar, Essência Alvo, Terreno Favorável, Espaço, Estrelas, Destruição e Enfraquecer. A indicação cobre somente as parcelas já implementadas e suas opções; não afirma execução integral de cada texto. Enfraquecer mantém a extensão a outros ataques manual. Brasas é identificado como fluxo separado no painel Efeitos com duração, após ativação/resistência; o construtor não promete criar esse registro automaticamente.
+
+Outros primordiais e composições mistas não anunciam o grupo automático de Dano. Custos/slots continuam calculados, enquanto efeitos específicos manuais permanecem disponíveis nas referências. A prévia de dano do construtor é a base da composição; as escolhas contextuais do grupo entram na ativação. Ler o suporte não altera fichas, recursos, rascunho, adesão aos componentes ou histórico salvo. Não adiciona novas regras, condições ou componentes executáveis.
+
+Próximos contratos mecânicos exigem distinguir custos, dano, duração e alcance nas fontes. A leitura atual não inferiu como repetir/cobrar Sacrifício em falha, como combinar divisão de dano de área com distância individual ou como converter o “+1ND na Armadura” de Quebrar Armadura entre faixas de proteção. Esses pontos permanecem manuais até contrato explícito; não foram implementados por suposição. Foundry hospedado13.350 continua sem validação.

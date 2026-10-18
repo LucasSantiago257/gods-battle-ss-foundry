@@ -4,7 +4,8 @@
 <div class="stat-strip"><div><span>Slots extras</span><strong>{{builder.used}} / {{builder.capacity}}</strong></div><div><span>CE da composição</span><strong>{{builder.totalCost}}</strong></div><div><span>Dificuldade</span><strong>{{builder.difficulty}}</strong></div></div>
 <p>Primordial {{builder.primary.label}} · custo {{builder.cost}}CE de Big Bangs + {{builder.fixed}}CE de incrementos/ajuste. <button type="button" data-action="openReference" data-uuid="{{builder.primary.uuid}}">Ler primordial</button></p>
 {{#if builder.preview}}<p>Dano corporal {{builder.preview.normal.damage}} · crítico {{builder.preview.critical.damage}}; armadura {{builder.preview.normal.armorDamage}} · crítico {{builder.preview.critical.armorDamage}}, antes da resistência. {{builder.preview.formula}}</p>{{/if}}
-{{#each builder.components}}<details class="book-rule-view"><summary>{{name}} · graduação {{rank}} · slots {{slots}} · custo {{cost}}CE · p.{{page}}</summary>
+<p class="component-support-summary">Suporte dos componentes escolhidos: cálculo em Ativar <strong>{{builder.support.activation}}</strong> · rodadas assistidas <strong>{{builder.support.rounds}}</strong> · aplicação manual <strong>{{builder.support.manual}}</strong>.</p><p class="note">A prévia de dano acima mostra a base da composição. As escolhas do grupo automático entram em Ativar, após habilitá-lo em Configurar. Compor não ativa os efeitos na ficha.</p>
+{{#each builder.components}}<details class="book-rule-view"><summary>{{name}} · graduação {{rank}} · slots {{slots}} · custo {{cost}}CE · p.{{page}} · {{support.label}}</summary><p class="component-support-detail">{{support.detail}}</p>
 <div class="book-rule-text">{{description}}</div><p>Requisitos: {{requirements}}</p><p class="note">{{author}} · {{license}}</p>
 {{#if benefit}}<p>Efeito descrito da graduação: {{benefit}} · aplicar após conferência.</p>{{/if}}
 {{> "systems/gods-battle-ss/templates/fields.hbs" fields=fields}}
