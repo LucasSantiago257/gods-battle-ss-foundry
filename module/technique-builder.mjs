@@ -1,3 +1,4 @@
+import {componentSupportSummary} from "./component-support.mjs";
 import {SYSTEM_ID,NATURES} from "./config.mjs";
 import {TECHNIQUE_TIERS,TECHNIQUE_MODES} from "./technique-rules.mjs";
 import {PRIMORDIALS,componentUuid,validComponentUuid,composeTechnique} from "./technique-builder-rules.mjs";
@@ -50,7 +51,8 @@ export async function techniqueBuilderContext(item) {
  const context={...draft,components:[],fields:[field("name","Nome da técnica",draft.name,null,"text"),field("classification","Classe / nível da técnica",draft.classification,{bronze:"Bronze",silver:"Prata",gold:"Ouro"}),field("nature","Natureza",draft.nature,Object.fromEntries(Object.entries(NATURES).map(([key,v])=>[key,v.label]))),field("primary","Big Bang primordial",draft.primary,Object.fromEntries(Object.entries(PRIMORDIALS).map(([key,v])=>[key,v.label]))),field("techniqueMode","ND/Poder",draft.techniqueMode,TECHNIQUE_MODES),field("damageLevel","ND no modo manual",draft.damageLevel),field("power","Poder no modo manual",draft.power),field("range","Alcance em metros (0 usa a classe)",draft.range),field("duration","Duração / observações",draft.duration,null,"text"),field("controlRounds","Controle: rodadas (0 usa classe; inclui ativação)",draft.controlRounds??0),field("description","Descrição narrativa e parâmetros especiais",draft.description,null,"textarea"),field("extraSlots","Slots além da classe (requer conferência)",draft.extraSlots),field("extraCost","CE fixa extra além dos componentes",draft.extraCost),field("reason","Notas (opcional)",draft.reason,null,"textarea")]};
  try{
   const p=await plan(item,draft);Object.assign(context,p);
-  context.components=p.components.map(c=>({...c,fields:[...(c.type==="increment"?[{...field(`components.${c.slot}.rank`,`Graduação do incremento (máximo ${c.maxRank})`,c.rank),min:1,max:c.maxRank}]:[]),field(`components.${c.slot}.detail`,"Parâmetro / escolha deste componente",c.detail,null,"text")]}));
+  context.support=componentSupportSummary(p.components,draft.primary);
+  context.components=p.components.map(c=>({...c,support:context.support.rows.find(r=>r.slot===c.slot),fields:[...(c.type==="increment"?[{...field(`components.${c.slot}.rank`,`Graduação do incremento (máximo ${c.maxRank})`,c.rank),min:1,max:c.maxRank}]:[]),field(`components.${c.slot}.detail`,"Parâmetro / escolha deste componente",c.detail,null,"text")]}));
   if(signature(item)!==draft.baseline)context.error="A técnica mudou após abrir o rascunho. Descarte-o e confira os novos dados.";
  }catch(error){context.error=error.message;}
  return context;
