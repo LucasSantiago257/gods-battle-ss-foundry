@@ -32,7 +32,7 @@ export async function useTechnique(actor, item) {
     const content = await foundry.applications.handlebars.renderTemplate(`systems/${SYSTEM_ID}/templates/technique-dialog.hbs`, {
       name: item.name, cost: item.system.cost + item.system.costExtra, current: actor.system.resources.cosmo.value,
       extra: actor.system.resources.cosmoExtra, reserve: actor.system.resources.cosmoReserved,
-      penalty: actor.system.combat.asterismPenalty, unlimited: actor.system.resources.cosmo.unlimited,areaTargets,targetName:target?.name,actions:actionView(actor),components:profile,hasExhaust:profile.rules.some(r=>r.kind==="exhaust"),hasEssence:profile.rules.some(r=>r.kind==="essence"),hasTerrain:profile.rules.some(r=>r.kind==="terrain")
+      penalty: actor.system.combat.asterismPenalty, unlimited: actor.system.resources.cosmo.unlimited,areaTargets,targetName:target?.name,actions:actionView(actor),movement:effective.movement,components:profile,hasExhaust:profile.rules.some(r=>r.kind==="exhaust"),hasEssence:profile.rules.some(r=>r.kind==="essence"),hasTerrain:profile.rules.some(r=>r.kind==="terrain")
     });
     const answer = await foundry.applications.api.DialogV2.wait({window: {title: "Ativar técnica"}, content,
       render:(_event,dialog)=>installTechniquePreview(dialog.form??dialog.element.querySelector("form"),actor.system,effective,actor,targetToken,areaTargets),
@@ -46,7 +46,7 @@ export async function useTechnique(actor, item) {
     const updatedArea=areaTargets?(answer.areaTargets??areaTargets):null;
     if(areaTargets&&!sameAreaSelection(areaTargets,updatedArea))throw Error("Os alvos originais da área mudaram. Reabra a ativação para escolher outro grupo.");
     const options={extra:0,elevate:0,condense:0,bonus:0,advantage:0,useExtra:true,allowOverload:false,...answer,...(updatedArea?{areaTargets:updatedArea}: {})};
-    techniqueActionPlan(actor,options,"preview");
+    techniqueActionPlan(actor,options,"preview",effective.movement);
     if(options.oppositeEssence&&!target)throw Error("Essência Alvo exige um alvo marcado.");
     const parameters = techniqueParameters(actor.system, effective, options);
     let payment = cosmoPayment(actor.system, parameters.cost, options);
