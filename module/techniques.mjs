@@ -7,7 +7,7 @@ import {rollTest} from "./rolls.mjs";
 import {activationFormOptions,installTechniquePreview} from "./technique-ui.mjs";
 import {activationState,submitTechniqueActivation,techniqueRollMode,pendingTechnique} from "./technique-activation.mjs";
 import {primaryGM,assertNoTechniqueInterruption} from "./master-queue.mjs";
-import {actionView,techniqueActionPlan} from "./action-rules.mjs";
+import {actionView,techniqueActionPlan,actionHash} from "./action-rules.mjs";
 import {techniqueWithComponents} from "./technique-components.mjs";
 
 const active = new WeakSet();
@@ -90,12 +90,16 @@ export function renderTechniqueChat(message, html) {
     ||!Number.isFinite(attack.damage)||!Number.isFinite(attack.armorDamage)||attack.damage<0||attack.armorDamage<0){
     for(const button of buttons)button.remove();return;
   }
+  const attackBaseline=actionHash(attack),registered=game.messages?.get?.(message.id)===message;
+  const attackUnchanged=()=>actionHash(message.flags?.[SYSTEM_ID]?.attack)===attackBaseline&&(!registered||game.messages?.get?.(message.id)===message);
   for(const button of buttons)button.addEventListener("click",async()=>{
     if(resistanceBusy.has(message)||!message.isContentVisible)return;
     resistanceBusy.add(message);for(const item of buttons)item.disabled=true;
     try{
+      if(!attackUnchanged())throw Error("O ataque mudou. Atualize o cartão antes de resistir.");
       const chosen=attack.areaTargets?areaAttackFor(attack,button.dataset.areaTarget):attack;
       const actor=await resistanceForAttack(chosen,globalThis.canvas?.tokens?.controlled??[]);
+      if(!attackUnchanged())throw Error("O ataque mudou. Atualize o cartão antes de resistir.");
       await rollTest(actor,"resistance",NATURES[chosen.nature].resistance,{difficulty:chosen.powerCosmic,resistanceAttack:{...chosen,messageId:message.id},quick:quickAvailable&&button.dataset.action==="resistTechnique"});
     }catch(error){console.error(error);ui.notifications.error(error.message);}
     finally{resistanceBusy.delete(message);for(const item of buttons)item.disabled=false;}
