@@ -1,3 +1,4 @@
+import {techniqueMovement} from "./technique-movement.mjs";
 import {optionalNote} from "./form-values.mjs";
 import {SYSTEM_ID,NATURES,ATTRIBUTES} from "./config.mjs";
 import {effectiveAttribute} from "./passives.mjs";
@@ -10,7 +11,7 @@ export const COMPONENT_RULES={
  "1c0a9862d3c417fd":{key:"increment:Controle sobre as Estrelas",label:"Controle sobre as Estrelas",page:"219",kind:"stars",introduced:2},
  "5f24c377be178c53":{key:"increment:Controle sobre o Espaço",label:"Controle sobre o Espaço",page:"217–218",kind:"space"}
 };
-export function componentState(item) {const f=item.flags?.[SYSTEM_ID]??{};return {enabled:f.componentAutomation===true,ruleVersion:f.componentRuleVersion??1,constructionId:f.techniqueConstructionId,construction:f.techniqueConstructionHistory?.[f.techniqueConstructionId]};}
+export function componentState(item) {const f=item.flags?.[SYSTEM_ID]??{};return {movementMode:f.techniqueMovementMode??"standard",enabled:f.componentAutomation===true,ruleVersion:f.componentRuleVersion??1,constructionId:f.techniqueConstructionId,construction:f.techniqueConstructionHistory?.[f.techniqueConstructionId]};}
 export function componentProfile(item,{enabled=componentState(item).enabled,ruleVersion=componentState(item).ruleVersion}={}) {
  const state=componentState(item),record=state.construction;
  if(!enabled)return {enabled:false,rules:[],manual:[]};
@@ -30,7 +31,7 @@ export function componentProfile(item,{enabled=componentState(item).enabled,rule
  if(!rules.length)throw Error("A composição não contém componentes deste grupo automático.");
  return {enabled:true,ruleVersion,rules,manual};
 }
-export function techniqueWithComponents(item) {return {...(item.system.toObject?item.system.toObject():item.system),componentProfile:componentProfile(item)};}
+export function techniqueWithComponents(item) {return {...(item.system.toObject?item.system.toObject():item.system),componentProfile:componentProfile(item),movement:techniqueMovement(item)};}
 export function componentOptions(technique,options={},system=null) {
  const profile=technique.componentProfile??{enabled:false,rules:[]};
  const exhaust=options.exhaust??0,essence=options.oppositeEssence??false,terrain=options.favorableTerrain??false;
