@@ -72,8 +72,17 @@ export function residualActionPlan(actor,id){
  const after={...plan.after,cosmoUses:plan.view.cosmoUses+1};
  return {...plan,after,updates:{[`flags.${SYSTEM_ID}.actionUsage`]:after},actionLabel:"1 Ação de Cosmo + 1 Movimento Parcial"};
 }
-export function techniqueActionPlan(actor,options,id) {
+export function techniqueActionPlan(actor,options,id,movement=null) {
  assertActionAllowed(actor,"technique");
+ if(movement){
+  if(!["partial","total"].includes(movement.mode))throw Error("Modo de Movendo inválido.");
+  if(options?.areaTargets!==undefined)throw Error("Movendo em área exige resolução manual; a exceção de ações não é presumida.");
+  if(options?.actionPool!==undefined&&options.actionPool!=="movement")throw Error("Esta técnica usa o movimento configurado em Movendo.");
+  if(actionContext(actor)&&options?.actionPool!=="movement")throw Error("Selecione o movimento configurado em Movendo.");
+  const plan=consumeActionPlan(actor,{pool:"movement",amount:1,movementMode:movement.mode},id);
+  return {...plan,actionLabel:plan.label,movement:movement.mode};
+ }
+ if(options?.actionPool==="movement")throw Error("Movimento exige Movendo habilitado na composição salva.");
  if(options?.areaTargets!==undefined){
   assertActionAllowed(actor,"attack");assertActionAllowed(actor,"defense");const view=actionView(actor),before=rawActionUsage(actor);
   if(!view.enabled)return {view,before,after:before,updates:{},cost:0};
