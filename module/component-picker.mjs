@@ -7,9 +7,12 @@ export function installComponentPicker(form,entries) {
  if(!form)return;
  const search=form.elements.componentSearch,type=form.elements.componentType,select=form.elements.component;
  const title=form.querySelector('[data-component-title]'),description=form.querySelector('[data-component-description]'),requirements=form.querySelector('[data-component-requirements]'),count=form.querySelector('[data-component-count]');
+ const support=form.querySelector("[data-component-support]"),supportDetail=form.querySelector("[data-component-support-detail]");
  const preview=()=>{
   const entry=entries.find(row=>row._id===select.value);
   title.textContent=entry?`${entry.name} · p.${entry.system?.page??""}`:"Nenhum componente encontrado";
+  if(support)support.textContent=entry?.support?.label??"";
+  if(supportDetail)supportDetail.textContent=entry?.support?.detail??"";
   description.textContent=entry?.system?.description??"";
   requirements.textContent=entry?.system?.requirements?`Requisitos: ${entry.system.requirements}`:"";
  };

@@ -1,4 +1,4 @@
-import {componentSupportSummary} from "./component-support.mjs";
+import {componentSupport,componentSupportSummary} from "./component-support.mjs";
 import {SYSTEM_ID,NATURES} from "./config.mjs";
 import {TECHNIQUE_TIERS,TECHNIQUE_MODES} from "./technique-rules.mjs";
 import {PRIMORDIALS,componentUuid,validComponentUuid,composeTechnique} from "./technique-builder-rules.mjs";
@@ -62,9 +62,10 @@ export async function addTechniqueComponent(item) {
  const actor=item.parent;busy.add(item);
  try{
   const pack=game.packs.get(`${SYSTEM_ID}.componentes-tecnicas`);if(!pack?.testUserPermission(game.user,"OBSERVER"))throw Error("O mestre precisa permitir consulta ao compêndio.");
-  const index=await pack.getIndex({fields:["type","system.page","system.description","system.requirements"]});
+  const index=await pack.getIndex({fields:["type","system.page","system.description","system.requirements",`flags.${SYSTEM_ID}.source.key` ]});
   const blocked=new Set([componentUuid(PRIMORDIALS[draft.primary].id),...Object.values(draft.components??{}).map(c=>c.uuid)]);
-  const entries=index.contents.filter(e=>["bigbang","increment"].includes(e.type)&&validComponentUuid(componentUuid(e._id))&&!blocked.has(componentUuid(e._id))).toSorted((a,b)=>a.name.localeCompare(b.name,"pt-BR"));
+  const primordialIds=new Set(Object.values(PRIMORDIALS).map(p=>componentUuid(p.id))),mixed=Object.values(draft.components??{}).some(c=>primordialIds.has(c.uuid));
+  const entries=index.contents.filter(e=>["bigbang","increment"].includes(e.type)&&validComponentUuid(componentUuid(e._id))&&!blocked.has(componentUuid(e._id))).toSorted((a,b)=>a.name.localeCompare(b.name,"pt-BR")).map(entry=>({...entry,support:componentSupport({uuid:componentUuid(entry._id),key:entry.flags?.[SYSTEM_ID]?.source?.key,type:entry.type,rank:1},draft.primary,mixed||primordialIds.has(componentUuid(entry._id)))}));
   const check=()=>{if(!own(item)||item.parent!==actor||actor.items.get(item.id)!==item||flags(item).techniqueDraft?.id!==draft.id||!pack.testUserPermission(game.user,"OBSERVER"))throw Error("Ficha, rascunho ou permissão mudou. Abra a seleção novamente.");};
   check();if(!entries.length)throw Error("Nenhum componente disponível para adicionar.");
   const content=await foundry.applications.handlebars.renderTemplate(`systems/${SYSTEM_ID}/templates/component-picker.hbs`,{entries});check();

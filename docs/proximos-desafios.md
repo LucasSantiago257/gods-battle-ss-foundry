@@ -235,3 +235,8 @@ A resistência antes conferia condições e uma cópia do ataque, mas podia usar
 O botão também confere o ataque que estava renderizado antes e depois da busca do alvo. Se uma mensagem registrada for removida ou seu ataque for substituído, o botão antigo não rola. Quando o original está disponível na coleção, a resistência compara o payload com ele; em área usa a parcela canônica do defensor, preservando alvo, grupo e dano. Alteração, remoção ou perda de visibilidade durante a resolução impedem publicar. Testes avulsos sem uma origem disponível preservam seu comportamento anterior, com a conferência local do defensor/armadura.
 
 Não muda fórmulas, dificuldades, custos, dano, condições ou permissões, nem cria trava permanente ou confirmação adicional. Atualizar o cartão e usar Resistir/Ajustar novamente utiliza os dados atuais. A publicação continua com a visibilidade escolhida e sem gravar o snapshot da ficha em flags ou chat. Não afirma coordenação transacional com todas as macros ou validação no core hospedado13.350; reconexão, tokens sintéticos e concorrência entre clientes ainda precisam do ensaio real.
+
+
+## Seleção de componentes — 0.54.0
+
+A prévia do seletor agora mostra apoio e limites antes de adicionar o componente. Usa as mesmas referências canônicas e classificações da composição final, considerando o primordial e primordiais adicionais. Não presume automação pelo nome, não habilita cálculos nem altera custos. A decisão fica visível antes de preencher o rascunho; a escolha continua livre. Matrizes e limites de regras permanecem em [componentes automáticos](componentes-automaticos.md).

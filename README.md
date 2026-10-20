@@ -127,3 +127,6 @@ Na0.21.0, o mestre pode processar nova resistência pública de Controle pela fi
 Na0.21.0, [Sustentada](docs/sustentada.md) acompanha duração inicial e recarga no usuário, com frequência escolhida, pagamento único e recuperação. Efeitos permanecem manuais; oposição genérica pública disponível na0.21.0.
 
 [Oposição de Sustentada](docs/oposicao-sustentada.md), na0.21.0: atributo/Cosmo ativo/passivo, níveis calculados, cartão público e recuperação do mesmo resultado. Sem custo adicional; efeitos e manobras completas continuam manuais.
+
+
+Na seleção de Big Bangs/incrementos, a prévia mostra o apoio disponível antes de adicionar: cálculo em Ativar, rodadas assistidas ou aplicação manual. O texto considera o primordial e composições mistas; não habilita automação por conta própria (0.54.0).
