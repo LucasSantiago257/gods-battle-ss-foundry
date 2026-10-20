@@ -1,5 +1,7 @@
 # Saint Seiya — A Batalha dos Deuses para FoundryVTT
 
+**Cartões de técnicas:** a penalidade de resistência mostra os componentes e páginas corretos, incluindo Enfraquecer. Falhas não pedem resistência; Controle e Sustentada indicam seus próprios próximos passos. Descrição e referência ficam disponíveis em uma seção recolhível.
+
 **Movendo nas técnicas do livro:** Configurar → Ações na ativação também oferece o modo impresso para Lança Dourada (Total), Teletransporte e as três referências de Velocidade (Parcial). A adesão é explícita; o custo salvo e os demais efeitos da cópia são preservados.
 
 **Big Bang Movendo:** em uma técnica personalizada com composição salva, escolha Parcial ou Total em Configurar → Ações na ativação. Movimento e CE são consumidos juntos, preservando ataque e defesa; falha e recuperação usam o mesmo registro. A escolha exige o componente canônico, não seu nome. Área e deslocamento do token continuam manuais.
