@@ -105,6 +105,11 @@ test("seletor omite escolhidos e cancelar preserva rascunho e recursos",async()=
  const r=runtime(),d=await ready(r),before=structuredClone(r.actor.system);d.components={existing:{uuid:componentUuid('02cba36e32fda2f8'),rank:1,detail:''}};let context;
  foundry.applications.handlebars.renderTemplate=async(_path,c)=>{context=c;return 'seleção';};await addTechniqueComponent(r.item);
  assert.ok(context.entries.length>0);assert.ok(!context.entries.some(e=>e._id==='13841831d802c5be'||e._id==='02cba36e32fda2f8'));assert.equal(r.updates.length,1);assert.deepEqual(r.actor.system,before);assert.equal(Object.keys(d.components).length,1);
+ const support=id=>context.entries.find(e=>e._id===id)?.support;
+ assert.equal(support('69e4c648b940a68e').kind,'activation');assert.equal(support('e63322f3195be739').kind,'rounds');assert.equal(support('3db91f91d5c36fe8').kind,'activation');assert.equal(support('953cf77664309d03').kind,'manual');
+ d.components.extra={uuid:componentUuid('953cf77664309d03'),rank:1};await addTechniqueComponent(r.item);assert.equal(support('69e4c648b940a68e').kind,'manual');assert.equal(support('3db91f91d5c36fe8').kind,'manual');
+ delete d.components.extra;d.primary='control';await addTechniqueComponent(r.item);assert.equal(support('69e4c648b940a68e').kind,'manual');assert.equal(support('3db91f91d5c36fe8').kind,'activation');
+ assert.equal(r.updates.length,1);assert.deepEqual(r.actor.system,before);
 });
 
 test("adicionar componente nao abre referencia automaticamente nem altera recursos",async()=>{
