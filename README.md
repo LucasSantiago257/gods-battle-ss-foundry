@@ -1,5 +1,7 @@
 # Saint Seiya — A Batalha dos Deuses para FoundryVTT
 
+**Resistência com dados atuais:** mudanças na ficha do defensor, armadura ou ataque durante a resolução impedem publicar um resultado com parâmetros antigos. Botões antigos e parcelas divergentes de área são recusados; nenhuma edição posterior é desfeita.
+
 **Cartões de técnicas:** a penalidade de resistência mostra os componentes e páginas corretos, incluindo Enfraquecer. Falhas não pedem resistência; Controle e Sustentada indicam seus próprios próximos passos. Descrição e referência ficam disponíveis em uma seção recolhível.
 
 **Movendo nas técnicas do livro:** Configurar → Ações na ativação também oferece o modo impresso para Lança Dourada (Total), Teletransporte e as três referências de Velocidade (Parcial). A adesão é explícita; o custo salvo e os demais efeitos da cópia são preservados.
