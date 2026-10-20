@@ -1,5 +1,7 @@
 # Saint Seiya — A Batalha dos Deuses para FoundryVTT
 
+**Big Bang Movendo:** em uma técnica personalizada com composição salva, escolha Parcial ou Total em Configurar → Ações na ativação. Movimento e CE são consumidos juntos, preservando ataque e defesa; falha e recuperação usam o mesmo registro. A escolha exige o componente canônico, não seu nome. Área e deslocamento do token continuam manuais.
+
 **Consulta dos efeitos:** busque por nome, origem, alvo ou página e filtre ativos, parcelas/recargas pendentes ou histórico. A busca ignora acentos, mantém os totais gerais e conserva a preferência enquanto a ficha estiver aberta. Limpar filtros restaura todos os registros.
 
 **Defesa física direta:** o cartão oferece Defender com 1 ação, mostrando a rodada e sem bônus situacional. Ajustar defesa mantém quantidade e modificador livres. O mestre processa a mesma fila e recuperação, sem repetir o gasto do ataque original.

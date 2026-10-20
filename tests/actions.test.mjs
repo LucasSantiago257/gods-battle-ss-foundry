@@ -191,3 +191,37 @@ test("cartão atualiza prévia após recusar alteração e oculta atalho com sol
  foundry.applications.api.DialogV2.wait=async()=>{throw Error("Diálogo inesperado");};await button.click();assert.equal(r.messages.size,2);assert.equal(button.hidden,true);assert.equal(r.stats.rolls,1);
  const request=[...r.messages.values()].find(m=>m.flags[ID].actionRequest);await r.execute(request);assert.equal(actionView(r.target).remaining.defense,2);assert.equal(r.stats.rolls,2);
 });
+
+
+function movendo(r,mode="partial"){
+ const item=r.actor.items.get("tech");item.system.cost=3;item.flags[ID]={techniqueMovementMode:mode,techniqueConstructionId:"composition",techniqueConstructionHistory:{composition:{primary:{uuid:`Compendium.${ID}.componentes-tecnicas.Item.13841831d802c5be`},components:[{uuid:`Compendium.${ID}.componentes-tecnicas.Item.3db91f91d5c36fe8`,key:"bigbang:extra:Movendo",type:"bigbang",rank:1}]}}};return item;
+}
+test("Movendo Parcial paga CE e uma parcela de movimento juntos, preservando luta e Cosmo",async()=>{
+ const r=runtime();movendo(r);const before=actionView(r.actor),m=r.techRequest("movement");m.flags[ID].techniqueRequest.options.bonus=2;game.user=r.gm;await executeTechniqueRequest(m,r.owner.id);
+ assert.equal(r.renders.at(-1).context.success,true);const after=actionView(r.actor);assert.equal(after.remaining.movement,before.remaining.movement-1);assert.equal(after.remaining.attack,before.remaining.attack);assert.equal(after.remaining.defense,before.remaining.defense);assert.equal(after.cosmoUses,0);assert.equal(r.actor.system.resources.cosmo.value,7);
+ const joint=r.updates.find(u=>Object.hasOwn(u,"system.combat.asterismPenalty"));assert.equal(joint[`flags.${ID}.actionUsage`].spent.movement,1);assert.equal(joint["system.resources.cosmo.value"],7);assert.equal(r.actor.flags[ID].techniqueOperations[m.id].movementMode,"partial");assert.equal(r.renders.at(-1).context.actions.pool,"Movimento parcial");await executeTechniqueRequest(m,r.owner.id);assert.equal(r.stats.rolls,1);
+});
+test("Movendo Total exige movimento intacto e consome todas as parcelas conforme Velocidade",async()=>{
+ const r=runtime();movendo(r,"total");const max=actionView(r.actor).maxima.movement,m=r.techRequest("movement");game.user=r.gm;await executeTechniqueRequest(m,r.owner.id);assert.equal(actionView(r.actor).remaining.movement,0);assert.equal(actionView(r.actor).movementTotal,true);assert.equal(r.actor.flags[ID].techniqueOperations[m.id].actionCost,max);assert.equal(r.actor.system.resources.cosmo.value,7);
+ const s=runtime();movendo(s,"total");patch(s.actor,actionPlan(s.actor,"movement",1,{operationId:"walk"}).updates);const bad=s.techRequest("movement");game.user=s.gm;await executeTechniqueRequest(bad,s.owner.id);assert.equal(bad.flags[ID].techniqueResponse.status,"failed");assert.equal(s.stats.rolls,0);assert.equal(s.actor.system.resources.cosmo.value,10);
+});
+test("Movendo não aceita reserva de luta, composição falsa, modo alterado, área ou movimento bloqueado",async()=>{
+ for(const kind of ["pool","source","mode","area","paralyzed"]){const r=runtime(),item=movendo(r);if(kind==="paralyzed")r.actor.flags[ID]={conditionEffects:{stop:{actorUuid:r.actor.uuid,status:"active",key:"paralyzed",count:1,ruleVersion:1,reviewedManual:true}}};
+ const m=r.techRequest(kind==="pool"?"attack":"movement");if(kind==="source")item.flags[ID].techniqueConstructionHistory.composition.components[0].uuid="Compendium.other.componentes-tecnicas.Item.3db91f91d5c36fe8";if(kind==="mode")item.flags[ID].techniqueMovementMode="total";if(kind==="area")m.flags[ID].techniqueRequest.options.areaTargets=[];
+ game.user=r.gm;await executeTechniqueRequest(m,r.owner.id);assert.equal(m.flags[ID].techniqueResponse.status,"failed",kind);assert.equal(r.stats.rolls,0,kind);assert.equal(r.actor.system.resources.cosmo.value,10,kind);assert.equal(actionView(r.actor).spent.movement,0,kind);}
+ const r=runtime(),m=r.techRequest("movement");game.user=r.gm;await executeTechniqueRequest(m,r.owner.id);assert.equal(m.flags[ID].techniqueResponse.status,"failed");assert.equal(r.stats.rolls,0);
+});
+test("falha de Asterismo em Movendo cobra CE e movimento uma vez",async()=>{
+ const r=runtime();movendo(r);r.actor.items.get("tech").system.cost=10;const m=r.techRequest("movement");game.user=r.gm;await executeTechniqueRequest(m,r.owner.id);assert.equal(r.renders.at(-1).context.success,false);assert.equal(actionView(r.actor).spent.movement,1);assert.equal(r.actor.system.resources.cosmo.value,0);assert.equal(m.flags[ID].attack,undefined);assert.equal(actionView(r.actor).spent.attack,0);
+});
+test("recuperação de Movendo reconhece resposta perdida sem repetir movimento ou CE",async()=>{
+ const r=runtime();movendo(r,"total");const m=r.techRequest("movement");r.control.publishFail=true;game.user=r.gm;await executeTechniqueRequest(m,r.owner.id);const after=clone(r.actor.flags[ID].actionUsage);r.control.publishFail=false;r.actor.items.get("tech").flags[ID].techniqueMovementMode="partial";await recoverTechniqueOperation(r.actor,m.id);assert.deepEqual(r.actor.flags[ID].actionUsage,after);assert.equal(r.actor.system.resources.cosmo.value,7);assert.equal(r.stats.rolls,1);assert.equal(m.flags[ID].techniqueResponse.status,"published");
+});
+test("mudança de modo de Movendo durante a rolagem interrompe sem gastar",async()=>{
+ const r=runtime(),item=movendo(r),m=r.techRequest("movement");r.control.beforeRoll=()=>{item.flags[ID].techniqueMovementMode="total";};game.user=r.gm;await executeTechniqueRequest(m,r.owner.id);assert.equal(r.stats.rolls,1);assert.equal(actionView(r.actor).spent.movement,0);assert.equal(r.actor.system.resources.cosmo.value,10);assert.equal(m.flags[ID].techniqueResponse.status,"interrupted");await recoverTechniqueOperation(r.actor,m.id);assert.equal(r.stats.rolls,1);
+});
+
+
+test("Movendo em Controle/Sustentada simples conserva luta e não cria estados ou recargas",async()=>{
+ for(const kind of ["control","sustained"]){const r=runtime(),item=movendo(r);item.system.effectKind=kind;item.flags[ID].techniqueConstructionHistory.composition.primary.uuid=`Compendium.${ID}.componentes-tecnicas.Item.${kind==="control"?"953cf77664309d03":"ac34d9f38628bd92"}`;const m=r.techRequest("movement");m.flags[ID].techniqueRequest.options.bonus=2;game.user=r.gm;await executeTechniqueRequest(m,r.owner.id);assert.equal(m.flags[ID].techniqueResponse.status,"published",kind);assert.equal(r.renders.at(-1).context.success,true,kind);assert.equal(r.actor.system.resources.cosmo.value,7,kind);assert.equal(actionView(r.actor).spent.movement,1,kind);assert.equal(actionView(r.actor).spent.attack,0,kind);assert.equal(r.actor.flags[ID].persistentEffects,undefined,kind);assert.equal(r.target.flags[ID]?.conditionEffects,undefined,kind);}
+});

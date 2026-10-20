@@ -2,6 +2,7 @@ import {COMPONENT_RULES} from "./technique-components.mjs";
 const prefix="Compendium.gods-battle-ss.componentes-tecnicas.Item.";
 export function componentSupport(component,primary,mixed=false){
  const manual={kind:"manual",label:"Aplicação manual",detail:"Custo e slots são calculados; o efeito deste componente exige aplicação pela mesa."};
+ if(["damage","control","sustained"].includes(primary)&&!mixed&&component.uuid===prefix+"3db91f91d5c36fe8"&&component.key==="bigbang:extra:Movendo"&&component.type==="bigbang"&&component.rank===1)return {kind:"activation",label:"Movimento configurável em Ativar",detail:"Após concluir, selecione Movendo Parcial ou Total em Configurar → Ações na ativação. Consome movimento e CE juntos; não desloca o token nem executa os demais efeitos. Área permanece manual."};
  if(primary!=="damage"||mixed)return {...manual,detail:"Este primordial ou composição mista não usa o grupo automático de Dano. Consulte os fluxos próprios e a referência do componente."};
  const id=typeof component.uuid==="string"&&component.uuid.startsWith(prefix)?component.uuid.slice(prefix.length):null,rule=id&&Object.hasOwn(COMPONENT_RULES,id)?COMPONENT_RULES[id]:null;
  if(rule&&component.uuid===prefix+id&&component.key===rule.key){
