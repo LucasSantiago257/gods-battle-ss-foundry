@@ -2,5 +2,6 @@
 <label>Tipo<select name="componentType"><option value="all">Todos</option><option value="bigbang">Big Bangs</option><option value="increment">Incrementos</option></select></label>
 <p data-component-count role="status">{{entries.length}} componente(s) disponível(is)</p>
 <label>Componente<select name="component" size="7" style="height:180px;width:100%">{{#each entries}}<option value="{{_id}}">{{name}} · p.{{system.page}}</option>{{/each}}</select></label>
-<section><h3 data-component-title>Regra do componente</h3><div data-component-description style="white-space:pre-wrap;max-height:240px;overflow:auto"></div><p data-component-requirements></p></section>
+<section><h3 data-component-title>Regra do componente</h3><p><strong data-component-support></strong></p><p data-component-support-detail></p><div data-component-description style="white-space:pre-wrap;max-height:240px;overflow:auto"></div><p data-component-requirements></p></section>
+<p class="note">O apoio exibido considera o primordial e os componentes já escolhidos. A composição final e a configuração da ativação determinam os cálculos disponíveis.</p>
 <p>Adicionar altera apenas o rascunho. Big Bangs extras ocupam slots; incrementos usam a graduação do personagem. Componentes já selecionados não aparecem na lista.</p>
