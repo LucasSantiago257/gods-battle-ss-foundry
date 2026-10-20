@@ -1,5 +1,7 @@
 # Seleção de componentes — 0.36.0
 
+A cobertura atual dos componentes, incluindo Movendo e o fluxo separado de Brasas, está na [tabela de execução](componentes-automaticos.md). Os marcos datados abaixo preservam a evolução do construtor; uma referência no compêndio não significa execução integral do efeito.
+
 Adicionar Big Bang / incremento abre busca por nome ou página, sem distinção de maiúsculas e acentos, e filtro de tipo. A regra e os requisitos do selecionado aparecem na própria janela como texto. Componentes já incluídos e o primordial atual ficam fora da lista. Sem resultados, Adicionar fica indisponível; limpar a busca recupera a lista.
 
 Adicionar altera somente o rascunho e não abre outra ficha automaticamente. A leitura completa continua nos detalhes do componente e em Abrir referência por escolha do usuário. Cancelar conserva composição e recursos. Propriedade, permissão de consulta, documento e duplicatas são conferidos antes de gravar; nenhuma regra, custo, graduação ou automação de efeito muda por pesquisar ou selecionar.

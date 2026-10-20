@@ -1,5 +1,7 @@
 # Próximos desafios — após 0.30.0
 
+Consulta atual: [cobertura de componentes na0.51.0](componentes-automaticos.md). As seções datadas registram marcos históricos; a contagem antiga de quatro componentes não é a cobertura atual. Prioridades de Lucas permanecem gameplay e poderes independentes de novas condições.
+
 ## Prioridade vigente — decisão de Lucas em 14/10/2026
 
 Lucas priorizou os pontos 2, 3, 4, 5 e 6 do mapa `work/mapa-sistema-0.30.0.md`, excluindo o foco em condições. Esta decisão substitui a recomendação anterior de concluir Atordoado primeiro e a ordem histórica abaixo.
