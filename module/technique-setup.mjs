@@ -1,4 +1,4 @@
-import {TECHNIQUE_MOVEMENT,hasMovendo,techniqueMovement} from "./technique-movement.mjs";
+import {movementChoices,techniqueMovement} from "./technique-movement.mjs";
 import {SYSTEM_ID,NATURES,STATUS} from "./config.mjs";
 import {TECHNIQUE_TIERS,TECHNIQUE_MODES,EFFECT_KINDS,effectiveTechnique} from "./technique-rules.mjs";
 import {componentState,componentProfile} from "./technique-components.mjs";
@@ -8,7 +8,7 @@ const itemState=item=>JSON.stringify({name:item.name,system:item.system.toObject
 export function techniqueSetupContext(actor,item) {
  const s=item.system,tier=TECHNIQUE_TIERS[s.classification]??TECHNIQUE_TIERS.bronze,status=TECHNIQUE_TIERS[actor.system.profile.status];
  let profile,message="";try{profile=componentProfile(item,{enabled:true,ruleVersion:4});}catch(error){message=error.message;}
- return {movementModes:options(hasMovendo(item)?TECHNIQUE_MOVEMENT:{standard:TECHNIQUE_MOVEMENT.standard},componentState(item).movementMode),name:item.name,classes:options({bronze:"Bronze",silver:"Prata",gold:"Ouro"},s.classification),natures:options({"":"Selecionar",...Object.fromEntries(Object.entries(NATURES).map(([key,value])=>[key,value.label]))},s.nature),effects:options(EFFECT_KINDS,s.effectKind),modes:options(TECHNIQUE_MODES,s.techniqueMode??"manual"),
+ return {movementModes:options(movementChoices(item),componentState(item).movementMode),name:item.name,classes:options({bronze:"Bronze",silver:"Prata",gold:"Ouro"},s.classification),natures:options({"":"Selecionar",...Object.fromEntries(Object.entries(NATURES).map(([key,value])=>[key,value.label]))},s.nature),effects:options(EFFECT_KINDS,s.effectKind),modes:options(TECHNIQUE_MODES,s.techniqueMode??"manual"),
   canComponents:!!profile,componentMessage:message,components:profile,componentEnabled:componentState(item).enabled,controlRounds:s.controlRounds??0,cost:s.cost,costExtra:s.costExtra,power:s.power||status?.power||0,damageLevel:s.damageLevel||status?.damageLevel||0,range:s.range||tier.range,printedCost:item.flags?.[SYSTEM_ID]?.source?.reference?.costPrinted??s.costText,statusLabel:STATUS[actor.system.profile.status]??actor.system.profile.status,automatic:status?`ND ${status.damageLevel} · Poder ${status.power}`:"ND/Poder deste status exigem configuração manual."};
 }
 export function techniqueSetupUpdates(actor,item,answer) {

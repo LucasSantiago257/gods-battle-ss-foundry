@@ -82,3 +82,17 @@ test("Configurar salva Movendo independente do grupo de dano e rejeita adesão s
  const documentLike={system:item.system};Object.defineProperty(documentLike,"flags",{get:()=>item.flags});const updates=techniqueSetupUpdates(actor,documentLike,answer);assert.equal(updates[`flags.${ID}.techniqueMovementMode`],"total");assert.equal(updates[`flags.${ID}.componentAutomation`],false);assert.equal(updates["system.cost"],3);
  item.flags[ID].techniqueConstructionHistory.saved.components=[];assert.throws(()=>techniqueSetupUpdates(actor,item,answer),/Movendo/);assert.equal(techniqueSetupUpdates(actor,item,{...answer,movementMode:"standard"})[`flags.${ID}.techniqueMovementMode`],"standard");
 });
+
+
+import {printedMovendo,movementChoices} from "../module/technique-movement.mjs";
+test("Movendo nas cinco referências do livro mantém apenas o modo impresso e exige adesão",async()=>{
+ const rows=JSON.parse(await readFile("data/catalog/techniques.json","utf8")),matching=rows.filter(d=>printedMovendo(d));assert.equal(matching.length,5);
+ for(const item of matching){const mode=printedMovendo(item).mode;assert.match(item.system.description,new RegExp("movimento\\s+"+(mode==="partial"?"parcial":"total")));assert.deepEqual(Object.keys(movementChoices(item)),["standard",mode]);assert.equal(techniqueMovement(item),null);
+  const copy=structuredClone(item);copy.system.effectKind="damage";assert.equal(techniqueMovement(copy,mode).mode,mode);assert.throws(()=>techniqueMovement(copy,mode==="partial"?"total":"partial"),/modo.*livro/);
+ }
+});
+test("nomes livres, origem desconhecida e referência Movendo removida/duplicada não habilitam a cópia",async()=>{
+ const rows=JSON.parse(await readFile("data/catalog/techniques.json","utf8")),base=rows.find(d=>d._id==="6c8301ddd7284f94");
+ for(const change of [d=>d.flags[ID].source.key="other",d=>d.flags[ID].source.references=[],d=>d.flags[ID].source.references.push({uuid:moveComponent.uuid}),d=>d.flags[ID].source.reference.manualOnly=true,d=>d.flags[ID].source.references.push({uuid:`Compendium.${ID}.componentes-tecnicas.Item.953cf77664309d03`})]){const d=structuredClone(base);change(d);assert.equal(printedMovendo(d),null);assert.equal(hasMovendo(d),false);}
+ const custom={name:base.name,system:{effectKind:"damage",bigbangs:"Movendo"},flags:{}};assert.equal(hasMovendo(custom),false);assert.deepEqual(Object.keys(movementChoices(custom)),["standard"]);
+});
