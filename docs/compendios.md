@@ -1,6 +1,6 @@
-# Compêndios do livro — versão 0.9.2
+# Compêndios do livro — versão 0.55.0
 
-O pacote instala **nove compêndios nativos, com 866 Items**. Não é necessário executar uma macro nem criar o compêndio de modelos para acessar o livro. Os catálogos aparecem na aba Compêndios do Foundry e quatro deles têm atalhos na aba Poderes; Sentidos e Auras tem atalho em História e evolução; Técnicas e Big Bangs/Incrementos têm atalhos em Técnicas.
+O pacote instala **dez compêndios nativos de Items, com 888 entradas**. Não é necessário executar uma macro nem criar o compêndio de modelos para acessar o livro. Os catálogos aparecem na aba Compêndios do Foundry e quatro deles têm atalhos na aba Poderes; Sentidos e Auras tem atalho em História e evolução; Técnicas e Big Bangs/Incrementos têm atalhos em Técnicas.
 
 | Compêndio | Entradas | Cobertura |
 | --- | ---: | --- |
@@ -13,14 +13,15 @@ O pacote instala **nove compêndios nativos, com 866 Items**. Não é necessári
 | Sentidos e Auras | 49 | 38 auras básicas/divinas (pp. 456–458), quatro estágios do 6º Sentido, cinco do 7º e referências do 8º e 9º (pp. 474–480). |
 | Big Bangs e Incrementos | 59 | Quatro Big Bangs primordiais e 43 extras (pp. 224–230); 12 incrementos, com benefícios por graduação (pp. 217–220). |
 | Técnicas | 166 | 165 entradas com classe da lista (pp. 235–366), mais Exclamação de Athena e manobra cooperativa (pp. 215–217). |
+| Artefatos | 22 | 19 artefatos e três espadas/armaduras lendárias das pp.607–614; Selamento inclui tabela comum da p.612. Poderes descritos, aplicação manual. |
 
 Os seis estilos são Santo, Sábio, Guardião, Artista, Asgardiano e Domador de Bestas (pp. 58–124). As especializações adicionais são Protetor, Assassino e Telecinético (pp. 125–138). As evoluções são Aesir, Cavaleiros de Ouro, Juízes do Inferno, Generais Marinas, Dríades e Berserkers (pp. 551–586). Cada lista inclui todos os níveis nomeados nessa seção do livro.
 
 ## Usar na ficha
 
-Além dos nove catálogos do livro, o sistema inclui **Fichas de teste — Combate**, um compêndio de Atores com três personagens fictícios prontos para exercício. Consulte [fichas de teste](fichas-teste.md); ele não altera a cobertura dos 866 Items do livro.
+Além dos dez catálogos do livro, o sistema inclui **Fichas de teste — Combate**, um compêndio de Atores com três personagens fictícios prontos para exercício. Consulte [fichas de teste](fichas-teste.md); ele não altera a cobertura dos 888 Items do livro.
 
-1. Atualize o sistema com o mundo encerrado, confirme **0.9.2** e reinicie o mundo.
+1. Atualize o sistema com o mundo encerrado, confirme **0.55.0** e reinicie o mundo.
 2. Abra o cavaleiro, acesse **Poderes** e clique no catálogo desejado. Criaturas e poderes de divindades estão também na aba Compêndios.
 3. Pesquise pelo nome ou navegue pelas pastas de origem. Abra o item para conferir a regra e a página. A seção Descrição desta cópia mostra o texto completo; Outras ocorrências no livro permite comparar os contextos de uma combinação.
 4. Arraste o item para a ficha. Uma **cópia independente** é criada; o UUID do documento de origem fica registrado. Edite requisitos, notas, graduação e usos dessa cópia conforme a campanha.
@@ -40,7 +41,7 @@ Atualizações do sistema atualizam os catálogos de origem; cópias já importa
 - Variações de título fora do índice ficam identificadas por suas referências, sem presumir equivalência de todas as condições. Alguns nomes com erro de grafia foram corrigidos com nota contendo o título original.
 - Quando o bloco da criatura lista somente o nome de um poder, a entrada identifica a referência. Por exemplo, Barreira Divina de Hypnos remete à seção de poderes divinos; nenhum efeito foi inventado para preencher o espaço.
 
-O catálogo cobre as listas e poderes nomeados acima. As quantidades de “espaços de habilidades” dos monstros nem sempre coincidem com as descrições presentes no livro; não foram criadas habilidades ausentes. Auras e estágios dos Sentidos são referências importáveis; sua importação não altera os campos Sentido, estágio, Aura ou bônus do cavaleiro. Ações básicas de combate e artefatos são outras categorias de regras, ainda fora deste catálogo. A auditoria de referências distribuídas pelo restante do livro continua.
+O catálogo cobre as listas e poderes nomeados acima. As quantidades de “espaços de habilidades” dos monstros nem sempre coincidem com as descrições presentes no livro; não foram criadas habilidades ausentes. Auras e estágios dos Sentidos são referências importáveis; sua importação não altera os campos Sentido, estágio, Aura ou bônus do cavaleiro. Ações básicas de combate e o catálogo completo de armaduras são outras categorias de regras; não são cobertos integralmente por esta lista. A auditoria de referências distribuídas pelo restante do livro continua.
 
 ## Componentes de técnicas
 
@@ -75,3 +76,12 @@ Por exemplo, Olho de Fogo menciona a Virtude Sensitivo no índice (p. 465), enqu
 Os testes verificam listas de níveis, títulos quebrados, IDs únicos e estáveis, proveniência, validação de campos e ausência de dados pessoais nas entradas. Também compilam e extraem todos os compêndios com a CLI oficial, comparando Items, regras, pastas e fontes. Isso verifica os arquivos; a instalação e os atalhos precisam ser conferidos no servidor Foundry 13 build 350.
 
 Autoria original: **Dhoko de Libra**. Texto de referência: arquivo V49.1.1 fornecido pelo usuário; o próprio livro informa versão 49.0. Cada Item contém suas páginas e origem. Conteúdo adaptado sob [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/), conforme [licença e alterações](../LICENSE-CONTENT.md). O PDF, imagens e marcas d'água não fazem parte do pacote.
+
+
+## Artefatos — 0.55.0
+
+Abra **Compêndios → Artefatos — A Batalha dos Deuses**, consulte a descrição e arraste para a ficha. A cópia aparece entre os artefatos da aba Armadura, sem equipar nem executar poderes. Nível equivalente (15 a45 nas referências desta seção) mede poder do objeto; não exige subir o personagem a esse nível. Custo numérico0 indica ausência de cobrança automatizada, não uso gratuito: consulte Custo / consumo descrito e a regra.
+
+Talismã de Selamento tem o título quebrado normalizado, com grafia original anotada. A tabela de Selamento foi separada do corpo da Máscara Rangda e incorporada como referência comum nos artefatos de selamento, com página612 explícita. As três espadas preservam o contexto das Armaduras Lendárias e a regra individual. Importar não concede Lenda, quebra de limite, armadura Glória, localização de tokens, dano, selamento ou condições. Não inclui imagens do livro.
+
+A cobertura desta seção não substitui o futuro catálogo de armaduras por constelação nem comprova auditoria de todas as referências dispersas. Os866Items anteriores e seusUUIDs permanecem preservados; cópias importadas no mundo não são reescritas. Validação do importador no core hospedado13.350 permanece pendente.
