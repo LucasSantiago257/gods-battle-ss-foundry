@@ -2,7 +2,7 @@
   "id": "gods-battle-ss",
   "title": "Saint Seiya — A Batalha dos Deuses",
   "description": "Sistema UmD10+ com fichas de cavaleiros, técnicas e compêndios do livro para Foundry 13.350.",
-  "version": "0.54.0",
+  "version": "0.55.0",
   "compatibility": {
     "minimum": "13",
     "maximum": "13"
@@ -15,7 +15,7 @@
   ],
   "url": "https://github.com/LucasSantiago257/gods-battle-ss-foundry",
   "manifest": "https://github.com/LucasSantiago257/gods-battle-ss-foundry/releases/latest/download/system.json",
-  "download": "https://github.com/LucasSantiago257/gods-battle-ss-foundry/releases/download/v0.54.0/gods-battle-ss-0.54.0.zip",
+  "download": "https://github.com/LucasSantiago257/gods-battle-ss-foundry/releases/download/v0.55.0/gods-battle-ss-0.55.0.zip",
   "esmodules": [
     "module/main.mjs"
   ],
@@ -112,6 +112,13 @@
       "name": "tecnicas",
       "label": "Técnicas — A Batalha dos Deuses",
       "path": "packs/tecnicas",
+      "type": "Item",
+      "system": "gods-battle-ss"
+    },
+    {
+      "name": "artefatos",
+      "label": "Artefatos — A Batalha dos Deuses",
+      "path": "packs/artefatos",
       "type": "Item",
       "system": "gods-battle-ss"
     },

@@ -19,7 +19,7 @@ test("manifesto registra todos os compêndios e todas as fontes disponíveis", a
  assert.deepEqual(manifest.packs.filter(p=>p.type==="Item").map(p => p.name), CATALOG_PACKS.map(p => p.name));
  for (const p of manifest.packs) {assert.equal(p.path, `packs/${p.name}`); assert.ok(["Item","Actor"].includes(p.type)); assert.equal(p.system, manifest.id);}
  assert.deepEqual((await readdir("data/catalog")).sort(), CATALOG_PACKS.flatMap(p => p.sources.map(s => `${s}.json`)).sort());
- assert.deepEqual(catalogs.map(p => p.entries.length), [129, 229, 98, 88, 34, 14, 49, 59, 166]);
+ assert.deepEqual(catalogs.map(p => p.entries.length), [129, 229, 98, 88, 34, 14, 49, 59, 166, 22]);
 });
 test("conteúdos importáveis têm IDs estáveis, proveniência e dados válidos sem informações pessoais", () => {
  assert.equal(new Set(all.map(e => e._id)).size, all.length);
@@ -29,7 +29,7 @@ test("conteúdos importáveis têm IDs estáveis, proveniência e dados válidos
   assert.equal(e._id, createHash("sha256").update(provenance.key).digest("hex").slice(0,16), e.name);
   assert.ok(!keys.has(provenance.key)); keys.add(provenance.key);
   assert.ok(e.name.trim() && e.system.description.trim(), e.name);
-  assert.ok(["ability", "virtue", "divineCosmo", "bigbang", "increment", "technique"].includes(e.type));
+  assert.ok(["ability", "virtue", "divineCosmo", "bigbang", "increment", "technique", "artifact"].includes(e.type));
   assert.doesNotThrow(() => validateStrings(ContentData.defineSchema(), {...content(), ...e.system}), e.name);
   for (const key of ["level", "power", "cost"]) assert.ok(Number.isInteger(e.system[key]) && e.system[key]>=0);
   assert.equal(provenance.author, "Dhoko de Libra"); assert.equal(provenance.license, "CC BY-NC-SA 4.0");
@@ -150,5 +150,22 @@ test("compêndios LevelDB preservam todos os Items, regras, fontes e pastas no r
   }
  } finally {
   const resolved=path.resolve(temp); assert.ok(resolved.startsWith(root+path.sep)); await rm(resolved,{recursive:true,force:true});
+ }
+});
+
+
+test("artefatos preservam 22 referências, níveis equivalentes e importação sem poderes automáticos",async()=>{
+ const entries=await source("artifacts"),{passiveDefinition}=await import("../module/passives.mjs"),{ContentSheet}=await import("../module/sheets.mjs");
+ assert.equal(entries.length,22);assert.equal(entries.filter(e=>e.system.category.startsWith("Armaduras")).length,3);
+ const byName=name=>entries.find(e=>e.name===name);
+ assert.equal(byName("Pomo Dourado").system.level,45);assert.equal(byName("Harpa de Pandora").system.level,40);
+ const talisman=byName("Talismã de Selamento");assert.match(talisman.system.notes,/Título original/);assert.match(talisman.system.description,/5 turnos/);
+ const mask=byName("Máscara Rangda");assert.match(mask.system.description,/Ilha da Rainha da Morte/);assert.doesNotMatch(mask.system.description,/Selar Entidade/);
+ for(const e of entries){
+  const src=e.flags["gods-battle-ss"].source;assert.equal(e.type,"artifact");assert.equal(src.reference.levelKind,"equivalent");assert.equal(src.reference.application,"manual");assert.equal(passiveDefinition(e),null);assert.equal(e.system.cost,0);assert.equal(e.system.power,0);
+  if(src.reference.tablePages){assert.ok(src.pages.includes(612));assert.match(e.system.description,/Selar Entidade.*Nível do alvo \+10/);}
+  const context=await new ContentSheet({...e,isOwner:true,system:{...content(),...e.system}})._prepareContext({});assert.ok(context.fields.some(f=>f.name==="system.level"&&/equivalente/.test(f.label)));assert.ok(context.fields.some(f=>f.name==="system.costText"));
+  let update;const actor={isOwner:true,acceptDrop:async()=>({update:async data=>{update=data;}})};const uuid=`Compendium.gods-battle-ss.artefatos.Item.${e._id}`;
+  await new KnightSheet(actor)._onDropItem({}, {...e,uuid});assert.deepEqual(update,{"system.originUuid":uuid,"system.equipped":false});
  }
 });

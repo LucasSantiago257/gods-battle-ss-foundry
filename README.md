@@ -50,7 +50,7 @@ Para exercitar o combate, abra **Compêndios → Fichas de teste — Combate**. 
 
 Fichas, compêndios e ativação de técnicas do sistema UmD10+, com destino ao **FoundryVTT 13 build 350**. Versão **0.36.0, em desenvolvimento**. A criação de personagens na versão 0.1.1 foi confirmada pelo usuário no servidor; as novas automações ainda precisam ser validadas dentro do Foundry.
 
-O sistema inclui **866 entradas em nove compêndios nativos**, com descrições, requisitos, origem e páginas do livro. Na aba **Poderes**, os atalhos abrem os catálogos para arrastar itens à ficha. Acrescenta 166 técnicas para consulta e configuração, com atalhos na aba Técnicas. As cópias do catálogo exigem revisão antes de gastar CE; custos variáveis, efeitos especiais e Exclamação de Athena permanecem manuais. A ficha permite abrir os Big Bangs relacionados para consulta. Os Items do livro mostram a descrição completa em uma área de leitura. Consulte a [cobertura e o uso dos compêndios](docs/compendios.md). Para atualizar, encerre o mundo e use **Sistemas de Jogo → Atualizar**; depois inicie o mundo e recarregue a página.
+O sistema inclui **888 entradas em dez compêndios nativos de Items**, com descrições, requisitos, origem e páginas do livro. Na aba **Poderes**, os atalhos abrem os catálogos para arrastar itens à ficha. Acrescenta 166 técnicas para consulta e configuração, com atalhos na aba Técnicas. As cópias do catálogo exigem revisão antes de gastar CE; custos variáveis, efeitos especiais e Exclamação de Athena permanecem manuais. A ficha permite abrir os Big Bangs relacionados para consulta. Os Items do livro mostram a descrição completa em uma área de leitura. Consulte a [cobertura e o uso dos compêndios](docs/compendios.md). Para atualizar, encerre o mundo e use **Sistemas de Jogo → Atualizar**; depois inicie o mundo e recarregue a página.
 
 ## O que já existe
 
@@ -130,3 +130,6 @@ Na0.21.0, [Sustentada](docs/sustentada.md) acompanha duração inicial e recarga
 
 
 Na seleção de Big Bangs/incrementos, a prévia mostra o apoio disponível antes de adicionar: cálculo em Ativar, rodadas assistidas ou aplicação manual. O texto considera o primordial e composições mistas; não habilita automação por conta própria (0.54.0).
+
+
+Na0.55.0, **Compêndios → Artefatos** reúne22referências das pp.607–614, com níveis equivalentes, regras, páginas e atribuição. Arrastar cria cópia independente sem equipar nem executar poderes. Os866Items anteriores permanecem preservados.

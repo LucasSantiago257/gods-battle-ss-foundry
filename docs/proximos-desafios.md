@@ -240,3 +240,8 @@ Não muda fórmulas, dificuldades, custos, dano, condições ou permissões, nem
 ## Seleção de componentes — 0.54.0
 
 A prévia do seletor agora mostra apoio e limites antes de adicionar o componente. Usa as mesmas referências canônicas e classificações da composição final, considerando o primordial e primordiais adicionais. Não presume automação pelo nome, não habilita cálculos nem altera custos. A decisão fica visível antes de preencher o rascunho; a escolha continua livre. Matrizes e limites de regras permanecem em [componentes automáticos](componentes-automaticos.md).
+
+
+## Artefatos importáveis — 0.55.0
+
+Auditada a seção607–614:19objetos+3espadas/armaduras lendárias,22Items novos no compêndio Artefatos; total888Items/10catálogos de Items, além das3fichas de teste. Nível equivalente preservado até45, campo identificado como referência. Texto de Selamento inclui a tabela612 sem atribuí-la à Máscara Rangda. Sem efeitos automáticos, equipamentos, condições, cobranças, Lenda ou quebras de limite. Detalhes em [compêndios](compendios.md). Preservadas as866entradas/UUIDs anteriores. Ainda pendem auditoria global das armaduras e demais referências dispersas; a entrega deste catálogo não conclui os marcos de gameplay nem a auditoria total. Core hospedado13.350 pendente.
