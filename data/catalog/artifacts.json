@@ -1,0 +1,978 @@
+[
+  {
+    "_id": "040cefc3828d0d8d",
+    "name": "Adaga dourada",
+    "type": "artifact",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Adaga dourada [Nível Equivalente 30] É uma adaga feita de Ouro que recebeu o sangue de Athena junto de seu Cosmo  e acabou por possuir a capacidade de ferir deuses, apesar de no conteúdo escrito diretamente por Masami Kurumada, não ser dito que ela é o único utensílio que pode ser usado para tal feito (muitos deuses foram feridos por outras armas ao longo da série).\n\nPoder: Anula a Barreira Divina dos Deuses.",
+      "page": "607",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Conferir as condições específicas de posse, uso ou despertar descritas na referência; aplicação manual.",
+      "category": "Artefatos",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "costText": "Consumos e condições descritos são aplicados manualmente; custo numérico não automatizado.",
+      "notes": "Nível equivalente é referência de poder, não requisito automático de aquisição. Importar não equipa armadura nem altera atributos, Lenda, recursos, defesa, dano ou condições. Poderes e consumos são aplicados pela mesa.",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artifact:Adaga dourada",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            607
+          ],
+          "reference": {
+            "levelKind": "equivalent",
+            "application": "manual"
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "65cad3b180b6f3e8",
+    "name": "O Anel Nibelungo",
+    "type": "artifact",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "O Anel Nibelungo [Nível Equivalente 25] A única pessoa que sofreu os efeitos do anel foi Hilda de Polaris, representante de Odin. O anel permite que a pessoa que o deu controle a pessoa que o recebeu, e a única forma de retirá-lo do usuário não é arrancá-lo do dedo do usuário, e sim conseguir as sete Safiras de Odin e despertar a Espada Balmung, que se encontra guardada na estátua de Odin, e golpear o anel com ela. O anel tem a capacidade de lançar rajadas de poder.\n\nPoder: Controla totalmente um alvo.\n\nRajada de poder: 60 de dano.",
+      "page": "607",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Conferir as condições específicas de posse, uso ou despertar descritas na referência; aplicação manual.",
+      "category": "Artefatos",
+      "level": 25,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "costText": "Consumos e condições descritos são aplicados manualmente; custo numérico não automatizado.",
+      "notes": "Nível equivalente é referência de poder, não requisito automático de aquisição. Importar não equipa armadura nem altera atributos, Lenda, recursos, defesa, dano ou condições. Poderes e consumos são aplicados pela mesa.",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artifact:O Anel Nibelungo",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            607
+          ],
+          "reference": {
+            "levelKind": "equivalent",
+            "application": "manual"
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "66fbe71e56c0d574",
+    "name": "Draupnir",
+    "type": "artifact",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Draupnir [Nível Equivalente 28]\n\nUma arma sagrada em forma de Soco Inglês capaz de gerar suficiente poder para derrotar Loki e o prender na Ânfora de novo. Entretanto, Draupnir só mostrará seu verdadeiro poder se aceitar quem a usa. Hilda de Polaris guardava essa arma, a confiando a Aioro s de Sagitário.\n\nPoder: Anula a Barreira Divina dos Deuses.",
+      "page": "607, 608",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Conferir as condições específicas de posse, uso ou despertar descritas na referência; aplicação manual.",
+      "category": "Artefatos",
+      "level": 28,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "costText": "Consumos e condições descritos são aplicados manualmente; custo numérico não automatizado.",
+      "notes": "Nível equivalente é referência de poder, não requisito automático de aquisição. Importar não equipa armadura nem altera atributos, Lenda, recursos, defesa, dano ou condições. Poderes e consumos são aplicados pela mesa.",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artifact:Draupnir",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            607,
+            608
+          ],
+          "reference": {
+            "levelKind": "equivalent",
+            "application": "manual"
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "b887e28ecc58cad8",
+    "name": "Lança de Gungnir",
+    "type": "artifact",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Lança de Gungnir [Nível Equivalente 30] Gungnir é a lança de Odin, deus principal da mitologia nórdica. A lança Gungnir , quando lançada nunca erra o alvo, e sempre volta à mão de Odin, além disso, juramentos prestados em nome de Gungnir são inquebráveis. A lança foi um presente de Loki a Odin;\n\nPoder: Juramento: O Usuário escolhe um alvo e recebe +3 Pontos de Determinação contra ele ; Perfuração Certeira: Ao final da Ações de ataque causa 30 pontos de dano, acertando ou não o alvo; Divina: Anula Barreira Divina.",
+      "page": "608",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Conferir as condições específicas de posse, uso ou despertar descritas na referência; aplicação manual.",
+      "category": "Artefatos",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "costText": "Consumos e condições descritos são aplicados manualmente; custo numérico não automatizado.",
+      "notes": "Nível equivalente é referência de poder, não requisito automático de aquisição. Importar não equipa armadura nem altera atributos, Lenda, recursos, defesa, dano ou condições. Poderes e consumos são aplicados pela mesa.",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artifact:Lança de Gungnir",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            608
+          ],
+          "reference": {
+            "levelKind": "equivalent",
+            "application": "manual"
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "6aa98216919430cf",
+    "name": "Espada Balmung",
+    "type": "artifact",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Espada Balmung [Nível Equivalente 30] É a espada de gelo sagrada, presente na Robe de Odin. Ela, assim como a Armadura de Athena, é representada em forma de estátua. É a única arma conhecida com poder suficiente para quebrar o feitiço do Anel de Nibelungo. Sendo um objeto sagrado, está bem guardada, oculta nas profundezas da terra, sob a estátua de Odin. Ao se reunir as sete Safiras de Odin, a colossal espada se desprende da estátua e se parte, liberando o traje. Seiya de Pégaso, Hilda de Polaris e Aiolia de Leão são, até o momento, os únicos conhecidos por terem empunhado a espada - Seiya usou-a para cortar a maldição do Anel de Nibelungo; Hilda, já livre da influência maligna, usou a espada para evitar a aniquilação de Asgard; Aiolia, na saga Soul of Gold, usou a espada em conjunto com o Draupnir para tentar aprisionar o deus Loki, mas ambas, espada e Robe, foram destruídas pelo mesmo, que empunhava a Lança de Gungnir.\n\nPoder: O usuário enquanto de posse da espada tem o direito de vestir o Robe de Odin.",
+      "page": "608",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Conferir as condições específicas de posse, uso ou despertar descritas na referência; aplicação manual.",
+      "category": "Artefatos",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "costText": "Consumos e condições descritos são aplicados manualmente; custo numérico não automatizado.",
+      "notes": "Nível equivalente é referência de poder, não requisito automático de aquisição. Importar não equipa armadura nem altera atributos, Lenda, recursos, defesa, dano ou condições. Poderes e consumos são aplicados pela mesa.",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artifact:Espada Balmung",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            608
+          ],
+          "reference": {
+            "levelKind": "equivalent",
+            "application": "manual"
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "5866f2fe5bbaef87",
+    "name": "Safiras de Odin",
+    "type": "artifact",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Safiras de Odin [Nível Equivalente 25]\n\nSão 7 safiras protegidas pelo povo de Asgard e utilizados por eles para própria defesa. Podem ser usadas separadamente ou em conjunto.\n\nPoder Separadas: Elevar a Classe de uma Armadura para o Nível seguinte.\n\nPoder do Conjunto: Invocar a Espada Balmung.",
+      "page": "608, 609",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Conferir as condições específicas de posse, uso ou despertar descritas na referência; aplicação manual.",
+      "category": "Artefatos",
+      "level": 25,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "costText": "Consumos e condições descritos são aplicados manualmente; custo numérico não automatizado.",
+      "notes": "Nível equivalente é referência de poder, não requisito automático de aquisição. Importar não equipa armadura nem altera atributos, Lenda, recursos, defesa, dano ou condições. Poderes e consumos são aplicados pela mesa.",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artifact:Safiras de Odin",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            608,
+            609
+          ],
+          "reference": {
+            "levelKind": "equivalent",
+            "application": "manual"
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "89cd3b4728de3326",
+    "name": "Mapa Estelar",
+    "type": "artifact",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Mapa Estelar [Nível Equivalente 20] Um mapa (não precisa ser físico) capaz de visualizar e localizar cada Armadura Ativa em tempo real.\n\nPoder: O mapa indica a localização exata de qualquer Armadura.",
+      "page": "609",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Conferir as condições específicas de posse, uso ou despertar descritas na referência; aplicação manual.",
+      "category": "Artefatos",
+      "level": 20,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "costText": "Consumos e condições descritos são aplicados manualmente; custo numérico não automatizado.",
+      "notes": "Nível equivalente é referência de poder, não requisito automático de aquisição. Importar não equipa armadura nem altera atributos, Lenda, recursos, defesa, dano ou condições. Poderes e consumos são aplicados pela mesa.",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artifact:Mapa Estelar",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            609
+          ],
+          "reference": {
+            "levelKind": "equivalent",
+            "application": "manual"
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "a0cf78aaedaaf898",
+    "name": "Espelho Senin",
+    "type": "artifact",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Espelho Senin [Nível Equivalente 30] Este espelho é um portal para a terra de Senin. Ele aparece somente no Gaiden do Cavaleiro de Ouro de Libra Dokho .",
+      "page": "609",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Conferir as condições específicas de posse, uso ou despertar descritas na referência; aplicação manual.",
+      "category": "Artefatos",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "costText": "Consumos e condições descritos são aplicados manualmente; custo numérico não automatizado.",
+      "notes": "Nível equivalente é referência de poder, não requisito automático de aquisição. Importar não equipa armadura nem altera atributos, Lenda, recursos, defesa, dano ou condições. Poderes e consumos são aplicados pela mesa.",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artifact:Espelho Senin",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            609
+          ],
+          "reference": {
+            "levelKind": "equivalent",
+            "application": "manual"
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "f476fe2f1b657645",
+    "name": "Fio de Ariadne",
+    "type": "artifact",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Fio de Ariadne [Nível Equivalente 20] O Fio de Ariadne ou Novelo de Ariadne, foi um fio que o Grande Mestre deu a Cardinale de Peixes para se guiar no Labirinto dos Deuses, tendo em vista que ele ajuda a sair de todo o labirinto. Ele foi baseado no mito em que Teseu foi enfrentar o Minotauro, e Ariadne lhe deu uma espada e um novelo de lã, pra ele se guiar no labirinto.\n\nPoder: Permite encontrar a direção e localizar qualquer lugar ou pessoa no mundo.",
+      "page": "609",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Conferir as condições específicas de posse, uso ou despertar descritas na referência; aplicação manual.",
+      "category": "Artefatos",
+      "level": 20,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "costText": "Consumos e condições descritos são aplicados manualmente; custo numérico não automatizado.",
+      "notes": "Nível equivalente é referência de poder, não requisito automático de aquisição. Importar não equipa armadura nem altera atributos, Lenda, recursos, defesa, dano ou condições. Poderes e consumos são aplicados pela mesa.",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artifact:Fio de Ariadne",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            609
+          ],
+          "reference": {
+            "levelKind": "equivalent",
+            "application": "manual"
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "25339096bc97a24d",
+    "name": "Guizos",
+    "type": "artifact",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Guizos [Nível Equivalente 15] Os Guizos foram os objetos em forma de crânio que os Cavaleiros de Bronze usaram no Vale da Morte para não se perderem uns dos outros, e até para não lutarem entre si.\n\nPoder: Os usuários dos Guizos sempre sabem a localização do outro usuário.",
+      "page": "609",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Conferir as condições específicas de posse, uso ou despertar descritas na referência; aplicação manual.",
+      "category": "Artefatos",
+      "level": 15,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "costText": "Consumos e condições descritos são aplicados manualmente; custo numérico não automatizado.",
+      "notes": "Nível equivalente é referência de poder, não requisito automático de aquisição. Importar não equipa armadura nem altera atributos, Lenda, recursos, defesa, dano ou condições. Poderes e consumos são aplicados pela mesa.",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artifact:Guizos",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            609
+          ],
+          "reference": {
+            "levelKind": "equivalent",
+            "application": "manual"
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "e4a617281d5ba3e3",
+    "name": "Espelho de Pandora",
+    "type": "artifact",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Espelho de Pandora [Nível Equivalente 30]\n\nO Espelho de Pandora é um objeto (capaz de refletir uma luz semelhante à luz do sol) que a Pandora entregou ao Faraó de Esfinge para tornar a Eurídice em pedra, e prender o Orfeu de Lira no mundo dos mortos.\n\nRaio de Petrificação: Aumenta o Poder Cósmico do Usuário + 10 de Modificador Positivo para resistir a petrificação.",
+      "page": "609, 610",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Conferir as condições específicas de posse, uso ou despertar descritas na referência; aplicação manual.",
+      "category": "Artefatos",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "costText": "Consumos e condições descritos são aplicados manualmente; custo numérico não automatizado.",
+      "notes": "Nível equivalente é referência de poder, não requisito automático de aquisição. Importar não equipa armadura nem altera atributos, Lenda, recursos, defesa, dano ou condições. Poderes e consumos são aplicados pela mesa.",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artifact:Espelho de Pandora",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            609,
+            610
+          ],
+          "reference": {
+            "levelKind": "equivalent",
+            "application": "manual"
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "fc925ab2e128651d",
+    "name": "Harpa de Pandora",
+    "type": "artifact",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Harpa de Pandora [Nível Equivalente 40] A Harpa de Pandora é um instrumento musical usado por  Pandora, que possui uma grande habilidade musical. Através de sua harpa, Pandora é capaz até mesmo de impingir dor como ela faz para castigar o Radamanthys no Castelo de Heinstein.\n\nPoder: A harpa causa a graduação da Perícia Atuação x 20 de dano no alvo que sentirá uma dor insuportável. + Estado Atordoado.",
+      "page": "610",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Conferir as condições específicas de posse, uso ou despertar descritas na referência; aplicação manual.",
+      "category": "Artefatos",
+      "level": 40,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "costText": "Consumos e condições descritos são aplicados manualmente; custo numérico não automatizado.",
+      "notes": "Nível equivalente é referência de poder, não requisito automático de aquisição. Importar não equipa armadura nem altera atributos, Lenda, recursos, defesa, dano ou condições. Poderes e consumos são aplicados pela mesa.",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artifact:Harpa de Pandora",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            610
+          ],
+          "reference": {
+            "levelKind": "equivalent",
+            "application": "manual"
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "1f4519ef9da37a30",
+    "name": "Pomo Dourado",
+    "type": "artifact",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Pomo Dourado [Nível Equivalente 45] O Pomo Dourado é um pomo em forma de maçã, que serviu de hospedeiro da alma de Éris, aprisionado por Athena.\n\nPoder: Selamento; +5 de Modificador Positivo no TAP Selamento.\n\nEspecial: Capacidade de suprimir e aprisionar um Deus\n\nDuração Selamento: Aproximadamente 240 anos\n\nReferência comum — Testes de Selamento (p. 612):\nTabela: Testes de Selamento\n\nDescrição Dificuldade\n\nSelar Habilidade/Dádiva Nível do alvo +1\n\nSelar Poderes/Acessórios Armaduras Nível do alvo +2\n\nSelar Virtudes Nível do alvo +3\n\nSelar Técnicas Nível do alvo +4\n\nSelar Cosmo Energia Nível do alvo +6\n\nSelar Entidade (aprisionar) Nível do alvo +10",
+      "page": "610, 612",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Conferir as condições específicas de posse, uso ou despertar descritas na referência; aplicação manual.",
+      "category": "Artefatos",
+      "level": 45,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "costText": "Consumos e condições descritos são aplicados manualmente; custo numérico não automatizado.",
+      "notes": "Nível equivalente é referência de poder, não requisito automático de aquisição. Importar não equipa armadura nem altera atributos, Lenda, recursos, defesa, dano ou condições. Poderes e consumos são aplicados pela mesa.",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artifact:Pomo Dourado",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            610,
+            612
+          ],
+          "reference": {
+            "levelKind": "equivalent",
+            "application": "manual",
+            "tablePages": [
+              612
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "5ed056648da431d0",
+    "name": "Vaso Sagrado",
+    "type": "artifact",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Vaso Sagrado [Nível Equivalente 45] O Vaso Sagrado é o vaso no qual Hypnos prendeu Athena . Encontra-se no interior do Templo de Hades. O vaso tem como características a aparente indestrutibilidade -  Hypnos chegou a comentar que nem a fúria de Zeus poderia quebrá-lo. Outro fato é sua capacidade de drenar o sangue de suas vítimas. Quando o vaso adquiri  r uma cor totalmente vermelha, significa que a pessoa nele aprisionada está morta.\n\nPoder: Selamento; +15 de Modificador Positivo no TAP Selamento.\n\nEspecial: Capacidade de suprimir e aprisionar um Deus\n\nEspecial: Diminui o a vida de quem estiver selado dentro do vaso. Retira 10 pontos de vida por hora.\n\nReferência comum — Testes de Selamento (p. 612):\nTabela: Testes de Selamento\n\nDescrição Dificuldade\n\nSelar Habilidade/Dádiva Nível do alvo +1\n\nSelar Poderes/Acessórios Armaduras Nível do alvo +2\n\nSelar Virtudes Nível do alvo +3\n\nSelar Técnicas Nível do alvo +4\n\nSelar Cosmo Energia Nível do alvo +6\n\nSelar Entidade (aprisionar) Nível do alvo +10",
+      "page": "610, 611, 612",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Conferir as condições específicas de posse, uso ou despertar descritas na referência; aplicação manual.",
+      "category": "Artefatos",
+      "level": 45,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "costText": "Consumos e condições descritos são aplicados manualmente; custo numérico não automatizado.",
+      "notes": "Nível equivalente é referência de poder, não requisito automático de aquisição. Importar não equipa armadura nem altera atributos, Lenda, recursos, defesa, dano ou condições. Poderes e consumos são aplicados pela mesa.",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artifact:Vaso Sagrado",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            610,
+            611,
+            612
+          ],
+          "reference": {
+            "levelKind": "equivalent",
+            "application": "manual",
+            "tablePages": [
+              612
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "9924340fc813010d",
+    "name": "Rosário de 108 Contas",
+    "type": "artifact",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Rosário de 108 Contas [Nível Equivalente 30] O Rosário de 108 Contas é  item de vital importância nas Guerras Santas travadas contra Hades, uma vez que, juntamente com a Terra Enclausurada a barreira de Athena e os Caixões construídos por Deathtoll de Câncer, são as únicas formas conhecidas de selar as almas dos Espectros e, portanto, impedir que possam ser chamados de volta à vida.\n\nPoder: Selamento; +2 de Modificador Positivo no TAP Selamento.\n\nEspecial: Anula a Habilidade último dia dos Espectros\n\nDuração Selamento: Aproximadamente 240 anos\n\nReferência comum — Testes de Selamento (p. 612):\nTabela: Testes de Selamento\n\nDescrição Dificuldade\n\nSelar Habilidade/Dádiva Nível do alvo +1\n\nSelar Poderes/Acessórios Armaduras Nível do alvo +2\n\nSelar Virtudes Nível do alvo +3\n\nSelar Técnicas Nível do alvo +4\n\nSelar Cosmo Energia Nível do alvo +6\n\nSelar Entidade (aprisionar) Nível do alvo +10",
+      "page": "611, 612",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Conferir as condições específicas de posse, uso ou despertar descritas na referência; aplicação manual.",
+      "category": "Artefatos",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "costText": "Consumos e condições descritos são aplicados manualmente; custo numérico não automatizado.",
+      "notes": "Nível equivalente é referência de poder, não requisito automático de aquisição. Importar não equipa armadura nem altera atributos, Lenda, recursos, defesa, dano ou condições. Poderes e consumos são aplicados pela mesa.",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artifact:Rosário de 108 Contas",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            611,
+            612
+          ],
+          "reference": {
+            "levelKind": "equivalent",
+            "application": "manual",
+            "tablePages": [
+              612
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "ed270a26e6fec90b",
+    "name": "Ânfora de Athena",
+    "type": "artifact",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Ânfora de Athena [Nível Equivalente 40] A Ânfora de Athena ou Ânfora Sagrada, como também é citada, é um jarro usado pela deusa Athena para selar a alma de Poseidon, utilizado nas Guerras Santas, travadas entre eles. A ânfora sempre é lacrada com um dos Selos de Athena, que é conservado por cerca de 200 anos ou mais. Mesmo após séculos, o lacre ainda não pode ser removido por humanos comuns, exceto por alguém de poder considerável, como um Cavaleiro de Ouro. Porém, como dito pelo próprio Imperador Poseidon, o\n\nPoder: Selamento; +10 de Modificador Positivo no TAP Selamento.\n\nEspecial: Capacidade de suprimir e aprisionar um Deus\n\nDuração Selamento: Aproximadamente 240 anos\n\nReferência comum — Testes de Selamento (p. 612):\nTabela: Testes de Selamento\n\nDescrição Dificuldade\n\nSelar Habilidade/Dádiva Nível do alvo +1\n\nSelar Poderes/Acessórios Armaduras Nível do alvo +2\n\nSelar Virtudes Nível do alvo +3\n\nSelar Técnicas Nível do alvo +4\n\nSelar Cosmo Energia Nível do alvo +6\n\nSelar Entidade (aprisionar) Nível do alvo +10",
+      "page": "611, 612",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Conferir as condições específicas de posse, uso ou despertar descritas na referência; aplicação manual.",
+      "category": "Artefatos",
+      "level": 40,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "costText": "Consumos e condições descritos são aplicados manualmente; custo numérico não automatizado.",
+      "notes": "Nível equivalente é referência de poder, não requisito automático de aquisição. Importar não equipa armadura nem altera atributos, Lenda, recursos, defesa, dano ou condições. Poderes e consumos são aplicados pela mesa.",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artifact:Ânfora de Athena",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            611,
+            612
+          ],
+          "reference": {
+            "levelKind": "equivalent",
+            "application": "manual",
+            "tablePages": [
+              612
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "87cd1e0fd1c371c4",
+    "name": "Selos de Athena",
+    "type": "artifact",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Selos de Athena [Nível Equivalente 20] O Selo de Athena é um poderoso talismã cujo poder é capaz de restringir a ponto de quase anular outras forças, incluindo sobrenaturais ou mesmo divinas, por extensos espaços de tempo. É talvez a mais segura das técnicas de lacre de poderes. Ao lado da própria deusa, o Grande Mestre é o principal utilizador dos Selos. Não há evidências de que qualquer um além dos dois tenha permissão para utilizá-los.\n\nPoder: Selamento; +2 de Modificador Positivo no TAP Selamento.\n\nEspecial: Capacidade de suprimir e aprisionar um Deus\n\nDuração Selamento: Aproximadamente 1 dia\n\nReferência comum — Testes de Selamento (p. 612):\nTabela: Testes de Selamento\n\nDescrição Dificuldade\n\nSelar Habilidade/Dádiva Nível do alvo +1\n\nSelar Poderes/Acessórios Armaduras Nível do alvo +2\n\nSelar Virtudes Nível do alvo +3\n\nSelar Técnicas Nível do alvo +4\n\nSelar Cosmo Energia Nível do alvo +6\n\nSelar Entidade (aprisionar) Nível do alvo +10",
+      "page": "611, 612",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Conferir as condições específicas de posse, uso ou despertar descritas na referência; aplicação manual.",
+      "category": "Artefatos",
+      "level": 20,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "costText": "Consumos e condições descritos são aplicados manualmente; custo numérico não automatizado.",
+      "notes": "Nível equivalente é referência de poder, não requisito automático de aquisição. Importar não equipa armadura nem altera atributos, Lenda, recursos, defesa, dano ou condições. Poderes e consumos são aplicados pela mesa.",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artifact:Selos de Athena",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            611,
+            612
+          ],
+          "reference": {
+            "levelKind": "equivalent",
+            "application": "manual",
+            "tablePages": [
+              612
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "05b4fc8331cf0548",
+    "name": "Talismã de Selamento",
+    "type": "artifact",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Talismã de Sel amento [Nível Equivalente 28]\n\nO Selo de At hena é um Talismã sagrado , o nome, não é devido ao fato de ser um selo de uma carta, mas por ser usado por At hena, pra poder selar qualquer alma em qualquer objeto (ou apenas em algum objeto que já seja sagrado, mas nada ainda foi dito sobre isso). O nome de At hena vem escrito em grego (\"Αθήνα\"), l íngua de At hena. N ão existe algo espec ífico que o quebra,  sabemos que, geralmente, se for um objeto que pode ser aberto, o selo perde seu poder (libertando o ser de dentro do objeto), mas se for um objeto como uma torre, ele se enfraquece com o tempo e por isso, alguém tem que vigiar pra evitar que alguém desfaça o selo antes da hora.\n\nPoder: Selamento; +2 de Modificador Positivo no TAP Selamento.\n\nEspecial: Capacidade de suprimir as vantagens dos Estágios de Sentidos de Cosmo do alvo.\n\nDuração Selamento: Aproximadamente 5 turnos\n\nReferência comum — Testes de Selamento (p. 612):\nTabela: Testes de Selamento\n\nDescrição Dificuldade\n\nSelar Habilidade/Dádiva Nível do alvo +1\n\nSelar Poderes/Acessórios Armaduras Nível do alvo +2\n\nSelar Virtudes Nível do alvo +3\n\nSelar Técnicas Nível do alvo +4\n\nSelar Cosmo Energia Nível do alvo +6\n\nSelar Entidade (aprisionar) Nível do alvo +10",
+      "page": "612",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Conferir as condições específicas de posse, uso ou despertar descritas na referência; aplicação manual.",
+      "category": "Artefatos",
+      "level": 28,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "costText": "Consumos e condições descritos são aplicados manualmente; custo numérico não automatizado.",
+      "notes": "Nível equivalente é referência de poder, não requisito automático de aquisição. Importar não equipa armadura nem altera atributos, Lenda, recursos, defesa, dano ou condições. Poderes e consumos são aplicados pela mesa. Título original: Talismã de Sel amento.",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artifact:Talismã de Sel amento",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            612
+          ],
+          "reference": {
+            "levelKind": "equivalent",
+            "application": "manual",
+            "tablePages": [
+              612
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "c674c21f3a1d10d6",
+    "name": "Máscara Rangda",
+    "type": "artifact",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "Máscara Rangda [Nível Equivalente 30]\n\nEste artefato funciona como selo de Athena sobre a Ilha da Rainha da Morte . O usuário da máscara tem sua essência dominada pela Bruxa  Rangda tornando-se Mau e Vil com o decorrer do tempo.\n\nPoder: Quem possuir a Máscara controla os Cavaleiros Negros como o Grande Mestre controla o Santuário  de Athena.",
+      "page": "612, 613",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Conferir as condições específicas de posse, uso ou despertar descritas na referência; aplicação manual.",
+      "category": "Artefatos",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "costText": "Consumos e condições descritos são aplicados manualmente; custo numérico não automatizado.",
+      "notes": "Nível equivalente é referência de poder, não requisito automático de aquisição. Importar não equipa armadura nem altera atributos, Lenda, recursos, defesa, dano ou condições. Poderes e consumos são aplicados pela mesa.",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artifact:Máscara Rangda",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            612,
+            613
+          ],
+          "reference": {
+            "levelKind": "equivalent",
+            "application": "manual"
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "fc9abbd6cc132a44",
+    "name": "Durandal, A Espada Sagrada Indestrutível",
+    "type": "artifact",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "As Armaduras Lendárias [Nível Equivalente 30]: Essas Armaduras são inspiradas nas lendárias Espadas Sagradas da Távola Redonda. Aqueles que as possuem podem usá- las tanto como espadas de combate quanto como armaduras que cobrem quase todo o corpo, deixando apenas algumas partes à mostra. Elas desempenham um papel crucial na liberação das técnicas de seus portadores, pois estes só podem utilizar a maioria de seus golpes através da \"Liberação da espada maldita\", que permite que eles personifiquem seus ataques. Essa frase também é usada quando um usuário usa sua espada sagrada como armadura para sua proteção, envolvendo -a ao redor de seu corpo.\n\nDurandal, A Espada Sagrada Indestrutível Durandal é a lendária espada empunhada por Rolando, um cavaleiro heroico que serviu ao imperador Carlos Magno no século VIII. Ela seria a espada mais afiada em toda a existência. De acordo com a Canção de Rolando, a espada é entregue à Carlos Magno por um anjo, e o imperador entrega a mesma à Rolando. De acordo com o poema Orlando Furioso, ela pertencia a Heitor de Tróia, e foi dada a Rolando.\n\nPoder: Quebrar Limite: Permite ao Usuário superar o limite do Atributo Vigor, conforme  o seu nível atual (Máx. 11); Armadura Indestrutível: As Armaduras Artefatos são consideradas Glórias; Lendária: Adiciona +1 Ponto de Lenda automaticamente ao usuário.",
+      "page": "613",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Conferir as condições específicas de posse, uso ou despertar descritas na referência; aplicação manual.",
+      "category": "Armaduras Lendárias (artefatos)",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "costText": "Consumos e condições descritos são aplicados manualmente; custo numérico não automatizado.",
+      "notes": "Nível equivalente é referência de poder, não requisito automático de aquisição. Importar não equipa armadura nem altera atributos, Lenda, recursos, defesa, dano ou condições. Poderes e consumos são aplicados pela mesa.",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artifact:legendary:Durandal, A Espada Sagrada Indestrutível",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            613
+          ],
+          "reference": {
+            "levelKind": "equivalent",
+            "application": "manual"
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "db1685652460e125",
+    "name": "Arondight, A Espada Sagrada da Traição",
+    "type": "artifact",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "As Armaduras Lendárias [Nível Equivalente 30]: Essas Armaduras são inspiradas nas lendárias Espadas Sagradas da Távola Redonda. Aqueles que as possuem podem usá- las tanto como espadas de combate quanto como armaduras que cobrem quase todo o corpo, deixando apenas algumas partes à mostra. Elas desempenham um papel crucial na liberação das técnicas de seus portadores, pois estes só podem utilizar a maioria de seus golpes através da \"Liberação da espada maldita\", que permite que eles personifiquem seus ataques. Essa frase também é usada quando um usuário usa sua espada sagrada como armadura para sua proteção, envolvendo -a ao redor de seu corpo.\n\nArondight, A Espada Sagrada da Traição Arondight é o nome da espada sagrada portada por Lancelot nas lendas medievais relacionadas ao Rei Arthur, sendo descrita como uma arma forjada de forma sobrenatural pelas fadas e que foi usada pelo cavaleiro para matar um terrível dragão. Trata-se de uma espada mágica que foi criada para ser concedida a alguém que pudesse ser exaltado como o cavaleiro perfeito, em suma, o mais forte e corajoso cavaleiro de sua época no sentido de ser inigualável.\n\nPoder: Quebrar Limite: Permite ao Usuário superar o limite do Atributo Cosmo , conforme o seu nível atual (Máx. 11); Armadura Feérica: As Armaduras Lendárias são consideradas Glórias; Lendária: Adiciona +1 Ponto de Lenda automaticamente ao usuário.",
+      "page": "613, 614",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Conferir as condições específicas de posse, uso ou despertar descritas na referência; aplicação manual.",
+      "category": "Armaduras Lendárias (artefatos)",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "costText": "Consumos e condições descritos são aplicados manualmente; custo numérico não automatizado.",
+      "notes": "Nível equivalente é referência de poder, não requisito automático de aquisição. Importar não equipa armadura nem altera atributos, Lenda, recursos, defesa, dano ou condições. Poderes e consumos são aplicados pela mesa.",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artifact:legendary:Arondight, A Espada Sagrada da Traição",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            613,
+            614
+          ],
+          "reference": {
+            "levelKind": "equivalent",
+            "application": "manual"
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": "4f2a20eed58edc46",
+    "name": "Gram, A Espada Sagrada da Ira",
+    "type": "artifact",
+    "img": "systems/gods-battle-ss/assets/cosmos.svg",
+    "system": {
+      "description": "As Armaduras Lendárias [Nível Equivalente 30]: Essas Armaduras são inspiradas nas lendárias Espadas Sagradas da Távola Redonda. Aqueles que as possuem podem usá- las tanto como espadas de combate quanto como armaduras que cobrem quase todo o corpo, deixando apenas algumas partes à mostra. Elas desempenham um papel crucial na liberação das técnicas de seus portadores, pois estes só podem utilizar a maioria de seus golpes através da \"Liberação da espada maldita\", que permite que eles personifiquem seus ataques. Essa frase também é usada quando um usuário usa sua espada sagrada como armadura para sua proteção, envolvendo -a ao redor de seu corpo.\n\nGram, A Espada Sagrada da Ira Segundo a lenda, o rei chamado Sigmund carregava uma espada encantada denominada Gram relacionada ao Sol e que foi puxada por ele do tronco da árvore Barnstokkr após a arma ser colocada pelo deus Odin para ser empunhada por um escolhido. Posteriormente, a Gram foi destruída  pela lança Gungnir, assim, o filho do portador anterior, Sigurd, usou seus fragmentos para reforjá-la, com isso, a transformando em uma lâmina amaldiçoada que foi  capaz de matar até mesmo o terrível dragão Fafnir.\n\nPoder: Quebrar Limite:  Permite ao Usuário superar o limite do Atributo Força, conforme o seu nível atual (Máx. 11); Armadura Nórdica: As Armaduras Lendárias são consideradas Glórias;  Lendária: Adiciona +1 Ponto de Lenda automaticamente ao usuário.",
+      "page": "613, 614",
+      "sourceVersion": "PDF V49.1.1 (livro: 49.0)",
+      "requirements": "Conferir as condições específicas de posse, uso ou despertar descritas na referência; aplicação manual.",
+      "category": "Armaduras Lendárias (artefatos)",
+      "level": 30,
+      "action": "",
+      "resistance": "",
+      "combination": "",
+      "duration": "",
+      "cost": 0,
+      "power": 0,
+      "costText": "Consumos e condições descritos são aplicados manualmente; custo numérico não automatizado.",
+      "notes": "Nível equivalente é referência de poder, não requisito automático de aquisição. Importar não equipa armadura nem altera atributos, Lenda, recursos, defesa, dano ou condições. Poderes e consumos são aplicados pela mesa.",
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "reset": "manual"
+      }
+    },
+    "flags": {
+      "gods-battle-ss": {
+        "source": {
+          "key": "artifact:legendary:Gram, A Espada Sagrada da Ira",
+          "author": "Dhoko de Libra",
+          "license": "CC BY-NC-SA 4.0",
+          "pages": [
+            613,
+            614
+          ],
+          "reference": {
+            "levelKind": "equivalent",
+            "application": "manual"
+          }
+        }
+      }
+    }
+  }
+]
