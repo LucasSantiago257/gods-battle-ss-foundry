@@ -69,3 +69,7 @@ test("recuperação preserva edições posteriores, armadura substituída e regi
  for(const change of [f=>f.armor.system.health.value=17,f=>f.armor.system.notes="Nova nota",f=>f.armor.uuid="Actor.target.Item.replacement",f=>f.actor.flags[ID].persistentEffects.periodic.description="Anotação posterior"]){const f=fixture(),op=prepared(f);f.armor.system=copy(op.after.armorSystem);change(f);const before=copy({system:f.actor.system,flags:f.actor.flags,armor:f.armor.system});assert.throws(()=>armorBreakRecoveryPlan(f.actor,op));assert.deepEqual({system:f.actor.system,flags:f.actor.flags,armor:f.armor.system},before);}
  const f=fixture(),op=prepared(f);assert.throws(()=>armorBreakRecoveryPlan({...f.actor,uuid:"Actor.copy"},op),/outra ficha/);op.status="applied";assert.throws(()=>armorBreakRecoveryPlan(f.actor,op));
 });
+
+test("recuperação rejeita journal adulterado antes de completar qualquer registro",()=>{
+ for(const change of [op=>op.round=4,op=>op.after.armorSystem.health.value=20,op=>op.after.record.description="alterada",op=>op.after.record.ticks.round3.damage=5,op=>op.before.record.actorUuid="Actor.other",op=>op.after.record.ticks.round3.pool="health",op=>op.after.record.ticks.round3.status="skipped"]){const f=fixture(),op=prepared(f);f.armor.system=copy(op.after.armorSystem);change(op);assert.throws(()=>armorBreakRecoveryPlan(f.actor,op));}
+});
