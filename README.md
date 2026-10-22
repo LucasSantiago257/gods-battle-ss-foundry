@@ -133,3 +133,6 @@ Na seleção de Big Bangs/incrementos, a prévia mostra o apoio disponível ante
 
 
 Na0.55.0, **Compêndios → Artefatos** reúne22referências das pp.607–614, com níveis equivalentes, regras, páginas e atribuição. Arrastar cria cópia independente sem equipar nem executar poderes. Os866Items anteriores permanecem preservados.
+
+
+Na0.55.1, o painel de efeitos oferece Ajustar, Encerrar e recarga somente quando o mestre responsável pode executar a operação. Outros mestres e operações interrompidas conservam a consulta dos registros sem botões que seriam recusados ao clicar.
