@@ -16,7 +16,10 @@ export async function attackTarget(actor) {
   try {
     assertNoTechniqueInterruption(actor);assertActionAllowed(actor,"attack");const view=actionView(actor),baseline=combatActionState(actor);
     if(view.enabled&&view.remaining.attack<1)throw Error("Nenhuma ação de ataque disponível nesta rodada.");
-    const choices=Object.entries(FIGHTING).filter(([key])=>key!=="defense").map(([key,label])=>`<option value="${key}">${label} (${actor.system.fighting[key]})</option>`).join("");
+    const trained=Object.entries(FIGHTING).filter(([key])=>key!=="defense"&&Number.isInteger(actor.system.fighting[key])&&actor.system.fighting[key]>=1&&actor.system.fighting[key]<=5);
+    if(!trained.length)throw Error("Configure uma habilidade de ataque com graduação entre 1 e 5.");
+    const preferred=trained.reduce((best,entry)=>actor.system.fighting[entry[0]]>actor.system.fighting[best[0]]?entry:best)[0];
+    const choices=trained.map(([key,label])=>`<option value="${key}"${key===preferred?" selected":""}>${label} (${actor.system.fighting[key]})</option>`).join("");
     const actions=view.enabled?`<label>Ações de ataque a usar (${view.remaining.attack} disponíveis)<input name="amount" type="number" min="1" max="${view.remaining.attack}" value="${view.remaining.attack}"></label>`:"";
     const answer=await foundry.applications.api.DialogV2.wait({window:{title:"Ataque contra defensor"},content:`<p>Alvo: ${escaped(target.name)}</p><label>Habilidade de luta<select name="kind">${choices}</select></label><label>Modificador situacional<input type="number" name="bonus" value="0"></label>${actions}`,buttons:[{action:"roll",label:"Atacar",default:true,callback:(_e,b)=>({kind:b.form.elements.kind.value,bonus:Number(b.form.elements.bonus.value),amount:Number(b.form.elements.amount?.value??0)})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
     if (!answer) return;
