@@ -1,9 +1,9 @@
-// Draft contract for p.229. Not connected to an action until the journal/UI milestone is complete.
+// Canonical, finite armor parcels from p.229; no bodily damage or CE maintenance.
 import {SYSTEM_ID} from "./config.mjs";
 import {actionHash} from "./action-rules.mjs";
 import {componentUuid} from "./technique-builder-rules.mjs";
 import {techniqueReadiness} from "./technique-rules.mjs";
-import {effectState,effectRecords,effectView,encounterForEffect} from "./effect-rules.mjs";
+import {effectState,effectRecords,effectView,encounterForEffect,nextEffectRound} from "./effect-rules.mjs";
 import {optionalNote} from "./form-values.mjs";
 
 export const ARMOR_BREAK=Object.freeze({id:"4bf80b08a6fdf40c",key:"bigbang:extra:Quebrar Armadura",page:"229",primary:componentUuid("ac34d9f38628bd92"),damage:Object.freeze({bronze:1,silver:2,gold:3})});
@@ -34,12 +34,12 @@ export function armorBreakDefinition(actor,item,answer){
  if(!Number.isSafeInteger(lastRound))throw Error("Prazo fora do limite numérico.");
  return {kind:"armorBreak",label:"Quebrar Armadura · Sustentada",damage:source.damage,page:ARMOR_BREAK.page,source,armor:{id:armor.id,uuid:armor.uuid,name:armor.name},rounds:answer.rounds,firstOffset:answer.firstOffset,firstRound,lastRound,combatUuid:context.combatUuid,combatantId:context.combatantId,reason:optionalNote(answer.reason),description:optionalNote(answer.description)};
 }
-function recordArmor(actor,record){
+function canonicalRecord(record){
  const source=record.source;
  if(!Object.hasOwn(ARMOR_BREAK.damage,source?.classification)||record.kind!=="armorBreak"||source?.componentUuid!==componentUuid(ARMOR_BREAK.id)||source.primaryUuid!==ARMOR_BREAK.primary||record.damage!==ARMOR_BREAK.damage[source.classification]||source.damage!==record.damage)throw Error("Parcela de Quebrar Armadura alterada ou inválida.");
  reference(source.itemUuid,"Técnica registrada");reference(source.actorUuid,"Origem registrada");reference(source.constructionId,"Composição registrada");
- return armorFor(actor,record.armor);
 }
+function recordArmor(actor,record){canonicalRecord(record);return armorFor(actor,record.armor);}
 export function armorBreakView(actor,record){
  const view=effectView(actor,record);if(record.kind!=="armorBreak")return {...view,canResolve:false,state:"Tipo de efeito incompatível."};
  if(view.foreign||record.status!=="active")return view;
@@ -69,12 +69,21 @@ export function armorBreakAfter(before,record,armorHealth){
  if(!Number.isFinite(armorHealth)||record.armor?.id!==before.armorId||record.armor.uuid!==before.armorUuid)throw Error("Snapshot de parcela inválido.");
  const after=structuredClone(before);after.armorSystem.health.value=armorHealth;after.record=structuredClone(record);return after;
 }
-// A future recovery action applies only these journal flags/record, never another armor debit.
+// Validate the cross-document journal before using any saved value for flags-only completion.
+function validateJournal(operation){
+ const {before,after,effectId,round,actorUuid}=operation,same=(a,b)=>actionHash(a)===actionHash(b);
+ if(!before||!after||before.armorId!==after.armorId||before.armorUuid!==after.armorUuid||before.record?.id!==effectId||before.record.actorUuid!==actorUuid||before.record.status!=="active"||nextEffectRound(before.record)!==round)throw Error("Journal de armadura inválido.");
+ canonicalRecord(before.record);
+ const tick=after.record?.ticks?.[`round${round}`],health=before.armorSystem?.health?.value;
+ if(!tick||tick.round!==round||tick.pool!=="armor"||tick.armorId!==before.armorId||tick.armorUuid!==before.armorUuid||!["applied","skipped"].includes(tick.status)||tick.baseDamage!==before.record.damage||!Number.isFinite(tick.damage)||tick.damage<0||tick.damage>1000000||tick.status==="skipped"&&tick.damage!==0||!Number.isFinite(health)||health<0||tick.before!==health||tick.after!==health-tick.damage)throw Error("Parcela do journal inválida.");
+ const expectedRecord={...before.record,ticks:{...before.record.ticks,[`round${round}`]:tick},status:round===before.record.lastRound?"expired":"active"};
+ if(!same(armorBreakAfter(before,expectedRecord,tick.after),after))throw Error("Snapshots do journal incompatíveis.");
+}
+// Recovery completes only the record. It never repeats an Item debit or restores resources.
 export function armorBreakRecoveryPlan(actor,operation){
  if(operation?.kind!=="armorBreak"||operation.status!=="prepared"||operation.actorUuid!==actor.uuid)throw Error("Operação de armadura ausente ou de outra ficha.");
- const current=armorBreakSnapshot(actor,operation.effectId),before=operation.before,after=operation.after;
- if(!before||!after||before.armorId!==after.armorId||before.armorUuid!==after.armorUuid)throw Error("Journal de armadura inválido.");
- const same=(a,b)=>actionHash(a)===actionHash(b);
+ validateJournal(operation);
+ const current=armorBreakSnapshot(actor,operation.effectId),before=operation.before,after=operation.after,same=(a,b)=>actionHash(a)===actionHash(b);
  if(same(current,after))return {status:"applied"};
  if(same(current,before))return {status:"failed"};
  if(current.armorId===after.armorId&&current.armorUuid===after.armorUuid&&same(current.armorSystem,after.armorSystem)&&same(current.record,before.record))return {status:"applied",record:structuredClone(after.record)};
