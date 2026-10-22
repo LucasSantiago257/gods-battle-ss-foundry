@@ -1,5 +1,12 @@
 # Próximos desafios — após 0.30.0
 
+## Diretriz atual — versões maiores para a one-shot (21/10/2026)
+
+Agrupar as próximas entregas em marcos equivalentes a três ou quatro versões recentes, com foco em um combate completo e utilizável na sessão. Próximo conjunto: fluxo ataque/defesa/resistência/dano; construção e uso de técnicas com cálculos claros; alvos e acompanhamento de efeitos; ensaio reproduzível com fichas de exercício. Esta diretriz complementa a prioridade de gameplay e substitui releases de pequenas melhorias isoladas.
+
+Trabalhar o conjunto ao longo das execuções na mesma branch/PR, publicar quando integrado e verificado. Reservar patches antecipados para falhas que bloqueiem uso ou comprometam dados/recursos. Ampliar catálogos e exceções não essenciais sai do caminho crítico da one-shot. Novas condições continuam adiadas; regras ambíguas não serão presumidas. Compatibilidade no core hospedado13.350 segue pendente e não pode ser confirmada apenas por testes locais.
+
+
 Consulta atual: [cobertura de componentes na0.51.0](componentes-automaticos.md). As seções datadas registram marcos históricos; a contagem antiga de quatro componentes não é a cobertura atual. Prioridades de Lucas permanecem gameplay e poderes independentes de novas condições.
 
 ## Prioridade vigente — decisão de Lucas em 14/10/2026
@@ -250,3 +257,12 @@ Auditada a seção607–614:19objetos+3espadas/armaduras lendárias,22Items novo
 ## Ações disponíveis no painel de efeitos — 0.55.1
 
 Aplicar, Ajustar, Encerrar e recarga compartilham a verificação de disponibilidade do mestre responsável, propriedade da ficha e operações interrompidas. Corrige botões de Ajustar/Encerrar que apareciam para mestres secundários ou com operação pendente e só seriam recusados após o clique. Leitura dos registros/prazos permanece disponível; permissões e validações no processamento são preservadas. Não altera condições, regras, custos, rodadas ou catálogos.
+
+
+## Ficha e cartões mais limpos — 0.56.0
+
+Lucas confirmou funcionamento do combate básico no servidor e pediu limpeza da interface. Atacar agora é uma ação permanente acima das abas; Técnicas preservam organização e ativação existentes. Retirados parágrafos genéricos de regras, dicas soltas dos campos e rodapés repetidos dos cartões. Contas de rolagem, ajustes de combate, marcações de estado e ferramentas do mestre ficam recolhidos; avisos condicionais de erro, operações interrompidas e efeitos reais permanecem.
+
+O dono aplica dano em si e o mestre em qualquer defensor autorizado pelo cartão, sem aprovação humana ou mensagem visível de solicitação. A coordenação automática pelo mestre ativo, journal, permissões, origem, cobrança única e recuperação permanecem. Estado discreto Pendente/Aplicado/Desfeito acompanha alterações da ficha e bloqueia reaplicação; observadores não recebem ações. Desfazer continua protegido contra mudanças posteriores. Pedidos de versões anteriores permanecem recuperáveis.
+
+Regra física conferida nas pp.417–418: dano corporal desconta PA; não há perda geral de PV da armadura nesse cálculo. Lucas decidiu explicitamente que dano físico excepcional à armadura fica a cargo do mestre; não introduzir regra geral nem aplicar a habilidade específica da p.65 a todos. Nenhuma regra de dano foi alterada. A confirmação do combate básico não valida automaticamente esta nova interface, concorrência ou todas as funções no core13.350. Validação de navegador isolado e testes não substitui esse ensaio.
