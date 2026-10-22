@@ -266,3 +266,12 @@ Lucas confirmou funcionamento do combate básico no servidor e pediu limpeza da 
 O dono aplica dano em si e o mestre em qualquer defensor autorizado pelo cartão, sem aprovação humana ou mensagem visível de solicitação. A coordenação automática pelo mestre ativo, journal, permissões, origem, cobrança única e recuperação permanecem. Estado discreto Pendente/Aplicado/Desfeito acompanha alterações da ficha e bloqueia reaplicação; observadores não recebem ações. Desfazer continua protegido contra mudanças posteriores. Pedidos de versões anteriores permanecem recuperáveis.
 
 Regra física conferida nas pp.417–418: dano corporal desconta PA; não há perda geral de PV da armadura nesse cálculo. Lucas decidiu explicitamente que dano físico excepcional à armadura fica a cargo do mestre; não introduzir regra geral nem aplicar a habilidade específica da p.65 a todos. Nenhuma regra de dano foi alterada. A confirmação do combate básico não valida automaticamente esta nova interface, concorrência ou todas as funções no core13.350. Validação de navegador isolado e testes não substitui esse ensaio.
+
+
+## Marco integrado da one-shot — em preparação
+
+A base publicada continua 0.56.0. Este conjunto ainda não é uma release: a preparação do ensaio e a melhoria do ataque acumulam-se na mesma branch até fechar a revisão de construção/configuração/ativação, alvos/distância e painel de efeitos.
+
+O ataque abre com a habilidade treinada de maior graduação e omite graduações nulas. O mestre pode criar outro grupo privado de treino sem restaurar fichas existentes. Lyra nova inclui dois exemplos adicionais, Controle e Sustentada, limitados a prazo/recarga e sem poderes ou condições fictícias. O [ensaio](fichas-teste.md) percorre o ciclo completo com mestre/jogadores; testes de integração usam os mesmos Atores publicados, incluindo identidade sintética e recuperação após perda da publicação. Copiar novamente o catálogo não atualiza fichas antigas.
+
+Ainda falta fechar o restante do marco e conferir o ensaio em conexões reais do core13.350. Não há nova release nem afirmação de validação no servidor por estes testes locais.
