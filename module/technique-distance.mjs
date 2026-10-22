@@ -27,10 +27,10 @@ export function techniqueDistance(actor,target,canvas=globalThis.canvas) {
 }
 export function techniqueDistanceLabel(measurement,range,automated=false) {
  if(!measurement.available)return measurement.text;
- const prefix=`Medida agora: ${number(measurement.distance)} m entre centros, pela grade da cena`;
+ const prefix=`Distância ${number(measurement.distance)} m entre centros`;
  if(!Number.isFinite(range)||range<=0)return `${prefix}. Configure o alcance da técnica para comparar.`;
  const excess=measurement.distance-range;
- return `${prefix}. Alcance configurado: ${number(range)} m. ${excess>1e-8?`Excede em ${number(excess)} m; ${automated?"redução calculada":"ajuste de distância ainda manual"} (p.204).`:"Dentro do alcance configurado."}`;
+ return `${prefix} · alcance ${number(range)} m · ${excess>1e-8?`Excede em ${number(excess)} m · ${automated?"redução calculada":"ajuste manual"}`:"Dentro do alcance"}`;
 }
 
 export function distanceSnapshot(source,target) {
