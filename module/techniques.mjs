@@ -30,7 +30,7 @@ export async function useTechnique(actor, item) {
     const target=areaTargets?null:techniqueTarget(),baseline=activationState(actor,item),rollMode=techniqueRollMode();
     const effective=techniqueWithComponents(item),profile=effective.componentProfile;
     const content = await foundry.applications.handlebars.renderTemplate(`systems/${SYSTEM_ID}/templates/technique-dialog.hbs`, {
-      name: item.name, cost: item.system.cost + item.system.costExtra, current: actor.system.resources.cosmo.value,
+      name: item.name, nonDamage:effective.effectKind!=="damage",isControl:effective.effectKind==="control",cost: item.system.cost + item.system.costExtra, current: actor.system.resources.cosmo.value,
       extra: actor.system.resources.cosmoExtra, reserve: actor.system.resources.cosmoReserved,
       penalty: actor.system.combat.asterismPenalty, unlimited: actor.system.resources.cosmo.unlimited,areaTargets,targetName:target?.name,actions:{...actionView(actor),techniqueChoices:!areaTargets&&!effective.movement?techniqueActionChoices(actor):[]},movement:effective.movement,components:profile,hasExhaust:profile.rules.some(r=>r.kind==="exhaust"),hasEssence:profile.rules.some(r=>r.kind==="essence"),hasTerrain:profile.rules.some(r=>r.kind==="terrain")
     });

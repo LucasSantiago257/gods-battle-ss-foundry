@@ -116,3 +116,24 @@
 @media(max-width:700px){.gods-battle .quick-actions {margin:0 15px 12px;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;}.gods-battle .primary-attack {grid-column:1/-1;min-height:42px;}.gods-battle .quick-stat {padding:6px 8px;}.gods-battle .quick-stat strong {font-size:19px;}}
 
 @media(max-width:700px){.gods-battle .resource-strip{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.gods-battle .resource{padding:8px;min-width:0}.gods-battle .resource input{width:0;min-width:0;flex:1;font-size:21px}.gods-battle .resource>div>span{flex-shrink:0;font-size:12px}.gods-battle .battle-header{gap:10px}.gods-battle .level-seal{padding:7px 10px}}
+
+/* Activation dialog layout. All controls remain in the form, including folded options. */
+.technique-activation {min-width:0;}
+.technique-activation .activation-heading {display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;margin-bottom:12px;}
+.technique-activation .activation-summary {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:10px 0;}
+.technique-activation .activation-summary>div {display:flex;flex-direction:column;gap:4px;border:1px solid var(--battle-line,#657080);border-radius:6px;padding:8px;}
+.technique-activation .activation-summary strong {font-size:1.2em;}
+.technique-activation .activation-damage p {margin:4px 0;}
+.technique-activation .activation-error {color:var(--color-level-error,#c84444);font-weight:600;}
+.technique-activation [data-technique-preview]:empty {display:none;}
+.technique-activation .activation-options {margin-top:10px;border-top:1px solid var(--battle-line,#657080);padding-top:8px;}
+.technique-activation summary {cursor:pointer;}
+.technique-activation .activation-fields {display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;}
+.technique-activation label {display:flex;flex-direction:column;gap:4px;margin:8px 0;min-width:0;}
+.technique-activation input,.technique-activation select {box-sizing:border-box;min-width:0;width:100%;max-width:100%;}
+.technique-activation .activation-check {flex-direction:row;align-items:center;gap:8px;}
+.technique-activation .activation-check input[type=checkbox] {width:auto;flex:0 0 auto;}
+.technique-activation table {width:100%;table-layout:fixed;overflow-wrap:anywhere;}
+@media(max-width:480px){.technique-activation .activation-summary{grid-template-columns:1fr;}.technique-activation .activation-fields{grid-template-columns:1fr;}}
+
+.technique-activation .activation-heading>strong,.technique-activation .activation-heading>span {min-width:0;overflow-wrap:anywhere;}

@@ -294,3 +294,11 @@ Troca/remoção/armadura morta, cópia, prévia antiga e edição posterior são
 Dez referências de componentes têm algum apoio: os sete cálculos do grupo de Dano, Movendo, Brasas e o perfil Sustentado de Quebrar Armadura. Isto não automatiza os demais trechos do componente ou técnicas mistas. Forma instantânea +1ND entre faixas permanece manual; dano físico comum à armadura continua manual conforme decisão de Lucas. Catálogos e UUIDs preservados, sem migração.
 
 Próximos passos: ensaio no core13.350 e concorrência entre conexões reais; ampliar apenas contratos inequívocos independentes de condições. Distância individual em área, Sacrifício/Estocar/Novamente e exceções de Marcas/Fadas/Ataúde mantêm as lacunas registradas; não presumir fórmulas ou gatilhos. Auditoria final dos catálogos/armaduras/artefatos segue após o caminho crítico da sessão. A organização de Técnicas e Atacar no topo continuam preservadas.
+
+## 0.59.0 — Ativação legível integrada
+
+O conjunto do PR71 reúne valores no topo por tipo de técnica, grupos opcionais de ajustes/componentes/CE, medidas e lista de área compactas e avisos reais fora dos grupos. Cálculos e explicações gerais deixaram o caminho comum; não há requisito de leitura ou justificativa. Abrir/fechar um grupo conserva os parâmetros enviados; o fluxo comum usa os mesmos defaults. Lista de Técnicas e Atacar no topo preservados.
+
+Ensaio integrado usa o formulário real no Edge e seu callback de envio, seguido da coordenação do pagamento nos módulos com fichas de exercício. Cobre Dano, Controle, Sustentada, Esgotar, Movendo Parcial, dois alvos, CE/ND inválidos, medição manual, atualização/ocultação de área, teclado e440px. Prévia/cancelamento não gravam recursos; ativação cobra uma vez e respeita reservas. Nomes longos são escapados e quebram linha. Os helpers/capturas são artefatos de trabalho e não entram no pacote.
+
+Esta entrega não acrescenta regra ou condição, não resolve distância individual de área e não valida o core hospedado13.350. Próximos passos continuam ensaio hospedado/conexões reais e próximos contratos inequívocos de gameplay; lacunas e auditorias registradas permanecem. Ver [ativação](ativacao-direta.md) e [ensaio](fichas-teste.md). Preservar versões maiores, fontes dos catálogos e cópias anteriores.
