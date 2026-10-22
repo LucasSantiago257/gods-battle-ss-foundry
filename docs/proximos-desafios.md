@@ -7,7 +7,7 @@ Agrupar as próximas entregas em marcos equivalentes a três ou quatro versões 
 Trabalhar o conjunto ao longo das execuções na mesma branch/PR, publicar quando integrado e verificado. Reservar patches antecipados para falhas que bloqueiem uso ou comprometam dados/recursos. Ampliar catálogos e exceções não essenciais sai do caminho crítico da one-shot. Novas condições continuam adiadas; regras ambíguas não serão presumidas. Compatibilidade no core hospedado13.350 segue pendente e não pode ser confirmada apenas por testes locais.
 
 
-Consulta atual: [cobertura de componentes na0.51.0](componentes-automaticos.md). As seções datadas registram marcos históricos; a contagem antiga de quatro componentes não é a cobertura atual. Prioridades de Lucas permanecem gameplay e poderes independentes de novas condições.
+Consulta atual: [cobertura de componentes na0.58.0](componentes-automaticos.md). As seções datadas registram marcos históricos; a contagem antiga de quatro componentes não é a cobertura atual. Prioridades de Lucas permanecem gameplay e poderes independentes de novas condições.
 
 ## Prioridade vigente — decisão de Lucas em 14/10/2026
 
@@ -284,3 +284,13 @@ As888entradas Item e seus UUIDs são preservados. Nenhuma regra nova de armadura
 2. Auditar os parâmetros necessários às técnicas escolhidas para a mesa e as lacunas inequívocas de componentes, mantendo exceções sem contrato como manuais. Não ampliar catálogo ou inventar regras apenas para aumentar uma versão.
 3. As prioridades autorizadas de distância/área e exceções de Sustentada/Residual, Marcas, Fadas e Ataúde permanecem no roteiro. Trabalhar somente partes independentes de novas condições e ambiguidades, em próximo conjunto coerente.
 4. Auditoria global de armaduras/referências e catálogos adicionais continua pendente, fora do caminho crítico do ensaio. Quantidade de entradas não equivale a automação integral do livro.
+
+## 0.58.0 — Quebrar Armadura Sustentada integrado
+
+O conjunto une composição descobrível, vínculo a um Item específico, aplicação/Ajustar/dispensa, prazos/histórico e journal/recuperação entre Item e Actor. Somente Sustentada canônica concluída sem primordial misto: Bronze1, Prata2, Ouro3PV de armadura por rodada, sem ND/bônus corporal. Mestre escolhe prazo finito e início; registro não surge na ativação nem amplia duração por manutenção/oposição. Veja [contrato e ensaio](armadura-recorrente.md).
+
+Troca/remoção/armadura morta, cópia, prévia antiga e edição posterior são preservadas. A janela após débito do Item pode completar apenas o registro; nunca repete dano ou restaura recursos. Encerramento manual também encerra o efeito para impedir reaplicar parcela divergente. PA e capacidade derivadas podem mudar ao perder a armadura; nenhum PV corporal, CE atual, reserva, ação ou condição é gravado pela operação.
+
+Dez referências de componentes têm algum apoio: os sete cálculos do grupo de Dano, Movendo, Brasas e o perfil Sustentado de Quebrar Armadura. Isto não automatiza os demais trechos do componente ou técnicas mistas. Forma instantânea +1ND entre faixas permanece manual; dano físico comum à armadura continua manual conforme decisão de Lucas. Catálogos e UUIDs preservados, sem migração.
+
+Próximos passos: ensaio no core13.350 e concorrência entre conexões reais; ampliar apenas contratos inequívocos independentes de condições. Distância individual em área, Sacrifício/Estocar/Novamente e exceções de Marcas/Fadas/Ataúde mantêm as lacunas registradas; não presumir fórmulas ou gatilhos. Auditoria final dos catálogos/armaduras/artefatos segue após o caminho crítico da sessão. A organização de Técnicas e Atacar no topo continuam preservadas.
