@@ -1,3 +1,5 @@
+import {registerArmorBreak} from "../module/armor-effects.mjs";
+import {resolveEffect} from "../module/effects.mjs";
 // Integration rehearsal using the shipped exercise Actors. This runtime is not the Foundry core.
 import test from "node:test";
 import {readFile} from "node:fs/promises";
@@ -206,4 +208,12 @@ test("painel usa prazo preciso e conserva aviso real quando o alvo da Sustentada
  let row=effectSheetContext(r.lyra).find(row=>row.id===record.id);assert.equal(row.displayState,"Recarga de 1 CE pendente · rodada 3");assert.equal(row.canPay,true);
  r.combat.combatants.delete("combatant1");const before=clone({resources:r.lyra.system.resources,flags:r.lyra.flags});row=effectSheetContext(r.lyra).find(row=>row.id===record.id);
  assert.match(row.displayState,/Alvo\/combatente indisponível/);assert.equal(row.canPay,false);assert.equal(row.quickSustain,null);assert.deepEqual({resources:r.lyra.system.resources,flags:r.lyra.flags},before);
+});
+
+for(const synthetic of [false,true])test(`construir Sustentada + Quebrar → ativar → prazo e parcela no alvo (${synthetic?"sintético":"vinculado"})`,async()=>{
+ const r=rehearsal({synthetic});game.user=r.attacker;const ce=r.lyra.system.resources.cosmo.value,health=r.doran.system.resources.health.value,item=await createPersonalTechnique(r.lyra);
+ await item.update({[`flags.${ID}.techniqueDraft.primary`]:"sustained",[`flags.${ID}.techniqueDraft.name`]:"Quebra de exercício"});const extra=componentCatalog.find(d=>d.flags[ID].source.key==="bigbang:extra:Quebrar Armadura");r.controls.answer=extra._id;await addTechniqueComponent(item);
+ const draft=await techniqueBuilderContext(item);assert.equal(draft.support.rounds,1);assert.equal(draft.totalCost,3);assert.equal(draft.preview.parameters.difficulty,13);await finishTechniqueBuilder(item);assert.equal(item.flags[ID].techniqueDraft,undefined);assert.equal(item.system.effectKind,"sustained");
+ const root=await r.activate(item);assert.equal(root.flags[ID].techniqueResponse.status,"published");assert.equal(root.flags[ID].attack,undefined);assert.equal(r.lyra.system.resources.cosmo.value,ce-3);assert.equal(r.doran.system.resources.health.value,health);game.user=r.gm;r.controls.answer={itemUuid:item.uuid,targetUuid:r.doran.uuid,maintenanceMode:"round",firstRound:1,rounds:null,reason:""};const sustained=await registerSustained(r.lyra);assert.equal(sustained.source.itemUuid,item.uuid);
+ r.controls.answer={sourceUuid:item.uuid,rounds:2,firstOffset:0,reason:""};const record=await registerArmorBreak(r.doran),row=effectSheetContext(r.doran).find(row=>row.id===record.id);assert.equal(row.quickDamage,1);const rolls=r.rolls;await resolveEffect(r.doran,record.id,{quick:true,expectedRound:row.nextRound,expectedState:row.quickSignature});assert.equal(r.doran.items.get(record.armor.id).system.health.value,29);assert.equal(r.doran.system.resources.health.value,health);assert.equal(r.lyra.system.resources.cosmo.value,ce-3);assert.equal(r.rolls,rolls);if(synthetic)assert.equal(r.worldDoran.items.get(record.armor.id).system.health.value,30);assert.deepEqual(r.notices,[]);
 });

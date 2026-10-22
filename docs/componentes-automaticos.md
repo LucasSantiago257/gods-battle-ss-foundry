@@ -1,6 +1,6 @@
-# Componentes: cobertura atual — 0.51.0
+# Componentes: cobertura atual — 0.58.0
 
-O catálogo contém 59 referências de Big Bangs e incrementos, incluindo primordiais. Nove referências têm os apoios específicos listados abaixo: sete pertencem ao grupo numérico de Dano, Movendo tem configuração própria de ações e Brasas usa registro separado por rodada. Essa contagem mede referências com algum suporte, não execução integral dos seus textos nem proporção de conclusão do sistema. A cobertura pessoal de virtudes/habilidades/dádivas é outra matriz.
+O catálogo contém 59 referências de Big Bangs e incrementos, incluindo primordiais. Dez referências têm os apoios específicos listados abaixo: sete pertencem ao grupo numérico de Dano, Movendo tem configuração própria de ações e Brasas/Quebrar Armadura Sustentada usam registros separados por rodada. Essa contagem mede referências com algum suporte, não execução integral dos seus textos nem proporção de conclusão do sistema. A cobertura pessoal de virtudes/habilidades/dádivas é outra matriz.
 
 | Referência | Apoio disponível | Limite principal |
 |---|---|---|
@@ -12,6 +12,7 @@ O catálogo contém 59 referências de Big Bangs e incrementos, incluindo primor
 | Controle sobre a Destruição · p.219 | −1/−2/−3 na resistência desta ativação. | Não cria penalidade persistente. |
 | Enfraquecer · p.227 | Graduação efetiva do atributo da natureza como penalidade nesta resistência. | Extensão a outros ataques continua manual. |
 | Movendo · p.229 | Movimento Parcial ou Total junto ao pagamento da técnica. | Configuração própria; área, Residual e primordiais mistos permanecem manuais. |
+| Quebrar Armadura · p.229 | Sustentada:1/2/3PV de armadura por rodada; vínculo específico, Ajustar, prazo e recuperação. | Registro separado pelo mestre no alvo; instantânea +1ND e primordiais mistos permanecem manuais. |
 | Brasas · p.225 | Parcela de PV registrada por rodada, com aplicação direta ou ajuste. | É preciso registrar no alvo após ativação/resistência; não surge automaticamente. |
 
 ## Como habilitar
@@ -20,11 +21,13 @@ Para os sete cálculos do grupo de Dano, conclua a composição personalizada e 
 
 Movendo é independente desse grupo: **Configurar → Ações na ativação**. Composições personalizadas válidas permitem escolher Parcial ou Total conforme a técnica. Cinco referências do livro oferecem apenas o modo impresso: Lança Dourada usa Total; Teletransporte, Velocidade mental, Velocidade física e Velocidade (Ar) usam Parcial. Cópias existentes mantêm a reserva de luta padrão até a escolha explícita. Não importa novamente a técnica nem desloca o token.
 
+Quebrar Armadura Sustentada usa o botão próprio no alvo quando há composição apta; veja [vínculo, prazo e ensaio](armadura-recorrente.md).
+
 Brasas usa **Combate → Efeitos com duração**. O registro acompanha origem, parcelas e histórico, sem dano ao avançar rodadas. Veja [efeitos com duração](efeitos-duracao.md). Detalhes de Movendo, fontes e limites estão no [roteiro atual](proximos-desafios.md).
 
 ## Contratos ainda pendentes
 
-Controle Atômico tem relação entre contagem de resultados e graduação a esclarecer; Controle sobre a Energia exige definir devolução, falha e interação com excesso de CE; Guardar envolve a duração imóvel; Vitalidade precisa de contrato de dano causado, cura e recuperação; Sacrifício mantém dúvidas de repetição/cobrança em falha; Quebrar Armadura mantém dúvida sobre conversão de +1 ND entre faixas. Não foram implementados por suposição. Novas mecânicas de condições seguem adiadas por decisão de Lucas.
+Controle Atômico tem relação entre contagem de resultados e graduação a esclarecer; Controle sobre a Energia exige definir devolução, falha e interação com excesso de CE; Guardar envolve a duração imóvel; Vitalidade precisa de contrato de dano causado, cura e recuperação; Sacrifício mantém dúvidas de repetição/cobrança em falha; A forma instantânea de Quebrar Armadura mantém dúvida sobre conversão de +1 ND entre faixas; a parcela fixa Sustentada tem o fluxo próprio acima. Não foram implementados por suposição. Novas mecânicas de condições seguem adiadas por decisão de Lucas.
 
 Permissões, assinatura da prévia, cobrança única e recuperação continuam validadas no processamento. Testes e navegador isolado não confirmam o core hospedado13.350. Fontes e licença do catálogo permanecem em [ATTRIBUTION.md](../ATTRIBUTION.md).
 
