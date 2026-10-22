@@ -25,6 +25,10 @@ export const TEST_ACTORS = specs.map(spec => ({
   items:[
     {_id:"demoArmor0000001",name:"Armadura de Bronze — treino",type:"armor",img:image,effects:[],system:{equipped:true,class:"bronze",version:1,health:{value:30},state:"active",description:"Armadura de treino: 30 PV, PA 3, +3 CE. Modelo de Bronze, sem poderes especiais.",sourceVersion:"Exemplo de teste",notes:"Ficha fictícia para testes de combate."}},
     {_id:"demoTech00000001",name:spec.technique,type:"technique",img:image,effects:[],system:{nature:spec.nature,classification:"bronze",effectKind:"damage",damageLevel:2,power:10,cost:2,costExtra:0,range:10,techniqueReviewed:true,description:"Técnica personalizada de treino para conferir ativação, consumo de CE, resistência e aplicação/desfazer de dano. Não representa uma técnica nomeada do livro.",sourceVersion:"Exemplo de teste",notes:"Parâmetros de teste explícitos; sem Big Bangs extras ou efeitos especiais."}}
+    ,...(spec.key==="sage"?[
+      {_id:"demoControl00001",name:"Foco de treino — Controle",type:"technique",img:image,effects:[],system:{nature:"mental",classification:"bronze",effectKind:"control",damageLevel:0,power:0,cost:2,costExtra:0,range:3,controlRounds:0,description:"Exercício de ativação, resistência e duração de Controle Bronze. Registra somente o prazo; não impõe condição ou penalidade.",sourceVersion:"Exemplo de teste",notes:"Duração padrão de Controle Bronze: 2 rodadas (pp.205/207/208/224); falha crítica da resistência dobra o prazo. Sem condição automática."}},
+      {_id:"demoSustain00001",name:"Aura de treino — Sustentada",type:"technique",img:image,effects:[],system:{nature:"mental",classification:"bronze",effectKind:"sustained",damageLevel:0,power:0,cost:2,costExtra:0,range:3,description:"Exercício de ativação e acompanhamento de Sustentada Bronze. Registra duração e recarga; não concede bônus nem causa dano.",sourceVersion:"Exemplo de teste",notes:"Usar perfil por rodada no ensaio: duração inicial de 2 rodadas e recarga de 1 CE após o prazo (pp.205/225). Oposição conforme o fluxo existente."}}
+    ]:[])
   ]
 }));
 
@@ -43,8 +47,9 @@ export function openTestActors() {
 }
 
 let importing=false;
-export async function importTestActors() {
+export async function importTestActors({fresh=false}={}) {
   if(!game.user.isGM) return ui.notifications.warn("Somente o mestre pode importar o grupo de teste.");
+  if(typeof fresh!=="boolean") throw Error("Escolha de grupo de teste inválida.");
   if(importing) return;
   importing=true;
   try {
@@ -53,17 +58,20 @@ export async function importTestActors() {
     const documents=await pack.getDocuments();
     const sources=documents.filter(doc=>TEST_ACTORS.some(source=>source._id===doc.id));
     if(sources.length!==TEST_ACTORS.length) throw Error("Grupo de teste incompleto; confira a instalação do sistema.");
-    const existing=game.actors.contents.filter(actor=>TEST_ACTORS.some(source=>source.flags[SYSTEM_ID].testActor===actor.flags?.[SYSTEM_ID]?.testActor));
+    const existing=fresh?[]:game.actors.contents.filter(actor=>TEST_ACTORS.some(source=>source.flags[SYSTEM_ID].testActor===actor.flags?.[SYSTEM_ID]?.testActor));
     const missing=sources.filter(doc=>!existing.some(actor=>actor.flags[SYSTEM_ID].testActor===doc.flags[SYSTEM_ID].testActor));
     if(!missing.length) {ui.notifications.info("O grupo de teste já existe. Recursos, notas e alterações foram preservados.");return existing;}
-    let folder=game.folders.contents.find(folder=>folder.type==="Actor"&&folder.flags?.[SYSTEM_ID]?.testActors);
-    if(!folder) folder=await Folder.create({name:"TESTES — Combate",type:"Actor",flags:{[SYSTEM_ID]:{testActors:true}}});
+    let folder=fresh?null:game.folders.contents.find(folder=>folder.type==="Actor"&&folder.flags?.[SYSTEM_ID]?.testActors);
+    if(!folder) {
+      const count=game.folders.contents.filter(f=>f.type==="Actor"&&f.flags?.[SYSTEM_ID]?.testActors).length;
+      folder=await Folder.create({name:fresh&&count?`TESTES — Combate · ${count+1}`:"TESTES — Combate",type:"Actor",flags:{[SYSTEM_ID]:{testActors:true}}});
+    }
     const created=await Actor.createDocuments(missing.map(doc=>{
       const data=doc.toObject();delete data._id;delete data._stats;data.folder=folder.id;data.ownership={default:0};
       data.flags[SYSTEM_ID].testActorOrigin=doc.uuid;
       return data;
     }));
-    ui.notifications.info(`${created.length} fichas criadas em TESTES — Combate. Arraste-as para a cena e atribua os jogadores nas permissões.`);
+    ui.notifications.info(`${created.length} fichas criadas em ${folder.name}.`);
     return [...existing,...created];
   } catch(error) {ui.notifications.error(error.message);} finally {importing=false;}
 }
