@@ -245,3 +245,8 @@ A prévia do seletor agora mostra apoio e limites antes de adicionar o component
 ## Artefatos importáveis — 0.55.0
 
 Auditada a seção607–614:19objetos+3espadas/armaduras lendárias,22Items novos no compêndio Artefatos; total888Items/10catálogos de Items, além das3fichas de teste. Nível equivalente preservado até45, campo identificado como referência. Texto de Selamento inclui a tabela612 sem atribuí-la à Máscara Rangda. Sem efeitos automáticos, equipamentos, condições, cobranças, Lenda ou quebras de limite. Detalhes em [compêndios](compendios.md). Preservadas as866entradas/UUIDs anteriores. Ainda pendem auditoria global das armaduras e demais referências dispersas; a entrega deste catálogo não conclui os marcos de gameplay nem a auditoria total. Core hospedado13.350 pendente.
+
+
+## Ações disponíveis no painel de efeitos — 0.55.1
+
+Aplicar, Ajustar, Encerrar e recarga compartilham a verificação de disponibilidade do mestre responsável, propriedade da ficha e operações interrompidas. Corrige botões de Ajustar/Encerrar que apareciam para mestres secundários ou com operação pendente e só seriam recusados após o clique. Leitura dos registros/prazos permanece disponível; permissões e validações no processamento são preservadas. Não altera condições, regras, custos, rodadas ou catálogos.
