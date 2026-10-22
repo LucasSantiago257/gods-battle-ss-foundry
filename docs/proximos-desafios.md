@@ -2,7 +2,7 @@
 
 ## Diretriz atual — versões maiores para a one-shot (21/10/2026)
 
-Agrupar as próximas entregas em marcos equivalentes a três ou quatro versões recentes, com foco em um combate completo e utilizável na sessão. Próximo conjunto: fluxo ataque/defesa/resistência/dano; construção e uso de técnicas com cálculos claros; alvos e acompanhamento de efeitos; ensaio reproduzível com fichas de exercício. Esta diretriz complementa a prioridade de gameplay e substitui releases de pequenas melhorias isoladas.
+Agrupar as próximas entregas em marcos equivalentes a três ou quatro versões recentes, com foco em um combate completo e utilizável na sessão. O marco integrado0.57.0 reúne fluxo ataque/defesa/resistência/dano; construção e uso de técnicas com cálculos claros; alvos e acompanhamento de efeitos; ensaio reproduzível com fichas de exercício. O ensaio hospedado continua pendente. Esta diretriz complementa a prioridade de gameplay e substitui releases de pequenas melhorias isoladas.
 
 Trabalhar o conjunto ao longo das execuções na mesma branch/PR, publicar quando integrado e verificado. Reservar patches antecipados para falhas que bloqueiem uso ou comprometam dados/recursos. Ampliar catálogos e exceções não essenciais sai do caminho crítico da one-shot. Novas condições continuam adiadas; regras ambíguas não serão presumidas. Compatibilidade no core hospedado13.350 segue pendente e não pode ser confirmada apenas por testes locais.
 
@@ -268,10 +268,19 @@ O dono aplica dano em si e o mestre em qualquer defensor autorizado pelo cartão
 Regra física conferida nas pp.417–418: dano corporal desconta PA; não há perda geral de PV da armadura nesse cálculo. Lucas decidiu explicitamente que dano físico excepcional à armadura fica a cargo do mestre; não introduzir regra geral nem aplicar a habilidade específica da p.65 a todos. Nenhuma regra de dano foi alterada. A confirmação do combate básico não valida automaticamente esta nova interface, concorrência ou todas as funções no core13.350. Validação de navegador isolado e testes não substitui esse ensaio.
 
 
-## Marco integrado da one-shot — em preparação
+## Marco integrado da one-shot — 0.57.0
 
-A base publicada continua 0.56.0. Este conjunto ainda não é uma release: a preparação do ensaio e a melhoria do ataque acumulam-se na mesma branch até fechar a revisão de construção/configuração/ativação, alvos/distância e painel de efeitos.
+Entrega reunida no PR69, sem releases intermediárias por execução. Atacar abre com a habilidade treinada de maior graduação; Ativar começa por uma reserva de ataque/defesa inteira disponível e mostra as indisponíveis desabilitadas. Seleção e execução compartilham o mesmo plano de ações. Mantidos Atacar no topo e a organização de Técnicas. O painel evita repetir estado e prazo no título dos registros válidos; erros, pausas e registros de outra ficha continuam visíveis.
 
-O ataque abre com a habilidade treinada de maior graduação e omite graduações nulas. O mestre pode criar outro grupo privado de treino sem restaurar fichas existentes. Lyra nova inclui dois exemplos adicionais, Controle e Sustentada, limitados a prazo/recarga e sem poderes ou condições fictícias. O [ensaio](fichas-teste.md) percorre o ciclo completo com mestre/jogadores; testes de integração usam os mesmos Atores publicados, incluindo identidade sintética e recuperação após perda da publicação. Copiar novamente o catálogo não atualiza fichas antigas.
+Novo grupo de treino cria três cópias privadas em pasta própria sem restaurar fichas anteriores. Lyra nova inclui exemplos de Controle e Sustentada para prazo/recarga, sem bônus ou condições fictícias. Importar grupo de teste conserva sua semântica e não acrescenta itens a fichas antigas.
 
-Ainda falta fechar o restante do marco e conferir o ensaio em conexões reais do core13.350. Não há nova release nem afirmação de validação no servidor por estes testes locais.
+O [ensaio para mestre e jogadores](fichas-teste.md) reúne ataque/defesa, dono/mestre aplicando dano, Ajustar/Desfazer, composição personalizada com Esgotar do catálogo, configuração, prévia de custo/dificuldade/dano/distância, resistência, duração, recarga e recuperação. Testes integrados incluem Actor vinculado/sintético, dois proprietários e observador, área com dois alvos e publicação perdida sem repetir dados/CE/ações. Edge isolado conferiu seleção de reserva intacta, atualização da prévia, medida atualizada, painel com prazo/recarga, busca/histórico e ficha440px, sem escrever no Actor.
+
+As888entradas Item e seus UUIDs são preservados. Nenhuma regra nova de armadura física, condição, área/Movendo ou poder ambíguo. Não há migração nem restauração de recursos. O marco de implementação e ensaio isolado não confirma o core hospedado13.350: combate básico foi confirmado por Lucas, mas o percurso desta entrega e duas conexões reais ainda precisam ser conferidos.
+
+### Depois deste marco
+
+1. Registrar eventuais problemas encontrados no ensaio hospedado e corrigir bloqueios de uso/integridade; continuar trabalho independente sem exigir resposta para avançar.
+2. Auditar os parâmetros necessários às técnicas escolhidas para a mesa e as lacunas inequívocas de componentes, mantendo exceções sem contrato como manuais. Não ampliar catálogo ou inventar regras apenas para aumentar uma versão.
+3. As prioridades autorizadas de distância/área e exceções de Sustentada/Residual, Marcas, Fadas e Ataúde permanecem no roteiro. Trabalhar somente partes independentes de novas condições e ambiguidades, em próximo conjunto coerente.
+4. Auditoria global de armaduras/referências e catálogos adicionais continua pendente, fora do caminho crítico do ensaio. Quantidade de entradas não equivale a automação integral do livro.
