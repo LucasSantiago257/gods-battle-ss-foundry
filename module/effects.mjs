@@ -1,3 +1,5 @@
+import {resolveArmorBreak,recoverArmorBreak} from "./armor-effects.mjs";
+import {armorBreakView,armorBreakTickPlan,armorBreakState} from "./armor-effect-rules.mjs";
 import {effectDeadline} from "./effect-deadlines.mjs";
 import {recoverCosmoDeposit} from "./cosmo-deposits.mjs";
 import {canResistResidual,recoverResidualResistance} from "./residual-resistance.mjs";
@@ -31,7 +33,7 @@ export function effectSources() {
 }
 export function effectSheetContext(actor) {
  let quickSignature=null;try{available(actor);quickSignature=effectState(actor);}catch{/* Atalho indisponível enquanto houver bloqueio ou falta de permissão. */}
- return Object.entries(effectRecords(actor)).map(([id,record])=>{const view=effectView(actor,record);let canQuickResolve=false;if(quickSignature&&actor.isOwner&&view.canResolve)try{effectTickPlan(actor,record);canQuickResolve=true;}catch{/* Registro inválido mantém revisão manual. */}let quickSustain=null;if(quickSignature&&record.kind==="sustained"&&view.canPay)try{quickSustain=sustainedPaymentPreview(actor,id);}catch{/* Saldo, alvo ou operação indisponível. */}const deadline=effectDeadline(view),displayState=!view.foreign&&view.context&&["manual","brasas","sustained"].includes(record.kind)&&deadline.deadlinePriority<3?deadline.deadlineLabel:[view.state,deadline.deadlineLabel].filter(Boolean).join(" · ");return {id,...record,...view,...deadline,displayState,quickSignature,canQuickResolve,quickSustain,quickDamage:record.kind==="brasas"?record.damage:0,canResistResidual:canResistResidual(actor,id),residualResistances:Object.values(record.residual?.resistance?.attempts??{}).toSorted((a,b)=>a.attempt-b.attempt),isResidual:record.kind==="residual",isSustained:record.kind==="sustained",sustainModeLabel:record.sustain?.mode==="once"?"única até encerrar":"por rodada",oppositionRound:game.combat?.round,canOppose:canOpposeSustained(actor,id),sustainOppositions:Object.values(record.sustain?.oppositions??{}).toSorted((a,b)=>a.round-b.round||a.attempt-b.attempt),canRetryControl:canRetryControl(actor,id),controlRetries:Object.values(record.controlRetries??{}).toSorted((a,b)=>a.round-b.round),canPay:!!quickSignature&&view.canPay,sustainPayments:Object.values(record.sustain?.payments??{}).toSorted((a,b)=>a.round-b.round),canEnd:!!quickSignature&&record.status==="active",canResolve:!!quickSignature&&view.canResolve,ticks:Object.values(record.ticks??{}).toSorted((a,b)=>a.round-b.round)};}).toSorted((a,b)=>b.time-a.time);
+ return Object.entries(effectRecords(actor)).map(([id,record])=>{const isArmorBreak=record.kind==="armorBreak",view=isArmorBreak?armorBreakView(actor,record):effectView(actor,record),signature=quickSignature?(isArmorBreak?armorBreakState(actor):quickSignature):null;let canQuickResolve=false;if(quickSignature&&actor.isOwner&&view.canResolve)try{(isArmorBreak?armorBreakTickPlan:effectTickPlan)(actor,record);canQuickResolve=true;}catch{/* Registro inválido mantém revisão manual. */}let quickSustain=null;if(quickSignature&&record.kind==="sustained"&&view.canPay)try{quickSustain=sustainedPaymentPreview(actor,id);}catch{/* Saldo, alvo ou operação indisponível. */}const deadline=effectDeadline(view),displayState=!view.foreign&&view.context&&(["manual","brasas","sustained"].includes(record.kind)||isArmorBreak&&!!view.armorId)&&deadline.deadlinePriority<3?deadline.deadlineLabel:[view.state,deadline.deadlineLabel].filter(Boolean).join(" · ");return {id,...record,...view,...deadline,displayState,quickSignature:signature,canQuickResolve,quickSustain,isArmorBreak,quickDamage:record.kind==="brasas"||isArmorBreak?record.damage:0,canResistResidual:canResistResidual(actor,id),residualResistances:Object.values(record.residual?.resistance?.attempts??{}).toSorted((a,b)=>a.attempt-b.attempt),isResidual:record.kind==="residual",isSustained:record.kind==="sustained",sustainModeLabel:record.sustain?.mode==="once"?"única até encerrar":"por rodada",oppositionRound:game.combat?.round,canOppose:canOpposeSustained(actor,id),sustainOppositions:Object.values(record.sustain?.oppositions??{}).toSorted((a,b)=>a.round-b.round||a.attempt-b.attempt),canRetryControl:canRetryControl(actor,id),controlRetries:Object.values(record.controlRetries??{}).toSorted((a,b)=>a.round-b.round),canPay:!!quickSignature&&view.canPay,sustainPayments:Object.values(record.sustain?.payments??{}).toSorted((a,b)=>a.round-b.round),canEnd:!!quickSignature&&record.status==="active",canResolve:!!quickSignature&&view.canResolve,ticks:Object.values(record.ticks??{}).toSorted((a,b)=>a.round-b.round)};}).toSorted((a,b)=>b.time-a.time);
 }
 // Só registros próprios em estados finais conhecidos saem da área principal.
 // Cópias e estados desconhecidos precisam continuar visíveis para conferência.
@@ -67,6 +69,7 @@ export async function registerEffect(actor) {
  });
 }
 export async function resolveEffect(actor,key,{quick=false,expectedRound=null,expectedState=null}={}) {
+ if(effectRecords(actor)[key]?.kind==="armorBreak")return resolveArmorBreak(actor,key,{quick,expectedRound,expectedState});
  available(actor);safeKey(key);
  const record=effectRecords(actor)[key];if(!record)throw Error("Efeito ausente.");
  const view=effectView(actor,record);if(!view.canResolve)throw Error(view.state);
@@ -100,6 +103,7 @@ export async function endEffect(actor,key) {
  });
 }
 export async function recoverEffect(actor,key) {
+ if(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind==="armorBreak")return recoverArmorBreak(actor,key);
  if(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind==="cosmoEscrow")return recoverCosmoDeposit(actor,key);
  if(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind==="residualResistance")return recoverResidualResistance(actor,key);
  if(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind==="residualDeposit")return recoverResidual(actor,key);
