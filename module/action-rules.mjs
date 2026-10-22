@@ -95,6 +95,16 @@ export function techniqueActionPlan(actor,options,id,movement=null) {
  if(!["attack","defense"].includes(options.actionPool))throw Error("Escolha todas as ações de ataque ou todas as ações de defesa para esta técnica.");
  return actionPlan(actor,options.actionPool,0,{all:true,operationId:id});
 }
+// Prefer an intact reserve in the activation dialog; the execution plan remains authoritative.
+export function techniqueActionChoices(actor) {
+ const view=actionView(actor);if(!view.enabled)return [];
+ const choices=["attack","defense"].map(key=>{
+  let available=true,reason="";try{techniqueActionPlan(actor,{actionPool:key},"preview");}catch(error){available=false;reason=error.message;}
+  return {key,label:`Todas as ações de ${ACTION_LABELS[key].toLowerCase()} · ${view.remaining[key]}/${view.maxima[key]}`,available,reason};
+ });
+ const preferred=choices.find(c=>c.available)?.key??choices[0].key;
+ return choices.map(c=>({...c,selected:c.key===preferred}));
+}
 export function stampCombatRound(combat,changes) {
  if(Object.hasOwn(changes,"round")&&changes.round!==combat.round)changes[`flags.${SYSTEM_ID}.actionControl.epoch`]=foundry.utils.randomID();
 }
