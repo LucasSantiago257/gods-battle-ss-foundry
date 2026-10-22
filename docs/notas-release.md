@@ -1,3 +1,16 @@
+## 0.57.0 — Marco integrado de combate e ensaio da one-shot
+
+- Atacar abre com a habilidade treinada de maior graduação. O botão permanece no topo; a organização de Técnicas foi preservada.
+- Ativar seleciona uma reserva inteira disponível de ataque/defesa; opções indisponíveis ficam desabilitadas. Cálculo, gasto único e recuperação permanecem os mesmos.
+- Novo grupo de treino cria três fichas privadas sem restaurar cópias anteriores. Lyra inclui Dano, Controle e Sustentada para praticar prazo/recarga sem condições novas.
+- Títulos de efeitos válidos apresentam um prazo claro, preservando avisos reais, estados pausados e histórico.
+- Ensaio documentado para mestre/jogadores e integração de construção/configuração/ativação, custo/dificuldade/dano/distância, resistência, aplicação/Ajustar/Desfazer, área por alvo, duração e recuperação de publicação perdida.
+- Dono aplica dano em si e mestre nos defensores, sem aprovação humana; proteções e coordenação automática preservadas. Ataque físico comum continua sem perda automática de PV da armadura.
+- Catálogos Item, UUIDs anteriores, fichas, notas e recursos preservados. Sem migração de dados.
+- O combate básico foi confirmado por Lucas no servidor. Testes e navegador isolados desta entrega não comprovam o percurso completo no core hospedado13.350; veja [o ensaio](https://github.com/LucasSantiago257/gods-battle-ss-foundry/blob/main/docs/fichas-teste.md).
+
+### Histórico de entregas anteriores
+
 ## 0.36.0 — Busca e leitura de componentes na composição
 
 - O seletor de Big Bangs/incrementos busca por nome ou página e filtra por tipo, com leitura da regra e requisitos na mesma janela.

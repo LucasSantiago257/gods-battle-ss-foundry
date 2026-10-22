@@ -16,8 +16,8 @@ beforeEach(()=>{
  globalThis.ui={notifications:{warn:m=>alerts.push(m),error:m=>alerts.push(m),info:m=>alerts.push(m)}};
  game.user={isGM:true};game.actors={contents:[]};game.folders={contents:[]};
  game.packs=new Map([[`${ID}.${TEST_ACTOR_PACK.name}`,{getDocuments:async()=>TEST_ACTORS.map(source=>({id:source._id,uuid:`Compendium.${ID}.fichas-teste.Actor.${source._id}`,flags:source.flags,toObject:()=>structuredClone(source)}))}]]);
- globalThis.Folder={create:async source=>{const folder={...source,id:"demo-folder"};game.folders.contents.push(folder);return folder;}};
- globalThis.Actor={createDocuments:async sources=>{creations.push(...sources);const docs=sources.map((source,i)=>({...source,id:`new-${i}`}));game.actors.contents.push(...docs);return docs;}};
+ globalThis.Folder={create:async source=>{const folder={...source,id:game.folders.contents.length?`demo-folder${game.folders.contents.length+1}`:"demo-folder"};game.folders.contents.push(folder);return folder;}};
+ globalThis.Actor={createDocuments:async sources=>{creations.push(...sources);const docs=sources.map((source,i)=>({...source,id:`new-${creations.length-sources.length+i}`}));game.actors.contents.push(...docs);return docs;}};
 });
 
 test("fichas de teste têm recursos coerentes, luta, técnicas prontas e não iniciam criação",()=>{
@@ -70,4 +70,25 @@ test("banco Actor preserva fichas, armaduras e técnicas embutidas no round-trip
   const extracted=await Promise.all((await readdir(output)).map(async file=>JSON.parse(await readFile(path.join(output,file),"utf8"))));
   assert.equal(extracted.length,3);for(const doc of docs)assert.deepEqual(extracted.find(actor=>actor._id===doc._id),doc);
  }finally{assert.ok(path.resolve(temp).startsWith(root+path.sep));await rm(temp,{recursive:true,force:true});}
+});
+
+
+test("novo grupo cria cópias completas sem alterar fichas, permissões ou anotações anteriores",async()=>{
+ const first=await importTestActors();first[0].system.resources.health.value=3;first[0].ownership={default:1,player:3};first[0].items[0].system.notes="Minha anotação";
+ const before=structuredClone(first),second=await importTestActors({fresh:true});
+ assert.equal(second.length,3);assert.equal(creations.length,6);assert.deepEqual(first,before);
+ assert.equal(game.folders.contents.length,2);assert.equal(game.folders.contents[1].name,"TESTES — Combate · 2");
+ assert.ok(second.every(actor=>actor.folder==="demo-folder2"&&actor.ownership.default===0&&!first.some(old=>old.id===actor.id)));
+ const sage=second.find(actor=>actor.flags[ID].testActor==="sage");
+ assert.deepEqual(sage.items.filter(item=>item.type==="technique").map(item=>item.system.effectKind),["damage","control","sustained"]);
+ assert.equal(sage.items.length,new Set(sage.items.map(item=>item._id)).size);
+ assert.equal(sage.items.find(item=>item.system.effectKind==="control").system.controlRounds,0);
+ await assert.rejects(()=>importTestActors({fresh:"true"}),/inválida/);
+});
+
+test("novas fichas são privadas e a importação normal continua preservando as cópias",async()=>{
+ await importTestActors({fresh:true});const again=await importTestActors();assert.equal(again.length,3);assert.equal(creations.length,3);
+ game.user.isGM=false;await importTestActors({fresh:true});assert.equal(creations.length,3);
+ game.user.isGM=true;const results=await Promise.all([importTestActors({fresh:true}),importTestActors({fresh:true})]);
+ assert.equal(results[0].length,3);assert.equal(results[1],undefined);assert.equal(creations.length,6);
 });

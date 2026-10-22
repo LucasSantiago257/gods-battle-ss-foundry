@@ -1,5 +1,7 @@
 # Saint Seiya — A Batalha dos Deuses para FoundryVTT
 
+**0.57.0 — ensaio integrado da one-shot:** Atacar começa pela habilidade treinada; técnicas oferecem uma reserva intacta disponível; prazos de efeitos têm títulos compactos. Novo grupo de treino preserva fichas anteriores e inclui exemplos de Dano, Controle e Sustentada. [Ensaio para mestre e jogadores](docs/fichas-teste.md), com construção personalizada, distância, aplicar/Ajustar/Desfazer e recarga.
+
 **Resistência com dados atuais:** mudanças na ficha do defensor, armadura ou ataque durante a resolução impedem publicar um resultado com parâmetros antigos. Botões antigos e parcelas divergentes de área são recusados; nenhuma edição posterior é desfeita.
 
 **Cartões de técnicas:** a penalidade de resistência mostra os componentes e páginas corretos, incluindo Enfraquecer. Falhas não pedem resistência; Controle e Sustentada indicam seus próprios próximos passos. Descrição e referência ficam disponíveis em uma seção recolhível.
@@ -46,19 +48,19 @@
 
 **Subir de nível · evolução assistida** abre um rascunho de ganhos e escolhas do compêndio, com comparação antes/depois, saldos de pontos e registro no histórico. O mestre ativo processa a confirmação; recursos atuais e cópias existentes são preservados. Veja [evolução assistida](docs/evolucao.md).
 
-Para exercitar o combate, abra **Compêndios → Fichas de teste — Combate**. A versão 0.9.2 acrescenta Santo, Guardião e Sábia com armadura, técnica e recursos preenchidos. Como mestre, **Combate → Importar grupo de teste** cria as fichas ausentes em uma pasta própria e preserva as cópias existentes. Veja [o exercício passo a passo](docs/fichas-teste.md).
+Para ensaiar a one-shot, use **Combate → Ferramentas do mestre → Novo grupo de treino**. Cria Santo, Guardião e Sábia em cópias privadas; Lyra inclui Dano, Controle e Sustentada. Importar grupo de teste preserva as fichas anteriores. Veja [o exercício para mestre e jogadores](docs/fichas-teste.md), incluindo aplicação direta, desfazer, duração e recarga.
 
-Fichas, compêndios e ativação de técnicas do sistema UmD10+, com destino ao **FoundryVTT 13 build 350**. Versão **0.36.0, em desenvolvimento**. A criação de personagens na versão 0.1.1 foi confirmada pelo usuário no servidor; as novas automações ainda precisam ser validadas dentro do Foundry.
+Fichas, compêndios e ativação de técnicas do sistema UmD10+, com destino ao **FoundryVTT 13 build 350**. Versão **0.57.0**. Lucas confirmou o combate básico no servidor. Este marco foi ensaiado em módulos e navegador isolados; as interfaces novas e o percurso completo ainda precisam ser conferidos no core hospedado13.350.
 
 O sistema inclui **888 entradas em dez compêndios nativos de Items**, com descrições, requisitos, origem e páginas do livro. Na aba **Poderes**, os atalhos abrem os catálogos para arrastar itens à ficha. Acrescenta 166 técnicas para consulta e configuração, com atalhos na aba Técnicas. As cópias do catálogo exigem revisão antes de gastar CE; custos variáveis, efeitos especiais e Exclamação de Athena permanecem manuais. A ficha permite abrir os Big Bangs relacionados para consulta. Os Items do livro mostram a descrição completa em uma área de leitura. Consulte a [cobertura e o uso dos compêndios](docs/compendios.md). Para atualizar, encerre o mundo e use **Sistemas de Jogo → Atualizar**; depois inicie o mundo e recarregue a página.
 
 ## O que já existe
 
-Desde 0.6.0, a Visão geral explica as parcelas dos cálculos. PV cresce a partir do nível 2, conforme a campanha. Bônus de atributos divinos estão implementados com adesão explícita nas fichas existentes; novos personagens usam a automação. PV atuais, ajustes manuais e itens são preservados. Consulte [cálculos e compatibilidade](docs/calculos.md).
+As parcelas dos cálculos ficam disponíveis em detalhes recolhidos. PV cresce a partir do nível 2, conforme a campanha. Bônus de atributos divinos estão implementados com adesão explícita nas fichas existentes; novos personagens usam a automação. PV atuais, ajustes manuais e itens são preservados. Consulte [cálculos e compatibilidade](docs/calculos.md).
 
 Desde 0.7.0, 25 entradas têm efeitos pessoais totais ou parciais: bônus de PV, atributos, perícias, ações, proteção e Domínio. As 358 virtudes/habilidades/dádivas têm classificação de cobertura. Requisitos são informativos; os efeitos cobertos seguem as opções de automação da ficha e da cópia, sem declaração de aceite. Consulte [efeitos pessoais](docs/efeitos-pessoais.md).
 
-Desde 0.8.0, ataque/defesa comuns e resistência de técnicas oferecem aplicação confirmada de dano. Um mestre ativo serializa alterações e registra os valores; a última aplicação pode ser desfeita se os recursos não mudaram. Consulte [combate](docs/combate.md).
+Ataque/defesa comuns e resistência de técnicas oferecem aplicação direta de dano pelo proprietário do defensor ou mestre. Um mestre ativo serializa alterações e registra os valores; a última aplicação pode ser desfeita se os recursos não mudaram. Consulte [combate](docs/combate.md).
 
 Desde 0.9.0, novos cavaleiros têm assistente de criação em seis etapas com rascunho persistente, benefícios de estilo concedidos uma vez, escolhas dos compêndios e revisão de orçamento/requisitos. Personagens antigos conservam a edição normal. Consulte [criação assistida](docs/criacao.md).
 
@@ -85,7 +87,7 @@ Consulte o [guia de instalação por manifesto](docs/instalacao-manifesto.md). C
 
 ## Instalação manual no servidor
 
-1. Extraia o ZIP `gods-battle-ss-0.21.0.zip`. Ele contém a pasta `gods-battle-ss`.
+1. Extraia o ZIP da versão instalada. Ele contém a pasta `gods-battle-ss`.
 2. Com o servidor Foundry parado, envie essa pasta para `<pasta de dados>/Data/systems/gods-battle-ss/`. `system.json` deve ficar diretamente nessa pasta, sem uma pasta intermediária.
 3. Reinicie o Foundry e crie um **mundo de teste** escolhendo “Saint Seiya — A Batalha dos Deuses”.
 4. Crie um Actor do tipo **Cavaleiro**. Edite o nome, atributos, estilo e recursos. As alterações são salvas ao editar os campos.
