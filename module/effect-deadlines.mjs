@@ -12,7 +12,7 @@ export function effectDeadline(view){
   if(view.canPay)return {...base,maintenancePending:true,deadlinePriority:0,deadlineLabel:`Recarga de 1 CE pendente · rodada ${now}`,deadlineDetail:view.overdue?`Lacuna de ${now-view.nextRound} rodada(s) desde a ${view.nextRound}; sem cobrança retroativa automática.`:"Primeira rodada ainda não coberta pelo pagamento."};
   return {...base,deadlinePriority:1,deadlineLabel:`Recarga coberta até a rodada ${record.sustain.paidUntilRound}`,deadlineDetail:`Próxima recarga: rodada ${view.nextRound}. Não é expiração automática do efeito.`};
  }
- if(!["brasas","manual"].includes(record.kind))return {...base,deadlinePriority:3,deadlineLabel:"Prazo exige conferência do tipo de efeito"};
+ if(!["brasas","manual","armorBreak"].includes(record.kind))return {...base,deadlinePriority:3,deadlineLabel:"Prazo exige conferência do tipo de efeito"};
  if(!Number.isSafeInteger(view.nextRound)||!Number.isSafeInteger(record.firstRound)||!Number.isSafeInteger(record.lastRound)||record.firstRound<1||record.lastRound<record.firstRound||record.lastRound-record.firstRound>=1000)return {...base,deadlinePriority:3,deadlineLabel:"Prazo exige conferência do registro"};
  let remaining=0,pending=0;
  for(let round=record.firstRound;round<=record.lastRound;round++)if(!record.ticks?.[`round${round}`]){remaining++;if(round<=now)pending++;}
