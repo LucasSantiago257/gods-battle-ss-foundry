@@ -7,7 +7,7 @@ import {rollTest} from "./rolls.mjs";
 import {activationFormOptions,installTechniquePreview} from "./technique-ui.mjs";
 import {activationState,submitTechniqueActivation,techniqueRollMode,pendingTechnique} from "./technique-activation.mjs";
 import {primaryGM,assertNoTechniqueInterruption} from "./master-queue.mjs";
-import {actionView,techniqueActionPlan,actionHash} from "./action-rules.mjs";
+import {actionView,techniqueActionPlan,techniqueActionChoices,actionHash} from "./action-rules.mjs";
 import {techniqueWithComponents} from "./technique-components.mjs";
 
 const active = new WeakSet();
@@ -32,7 +32,7 @@ export async function useTechnique(actor, item) {
     const content = await foundry.applications.handlebars.renderTemplate(`systems/${SYSTEM_ID}/templates/technique-dialog.hbs`, {
       name: item.name, cost: item.system.cost + item.system.costExtra, current: actor.system.resources.cosmo.value,
       extra: actor.system.resources.cosmoExtra, reserve: actor.system.resources.cosmoReserved,
-      penalty: actor.system.combat.asterismPenalty, unlimited: actor.system.resources.cosmo.unlimited,areaTargets,targetName:target?.name,actions:actionView(actor),movement:effective.movement,components:profile,hasExhaust:profile.rules.some(r=>r.kind==="exhaust"),hasEssence:profile.rules.some(r=>r.kind==="essence"),hasTerrain:profile.rules.some(r=>r.kind==="terrain")
+      penalty: actor.system.combat.asterismPenalty, unlimited: actor.system.resources.cosmo.unlimited,areaTargets,targetName:target?.name,actions:{...actionView(actor),techniqueChoices:!areaTargets&&!effective.movement?techniqueActionChoices(actor):[]},movement:effective.movement,components:profile,hasExhaust:profile.rules.some(r=>r.kind==="exhaust"),hasEssence:profile.rules.some(r=>r.kind==="essence"),hasTerrain:profile.rules.some(r=>r.kind==="terrain")
     });
     const answer = await foundry.applications.api.DialogV2.wait({window: {title: "Ativar técnica"}, content,
       render:(_event,dialog)=>installTechniquePreview(dialog.form??dialog.element.querySelector("form"),actor.system,effective,actor,targetToken,areaTargets),
