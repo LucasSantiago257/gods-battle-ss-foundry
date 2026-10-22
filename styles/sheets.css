@@ -135,3 +135,5 @@
 .technique-activation .activation-check input[type=checkbox] {width:auto;flex:0 0 auto;}
 .technique-activation table {width:100%;table-layout:fixed;overflow-wrap:anywhere;}
 @media(max-width:480px){.technique-activation .activation-summary{grid-template-columns:1fr;}.technique-activation .activation-fields{grid-template-columns:1fr;}}
+
+.technique-activation .activation-heading>strong,.technique-activation .activation-heading>span {min-width:0;overflow-wrap:anywhere;}
