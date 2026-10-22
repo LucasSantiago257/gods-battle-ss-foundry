@@ -97,3 +97,22 @@
 .gods-battle .effect-filter label {flex:1 1 180px; min-width:0;}
 .gods-battle .effect-filter input, .gods-battle .effect-filter select {width:100%;}
 .gods-battle [data-effect-record][hidden], .gods-battle .effect-history[hidden] {display:none !important;}
+
+/* Primary combat action stays above tabs and scrolling content. */
+.gods-battle .quick-actions {display:grid;grid-template-columns:minmax(150px,1.4fr) repeat(3,minmax(0,1fr));gap:10px;align-items:stretch;margin:0 24px 14px;flex-shrink:0;}
+.gods-battle .primary-attack {background:var(--battle-gold);border-color:var(--battle-gold);color:#151c2c;font-weight:800;font-size:17px;min-height:48px;display:flex;align-items:center;justify-content:center;gap:9px;}
+.gods-battle .primary-attack:hover {background:#f6d99a;color:#111827;}
+.gods-battle .quick-stat {display:flex;align-items:center;justify-content:space-between;gap:6px;padding:8px 12px;border:1px solid var(--battle-line);border-radius:6px;background:var(--battle-panel);}
+.gods-battle .quick-stat span {font-size:11px;color:var(--battle-muted);}.gods-battle .quick-stat strong {font-size:22px;}
+.gods-battle .sheet-settings,.gods-battle .sheet-tools {border-top:1px solid var(--battle-line);padding:12px 0;margin:10px 0;}
+.gods-battle .sheet-settings>summary,.gods-battle .sheet-tools>summary {cursor:pointer;color:var(--battle-gold);font-weight:600;}
+.gods-battle .sheet-settings>fieldset,.gods-battle .sheet-tools>div {margin-top:12px;}
+.gods-battle .level-up-action {float:right;font-size:11px;}
+.battle-chat .chat-actions {display:flex;gap:6px;flex-wrap:wrap;margin:10px 0;}.battle-chat .chat-actions button {flex:1 1 80px;min-height:32px;}
+.battle-chat .damage-summary {display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0;}.battle-chat .damage-summary>strong {font-size:24px;}
+.battle-chat .damage-status {display:inline-block;font-size:11px;border:1px solid currentColor;border-radius:20px;padding:2px 8px;margin:4px 0;}.battle-chat .damage-status[data-state="applied"] {color:inherit;background:#43895622;}.battle-chat .damage-status[data-state="pending"] {color:inherit;background:#e9b25522;}
+.battle-chat .roll-details {margin:10px 0;font-size:12px;}.battle-chat .roll-details>summary {cursor:pointer;}.battle-chat .chat-meta {font-size:12px;opacity:.85;}
+[data-gods-battle-internal-damage] {display:none!important;}
+@media(max-width:700px){.gods-battle .quick-actions {margin:0 15px 12px;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;}.gods-battle .primary-attack {grid-column:1/-1;min-height:42px;}.gods-battle .quick-stat {padding:6px 8px;}.gods-battle .quick-stat strong {font-size:19px;}}
+
+@media(max-width:700px){.gods-battle .resource-strip{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.gods-battle .resource{padding:8px;min-width:0}.gods-battle .resource input{width:0;min-width:0;flex:1;font-size:21px}.gods-battle .resource>div>span{flex-shrink:0;font-size:12px}.gods-battle .battle-header{gap:10px}.gods-battle .level-seal{padding:7px 10px}}
