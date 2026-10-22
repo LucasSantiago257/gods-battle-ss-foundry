@@ -8,7 +8,7 @@ import {renderTechniqueChat} from "./techniques.mjs";
 import {openCatalog} from "./catalog.mjs";
 import {evaluatePassives} from "./passives.mjs";
 import {attackTarget} from "./combat.mjs";
-import {renderCombatChat,enqueueDamageRequest,notifyDamageResponse,resumeDamageRequests} from "./damage.mjs";
+import {refreshDamageCards,renderCombatChat,enqueueDamageRequest,notifyDamageResponse,resumeDamageRequests} from "./damage.mjs";
 import {beginCreation} from "./creation.mjs";
 import {openTestActors,importTestActors} from "./combat-examples.mjs";
 import {beginLevelUp,requestLevelUp,enqueueLevelRequest,resumeLevelRequests} from "./level-up.mjs";
@@ -60,3 +60,9 @@ Hooks.on("createCombatant",refreshActionSheets);
 Hooks.on("updateCombatant",refreshActionSheets);
 Hooks.on("deleteCombatant",refreshActionSheets);
 Hooks.on("preCreateItem", (item,data = {}) => {if (item.parent?.type === "knight" && !data.system?.acquisitionLevel) item.updateSource({"system.acquisitionLevel":item.parent.system.profile.level});});
+
+Hooks.on("updateActor",refreshDamageCards);
+Hooks.on("deleteActor",refreshDamageCards);
+Hooks.on("updateChatMessage",refreshDamageCards);
+Hooks.on("updateUser",refreshDamageCards);
+Hooks.on("deleteChatMessage",refreshDamageCards);
