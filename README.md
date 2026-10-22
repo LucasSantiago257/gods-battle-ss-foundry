@@ -1,5 +1,7 @@
 # Saint Seiya — A Batalha dos Deuses para FoundryVTT
 
+**0.58.0 — armadura por rodada:** Quebrar Armadura em técnica personalizada Sustentada ganha registro no alvo, parcela por classe, aplicação/Ajustar, prazo e histórico. Trocar a armadura pausa o vínculo; recuperação completa o registro sem repetir dano. [Contrato e ensaio](docs/armadura-recorrente.md). Ataque físico comum continua com exceções de armadura manuais.
+
 **0.57.0 — ensaio integrado da one-shot:** Atacar começa pela habilidade treinada; técnicas oferecem uma reserva intacta disponível; prazos de efeitos têm títulos compactos. Novo grupo de treino preserva fichas anteriores e inclui exemplos de Dano, Controle e Sustentada. [Ensaio para mestre e jogadores](docs/fichas-teste.md), com construção personalizada, distância, aplicar/Ajustar/Desfazer e recarga.
 
 **Resistência com dados atuais:** mudanças na ficha do defensor, armadura ou ataque durante a resolução impedem publicar um resultado com parâmetros antigos. Botões antigos e parcelas divergentes de área são recusados; nenhuma edição posterior é desfeita.
