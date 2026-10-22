@@ -20,7 +20,7 @@ export async function requestDamage(message,action="apply",{adjust=false}={}) {
   localBusy.add(message.id);
   try {
     const r=resolution(message,{allowEffectDamage:action==="undo"}),actor=await fromUuid(r.actorUuid);
-    if (!actor?.isOwner) throw Error("Somente o mestre ou proprietário do defensor pode aplicar dano.");
+    if (!actor || !(game.user.isGM||actor.isOwner)) throw Error("Somente o mestre ou proprietário do defensor pode aplicar dano.");
     const snapshot=damageSnapshot(actor,r.body,r.armor,r.armorId);
     let override=null;
     if(action==="apply"&&adjust) {
@@ -29,7 +29,7 @@ export async function requestDamage(message,action="apply",{adjust=false}={}) {
       damageSnapshot(actor,answer.body,answer.armor,r.armorId);
       if(answer.body!==r.body || answer.armor!==r.armor) {optionalNote(answer.reason);override=answer;}
     } else if(action==="undo"&&!await foundry.applications.api.DialogV2.confirm({window:{title:"Desfazer aplicação"},content:"<p>Restaurar os valores anteriores? Alterações posteriores impedem o desfazer.</p>"})) return;
-    return await ChatMessage.create({content:"<p>Solicitação de dano enviada ao mestre. Aguarde a confirmação no registro.</p>",whisper:[...new Set([game.user.id,gm.id])],flags:{[SYSTEM_ID]:{damageRequest:{messageId:message.id,action,expected:snapshot.before,override}}}});
+    return await ChatMessage.create({content:"<span aria-hidden=\"true\"></span>",whisper:[...new Set([game.user.id,gm.id])],flags:{[SYSTEM_ID]:{damageRequest:{messageId:message.id,action,expected:snapshot.before,override,silent:true}}}});
   } finally {localBusy.delete(message.id);}
 }
 export async function executeDamageRequest(message,userId) {
@@ -126,7 +126,41 @@ export async function recoverDamageOperation(actor,key) {
     await actor.update({[`flags.${SYSTEM_ID}.damageOperations.${key}.status`]:r.direction==='undo'?'applied':'failed'});
   });
 }
+// Public card state; requests remain an internal, automatic transport to the active GM.
+export async function damageCardState(message) {
+ if(!message?.isContentVisible)return null;
+ const r=message.flags?.[SYSTEM_ID]?.resolvedDamage;if(!r)return null;
+ const actor=await fromUuid(r.actorUuid);if(!actor)return {label:"Alvo indisponível",state:"unavailable",authorized:false};
+ const authorized=!!(game.user.isGM||actor.isOwner),record=actor.flags?.[SYSTEM_ID]?.damageOperations?.[r.rootMessageId];
+ const applied=record?.status==="applied",interrupted=["prepared","repair"].includes(record?.status);
+ const queued=(game.messages?.contents??[]).some(m=>m.flags?.[SYSTEM_ID]?.damageRequest?.messageId===message.id&&!m.flags?.[SYSTEM_ID]?.damageResponse);
+ const processing=localBusy.has(message.id)||queued;
+ const effect=message.flags?.[SYSTEM_ID]?.attack?.effectKind,damageAllowed=!effect||effect==="damage",ready=!!primaryGM()?.active;
+ const state=interrupted?"interrupted":processing?"processing":applied?"applied":record?.status==="undone"?"undone":"pending";
+ const label={interrupted:"Conferir aplicação",processing:"Aplicando…",applied:"Aplicado",undone:"Desfeito",pending:"Pendente"}[state];
+ const canApply=authorized&&ready&&!processing&&!interrupted&&!applied&&damageAllowed;
+ const canUndo=authorized&&ready&&!processing&&!interrupted&&applied&&actor.flags?.[SYSTEM_ID]?.damageLast===r.rootMessageId&&snapshotMatches(actor,record,"after");
+ return {label,state,authorized,canApply,canAdjust:canApply,canUndo:!!canUndo};
+}
+const cardEpochs=new WeakMap();
+async function updateDamageCard(message,root) {
+ const epoch=(cardEpochs.get(root)??0)+1;cardEpochs.set(root,epoch);
+ let status;try{status=await damageCardState(message);}catch{return;}
+ if(!status||cardEpochs.get(root)!==epoch)return;
+ const badge=root.querySelector('[data-damage-status]');if(badge){badge.textContent=status.label;if(badge.dataset)badge.dataset.state=status.state;}
+ for(const [action,key]of [["applyDamage","canApply"],["adjustDamage","canAdjust"],["undoDamage","canUndo"]]){
+  const button=root.querySelector(`[data-action="${action}"]`);if(!button)continue;button.hidden=!status.authorized;button.disabled=!status[key];
+ }
+}
+export async function refreshDamageCards() {
+ const roots=globalThis.document?.querySelectorAll?.('[data-damage-card-id]')??[];
+ await Promise.allSettled([...roots].map(root=>{const message=game.messages?.get?.(root.dataset.damageCardId);return message?updateDamageCard(message,root):undefined;}));
+}
 export async function renderCombatChat(message,html) {
+  if(message.flags?.[SYSTEM_ID]?.damageRequest?.silent){const root=html.closest?.(".message")??html;if(root.dataset)root.dataset.godsBattleInternalDamage="";root.hidden=true;return;}
+  const damageRoot=html;
+  if(message.flags?.[SYSTEM_ID]?.resolvedDamage&&damageRoot.dataset)damageRoot.dataset.damageCardId=message.id;
+
   const quickButton=html.querySelector('[data-action="quickDefendAttack"]');
   let preview=null;
   const refresh=async()=>{
@@ -141,7 +175,7 @@ export async function renderCombatChat(message,html) {
   }],["defendAttack",()=>defendAttack(message)],["applyDamage",()=>requestDamage(message,"apply")],["adjustDamage",()=>requestDamage(message,"apply",{adjust:true})],["undoDamage",()=>requestDamage(message,"undo")]]) {
     const button=html.querySelector(`[data-action="${action}"]`);if(!button)continue;
     if(!message.isContentVisible) {button.remove();continue;}
-    button.addEventListener("click",async()=>{button.disabled=true;try{await callback();}catch(error){ui.notifications.error(error.message);}finally{button.disabled=false;if(action==="quickDefendAttack")await refresh();}});
+    button.addEventListener("click",async()=>{button.disabled=true;try{await callback();}catch(error){ui.notifications.error(error.message);}finally{button.disabled=false;if(action==="quickDefendAttack")await refresh();await updateDamageCard(message,damageRoot);}});
   }
-  await refresh();
+  await refresh();await updateDamageCard(message,damageRoot);
 }

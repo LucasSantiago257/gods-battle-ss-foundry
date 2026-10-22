@@ -4,7 +4,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {knight,content} from "./foundry-stub.mjs";
 import {physicalDamage,damageSnapshot,snapshotMatches,canReadChat,damageTurnSnapshot,damageTurnSummary} from "../module/combat-rules.mjs";
-import {executeDamageRequest,enqueueDamageRequest,recoverDamageOperation,requestDamage} from "../module/damage.mjs";
+import {executeDamageRequest,enqueueDamageRequest,recoverDamageOperation,requestDamage,damageCardState,renderCombatChat} from "../module/damage.mjs";
 const ID='gods-battle-ss';
 function patch(obj,data) {for(const [path,value] of Object.entries(data)){const parts=path.split('.');let o=obj;for(const key of parts.slice(0,-1))o=o[key]??={};o[parts.at(-1)]=structuredClone(value);}}
 function fixture() {
@@ -132,7 +132,7 @@ test('ajustar dano conserva substituicao e cancelar nao envia solicitacao',async
 test('dano direto recusa resultado oculto e ficha sem propriedade antes de enviar',async()=>{
  const f=fixture();let sent=0;globalThis.ChatMessage={create:async()=>{sent++;}};
  f.actor.isOwner=true;f.source.isContentVisible=false;await requestDamage(f.source);assert.equal(sent,0);
- f.source.isContentVisible=true;f.actor.isOwner=false;await assert.rejects(requestDamage(f.source),/proprietario|proprietário/);assert.equal(sent,0);
+ f.source.isContentVisible=true;f.actor.isOwner=false;game.user=f.player;await assert.rejects(requestDamage(f.source),/proprietario|proprietário/);assert.equal(sent,0);
 });
 
 test('dano direto suprime clique concorrente e mestre recusa snapshot alterado',async()=>{
@@ -150,7 +150,7 @@ test('cartoes mostram valores de dano calculado e efeito sem dano nao oferece ap
  const technique=Handlebars.compile(await readFile(new URL('../templates/chat.hbs',import.meta.url),'utf8'));
  const physical=Handlebars.compile(await readFile(new URL('../templates/combat-chat.hbs',import.meta.url),'utf8'));
  const tech=technique({resistance:{damage:10.5,armorDamage:2.5}}),fight=physical({resolvedDamage:{body:21,armor:0}});
- assert.match(tech,/Aplicar dano: 10\.5 PV · 2\.5 armadura/);assert.match(fight,/Aplicar dano: 21 PV · 0 armadura/);
+ assert.match(tech,/<strong>10\.5 PV<\/strong>/);assert.match(tech,/2\.5 armadura/);assert.match(fight,/<strong>21 PV<\/strong>/);assert.match(fight,/data-damage-status[^>]*>Pendente/);assert.doesNotMatch(fight,/Dano físico comum não altera/);
  for(const html of [tech,fight]){assert.match(html,/data-action="adjustDamage"/);assert.match(html,/data-action="undoDamage"/);}
  for(const resistance of [{manualEffect:'Sustentada'},{control:{resisted:true}}])assert.doesNotMatch(technique({resistance}),/data-action="applyDamage"/);
 });
@@ -167,4 +167,31 @@ test("área aplica uma parcela por defensor e desfaz um sem restaurar o outro",a
 test("defensor externo não pode aplicar resistência vinculada a uma área",async()=>{
  const f=fixture();game.messages.set("attack",{flags:{[ID]:{attack:{effectKind:"damage",area:{count:2},areaTargets:[{actorUuid:"Actor.other",tokenUuid:"Scene.a.Token.b",name:"B"},{actorUuid:"Actor.third",tokenUuid:"Scene.a.Token.c",name:"C"}]}}}});
  const request=f.request();await executeDamageRequest(request,f.player.id);assert.equal(f.actor.system.resources.health.value,100);assert.equal(request.flags[ID].damageResponse.ok,false);
+});
+
+
+test("cartão de dano distingue dono, mestre e observador e acompanha aplicar/desfazer",async()=>{
+ const f=fixture();f.source.isContentVisible=true;f.actor.isOwner=true;game.user=f.player;
+ let view=await damageCardState(f.source);assert.equal(view.canApply,true);assert.equal(view.canUndo,false);assert.equal(view.state,"pending");
+ f.actor.isOwner=false;assert.equal((await damageCardState(f.source)).authorized,false);
+ game.user=f.gm;view=await damageCardState(f.source);assert.equal(view.canApply,true);assert.equal(view.authorized,true);
+ await executeDamageRequest(f.request(),'p');view=await damageCardState(f.source);assert.equal(view.state,"applied");assert.equal(view.canApply,false);assert.equal(view.canAdjust,false);assert.equal(view.canUndo,true);
+ await executeDamageRequest(f.request('undo','undo'),'p');view=await damageCardState(f.source);assert.equal(view.state,"undone");assert.equal(view.canApply,true);assert.equal(view.canUndo,false);
+ f.actor.flags[ID].damageOperations.attack.status='repair';view=await damageCardState(f.source);assert.equal(view.state,'interrupted');assert.equal(view.canApply,false);assert.equal(view.canUndo,false);
+ f.source.isContentVisible=false;assert.equal(await damageCardState(f.source),null);
+});
+
+test("dono aplica dano sem diálogo de aprovação e transporte interno não aparece no chat",async()=>{
+ const f=fixture();f.source.isContentVisible=true;f.actor.isOwner=true;game.user=f.player;let sent,dialogs=0;
+ foundry.applications.api.DialogV2={wait:async()=>{dialogs++;},confirm:async()=>{dialogs++;}};
+ globalThis.ChatMessage={create:async data=>{sent=data;return data;}};
+ await requestDamage(f.source);assert.equal(dialogs,0);assert.equal(sent.flags[ID].damageRequest.silent,true);assert.doesNotMatch(sent.content,/solicita|mestre|aguarde/i);
+ const row={dataset:{},hidden:false},html={closest:()=>row};await renderCombatChat({flags:sent.flags},html);assert.equal(row.hidden,true);assert.ok(Object.hasOwn(row.dataset,'godsBattleInternalDamage'));
+ game.user=f.gm;const req={id:'automatic',author:f.player,flags:sent.flags,async update(d){patch(this,d);}};await executeDamageRequest(req,'p');assert.equal(f.actor.system.resources.health.value,89.5);assert.equal(req.flags[ID].damageResponse.ok,true);
+});
+
+test("cartão pendente bloqueia nova aplicação durante processamento e desfazer após edição",async()=>{
+ const f=fixture();f.source.isContentVisible=true;f.actor.isOwner=true;game.messages.contents=[f.source,{flags:{[ID]:{damageRequest:{messageId:f.source.id}}}}];
+ let view=await damageCardState(f.source);assert.equal(view.state,'processing');assert.equal(view.canApply,false);
+ game.messages.contents=[f.source];await executeDamageRequest(f.request(),'p');f.actor.system.resources.health.value=1;view=await damageCardState(f.source);assert.equal(view.state,'applied');assert.equal(view.canUndo,false);assert.equal(view.canApply,false);
 });

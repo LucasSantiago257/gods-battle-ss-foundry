@@ -136,3 +136,6 @@ Na0.55.0, **Compêndios → Artefatos** reúne22referências das pp.607–614, c
 
 
 Na0.55.1, o painel de efeitos oferece Ajustar, Encerrar e recarga somente quando o mestre responsável pode executar a operação. Outros mestres e operações interrompidas conservam a consulta dos registros sem botões que seriam recusados ao clicar.
+
+
+Na0.56.0, **Atacar** fica no topo da ficha, em todas as abas. Textos gerais de regras foram retirados da leitura principal; ajustes, ferramentas e contas ficam recolhidos. A organização de Técnicas foi preservada. Nos cartões, o dono aplica dano na própria ficha e o mestre aplica nos defensores: **Pendente / Aplicado / Desfeito**, sem pedido visível de aprovação. O mestre conectado coordena a gravação automaticamente; proteção contra duplicidade, permissões e recuperação são mantidas. Ataque físico comum conserva a regra do livro; dano à armadura excepcional fica a cargo do mestre. Veja [ficha e aplicação de dano](docs/ficha-e-dano.md).
