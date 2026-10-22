@@ -1,3 +1,14 @@
+## 0.59.0 — Ativação legível para a sessão
+
+Ativar agora começa pelos valores e pelo alvo. Ajustes ficam em grupos opcionais, preservando a organização atual de Técnicas e os mesmos cálculos/pagamentos.
+
+- Custo, dificuldade, PC e dano por tipo no topo; Controle exibe duração base e Sustentada omite dano genérico.
+- CE/Elevar/Condensar, teste e componentes ficam recolhidos. Abrir/fechar conserva as escolhas; ativação comum segue direto com os mesmos defaults.
+- Distância e área mantêm opções explícitas, alvos originais, medidas/atualização e forma opcional. Avisos de CE/ND/cena/alvo alterado continuam visíveis e bloqueiam quando necessário.
+- Campos vazios não criam textos soltos; cálculos detalhados ficam recolhidos. Teclado, nomes longos e janela440px conferidos em Edge isolado.
+- Ensaio integrado de formulários reais/callbacks e coordenação do pagamento com Dano/Controle/Sustentada/Esgotar/Movendo/área. Cancelar e preparar não gastam; pagamento e reservas continuam únicos.
+- Sem regras novas, migração, catálogos alterados ou perda automática de armadura em ataque físico comum. Validação no core hospedado13.350 e conexões reais continua pendente. [Uso e limites](ativacao-direta.md).
+
 ## 0.58.0 — Quebrar Armadura Sustentada: composição, parcelas e recuperação
 
 Técnicas personalizadas Sustentadas com Quebrar Armadura canônico podem acompanhar1/2/3PV de armadura por rodada em Bronze/Prata/Ouro. O mestre registra prazo finito e início no alvo após resolver a ativação e os efeitos da técnica.
