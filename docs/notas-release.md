@@ -1,3 +1,13 @@
+## 0.58.0 — Quebrar Armadura Sustentada: composição, parcelas e recuperação
+
+Técnicas personalizadas Sustentadas com Quebrar Armadura canônico podem acompanhar1/2/3PV de armadura por rodada em Bronze/Prata/Ouro. O mestre registra prazo finito e início no alvo após resolver a ativação e os efeitos da técnica.
+
+- Construtor e seletor indicam o fluxo separado. O painel mostra a armadura vinculada, PV atuais, parcela, prazo e histórico; Aplicar/Ajustar/dispensar preservam notas opcionais.
+- Troca/remoção, cópias, prévia antiga e cliques concorrentes não transferem ou repetem parcelas. O registro não aplica dano ao avançar rodadas.
+- Journal precede a gravação de Item+Actor. Interrupção após o débito pode completar somente o registro; reparos/edições posteriores são preservados. Encerrar a operação também encerra seu efeito, sem alterar PV.
+- Nenhum débito de corpo/CE/ações/condições; manutenção/oposição e extensão de Sustentada continuam no fluxo próprio. Forma instantânea +1ND, técnicas mistas e dano físico comum à armadura permanecem manuais.
+- Catálogos, UUIDs e organização de Técnicas preservados; sem migração. [Ensaio curto](armadura-recorrente.md#ensaio-curto), inclusive com fichas de exercício. Testes isolados e CI não substituem o ensaio hospedado13.350 ou conexões reais.
+
 ## 0.57.0 — Marco integrado de combate e ensaio da one-shot
 
 - Atacar abre com a habilidade treinada de maior graduação. O botão permanece no topo; a organização de Técnicas foi preservada.
