@@ -1,5 +1,7 @@
 # Saint Seiya — A Batalha dos Deuses para FoundryVTT
 
+**0.57.0 — ensaio integrado da one-shot:** Atacar começa pela habilidade treinada; técnicas oferecem uma reserva intacta disponível; prazos de efeitos têm títulos compactos. Novo grupo de treino preserva fichas anteriores e inclui exemplos de Dano, Controle e Sustentada. [Ensaio para mestre e jogadores](docs/fichas-teste.md), com construção personalizada, distância, aplicar/Ajustar/Desfazer e recarga.
+
 **Resistência com dados atuais:** mudanças na ficha do defensor, armadura ou ataque durante a resolução impedem publicar um resultado com parâmetros antigos. Botões antigos e parcelas divergentes de área são recusados; nenhuma edição posterior é desfeita.
 
 **Cartões de técnicas:** a penalidade de resistência mostra os componentes e páginas corretos, incluindo Enfraquecer. Falhas não pedem resistência; Controle e Sustentada indicam seus próprios próximos passos. Descrição e referência ficam disponíveis em uma seção recolhível.
@@ -48,7 +50,7 @@
 
 Para ensaiar a one-shot, use **Combate → Ferramentas do mestre → Novo grupo de treino**. Cria Santo, Guardião e Sábia em cópias privadas; Lyra inclui Dano, Controle e Sustentada. Importar grupo de teste preserva as fichas anteriores. Veja [o exercício para mestre e jogadores](docs/fichas-teste.md), incluindo aplicação direta, desfazer, duração e recarga.
 
-Fichas, compêndios e ativação de técnicas do sistema UmD10+, com destino ao **FoundryVTT 13 build 350**. Base publicada **0.56.0**; próximo marco integrado em preparação. Lucas confirmou o combate básico no servidor. As interfaces novas e o ensaio completo ainda precisam ser conferidos no core hospedado.
+Fichas, compêndios e ativação de técnicas do sistema UmD10+, com destino ao **FoundryVTT 13 build 350**. Versão **0.57.0**. Lucas confirmou o combate básico no servidor. Este marco foi ensaiado em módulos e navegador isolados; as interfaces novas e o percurso completo ainda precisam ser conferidos no core hospedado13.350.
 
 O sistema inclui **888 entradas em dez compêndios nativos de Items**, com descrições, requisitos, origem e páginas do livro. Na aba **Poderes**, os atalhos abrem os catálogos para arrastar itens à ficha. Acrescenta 166 técnicas para consulta e configuração, com atalhos na aba Técnicas. As cópias do catálogo exigem revisão antes de gastar CE; custos variáveis, efeitos especiais e Exclamação de Athena permanecem manuais. A ficha permite abrir os Big Bangs relacionados para consulta. Os Items do livro mostram a descrição completa em uma área de leitura. Consulte a [cobertura e o uso dos compêndios](docs/compendios.md). Para atualizar, encerre o mundo e use **Sistemas de Jogo → Atualizar**; depois inicie o mundo e recarregue a página.
 
