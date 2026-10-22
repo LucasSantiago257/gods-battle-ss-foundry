@@ -1,5 +1,7 @@
 # Ensaio de combate para a one-shot
 
+Disponível na **0.57.0**. Faça primeiro ataque e técnica de Dano; duração/recarga e construção personalizada podem ser ensaiadas depois, no mesmo mundo de teste.
+
 O compêndio **Fichas de teste — Combate** traz três cavaleiros fictícios de nível 1, com PV/CE preenchidos e Bronze equipada (30 PV, PA 3). Cada ficha tem uma técnica de Dano configurada: ND 2, Poder 10, custo 2 CE. Lyra também tem **Foco de treino — Controle** e **Aura de treino — Sustentada**, para exercitar duração e recarga sem impor condições ou bônus.
 
 | Ficha | PV | CE | Luta | Uso no ensaio |
@@ -23,7 +25,7 @@ Para testar identidade sintética, faça outro grupo e coloque o token de Doran 
 1. **Aster:** marque Doran e clique em **Atacar**, no topo da ficha. Soco vem selecionado. Role usando 1 ação e bônus 0.
 2. **Doran:** no cartão, use **Defender com 1 ação**. O resultado mostra o dano calculado. **Aplicar dano** desconta esse valor na própria ficha; o estado passa de Pendente para Aplicado. O mestre também pode aplicar. Clicar novamente não repete o dano.
 3. Use **Desfazer**, sem editar os recursos entre as duas ações. PV retornam ao valor anterior; ações de ataque/defesa continuam gastas. **Ajustar dano** é separado: depois de desfazer, experimente 1,5 PV corporais e 0 na armadura, aplique e desfaça. Ataque físico comum conserva os PV da armadura.
-4. **Lyra:** marque Doran. Em **Técnicas**, use **Ativar → Pulso mental de treino**. Confira custo 2 CE, dificuldade 12, ND 2 e dano normal 21 PV; escolha a reserva de ataque. O teste pode falhar e ainda consumir o custo/ações. Em sucesso crítico, a prévia indica o dano maior.
+4. **Lyra:** marque Doran. Em **Técnicas**, use **Ativar → Pulso mental de treino**. Confira custo 2 CE, dificuldade 12, ND 2 e dano normal 21 PV; escolha a reserva de ataque. Se ela já estiver gasta, a janela começa pela defesa intacta disponível; reservas indisponíveis ficam desabilitadas. O teste pode falhar e ainda consumir o custo/ações. Em sucesso crítico, a prévia indica o dano maior.
 5. **Doran:** use **Resistir** no cartão da técnica, ou Ajustar para um modificador situacional. A resistência mental usa Sentidos e a dificuldade do ataque. Aplique o dano exibido e desfaça logo depois. No resultado de falha de resistência, Bronze perde 10 PV; em sucesso, a parcela pode ser menor ou nula, conforme o resultado. Desfazer restaura corpo e armadura, sem devolver CE ou ações à Lyra.
 
 Os dados variam. Se a ativação falhar, não há ataque a resistir; avance a rodada para outra tentativa, observando a CE restante. Para repetir o exercício com recursos iniciais, crie **Novo grupo de treino**. Nenhum botão reinicia as fichas usadas.
@@ -37,11 +39,19 @@ Os dados variam. Se a ativação falhar, não há ataque a resistir; avance a ro
 
 Uma sequência de uma técnica de Dano, um Controle, uma Sustentada e uma recarga usa os 7 CE iniciais de Lyra. Falhas também gastam CE; use um novo grupo se precisar repetir. O ensaio de Controle acompanha prazo, sem impor uma condição nova. A Aura não concede defesa, dano ou bônus fictícios.
 
+## Opcional: construir e configurar uma técnica
+
+Use um grupo novo para manter os 7 CE de Lyra. Em **Técnicas → Adicionar**, escolha nome, classe Bronze, natureza Mental, primordial Dano e ND/Poder pelo status. Adicione **Esgotar** pelo seletor e conclua: custo fixo 3 CE e dificuldade 13. Configurar permite habilitar o grupo de componentes da composição salva, mantendo alcance base 3 m e sem lançar o bônus de Esgotar manualmente.
+
+Marque Doran a 6 m pela grade. Em Ativar, escolha um aumento de Esgotar e marque a redução por distância. A prévia deve mostrar **5 CE**, dificuldade **15**, redução de **2 ND** e dano normal **11 PV**, antes da resistência. ND2 de Bronze +1 de Esgotar −2 por distância; o custo variável acrescenta2CE ao custo3. Desligar a redução permite comparar o dano31. A prévia não gasta recursos. Após mover tokens, atualize a medida; se o token mudar depois da prévia enviada, o processamento recusa sem gastar.
+
+Para área, veja [técnicas em área](tecnicas-area.md). O teste de integração cobre dois alvos distintos, custo único e resistência/aplicação/desfazer individuais; geometria, alcance por alvo e a combinação com Movendo mantêm os limites já documentados. Esse caso exige Asterismo3 e não está habilitado pelas fichas iniciais de graduação2.
+
 ## Interrupção e resultado esperado
 
 Se surgir estado de operação interrompida, o mestre usa a recuperação do registro em Combate; não repete a ativação para obter o cartão perdido. Alterações posteriores de PV/armadura podem impedir Desfazer; o sistema deve preservar essas edições. A preparação de falhas artificiais fica nos testes automatizados, sem precisar interromper gravações no mundo de jogo.
 
-Os testes de integração usam as mesmas fontes dos Atores e percorrem ataque/defesa, aplicação pelo dono, Ajustar/Desfazer, técnica/resistência, duração, recarga e recuperação. Incluem Actor vinculado e identidade sintética, com dois proprietários e um observador. Com dados controlados, o ataque físico resolve 8 PV corporais/0 na armadura; a técnica mental resolve 21/10 em falha normal da resistência. São testes de módulos em runtime simulado, não execução do core Foundry.
+Os testes de integração usam as mesmas fontes dos Atores e percorrem ataque/defesa, aplicação pelo dono, Ajustar/Desfazer, técnica/resistência, duração, recarga e recuperação. Incluem Actor vinculado e identidade sintética, com dois proprietários e um observador, construção/configuração/ativação pelo caminho dos diálogos, distância desatualizada, área com dois alvos e preservação dos avisos reais do painel. Com dados controlados, o ataque físico resolve 8 PV corporais/0 na armadura; a técnica mental resolve 21/10 em falha normal da resistência. São testes de módulos em runtime simulado, não execução do core Foundry.
 
 O combate básico já foi confirmado por Lucas no servidor. O ensaio completo desta entrega, interfaces novas e concorrência entre conexões no Foundry 13 build 350 continuam pendentes de confirmação. Catálogos e cópias existentes permanecem preservados.
 
