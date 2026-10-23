@@ -1,5 +1,13 @@
 ## 0.59.0 — Ativação legível para a sessão
 
+## 0.60.0 — Andamento por alvo da área
+
+- Novos cartões acompanham resistência e dano de cada defensor pelos resultados legíveis e journal existente.
+- Mestre e dono recebem suas ações; outros jogadores conservam só os nomes públicos. Atualização remove estados antigos após perda de acesso, exclusão ou troca de identidade.
+- Aplicar/Ajustar/Desfazer continuam no resultado individual, sem nova cobrança ou aprovação humana. Cálculo do dano recolhido; valores e avisos reais visíveis.
+- Ensaios de módulos vinculados/sintéticos e Edge isolado; core hospedado13.350 e concorrência real pendentes. Catálogos e regras preservados.
+
+
 Ativar agora começa pelos valores e pelo alvo. Ajustes ficam em grupos opcionais, preservando a organização atual de Técnicas e os mesmos cálculos/pagamentos.
 
 - Custo, dificuldade, PC e dano por tipo no topo; Controle exibe duração base e Sustentada omite dano genérico.

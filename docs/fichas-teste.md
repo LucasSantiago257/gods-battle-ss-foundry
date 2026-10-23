@@ -66,3 +66,7 @@ Use um grupo novo e siga [o ensaio de armadura](armadura-recorrente.md#ensaio-cu
 Ativar começa com custo, Asterismo, PC e valores aplicáveis. Faça uma ativação comum sem abrir os grupos. Depois use **CE e Elevar/Condensar**, altere Elevar e feche o grupo: a prévia principal conserva o ajuste. Componentes e modificadores têm grupos próprios; Controle/Sustentada não exibem dano genérico. Cancelar continua sem custo.
 
 No ensaio opcional de Esgotar, abra **Componentes da ativação** para escolher o aumento; no exercício de distância, a opção e Atualizar medida ficam acessíveis. Para área, os alvos e a tabela permanecem visíveis, enquanto Forma de referência é opcional. Confira custo/dificuldade antes de enviar e use os mesmos percursos de aplicação/Ajustar/Desfazer já descritos. [Uso e limites da janela](ativacao-direta.md).
+
+## Área: andamento por defensor — 0.60.0
+
+No exercício de área acima, confira Aguardando resistência → Dano pendente → Aplicado/Desfeito separadamente em cada alvo. Cada dono vê apenas seu estado/ações; o mestre vê ambos e o observador só os nomes. O dano continua no resultado individual, sem pedido visível ou aplicação em lote. [Ensaio de privacidade, identidade e limites](area-andamento.md#ensaio-curto). Novas áreas usam o acompanhamento; cartões antigos mantêm seu conteúdo salvo.

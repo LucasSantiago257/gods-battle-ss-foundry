@@ -1,7 +1,7 @@
 <div class="battle-chat"><span class="eyebrow">Técnica · {{effectLabel}}</span><h3>{{name}}</h3>
 {{#if targetName}}<p>Alvo: <strong>{{targetName}}</strong>.</p>{{/if}}
 {{#if distance}}<p>Distância {{distance.distance}} m · alcance {{distance.range}} m · −{{distance.levels}} {{#if distance.powerCosmic}}PC{{else}}ND{{/if}} já incluído (p.204).</p>{{/if}}
-{{#if area}}<p>Área · {{area.count}} alvos · dano corporal total {{damageTotal}} dividido em {{area.count}} parcelas de {{damage}} antes da resistência. Armadura: {{armorDamage}} por alvo. Custo e rolagem únicos (p.210).</p>{{/if}}
+{{#if area}}<p>Área · <strong>{{area.count}} alvos</strong>.</p>{{/if}}
 <p>Asterismo ({{attributeLabel}}): {{#each results}}<span class="die">{{this}}</span> {{/each}} · modificador {{modifier}}</p>
 <details class="roll-details"><summary>Detalhes da rolagem</summary><p>{{highest}} + {{tens}} × 2 − {{ones}} × 2 + {{modifier}}</p></details>
 <div class="chat-result"><strong>{{total}}</strong><span>{{outcome}}<br>Dificuldade {{difficulty}}</span></div>
@@ -11,9 +11,9 @@
 {{#if success}}<p>Poder Cósmico: <strong>{{powerCosmic}}</strong>.{{#if components.powerCosmicBonus}} Controle sobre as Estrelas: +{{components.powerCosmicBonus}} PC, já incluído (p.219).{{/if}}</p>
 {{#if componentResistance}}<p>{{componentResistance.label}}: {{componentResistance.modifier}} no teste de resistência do alvo (p.{{componentResistance.page}}).</p>{{/if}}
 {{#if isDamage}}<p>ND {{damageLevel}} · dano corporal <strong>{{damage}}</strong> · dano à armadura <strong>{{armorDamage}}</strong> (antes da resistência).</p>{{else}}<p>{{#if control}}Controle: duração base <strong>{{control.baseRounds}} rodadas</strong>, incluindo a ativação.{{else}}Sustentação: duração e oposição conforme a técnica.{{/if}}</p>{{/if}}
-{{#if isDamage}}<p>{{damageLevel}} ND × {{power}} Poder + nível {{userLevel}} + bônus {{damageBonus}}{{#if area}} = {{damageTotal}} total ÷ {{area.count}} alvos{{/if}}.</p>{{/if}}
+{{#if isDamage}}<details class="roll-details"><summary>Cálculo do dano</summary><p>{{damageLevel}} ND × {{power}} Poder + nível {{userLevel}} + bônus {{damageBonus}}{{#if area}} = {{damageTotal}} total ÷ {{area.count}} alvos (p.210){{/if}}.</p></details>{{/if}}
 {{#if critical}}<p>Sucesso crítico.{{#if isDamage}} +1 ND já incluído no cálculo de dano.{{/if}}</p>{{/if}}
-{{#if areaTargets}}{{#each areaTargets}}<p><strong>{{name}}</strong> <button type="button" data-action="resistTechnique" data-area-target="{{actorUuid}}">Resistir</button><button type="button" data-action="adjustResistance" data-area-target="{{actorUuid}}">Ajustar resistência</button></p>{{/each}}{{else}}<button type="button" data-action="resistTechnique">{{#if targetName}}Resistir com o alvo marcado{{else}}Resistir com o cavaleiro selecionado{{/if}}</button><button type="button" data-action="adjustResistance">Ajustar resistência</button>{{/if}}
+{{#if areaTargets}}<ul class="area-progress" data-area-progress aria-label="Alvos da área">{{#each areaTargets}}<li data-area-member="{{actorUuid}}"><div class="area-target-heading"><strong>{{name}}</strong><span class="damage-status" data-area-status role="status" aria-live="polite" hidden></span></div><div class="area-target-actions"><button type="button" data-action="resistTechnique" data-area-target="{{actorUuid}}" hidden disabled>Resistir</button><button type="button" data-action="adjustResistance" data-area-target="{{actorUuid}}" hidden disabled>Ajustar resistência</button></div></li>{{/each}}</ul>{{else}}<button type="button" data-action="resistTechnique">{{#if targetName}}Resistir com o alvo marcado{{else}}Resistir com o cavaleiro selecionado{{/if}}</button><button type="button" data-action="adjustResistance">Ajustar resistência</button>{{/if}}
 {{else}}<p>A técnica falhou; não causa dano nem efeitos.</p>{{/if}}
 {{#if nextPenalty}}<p>Falha crítica: −10 no próximo teste de Asterismo.</p>{{/if}}
 {{#if description}}<details class="technique-description-reference"><summary>Descrição e referência da técnica</summary><p class="technique-description">{{description}}</p></details>{{/if}}

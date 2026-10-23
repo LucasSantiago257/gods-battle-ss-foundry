@@ -1,3 +1,4 @@
+import {installAreaProgress,updateAreaProgress} from "./area-progress.mjs";
 import {sameAreaSelection} from "./area-preview.mjs";
 import {areaTargetSelection} from "./area-targets.mjs";
 import {areaAttackFor} from "./area-rules.mjs";
@@ -93,7 +94,7 @@ export function renderTechniqueChat(message, html) {
   const attackBaseline=actionHash(attack),registered=game.messages?.get?.(message.id)===message;
   const attackUnchanged=()=>actionHash(message.flags?.[SYSTEM_ID]?.attack)===attackBaseline&&(!registered||game.messages?.get?.(message.id)===message);
   for(const button of buttons)button.addEventListener("click",async()=>{
-    if(resistanceBusy.has(message)||!message.isContentVisible)return;
+    if(button.hidden||button.disabled||resistanceBusy.has(message)||!message.isContentVisible)return;
     resistanceBusy.add(message);for(const item of buttons)item.disabled=true;
     try{
       if(!attackUnchanged())throw Error("O ataque mudou. Atualize o cartão antes de resistir.");
@@ -102,6 +103,7 @@ export function renderTechniqueChat(message, html) {
       if(!attackUnchanged())throw Error("O ataque mudou. Atualize o cartão antes de resistir.");
       await rollTest(actor,"resistance",NATURES[chosen.nature].resistance,{difficulty:chosen.powerCosmic,resistanceAttack:{...chosen,messageId:message.id},quick:quickAvailable&&button.dataset.action==="resistTechnique"});
     }catch(error){console.error(error);ui.notifications.error(error.message);}
-    finally{resistanceBusy.delete(message);for(const item of buttons)item.disabled=false;}
+    finally{resistanceBusy.delete(message);for(const item of buttons)item.disabled=false;await updateAreaProgress(html);}
   });
+  return installAreaProgress(message,html,{busy:()=>resistanceBusy.has(message)});
 }
