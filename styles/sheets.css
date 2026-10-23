@@ -137,3 +137,11 @@
 @media(max-width:480px){.technique-activation .activation-summary{grid-template-columns:1fr;}.technique-activation .activation-fields{grid-template-columns:1fr;}}
 
 .technique-activation .activation-heading>strong,.technique-activation .activation-heading>span {min-width:0;overflow-wrap:anywhere;}
+
+.battle-chat .area-progress {list-style:none;padding:0;margin:12px 0;}
+.battle-chat .area-progress>li {border-top:1px solid var(--battle-line,#657080);padding:8px 0;min-width:0;}
+.battle-chat .area-target-heading {display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;overflow-wrap:anywhere;}
+.battle-chat .area-target-heading>strong {min-width:0;}
+.battle-chat .area-target-actions {display:flex;flex-wrap:wrap;gap:6px;}
+.battle-chat .area-target-actions button {flex:1 1 110px;min-width:0;min-height:32px;white-space:normal;}
+.battle-chat .area-progress [hidden] {display:none!important;}
