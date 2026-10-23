@@ -1,4 +1,4 @@
-// Read-only draft contract. Not connected to a card until the UI/privacy milestone is complete.
+// Read-only state derived from visible results and the existing defender journal.
 import {SYSTEM_ID} from "./config.mjs";
 import {areaAttackFor} from "./area-rules.mjs";
 import {actionHash} from "./action-rules.mjs";
