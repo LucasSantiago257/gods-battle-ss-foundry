@@ -1,3 +1,4 @@
+import {areaProgressRow} from "../module/area-progress-rules.mjs";
 import {registerArmorBreak} from "../module/armor-effects.mjs";
 import {resolveEffect} from "../module/effects.mjs";
 // Integration rehearsal using the shipped exercise Actors. This runtime is not the Foundry core.
@@ -184,21 +185,24 @@ test("movimento após a prévia bloqueia a técnica sem dados/CE e reabrir usa a
 });
 
 
-test("ensaio em área paga uma vez e mantém resistência/dano/desfazer separados por alvo",async()=>{
- const r=rehearsal(),scene=r.scene(),other={...scene.target,id:"aster",uuid:"Scene.range.Token.aster",actor:r.aster,x:100};scene.scene.tokens.set(other.id,other);
+for(const synthetic of [false,true])test(`ensaio em área acompanha resistência/dano/desfazer por alvo (${synthetic?"sintético":"vinculado"})`,async()=>{
+ const r=rehearsal({synthetic}),scene=r.scene(),other={...scene.target,id:"aster",uuid:"Scene.range.Token.aster",actor:r.aster,x:100};scene.scene.tokens.set(other.id,other);
  const object={actor:r.aster,document:other,isVisible:true,get center(){return other.getCenterPoint();}};canvas.tokens.placeables.push(object);
  const priorLookup=globalThis.fromUuid;globalThis.fromUuid=async uuid=>uuid===other.uuid?other:priorLookup(uuid);
  r.lyra.system.skills.asterism.value=3;prepareKnight(r.lyra.system,r.lyra.items.contents);game.user=r.attacker;r.attacker.targets=new Set([scene.targetObject,object]);
  const dialog=activationDialog(r);r.dice.push([8,7,6]);const root=await useTechnique(r.lyra,r.lyra.items.get("demoTech00000001"));
  assert.equal(dialog.form.output.cost.textContent,"4 CE");assert.equal(dialog.form.output.difficulty.textContent,"16");assert.equal(dialog.form.output.damage.textContent,"10.5");await r.coordinate(root,enqueueTechniqueRequest);
  assert.equal(root.flags[ID].techniqueResponse.status,"published");assert.equal(r.lyra.system.resources.cosmo.value,3);assert.equal(actionView(r.lyra).spent.attack,1);assert.equal(actionView(r.lyra).spent.defense,1);
+ const state=(actor,user=r.gm)=>areaProgressRow(root,actor.uuid,actor,{user,users:game.users,messages:r.messages.contents}).state;
+ assert.equal(state(r.doran),"waiting");assert.equal(state(r.aster),"waiting");assert.equal(state(r.doran,r.attacker),"restricted");assert.equal(state(r.aster,r.observer),"restricted");
  game.user=r.defender;r.dice.push([5,4,3]);const a=await rollTest(r.doran,"resistance","sen",{quick:true,difficulty:root.flags[ID].attack.powerCosmic,resistanceAttack:{...areaAttackFor(root.flags[ID].attack,r.doran.uuid),messageId:root.id}});
  game.user=r.attacker;r.dice.push([5,4]);const b=await rollTest(r.aster,"resistance","sen",{quick:true,difficulty:root.flags[ID].attack.powerCosmic,resistanceAttack:{...areaAttackFor(root.flags[ID].attack,r.aster.uuid),messageId:root.id}});
  assert.equal(a.flags[ID].resolvedDamage.body,10.5);assert.equal(b.flags[ID].resolvedDamage.body,10.5);assert.equal(a.flags[ID].resolvedDamage.armor,10);assert.equal(b.flags[ID].resolvedDamage.armor,10);
+ assert.equal(state(r.doran,r.defender),"pending");assert.equal(state(r.aster,r.attacker),"pending");
  await r.damage(a);game.user=r.gm;await requestDamage(b);await r.coordinate(r.messages.contents.at(-1),enqueueDamageRequest);
- assert.equal(r.doran.system.resources.health.value,17.5);assert.equal(r.aster.system.resources.health.value,12.5);
+ assert.equal(r.doran.system.resources.health.value,17.5);assert.equal(r.aster.system.resources.health.value,12.5);assert.equal(state(r.doran),"applied");assert.equal(state(r.aster),"applied");
  await r.damage(a,"undo");assert.equal(r.doran.system.resources.health.value,28);assert.equal(r.doran.items.get("demoArmor0000001").system.health.value,30);assert.equal(r.aster.system.resources.health.value,12.5);assert.equal(r.aster.items.get("demoArmor0000001").system.health.value,20);
- assert.equal(r.lyra.system.resources.cosmo.value,3);assert.equal(r.rolls,3);assert.deepEqual(r.notices,[]);
+ assert.equal(state(r.doran),"undone");assert.equal(state(r.aster),"applied"); assert.equal(r.lyra.system.resources.cosmo.value,3);assert.equal(r.rolls,3);assert.deepEqual(r.notices,[]);
 });
 
 
