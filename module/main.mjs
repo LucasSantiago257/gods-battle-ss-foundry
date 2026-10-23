@@ -1,3 +1,4 @@
+import {refreshAreaProgress} from "./area-progress.mjs";
 import {renderControlChat} from "./control.mjs";
 import {SYSTEM_ID, ITEM_TYPES} from "./config.mjs";
 import {KnightData, ContentData} from "./models.mjs";
@@ -66,3 +67,6 @@ Hooks.on("deleteActor",refreshDamageCards);
 Hooks.on("updateChatMessage",refreshDamageCards);
 Hooks.on("updateUser",refreshDamageCards);
 Hooks.on("deleteChatMessage",refreshDamageCards);
+
+// Area progress only reads existing messages and defender journals.
+for(const hook of ["createChatMessage","updateChatMessage","deleteChatMessage","createActor","updateActor","deleteActor","updateUser","deleteUser","createToken","updateToken","deleteToken"])Hooks.on(hook,refreshAreaProgress);
