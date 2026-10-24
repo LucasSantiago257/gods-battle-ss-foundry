@@ -35,3 +35,13 @@ Desde0.14.0, em encontro com controle habilitado, a técnica paga também toda a
 
 
 Na 0.18.1, as janelas do mestre para condições, efeitos, Controle, ajustes e recuperações não ocupam a fila enquanto aguardam sua decisão. Outros pagamentos podem prosseguir; a confirmação entra na fila para revalidar os dados e gravar. Se os dados conferidos mudarem, reabra a operação com a situação atual. A gravação continua coordenada no cliente do mestre, sem bloqueio global do servidor.
+
+## Correção0.60.1 — valores estáveis no transporte
+
+O relato de Elevar Cosmo com “O pagamento mudou” foi reproduzido sem mudança de custo ou ficha: expandir as chaves internas de `expectedPayment.updates` já causava uma diferença na comparação antiga. Novas solicitações enviam apenas custo, parcelas de CE atual/extra, excesso, dano corporal autorizado e indicação de CE ilimitada, com versão explícita. São os valores relevantes para a autorização; comandos internos de gravação não viajam nesse contrato.
+
+A coordenação recalcula o pagamento e produz seus próprios comandos de atualização. Solicitações antigas com `updates` planos ou expandidos são compatíveis pelos mesmos valores; esse campo legado nunca é uma fonte de gravação. Alterações reais de custo, distribuição ou PV continuam sendo recusadas antes de rolar/gastar. Propriedade, fila, estado atual, autorização de queima de PV, recuperação e cobrança única permanecem.
+
+Após atualizar o sistema e recarregar os clientes, reabra a ativação que falhou antes de cobrar. Não repita uma ativação já paga: os registros e a recuperação existentes continuam válidos. Não há migração nem alteração de técnica, recurso ou catálogo ao instalar a correção.
+
+Ensaio: técnica de2CE com Elevar3 mostra5CE e dificuldade15. Após confirmar, gasta5CE uma vez e publica o resultado; duplicar o processamento não cobra nem rola de novo. Os testes também cobrem CE extra/reservada/ilimitada, queima de PV, solicitações antigas, valores divergentes e publicação interrompida. O percurso do formulário até a coordenação usa fichas publicadas; a transformação de formato é simulada explicitamente no transporte. Isso não substitui a confirmação no core hospedado13.350/conexões reais.
