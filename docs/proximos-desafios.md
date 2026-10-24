@@ -314,3 +314,11 @@ Ensaio cruza ativação/resistência/aplicação/desfazer reais dos módulos com
 Lucas relatou melhora no uso e erro “O pagamento mudou” ao elevar Cosmo. Questionado sobre outros bloqueios, indicou que no geral era esse. A correção elimina comparação de formato interno e mantém a autorização pelos valores reais; não acrescenta modo livre genérico nem novas restrições. Trata-se da exceção de patch para falha que bloqueia uso, preservando a diretriz de marcos maiores para funcionalidades.
 
 Teste anterior à correção reproduziu a mensagem após expansão de chaves, sem mudar custo/ficha. Regressões cobrem transporte novo/legado, CE/PV, duplicidade e recuperação; o formulário com Elevar3 conserva5CE/dificuldade15 e pagamento único. Core hospedado13.350 e concorrência real seguem pendentes. Demais contratos, ambiguidades e auditorias do roteiro continuam como registrados; ver [pagamento](ativacoes.md).
+
+## 0.61.0 — Armaduras legíveis e referências conferidas
+
+Item e lista de Armaduras distinguem requisitos da tabela e aplicação real de bônus. PV0/negativo, Morta/Em recuperação, múltiplas equipadas, ordem visual, troca/remoção, máximos manuais/passivos e CE negativa foram ensaiados com recursos preservados. Equipar não ganha validação de Sentido ou barreira nova. Atacar e Técnicas mantêm sua organização.
+
+Auditoria reúne cinco classes,22artefatos já publicados e inventário por ocorrência de688–698. As168referências principais desse trecho não são168novos Items; Ares e armas incidentais têm contagem separada. Numeração incompleta, cabeçalhos divergentes e nomes coincidentes ficam registrados sem criar dados ou regras. [Matriz e limites](auditoria-armaduras-artefatos.md).
+
+Este conjunto fecha a apresentação e o levantamento desta lista, sem declarar auditoria global concluída. Referências dispersas, poderes de vestimentas/artefatos, contratos ambíguos de componentes e exceções avançadas continuam pendentes. Gameplay e ensaio da one-shot seguem prioridade; novas condições fora do foco. Core hospedado13.350/conexões reais seguem sem confirmação. Próximos conjuntos devem reunir partes inequívocas úteis à sessão, sem inventar contratos, ampliar catálogo por contagem ou voltar a releases pequenas por ajuste.
