@@ -308,3 +308,9 @@ Esta entrega não acrescenta regra ou condição, não resolve distância indivi
 Conjunto iniciado no PR72 une leitura de origem/journal e privacidade, estados por alvo original, visibilidade de ações por dono/mestre, atualização em chat/ficha/token/usuário e proteção contra respostas assíncronas antigas. O caminho de dano individual, custos, dados, reservas e condições permanece o publicado. Cálculo fica recolhido e valores/estados visíveis. Cartões antigos preservam conteúdo salvo; novas ativações usam o acompanhamento.
 
 Ensaio cruza ativação/resistência/aplicação/desfazer reais dos módulos com fichas vinculadas/sintéticas e dois donos; Edge usa template/callbacks reais para Resistir/Ajustar, mestre/observador, teclado e440px. Não comprova core hospedado13.350 ou conexões simultâneas. Estes seguem pendentes, assim como distância individual de área/Movendo, contratos ambíguos de componentes e exceções, auditorias finais de catálogos/armaduras/artefatos. Novas condições fora do foco. Ver [andamento e ensaio](area-andamento.md).
+
+## 0.60.1 — Falso conflito no pagamento de técnicas
+
+Lucas relatou melhora no uso e erro “O pagamento mudou” ao elevar Cosmo. Questionado sobre outros bloqueios, indicou que no geral era esse. A correção elimina comparação de formato interno e mantém a autorização pelos valores reais; não acrescenta modo livre genérico nem novas restrições. Trata-se da exceção de patch para falha que bloqueia uso, preservando a diretriz de marcos maiores para funcionalidades.
+
+Teste anterior à correção reproduziu a mensagem após expansão de chaves, sem mudar custo/ficha. Regressões cobrem transporte novo/legado, CE/PV, duplicidade e recuperação; o formulário com Elevar3 conserva5CE/dificuldade15 e pagamento único. Core hospedado13.350 e concorrência real seguem pendentes. Demais contratos, ambiguidades e auditorias do roteiro continuam como registrados; ver [pagamento](ativacoes.md).
