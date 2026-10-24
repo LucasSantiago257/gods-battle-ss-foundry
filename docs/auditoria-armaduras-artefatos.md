@@ -1,6 +1,6 @@
-# Armaduras e artefatos — auditoria em preparação
+# Armaduras e artefatos — fontes e cobertura da0.61.0
 
-Base conferida:0.60.1. Esta etapa registra fontes, cobertura e achados para o próximo conjunto. O conjunto em preparação corrige a leitura de requisitos e distingue parâmetros de bônus efetivamente aplicados; ainda não substitui a versão pública0.60.1. Catálogos e cópias permanecem preservados. A contagem de referências não mede automação integral.
+Base de catálogo conferida:0.60.1. O conjunto0.61.0 reúne apresentação de armaduras, ensaio e levantamento de fontes. Corrige a leitura de requisitos e distingue parâmetros de bônus efetivamente aplicados. Catálogos e cópias permanecem preservados. A contagem de referências não mede automação integral.
 
 ## Classes e parâmetros básicos
 
@@ -74,16 +74,35 @@ O inventário histórico em work, baseado na0.54.0, ainda descrevia essas entrad
 
 ## Lista de vestimentas e auditoria restante
 
-A seção6.6, pp.688–698, contém uma lista distinta: vestimentas de Athena, espectros, guerreiros de Asgard/Aesirs, outras referências de Odin, escamas e regimentos de Ares. Essa lista não é preenchida pelos22artefatos nem pelas cinco classes genéricas do formulário. Ainda falta inventário por ocorrência, deduplicação e classificação das referências dispersas antes de uma auditoria global de cobertura. As pp.699–702 não ampliam a lista nessa extração.
+A seção6.6, pp.688–698, foi inventariada por ocorrência no material de trabalho. São168referências principais nos blocos abaixo, e não168novos Items ou armaduras numéricas. O levantamento conserva portadores alternativos na mesma linha, separa referências explícitas e evita unir nomes semelhantes sem contexto. Essa lista não é preenchida pelos22artefatos nem pelas cinco classes genéricas do formulário.
+
+| Bloco da lista | Páginas | Referências contadas |
+|---|---|---:|
+|Athena: zodíaco / Bronze / outros guerreiros / bloco de Prata / constelações restantes|688–692|12 /11 /4 /24 /37 =88|
+|Espectros: juízes / celestes / terrestres / soldado / Lost Canvas|692–694|3 /11 /8 /1 /11 =34|
+|Odin: matriarca / Asgard / Aesirs / Soul of Gold|694–696|1 /8 /5 /7 =21|
+|Poseidon: generais / comandantes / soldados|696–697|7 /12 /6 =25|
+
+Em separado há11referências de Ares (4acompanhantes,3nomes de regimentos e4categorias coletivas) e7menções incidentais de armas na descrição dos guerreiros de Soul of Gold. Estas últimas não foram transformadas em artefatos ou efeitos executáveis. As contagens são deste trecho, não uma declaração de cobertura integral do livro.
+
+Limites encontrados no próprio trecho:
+
+- A numeração de Athena vai de1a89, omite52 e contém88linhas; preservar a referência, sem fabricar a entrada52 ou renumerar o livro.
+- O cabeçalho menciona15dos16cavaleiros de Prata do mangá, mas as linhas13–28 contêm16referências; o bloco13–36 tem24linhas ao incluir as demais origens.
+- Shido/Mizar e Bado/Alcor dividem uma linha, mas são duas referências explícitas. Portadores alternativos de uma mesma linha numerada de Athena não são outras armaduras.
+- Queen e Fiodor aparecem com Mandrágora e estrelas distintas. Gram na descrição de Sigmund(p.695) não foi igualada automaticamente ao artefato lendário das pp.613–614.
+- O trecho cita quatro regimentos de Ares e fornece três nomes. Não foi criado um quarto, nem atribuída classe numérica a partir de status coletivo.
+
+Inventário deste trecho concluído; conferência das referências dispersas e cobertura individual de poderes continuam pendentes antes de uma auditoria global. Nenhum catálogo, UUID, ficha ou campo de classe foi criado/alterado pelo inventário. As pp.699–702 não ampliam a lista nessa extração.
 
 A matriz desta etapa cobre parâmetros básicos, limites de execução já identificados e os22artefatos da seção607–614. Não fecha todas as armaduras, poderes específicos ou referências cruzadas do livro. Tampouco substitui os contratos ambíguos de componentes e poderes avançados que continuam registrados em [próximos desafios](proximos-desafios.md).
 
-## Ensaio do conjunto em preparação
+## Ensaio do conjunto
 
 Oito regressões cobrem requisito qualitativo, versões e valor interno preservado, troca/remoção, PVA0/negativo fracionário e inteiro, Morta/Em recuperação, múltiplas equipadas com ordenação visual diferente, máximos derivados/passiva/manual, CE negativa sem sinal duplo, cópias removidas e outra ficha. O callback existente de Equipar continua funcionando abaixo do requisito de Sentido; nenhum recurso atual é consumido ou restaurado pela apresentação.
 
 Edge isolado usa os templates e contextos reais do sistema e o callback Equipar da ficha sobre Actors de exercício vinculados/sintéticos simulados. Confere teclado, estados reais, remoção, nomes escapados, observador sem ações de edição e largura440px. Cinco classes de Item independente exibem requisitos sem estado de aplicação. Estes são ensaios locais, não execução do core hospedado.
 
-Antes de integrar/publicar: concluir revisão do diff, CI Linux completo e auditoria do pacote/catálogos/IDs/privacidade. Inventário por ocorrência de688–698 e referências dispersas segue pendente para a auditoria global; não reimportar artefatos já publicados. Preservar organização de Técnicas, Atacar no topo e a diretriz de versões maiores.
+Validação do conjunto:671testes Linux completos, compilação de templates, roundtrip nativo de compêndios e pacote de CI conferidos;670testes locais, com apenas o roundtrip nativo de Items omitido no ambiente Windows. O ZIP da release deve conservar as fontes, catálogos/IDs e privacidade conferidos antes da instalação. Inventário por ocorrência de688–698 registrado; referências dispersas e poderes individuais seguem pendentes para a auditoria global; não reimportar artefatos já publicados. Preservar organização de Técnicas, Atacar no topo e a diretriz de versões maiores.
 
 As verificações atuais combinam leitura das fontes já extraídas, metadados de catálogo, cálculos, contextos e navegador isolados. Não comprovam core hospedado13.350 ou conexões reais; esses ensaios permanecem pendentes. Sem novas condições ou regras presumidas. Fonte e licença do livro permanecem em [atribuição](../ATTRIBUTION.md).
