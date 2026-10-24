@@ -68,6 +68,24 @@ As referências abaixo foram confrontadas com a cobertura pessoal publicada. Um 
 
 A aplicação de dano físico comum à armadura continua manual nas exceções escolhidas pela mesa. O registro específico de [Quebrar Armadura Sustentada](armadura-recorrente.md) conserva seu contrato próprio; não recebe poderes de Gungnir, Safiras ou outros objetos por semelhança de descrição.
 
+## Restauração, selamento e outros perfis relacionados
+
+A conferência abaixo cobre os trechos indicados, sem classificar todas as ocorrências do índice. As referências do catálogo continuam independentes e manuais; a presença de uma fórmula não significa que o fluxo completo esteja executado.
+
+| Referência publicada | Fontes confrontadas nesta etapa | Parcela e limite |
+|---|---|---|
+|Selamento, Dádiva do Artista|103|Inibe queima/Ação de Cosmo, usa Ação de Cosmo+Movimento Parcial, resistência Cosmo e menciona+1no TAP Selamento. Não é uma condição genérica ou o mesmo perfil de cada artefato.|
+|Consertar Armaduras|307–308|Cura PVA igual ao nível do usuário por hora, custo1/hora e requisitos próprios. Ativar como técnica de Controle não representa relógio, pagamento por hora ou reparo do Item. Não tratar como cura corporal nem reutilizar automaticamente os registros por rodada.|
+|Restaurador Avançado de Mu e Mu/Shion|308/468–469|Conhecimento para restaurar/evoluir/reviver depende de combinação específica. Duas referências de contexto são preservadas; não foram fundidas nem transformadas em receita universal.|
+|Companheiro das Armaduras de Shion|307–308/469|Conhecimento/comunicação por combinação e graduação de Armaduras; não revela dados privados de outra ficha nem acrescenta bônus por importar o Item.|
+|Armadura Remota|76/462|Perfil de personagem5níveis abaixo. Não reduzir a ficha original ou copiar seus recursos para um Actor controlável automaticamente. A exceção de localização por Infinito em76 é referência própria, não revelação automática de fichas.|
+|Pó de Armaduras|Ocorrências publicadas em28páginas; confronto contextual restante pendente|A descrição agregada indica+1NDna armadura para combinações específicas. Não estender a dano corporal, todos os ataques físicos ou todos os componentes por nome.|
+|Técnica de Selamento, Cosmo Divino|496|Há requisitos, bônus+1Cosmo, refinos e+10no TAP em um perfil próprio. Não aplicar como bônus genérico de todo selo nem apagar poderes/virtudes do alvo.|
+|Armadura de Dédalos, Cor Tauri|652|+5Resistência no poder nomeado; o bloco separado Autômato tem+5PA. São parcelas distintas, não+5PA atribuídos a todo Item Armadura.|
+|Barreira Divina de Hypnos e poder homônimo|659/676|A ocorrência da criatura é referência ao poder geral. A fórmula da barreira e ricochete exigem resolução própria e destino do ataque; não duplicar testes ou presumir imunidade apenas por uma armadura equipada.|
+
+O nome Consertar Armaduras aparece no cabeçalho da técnica e Restaurar Armaduras em parte da descrição associada. O contexto é registrado com os IDs originais; não foi criado outro Item por diferença de verbo. A perícia Armaduras e os ajustes manuais continuam disponíveis à mesa, sem um processo novo de autorização.
+
 ## Etapa restante
 
 - Classificar e conferir os demais candidatos por contexto e referências indiretas, com páginas e cobertura do catálogo/código. O índice lexical não encerra a auditoria global.
