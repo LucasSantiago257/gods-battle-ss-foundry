@@ -5,7 +5,7 @@ import assert from "node:assert/strict";
 import {knight,content} from "./foundry-stub.mjs";
 import {prepareKnight} from "../module/rules.mjs";
 import {activationState,submitTechniqueActivation,executeTechniqueRequest,enqueueTechniqueRequest,resumeTechniqueRequests,pendingTechnique,recoverTechniqueOperation,reviewTechniqueOperation,paymentSnapshot} from "../module/technique-activation.mjs";
-import {techniqueParameters,cosmoPayment} from "../module/technique-rules.mjs";
+import {techniqueParameters,cosmoPayment,paymentAuthorization} from "../module/technique-rules.mjs";
 import {enqueueDamageRequest} from "../module/damage.mjs";
 import {applyLevelOperation} from "../module/level-up.mjs";
 import {techniqueWithComponents,COMPONENT_RULES} from "../module/technique-components.mjs";
@@ -258,3 +258,46 @@ test("área respeita modos de visibilidade e não publica coordenadas",async()=>
 
 test("Enfraquecer congela graduação paga e recuperação conserva a mesma parcela",async()=>{const r=runtime();enableComponents(r);r.item.flags[ID].componentRuleVersion=4;r.actor.system.attributes.for.effective=4;const m=r.request('weaken');r.controls.publishFail=true;await r.execute(m);const ce=r.actor.system.resources.cosmo.value;r.actor.system.attributes.for.effective=2;r.controls.publishFail=false;await recoverTechniqueOperation(r.actor,m.id);const saved=m.flags[ID].attack.componentResistance;assert.match(r.renders.at(-1).context.componentResistance.label,/Enfraquecer/);assert.equal(r.renders.at(-1).context.componentResistance.modifier,saved.modifier);assert.equal(saved.version,2);assert.equal(saved.modifier,-5);assert.equal(saved.entries.at(-1).attributeRank,4);assert.equal(r.stats.payments,1);assert.equal(r.stats.rolls,1);assert.equal(r.actor.system.resources.cosmo.value,ce);});
 test("mudança no atributo-chave de Enfraquecer durante rolagem impede pagamento",async()=>{const r=runtime();enableComponents(r);r.item.flags[ID].componentRuleVersion=4;const m=r.request('weakenchange');r.controls.beforeRoll=async()=>{r.actor.system.attributes.for.value=4;r.actor.system.attributes.for.effective=4;};await r.execute(m);assert.equal(r.stats.payments,0);assert.equal(m.flags[ID].techniqueResponse.status,'interrupted');});
+
+// Simulate recursive dotted-key expansion at the document transport boundary.
+function expandedTransport(value){
+ if(Array.isArray(value))return value.map(expandedTransport);
+ if(!value||typeof value!=="object")return value;
+ const result={};for(const [key,v]of Object.entries(value)){const parts=key.split(".");let at=result;for(const part of parts.slice(0,-1))at=at[part]??={};at[parts.at(-1)]=expandedTransport(v);}return result;
+}
+test("Elevar Cosmo aceita pagamento equivalente após expansão das flags no transporte",async()=>{
+ const r=runtime(),options={...r.options,elevate:3},m=r.request("elevatedTransport",{options});
+ m.flags[ID].techniqueRequest.expectedPayment=expandedTransport(m.flags[ID].techniqueRequest.expectedPayment);
+ await r.execute(m);assert.equal(m.flags[ID].techniqueResponse.status,"published",m.flags[ID].techniqueResponse.text);assert.equal(r.actor.system.resources.cosmo.value,5);assert.equal(r.stats.payments,1);assert.equal(r.stats.rolls,1);
+});
+
+test("envio novo autoriza valores estáveis e atravessa transporte expandido sem updates nas flags",async()=>{
+ for(const mode of ["current","extra","reserved","overload","unlimited"]){
+  const r=runtime(),options={...r.options,elevate:3};
+  if(mode==="extra")r.actor.system.resources.cosmoExtra=2;
+  if(mode==="reserved")r.actor.system.resources.cosmoReserved=3;
+  if(mode==="overload"){r.actor.system.resources.cosmo.value=2;r.actor.system.resources.cosmoOverload=1;options.allowOverload=true;}
+  if(mode==="unlimited")r.actor.system.resources.cosmo.unlimited=true;
+  const p=techniqueParameters(r.actor.system,techniqueWithComponents(r.item),options),payment=cosmoPayment(r.actor.system,p.cost,options),baseline=activationState(r.actor,r.item),before=paymentSnapshot(r.actor);
+  const create=ChatMessage.create;ChatMessage.create=data=>create(expandedTransport(data));
+  const message=await submitTechniqueActivation(r.actor,r.item,{baseline,options,payment,rollMode:"publicroll"});
+  assert.deepEqual(message.flags[ID].techniqueRequest.expectedPayment,paymentAuthorization(payment));assert.equal(message.flags[ID].techniqueRequest.expectedPayment.updates,undefined);assert.equal(r.stats.rolls,0);assert.equal(r.stats.payments,0);
+  await r.execute(message);assert.equal(message.flags[ID].techniqueResponse.status,"published",mode+": "+message.flags[ID].techniqueResponse.text);
+  assert.equal(r.actor.system.resources.cosmo.value,payment.updates["system.resources.cosmo.value"]??before.current);assert.equal(r.actor.system.resources.cosmoExtra,payment.updates["system.resources.cosmoExtra"]??before.extra);assert.equal(r.actor.system.resources.health.value,before.health-payment.lifeDamage);assert.equal(r.actor.system.resources.cosmoReserved,before.reserved);
+  await r.execute(message);assert.equal(r.stats.payments,1);assert.equal(r.stats.rolls,1);
+ }
+});
+test("compatibilidade legada não executa updates enviados; só o pagamento recalculado grava",async()=>{
+ for(const expanded of [false,true]){const r=runtime(),options={...r.options,elevate:3},message=r.request("legacy",{options});const expected=message.flags[ID].techniqueRequest.expectedPayment;
+ expected.updates["system.resources.cosmo.value"]=999;expected.updates["system.resources.health.value"]=999;expected.updates["system.profile.level"]=99;if(expanded)message.flags[ID].techniqueRequest.expectedPayment=expandedTransport(expected);
+ const level=r.actor.system.profile.level;await r.execute(message);assert.equal(message.flags[ID].techniqueResponse.status,"published");assert.equal(r.actor.system.resources.cosmo.value,5);assert.equal(r.actor.system.resources.health.value,100);assert.equal(r.actor.system.profile.level,level);assert.equal(r.stats.payments,1);}
+});
+test("diferenças reais ou autorização inválida não rolam nem gastam após normalização",async()=>{
+ for(const kind of ["cost","distribution","lifeDamage","unlimited","version","negative","nonfinite","missing"]){const r=runtime(),options={...r.options,elevate:3},message=r.request("divergent",{options});const expected=paymentAuthorization(message.flags[ID].techniqueRequest.expectedPayment);message.flags[ID].techniqueRequest.expectedPayment=expected;
+ if(kind==="cost"){expected.cost++;expected.fromCurrent++;}if(kind==="distribution"){expected.fromExtra++;expected.fromCurrent--;}if(kind==="lifeDamage"){expected.overload=1;expected.fromCurrent--;expected.lifeDamage=1;}if(kind==="unlimited"){expected.unlimited=true;expected.fromCurrent=0;}if(kind==="version")expected.version=99;if(kind==="negative")expected.fromCurrent=-1;if(kind==="nonfinite")expected.lifeDamage=Infinity;if(kind==="missing")delete expected.cost;
+ await r.execute(message);assert.equal(message.flags[ID].techniqueResponse.status,"failed",kind);assert.equal(r.stats.rolls,0,kind);assert.equal(r.stats.payments,0,kind);assert.equal(r.actor.system.resources.cosmo.value,10,kind);assert.equal(r.actor.system.resources.health.value,100,kind);}
+});
+test("recuperação de Elevar após transporte normalizado conserva pagamento único e mesmo resultado",async()=>{
+ const r=runtime(),options={...r.options,elevate:3},p=techniqueParameters(r.actor.system,techniqueWithComponents(r.item),options),payment=cosmoPayment(r.actor.system,p.cost,options),create=ChatMessage.create;ChatMessage.create=data=>create(expandedTransport(data));
+ const message=await submitTechniqueActivation(r.actor,r.item,{baseline:activationState(r.actor,r.item),options,payment,rollMode:"publicroll"});r.controls.publishFail=true;await r.execute(message);assert.equal(message.flags[ID].techniqueResponse.status,"paid");assert.equal(r.actor.system.resources.cosmo.value,5);r.controls.publishFail=false;await recoverTechniqueOperation(r.actor,message.id);assert.equal(message.flags[ID].techniqueResponse.status,"published");assert.equal(r.stats.rolls,1);assert.equal(r.stats.payments,1);assert.equal(r.actor.system.resources.cosmo.value,5);
+});

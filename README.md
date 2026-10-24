@@ -1,5 +1,7 @@
 # Saint Seiya — A Batalha dos Deuses para FoundryVTT
 
+**0.60.1 — pagamento de técnicas:** corrige o falso aviso “O pagamento mudou” quando os mesmos valores chegavam com outro formato interno. Elevar Cosmo conserva custo e cálculo; a cobrança continua única. [Pagamento e limites](docs/ativacoes.md#correção0601--valores-estáveis-no-transporte).
+
 **0.60.0 — andamento da área:** novos cartões mostram resistência e aplicação por alvo, com ações só para mestre ou dono. Estados acompanham os registros individuais; outros jogadores conservam só os nomes públicos. Cálculo do dano fica recolhido. [Uso e ensaio](docs/area-andamento.md).
 
 **0.59.0 — ativação legível:** custo, dificuldade, PC e alvo aparecem primeiro; ajustes de CE/teste/componentes ficam recolhidos. Distância e área mantêm os mesmos controles, avisos reais e pagamento. [Uso e limites da janela](docs/ativacao-direta.md). A organização da aba Técnicas foi preservada.

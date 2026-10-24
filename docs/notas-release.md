@@ -1,5 +1,10 @@
 ## 0.59.0 — Ativação legível para a sessão
 
+## 0.60.1 — Correção do pagamento ao elevar Cosmo
+
+Corrige falso conflito causado por comparar comandos internos de gravação em formatos diferentes. A autorização passa a transportar os valores de CE/PV; solicitações antigas continuam compatíveis. Elevar, custos, permissões, fila, cobrança única e recuperação preservados. Patch isolado por falha que bloqueava uso, sem nova regra ou condição.
+
+
 ## 0.60.0 — Andamento por alvo da área
 
 - Novos cartões acompanham resistência e dano de cada defensor pelos resultados legíveis e journal existente.
