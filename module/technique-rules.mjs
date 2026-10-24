@@ -83,6 +83,19 @@ export function cosmoPayment(system, cost, {useExtra = true, allowOverload = fal
   if (lifeDamage) updates["system.resources.health.value"] = system.resources.health.value - lifeDamage;
   return {updates, cost, fromExtra, fromCurrent, overload, lifeDamage, unlimited: false};
 }
+// Authorize amounts, never an Actor.update payload transported inside document flags.
+// Legacy requests may still include flat or expanded `updates`; they are not a write source.
+export function paymentAuthorization(payment) {
+ if(!payment||(payment.version!==undefined&&payment.version!==1)||typeof payment.unlimited!=="boolean")throw Error("Valores de pagamento inválidos.");
+ const result={version:1};
+ for(const key of ["cost","fromExtra","fromCurrent","overload","lifeDamage"]){
+  const value=payment[key];if(!Number.isSafeInteger(value)||value<0)throw Error("Valores de pagamento inválidos.");result[key]=value;
+ }
+ result.unlimited=payment.unlimited;
+ if(result.unlimited?(result.fromExtra||result.fromCurrent||result.overload||result.lifeDamage):result.cost!==result.fromExtra+result.fromCurrent+result.overload)throw Error("Valores de pagamento inválidos.");
+ if(!result.overload&&result.lifeDamage)throw Error("Valores de pagamento inválidos.");
+ return result;
+}
 export function techniqueOutcome(system, technique, parameters, total) {
   technique=effectiveTechnique(system,technique);
   const outcome = classify(total, parameters.difficulty);
