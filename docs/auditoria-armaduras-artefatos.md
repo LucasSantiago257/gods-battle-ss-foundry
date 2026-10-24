@@ -31,7 +31,7 @@ A tabela de Divina e o processo de despertar nas pp.151–152 usam referências 
 | Dano à armadura por técnicas |141 e regras da técnica|Aplicação individual e journal existentes. Exceções de classe/perfil seguem conferidas na mesa; não aplicar imunidade nova por inferência.|
 | Quebrar Armadura Sustentada |229|Parcela1/2/3 por classe em registro específico, com prazo, Ajustar e recuperação; ver [contrato](armadura-recorrente.md). Forma instantânea e mistos permanecem manuais.|
 | Recuperação, restauração e sangue |142–143/307–308|Condições de recipiente, dias, técnica e sangue continuam manuais. A recuperação do journal de uma operação interrompida é outra função.|
-| Lutar sem armadura |145|A perda de bônus ocorre na seleção; a parcela corporal de20% pelo uso de técnica sem armadura continua manual. Não foi inferido em que momento cobrar a parcela ligada ao dano causado.|
+| Lutar sem armadura |145|PA/capacidade deixam de ser somadas quando não há armadura aplicada; a parcela corporal de20% pelo uso de técnica sem armadura continua manual. Não foi inferido em que momento cobrar a parcela ligada ao dano causado.|
 | Afinidade, memórias e acessórios |145–148|Parâmetros e descrição disponíveis; efeitos específicos exigem seus próprios contratos. Não concedem ações/condições automaticamente.|
 | Divinização e asas |151–152|Processo de despertar/duração, requisitos e voo permanecem manuais. Selecionar a classe numérica não executa esses eventos.|
 
