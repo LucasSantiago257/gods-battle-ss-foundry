@@ -1,6 +1,6 @@
 # Armaduras e artefatos — auditoria em preparação
 
-Base conferida:0.60.1. Esta etapa registra fontes, cobertura e achados para o próximo conjunto. A apresentação publicada ainda mostra um número no requisito de classes superiores; a correção de UI e o ensaio integrado estão pendentes na mesma branch. Catálogos e cópias permanecem preservados. A contagem de referências não mede automação integral.
+Base conferida:0.60.1. Esta etapa registra fontes, cobertura e achados para o próximo conjunto. O conjunto em preparação corrige a leitura de requisitos e distingue parâmetros de bônus efetivamente aplicados; ainda não substitui a versão pública0.60.1. Catálogos e cópias permanecem preservados. A contagem de referências não mede automação integral.
 
 ## Classes e parâmetros básicos
 
@@ -12,7 +12,7 @@ Base conferida:0.60.1. Esta etapa registra fontes, cobertura e achados para o pr
 | Divina |152|150|15|+15|7º Sentido Superado|
 | Kamui |152|200|20|Ilimitada|9º Sentido|
 
-Os valores numéricos base coincidem com `ARMORS`/`armorValues`. O campo numérico interno `minimum` usa0 nas três classes superiores naV1; esse0 não representa ausência de requisito. A ficha de Item hoje o imprime como Cosmo mínimo0. A próxima etapa deve mostrar o requisito qualitativo legível, sem criar bloqueio de equipamento ou reescrever dados do usuário.
+Os valores numéricos base coincidem com `ARMORS`/`armorValues`. O campo numérico interno `minimum` usa0 nas três classes superiores naV1; esse0 não representa ausência de requisito. O contexto de apresentação passa a mostrar o requisito qualitativo da tabela, sem criar bloqueio de equipamento ou reescrever o campo numérico. Bronze/Prata continuam mostrando o Cosmo mínimo calculado por versão.
 
 A tabela de Divina e o processo de despertar nas pp.151–152 usam referências distintas de estágio/elevação; essa leitura não cria uma validação automática. O texto específico de acesso e a decisão da mesa permanecem relevantes. Requisitos de classe, penalidades por Cosmo insuficiente e imunidades de dano não são conferidos automaticamente por estes números.
 
@@ -26,7 +26,7 @@ A tabela de Divina e o processo de despertar nas pp.151–152 usam referências 
 | Máximo manual |Campo da ficha|Tem precedência sobre o máximo calculado; bônus/efeitos continuam como implementados. Nenhuma cura ao editar máximo.|
 | Estado e seleção |142–143 + convenção do sistema|A primeira armadura equipada com PVA>=0 e estado diferente de Morta fornece bônus. A ação normal de equipar seleciona uma; dados antigos/manuais podem conter mais de uma equipada.|
 | PVA0 / negativo |142–143|0 ainda pode recuperar; a fonte cita-1 como sem uso. O sistema exclui qualquer PVA negativo, inclusive fração. Essa fronteira fracionária é convenção existente, sem arredondamento novo.|
-| Estado Em recuperação |Campo manual|Atualmente não exclui bônus por si só se PVA>=0; Morta exclui. A próxima UI deve refletir o que foi aplicado, sem impor uma regra nova ao campo.|
+| Estado Em recuperação |Campo manual|Atualmente não exclui bônus por si só se PVA>=0; Morta exclui. A UI reflete esse resultado sem impor uma regra nova ao campo.|
 | PA contra dano físico comum |144/417–418|Proteção reduz o dano corporal no fluxo físico. Ataque comum não recebe perda automática de PVA; exceções continuam manuais conforme decisão de Lucas.|
 | Dano à armadura por técnicas |141 e regras da técnica|Aplicação individual e journal existentes. Exceções de classe/perfil seguem conferidas na mesa; não aplicar imunidade nova por inferência.|
 | Quebrar Armadura Sustentada |229|Parcela1/2/3 por classe em registro específico, com prazo, Ajustar e recuperação; ver [contrato](armadura-recorrente.md). Forma instantânea e mistos permanecem manuais.|
@@ -35,7 +35,7 @@ A tabela de Divina e o processo de despertar nas pp.151–152 usam referências 
 | Afinidade, memórias e acessórios |145–148|Parâmetros e descrição disponíveis; efeitos específicos exigem seus próprios contratos. Não concedem ações/condições automaticamente.|
 | Divinização e asas |151–152|Processo de despertar/duração, requisitos e voo permanecem manuais. Selecionar a classe numérica não executa esses eventos.|
 
-A lista de Itens hoje imprime a PA da armadura mesmo quando ela está sem bônus aplicados. A próxima etapa deve distinguir a armadura efetivamente usada, mantendo parâmetros e Equipar disponíveis. Esta é uma mudança de apresentação; não haverá equipamento forçado, corte silencioso de recurso, cura ou dano automático.
+A lista e o Item distinguem Bônus aplicados, Guardada e Sem bônus com motivo real (PV negativo, Morta ou outra armadura em uso). A PA exibida continua sendo o parâmetro daquela armadura, e a seleção usa a ordem da coleção do cálculo, mesmo quando a lista está ordenada de outra forma. Itens de mundo/compêndio e cópias removidas não recebem estado de aplicação. O contexto usa máximos já derivados, inclusive passivas e máximo manual; não recalcula nem grava recursos. Equipar e os parâmetros manuais permanecem disponíveis, sem equipamento forçado, cura ou dano automático.
 
 ## Artefatos publicados: presença e aplicação
 
@@ -78,11 +78,12 @@ A seção6.6, pp.688–698, contém uma lista distinta: vestimentas de Athena, e
 
 A matriz desta etapa cobre parâmetros básicos, limites de execução já identificados e os22artefatos da seção607–614. Não fecha todas as armaduras, poderes específicos ou referências cruzadas do livro. Tampouco substitui os contratos ambíguos de componentes e poderes avançados que continuam registrados em [próximos desafios](proximos-desafios.md).
 
-## Próximas verificações do conjunto
+## Ensaio do conjunto em preparação
 
-- Mostrar requisito qualitativo no Item e estado real da armadura aplicada, sem persistência ou bloqueio de Equipar.
-- Exercitar troca/remoção, PVA0/negativo, Morta/Em recuperação, múltiplas equipadas, ajustes e máximos manuais em fichas vinculadas/sintéticas.
-- Conferir conteúdo escapado, teclado/440px e detalhes opcionais; preservar organização de Técnicas e Atacar no topo.
-- Manter catálogos/IDs/888Items/3fichas e privacidade; publicar uma versão integrada depois do ensaio e auditoria, sem release desta etapa documental.
+Oito regressões cobrem requisito qualitativo, versões e valor interno preservado, troca/remoção, PVA0/negativo fracionário e inteiro, Morta/Em recuperação, múltiplas equipadas com ordenação visual diferente, máximos derivados/passiva/manual, CE negativa sem sinal duplo, cópias removidas e outra ficha. O callback existente de Equipar continua funcionando abaixo do requisito de Sentido; nenhum recurso atual é consumido ou restaurado pela apresentação.
 
-As verificações atuais são leitura das fontes já extraídas, metadados de catálogo e cálculo isolado de classe. Não comprovam core hospedado13.350 ou conexões reais; esses ensaios permanecem pendentes. Sem novas condições ou regras presumidas. Fonte e licença do livro permanecem em [atribuição](../ATTRIBUTION.md).
+Edge isolado usa os templates e contextos reais do sistema e o callback Equipar da ficha sobre Actors de exercício vinculados/sintéticos simulados. Confere teclado, estados reais, remoção, nomes escapados, observador sem ações de edição e largura440px. Cinco classes de Item independente exibem requisitos sem estado de aplicação. Estes são ensaios locais, não execução do core hospedado.
+
+Antes de integrar/publicar: concluir revisão do diff, CI Linux completo e auditoria do pacote/catálogos/IDs/privacidade. Inventário por ocorrência de688–698 e referências dispersas segue pendente para a auditoria global; não reimportar artefatos já publicados. Preservar organização de Técnicas, Atacar no topo e a diretriz de versões maiores.
+
+As verificações atuais combinam leitura das fontes já extraídas, metadados de catálogo, cálculos, contextos e navegador isolados. Não comprovam core hospedado13.350 ou conexões reais; esses ensaios permanecem pendentes. Sem novas condições ou regras presumidas. Fonte e licença do livro permanecem em [atribuição](../ATTRIBUTION.md).
