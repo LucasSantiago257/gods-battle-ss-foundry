@@ -1,4 +1,14 @@
-## 0.59.0 — Ativação legível para a sessão
+## 0.61.0 — Armaduras legíveis e auditoria de referências
+
+O conjunto reúne requisito legível, estado da armadura efetivamente aplicada, apresentação em janela estreita e auditoria de cobertura. Não acrescenta bloqueios de equipamento ou regras de dano.
+
+- Item Armadura mostra Cosmo mínimo para Bronze/Prata e o Sentido da tabela para Ouro/Divina/Kamui. O campo numérico interno é preservado; requisitos continuam a cargo da mesa.
+- Lista e Item distinguem Bônus aplicados, Guardada e Sem bônus com motivo real. A ordem visual não troca a armadura usada pelo cálculo. Valores manuais, passivas, recursos atuais e cópias são preservados.
+- CE ajustada negativa aparece sem sinal duplo; nomes longos, teclado e440px foram conferidos. Atacar e organização de Técnicas preservados.
+- Matriz de cinco classes e22artefatos cruzada com as fontes e identidades publicadas. Lista688–698 inventariada:168referências principais,11referências coletivas/personagens de Ares e7menções incidentais de armas. Contagens não equivalem a novos Items ou automação integral.
+- Oito regressões de apresentação/equipamento,671testes Linux completos e ensaio Edge isolado com callbacks da ficha. Core hospedado13.350 e concorrência real permanecem pendentes.
+
+Catálogos e UUIDs conservados. Sem migração, novas condições, cura/corte de recursos, perda geral de PVA em ataque comum ou inferência para regras ambíguas. Referências dispersas e poderes individuais continuam no roteiro. [Fontes, convenções e limites](auditoria-armaduras-artefatos.md).
 
 ## 0.60.1 — Correção do pagamento ao elevar Cosmo
 
@@ -12,6 +22,8 @@ Corrige falso conflito causado por comparar comandos internos de gravação em f
 - Aplicar/Ajustar/Desfazer continuam no resultado individual, sem nova cobrança ou aprovação humana. Cálculo do dano recolhido; valores e avisos reais visíveis.
 - Ensaios de módulos vinculados/sintéticos e Edge isolado; core hospedado13.350 e concorrência real pendentes. Catálogos e regras preservados.
 
+
+## 0.59.0 — Ativação legível para a sessão
 
 Ativar agora começa pelos valores e pelo alvo. Ajustes ficam em grupos opcionais, preservando a organização atual de Técnicas e os mesmos cálculos/pagamentos.
 

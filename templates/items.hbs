@@ -2,9 +2,9 @@
   <div class="section-heading"><h3>{{group.label}}</h3>{{#if @root.editable}}<button type="button" data-action="createItem" data-item-type="{{group.type}}"><i class="fa-solid fa-plus"></i> Criar</button>{{/if}}</div>
   <ol class="item-list">
   {{#each group.items}}
-    <li class="item item-row" data-item-id="{{id}}" draggable="true">
+    <li class="item item-row{{#if isArmor}} armor-row{{/if}}" data-item-id="{{id}}" draggable="true">
       <img src="{{img}}" alt="" width="40" height="40">
-      <div class="item-name"><button type="button" class="text-button" data-action="editItem">{{name}}</button><small>{{subtitle}}</small>{{#if origin}}<small title="{{origin}}">Importado de compêndio / documento</small>{{/if}}</div>
+      <div class="item-name"><button type="button" class="text-button" data-action="editItem">{{name}}</button><small>{{subtitle}}</small>{{#if armor.application}}<span class="armor-application armor-{{armor.application.key}}">{{armor.application.label}}</span>{{/if}}{{#if origin}}<small title="{{origin}}">Importado de compêndio / documento</small>{{/if}}</div>
       <div class="item-controls">
       {{#if isTechnique}}{{#if @root.editable}}<button type="button" data-action="setupTechnique">Configurar</button>{{#if needsReview}}<button type="button" data-action="editItem">Conferir</button>{{else}}<button type="button" data-action="useTechnique">Ativar</button>{{/if}}{{/if}}{{/if}}
       {{#if hasUses}}<span>{{uses.value}} / {{uses.max}} usos</span>{{#if @root.editable}}<button type="button" data-action="useItem" title="Gastar um uso">Usar</button>{{/if}}{{/if}}

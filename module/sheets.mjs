@@ -1,3 +1,4 @@
+import {armorPresentation} from "./armor-view.mjs";
 import {registerArmorBreak,canRegisterArmorBreak} from "./armor-effects.mjs";
 import {installEffectFilter} from "./effect-filter.mjs";
 import {cosmoDepositContext,depositCosmo,returnCosmo} from "./cosmo-deposits.mjs";
@@ -76,7 +77,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
     const t = (path, label, value) => tf(`system.${path}`, label, value);
     const groups = Object.fromEntries(Object.entries(ITEM_TYPES).map(([type, label]) => [type, {type, label, items: []}]));
     for (const item of this.actor.items.contents.toSorted((a, b) => a.sort - b.sort)) groups[item.type]?.items.push({id: item.id, uuid: item.uuid, name: item.name, img: item.img, equipped: item.system.equipped,
-      isArmor: item.type === "armor", isTechnique: item.type === "technique", needsReview: item.type === "technique" && !!techniqueReadiness(item), uses: item.system.uses, hasUses: item.system.uses.max > 0, subtitle: item.type === "armor" ? `${ARMORS[item.system.class].label} V${item.system.version} · PV ${item.system.health.value}/${item.system.health.max} · PA ${item.system.armor.pa}` : item.type === "technique" ? techniqueReadiness(item) ? "Configure a cópia / confira a aplicação manual" : `${item.system.classification} · ${EFFECT_KINDS[item.system.effectKind]} · CE ${item.system.cost + item.system.costExtra} · ND ${item.system.techniqueMode==="status"?"automático pelo status":item.system.damageLevel}` : item.system.category,
+      isArmor: item.type === "armor", armor: armorPresentation(item,this.actor), isTechnique: item.type === "technique", needsReview: item.type === "technique" && !!techniqueReadiness(item), uses: item.system.uses, hasUses: item.system.uses.max > 0, subtitle: item.type === "armor" ? `${ARMORS[item.system.class].label} V${item.system.version} · PV ${item.system.health.value}/${item.system.health.max} · PA ${item.system.armor.pa}` : item.type === "technique" ? techniqueReadiness(item) ? "Configure a cópia / confira a aplicação manual" : `${item.system.classification} · ${EFFECT_KINDS[item.system.effectKind]} · CE ${item.system.cost + item.system.costExtra} · ND ${item.system.techniqueMode==="status"?"automático pelo status":item.system.damageLevel}` : item.system.category,
       origin: item.system.originUuid} );
     const techniqueLedger=Object.entries(this.actor.flags?.[SYSTEM_ID]?.techniqueOperations??{}).map(([key,r])=>{const published=r.cardPublished||game.messages?.get?.(r.requestId)?.flags?.[SYSTEM_ID]?.techniqueResponse?.status==="published";return {key,...r,statusLabel:{prepared:"Interrompida · conferir pagamento",paid:published?"Paga e publicada":"Paga · conferir cartão",failed:"Encerrada sem pagamento",reviewed:"Encerrada após revisão manual"}[r.status]??r.status,canRecover:game.user.isGM&&(r.status==="prepared"||r.status==="paid"&&!published)};}).toSorted((a,b)=>b.time-a.time).slice(0,20);
     const persistentEffects=effectSheetContext(this.actor);
@@ -243,7 +244,7 @@ export class ContentSheet extends foundry.applications.api.HandlebarsApplication
       technique={components,componentEnabled:componentState(this.item).enabled,cost:s.cost+s.costExtra,difficulty:10+s.cost+s.costExtra,damage:s.effectKind==="damage"?effective.power*(effective.damageLevel+(user?.automation?.techniqueND??0))+(user?.profile.level??0)+(user?.combat.damageBonus??0)+(user?.combat.techniqueDamageBonus??0):0,
         includesUser:!!user,reviewMessage,canActivate:this.isEditable&&this.item.parent?.type==="knight"&&!reviewMessage,canSetup:this.isEditable&&this.item.parent?.type==="knight"&&!source?.reference?.manualOnly};
     }
-    return Object.assign(context, {item: this.item, editable: this.isEditable, fields, typeLabel: ITEM_TYPES[this.item.type], armor: this.item.type === "armor" ? s.armor : null,
+    return Object.assign(context, {item: this.item, editable: this.isEditable, fields, typeLabel: ITEM_TYPES[this.item.type], armor: armorPresentation(this.item),
       technique, origin: s.originUuid, bookReference,builder:await techniqueBuilderContext(this.item),canBuild:this.isEditable&&this.item.type==="technique"&&this.item.parent?.type==="knight"&&!source,construction:techniqueConstruction(this.item),
       ruleReference: definition ? {...definition, statusLabel: {automated:"Automatizada",partial:"Parcialmente automatizada",manual:"Aplicação manual"}[definition.status], warnings: this.item.parent?.type === "knight" ? passiveWarnings(this.item.parent.system,this.item) : []} : null});
   }

@@ -145,3 +145,11 @@
 .battle-chat .area-target-actions {display:flex;flex-wrap:wrap;gap:6px;}
 .battle-chat .area-target-actions button {flex:1 1 110px;min-width:0;min-height:32px;white-space:normal;}
 .battle-chat .area-progress [hidden] {display:none!important;}
+
+/* Armor parameters and actual bonus application are separate, read-only displays. */
+.gods-battle .stat-strip .armor-requirement {font-size: 15px; overflow-wrap: anywhere;}
+.gods-battle .armor-application {display: inline-block; font-size: 11px; line-height: 1.4; padding: 2px 6px; margin: 3px 0; border: 1px solid currentColor; border-radius: 4px;}
+.gods-battle .armor-applied {color: var(--battle-gold);}
+.gods-battle .armor-stored {opacity: .75;}
+.gods-battle .armor-row .item-name button {white-space: normal; overflow-wrap: anywhere;}
+@media(max-width:700px){.gods-battle .armor-row {flex-wrap:wrap;}.gods-battle .armor-row .item-controls {flex-basis:100%;margin-left:52px;}}
