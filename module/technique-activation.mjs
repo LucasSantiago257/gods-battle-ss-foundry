@@ -4,7 +4,7 @@ import {controlTimeline,controlStart} from "./control-rules.mjs";
 import {actionHash} from "./action-rules.mjs";
 import {optionalNote} from "./form-values.mjs";
 import {SYSTEM_ID} from "./config.mjs";
-import {techniqueParameters,techniqueOutcome,cosmoPayment,techniqueReadiness,EFFECT_KINDS} from "./technique-rules.mjs";
+import {techniqueParameters,techniqueOutcome,cosmoPayment,paymentAuthorization,techniqueReadiness,EFFECT_KINDS} from "./technique-rules.mjs";
 import {evaluatePool,prepareRollMessage} from "./rolls.mjs";
 import {levelSignature} from "./level-rules.mjs";
 import {primaryGM,isPrimaryGM,runMasterOperation,assertNoTechniqueInterruption} from "./master-queue.mjs";
@@ -33,7 +33,7 @@ export async function submitTechniqueActivation(actor,item,{baseline,options,pay
  available(actor);if(pendingTechnique(actor))throw Error("Já existe uma solicitação desta ficha aguardando processamento. Confira o chat/registro antes de repetir.");
  if(activationState(actor,item)!==baseline||techniqueReadiness(item))throw Error("A ficha ou técnica mudou durante a confirmação. Abra a ativação novamente.");
  if(!modes.has(rollMode))throw Error("Visibilidade de rolagem inválida.");
- return ChatMessage.create({content:"<p>Ativação enviada ao mestre. Aguarde: este cartão será atualizado com o resultado. Não repita a solicitação.</p>",whisper:[...new Set([game.user.id,gm.id])],blind:rollMode==="blindroll",flags:{[SYSTEM_ID]:{techniqueRequest:{actorUuid:actor.uuid,itemId:item.id,itemUuid:item.uuid,baseline,options:structuredClone(options),expectedPayment:structuredClone(payment),targetUuid:target?.uuid??null,rollMode}}}});
+ return ChatMessage.create({content:"<p>Ativação enviada ao mestre. Aguarde: este cartão será atualizado com o resultado. Não repita a solicitação.</p>",whisper:[...new Set([game.user.id,gm.id])],blind:rollMode==="blindroll",flags:{[SYSTEM_ID]:{techniqueRequest:{actorUuid:actor.uuid,itemId:item.id,itemUuid:item.uuid,baseline,options:structuredClone(options),expectedPayment:paymentAuthorization(payment),targetUuid:target?.uuid??null,rollMode}}}});
 }
 async function response(message,status,text,paid=false) {
  const next={ok:status==="published",status,text,paid};if(hash(flags(message).techniqueResponse)===hash(next))return;
@@ -84,7 +84,7 @@ export async function executeTechniqueRequest(message,userId) {
   const options=request.options;if(!options||typeof options.useExtra!=="boolean"||typeof options.allowOverload!=="boolean")throw Error("Opções de pagamento inválidas.");
   const technique=techniqueWithComponents(item),actionPlan=techniqueActionPlan(actor,options,message.id,technique.movement);
   const parameters=techniqueParameters(actor.system,technique,options),payment=cosmoPayment(actor.system,parameters.cost,options);
-  if(hash(payment)!==hash(request.expectedPayment))throw Error("O pagamento mudou; confirme os valores novamente.");
+  if(hash(paymentAuthorization(payment))!==hash(paymentAuthorization(request.expectedPayment)))throw Error("O custo ou a distribuição de CE/PV mudou. Reabra a ativação para atualizar os valores.");
   let target=null;if(request.targetUuid){if(!validActor(request.targetUuid))throw Error("Alvo inválido.");target=await fromUuid(request.targetUuid);if(target?.type!=="knight"||target.uuid!==request.targetUuid)throw Error("O alvo não está mais disponível.");}
   if(parameters.area&&target)throw Error("Área não pode ter um alvo único alternativo.");
   const areaContext=await validatedAreaContext(options.areaTargets,requester),rangeContext=await validatedDistanceContext(options.distanceSnapshot,actor,target,requester);
