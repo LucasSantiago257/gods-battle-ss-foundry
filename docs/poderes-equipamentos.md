@@ -33,7 +33,7 @@ Todos continuam como **referência/aplicação manual**. As três lendárias con
 |Arondight|613–614|Quebra de limite de Cosmo por nível até11; Glória;+1Lenda|Posse, forma, progressão, acúmulo entre cópias e remoção.|
 |Gram lendária|613–614|Quebra de limite de Força por nível até11; Glória;+1Lenda|Posse, forma, progressão, acúmulo entre cópias e remoção; não equiparar à menção de695.|
 
-O catálogo preserva a tabela comum de Selamento da p.612 em Pomo, Vaso, Rosário, Ânfora, Selos e Talismã. As dificuldades por categoria são nível do alvo+1/+2/+3/+4/+6/+10; isso não define por si só qual parada usar, custo, ação, sucesso/fracasso, duração ou encerramento de cada objeto. Não há calculadora nova nem TAP executado nesta etapa.
+O catálogo preserva a tabela comum de Selamento da p.612 em Pomo, Vaso, Rosário, Ânfora, Selos e Talismã. As dificuldades por categoria são nível do alvo+1/+2/+3/+4/+6/+10; isso não define por si só o fluxo de custo, ação, sucesso/fracasso, duração ou encerramento de cada objeto. A perícia Selamento e sua associação a Força constam em195–196 e já existem na ficha; a rolagem genérica não executa selamento, posse ou libertação. Não há calculadora nova nem TAP executado nesta etapa.
 
 A narrativa da Ânfora termina abruptamente na extração de611 e na cópia atual; os blocos de poder/duração estão presentes. Não foi reconstruída uma frase ou corrigida a fonte por suposição. O relato narrativo de cerca de200anos e o campo mecânico de aproximadamente240anos são preservados como contextos distintos.
 
@@ -132,6 +132,16 @@ A comparação com os38Items relacionados a esses contextos distingue descriçã
 A cópia publicada Armadura Remota `ebc29b1fa7dbe063` registra76/462. A continuação em77 acrescenta duas exceções: detecção de ausência de portador por Telepata/Sekishiki e uso entre dimensões com Outra Dimensão. Os dois trechos foram encontrados na extração, mas suas frases normalizadas não aparecem nas descrições atuais dos catálogos. É uma lacuna contextual registrada, não uma autorização para modificar ou reimportar as cópias publicadas.
 
 A referência ao Infinito em76 e as duas exceções de77 são distintas. Nenhuma delas autoriza revelar Actors privados, conceder controle de token ou reduzir o nível/recursos da ficha original. Catálogos e UUIDs continuam preservados; o tratamento de referências indiretas/continuações permanece aberto na auditoria global.
+
+## Contextos141–240: perícias, virtudes e duelo
+
+Mais46páginas candidatas receberam classificação contextual, totalizando108das322até240. Desse lote,13páginas de armaduras141–153 reutilizam a auditoria publicada0.61.0; não são uma segunda entrega das classes. As demais se distribuem em2contextos de atributos,10de virtudes/perfis naturais,6de perícias,10de técnicas/duelo e5de componentes. Ainda não é uma auditoria global ou leitura integral de cada página.
+
+- **Perícias disponíveis:** Armaduras usa Cosmo(192), e Selamento usa Força(195–196), como já consta na configuração da ficha. Identificar/avaliar uma vestimenta ou rolar Selamento não restaura PVA, revela ficha oculta nem executa automaticamente o efeito de um artefato. O conhecimento dessas perícias não deve ser registrado como ausente.
+- **Golpe Letal181:** a referência cita+1NDnas armaduras e custo1condensar. Essa parcela não foi aplicada ao NDcorporal ou fundida com Pó de Armaduras, nem gerou cobrança nova.
+- **Traje Protetor172 e Armas Próprias174:** são perfis pessoais de vestimenta/arma; não transformam toda Armadura num item que concede progressão ou anulação divina automaticamente. Exceções de memória182 e substituição por gêmeo168 também não copiam ou reescrevem a ficha do usuário.
+- **Duelo de Técnicas213:** dano de5PVApor turno a partir do3ºpara Bronze e do5ºpara Prata pertence ao duelo prolongado; Ouro e acima têm exceção própria no trecho. Sem registro/relógio específico de duelo, não cobrar essa parcela ao avançar uma rodada Foundry, receber dano comum ou pagar Sustentada.
+- **Anular Proteção225 e Zero Absoluto230:** redução/perda de PA e congelamento têm contextos próprios. Não alterar a armadura equipada, criar novas condições ou misturar os efeitos com o Quebrar Armadura recorrente já publicado. A extensão instantânea de Quebrar Armadura229 e os limites Divino/Planetário/Galáxia202 permanecem como lacunas documentadas, sem mudar a fórmula atual.
 
 ## Etapa restante
 
