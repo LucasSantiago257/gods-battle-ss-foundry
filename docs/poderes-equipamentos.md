@@ -143,6 +143,38 @@ Mais46páginas candidatas receberam classificação contextual, totalizando108da
 - **Duelo de Técnicas213:** dano de5PVApor turno a partir do3ºpara Bronze e do5ºpara Prata pertence ao duelo prolongado; Ouro e acima têm exceção própria no trecho. Sem registro/relógio específico de duelo, não cobrar essa parcela ao avançar uma rodada Foundry, receber dano comum ou pagar Sustentada.
 - **Anular Proteção225 e Zero Absoluto230:** redução/perda de PA e congelamento têm contextos próprios. Não alterar a armadura equipada, criar novas condições ou misturar os efeitos com o Quebrar Armadura recorrente já publicado. A extensão instantânea de Quebrar Armadura229 e os limites Divino/Planetário/Galáxia202 permanecem como lacunas documentadas, sem mudar a fórmula atual.
 
+## Contextos241–370: efeitos impressos e exceções próprias
+
+O terceiro lote classifica70páginas candidatas, totalizando178até370. São33contextos de componentes/combinações impressas,9de exceções próprias de equipamento,16menções narrativas,7referências a resultado de pulverização,2de restauração já conferida,1de requisito de perícia e2exemplos de aventura/ações. A relação com102técnicas catalogadas conserva os IDs originais; esse número é sobreposição com as páginas, não102novos poderes executáveis.
+
+Pó de Armaduras e Consertar reutilizam as verificações acima. Um resultado narrado como pó da armadura não é automaticamente a habilidade Pó de Armaduras. Duração Sustentada, efeito misto Dano ou parcela1/2/3por turno impressos em uma técnica também não habilitam o registro canônico de Quebrar Armadura sem sua composição própria.
+
+Sete perfis especiais foram confrontados em fonte e descrição da técnica correspondente:
+
+| Perfil publicado | Página do trecho | Parcela/limite específico |
+|---|---|---|
+|Rosa Piranha|277|Armaduras Ouro ou superiores reduzem2NDna armadura nesse perfil. Não são2PA ou redução corporal universal.|
+|Excalibur|283–284|Há1PVApor ataque após ativação, contexto de estágio de Sentido, exceções de PA Bronze/Prata e+5contra Barreira Divina. Não estender a todo ataque com arma ou ao simples equipamento.|
+|Flecha da Justiça|314|Atinge qualquer classe de armadura e anula Barreira Divina no seu próprio perfil. A exceção é desta técnica, não da Marcha dos Espíritos iniciada depois na mesma página.|
+|Invocação dos Espiritos Malignos|321|Referência condicional a rosário ou artefato apropriado de selamento. A expressão genérica não foi automaticamente identificada como um dos22objetos nem convertida em morte/selamento ao causar dano.|
+|Esfera de Gravidade|324|Resultado específico cita armadura reduzida a pó/PA0. PA0 não é por si só PVAnegativo, Item removido ou morte do portador.|
+|Execução Aurora (Ar)|354–355|Redução de PA1+graduação de Velocidade e contexto próprio de congelamento. Não substituir pelo Anular Proteção genérico.|
+|Aniquilação Aurora (Ar)|356|Redução de PA3+graduação de Velocidade e demais exceções próprias. Não herda a parcela1+Velocidade da Execução.|
+
+As reduções, imunidades, confirmações e estados desses perfis continuam manuais; nenhum campo foi apagado, condição criada ou custo alterado. A ocorrência Armaduras como requisito da técnica Cura309 não transforma a cura corporal em reparo do Item Armadura. A operação de restauração/hora307–308 é outro perfil.
+
+## Contextos371–450: combate e manobras de equipamento
+
+O quarto lote classifica32páginas candidatas, totalizando210das322até450:7exemplos de testes/identificação,4contextos narrativos/reputação,3de dano físico básico já auditado,5de movimento/queda/estados,8de críticos/manobras específicas e5de capacidade/elevação de Cosmo. A classificação abrange os contextos citados, não uma nova execução de todas as manobras.
+
+- **Ataque físico comum416–418:** a PA mitiga o dano corporal conforme o fluxo publicado. Não se acrescenta perda automática de PVA; exceções de técnicas/habilidades permanecem específicas.
+- **Equipar/Remover não executa Retirar a Armadura em Combate425.** A manobra descreve recuperação de CE e retorno ao recipiente por6horas. O botão da ficha conserva sua troca simples, sem restaurar recursos ou impor espera de6horas. Queimar a Vida426 também tem requisitos e custo próprios.
+- **Queda393, críticos411–415 e duelo/bloqueio421–422:** têm escolhas, resultados e proteção próprios. A menção a armadura ou a um dano mínimo não cria uma parcela geral de PVA por todo acerto.
+- **CEzero e fadiga444/448:** suas consequências de movimento ou cansaço não viram bloqueios/condições automáticos novos neste conjunto.
+- **Capacidade de CE e despertar443–450:** capacidade, saldo atual, excedente, sangue/acessório e ascensão são contextos distintos. Recalcular capacidade ou remover uma armadura não dá direito a cura, gasto, promoção ou reposição automática. O exemplo numérico445 não é uma nova concessão de recursos.
+
+Os exemplos de pegar/ativar/identificar um artefato379–391 são testes e informação da campanha, sem transferência automática de propriedade ou revelação de ficha oculta. Não foi transformado o exemplo de um objeto em poder executável de todos os artefatos.
+
 ## Etapa restante
 
 - Classificar e conferir os demais candidatos por contexto e referências indiretas, com páginas e cobertura do catálogo/código. O índice lexical não encerra a auditoria global.
