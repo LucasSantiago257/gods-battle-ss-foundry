@@ -208,9 +208,17 @@ O processo também descreve restrições de ações, exaustão/Cansado e aprisio
 
 O exemplo669chama um resultado29suficiente contra um Pseudodeus, enquanto a classificação666e a CD30para Mortais em667apontam outro limite. A divergência foi registrada; não se inventou outra Casta/CD, não se corrigiu a fonte e não se acrescentou um bloqueio ao teste manual. Gatilhos novos de condições continuam adiados.
 
+## Referências indiretas: confronto de identidade
+
+Foram confrontados sete casos nomeados fora da seção dos artefatos: Armas de Libra534/582, Sohma Megas Drepanon530, Armadura de Athena530, Espada de Athena540/545, Orbe/Armadura de Joia de Vouivre654, recompensa de Medusa631 e Colar de Hipnos660. Os contextos de fonte foram relidos e comparados aos nomes/descrições dos31arquivos JSON de catálogo, sem escrever nesses arquivos.
+
+A expressão Armadura de Athena aparece na descrição da Espada Balmung (`6aa98216919430cf`) como comparação da forma de estátua. Isso não transforma Balmung na armadura nem lhe transfere os poderes de outro objeto. Nenhum dos sete casos tem um Item dedicado pelo nome entre os22artefatos publicados; a conferência literal dos demais catálogos não garante ausência de toda grafia alternativa, referência indireta ou descrição de Actor gerada.
+
+Essa separação registra cobertura de identidade, não uma lista obrigatória de novos Items. A cabeça de Medusa e o Colar de Hipnos são recompensas sugeridas, enquanto os demais trechos trazem objetos e exceções de campanha. Sem nível, custo, ação e oposição próprios definidos, não se preenchem parâmetros por analogia com os22artefatos. Espada de Athena não foi renomeada para Adaga dourada; o objeto citado em321 também não foi identificado automaticamente como Rosário de108Contas.
+
 ## Etapa restante
 
-- Confrontar as referências indiretas nomeadas nos últimos lotes com as descrições/ocorrências e identidades de objetos já publicados; separar referência dedicada, menção de contexto e recompensa sugerida. A triagem dos322candidatos terminou, mas não encerra sozinha a auditoria global.
+- Revisar o fechamento dos cruzamentos de identidade acima e a ligação com o roteiro publicado. A triagem dos322candidatos e os sete casos indiretos terminaram dentro do escopo declarado; não equivalem à leitura integral das702páginas, a garantia de toda variante OCR ou à execução de cada poder.
 - Revisar os cruzamentos de habilidades/objetos e o escopo final da auditoria, conservando as lacunas de continuação77, Selamento666–669, variantes e perfis específicos. Não confundir lacuna de referência com autorização para editar o catálogo ou habilitar poderes.
 - Só propor implementação quando custo, ação, alvo, oposição, início/fim e recuperação necessários estiverem definidos. A ausência de contrato fica registrada sem bloquear a sessão com novas exigências.
 - Preservar o percurso da one-shot, Atacar, Técnicas, permissões, cobrança única, recursos e cópias. Novas condições permanecem adiadas. Core hospedado13.350/conexões reais seguem sem confirmação.
