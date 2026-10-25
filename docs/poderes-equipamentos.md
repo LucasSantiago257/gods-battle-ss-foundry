@@ -175,10 +175,43 @@ O quarto lote classifica32páginas candidatas, totalizando210das322até450:7exem
 
 Os exemplos de pegar/ativar/identificar um artefato379–391 são testes e informação da campanha, sem transferência automática de propriedade ou revelação de ficha oculta. Não foi transformado o exemplo de um objeto em poder executável de todos os artefatos.
 
+## Contextos451–702: fechamento da triagem direta
+
+O último lote classifica112páginas candidatas. Com os lotes anteriores, os322candidatos do índice lexical receberam classificação contextual. Isso encerra **a triagem direta definida pelos termos de busca**, não a revisão integral de todas as702páginas nem a cobertura de cada poder/menção indireta. O contexto adicional666, necessário ao confronto de Selamento, não foi contado como uma página candidata nova.
+
+O lote reúne perfis avançados, progressão/recompensas, pontos estratégicos de Santuário, descrições de estilos, valores de criaturas, objetos sugeridos, poderes divinos e referências já conferidas. As tabelas e descrições de criatura não são uma concessão automática de passivas ao Actor; uma PA já presente no bloco não deve ser somada outra vez apenas porque uma habilidade tem o nome Armadura.
+
+- **Santuários523–527:** percentual de armaduras despertadas, pontos estratégicos, fontes de Cosmo e níveis de acesso são parâmetros da campanha. Não contar Actors ocultos, conceder objetos ou alterar permissões do Foundry ao interpretar esses trechos.
+- **Referências adicionais de objetos:** Armas de Libra534/582, Sohma Megas Drepanon e Armadura de Athena530, Espada de Athena540/545 e Orbe/Armadura de Joia654 não foram fundidas com a Adaga dourada ou com os22artefatos apenas por associação narrativa.
+- **Recompensas sugeridas:** Cabeça de Medusa631, Colar de Hipnos660 e aprimoramentos por Oricalco637/644/647 são possibilidades do encontro. Não são automaticamente lacunas que exijam criar outro Item com nível/custo inventado.
+- **Poderes específicos de criatura:**5PVApor sucesso de Excelência619,2PVAao fim do turno639 e reduções de PA637/642 têm seus próprios portadores/eventos. Não são uma regra geral de dano à armadura em todo ataque físico.
+- **Hierarquia498 e exceções divinas493/681–682:** não criam um resolvedor universal de precedência, imunidade, destruição de Item ou ganho de classe. A exceção de uma técnica/objeto continua sendo lida no seu contexto.
+- **Oceano573:** o objeto com+5CEextras é um perfil de armazenamento específico; não amplia automaticamente o limite do corpo ou todos os depósitos de Cosmo já registrados.
+
+### Tabela distinta: Cavaleiros Negros588
+
+As classes comuns da ficha não representam automaticamente a tabela de vestimentas negras. A fonte fornece Bronze15PVA/1PA/0CE, Prata25PVA/3PA/+1CE e Ouro50PVA/5PA/+3CE. Para uma **cópiaV1ajustada manualmente**, os campos existentes conseguem representar esses números:
+
+| Classe escolhida | Máximo manual de PVA | PA extra | CE extra na armadura | Resultado PVA/PA/capacidade |
+|---|---:|---:|---:|---|
+|Bronze|15|-2|-3|15 /1 /0|
+|Prata|25|-2|-4|25 /3 /+1|
+|Ouro|50|-5|-7|50 /5 /+3|
+
+Os três exemplos foram conferidos com o cálculo existente sem gravar fichas ou recursos. São somente representação dos números dessa tabela emV1, não uma regra nova de evolução, requisito, imunidade, cura ou identidade da vestimenta. Alterar máximo não preenche PV atuais. Não foi criada uma classe nova, importação ou migração para aplicar os exemplos.
+
+### Selamento de divindades666–669
+
+Há um procedimento explícito nessa seção; ele não deve ser descrito como se o livro não oferecesse nenhum contrato de Selamento. O trecho associa Pseudodeuses/Inferiores à Casta Mortal, exige perda mínima de70%dos PV, usa TAP de Selamento para reduzir Casta em1por sucesso e prevê perda de Vigor1na falha/2na falha crítica. A tabela667indica CD40/5pontos para Amorfos,35/4para Imortais e30/3para Mortais.
+
+O processo também descreve restrições de ações, exaustão/Cansado e aprisionamento/retorno. A perícia pode ser rolada na ficha, mas esse procedimento com Casta, Vigor e estado persistente não está executado por importar um artefato ou usar a tabela de categorias612. Os dois contextos não devem ser fundidos em um TAP genérico com efeitos automáticos.
+
+O exemplo669chama um resultado29suficiente contra um Pseudodeus, enquanto a classificação666e a CD30para Mortais em667apontam outro limite. A divergência foi registrada; não se inventou outra Casta/CD, não se corrigiu a fonte e não se acrescentou um bloqueio ao teste manual. Gatilhos novos de condições continuam adiados.
+
 ## Etapa restante
 
-- Classificar e conferir os demais candidatos por contexto e referências indiretas, com páginas e cobertura do catálogo/código. O índice lexical não encerra a auditoria global.
-- Confrontar habilidades/técnicas relacionadas a armadura, restauração e acessórios com parcelas já executáveis e manuais; conservar as ambiguidades por perfil.
+- Confrontar as referências indiretas nomeadas nos últimos lotes com as descrições/ocorrências e identidades de objetos já publicados; separar referência dedicada, menção de contexto e recompensa sugerida. A triagem dos322candidatos terminou, mas não encerra sozinha a auditoria global.
+- Revisar os cruzamentos de habilidades/objetos e o escopo final da auditoria, conservando as lacunas de continuação77, Selamento666–669, variantes e perfis específicos. Não confundir lacuna de referência com autorização para editar o catálogo ou habilitar poderes.
 - Só propor implementação quando custo, ação, alvo, oposição, início/fim e recuperação necessários estiverem definidos. A ausência de contrato fica registrada sem bloquear a sessão com novas exigências.
 - Preservar o percurso da one-shot, Atacar, Técnicas, permissões, cobrança única, recursos e cópias. Novas condições permanecem adiadas. Core hospedado13.350/conexões reais seguem sem confirmação.
 
