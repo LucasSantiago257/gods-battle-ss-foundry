@@ -1,6 +1,6 @@
-# Poderes de equipamentos — auditoria em andamento
+# Poderes de equipamentos — cobertura e lacunas
 
-Base:0.61.0. Esta etapa confere poderes individuais dos22artefatos publicados e começa o levantamento de referências dispersas. Não modifica catálogos, fichas ou regras executáveis. Importar um Artefato continua criando uma referência manual independente; seus números impressos não são custos ou bônus já aplicados.
+Base:0.61.0. Este conjunto confere os poderes individuais dos 22 artefatos publicados, classifica os contextos dos 322 candidatos da triagem direta e cruza sete referências indiretas nomeadas. Não modifica catálogos, fichas ou regras executáveis. Importar um Artefato continua criando uma referência manual independente; seus números impressos não são custos ou bônus já aplicados.
 
 A matriz distingue o efeito citado da cobertura de execução. Os valores abaixo foram confrontados com a descrição preservada e o texto extraído das páginas indicadas;45âncoras factuais foram verificadas nos22Items. Isso não resolve custos, ações, oposição, duração, identidade de alvo ou eventos que a referência não define.
 
@@ -39,7 +39,7 @@ A narrativa da Ânfora termina abruptamente na extração de611 e na cópia atua
 
 ## Referências fora da seção607–614
 
-A triagem percorreu as702páginas do texto extraído. Termos amplos de armadura/vestimenta/escama/robe/surplice/artefato selecionaram322páginas candidatas; **isso é um índice de busca, não322páginas já auditadas**. Contém sumário, narrativa, requisitos, técnicas, tabelas e referências de classes diferentes. Não mede quantidade de objetos ou cobertura integral.
+A triagem percorreu as702páginas do texto extraído. Termos amplos de armadura/vestimenta/escama/robe/surplice/artefato selecionaram322páginas candidatas; **a contagem identifica candidatos; a classificação dos seus contextos aparece nos cinco lotes abaixo**. Contém sumário, narrativa, requisitos, técnicas, tabelas e referências de classes diferentes. Não mede quantidade de objetos ou cobertura integral.
 
 Busca pelos nomes/aliases dos22artefatos encontrou as ocorrências abaixo fora da seção. Não encontrar um nome não prova ausência: grafia alternativa, quebra/OCR, pronome e menção indireta exigem conferência contextual. Gram usa limites de palavra para evitar combinar trechos de outras palavras. A Ânfora admite o alias Ânfora Sagrada, explícito na descrição; Anel admite a preposição de. Nomes genéricos de espelho/anel/selo não são automaticamente o objeto do catálogo.
 
@@ -70,7 +70,7 @@ A aplicação de dano físico comum à armadura continua manual nas exceções e
 
 ## Restauração, selamento e outros perfis relacionados
 
-A conferência abaixo cobre os trechos indicados, sem classificar todas as ocorrências do índice. As referências do catálogo continuam independentes e manuais; a presença de uma fórmula não significa que o fluxo completo esteja executado.
+A conferência abaixo cobre os trechos indicados; a classificação dos demais contextos do índice aparece nos lotes seguintes. As referências do catálogo continuam independentes e manuais; a presença de uma fórmula não significa que o fluxo completo esteja executado.
 
 | Referência publicada | Fontes confrontadas nesta etapa | Parcela e limite |
 |---|---|---|
@@ -216,11 +216,14 @@ A expressão Armadura de Athena aparece na descrição da Espada Balmung (`6aa98
 
 Essa separação registra cobertura de identidade, não uma lista obrigatória de novos Items. A cabeça de Medusa e o Colar de Hipnos são recompensas sugeridas, enquanto os demais trechos trazem objetos e exceções de campanha. Sem nível, custo, ação e oposição próprios definidos, não se preenchem parâmetros por analogia com os22artefatos. Espada de Athena não foi renomeada para Adaga dourada; o objeto citado em321 também não foi identificado automaticamente como Rosário de108Contas.
 
-## Etapa restante
+## Fechamento e pendências
 
-- Revisar o fechamento dos cruzamentos de identidade acima e a ligação com o roteiro publicado. A triagem dos322candidatos e os sete casos indiretos terminaram dentro do escopo declarado; não equivalem à leitura integral das702páginas, a garantia de toda variante OCR ou à execução de cada poder.
-- Revisar os cruzamentos de habilidades/objetos e o escopo final da auditoria, conservando as lacunas de continuação77, Selamento666–669, variantes e perfis específicos. Não confundir lacuna de referência com autorização para editar o catálogo ou habilitar poderes.
-- Só propor implementação quando custo, ação, alvo, oposição, início/fim e recuperação necessários estiverem definidos. A ausência de contrato fica registrada sem bloquear a sessão com novas exigências.
-- Preservar o percurso da one-shot, Atacar, Técnicas, permissões, cobrança única, recursos e cópias. Novas condições permanecem adiadas. Core hospedado13.350/conexões reais seguem sem confirmação.
+Este conjunto documental está concluído no escopo declarado: matriz individual dos 22 artefatos, confronto das 14 ocorrências técnicas de Pó de Armaduras, classificação dos contextos dos 322 candidatos e cruzamento dos sete casos indiretos nomeados. Os lotes são complementares e não duplicam páginas na contagem. Os IDs citados e os vínculos para a documentação foram conferidos; os 31 arquivos de catálogo permanecem intactos.
 
-Esta etapa documental acumula o próximo conjunto; não é uma nova versão ou release. Fonte/licença em [atribuição](../ATTRIBUTION.md).
+Isso não é uma declaração de leitura integral das 702 páginas, garantia de toda variante de grafia/OCR ou automação de cada poder. Permanecem registradas a continuação ausente de Armadura Remota na p.77, a divergência de Selamento nas pp.666–669, as identidades indiretas e os perfis manuais específicos. O roteiro global conserva esses limites; não é preciso criar Items ou alterar cópias para encerrar esta conferência.
+
+- **Referência e execução:** os 22 artefatos continuam manuais. Um valor impresso não habilita automaticamente custo, alvo, oposição, manutenção, encerramento ou recuperação. Alguns procedimentos existem no livro, mas ainda precisam de representação própria no sistema; outros pontos têm ambiguidade explícita.
+- **Gameplay:** priorizar contratos inequívocos úteis à sessão, sem novas condições e sem transformar exceções de equipamento em dano físico comum. Antes de ampliar um perfil, definir as operações de aplicação, ajuste, encerramento e recuperação necessárias, preservando a liberdade dos campos manuais.
+- **Ensaio da one-shot:** Atacar, Técnicas, permissões, cobrança única, recursos e cópias foram preservados. Core hospedado 13.350 e concorrência entre conexões reais continuam sem confirmação; o roteiro de exercício permanece em [fichas de teste](fichas-teste.md).
+
+A ligação com as etapas anteriores e as pendências está em [armaduras e artefatos](auditoria-armaduras-artefatos.md) e [próximos desafios](proximos-desafios.md). Este fechamento não altera a versão 0.61.0 e não gera uma release documental isolada. Fonte/licença em [atribuição](../ATTRIBUTION.md).
