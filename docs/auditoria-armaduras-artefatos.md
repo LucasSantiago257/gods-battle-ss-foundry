@@ -106,3 +106,11 @@ Edge isolado usa os templates e contextos reais do sistema e o callback Equipar 
 Validação do conjunto:671testes Linux completos, compilação de templates, roundtrip nativo de compêndios e pacote de CI conferidos;670testes locais, com apenas o roundtrip nativo de Items omitido no ambiente Windows. O ZIP da release deve conservar as fontes, catálogos/IDs e privacidade conferidos antes da instalação. Inventário por ocorrência de688–698 registrado; referências dispersas e poderes individuais seguem pendentes para a auditoria global; não reimportar artefatos já publicados. Preservar organização de Técnicas, Atacar no topo e a diretriz de versões maiores.
 
 As verificações atuais combinam leitura das fontes já extraídas, metadados de catálogo, cálculos, contextos e navegador isolados. Não comprovam core hospedado13.350 ou conexões reais; esses ensaios permanecem pendentes. Sem novas condições ou regras presumidas. Fonte e licença do livro permanecem em [atribuição](../ATTRIBUTION.md).
+
+## Conferência complementar de poderes e referências — 25/10/2026
+
+O [levantamento de poderes de equipamentos](poderes-equipamentos.md) fecha um conjunto posterior à 0.61.0: matriz dos 22 artefatos, 14 blocos técnicos de Pó de Armaduras em 27 páginas e índice467, classificação contextual dos 322 candidatos da busca direta e sete referências indiretas nomeadas. A matriz registra valores, unidades, cobertura real e limites de execução, sem modificar catálogos ou cópias.
+
+As pendências de referências dispersas citadas acima passaram a ter esse registro verificável. A classificação cobre os contextos selecionados, sem alegar leitura integral das 702 páginas, ausência de toda grafia/OCR ou execução de todos os poderes. A continuação77 de Armadura Remota, a divergência29/30 em Selamento666–669 e as distinções entre objetos, variantes e recompensas sugeridas permanecem explícitas. O inventário688–698 e as cinco classes não foram recontados como novos Items.
+
+Este é o fechamento do conjunto documental definido, não da automação integral do livro ou do ensaio hospedado. Os poderes manuais continuam manuais; novas condições e decisões ambíguas permanecem adiadas. Sem alteração de runtime, versão, recursos, permissões ou UUIDs; nenhuma release isolada por documentação.
