@@ -79,12 +79,59 @@ A conferência abaixo cobre os trechos indicados, sem classificar todas as ocorr
 |Restaurador Avançado de Mu e Mu/Shion|308/468–469|Conhecimento para restaurar/evoluir/reviver depende de combinação específica. Duas referências de contexto são preservadas; não foram fundidas nem transformadas em receita universal.|
 |Companheiro das Armaduras de Shion|307–308/469|Conhecimento/comunicação por combinação e graduação de Armaduras; não revela dados privados de outra ficha nem acrescenta bônus por importar o Item.|
 |Armadura Remota|76/462|Perfil de personagem5níveis abaixo. Não reduzir a ficha original ou copiar seus recursos para um Actor controlável automaticamente. A exceção de localização por Infinito em76 é referência própria, não revelação automática de fichas.|
-|Pó de Armaduras|Ocorrências publicadas em28páginas; confronto contextual restante pendente|A descrição agregada indica+1NDna armadura para combinações específicas. Não estender a dano corporal, todos os ataques físicos ou todos os componentes por nome.|
+|Pó de Armaduras|14blocos técnicos em27páginas, mais índice467; confronto concluído abaixo|A descrição agregada indica+1NDna armadura para combinações específicas. Não estender a dano corporal, todos os ataques físicos ou todos os componentes por nome.|
 |Técnica de Selamento, Cosmo Divino|496|Há requisitos, bônus+1Cosmo, refinos e+10no TAP em um perfil próprio. Não aplicar como bônus genérico de todo selo nem apagar poderes/virtudes do alvo.|
 |Armadura de Dédalos, Cor Tauri|652|+5Resistência no poder nomeado; o bloco separado Autômato tem+5PA. São parcelas distintas, não+5PA atribuídos a todo Item Armadura.|
 |Barreira Divina de Hypnos e poder homônimo|659/676|A ocorrência da criatura é referência ao poder geral. A fórmula da barreira e ricochete exigem resolução própria e destino do ataque; não duplicar testes ou presumir imunidade apenas por uma armadura equipada.|
 
 O nome Consertar Armaduras aparece no cabeçalho da técnica e Restaurar Armaduras em parte da descrição associada. O contexto é registrado com os IDs originais; não foi criado outro Item por diferença de verbo. A perícia Armaduras e os ajustes manuais continuam disponíveis à mesa, sem um processo novo de autorização.
+
+## Pó de Armaduras: conferência por ocorrência
+
+A referência `daf6f9bf6e820524` lista28páginas, mas não28poderes diferentes. Foram conferidos14blocos técnicos, que abrangem27páginas, mais o índice agregador467. O texto da parcela coincide no livro extraído, na ocorrência preservada e na descrição da técnica correspondente. Cada uma das14técnicas conserva seu próprio ID e contexto.
+
+| Técnica publicada | Bloco da técnica | Página da parcela | ID preservado |
+|---|---|---:|---|
+|Ohm (Respiração Divina)|246–247|247|`e21d18a4b03d90c7`|
+|Enforcamento do Urso|257–258|258|`d257870889a03356`|
+|Prisão|261–262|262|`4cd2e0a108958cd2`|
+|Réquiem de Cordas|274–275|275|`5d576ad4c099fb17`|
+|Rosa Piranha|276–277|277|`da7e0ffe91ed000c`|
+|Marionete Cósmica|289–290|290|`9e83fde19bad99ae`|
+|Cabelos Dourados da Morte — Ouro / Físicos|291|291|`3df29a5b3a302a00`|
+|Fios Sedosos|305–306|306|`b9dfcf3224b8f4bd`|
+|Revolução Estelar|325–326|326|`63b9e43d667a96da`|
+|Cólera dos 100 Dragões|331–333|333|`553ebc7086536f03`|
+|Lanças de Gelo da Lótus Branca (Água)|352–353|353|`7f9eb2c60979944a`|
+|Presas Douradas do Dragão (Terra)|360|360|`3ed996990c1b39f8`|
+|Coroa de Fogo (Fogo)|362–363|363|`8fea987b4e5176de`|
+|Tempestade Giratória das Cem Lanças de Gelo (Água)|364–365|365|`096f10f4c7857652`|
+
+As páginas iniciais/continuações desses blocos podem não repetir o título Pó de Armaduras. Isso não é uma ocorrência ausente: a parcela está no fim do bloco correspondente. O índice467 usa Braços de Urso, enquanto o bloco257–258 é Enforcamento do Urso; os dois contextos foram anotados sem renomear Items nem criar um alias executável universal.
+
+A parcela aumenta o ND **na armadura** nas combinações citadas. Não é+1PV fixo nem+1NDcorporal. O cálculo genérico atual usa ND da técnica e classe/faixas para dano de armadura; não contém um bônus específico de Pó separado do dano corporal. A relação com a tabela202, inclusive a faixa Divino, e os perfis instantâneos/recorrentes precisam de contrato próprio antes de ampliar esse cálculo. O registro de Quebrar Armadura Sustentada não é essa parcela. Nenhuma fórmula, requisito, custo ou dano foi modificado nesta auditoria.
+
+## Primeira classificação dos contextos dispersos
+
+Foram classificados os contextos encontrados nas62páginas candidatas até140, dentro do índice de322páginas. A classificação não é leitura integral de todas essas páginas nem conclusão de cada poder. Os contextos já lidos em capítulos posteriores permanecem registrados separadamente.
+
+| Categoria de contexto | Páginas candidatas neste lote |
+|---|---:|
+|Sumário e ponteiros|5|
+|Santuário, estilo, classe e narrativa|14|
+|Criação, posse, perícia e companheiro|10|
+|Menção narrativa de armadura em uma habilidade, sem poder de equipamento demonstrado por essa menção|7|
+|Contextos de mecânicas específicas|26|
+
+O exemplo de criação17 confirma Bronze30PVA/3PA/+3CE; não concede outra armadura por duplicar o exemplo. As denominações Vestimentas, Escamas, Surplices, Folhas, Berserkers, Robes e Glórias em35–47 não são sete classes numéricas novas. Posse, memória e rejeição em50–53 não impõem validações novas ao botão Equipar.
+
+A comparação com os38Items relacionados a esses contextos distingue descrição de execução. A parcela estruturada de Melhoria Guardião soma PA pela graduação quando a cópia é habilitada e a melhoria está marcada ativa; não altera PVA nem vira uma propriedade universal da armadura. Outros perfis como Espírito Inquebrável60, Aura da Dor64, Aura de Destruição64–65, Fraquezas65, Cosmo Elevado70, Imobilizar84, Olhos de Loki111–112, Benção de Odin112–113, Precisão132–133 e selamento telecinético138 permanecem específicos. Seus danos/penalidades não são propagados a um ataque físico comum por mencionar armadura. Não foram criados gatilhos de condições ou novas restrições.
+
+### Lacuna contextual: continuação da Armadura Remota em77
+
+A cópia publicada Armadura Remota `ebc29b1fa7dbe063` registra76/462. A continuação em77 acrescenta duas exceções: detecção de ausência de portador por Telepata/Sekishiki e uso entre dimensões com Outra Dimensão. Os dois trechos foram encontrados na extração, mas suas frases normalizadas não aparecem nas descrições atuais dos catálogos. É uma lacuna contextual registrada, não uma autorização para modificar ou reimportar as cópias publicadas.
+
+A referência ao Infinito em76 e as duas exceções de77 são distintas. Nenhuma delas autoriza revelar Actors privados, conceder controle de token ou reduzir o nível/recursos da ficha original. Catálogos e UUIDs continuam preservados; o tratamento de referências indiretas/continuações permanece aberto na auditoria global.
 
 ## Etapa restante
 
