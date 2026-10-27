@@ -1,5 +1,9 @@
 # Próximos desafios — após 0.30.0
 
+## Reparo por horas informadas — 0.62.0
+
+[Reparo de armaduras](reparo-armaduras.md) reúne registro gratuito de uma armadura, parcelas de hora com sugestão nível/1CE, Ajustar explícito, cobrança única, Desfazer, encerramento, histórico e recuperação entre pagador/Item/alvo. Transporte privado e interface preservam Atacar/Técnicas. Não automatiza aquisição, teste, calendário, reviver/evoluir ou novas condições. Ensaio hospedado13.350 e concorrência real continuam separados.
+
 ## Diretriz atual — versões maiores para a one-shot (21/10/2026)
 
 Agrupar as próximas entregas em marcos equivalentes a três ou quatro versões recentes, com foco em um combate completo e utilizável na sessão. O marco integrado0.57.0 reúne fluxo ataque/defesa/resistência/dano; construção e uso de técnicas com cálculos claros; alvos e acompanhamento de efeitos; ensaio reproduzível com fichas de exercício. O ensaio hospedado continua pendente. Esta diretriz complementa a prioridade de gameplay e substitui releases de pequenas melhorias isoladas.
