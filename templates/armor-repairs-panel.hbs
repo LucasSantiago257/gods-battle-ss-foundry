@@ -1,0 +1,8 @@
+{{#if armorRepairs.visible}}<section class="armor-repair-panel"><h3>Reparo de armaduras</h3>
+{{#if armorRepairs.hasSources}}<button type="button" data-action="newArmorRepair" {{#unless armorRepairs.canRegister}}disabled{{/unless}}>Novo reparo</button>{{/if}}
+{{#if armorRepairs.waiting}}<p role="status">Processando…</p>{{/if}}
+{{#if armorRepairs.offline}}<p class="note">Mestre offline.</p>{{/if}}
+{{#each armorRepairs.interruptions}}<div class="repair-interruption"><span>{{name}}</span>{{#if canRecover}}<button type="button" data-action="recoverArmorRepair" data-operation="{{id}}">Conferir reparo</button>{{else}}{{#if canOrphan}}<button type="button" data-action="recoverArmorRepair" data-operation="{{id}}">Encerrar vínculo órfão</button>{{/if}}{{/if}}</div>{{/each}}
+{{#each armorRepairs.active}}{{> "systems/gods-battle-ss/templates/armor-repair-record.hbs"}}{{/each}}
+{{#if armorRepairs.history}}<details><summary>Trabalhos encerrados ({{armorRepairs.history.length}})</summary>{{#each armorRepairs.history}}{{> "systems/gods-battle-ss/templates/armor-repair-record.hbs"}}{{/each}}</details>{{/if}}
+</section>{{/if}}
