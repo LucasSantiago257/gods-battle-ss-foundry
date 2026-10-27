@@ -1,3 +1,13 @@
+## 0.63.0 — Dreno por parcelas informadas
+
+Dreno ganha um fluxo integrado em Combate → Efeitos com duração: registro gratuito, prazo finito informado, Aplicar/Ajustar/dispensar, Desfazer última parcela intacta, encerramento e histórico. Sugestão de1/3/5CEpela classe capturada, alocação explícita atual/extra e0já resolvido; sem transferência ao usuário ou nova condição. Teia configurada e composição Sustentada+Dreno canônicas têm suporte próprio.
+
+O dono do alvo resolve a própria perda sem possuir a origem. Mensagens privadas/discretas usam autor real e identidade única de intenção, com coordenação automática pelo mestre. Journals e recuperação completam só a gravação ausente ou encerram preservando ajustes. Notas posteriores e registros diferentes são preservados; recibos antigos não reescrevem ficha atual. A última parcela mantém Desfazer evidente quando continua válido.
+
+Atacar/Técnicas e catálogos preservados. Não executa ativação/oposição/manutenção, Apoiar, calendário, área, aprisionamento ou condições por inferência. Guardar continua manual pelos contratos distintos encontrados na fonte. CEilimitada permanece manual. [Uso, limites e ensaio](dreno.md).
+
+Validação:83testes focados(planos/runtime/transporte/UI/hooks), suíte Linux/roundtrip/check/pacotes no CI e10cenários Edge isolados com templates/callbacks reais, teclado440px, filtro, privacidade e recuperação. Core hospedado13.350 e concorrência entre conexões seguem separados.
+
 # 0.62.0 — Reparo de armaduras por horas informadas
 
 Um conjunto integrado para acompanhar Consertar Armaduras: escolher técnica/armadura, registrar gratuitamente, aplicar uma hora, ajustar PV/custo, desfazer a última parcela intacta, encerrar e consultar histórico. O painel fica em Equipamento → Armadura da ficha que possui a técnica. Sugestão de nível/1CE, máximo derivado, CEextra e excesso explícito; custo0 disponível para pagamento já resolvido manualmente.
