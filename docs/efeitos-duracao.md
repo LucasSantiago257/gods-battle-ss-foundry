@@ -1,3 +1,7 @@
+# Dreno — 0.63.0
+
+[Dreno](dreno.md) integra o painel e os prazos com perda de CE, Aplicar/Ajustar/dispensar, Desfazer da última parcela intacta, encerramento e recuperação próprios. O dono do alvo resolve sua perda sem possuir a origem. A última parcela concluída continua na área principal enquanto Desfazer estiver disponível; encerramento explícito ou alteração dos saldos a leva ao histórico. As seções abaixo registram os contratos anteriores de PV/Brasas/Sustentada/Residual e continuam separadas da nova operação de CE.
+
 # Painel de efeitos — 0.32.0
 
 Em Combate, Efeitos com duração separa Ativos e pendentes do Histórico de efeitos, que começa recolhido. Os dois grupos mostram suas quantidades. Registros próprios encerrados, expirados ou com segundo Asterismo falho ficam no histórico, com origem, prazo, pagamentos, resistências e rodadas preservados. Efeitos pausados, cópias de outra ficha e estados desconhecidos permanecem na área principal para conferência. Esta organização não encerra, resolve, cobra nem remove efeitos; recuperações interrompidas continuam na área própria, visíveis.
