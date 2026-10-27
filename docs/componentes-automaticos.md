@@ -1,6 +1,6 @@
-# Componentes: cobertura atual — 0.58.0
+# Componentes: cobertura atual — 0.63.0
 
-O catálogo contém 59 referências de Big Bangs e incrementos, incluindo primordiais. Dez referências têm os apoios específicos listados abaixo: sete pertencem ao grupo numérico de Dano, Movendo tem configuração própria de ações e Brasas/Quebrar Armadura Sustentada usam registros separados por rodada. Essa contagem mede referências com algum suporte, não execução integral dos seus textos nem proporção de conclusão do sistema. A cobertura pessoal de virtudes/habilidades/dádivas é outra matriz.
+O catálogo contém 59 referências de Big Bangs e incrementos, incluindo primordiais. Onze referências têm os apoios específicos listados abaixo: sete pertencem ao grupo numérico de Dano, Movendo tem configuração própria de ações e Brasas/Quebrar Armadura Sustentada/Dreno usam registros separados por rodada. Essa contagem mede referências com algum suporte, não execução integral dos seus textos nem proporção de conclusão do sistema. A cobertura pessoal de virtudes/habilidades/dádivas é outra matriz.
 
 | Referência | Apoio disponível | Limite principal |
 |---|---|---|
@@ -14,6 +14,7 @@ O catálogo contém 59 referências de Big Bangs e incrementos, incluindo primor
 | Movendo · p.229 | Movimento Parcial ou Total junto ao pagamento da técnica. | Configuração própria; área, Residual e primordiais mistos permanecem manuais. |
 | Quebrar Armadura · p.229 | Sustentada:1/2/3PV de armadura por rodada; vínculo específico, Ajustar, prazo e recuperação. | Registro separado pelo mestre no alvo; instantânea +1ND e primordiais mistos permanecem manuais. |
 | Brasas · p.225 | Parcela de PV registrada por rodada, com aplicação direta ou ajuste. | É preciso registrar no alvo após ativação/resistência; não surge automaticamente. |
+| Dreno · p.227 | Parcela de CE por classe capturada, Ajustar/dispensar/Desfazer, prazo/histórico e recuperação pelo dono do alvo. | Fonte Sustentada+Dreno ou Teia configurada; registro finito manual, sem transferência à origem ou nova condição. |
 
 ## Como habilitar
 
@@ -24,6 +25,8 @@ Movendo é independente desse grupo: **Configurar → Ações na ativação**. C
 Quebrar Armadura Sustentada usa o botão próprio no alvo quando há composição apta; veja [vínculo, prazo e ensaio](armadura-recorrente.md).
 
 Brasas usa **Combate → Efeitos com duração**. O registro acompanha origem, parcelas e histórico, sem dano ao avançar rodadas. Veja [efeitos com duração](efeitos-duracao.md). Detalhes de Movendo, fontes e limites estão no [roteiro atual](proximos-desafios.md).
+
+Dreno usa o registro próprio em **Combate → Efeitos com duração** e fica separado do grupo numérico de Dano. [Uso, alocação e ensaio](dreno.md).
 
 ## Contratos ainda pendentes
 
