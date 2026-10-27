@@ -1,5 +1,9 @@
 # Próximos desafios — após 0.30.0
 
+## Dreno por parcelas informadas — 0.63.0
+
+[Dreno](dreno.md) reúne fonte/perfil capturados, registro gratuito de prazo finito, retirada explícita de CEatual/extra, Aplicar/Ajustar/dispensar/Desfazer/encerrar/histórico, transporte privado e recuperação no alvo. O dono resolve sua própria perda sem possuir o atacante. Não amplia condições, calendário, área ou transferência à origem. Ativação/oposição/manutenção/Apoiar continuam separados. Guardar foi confrontado com as referências228–229/213–214/220e exemplos236/248/264: ações/sucessos, defesa por dano e escudos comHPsão contratos distintos; crescimento imóvel/reset/precedência permanecem manuais. Sem adicionar dados/reservas/absorção por analogia. Core hospedado13.350 e conexões reais seguem separados.
+
 ## Reparo por horas informadas — 0.62.0
 
 [Reparo de armaduras](reparo-armaduras.md) reúne registro gratuito de uma armadura, parcelas de hora com sugestão nível/1CE, Ajustar explícito, cobrança única, Desfazer, encerramento, histórico e recuperação entre pagador/Item/alvo. Transporte privado e interface preservam Atacar/Técnicas. Não automatiza aquisição, teste, calendário, reviver/evoluir ou novas condições. Ensaio hospedado13.350 e concorrência real continuam separados.
