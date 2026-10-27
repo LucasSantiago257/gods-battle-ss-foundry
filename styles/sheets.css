@@ -165,3 +165,10 @@
 .armor-repair-dialog label {display:grid;gap:4px;}
 .armor-repair-dialog :is(select,input,textarea) {max-width:100%;min-width:0;}
 .armor-repair-dialog input[type=checkbox] {width:auto;}
+
+.message[data-gods-battle-internal-drain],.message:has([data-gods-battle-internal-drain]) {display:none;}
+.gods-battle .drain-actions {display:flex;gap:8px;flex-wrap:wrap;}
+.gods-battle .drain-actions button {white-space:normal;flex:0 1 auto;}
+.drain-dialog {display:grid;gap:10px;}
+.drain-dialog label {display:grid;gap:4px;}
+.drain-dialog :is(input,select,textarea) {min-width:0;max-width:100%;}
