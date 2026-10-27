@@ -101,8 +101,8 @@ export async function recoverDrain(actor,id,{close=false,reason="",requester=gam
   }
   validateOp(actor,op);if(op.status==="applied")return {...summary(op),replayed:true};if(op.status!=="prepared")throw Error("Journal encerrado sem nova parcela.");
   const current=drainRecord(actor,op.recordId),state=drainTarget(actor),points=sides(op);
-  if(drainSame(current,op.afterRecord)&&drainSame(state,points.after)){
-   await identity(actor,requester,{id,intentGuard});if(!drainSame(ops(actor)[id],op)||!drainSame(drainRecord(actor,op.recordId),op.afterRecord)||!drainSame(drainTarget(actor),points.after))throw Error("O registro de Dreno mudou.");intent(intentGuard);await actor.update({[`${opPath(id)}.status`]:"applied"});return {...summary(op),status:"applied"};
+  if(drainSame(drainRecordMath(current),drainRecordMath(op.afterRecord))&&drainSame(state,points.after)){
+   await identity(actor,requester,{id,intentGuard});if(!drainSame(ops(actor)[id],op)||!drainSame(drainRecordMath(drainRecord(actor,op.recordId)),drainRecordMath(op.afterRecord))||!drainSame(drainTarget(actor),points.after))throw Error("O registro de Dreno mudou.");intent(intentGuard);await actor.update({[`${opPath(id)}.status`]:"applied"});return {...summary(op),status:"applied"};
   }
   if(!drainSame(current,op.beforeRecord)||!drainSame(state,points.before))throw Error("Recursos ou registro divergentes; encerre preservando ajustes.");return commit(actor,op,requester,intentGuard);
  });
