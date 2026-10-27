@@ -3,7 +3,6 @@
 import {SYSTEM_ID} from "./config.mjs";
 import {actionHash} from "./action-rules.mjs";
 import {componentUuid} from "./technique-builder-rules.mjs";
-import {techniqueReadiness} from "./technique-rules.mjs";
 import {optionalNote} from "./form-values.mjs";
 export const DRAIN=Object.freeze({id:"ea761952eeab6d92",key:"bigbang:extra:Dreno",primary:componentUuid("ac34d9f38628bd92"),page:"227/310–311",amount:Object.freeze({bronze:1,silver:3,gold:5}),catalogKey:"technique:cosmic:PRATA:TEIA DA TARÂNTULA"});
 const copy=structuredClone;
@@ -15,7 +14,7 @@ export function drainSource(item){
  const actorUuid=drainActor(item?.parent),f=item?.flags?.[SYSTEM_ID]??{},s=item?.system;
  if(item?.type!=="technique"||item.parent.items?.get?.(item.id)!==item||item.uuid!==`${actorUuid}.Item.${item.id}`)throw Error("Técnica ausente, substituída ou de outra ficha.");
  text(item.id,"Técnica");text(item.uuid,"Técnica");
- if(s?.effectKind!=="sustained"||techniqueReadiness(item)||f.techniqueBuilder?.status==="draft")throw Error("Dreno assistido exige uma técnica Sustentada concluída e pronta.");
+ if(s?.effectKind!=="sustained"||f.techniqueDraft||f.techniqueBuilder?.status==="draft")throw Error("Dreno assistido exige uma técnica Sustentada com composição concluída.");
  const constructionId=f.techniqueConstructionId;let profile;
  if(constructionId!==undefined&&constructionId!==null){
   text(constructionId,"Composição");const record=f.techniqueConstructionHistory?.[constructionId];
