@@ -74,3 +74,7 @@ No exercício de área acima, confira Aguardando resistência → Dano pendente 
 ## Opcional: reparo por horas informadas — 0.62.0
 
 Siga [o ensaio de reparo](reparo-armaduras.md#ensaio-curto) em cópias de exercício: registro gratuito, uma hora sugerida, Ajustar custo0, Desfazer última hora intacta, Encerrar e privacidade. A técnica canônica precisa estar na ficha de quem repara; nenhum grupo ou custo é criado automaticamente. Não confundir a hora informada com uma rodada ou ativação genérica.
+
+## Opcional: Dreno por parcelas — 0.63.0
+
+Siga [o ensaio de Dreno](dreno.md#ensaio-curto): mestre registra fonte Sustentada canônica, dono do alvo aplica sem possuir o atacante, Ajustar CEatual/extra ou0já resolvido, Desfazer última parcela intacta, dispensar/encerrar e conferir histórico. Registre duração/primeira parcela; ativação/oposição/manutenção ficam separadas. Não cria condição, transferência de CEou efeito ao avançar rodada.

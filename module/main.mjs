@@ -1,3 +1,5 @@
+import {refreshDrainSheets} from "./drain-ui.mjs";
+import {enqueueDrainRequest,resumeDrainRequests,renderDrainRequest,notifyDrainResponse} from "./drain-requests.mjs";
 import {refreshArmorRepairSheets} from "./armor-repair-ui.mjs";
 import {enqueueArmorRepairRequest,resumeArmorRepairRequests,renderArmorRepairRequest,notifyArmorRepairResponse} from "./armor-repair-requests.mjs";
 import {refreshAreaProgress} from "./area-progress.mjs";
@@ -29,7 +31,7 @@ Hooks.once("init", async () => {
   const registry = foundry.applications.apps.DocumentSheetConfig;
   registry.registerSheet(Actor, SYSTEM_ID, KnightSheet, {types: ["knight"], makeDefault: true, label: "Ficha de Cavaleiro"});
   registry.registerSheet(Item, SYSTEM_ID, ContentSheet, {types: Object.keys(ITEM_TYPES), makeDefault: true, label: "Conteúdo — A Batalha dos Deuses"});
-  await foundry.applications.handlebars.loadTemplates([`systems/${SYSTEM_ID}/templates/fields.hbs`, `systems/${SYSTEM_ID}/templates/items.hbs`, `systems/${SYSTEM_ID}/templates/level-guide.hbs`, `systems/${SYSTEM_ID}/templates/technique-builder.hbs`, `systems/${SYSTEM_ID}/templates/effects-panel.hbs`, `systems/${SYSTEM_ID}/templates/effect-record.hbs`, `systems/${SYSTEM_ID}/templates/armor-repair-record.hbs`, `systems/${SYSTEM_ID}/templates/armor-repairs-panel.hbs`]);
+  await foundry.applications.handlebars.loadTemplates([`systems/${SYSTEM_ID}/templates/fields.hbs`, `systems/${SYSTEM_ID}/templates/items.hbs`, `systems/${SYSTEM_ID}/templates/level-guide.hbs`, `systems/${SYSTEM_ID}/templates/technique-builder.hbs`, `systems/${SYSTEM_ID}/templates/effects-panel.hbs`, `systems/${SYSTEM_ID}/templates/effect-record.hbs`, `systems/${SYSTEM_ID}/templates/drain-record.hbs`, `systems/${SYSTEM_ID}/templates/armor-repair-record.hbs`, `systems/${SYSTEM_ID}/templates/armor-repairs-panel.hbs`]);
   game.godsBattle = {createStarterCompendium, openCatalog, explainPassives: actor => evaluatePassives(actor.system,actor.items.contents),attackTarget,beginCreation,openTestActors,importTestActors,beginLevelUp,requestLevelUp,toggleActionControl};
 });
 
@@ -42,25 +44,30 @@ Hooks.on("renderChatMessageHTML", renderTechniqueChat);
 Hooks.on("renderChatMessageHTML",renderCombatChat);
 Hooks.on("renderChatMessageHTML",renderControlChat);
 Hooks.on("renderChatMessageHTML",renderArmorRepairRequest);
+Hooks.on("renderChatMessageHTML",renderDrainRequest);
 Hooks.on("createChatMessage",enqueueDamageRequest);
 Hooks.on("createChatMessage",enqueueLevelRequest);
 Hooks.on("createChatMessage",enqueueTechniqueRequest);
 Hooks.on("createChatMessage",enqueueActionRequest);
 Hooks.on("createChatMessage",enqueueArmorRepairRequest);
+Hooks.on("createChatMessage",enqueueDrainRequest);
 Hooks.on("updateChatMessage",notifyDamageResponse);
 Hooks.on("updateChatMessage",notifyTechniqueResponse);
 Hooks.on("updateChatMessage",notifyActionResponse);
 Hooks.on("updateChatMessage",notifyArmorRepairResponse);
+Hooks.on("updateChatMessage",notifyDrainResponse);
 Hooks.once("ready",resumeDamageRequests);
 Hooks.once("ready",resumeLevelRequests);
 Hooks.once("ready",resumeTechniqueRequests);
 Hooks.once("ready",resumeActionRequests);
 Hooks.once("ready",resumeArmorRepairRequests);
+Hooks.once("ready",resumeDrainRequests);
 Hooks.on("updateUser",()=>resumeDamageRequests());
 Hooks.on("updateUser",()=>resumeLevelRequests());
 Hooks.on("updateUser",()=>resumeTechniqueRequests());
 Hooks.on("updateUser",()=>resumeActionRequests());
 Hooks.on("updateUser",()=>resumeArmorRepairRequests());
+Hooks.on("updateUser",()=>resumeDrainRequests());
 Hooks.on("preUpdateCombat",stampCombatRound);
 Hooks.on("updateCombat",refreshActionSheets);
 Hooks.on("deleteCombat",refreshActionSheets);
@@ -80,3 +87,6 @@ for(const hook of ["createChatMessage","updateChatMessage","deleteChatMessage","
 
 for(const hook of ["createActor","updateActor","deleteActor","createItem","updateItem","deleteItem","createToken","updateToken","deleteToken","updateUser"])Hooks.on(hook,refreshArmorRepairSheets);
 for(const hook of ["createChatMessage","updateChatMessage","deleteChatMessage"])Hooks.on(hook,message=>{if(message.flags?.[SYSTEM_ID]?.armorRepairRequest)refreshArmorRepairSheets();});
+
+for(const hook of ["createCombat","updateCombat","deleteCombat","createCombatant","updateCombatant","deleteCombatant","updateUser","deleteUser"])Hooks.on(hook,refreshDrainSheets);
+for(const hook of ["createChatMessage","updateChatMessage","deleteChatMessage"])Hooks.on(hook,message=>{if(message.flags?.[SYSTEM_ID]?.drainRequest)refreshDrainSheets();});

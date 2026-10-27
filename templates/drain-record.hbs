@@ -1,0 +1,13 @@
+<details class="calculation-ledger drain-record" data-effect-record data-effect-search="Dreno {{classification}}" data-effect-pending="{{#if pendingRounds}}true{{else}}false{{/if}}" {{#if canAdjust}}open{{else}}{{#if canUndo}}open{{/if}}{{/if}}>
+  <summary>Dreno{{#if classification}} · {{classification}} · {{amount}} CE{{/if}} · {{displayState}}</summary>
+  {{#if warning}}<p class="note">{{warning}}</p>{{/if}}
+  <div class="drain-actions">
+    {{#if canApply}}<button type="button" data-action="applyDrain" data-effect="{{id}}" data-revision="{{revision}}" data-signature="{{signature}}">Aplicar {{removed}} CE · rodada {{nextRound}}</button>{{/if}}
+    {{#if canAdjust}}<button type="button" data-action="adjustDrain" data-effect="{{id}}" data-revision="{{revision}}" data-signature="{{signature}}">Ajustar</button>{{/if}}
+    {{#if canSkip}}<button type="button" data-action="skipDrain" data-effect="{{id}}" data-revision="{{revision}}" data-signature="{{signature}}">Dispensar rodada {{nextRound}}</button>{{/if}}
+    {{#if canUndo}}<button type="button" data-action="undoDrain" data-effect="{{id}}" data-revision="{{revision}}">Desfazer última parcela</button>{{/if}}
+    {{#if canEnd}}<button type="button" data-action="endDrain" data-effect="{{id}}" data-revision="{{revision}}">Encerrar Dreno</button>{{/if}}
+  </div>
+  {{#if history}}<details><summary>Histórico de Dreno</summary>{{#each history}}<p>Rodada {{round}} · {{label}} · {{removed}} CE{{#if reason}} · {{reason}}{{/if}}</p>{{/each}}</details>{{/if}}
+  {{#if reason}}<details><summary>Notas</summary><p>{{reason}}</p></details>{{/if}}
+</details>
