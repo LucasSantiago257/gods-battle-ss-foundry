@@ -9,7 +9,8 @@ export const ARMOR_REPAIR=Object.freeze({id:"16ffa8dcf4d1e1d8",key:"technique:co
 const clone=structuredClone;
 function reference(value,label){if(typeof value!=="string"||!value||value.length>256)throw Error(`${label} ausente ou inválido.`);return value;}
 function integer(value,label,min=0){if(!Number.isSafeInteger(value)||value<min||value>1000000)throw Error(`${label}: informe um inteiro válido.`);return value;}
-function actorIdentity(actor){if(actor?.type!=="knight")throw Error("Escolha uma ficha de cavaleiro.");return reference(actor.uuid,"Ficha");}
+export const isRepairWorldActor=actor=>actor?.type==="knight"&&typeof actor.uuid==="string"&&/^(Actor\.|Scene\.)/.test(actor.uuid);
+function actorIdentity(actor){if(!isRepairWorldActor(actor))throw Error("Escolha uma ficha do mundo ou token, sem alterar modelos de compêndio.");return reference(actor.uuid,"Ficha");}
 function member(item,type){
  const actorUuid=actorIdentity(item?.parent);
  if(item.type!==type||item.parent.items?.get?.(item.id)!==item)throw Error("Item ausente, substituído ou de outra ficha.");
