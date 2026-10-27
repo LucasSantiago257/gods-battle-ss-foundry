@@ -43,8 +43,9 @@ function signature(c){
 }
 export function armorRepairState(item,armor){return signature(context(item,armor));}
 export function armorRepairPlan(item,armor,options={}){
- if(!options||typeof options!=="object"||Array.isArray(options))throw Error("Parâmetros de reparo inválidos.");
- const c=context(item,armor),repair=options.repair??c.source.level,cost=integer(options.cost??ARMOR_REPAIR.costPerHour,"CE da hora"),useExtra=options.useExtra??true,allowOverload=options.allowOverload??false;
+ if(!options||typeof options!=="object"||![Object.prototype,null].includes(Object.getPrototypeOf(options)))throw Error("Parâmetros de reparo inválidos.");
+ const own=(key,fallback)=>Object.hasOwn(options,key)?options[key]:fallback;
+ const c=context(item,armor),repair=own("repair",c.source.level),cost=integer(own("cost",ARMOR_REPAIR.costPerHour),"CE da hora"),useExtra=own("useExtra",true),allowOverload=own("allowOverload",false);
  if(!Number.isFinite(repair)||repair<0||repair>1000000)throw Error("PV de reparo: informe um valor válido.");
  if(typeof useExtra!=="boolean"||typeof allowOverload!=="boolean")throw Error("Distribuição de CE inválida.");
  const payment=cosmoPayment(item.parent.system,cost,{useExtra,allowOverload}),amount=Math.min(repair,Math.max(0,c.target.maximum-c.target.health));
