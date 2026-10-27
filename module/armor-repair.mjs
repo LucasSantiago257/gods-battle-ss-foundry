@@ -58,10 +58,19 @@ async function transact(b,op){
  if(op.plan[from].armor.health!==op.plan[to].armor.health)await b.armor.update({"system.health.value":op.plan[to].armor.health});
  await stage(b,op,to,to);return finish(b,op);
 }
-function newOperation(actor,record,plan,direction,user,original=null,reason=""){
- const id=repairKey(foundry.utils.randomID());if(Object.hasOwn(ops(actor),id))throw Error("Identificador de operação repetido.");
+function newOperation(actor,record,plan,direction,user,original=null,reason="",operationId=null){
+ const id=repairKey(operationId??foundry.utils.randomID());if(Object.hasOwn(ops(actor),id))throw Error("Identificador de operação repetido.");
  const op={kind:"armorRepair",ruleVersion:1,status:"prepared",id,actorUuid:actor.uuid,targetUuid:record.targetUuid,recordId:record.id,direction,plan:structuredClone(plan),beforeRecord:structuredClone(record),userId:user.id,time:Date.now(),reason:optionalNote(reason),...(original?{originalId:original.id,previousLast:original.beforeRecord.last??null}:{})};
  op.afterRecord=repairRecordAfter(op);return op;
+}
+async function replay(actor,key,id,user,direction){
+ if(id===null)return null;repairKey(id);const prior=ops(actor)[id];if(!prior)return null;
+ authorize(actor,user);if(await fromUuid(actor.uuid)!==actor)throw Error("Ficha removida ou substituída.");
+ if(prior.kind!=="armorRepair"||prior.actorUuid!==actor.uuid||prior.recordId!==key||prior.direction!==direction||prior.userId!==user.id)throw Error("Identificador de outra intenção de reparo.");
+ const target=await fromUuid(prior.targetUuid);authorize(actor,user);authorize(target,user);
+ if(prior.status==="prepared")throw Error("Esta hora está interrompida; use a recuperação do journal.");
+ if(prior.status!=="applied")throw Error("Esta intenção já foi encerrada sem nova aplicação.");
+ return {status:"applied",operationId:id,record:structuredClone(prior.afterRecord),replayed:true};
 }
 export async function registerArmorRepair(item,armor,{expectedState,requester=game.user,reason=""}={}){
  primary();return runMasterOperation(async()=>{
@@ -75,21 +84,23 @@ export async function registerArmorRepair(item,armor,{expectedState,requester=ga
   await actor.update({[`flags.${SYSTEM_ID}.armorRepairs.${id}`]:record});return structuredClone(record);
  });
 }
-export async function applyArmorRepair(actor,key,{expectedRevision,expectedState,options={},requester=game.user}={}){
+export async function applyArmorRepair(actor,key,{expectedRevision,expectedState,options={},requester=game.user,operationId=null}={}){
  primary();repairKey(key);return runMasterOperation(async()=>{
+  const prior=await replay(actor,key,operationId,requester,"apply");if(prior)return prior;
   const record=repairRecord(actor,key);checkExpected(record,expectedRevision);if(record.status!=="active")throw Error("Trabalho encerrado.");
   const b=await binding(actor,record,requester),plan=armorRepairPlan(b.item,b.armor,options);
   if(typeof expectedState!=="string"||expectedState!==plan.baseline)throw Error("A prévia do reparo mudou.");
-  const op=newOperation(actor,record,plan,"apply",requester,null,plan.reason);await identities(b);
+  const op=newOperation(actor,record,plan,"apply",requester,null,plan.reason,operationId);await identities(b);
   if(!repairSame(repairRecord(actor,key),record)||armorRepairState(b.item,b.armor)!==expectedState)throw Error("O trabalho mudou antes da aplicação.");
   return transact(b,op);
  });
 }
-export async function undoArmorRepair(actor,key,{expectedRevision,requester=game.user,reason=""}={}){
+export async function undoArmorRepair(actor,key,{expectedRevision,requester=game.user,reason="",operationId=null}={}){
  primary();repairKey(key);return runMasterOperation(async()=>{
+  const prior=await replay(actor,key,operationId,requester,"undo");if(prior)return prior;
   const record=repairRecord(actor,key);checkExpected(record,expectedRevision);const b=await binding(actor,record,requester),original=ops(actor)[record.last];
   validateRepairJournal(original);if(original.status!=="applied"||original.direction!=="apply"||original.recordId!==key||original.actorUuid!==actor.uuid||armorRepairState(b.item,b.armor)!==repairPointState(original.plan,"after"))throw Error("Recursos alterados ou última hora indisponível para desfazer.");
-  const op=newOperation(actor,record,original.plan,"undo",requester,original,reason);await identities(b);if(!repairSame(repairRecord(actor,key),record))throw Error("O trabalho mudou antes de desfazer.");return transact(b,op);
+  const op=newOperation(actor,record,original.plan,"undo",requester,original,reason,operationId);await identities(b);if(!repairSame(repairRecord(actor,key),record))throw Error("O trabalho mudou antes de desfazer.");return transact(b,op);
  });
 }
 export async function endArmorRepair(actor,key,{expectedRevision,requester=game.user,reason=""}={}){
