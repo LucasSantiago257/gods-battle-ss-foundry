@@ -70,3 +70,7 @@ No ensaio opcional de Esgotar, abra **Componentes da ativação** para escolher 
 ## Área: andamento por defensor — 0.60.0
 
 No exercício de área acima, confira Aguardando resistência → Dano pendente → Aplicado/Desfeito separadamente em cada alvo. Cada dono vê apenas seu estado/ações; o mestre vê ambos e o observador só os nomes. O dano continua no resultado individual, sem pedido visível ou aplicação em lote. [Ensaio de privacidade, identidade e limites](area-andamento.md#ensaio-curto). Novas áreas usam o acompanhamento; cartões antigos mantêm seu conteúdo salvo.
+
+## Opcional: reparo por horas informadas — 0.62.0
+
+Siga [o ensaio de reparo](reparo-armaduras.md#ensaio-curto) em cópias de exercício: registro gratuito, uma hora sugerida, Ajustar custo0, Desfazer última hora intacta, Encerrar e privacidade. A técnica canônica precisa estar na ficha de quem repara; nenhum grupo ou custo é criado automaticamente. Não confundir a hora informada com uma rodada ou ativação genérica.
