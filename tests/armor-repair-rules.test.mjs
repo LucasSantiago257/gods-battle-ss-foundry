@@ -61,7 +61,7 @@ test("assinatura muda com recursos, nível, máximo e identidade, não com notas
  for(const change of [f=>f.caster.system.profile.level++,f=>f.caster.system.resources.cosmo.value--,f=>f.caster.system.resources.cosmoReserved++,f=>f.armor.system.health.max++,f=>f.armor.system.health.value++,f=>{f.armor.id="replacement";f.armor.uuid=`${f.target.uuid}.Item.replacement`;}]){const f=fixture(),before=armorRepairState(f.item,f.armor);change(f);assert.notEqual(armorRepairState(f.item,f.armor),before);}
 });
 test("valores inválidos ou comandos transportados não viram gravações",()=>{
- for(const options of [{repair:-1},{repair:NaN},{repair:Infinity},{cost:-1},{cost:.5},{cost:"1"},{useExtra:"true"},{allowOverload:1},{reason:1},[],null]){const f=fixture(),before=snapshot(f);assert.throws(()=>f.plan(options));assert.deepEqual(snapshot(f),before);}
+ for(const options of [{repair:-1},{repair:NaN},{repair:Infinity},{cost:-1},{cost:.5},{cost:"1"},{useExtra:"true"},{allowOverload:1},{reason:1},{cost:null},{repair:null},{useExtra:null},Object.create({cost:0}),[],null]){const f=fixture(),before=snapshot(f);assert.throws(()=>f.plan(options));assert.deepEqual(snapshot(f),before);}
  const f=fixture(),p=f.plan({updates:{"system.resources.cosmo.value":999},after:{armor:{health:999}},hours:99});assert.equal(p.hours,1);assert.equal(p.after.payer.current,9);assert.equal(p.after.armor.health,30);assert.equal(Object.hasOwn(p.payment,"updates"),false);p.after.armor.health=0;assert.equal(f.armor.system.health.value,19);
 });
 test("dados de pagamento e nível inválidos não geram plano parcial",()=>{
