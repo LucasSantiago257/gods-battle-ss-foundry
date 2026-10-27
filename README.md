@@ -1,5 +1,7 @@
 # Saint Seiya — A Batalha dos Deuses para FoundryVTT
 
+**0.62.0 — reparo por horas informadas:** registro gratuito, Aplicar/Ajustar/Desfazer por parcela, CE/PVA claros, histórico e recuperação coordenada entre fichas e armadura. Escolhas autorizadas e transporte discreto; sem cura automática por relógio/ativação ou novas condições. [Uso e ensaio](docs/reparo-armaduras.md).
+
 **0.61.0 — armaduras legíveis e referências conferidas:** requisito de classe aparece por nome; a ficha distingue bônus aplicados, armadura guardada e motivo real de bônus ausentes. Equipar e ajustes continuam livres. O conjunto reúne apresentação, ensaio de troca/estados e auditoria das cinco classes,22artefatos e lista de vestimentas. [Cobertura e limites](docs/auditoria-armaduras-artefatos.md).
 
 **0.60.1 — pagamento de técnicas:** corrige o falso aviso “O pagamento mudou” quando os mesmos valores chegavam com outro formato interno. Elevar Cosmo conserva custo e cálculo; a cobrança continua única. [Pagamento e limites](docs/ativacoes.md#correção0601--valores-estáveis-no-transporte).
@@ -60,7 +62,7 @@
 
 Para ensaiar a one-shot, use **Combate → Ferramentas do mestre → Novo grupo de treino**. Cria Santo, Guardião e Sábia em cópias privadas; Lyra inclui Dano, Controle e Sustentada. Importar grupo de teste preserva as fichas anteriores. Veja [o exercício para mestre e jogadores](docs/fichas-teste.md), incluindo aplicação direta, desfazer, duração e recarga.
 
-Fichas, compêndios e ativação de técnicas do sistema UmD10+, com destino ao **FoundryVTT 13 build 350**. Versão **0.61.0**. Lucas confirmou o combate básico no servidor. Este marco foi ensaiado em módulos e navegador isolados; as interfaces novas e o percurso completo ainda precisam ser conferidos no core hospedado13.350.
+Fichas, compêndios e ativação de técnicas do sistema UmD10+, com destino ao **FoundryVTT 13 build 350**. Versão **0.62.0**. Lucas confirmou o combate básico no servidor. Este marco foi ensaiado em módulos e navegador isolados; as interfaces novas e o percurso completo ainda precisam ser conferidos no core hospedado13.350.
 
 O sistema inclui **888 entradas em dez compêndios nativos de Items**, com descrições, requisitos, origem e páginas do livro. Na aba **Poderes**, os atalhos abrem os catálogos para arrastar itens à ficha. Acrescenta 166 técnicas para consulta e configuração, com atalhos na aba Técnicas. As cópias do catálogo exigem revisão antes de gastar CE; custos variáveis, efeitos especiais e Exclamação de Athena permanecem manuais. A ficha permite abrir os Big Bangs relacionados para consulta. Os Items do livro mostram a descrição completa em uma área de leitura. Consulte a [cobertura e o uso dos compêndios](docs/compendios.md). Para atualizar, encerre o mundo e use **Sistemas de Jogo → Atualizar**; depois inicie o mundo e recarregue a página.
 

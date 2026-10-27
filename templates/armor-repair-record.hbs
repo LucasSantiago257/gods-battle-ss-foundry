@@ -1,0 +1,13 @@
+<article class="armor-repair-record" data-repair-id="{{id}}">
+  <div class="repair-heading"><strong>{{name}}</strong><span>{{statusLabel}}{{#unless foreign}} · {{hours}} h{{/unless}}</span></div>
+  {{#if sourceName}}<small>{{sourceName}}</small>{{/if}}
+  {{#if signature}}<p>PV {{health}} / {{maximum}}{{#if canApply}} · Próxima hora: +{{repair}} PVA · {{cost}} CE{{/if}}</p>{{/if}}
+  {{#if warning}}<p class="note">{{warning}}</p>{{/if}}
+  <div class="repair-actions">
+    {{#if canApply}}<button type="button" data-action="applyArmorRepair" data-repair="{{id}}" data-revision="{{revision}}" data-signature="{{signature}}">Aplicar hora</button>{{/if}}
+    {{#if canAdjust}}<button type="button" data-action="adjustArmorRepair" data-repair="{{id}}" data-revision="{{revision}}" data-signature="{{signature}}">Ajustar</button>{{/if}}
+    {{#if canUndo}}<button type="button" data-action="undoArmorRepair" data-repair="{{id}}" data-revision="{{revision}}">Desfazer última hora</button>{{/if}}
+    {{#if canEnd}}<button type="button" data-action="endArmorRepair" data-repair="{{id}}" data-revision="{{revision}}">Encerrar</button>{{/if}}
+  </div>
+  {{#if ticks}}<details><summary>Histórico</summary>{{#each ticks}}<p>Hora {{hour}} · {{label}} · {{repair}} PVA · {{cost}} CE{{#if reason}} · {{reason}}{{/if}}</p>{{/each}}{{#if reason}}<p>{{reason}}</p>{{/if}}</details>{{/if}}
+</article>

@@ -153,3 +153,15 @@
 .gods-battle .armor-stored {opacity: .75;}
 .gods-battle .armor-row .item-name button {white-space: normal; overflow-wrap: anywhere;}
 @media(max-width:700px){.gods-battle .armor-row {flex-wrap:wrap;}.gods-battle .armor-row .item-controls {flex-basis:100%;margin-left:52px;}}
+
+.message[data-gods-battle-internal-repair],.message:has([data-gods-battle-internal-repair]) {display:none;}
+.gods-battle .armor-repair-panel {margin-block:12px;padding:12px;border:1px solid var(--line,#8b805f);border-radius:6px;}
+.gods-battle .armor-repair-record {padding-block:10px;border-bottom:1px solid var(--line,#8b805f);}
+.gods-battle .repair-heading,.gods-battle .repair-actions,.gods-battle .repair-interruption {display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.gods-battle .repair-heading {justify-content:space-between;}
+.gods-battle .repair-heading strong,.gods-battle .armor-repair-record small {overflow-wrap:anywhere;}
+.gods-battle .repair-actions button {flex:0 1 auto;white-space:normal;}
+.armor-repair-dialog {display:grid;gap:10px;}
+.armor-repair-dialog label {display:grid;gap:4px;}
+.armor-repair-dialog :is(select,input,textarea) {max-width:100%;min-width:0;}
+.armor-repair-dialog input[type=checkbox] {width:auto;}
