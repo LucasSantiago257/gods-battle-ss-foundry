@@ -1,3 +1,4 @@
+import {openTechniqueDefenseRecovery} from "./technique-defense-recovery.mjs";
 import {drainContext,applyDrainParcel,finishDrain,openDrainRecovery} from "./drain-ui.mjs";
 import {openArmorRepairRecovery} from "./armor-repair-ui.mjs";
 import {resolveArmorBreak,recoverArmorBreak} from "./armor-effects.mjs";
@@ -27,7 +28,7 @@ async function guard(actor,baseline,operationId=null) {
  available(actor,operationId);
 }
 const effectSnapshot=(actor,key)=>({health:actor.system.resources.health.value,record:structuredClone(effectRecords(actor)[key])});
-export const effectOperationContext=actor=>Object.entries(actor.flags?.[SYSTEM_ID]?.effectOperations??{}).filter(([,r])=>!["armorRepair","armorRepairTarget","cosmoDrain"].includes(r.kind)).map(([id,r])=>({id,...r,canReview:game.user.isGM&&(r.status==="prepared"||["controlRetry","sustainOpposition","residualDeposit","residualResistance"].includes(r.kind)&&r.status==="applied"&&!r.published)})).filter(r=>r.status==="prepared"||["controlRetry","sustainOpposition","residualDeposit","residualResistance"].includes(r.kind)&&r.status==="applied"&&!r.published);
+export const effectOperationContext=actor=>Object.entries(actor.flags?.[SYSTEM_ID]?.effectOperations??{}).filter(([,r])=>!["armorRepair","armorRepairTarget","cosmoDrain","techniqueDefense"].includes(r.kind)).map(([id,r])=>({id,...r,canReview:game.user.isGM&&(r.status==="prepared"||["controlRetry","sustainOpposition","residualDeposit","residualResistance"].includes(r.kind)&&r.status==="applied"&&!r.published)})).filter(r=>r.status==="prepared"||["controlRetry","sustainOpposition","residualDeposit","residualResistance"].includes(r.kind)&&r.status==="applied"&&!r.published);
 export function effectSources() {
  const actors=new Map();for(const actor of [...(game.actors?.contents??[]),...(globalThis.canvas?.tokens?.placeables??[]).map(t=>t.actor),...(game.combats?.contents??[]).flatMap(c=>(c.combatants?.contents??[]).map(m=>m.actor))])if(actor?.uuid)actors.set(actor.uuid,actor);
  const sources=[];for(const actor of actors.values())for(const item of actor.items?.contents??[])try{const source=brasasSource(item);sources.push({...source,label:`${actor.name} · ${item.name} · ${source.damage} PV/rodada`,baseline:effectSourceState(item)});}catch{/* Somente composições canônicas aptas. */}
@@ -107,6 +108,7 @@ export async function endEffect(actor,key) {
  });
 }
 export async function recoverEffect(actor,key) {
+ if(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind==="techniqueDefense")return openTechniqueDefenseRecovery(actor,key);
  if(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind==="cosmoDrain")return openDrainRecovery(actor,key);
  if(["armorRepair","armorRepairTarget"].includes(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind))return openArmorRepairRecovery(actor,key);
  if(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind==="armorBreak")return recoverArmorBreak(actor,key);

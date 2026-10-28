@@ -1,3 +1,4 @@
+import {damageDefenseContext} from "./technique-defense-resolution.mjs";
 import {areaMember} from "./area-rules.mjs";
 import {actionHash} from "./action-rules.mjs";
 import {optionalNote} from "./form-values.mjs";
@@ -21,6 +22,7 @@ export async function requestDamage(message,action="apply",{adjust=false}={}) {
   try {
     const r=resolution(message,{allowEffectDamage:action==="undo"}),actor=await fromUuid(r.actorUuid);
     if (!actor || !(game.user.isGM||actor.isOwner)) throw Error("Somente o mestre ou proprietário do defensor pode aplicar dano.");
+    const defense=action==="apply"?damageDefenseContext(actor,message,game.user):null;defense?.validate();
     const snapshot=damageSnapshot(actor,r.body,r.armor,r.armorId);
     let override=null;
     if(action==="apply"&&adjust) {
@@ -29,6 +31,7 @@ export async function requestDamage(message,action="apply",{adjust=false}={}) {
       damageSnapshot(actor,answer.body,answer.armor,r.armorId);
       if(answer.body!==r.body || answer.armor!==r.armor) {optionalNote(answer.reason);override=answer;}
     } else if(action==="undo"&&!await foundry.applications.api.DialogV2.confirm({window:{title:"Desfazer aplicação"},content:"<p>Restaurar os valores anteriores? Alterações posteriores impedem o desfazer.</p>"})) return;
+    defense?.validate();
     return await ChatMessage.create({content:"<span aria-hidden=\"true\"></span>",whisper:[...new Set([game.user.id,gm.id])],flags:{[SYSTEM_ID]:{damageRequest:{messageId:message.id,action,expected:snapshot.before,override,silent:true}}}});
   } finally {localBusy.delete(message.id);}
 }
@@ -51,6 +54,9 @@ export async function executeDamageRequest(message,userId) {
     assertNoTechniqueInterruption(actor);
     const sourceAuthor=game.users.get(source.author?.id??source.user?.id);
     if (!sourceAuthor || !actor.testUserPermission(sourceAuthor,"OWNER")) throw Error("O resultado precisa ser publicado pelo defensor ou mestre.");
+    const defense=request.action==="apply"?damageDefenseContext(actor,source,requester):null;
+    const validateDefense=async()=>{if(!defense?.active)return;const doc=await fromUuid(r.actorUuid);if(doc!==actor||primaryGM()?.id!==game.user.id||!actor.testUserPermission(requester,"OWNER")||!sourceAuthor||!actor.testUserPermission(sourceAuthor,"OWNER"))throw Error("Mestre, defensor ou permissão mudaram durante o dano.");defense.validate();};
+    await validateDefense();
     key=r.rootMessageId;
     const history=actor.flags?.[SYSTEM_ID]?.damageOperations??{},previous=history[key];
     if (previous?.status==="prepared" || previous?.status==="repair") throw Error("Há operação incompleta. O mestre precisa conferir o registro antes de tentar novamente.");
@@ -66,12 +72,15 @@ export async function executeDamageRequest(message,userId) {
       const turn=damageTurnSnapshot(actor),turnSnapshot=turn&&r.turnSnapshot&&actionHash(turn)===actionHash(r.turnSnapshot)?turn:null;
       record={...snapshot,turnSnapshot,status:"prepared",direction:"apply",requestId:message.id,userId,reason:request.override?.reason??"",previousKey:actor.flags?.[SYSTEM_ID]?.damageLast??null,time:Date.now()};
     }
+    await validateDefense();
     await actor.update({[`flags.${SYSTEM_ID}.damageOperations.${key}`]:record});
+    await validateDefense();
     if(primaryGM()?.id!==game.user.id) throw Error("Mestre responsável mudou durante a operação.");
     const from=record.direction==="undo"?"after":"before",to=record.direction==="undo"?"before":"after";
     if(!snapshotMatches(actor,record,from)) throw Error("Recursos mudaram durante a aplicação.");
     const armor=record.armorId?actor.items.get(record.armorId):null;
     if(armor) await armor.update({"system.health.value":record[to].armor});
+    await validateDefense();
     if(actor.system.resources.health.value!==record[from].health || (armor && armor.system.health.value!==record[to].armor)) throw Error("Recursos mudaram durante a aplicação.");
     const completed={...record,status:to==="after"?"applied":"undone"};
     await actor.update({"system.resources.health.value":record[to].health,[`flags.${SYSTEM_ID}.damageOperations.${key}`]:completed,[`flags.${SYSTEM_ID}.damageLast`]:completed.status==="applied"?key:record.previousKey});
@@ -136,9 +145,10 @@ export async function damageCardState(message) {
  const queued=(game.messages?.contents??[]).some(m=>m.flags?.[SYSTEM_ID]?.damageRequest?.messageId===message.id&&!m.flags?.[SYSTEM_ID]?.damageResponse);
  const processing=localBusy.has(message.id)||queued;
  const effect=message.flags?.[SYSTEM_ID]?.attack?.effectKind,damageAllowed=!effect||effect==="damage",ready=!!primaryGM()?.active;
- const state=interrupted?"interrupted":processing?"processing":applied?"applied":record?.status==="undone"?"undone":"pending";
- const label={interrupted:"Conferir aplicação",processing:"Aplicando…",applied:"Aplicado",undone:"Desfeito",pending:"Pendente"}[state];
- const canApply=authorized&&ready&&!processing&&!interrupted&&!applied&&damageAllowed;
+ let stale=false;if(authorized&&!applied&&damageAllowed)try{damageDefenseContext(actor,message,game.user).validate();}catch{stale=true;}
+ const state=stale?"stale":interrupted?"interrupted":processing?"processing":applied?"applied":record?.status==="undone"?"undone":"pending";
+ const label={stale:"Atualizar resistência",interrupted:"Conferir aplicação",processing:"Aplicando…",applied:"Aplicado",undone:"Desfeito",pending:"Pendente"}[state];
+ const canApply=authorized&&!stale&&ready&&!processing&&!interrupted&&!applied&&damageAllowed;
  const canUndo=authorized&&ready&&!processing&&!interrupted&&applied&&actor.flags?.[SYSTEM_ID]?.damageLast===r.rootMessageId&&snapshotMatches(actor,record,"after");
  return {label,state,authorized,canApply,canAdjust:canApply,canUndo:!!canUndo};
 }
