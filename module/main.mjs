@@ -1,3 +1,5 @@
+import {renderTechniqueDefenseChat,refreshTechniqueDefenseCards,refreshTechniqueDefenseSheets} from "./technique-defense-ui.mjs";
+import {enqueueTechniqueDefenseRequest,resumeTechniqueDefenseRequests,renderTechniqueDefenseRequest,notifyTechniqueDefenseResponse} from "./technique-defense-requests.mjs";
 import {refreshDrainSheets} from "./drain-ui.mjs";
 import {enqueueDrainRequest,resumeDrainRequests,renderDrainRequest,notifyDrainResponse} from "./drain-requests.mjs";
 import {refreshArmorRepairSheets} from "./armor-repair-ui.mjs";
@@ -90,3 +92,12 @@ for(const hook of ["createChatMessage","updateChatMessage","deleteChatMessage"])
 
 for(const hook of ["createCombat","updateCombat","deleteCombat","createCombatant","updateCombatant","deleteCombatant","updateUser","deleteUser"])Hooks.on(hook,refreshDrainSheets);
 for(const hook of ["createChatMessage","updateChatMessage","deleteChatMessage"])Hooks.on(hook,message=>{if(message.flags?.[SYSTEM_ID]?.drainRequest)refreshDrainSheets();});
+
+Hooks.on("renderChatMessageHTML",renderTechniqueDefenseRequest);
+Hooks.on("renderChatMessageHTML",renderTechniqueDefenseChat);
+Hooks.on("createChatMessage",enqueueTechniqueDefenseRequest);
+Hooks.on("updateChatMessage",notifyTechniqueDefenseResponse);
+Hooks.once("ready",resumeTechniqueDefenseRequests);
+Hooks.on("updateUser",()=>resumeTechniqueDefenseRequests());
+for(const hook of ["createChatMessage","updateChatMessage","deleteChatMessage","createActor","updateActor","deleteActor","createItem","updateItem","deleteItem","updateUser","deleteUser","createToken","updateToken","deleteToken","controlToken","updateCombat","deleteCombat","updateCombatant"])Hooks.on(hook,refreshTechniqueDefenseCards);
+for(const hook of ["createChatMessage","updateChatMessage","deleteChatMessage"])Hooks.on(hook,message=>{if(message.flags?.[SYSTEM_ID]?.techniqueDefenseRequest)refreshTechniqueDefenseSheets();});

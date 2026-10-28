@@ -1,3 +1,4 @@
+import {techniqueDefenseRecoveryContext} from "./technique-defense-recovery.mjs";
 import {drainContext,beginDrain,applyDrainParcel,finishDrain,openDrainRecovery} from "./drain-ui.mjs";
 import {armorRepairContext,beginArmorRepair,applyArmorRepairHour,finishArmorRepairWork,openArmorRepairRecovery} from "./armor-repair-ui.mjs";
 import {armorPresentation} from "./armor-view.mjs";
@@ -94,7 +95,7 @@ export class KnightSheet extends foundry.applications.api.HandlebarsApplicationM
       calculations: calculationSummary(s, game.settings.get(SYSTEM_ID, "resistanceMode")),
       passiveLedger: evaluatePassives(s,this.actor.items.contents).ledger,
       damageLedger:Object.entries(this.actor.flags?.[SYSTEM_ID]?.damageOperations??{}).map(([key,r])=>({key,...r,statusLabel:{applied:"Aplicado",undone:"Desfeito",prepared:"Interrompido",repair:"Revisão necessária",failed:"Não aplicado"}[r.status]??r.status,canRecover:game.user.isGM&&["prepared","repair"].includes(r.status)})).toSorted((a,b)=>b.time-a.time).slice(0,20),
-      armorRepairs,drains,techniqueLedger,canRegisterArmorBreak:canRegisterArmorBreak(this.actor),cosmoDeposits:cosmoDepositContext(this.actor),persistentEffects,persistentEffectsPanel:effectPanelContext(persistentEffects),effectInterruptions:effectOperationContext(this.actor),conditionControl:conditionSheetContext(this.actor),
+      armorRepairs,drains,techniqueLedger,canRegisterArmorBreak:canRegisterArmorBreak(this.actor),cosmoDeposits:cosmoDepositContext(this.actor),persistentEffects,persistentEffectsPanel:effectPanelContext(persistentEffects),effectInterruptions:[...effectOperationContext(this.actor),...techniqueDefenseRecoveryContext(this.actor).interruptions],conditionControl:conditionSheetContext(this.actor),
       creationGuide: s.creationGuide.status==="draft" ? {...creationReview(s,this.actor.items.contents,this.actor.name),step:s.creationGuide.step,current:CREATION_STEPS[s.creationGuide.step-1],steps:CREATION_STEPS.map((step,index)=>({...step,index:index+1,active:index+1===s.creationGuide.step})),
         fields:[field("system.creationGuide.extraSkill","Perícia livre do estilo",s.creationGuide.extraSkill,{"":"Selecionar",...Object.fromEntries(Object.entries(SKILLS).map(([key,def])=>[key,def.label]))}),field("system.creationGuide.fightChoice","Santo / Asgardiano: luta inicial",s.creationGuide.fightChoice,{punch:"Soco",kick:"Chute"}),field("system.creationGuide.initializeResources","Preencher PV e CE atuais ao concluir",s.creationGuide.initializeResources,null,"checkbox")]} : null,
       canBeginCreation:this.isEditable && s.profile.level===1 && s.creationGuide.status==="",
