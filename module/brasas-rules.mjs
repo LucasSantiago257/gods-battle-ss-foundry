@@ -41,7 +41,8 @@ export function brasasRecordMath(actor,key){
  const marker=r.brasasLastOperation;
  const lastOperation=marker===undefined?null:{id:brasasKey(marker?.id),action:marker?.action};
  if(lastOperation&&(!["apply","undo","end"].includes(lastOperation.action)||lastOperation.action==="end"&&r.status!=="ended"||lastOperation.action==="apply"&&ticks.at(-1)?.operationId!==lastOperation.id))throw Error("Última operação de Brasas inválida.");
- return {actorUuid:actor.uuid,recordId:key,status:r.status,combatUuid:identity(r.combatUuid,"Encontro"),combatantId:identity(r.combatantId,"Combatente"),firstRound:r.firstRound,lastRound:r.lastRound,damage:r.damage,source:{actorUuid:s.actorUuid,itemUuid:s.itemUuid,componentUuid:s.componentUuid,classification:s.classification,damage:s.damage,constructionId:s.constructionId??null},ticks,lastOperation};
+ if(r.time!==undefined&&(!Number.isFinite(r.time)||r.time<0)||r.userId!==undefined&&(typeof r.userId!=="string"||!r.userId||r.userId.length>256))throw Error("Origem temporal de Brasas inválida.");
+ return {registration:{time:r.time??null,userId:r.userId??null},actorUuid:actor.uuid,recordId:key,status:r.status,combatUuid:identity(r.combatUuid,"Encontro"),combatantId:identity(r.combatantId,"Combatente"),firstRound:r.firstRound,lastRound:r.lastRound,damage:r.damage,source:{actorUuid:s.actorUuid,itemUuid:s.itemUuid,componentUuid:s.componentUuid,classification:s.classification,damage:s.damage,constructionId:s.constructionId??null},ticks,lastOperation};
 }
 export function brasasSnapshot(actor,key){return {health:health(actor.system?.resources?.health?.value),record:brasasRecordMath(actor,key)};}
 export function brasasState(actor,key){return actionHash(brasasSnapshot(actor,key));}
@@ -51,20 +52,20 @@ export function brasasParcelPlan(actor,key,{operationId,...options}={}){
  const tick={...p.tick,operationId},after={health:health(p.after),record:{...copy(before.record),status:p.status,ticks:[...copy(before.record.ticks),tickMath(tick,tick.round,r)],lastOperation:{id:operationId,action:"apply"}}};
  return {kind:"brasasParcel",version:1,action:"apply",operationId,before,after,tick,context:copy(p.view.context),baseline:actionHash(before)};
 }
-function applyReceipt(receipt,actor,key){
+export function validateBrasasApplyReceipt(receipt,actor,key){
  if(receipt?.kind!=="brasasParcel"||receipt.version!==1||receipt.action!=="apply"||receipt.status!=="applied")throw Error("Não há parcela de Brasas aplicada para desfazer.");
  brasasKey(receipt.operationId);
  const b=receipt.before,a=receipt.after;
  if(b?.record?.actorUuid!==actor.uuid||b.record.recordId!==key||b.record.status!=="active"||a?.record?.actorUuid!==actor.uuid||a.record.recordId!==key||!Array.isArray(b.record.ticks)||!Array.isArray(a.record.ticks))throw Error("Recibo de outra ficha ou registro.");
  const round=b.record.firstRound+b.record.ticks.length,t=tickMath(receipt.tick,round,b.record);
- if(t.operationId!==receipt.operationId||round>b.record.lastRound)throw Error("Parcela do recibo inválida.");
+ if(t.operationId!==receipt.operationId||round>b.record.lastRound||t.before!==b.health||t.after!==a.health)throw Error("Parcela do recibo inválida.");
  const expected={health:health(b.health)-t.damage,record:{...copy(b.record),status:round===b.record.lastRound?"expired":"active",ticks:[...copy(b.record.ticks),t],lastOperation:{id:receipt.operationId,action:"apply"}}};
  if(actionHash(a)!==actionHash(expected))throw Error("Recibo financeiro de Brasas inconsistente.");
  return {before:b,after:a};
 }
 // Call only with a receipt retrieved from the target Actor, never a transported receipt.
 export function brasasUndoPlan(actor,key,receipt,{operationId,reason}={}){
- brasasKey(operationId);const current=brasasSnapshot(actor,key),original=applyReceipt(receipt,actor,key);
+ brasasKey(operationId);const current=brasasSnapshot(actor,key),original=validateBrasasApplyReceipt(receipt,actor,key);
  if(operationId===receipt.operationId||actionHash(current)!==actionHash(original.after)||current.record.lastOperation?.id!==receipt.operationId||current.record.lastOperation?.action!=="apply")throw Error("Somente a última parcela intacta de Brasas pode ser desfeita.");
  const after={health:original.before.health,record:{...copy(original.before.record),lastOperation:{id:operationId,action:"undo"}}};
  return {kind:"brasasParcel",version:1,action:"undo",operationId,originalId:receipt.operationId,before:current,after,round:receipt.tick.round,reason:optionalNote(reason),baseline:actionHash(current)};
