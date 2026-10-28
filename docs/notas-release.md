@@ -1,3 +1,13 @@
+## 0.64.0 — Defender com técnica
+
+Um conjunto integrado para escolher a técnica própria no ataque recebido, conferir defesa/custo/Asterismo/reserva e ativar com coordenação privada automática. O resultado corporal é abatido antes da resistência; Bloqueador e falha crítica têm caminhos próprios. Registro de resultado já resolvido e Ajustar defesa geram revisões sem outro dado, custo ou ação.
+
+Cartões antigos exigem atualizar a resistência depois de mudar a defesa. Aplicar/Ajustar/Desfazer de dano continuam separados; Undo não devolve recursos da ativação. Journals completam apenas gravação ausente, conservam ajustes/notas e não relançam ou regravam recibos históricos. Interrupções ficam disponíveis ao dono/mestre. Dados reais salvos e histórico começam recolhidos; não há aprovação humana ou justificativa obrigatória.
+
+Atacar, Técnicas, cópias e catálogos preservados. Não automatiza Sentidos, conversão do bloqueio em PVA, Guardar genérico/imobilidade, proteção de terceiros, componentes/área/Movendo defensivos, aquisição ou novas condições. [Uso, limites e ensaio](defesa-tecnica.md).
+
+Validação: testes de planos/runtime/transporte/resistência/dano/UI/hooks, suíte Linux/roundtrip/check/pacotes e12cenários Edge isolados com callbacks reais, teclado440px, área, retomada e privacidade. Core hospedado13.350 e conexões reais continuam separados.
+
 ## 0.63.0 — Dreno por parcelas informadas
 
 Dreno ganha um fluxo integrado em Combate → Efeitos com duração: registro gratuito, prazo finito informado, Aplicar/Ajustar/dispensar, Desfazer última parcela intacta, encerramento e histórico. Sugestão de1/3/5CEpela classe capturada, alocação explícita atual/extra e0já resolvido; sem transferência ao usuário ou nova condição. Teia configurada e composição Sustentada+Dreno canônicas têm suporte próprio.

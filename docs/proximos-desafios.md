@@ -1,5 +1,9 @@
 # Próximos desafios — após 0.30.0
 
+## Defesa por técnica — 0.64.0
+
+[Defesa por técnica](defesa-tecnica.md) reúne escolha própria/prévia/pagamento/teste, resultado já resolvido e revisões, abatimento corporal antes da resistência, cartões atualizados e recuperação do dono. Guarda dados/resultados uma vez e mantém Aplicar/Ajustar/Desfazer de dano; não exige aquisição/revisão/aceite nem lê fonte atacante oculta. A relação entre Sentidos e a conversão para PVA continuam na mesa; Guardar genérico, imobilidade, área/Movendo da defesa e novas condições não foram presumidos. Core hospedado13.350 e concorrência real continuam separados.
+
 ## Dreno por parcelas informadas — 0.63.0
 
 [Dreno](dreno.md) reúne fonte/perfil capturados, registro gratuito de prazo finito, retirada explícita de CEatual/extra, Aplicar/Ajustar/dispensar/Desfazer/encerrar/histórico, transporte privado e recuperação no alvo. O dono resolve sua própria perda sem possuir o atacante. Não amplia condições, calendário, área ou transferência à origem. Ativação/oposição/manutenção/Apoiar continuam separados. Guardar foi confrontado com as referências228–229/213–214/220e exemplos236/248/264: ações/sucessos, defesa por dano e escudos comHPsão contratos distintos; crescimento imóvel/reset/precedência permanecem manuais. Sem adicionar dados/reservas/absorção por analogia. Core hospedado13.350 e conexões reais seguem separados.

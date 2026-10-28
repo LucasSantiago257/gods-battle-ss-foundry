@@ -78,3 +78,8 @@ Siga [o ensaio de reparo](reparo-armaduras.md#ensaio-curto) em cópias de exerc�
 ## Opcional: Dreno por parcelas — 0.63.0
 
 Siga [o ensaio de Dreno](dreno.md#ensaio-curto): mestre registra fonte Sustentada canônica, dono do alvo aplica sem possuir o atacante, Ajustar CEatual/extra ou0já resolvido, Desfazer última parcela intacta, dispensar/encerrar e conferir histórico. Registre duração/primeira parcela; ativação/oposição/manutenção ficam separadas. Não cria condição, transferência de CEou efeito ao avançar rodada.
+
+
+## Opcional: defesa por técnica — 0.64.0
+
+Siga [o ensaio de defesa](defesa-tecnica.md#ensaio-curto) com cópias: cancelar prévia, ativar defesa, resistir/aplicar/Desfazer, ajustar resultado já resolvido sem custo novo e atualizar resistência antiga. Confira falha crítica sem dado de resistência e exceção Bloqueador. Repita em token sintético/área e confirme controles somente do dono/mestre. Dados do resultado pago ficam em Dados e histórico; não são relançados para mostrar o painel. PVA e relação entre Sentidos continuam nas decisões da mesa.

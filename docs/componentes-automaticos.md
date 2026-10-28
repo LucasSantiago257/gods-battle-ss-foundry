@@ -1,4 +1,4 @@
-# Componentes: cobertura atual — 0.63.0
+# Componentes: cobertura atual — 0.64.0
 
 O catálogo contém 59 referências de Big Bangs e incrementos, incluindo primordiais. Onze referências têm os apoios específicos listados abaixo: sete pertencem ao grupo numérico de Dano, Movendo tem configuração própria de ações e Brasas/Quebrar Armadura Sustentada/Dreno usam registros separados por rodada. Essa contagem mede referências com algum suporte, não execução integral dos seus textos nem proporção de conclusão do sistema. A cobertura pessoal de virtudes/habilidades/dádivas é outra matriz.
 
@@ -103,3 +103,8 @@ Quatro componentes possuem cálculo assistido neste marco, entre59 entradas do p
 Antes dos próximos grupos: Controle Atômico precisa esclarecer a relação entre cada0 e a tabela de graduação, além da CE extra por1; Controle sobre as Estrelas menciona perfurar defesas e bônus de PC, exigindo revisar resistência/dano; Guardar envolve tempo imóvel; Brasas/Dreno dependem de duração e cobrança recorrente; Movendo precisa representar movimento parcial/total sem presumir que sejam dois usos. Eles continuam manuais. Condições, confirmação percentual, sustentação e cura exigem operações/expiração próprias.
 
 Fontes conferidas: pp.217–218,228,230 e regras gerais de composição/ativação. Autor: Dhoko de Libra. Atribuição/licença em [ATTRIBUTION.md](../ATTRIBUTION.md). Testes locais e prévias não substituem validação em Foundry13.350 com mestre e jogadores.
+
+
+## Manobra separada: defesa por técnica — 0.64.0
+
+[Defender com técnica](defesa-tecnica.md) usa a projeção numérica das pp.213–214 antes da resistência. Esse fluxo não altera a contagem de onze referências com apoio acima: Guardar continua manual em suas Ações de Defesa e imobilidade. Não equivale a executar todos os efeitos de Kahn, escudos ou variantes do catálogo.
