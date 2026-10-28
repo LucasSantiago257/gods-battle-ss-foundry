@@ -55,7 +55,7 @@ export async function executeDamageRequest(message,userId) {
     const sourceAuthor=game.users.get(source.author?.id??source.user?.id);
     if (!sourceAuthor || !actor.testUserPermission(sourceAuthor,"OWNER")) throw Error("O resultado precisa ser publicado pelo defensor ou mestre.");
     const defense=request.action==="apply"?damageDefenseContext(actor,source,requester):null;
-    const validateDefense=async()=>{if(!defense?.active)return;const doc=await fromUuid(r.actorUuid);if(doc!==actor||primaryGM()?.id!==game.user.id||!actor.testUserPermission(requester,"OWNER")||!sourceAuthor||!actor.testUserPermission(sourceAuthor,"OWNER"))throw Error("Mestre, defensor ou permissão mudaram durante o dano.");defense.validate();};
+    const validateDefense=async()=>{if(!defense?.active)return;const doc=await fromUuid(r.actorUuid);if(doc!==actor||primaryGM()?.id!==game.user.id||!actor.testUserPermission(requester,"OWNER")||!sourceAuthor||!actor.testUserPermission(sourceAuthor,"OWNER"))throw Error("Mestre, defensor ou permissão mudaram durante o dano.");assertNoTechniqueInterruption(actor);defense.validate();};
     await validateDefense();
     key=r.rootMessageId;
     const history=actor.flags?.[SYSTEM_ID]?.damageOperations??{},previous=history[key];

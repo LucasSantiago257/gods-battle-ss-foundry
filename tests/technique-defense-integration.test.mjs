@@ -27,3 +27,6 @@ test("permissão revogada no diálogo de recuperação impede pedido",async()=>{
 
 
 test("cartão sem resistência omite dado/dificuldade fictícios e mantém valores e ações",async()=>{const {readFile}=await import("node:fs/promises"),{default:Handlebars}=await import("handlebars");const render=Handlebars.compile(await readFile(new URL("../templates/chat.hbs",import.meta.url),"utf8"));const f=integration();await f.resolved({outcome:"criticalFailure",defense:0});await f.resist();const html=render(f.renders.at(-1).context);assert.match(html,/Sem resistência/);assert.match(html,/100 PV/);assert.match(html,/data-action="applyDamage"/);assert.doesNotMatch(html,/Detalhes da rolagem|Dificuldade|Dados:/);});
+
+
+test("operação de recursos surgida após journal impede aplicar dano técnico",async()=>{const f=integration();const card=await f.resist(),before=cash(f);f.hooks.after=(_tag,_actor,data)=>{if(Object.entries(data).some(([k,v])=>k.includes("damageOperations")&&v.status==="prepared"))f.actor.flags[ID].effectOperations={late:{kind:"techniqueDefense",status:"prepared"}};};const m=await f.damage(card);assert.equal(response(m).ok,false);assert.deepEqual(cash(f),before);assert.equal(f.armor.system.health.value,30);});
