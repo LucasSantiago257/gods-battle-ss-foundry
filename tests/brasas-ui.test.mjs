@@ -61,3 +61,5 @@ test("template conserva ações claras e detalhes recolhidos, escapando notas",a
 });
 
 test("callback de ajuste reautoriza antes de ler flags após perdaOWNER",async()=>{const f=setup(),r=view(f);foundry.applications.api.DialogV2.wait=async c=>{f.denied.add(f.actor.uuid);Object.defineProperty(f.actor,"flags",{get(){throw Error("private flags read");}});return c.buttons.find(b=>b.action==="apply").callback(null,{form:form()});};await assert.rejects(apply(f,r,{adjust:true}),/indisponíveis/);assert.equal(f.collection.size,0);});
+
+test("interrupção continua visível com mestre offline e registro removido",async()=>{const f=setup();game.user=f.gm;f.faults.push({tag:"commit",phase:"before"});await assert.rejects(f.apply({operationId:"pending"}));delete f.actor.flags[ID].persistentEffects.fire;game.user=f.owner;game.users.activeGM=null;const ctx=brasasContext(f.actor);assert.equal(ctx.visible,true);assert.equal(ctx.offline,true);assert.equal(ctx.interruptions.length,1);assert.equal(ctx.interruptions[0].canReview,false);assert.equal(f.actor.system.resources.health.value,100);});

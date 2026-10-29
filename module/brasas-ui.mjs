@@ -51,7 +51,7 @@ export function brasasContext(actor){
   rows.push(row);
  }
  for(const [id,op]of Object.entries(flags(actor).effectOperations??{}))if(op?.kind==="brasasParcel"&&op.status==="prepared"){
-  try{brasasKey(id);ready(actor,{readOnly:true});interruptions.push({id,canReview:true,canComplete:canComplete(actor,op)});}catch{}
+  try{brasasKey(id);const online=!!primaryGM()?.active;interruptions.push({id,canReview:online,canComplete:online&&canComplete(actor,op)});}catch{}
  }
  return {visible:rows.length>0||interruptions.length>0,rows,interruptions,waiting,offline:!primaryGM()?.active,warning:primaryGM()?.active&&!interruptions.length?blocked:undefined};
 }
