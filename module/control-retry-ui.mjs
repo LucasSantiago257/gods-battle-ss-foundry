@@ -10,7 +10,7 @@ import {controlRetryPrivateMessage,submitControlRetryRequest} from "./control-re
 const flags=a=>a.flags?.[SYSTEM_ID]??{},classes={bronze:"Bronze",silver:"Prata",gold:"Ouro"},listeners=new WeakMap();
 export function canManageControlRetry(actor,user=game.user){return !!user&&actor?.type==="knight"&&typeof actor.uuid==="string"&&/^(Actor\.|Scene\.)/.test(actor.uuid)&&!!actor.testUserPermission?.(user,"OWNER")&&(user.isGM||!(actor.isToken&&(actor.token?.hidden||actor.token?.object?.visible===false)));}
 function ready(actor,{id=null,readOnly=false}={}){
- if(!canManageControlRetry(actor))throw Error("Controle indisponível.");if(!primaryGM()?.active)throw Error("Mestre offline.");
+ if(!canManageControlRetry(actor))throw Error("Controle indisponível.");const gm=primaryGM();if(!gm?.active||!gm.isGM||game.users?.get?.(gm.id)!==gm||game.users?.get?.(game.user?.id)!==game.user)throw Error("Mestre offline.");
  if(!readOnly){assertNoTechniqueInterruption(actor,{effectOperationId:id});if(flags(actor).levelOperation?.status==="prepared"||Object.values(flags(actor).damageOperations??{}).some(o=>["prepared","repair"].includes(o.status)))throw Error("Confira a operação interrompida.");}
 }
 async function current(actor,user,options){if(game.user!==user)throw Error("Usuário mudou.");ready(actor,options);if(await fromUuid(actor.uuid)!==actor)throw Error("Ficha removida ou substituída.");if(game.user!==user)throw Error("Usuário mudou.");ready(actor,options);}
