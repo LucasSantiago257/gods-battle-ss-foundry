@@ -1,0 +1,12 @@
+<details class="calculation-ledger control-retry-record" data-control-retry-owned data-effect-record data-effect-search="Controle {{classification}}" data-effect-pending="{{#if pendingRounds}}true{{else}}false{{/if}}" {{#if canRetry}}open{{/if}}>
+  <summary>Controle{{#if classification}} · {{classification}}{{/if}} · {{displayState}}</summary>
+  {{#if classification}}<p>PC {{difficulty}} · {{#if unlimited}}CE ilimitada{{else}}{{cost}} CE{{/if}} · rodadas {{firstRound}}–{{lastRound}}</p>{{/if}}
+  {{#if warning}}<p role="status">{{warning}}</p>{{/if}}
+  <div class="control-retry-actions">
+    {{#if canRetry}}<button type="button" data-action="retryOwnedControl" data-effect="{{id}}" data-signature="{{signature}}">Nova resistência · {{#if unlimited}}CE ilimitada{{else}}{{cost}} CE{{/if}}</button>{{/if}}
+    {{#if canResolveGM}}<button type="button" data-action="quickResolveEffect" data-effect="{{id}}" data-round="{{nextRound}}" data-signature="{{quickSignature}}">Registrar rodada {{nextRound}}</button>{{/if}}
+    {{#if canEndGM}}<button type="button" data-action="endEffect" data-effect="{{id}}">Encerrar efeito</button>{{/if}}
+  </div>
+  {{#if history}}<details><summary>Resistências e dados</summary>{{#each history}}<p>Rodada {{round}} · {{total}} contra {{difficulty}} · {{#if unlimited}}CE ilimitada{{else}}{{cost}} CE · {{fromCurrent}} atual / {{fromExtra}} extra{{/if}}{{#if end}} · encerrado{{/if}}{{#if reason}} · {{reason}}{{/if}}</p>{{#if dice}}<p>Dados {{#each dice.results}}{{this}} {{/each}} · modificador {{dice.modifier}}</p>{{/if}}{{/each}}</details>{{/if}}
+  {{#if reason}}<details><summary>Notas</summary><p>{{reason}}</p></details>{{/if}}
+</details>
