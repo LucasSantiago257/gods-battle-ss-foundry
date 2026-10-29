@@ -183,3 +183,9 @@
 .gods-battle .brasas-actions{display:flex;flex-wrap:wrap;gap:8px}
 .gods-battle .brasas-actions button{white-space:normal;flex:0 1 auto}
 .brasas-dialog input,.brasas-dialog textarea{box-sizing:border-box;max-width:100%}
+
+.message:has([data-gods-battle-internal-control-retry]),[data-gods-battle-internal-control-retry]{display:none!important}
+.gods-battle .control-retry-actions{display:flex;flex-wrap:wrap;gap:.35rem}
+.gods-battle .control-retry-dialog input,.gods-battle .control-retry-dialog select,.gods-battle .control-retry-dialog textarea{max-width:100%}
+
+.gods-battle.control-retry-dialog{background:#142035;color:#e6edfa;padding:.65rem;border-radius:.3rem}

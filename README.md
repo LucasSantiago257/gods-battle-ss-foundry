@@ -1,5 +1,7 @@
 # Saint Seiya — A Batalha dos Deuses para FoundryVTT
 
+**0.66.0 — Controle pelo dono:** nova resistência genérica com prévia, ajustes, pagamento único, resultado público e recuperação própria, sem acessar atacante oculto ou pedir aprovação humana. Dados/notas/histórico recolhidos. [Uso e ensaio](docs/controle-dono.md).
+
 **0.65.0 — Brasas pelo dono:** Aplicar/Ajustar/dispensar/Desfazer última parcela intacta, prazo/histórico e recuperação própria na ficha do alvo. Coordenação privada automática, sem possuir o atacante ou pedir aprovação humana. [Uso e ensaio](docs/brasas.md).
 
 **0.64.0 — defesa por técnica:** prévia e ativação no ataque recebido, registro de resultado já resolvido, abatimento antes da resistência, revisão de cartões, recuperação e dados salvos sem nova rolagem. Dono/mestre operam com coordenação privada automática. [Uso e ensaio](docs/defesa-tecnica.md).

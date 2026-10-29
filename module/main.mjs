@@ -1,3 +1,5 @@
+import {refreshControlRetrySheets} from "./control-retry-ui.mjs";
+import {enqueueControlRetryRequest,resumeControlRetryRequests,renderControlRetryRequest,notifyControlRetryResponse} from "./control-retry-requests.mjs";
 import {refreshBrasasSheets} from "./brasas-ui.mjs";
 import {enqueueBrasasRequest,resumeBrasasRequests,renderBrasasRequest,notifyBrasasResponse} from "./brasas-requests.mjs";
 import {renderTechniqueDefenseChat,refreshTechniqueDefenseCards,refreshTechniqueDefenseSheets} from "./technique-defense-ui.mjs";
@@ -35,7 +37,7 @@ Hooks.once("init", async () => {
   const registry = foundry.applications.apps.DocumentSheetConfig;
   registry.registerSheet(Actor, SYSTEM_ID, KnightSheet, {types: ["knight"], makeDefault: true, label: "Ficha de Cavaleiro"});
   registry.registerSheet(Item, SYSTEM_ID, ContentSheet, {types: Object.keys(ITEM_TYPES), makeDefault: true, label: "Conteúdo — A Batalha dos Deuses"});
-  await foundry.applications.handlebars.loadTemplates([`systems/${SYSTEM_ID}/templates/fields.hbs`, `systems/${SYSTEM_ID}/templates/items.hbs`, `systems/${SYSTEM_ID}/templates/level-guide.hbs`, `systems/${SYSTEM_ID}/templates/technique-builder.hbs`, `systems/${SYSTEM_ID}/templates/effects-panel.hbs`, `systems/${SYSTEM_ID}/templates/effect-record.hbs`, `systems/${SYSTEM_ID}/templates/drain-record.hbs`, `systems/${SYSTEM_ID}/templates/brasas-record.hbs`, `systems/${SYSTEM_ID}/templates/armor-repair-record.hbs`, `systems/${SYSTEM_ID}/templates/armor-repairs-panel.hbs`]);
+  await foundry.applications.handlebars.loadTemplates([`systems/${SYSTEM_ID}/templates/fields.hbs`, `systems/${SYSTEM_ID}/templates/items.hbs`, `systems/${SYSTEM_ID}/templates/level-guide.hbs`, `systems/${SYSTEM_ID}/templates/technique-builder.hbs`, `systems/${SYSTEM_ID}/templates/effects-panel.hbs`, `systems/${SYSTEM_ID}/templates/effect-record.hbs`, `systems/${SYSTEM_ID}/templates/drain-record.hbs`, `systems/${SYSTEM_ID}/templates/brasas-record.hbs`, `systems/${SYSTEM_ID}/templates/control-retry-record.hbs`, `systems/${SYSTEM_ID}/templates/armor-repair-record.hbs`, `systems/${SYSTEM_ID}/templates/armor-repairs-panel.hbs`]);
   game.godsBattle = {createStarterCompendium, openCatalog, explainPassives: actor => evaluatePassives(actor.system,actor.items.contents),attackTarget,beginCreation,openTestActors,importTestActors,beginLevelUp,requestLevelUp,toggleActionControl};
 });
 
@@ -111,3 +113,11 @@ Hooks.once("ready",resumeBrasasRequests);
 Hooks.on("updateUser",()=>resumeBrasasRequests());
 for(const hook of ["createActor","updateActor","deleteActor","createCombat","updateCombat","deleteCombat","createCombatant","updateCombatant","deleteCombatant","createToken","updateToken","deleteToken","controlToken","updateUser","deleteUser"])Hooks.on(hook,refreshBrasasSheets);
 for(const hook of ["createChatMessage","updateChatMessage","deleteChatMessage"])Hooks.on(hook,message=>{if(message.flags?.[SYSTEM_ID]?.brasasRequest)refreshBrasasSheets();});
+
+Hooks.on("renderChatMessageHTML",renderControlRetryRequest);
+Hooks.on("createChatMessage",enqueueControlRetryRequest);
+Hooks.on("updateChatMessage",notifyControlRetryResponse);
+Hooks.once("ready",resumeControlRetryRequests);
+Hooks.on("updateUser",()=>resumeControlRetryRequests());
+for(const hook of ["createActor","updateActor","deleteActor","createCombat","updateCombat","deleteCombat","createCombatant","updateCombatant","deleteCombatant","createToken","updateToken","deleteToken","controlToken","updateUser","deleteUser"])Hooks.on(hook,refreshControlRetrySheets);
+for(const hook of ["createChatMessage","updateChatMessage","deleteChatMessage"])Hooks.on(hook,message=>{if(message.flags?.[SYSTEM_ID]?.controlRetryRequest)refreshControlRetrySheets();});

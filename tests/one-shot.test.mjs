@@ -1,3 +1,4 @@
+import {controlRetryContextForSheet} from "../module/control-retry-ui.mjs";
 import {areaProgressRow} from "../module/area-progress-rules.mjs";
 import {registerArmorBreak} from "../module/armor-effects.mjs";
 import {resolveEffect} from "../module/effects.mjs";
@@ -112,8 +113,8 @@ test("ensaio Controle acompanha prazo/histórico e Sustentada recarrega uma vez,
  const r=rehearsal(),health=r.doran.system.resources.health.value,ce=r.lyra.system.resources.cosmo.value;
  const root=await r.activate(r.lyra.items.get("demoControl00001")),resistance=await r.resist(root,[3,2,2]);assert.equal(resistance.flags[ID].resolvedDamage,undefined);
  game.user=r.gm;r.controls.answer={rounds:resistance.flags[ID].controlResolution.rounds,description:"Prazo de treino",reason:""};const control=await registerControl(resistance);assert.equal(control.firstRound,1);assert.equal(control.lastRound,control.rounds);assert.equal(control.damage,0);
- assert.ok(effectPanelContext(effectSheetContext(r.doran)).active.some(row=>row.id===control.id));
- r.controls.answer="";await endEffect(r.doran,control.id);assert.ok(effectPanelContext(effectSheetContext(r.doran)).history.some(row=>row.id===control.id));
+ assert.ok(effectPanelContext([...effectSheetContext(r.doran),...controlRetryContextForSheet(r.doran).rows]).active.some(row=>row.id===control.id));
+ r.controls.answer="";await endEffect(r.doran,control.id);assert.ok(effectPanelContext([...effectSheetContext(r.doran),...controlRetryContextForSheet(r.doran).rows]).history.some(row=>row.id===control.id));
  r.round(2);const sustained=r.lyra.items.get("demoSustain00001"),activation=await r.activate(sustained);assert.equal(activation.flags[ID].technique.success,true);
  game.user=r.gm;r.controls.answer={itemUuid:sustained.uuid,targetUuid:r.doran.uuid,maintenanceMode:"round",firstRound:2,rounds:null,reason:""};const record=await registerSustained(r.lyra);
  assert.equal(record.lastRound,3);assert.equal(r.lyra.system.resources.cosmo.value,ce-4);r.round(4);

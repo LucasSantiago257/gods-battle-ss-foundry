@@ -1,3 +1,11 @@
+## 0.66.0 — Nova resistência de Controle pelo dono
+
+O próprio alvo agora inicia a tentativa genérica de Controle registrado: prévia de custo/PC/parada/saldos, ajustes opcionais, resultado público e escolha de encerrar/manter prazo em sucesso. O mestre coordena automaticamente por mensagens privadas, sem aprovação humana. Dono não precisa acessar a origem oculta; Atacar/Técnicas e catálogos preservados.
+
+Dados e pagamento salvos uma vez, journals rolling/ready, publicação recuperável do mesmo resultado e controles de recuperação acessíveis ao dono. Recibos antigos não regravam a ficha; notas/ajustes tardios são preservados. CE extra/reservada/ilimitada mantêm o contrato anterior, sem excesso/PV/ações/condições ou nova regra de duração. O registro inicial e os recuperadores legados permanecem. Valores e avisos reais visíveis; dados/histórico/notas recolhidos. [Uso, limites e ensaio](controle-dono.md).
+
+Validação:1142 testes Linux completos, zero falhas/exclusões, roundtrip/check/11packs888Items3Actors/pacotes. Doze cenários Edge isolados com templates/callbacks/hooks/runtime reais, teclado440px, recuperação e privacidade; capturas inspecionadas. Core hospedado13.350 e concorrência real continuam separados.
+
 ## 0.65.0 — Brasas pelo dono do alvo
 
 Brasas registrado ganha um fluxo completo no painel de efeitos: o dono aplica a própria perda, ajusta zero/frações, dispensa, desfaz a última parcela intacta ou encerra, com prazo e histórico. O mestre coordena automaticamente por transporte privado autenticado, sem solicitação visível ou aprovação humana. A última parcela concluída conserva Desfazer evidente; alterações posteriores não são apagadas por recibos antigos.
