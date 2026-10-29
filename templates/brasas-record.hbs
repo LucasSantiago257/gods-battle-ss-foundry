@@ -1,4 +1,4 @@
-<details class="calculation-ledger brasas-record" data-effect-record data-effect-search="Brasas {{classification}}" data-effect-pending="{{#if pendingRounds}}true{{else}}false{{/if}}" {{#if canAdjust}}open{{else}}{{#if canUndo}}open{{/if}}{{/if}}>
+<details class="calculation-ledger brasas-record" data-brasas-owned data-effect-record data-effect-search="Brasas {{classification}}" data-effect-pending="{{#if pendingRounds}}true{{else}}false{{/if}}" {{#if canAdjust}}open{{else}}{{#if canUndo}}open{{/if}}{{/if}}>
   <summary>Brasas{{#if classification}} · {{classification}} · {{amount}} PV{{/if}} · {{displayState}}</summary>
   {{#if warning}}<p class="note">{{warning}}</p>{{/if}}
   {{#if classification}}<p>PV {{health}} · rodadas {{firstRound}}–{{lastRound}}</p>{{/if}}

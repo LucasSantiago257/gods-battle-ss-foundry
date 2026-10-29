@@ -4,6 +4,7 @@ import {effectView} from "./effect-rules.mjs";
 import {brasasKey,brasasState,brasasSnapshot,brasasParcelPlan,brasasUndoPlan} from "./brasas-rules.mjs";
 import {brasasSame,brasasEncounter,brasasApplicationState,validateBrasasJournal} from "./brasas-records.mjs";
 import {brasasPrivateMessage,submitBrasasRequest} from "./brasas-requests.mjs";
+const previewListeners=new WeakMap();
 const flags=a=>a.flags?.[SYSTEM_ID]??{},classes={bronze:"Bronze",silver:"Prata",gold:"Ouro"};
 export function canManageBrasas(actor,user=game.user){return !!user&&actor?.type==="knight"&&typeof actor.uuid==="string"&&/^(Actor\.|Scene\.)/.test(actor.uuid)&&!!actor.testUserPermission?.(user,"OWNER")&&(user.isGM||!(actor.isToken&&(actor.token?.hidden||actor.token?.object?.visible===false)));}
 function ready(actor,{id=null,readOnly=false}={}){
@@ -61,11 +62,11 @@ export function installBrasasPreview(form,actor,key,{signature,round,user=game.u
    ready(actor);if(game.user!==user||brasasApplicationState(actor,key)!==signature)throw Error("A prévia mudou. Reabra o ajuste.");
    const p=brasasParcelPlan(actor,key,{operationId:"preview",...formOptions(form)});if(p.tick.round!==round)throw Error("A rodada mudou.");if(out)out.textContent=`PV ${p.before.health} → ${p.after.health}`;if(button)button.disabled=false;
   }catch(error){if(out)out.textContent=error.message;if(button)button.disabled=true;}};
- form.addEventListener("input",update);form.addEventListener("change",update);update();
+ const previous=previewListeners.get(form);if(previous){form.removeEventListener?.("input",previous);form.removeEventListener?.("change",previous);}previewListeners.set(form,update);form.addEventListener("input",update);form.addEventListener("change",update);update();
 }
 export async function applyBrasasParcel(actor,key,{signature,round,adjust=false,skip=false}={}){
  ready(actor);brasasKey(key);if(typeof adjust!=="boolean"||typeof skip!=="boolean"||adjust&&skip)throw Error("Ação de Brasas inválida.");const user=game.user,row=brasasContext(actor).rows.find(r=>r.id===key);
- if(!row?.canAdjust||signature!==row.applySignature||round!==row.nextRound||typeof skip!=="boolean")throw Error("A parcela exibida de Brasas mudou.");let options={skip};
+ if(!row)throw Error("Brasas indisponíveis.");if(!row.canAdjust)throw Error(row.status==="expired"?"Duração concluída.":row.status==="ended"?"Brasas encerradas.":row.warning??(row.pendingRounds===0&&row.nextRound?"Aguardando próxima rodada.":row.displayState));if(signature!==row.applySignature||round!==row.nextRound||typeof skip!=="boolean")throw Error("A parcela exibida de Brasas mudou.");let options={skip};
  if(adjust){
   const content=`<div class="brasas-dialog"><p>Rodada ${round} · PV ${row.health}</p><label>Dano corporal<input type="number" name="damage" min="0" max="1000000" step="any" value="${row.amount}"></label><p data-brasas-preview role="status" aria-live="polite"></p><details><summary>Notas</summary><textarea name="reason" maxlength="2000" aria-label="Notas opcionais"></textarea></details></div>`;
   options=await foundry.applications.api.DialogV2.wait({window:{title:"Ajustar Brasas"},content,render:(_e,d)=>installBrasasPreview(d.form??d.element?.querySelector("form"),actor,key,{signature,round,user}),buttons:[{action:"apply",label:"Aplicar",callback:(_e,b)=>{const o=formOptions(b.form);brasasParcelPlan(actor,key,{operationId:"preview",...o});return o;}},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});if(!options)return;
@@ -86,7 +87,8 @@ export async function openBrasasRecovery(actor,id){
  await currentActor(actor,user,{readOnly:true});if(!brasasSame(flags(actor).effectOperations?.[id],original))throw Error("O journal de Brasas mudou.");
  return submitBrasasRequest({action:answer.action,actorUuid:actor.uuid,operationId:id,reason:answer.reason});
 }
+export function sanitizeBrasasSheet(root,actor){if(!canManageBrasas(actor))for(const element of root?.querySelectorAll?.("[data-brasas-owned]")??[])element.remove();}
 export function refreshBrasasSheets(){
  const actors=[...(game.actors?.contents??[]),...(globalThis.canvas?.tokens?.placeables??[]).map(t=>t.actor),...(game.combats?.contents??[]).flatMap(c=>(c.combatants?.contents??[]).map(m=>m.actor))];
- for(const actor of new Set(actors))for(const app of Object.values(actor?.apps??{}))if(app.rendered)app.render();
+ for(const actor of new Set(actors))for(const app of Object.values(actor?.apps??{}))if(app.rendered){sanitizeBrasasSheet(app.element,actor);app.render();}
 }
