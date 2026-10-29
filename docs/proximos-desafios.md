@@ -1,5 +1,11 @@
 # Próximos desafios — após 0.30.0
 
+## Brasas pelo dono — 0.65.0
+
+[Brasas](brasas.md) reúne aplicação pelo dono, ajuste/dispensa, Desfazer última parcela nova intacta, prazos/histórico, mensagens privadas e recuperação no alvo. Registro inicial continua explícito do mestre; sem nova regra, condição, CE ou relógio automático. Substitui a restrição de execução somente pelo mestre dos marcos históricos abaixo, preservando os journals antigos. QA isolado e suíte completa não confirmam core hospedado13.350 ou concorrência real.
+
+A avaliação de iniciativa405–408 foi encerrada: manifesto já usa @combat.initiative e o cálculo deriva Sentido+bônus. A representação booleana de Velocidade Superada não define precedência +/++/+++ ou simultaneidade completas; comparação numérica e conferência manual permanecem. Não há nova rolagem, desempate presumido ou trava por vez. Guardar, área/Movendo defensivos, Sentidos e demais lacunas já delimitadas não são reabertos por contagem.
+
 ## Defesa por técnica — 0.64.0
 
 [Defesa por técnica](defesa-tecnica.md) reúne escolha própria/prévia/pagamento/teste, resultado já resolvido e revisões, abatimento corporal antes da resistência, cartões atualizados e recuperação do dono. Guarda dados/resultados uma vez e mantém Aplicar/Ajustar/Desfazer de dano; não exige aquisição/revisão/aceite nem lê fonte atacante oculta. A relação entre Sentidos e a conversão para PVA continuam na mesa; Guardar genérico, imobilidade, área/Movendo da defesa e novas condições não foram presumidos. Core hospedado13.350 e concorrência real continuam separados.

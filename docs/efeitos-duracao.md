@@ -1,3 +1,7 @@
+# Brasas pelo dono — 0.65.0
+
+[Brasas](brasas.md) agora permite ao dono do alvo Aplicar/Ajustar/dispensar/Desfazer última parcela intacta/encerrar, com histórico e recuperação próprios. O mestre coordena automaticamente por mensagens privadas; o jogador não precisa acessar a origem. Registro inicial continua explícito do mestre. Este fluxo substitui os controles exclusivamente GM e a ausência de Undo descritos nos marcos históricos abaixo. Journals genéricos preparados antigos conservam seu recuperador; parcelas antigas não ganham reembolso retroativo. Nenhuma regra de dano, CE, duração ou condição nova foi introduzida.
+
 # Dreno — 0.63.0
 
 [Dreno](dreno.md) integra o painel e os prazos com perda de CE, Aplicar/Ajustar/dispensar, Desfazer da última parcela intacta, encerramento e recuperação próprios. O dono do alvo resolve sua perda sem possuir a origem. A última parcela concluída continua na área principal enquanto Desfazer estiver disponível; encerramento explícito ou alteração dos saldos a leva ao histórico. As seções abaixo registram os contratos anteriores de PV/Brasas/Sustentada/Residual e continuam separadas da nova operação de CE.
