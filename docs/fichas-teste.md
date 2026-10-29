@@ -83,3 +83,7 @@ Siga [o ensaio de Dreno](dreno.md#ensaio-curto): mestre registra fonte Sustentad
 ## Opcional: defesa por técnica — 0.64.0
 
 Siga [o ensaio de defesa](defesa-tecnica.md#ensaio-curto) com cópias: cancelar prévia, ativar defesa, resistir/aplicar/Desfazer, ajustar resultado já resolvido sem custo novo e atualizar resistência antiga. Confira falha crítica sem dado de resistência e exceção Bloqueador. Repita em token sintético/área e confirme controles somente do dono/mestre. Dados do resultado pago ficam em Dados e histórico; não são relançados para mostrar o painel. PVA e relação entre Sentidos continuam nas decisões da mesa.
+
+## Opcional: Brasas pelo dono — 0.65.0
+
+Siga [o ensaio de Brasas](brasas.md#ensaio-curto): mestre registra fonte Dano+Brasas, duração e primeira parcela após resolver o ataque; dono aplica sem possuir o atacante, Ajustar aceita zero/fração, Dispensar consome a rodada e Desfazer só a última parcela intacta. A última concluída conserva o botão na área principal. Cancelar por Escape não altera a ficha. Encerrar conserva PV e histórico; recuperação do dono não repete dano. Repita em vinculado/sintético e observador, sem provocar falhas artificiais no mundo de jogo. Registro/rodadas não criam ativação, CE ou condição nova.

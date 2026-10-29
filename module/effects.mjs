@@ -1,3 +1,4 @@
+import {brasasContext,applyBrasasParcel,finishBrasas,openBrasasRecovery} from "./brasas-ui.mjs";
 import {openTechniqueDefenseRecovery} from "./technique-defense-recovery.mjs";
 import {drainContext,applyDrainParcel,finishDrain,openDrainRecovery} from "./drain-ui.mjs";
 import {openArmorRepairRecovery} from "./armor-repair-ui.mjs";
@@ -17,6 +18,7 @@ import {actionHash} from "./action-rules.mjs";
 import {brasasSource,effectRecords,effectSourceState,effectDefinition,encounterForEffect,effectView,effectState,effectTickPlan} from "./effect-rules.mjs";
 const escape=value=>String(value??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;");
 const safeKey=key=>{if(!/^[a-zA-Z0-9]{1,32}$/.test(key??""))throw Error("Registro de efeito inválido.");return key;};
+function readable(actor){if(!game.user?.isGM&&!actor?.testUserPermission?.(game.user,"OWNER"))throw Error("Efeito indisponível para este usuário.");}
 function available(actor,operationId=null) {
  if(!isPrimaryGM()||actor?.type!=="knight"||!actor.isOwner)throw Error("Somente o mestre responsável pode registrar ou resolver efeitos.");
  assertNoTechniqueInterruption(actor,{effectOperationId:operationId});
@@ -28,7 +30,7 @@ async function guard(actor,baseline,operationId=null) {
  available(actor,operationId);
 }
 const effectSnapshot=(actor,key)=>({health:actor.system.resources.health.value,record:structuredClone(effectRecords(actor)[key])});
-export const effectOperationContext=actor=>Object.entries(actor.flags?.[SYSTEM_ID]?.effectOperations??{}).filter(([,r])=>!["armorRepair","armorRepairTarget","cosmoDrain","techniqueDefense"].includes(r.kind)).map(([id,r])=>({id,...r,canReview:game.user.isGM&&(r.status==="prepared"||["controlRetry","sustainOpposition","residualDeposit","residualResistance"].includes(r.kind)&&r.status==="applied"&&!r.published)})).filter(r=>r.status==="prepared"||["controlRetry","sustainOpposition","residualDeposit","residualResistance"].includes(r.kind)&&r.status==="applied"&&!r.published);
+export const effectOperationContext=actor=>Object.entries(actor.flags?.[SYSTEM_ID]?.effectOperations??{}).filter(([,r])=>!["armorRepair","armorRepairTarget","cosmoDrain","techniqueDefense","brasasParcel"].includes(r.kind)).map(([id,r])=>({id,...r,canReview:game.user.isGM&&(r.status==="prepared"||["controlRetry","sustainOpposition","residualDeposit","residualResistance"].includes(r.kind)&&r.status==="applied"&&!r.published)})).filter(r=>r.status==="prepared"||["controlRetry","sustainOpposition","residualDeposit","residualResistance"].includes(r.kind)&&r.status==="applied"&&!r.published);
 export function effectSources() {
  const actors=new Map();for(const actor of [...(game.actors?.contents??[]),...(globalThis.canvas?.tokens?.placeables??[]).map(t=>t.actor),...(game.combats?.contents??[]).flatMap(c=>(c.combatants?.contents??[]).map(m=>m.actor))])if(actor?.uuid)actors.set(actor.uuid,actor);
  const sources=[];for(const actor of actors.values())for(const item of actor.items?.contents??[])try{const source=brasasSource(item);sources.push({...source,label:`${actor.name} · ${item.name} · ${source.damage} PV/rodada`,baseline:effectSourceState(item)});}catch{/* Somente composições canônicas aptas. */}
@@ -36,13 +38,13 @@ export function effectSources() {
 }
 export function effectSheetContext(actor) {
  let quickSignature=null;try{available(actor);quickSignature=effectState(actor);}catch{/* Atalho indisponível enquanto houver bloqueio ou falta de permissão. */}
- return Object.entries(effectRecords(actor)).filter(([,r])=>r.kind!=="cosmoDrain").map(([id,record])=>{const isArmorBreak=record.kind==="armorBreak",view=isArmorBreak?armorBreakView(actor,record):effectView(actor,record),signature=quickSignature?(isArmorBreak?armorBreakState(actor):quickSignature):null;let canQuickResolve=false;if(quickSignature&&actor.isOwner&&view.canResolve)try{(isArmorBreak?armorBreakTickPlan:effectTickPlan)(actor,record);canQuickResolve=true;}catch{/* Registro inválido mantém revisão manual. */}let quickSustain=null;if(quickSignature&&record.kind==="sustained"&&view.canPay)try{quickSustain=sustainedPaymentPreview(actor,id);}catch{/* Saldo, alvo ou operação indisponível. */}const deadline=effectDeadline(view),displayState=!view.foreign&&view.context&&(["manual","brasas","sustained"].includes(record.kind)||isArmorBreak&&!!view.armorId)&&deadline.deadlinePriority<3?deadline.deadlineLabel:[view.state,deadline.deadlineLabel].filter(Boolean).join(" · ");return {id,...record,...view,...deadline,displayState,quickSignature:signature,canQuickResolve,quickSustain,isArmorBreak,quickDamage:record.kind==="brasas"||isArmorBreak?record.damage:0,canResistResidual:canResistResidual(actor,id),residualResistances:Object.values(record.residual?.resistance?.attempts??{}).toSorted((a,b)=>a.attempt-b.attempt),isResidual:record.kind==="residual",isSustained:record.kind==="sustained",sustainModeLabel:record.sustain?.mode==="once"?"única até encerrar":"por rodada",oppositionRound:game.combat?.round,canOppose:canOpposeSustained(actor,id),sustainOppositions:Object.values(record.sustain?.oppositions??{}).toSorted((a,b)=>a.round-b.round||a.attempt-b.attempt),canRetryControl:canRetryControl(actor,id),controlRetries:Object.values(record.controlRetries??{}).toSorted((a,b)=>a.round-b.round),canPay:!!quickSignature&&view.canPay,sustainPayments:Object.values(record.sustain?.payments??{}).toSorted((a,b)=>a.round-b.round),canEnd:!!quickSignature&&record.status==="active",canResolve:!!quickSignature&&view.canResolve,ticks:Object.values(record.ticks??{}).toSorted((a,b)=>a.round-b.round)};}).toSorted((a,b)=>b.time-a.time);
+ return Object.entries(effectRecords(actor)).filter(([,r])=>!["cosmoDrain","brasas"].includes(r.kind)).map(([id,record])=>{const isArmorBreak=record.kind==="armorBreak",view=isArmorBreak?armorBreakView(actor,record):effectView(actor,record),signature=quickSignature?(isArmorBreak?armorBreakState(actor):quickSignature):null;let canQuickResolve=false;if(quickSignature&&actor.isOwner&&view.canResolve)try{(isArmorBreak?armorBreakTickPlan:effectTickPlan)(actor,record);canQuickResolve=true;}catch{/* Registro inválido mantém revisão manual. */}let quickSustain=null;if(quickSignature&&record.kind==="sustained"&&view.canPay)try{quickSustain=sustainedPaymentPreview(actor,id);}catch{/* Saldo, alvo ou operação indisponível. */}const deadline=effectDeadline(view),displayState=!view.foreign&&view.context&&(["manual","brasas","sustained"].includes(record.kind)||isArmorBreak&&!!view.armorId)&&deadline.deadlinePriority<3?deadline.deadlineLabel:[view.state,deadline.deadlineLabel].filter(Boolean).join(" · ");return {id,...record,...view,...deadline,displayState,quickSignature:signature,canQuickResolve,quickSustain,isArmorBreak,quickDamage:record.kind==="brasas"||isArmorBreak?record.damage:0,canResistResidual:canResistResidual(actor,id),residualResistances:Object.values(record.residual?.resistance?.attempts??{}).toSorted((a,b)=>a.attempt-b.attempt),isResidual:record.kind==="residual",isSustained:record.kind==="sustained",sustainModeLabel:record.sustain?.mode==="once"?"única até encerrar":"por rodada",oppositionRound:game.combat?.round,canOppose:canOpposeSustained(actor,id),sustainOppositions:Object.values(record.sustain?.oppositions??{}).toSorted((a,b)=>a.round-b.round||a.attempt-b.attempt),canRetryControl:canRetryControl(actor,id),controlRetries:Object.values(record.controlRetries??{}).toSorted((a,b)=>a.round-b.round),canPay:!!quickSignature&&view.canPay,sustainPayments:Object.values(record.sustain?.payments??{}).toSorted((a,b)=>a.round-b.round),canEnd:!!quickSignature&&record.status==="active",canResolve:!!quickSignature&&view.canResolve,ticks:Object.values(record.ticks??{}).toSorted((a,b)=>a.round-b.round)};}).toSorted((a,b)=>b.time-a.time);
 }
 // Só registros próprios em estados finais conhecidos saem da área principal.
 // Cópias e estados desconhecidos precisam continuar visíveis para conferência.
 export function effectPanelContext(rows) {
  const history=[],active=[];
- for(const row of rows)(!row.foreign&&["ended","expired","failed"].includes(row.status)&&!(row.isDrain&&row.canUndo)?history:active).push(row);
+ for(const row of rows)(!row.foreign&&["ended","expired","failed"].includes(row.status)&&!((row.isDrain||row.isBrasas)&&row.canUndo)?history:active).push(row);
  return {active:active.toSorted((a,b)=>(a.deadlinePriority??2)-(b.deadlinePriority??2)),history,pendingRounds:active.reduce((sum,r)=>sum+(r.pendingRounds??0),0),pendingMaintenance:active.filter(r=>r.maintenancePending).length};
 }
 export function effectDialogContext(actor) {
@@ -72,6 +74,8 @@ export async function registerEffect(actor) {
  });
 }
 export async function resolveEffect(actor,key,{quick=false,expectedRound=null,expectedState=null}={}) {
+ readable(actor);
+ if(effectRecords(actor)[key]?.kind==="brasas"){const row=brasasContext(actor).rows.find(r=>r.id===key);if(!row||quick&&(row.applySignature!==expectedState||row.nextRound!==expectedRound))throw Error("A prévia de Brasas mudou.");return applyBrasasParcel(actor,key,{signature:row.applySignature,round:row.nextRound,adjust:!quick});}
  if(effectRecords(actor)[key]?.kind==="cosmoDrain"){const row=drainContext(actor).rows.find(r=>r.id===key);if(!row||quick&&(row.signature!==expectedState||row.nextRound!==expectedRound))throw Error("A prévia de Dreno mudou.");return applyDrainParcel(actor,key,{revision:row.revision,signature:row.signature,adjust:!quick});}
  if(effectRecords(actor)[key]?.kind==="armorBreak")return resolveArmorBreak(actor,key,{quick,expectedRound,expectedState});
  available(actor);safeKey(key);
@@ -97,6 +101,8 @@ export async function resolveEffect(actor,key,{quick=false,expectedRound=null,ex
  });
 }
 export async function endEffect(actor,key) {
+ readable(actor);
+ if(effectRecords(actor)[key]?.kind==="brasas"){const row=brasasContext(actor).rows.find(r=>r.id===key);if(!row)throw Error("Brasas indisponíveis.");return finishBrasas(actor,key,{signature:row.signature});}
  if(effectRecords(actor)[key]?.kind==="cosmoDrain"){const row=drainContext(actor).rows.find(r=>r.id===key);if(!row)throw Error("Dreno indisponível.");return finishDrain(actor,key,row.revision);}
  available(actor);safeKey(key);
  const record=effectRecords(actor)[key];if(!record||record.status!=="active")throw Error("Não há efeito ativo para encerrar.");const baseline=effectState(actor);
@@ -108,6 +114,8 @@ export async function endEffect(actor,key) {
  });
 }
 export async function recoverEffect(actor,key) {
+ readable(actor);
+ if(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind==="brasasParcel")return openBrasasRecovery(actor,key);
  if(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind==="techniqueDefense")return openTechniqueDefenseRecovery(actor,key);
  if(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind==="cosmoDrain")return openDrainRecovery(actor,key);
  if(["armorRepair","armorRepairTarget"].includes(actor.flags?.[SYSTEM_ID]?.effectOperations?.[key]?.kind))return openArmorRepairRecovery(actor,key);

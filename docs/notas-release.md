@@ -1,3 +1,11 @@
+## 0.65.0 — Brasas pelo dono do alvo
+
+Brasas registrado ganha um fluxo completo no painel de efeitos: o dono aplica a própria perda, ajusta zero/frações, dispensa, desfaz a última parcela intacta ou encerra, com prazo e histórico. O mestre coordena automaticamente por transporte privado autenticado, sem solicitação visível ou aprovação humana. A última parcela concluída conserva Desfazer evidente; alterações posteriores não são apagadas por recibos antigos.
+
+Journals próprios e recuperação do dono completam somente a parte ausente, sem repetir PV ou reembolso. Inversões preservam notas tardias; divergência permite encerrar a operação conservando recursos/registro. Fontes ocultas não são consultadas para resolver a perda. Registro continua conferência explícita do mestre; duração e primeira parcela são informadas. Não altera CE/PVA/ações/condições ou aplica dano ao avançar rodada. Catálogos, Atacar e Técnicas preservados. [Uso, limites e ensaio](brasas.md).
+
+Validação: 1035 testes Linux completos, sem falhas/exclusões, roundtrip Items/Actors, check e pacotes; 97 focados novos e 33 de efeitos anteriores preservados. Quatorze cenários Edge isolados com templates/callbacks/hooks/runtime reais, teclado 440px, privacidade e recuperação; capturas inspecionadas. Core hospedado13.350 e concorrência real continuam separados.
+
 ## 0.64.0 — Defender com técnica
 
 Um conjunto integrado para escolher a técnica própria no ataque recebido, conferir defesa/custo/Asterismo/reserva e ativar com coordenação privada automática. O resultado corporal é abatido antes da resistência; Bloqueador e falha crítica têm caminhos próprios. Registro de resultado já resolvido e Ajustar defesa geram revisões sem outro dado, custo ou ação.

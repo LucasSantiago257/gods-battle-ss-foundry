@@ -178,3 +178,8 @@
 .technique-defense-panel .chat-actions{display:flex;flex-wrap:wrap;gap:.35rem}.technique-defense-panel button{flex:1 1 9rem;white-space:normal;min-height:2rem}
 [data-defense-without-resistance] [data-action="adjustResistance"]{display:none!important}
 .technique-defense-dialog label{display:block;margin:.5rem 0}.technique-defense-dialog input,.technique-defense-dialog select{max-width:100%}
+
+.message:has([data-gods-battle-internal-brasas]),[data-gods-battle-internal-brasas]{display:none!important}
+.gods-battle .brasas-actions{display:flex;flex-wrap:wrap;gap:8px}
+.gods-battle .brasas-actions button{white-space:normal;flex:0 1 auto}
+.brasas-dialog input,.brasas-dialog textarea{box-sizing:border-box;max-width:100%}

@@ -1,0 +1,14 @@
+<details class="calculation-ledger brasas-record" data-brasas-owned data-effect-record data-effect-search="Brasas {{classification}}" data-effect-pending="{{#if pendingRounds}}true{{else}}false{{/if}}" {{#if canAdjust}}open{{else}}{{#if canUndo}}open{{/if}}{{/if}}>
+  <summary>Brasas{{#if classification}} · {{classification}} · {{amount}} PV{{/if}} · {{displayState}}</summary>
+  {{#if warning}}<p class="note">{{warning}}</p>{{/if}}
+  {{#if classification}}<p>PV {{health}} · rodadas {{firstRound}}–{{lastRound}}</p>{{/if}}
+  <div class="brasas-actions">
+    {{#if canApply}}<button type="button" data-action="applyBrasas" data-effect="{{id}}" data-round="{{nextRound}}" data-signature="{{applySignature}}">Aplicar {{amount}} PV · rodada {{nextRound}}</button>{{/if}}
+    {{#if canAdjust}}<button type="button" data-action="adjustBrasas" data-effect="{{id}}" data-round="{{nextRound}}" data-signature="{{applySignature}}">Ajustar</button>{{/if}}
+    {{#if canSkip}}<button type="button" data-action="skipBrasas" data-effect="{{id}}" data-round="{{nextRound}}" data-signature="{{applySignature}}">Dispensar rodada {{nextRound}}</button>{{/if}}
+    {{#if canUndo}}<button type="button" data-action="undoBrasas" data-effect="{{id}}" data-signature="{{signature}}">Desfazer última parcela</button>{{/if}}
+    {{#if canEnd}}<button type="button" data-action="endBrasas" data-effect="{{id}}" data-signature="{{signature}}">Encerrar Brasas</button>{{/if}}
+  </div>
+  {{#if history}}<details><summary>Histórico de Brasas</summary>{{#each history}}<p>{{#if round}}Rodada {{round}} · {{/if}}{{label}}{{#if hasDamage}} · {{damage}} PV{{/if}}{{#if reason}} · {{reason}}{{/if}}{{#if archivedReason}} · {{archivedReason}}{{/if}}</p>{{/each}}</details>{{/if}}
+  {{#if reason}}<details><summary>Notas</summary><p>{{reason}}</p></details>{{/if}}
+</details>
