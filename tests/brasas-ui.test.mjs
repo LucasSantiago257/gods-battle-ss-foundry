@@ -59,3 +59,5 @@ test("mestre offline, cópia e prazo futuro não oferecem aplicação inválida"
 test("template conserva ações claras e detalhes recolhidos, escapando notas",async()=>{
  const f=setup();f.record().reason='<img src=x onerror="bad">';const source=await readFile("templates/brasas-record.hbs","utf8"),html=Handlebars.compile(source)(view(f));assert.match(html,/Aplicar 10 PV/);assert.match(html,/Ajustar/);assert.match(html,/Dispensar/);assert.match(html,/Encerrar Brasas/);assert.match(html,/&lt;img/);assert.doesNotMatch(html,/<img|Actor.hidden|solicitar|justificativa|aceite|mestre/);assert.match(html,/<details><summary>Notas<\/summary>/);
 });
+
+test("callback de ajuste reautoriza antes de ler flags após perdaOWNER",async()=>{const f=setup(),r=view(f);foundry.applications.api.DialogV2.wait=async c=>{f.denied.add(f.actor.uuid);Object.defineProperty(f.actor,"flags",{get(){throw Error("private flags read");}});return c.buttons.find(b=>b.action==="apply").callback(null,{form:form()});};await assert.rejects(apply(f,r,{adjust:true}),/indisponíveis/);assert.equal(f.collection.size,0);});
