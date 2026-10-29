@@ -104,3 +104,7 @@ test("rolagem nativa corrompida em ready recusa antes do débito na recuperaçã
 test("cartão com carimbo real mas dados alterados não conclui publicação",async()=>{
  const f=ownedFixture();f.faults.push({tag:"published",phase:"after"});await assert.rejects(f.run());f.op().published=false;const m=f.messages.get(f.op().messageId);m.rolls[0].total++;await assert.rejects(f.recover(),/alterado/);assert.equal(f.stats.cards,1);assert.equal(f.stats.rolls,1);assert.equal(f.actor.system.resources.cosmo.value,7);
 });
+
+test("encerrar journal adulterado não exige resultado válido nem expõe objetos privados",async()=>{
+ const f=ownedFixture();f.faults.push({tag:"commit",phase:"before"});await assert.rejects(f.run());f.op().plan={};f.op().recordId={private:"description"};f.op().messageId={private:"source"};const before=copy(f.record),r=await f.recover({close:true});assert.equal(r.status,"reviewed");assert.equal(Object.hasOwn(r,"recordId"),false);assert.equal(Object.hasOwn(r,"messageId"),false);assert.deepEqual(f.record,before);assert.equal(f.actor.system.resources.cosmo.value,8);assert.equal((await f.recover({close:true})).replayed,true);
+});
