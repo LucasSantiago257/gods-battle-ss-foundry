@@ -1,5 +1,11 @@
 # Próximos desafios — após 0.30.0
 
+## Controle pelo dono — 0.66.0
+
+[Nova resistência](controle-dono.md) reúne prévia/opções, pagamento e dado únicos, publicação/recuperação do mesmo resultado e contexto privado do alvo. Toda execução nova, inclusive GM, usa o mesmo runtime. Registro inicial e journals legados preservados; sem novas condições ou regras das p.394–395. Validação isolada não confirma core hospedado13.350 ou concorrência real.
+
+Próxima avaliação independente delimitada: recarga de Sustentada pelo dono da origem, contra o contrato224 e o fluxo já publicado em sustentada.md/module/sustained.mjs. A execução atual exige GM e valida também o alvo; conferir pagamento, perfil por rodada/único, identidade da origem/alvo, privacidade, lacunas de prazo e recuperação antes de definir escopo. Não basta retirar isPrimaryGM, não criar manutenção automática/oposição nova ou presumir permissão sobre alvo oculto. Se faltar contrato útil, registrar lacuna e seguir outra parte autorizada; não repetir triagens encerradas ou criar releases por contagem.
+
 ## Brasas pelo dono — 0.65.0
 
 [Brasas](brasas.md) reúne aplicação pelo dono, ajuste/dispensa, Desfazer última parcela nova intacta, prazos/histórico, mensagens privadas e recuperação no alvo. Registro inicial continua explícito do mestre; sem nova regra, condição, CE ou relógio automático. Substitui a restrição de execução somente pelo mestre dos marcos históricos abaixo, preservando os journals antigos. QA isolado e suíte completa não confirmam core hospedado13.350 ou concorrência real.

@@ -87,3 +87,7 @@ Siga [o ensaio de defesa](defesa-tecnica.md#ensaio-curto) com cópias: cancelar 
 ## Opcional: Brasas pelo dono — 0.65.0
 
 Siga [o ensaio de Brasas](brasas.md#ensaio-curto): mestre registra fonte Dano+Brasas, duração e primeira parcela após resolver o ataque; dono aplica sem possuir o atacante, Ajustar aceita zero/fração, Dispensar consome a rodada e Desfazer só a última parcela intacta. A última concluída conserva o botão na área principal. Cancelar por Escape não altera a ficha. Encerrar conserva PV e histórico; recuperação do dono não repete dano. Repita em vinculado/sintético e observador, sem provocar falhas artificiais no mundo de jogo. Registro/rodadas não criam ativação, CE ou condição nova.
+
+## Opcional: nova resistência de Controle pelo dono — 0.66.0
+
+Siga [o ensaio pelo alvo](controle-dono.md#ensaio-curto): após registro inicial do mestre, avance uma rodada e confira prévia/cancelamento por Escape, custo1/1/2CE, ajustes/CE extra e uma tentativa por rodada informada. Resultado público com dados recolhidos; em sucesso, escolha encerrar somente o Controle ou manter prazo. Perda de propriedade remove controles. Repita em vinculado/sintético; não provoque falhas artificiais em mundo em uso. Recuperação do dono publica/completa o mesmo resultado, sem relançar ou cobrar outra vez. Condições/ações permanecem intactas; ensaio hospedado separado.

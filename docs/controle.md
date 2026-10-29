@@ -1,3 +1,7 @@
+# Controle pelo dono — 0.66.0
+
+[Nova resistência pelo alvo](controle-dono.md) substitui a execução exclusivamente GM das tentativas genéricas descritas nos marcos históricos abaixo. Dono/mestre usam o mesmo transporte privado autenticado e runtime coordenado, com prévia, resultado público, pagamento único, dados/histórico e recuperação própria. Registro inicial continua explícito do mestre e journals legados conservam o recuperador anterior. Não cria novas condições ou exceções de estados.
+
 # Controle: duração e nova resistência paga
 
 Na 0.18.0, técnicas configuradas com efeito **Controle** exibem duração base na prévia e no cartão: Bronze 2, Prata 3 e Ouro 4 rodadas, incluindo a rodada da ativação (livro, p.205). A duração usa a classe configurada da técnica; subir nível/status ou usar Apoiar não redefine essa classe. No construtor, configuração ou edição da cópia, **Duração de Controle** igual a 0 usa a tabela; um inteiro de 1 a 500 substitui a base. É uma escolha explícita para particularidades da técnica/campanha, sem interpretar texto livre.
