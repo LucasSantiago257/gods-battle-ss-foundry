@@ -63,7 +63,7 @@ export function controlRetryPreview(actor,key,values,context){
  return {version:1,signature,before,options,pool,payment:paid,context:encounter,difficulty:before.record.origin.powerCosmic,defaultAttribute:NATURES[before.record.origin.nature]?.resistance??""};
 }
 export function controlRetryState(actor,key,values,context){return controlRetryPreview(actor,key,values,context).signature;}
-function numericPreview(v){
+export function validateControlRetryPreview(v){
  if(!plain(v)||v.version!==1)throw Error("Prévia de Controle inválida.");
  const actor=actorFromSnapshot(v.before),before=controlRetrySnapshot(actor,v.before.record.recordId);
  if(!same(before,v.before))throw Error("Snapshot de Controle inválido.");
@@ -72,7 +72,7 @@ function numericPreview(v){
  return {version:1,signature:v.signature,before,options,pool,payment:paid,context,difficulty:v.difficulty};
 }
 function finish(preview,faces,operationId){
- controlRetryKey(operationId);const p=numericPreview(preview);if(!Array.isArray(faces)||faces.length!==p.pool.dice)throw Error("Dados não correspondem à parada salva.");
+ controlRetryKey(operationId);const p=validateControlRetryPreview(preview);if(!Array.isArray(faces)||faces.length!==p.pool.dice)throw Error("Dados não correspondem à parada salva.");
  const result=resolvePool([...faces],p.pool.modifier),success=result.total>=p.difficulty,end=success&&p.options.onSuccess==="end",cost=p.payment.cost;
  const attempt={operationId,round:p.context.round,total:result.total,difficulty:p.difficulty,success,end,cost,fromCurrent:p.payment.fromCurrent,fromExtra:p.payment.fromExtra,unlimited:p.payment.unlimited,attribute:p.options.attribute};
  const after=copy(p.before);after.resources.current-=p.payment.fromCurrent;after.resources.extra-=p.payment.fromExtra;after.record.retries.push(attempt);if(end)after.record.status="ended";
