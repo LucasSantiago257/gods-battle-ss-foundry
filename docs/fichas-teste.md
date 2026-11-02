@@ -91,3 +91,8 @@ Siga [o ensaio de Brasas](brasas.md#ensaio-curto): mestre registra fonte Dano+Br
 ## Opcional: nova resistência de Controle pelo dono — 0.66.0
 
 Siga [o ensaio pelo alvo](controle-dono.md#ensaio-curto): após registro inicial do mestre, avance uma rodada e confira prévia/cancelamento por Escape, custo1/1/2CE, ajustes/CE extra e uma tentativa por rodada informada. Resultado público com dados recolhidos; em sucesso, escolha encerrar somente o Controle ou manter prazo. Perda de propriedade remove controles. Repita em vinculado/sintético; não provoque falhas artificiais em mundo em uso. Recuperação do dono publica/completa o mesmo resultado, sem relançar ou cobrar outra vez. Condições/ações permanecem intactas; ensaio hospedado separado.
+
+
+## Opcional: recarga de Sustentada pelo dono — 0.67.0
+
+Siga [o ensaio do pagador](recarga-dono.md#ensaio-curto): mestre registra técnica/alvo/perfil após resolver ativação, jogador dono só do pagador confere fase inicial, cancela Ajustar por Escape, paga1CE atual/extra preservando reserva, verifica rodada/único/lacuna e encerra sem refund. Oposição segue separada. Repita em vinculado/sintético,ilimitada/observador/perdaOWNER; use recuperação somente para interrupções reais,sem injetar falhas em mundo em uso. Não presumir core13.350 ou concorrência entre conexões reais.

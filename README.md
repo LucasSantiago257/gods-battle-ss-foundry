@@ -1,5 +1,7 @@
 # Saint Seiya — A Batalha dos Deuses para FoundryVTT
 
+**0.67.0 — recarga de Sustentada pelo dono:** Pagar/Ajustar/Encerrar, prazo/perfis/histórico e recuperação na ficha pagadora, com coordenação automática privada, sem acessar adversário oculto ou pedir aprovação humana. Registro inicial/oposição/legados preservados. [Uso e ensaio](docs/recarga-dono.md).
+
 **0.66.0 — Controle pelo dono:** nova resistência genérica com prévia, ajustes, pagamento único, resultado público e recuperação própria, sem acessar atacante oculto ou pedir aprovação humana. Dados/notas/histórico recolhidos. [Uso e ensaio](docs/controle-dono.md).
 
 **0.65.0 — Brasas pelo dono:** Aplicar/Ajustar/dispensar/Desfazer última parcela intacta, prazo/histórico e recuperação própria na ficha do alvo. Coordenação privada automática, sem possuir o atacante ou pedir aprovação humana. [Uso e ensaio](docs/brasas.md).

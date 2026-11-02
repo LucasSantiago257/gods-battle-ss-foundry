@@ -195,3 +195,5 @@
 .gods-battle .sustained-payment-actions button{white-space:normal;max-width:100%}
 .gods-battle.sustained-payment-dialog{background:#142035;color:#e6edfa;padding:.65rem;border-radius:.3rem}
 .gods-battle.sustained-payment-dialog input,.gods-battle.sustained-payment-dialog textarea{box-sizing:border-box;max-width:100%}
+
+.gods-battle.sustained-payment-dialog input[type=checkbox]{width:auto;height:auto;min-height:0;padding:0;vertical-align:middle;margin-right:.4rem}

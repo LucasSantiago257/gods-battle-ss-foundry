@@ -1,10 +1,16 @@
 # Próximos desafios — após 0.30.0
 
+## Recarga pelo dono — 0.67.0
+
+[Recarga de Sustentada](recarga-dono.md) reúne pagamento próprio, prazo/perfis explícitos, encerramento/histórico e recuperação privada. Registro inicial e oposição permanecem do mestre, com execução automática dos pedidos legítimos. Sem nova regra de frequência, condição ou acesso adversário. Validação Linux/Edge/pacote não confirma core hospedado13.350/conexões reais.
+
+Os contratos concretos desta sequência foram entregues; guardas de iniciativa/Guardar, distância individual em área/Movendo, Sacrifício/Estocar/Novamente, Sentidos, custos permanentes e exceções de Residual/Marcas/Fadas/Ataúde conservam suas lacunas explícitas. Novas condições e catálogos não essenciais continuam fora do foco. Não abrir trabalhos por contagem ou manter verificações recorrentes apenas à espera do ensaio hospedado; retomar por um caso concreto útil com contrato inequívoco. Se não houver outra parte útil autorizada, encerrar a automação, preservando roteiro e ensaio.
+
 ## Controle pelo dono — 0.66.0
 
 [Nova resistência](controle-dono.md) reúne prévia/opções, pagamento e dado únicos, publicação/recuperação do mesmo resultado e contexto privado do alvo. Toda execução nova, inclusive GM, usa o mesmo runtime. Registro inicial e journals legados preservados; sem novas condições ou regras das p.394–395. Validação isolada não confirma core hospedado13.350 ou concorrência real.
 
-Próxima avaliação independente delimitada: recarga de Sustentada pelo dono da origem, contra as fontes205/225 e o fluxo já publicado em sustentada.md/module/sustained.mjs. A execução atual exige GM e valida também o alvo; conferir pagamento, perfil por rodada/único, identidade da origem/alvo, privacidade, lacunas de prazo e recuperação antes de definir escopo. Não basta retirar isPrimaryGM, não criar manutenção automática/oposição nova ou presumir permissão sobre alvo oculto. Se faltar contrato útil, registrar lacuna e seguir outra parte autorizada; não repetir triagens encerradas ou criar releases por contagem.
+A recarga foi concluída no conjunto0.67.0 abaixo. Esta avaliação205/225 está encerrada; não repetir a triagem ou continuar branches integradas.
 
 ## Brasas pelo dono — 0.65.0
 
