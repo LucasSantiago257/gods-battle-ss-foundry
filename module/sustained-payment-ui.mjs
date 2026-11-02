@@ -4,7 +4,7 @@ import {primaryGM,assertNoTechniqueInterruption} from "./master-queue.mjs";
 import {sustainPaymentKey,sustainPaymentRecordMath,sustainPaymentSnapshot,sustainPaymentContext,sustainPaymentPreview,sustainEndState} from "./sustained-payment-rules.mjs";
 import {sameSustainPayment,validateOwnedSustainJournal} from "./sustained-payment-records.mjs";
 import {sustainPaymentPrivateMessage,submitSustainPaymentRequest} from "./sustained-payment-requests.mjs";
-const flags=a=>a.flags?.[SYSTEM_ID]??{},classes={bronze:"Bronze",silver:"Prata",gold:"Ouro"},listeners=new WeakMap();
+const flags=a=>a.flags?.[SYSTEM_ID]??{},classes={bronze:"Bronze",silver:"Prata",gold:"Ouro"},listeners=new WeakMap(),observedActors=new Set();
 export function canManageOwnedSustained(actor,user=game.user){return !!user&&game.users?.get?.(user.id)===user&&actor?.type==="knight"&&typeof actor.uuid==="string"&&/^(Actor\.|Scene\.)/.test(actor.uuid)&&!!actor.testUserPermission?.(user,"OWNER")&&(user.isGM||!(actor.isToken&&(actor.token?.hidden||actor.token?.object?.visible===false)));}
 const online=()=>{const gm=primaryGM();return !!gm?.active&&gm.isGM&&game.users?.get?.(gm.id)===gm;};
 function ready(actor,{id=null,readOnly=false}={}){
@@ -38,7 +38,7 @@ function complete(actor,op){
 function history(r){return Object.values(r.sustain?.payments??{}).map(p=>({round:p.round,cost:p.cost,fromCurrent:p.fromCurrent,fromExtra:p.fromExtra,unlimited:p.unlimited,gap:p.gap?{first:p.gap.first,last:p.gap.last}:null,reason:typeof p.reason==="string"?p.reason:""})).sort((a,b)=>b.round-a.round);}
 export function ownedSustainSheetContext(actor){
  const empty={visible:false,rows:[],interruptions:[],waiting:false,offline:false};if(!canManageOwnedSustained(actor))return empty;
- const rows=[],interruptions=[],waiting=sustainPaymentWaiting(actor);let free=false,blocked="";try{ready(actor);free=true;}catch(e){blocked=e.message;}
+ observedActors.add(actor);const rows=[],interruptions=[],waiting=sustainPaymentWaiting(actor);let free=false,blocked="";try{ready(actor);free=true;}catch(e){blocked=e.message;}
  for(const [id,r]of Object.entries(flags(actor).persistentEffects??{}))if(r?.kind==="sustained"){
   let math;try{math=sustainPaymentRecordMath(actor,id);}catch{rows.push({id,isOwnedSustained:true,label:"Sustentada",foreign:true,time:r.time,displayState:"Registro inv\u00e1lido ou de outra ficha",deadlinePriority:3});continue;}
   const row={id,isOwnedSustained:true,label:"Sustentada",time:r.time,status:r.status,classification:classes[math.source.classification],mode:math.mode,modeLabel:math.mode==="once"?"\u00fanica at\u00e9 encerrar":"por rodada",firstRound:math.firstRound,lastRound:math.lastRound,paidUntilRound:math.paidUntilRound,history:history(r),reason:typeof r.reason==="string"?r.reason:"",signature:sustainEndState(actor,id),canEnd:free&&!waiting&&r.status==="active",displayState:r.status==="ended"?"Encerrada":"Prazo pausado",pendingRounds:0,maintenancePending:false,deadlinePriority:r.status==="active"?3:2};
@@ -85,4 +85,5 @@ export async function openOwnedSustainRecovery(actor,id){
  await current(actor,user,{readOnly:true});if(!sameSustainPayment(flags(actor).effectOperations?.[id],original))throw Error("Journal da recarga mudou.");return submitSustainPaymentRequest({action:answer.action,actorUuid:actor.uuid,operationId:id,reason:answer.reason});
 }
 export function sanitizeOwnedSustainSheet(root,actor){if(!canManageOwnedSustained(actor))for(const e of root?.querySelectorAll?.("[data-sustained-owned]")??[])e.remove();}
-export function refreshOwnedSustainSheets(){const actors=[...(game.actors?.contents??[]),...(globalThis.canvas?.tokens?.placeables??[]).map(t=>t.actor),...(game.combats?.contents??[]).flatMap(c=>(c.combatants?.contents??[]).map(m=>m.actor))];for(const actor of new Set(actors))for(const app of Object.values(actor?.apps??{}))if(app.rendered){sanitizeOwnedSustainSheet(app.element,actor);app.render();}}
+// Refresh sheets already projected here, without resolving every enemy combatant.
+export function refreshOwnedSustainSheets(){for(const actor of observedActors)for(const app of Object.values(actor?.apps??{}))if(app.rendered){sanitizeOwnedSustainSheet(app.element,actor);app.render();}}
