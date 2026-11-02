@@ -1,3 +1,5 @@
+import {ownedSustainSheetContext,paySustainedFromSheet} from "../module/sustained-payment-ui.mjs";
+import {enqueueSustainPaymentRequest} from "../module/sustained-payment-requests.mjs";
 import {controlRetryContextForSheet} from "../module/control-retry-ui.mjs";
 import {areaProgressRow} from "../module/area-progress-rules.mjs";
 import {registerArmorBreak} from "../module/armor-effects.mjs";
@@ -66,7 +68,7 @@ function rehearsal({synthetic=false}={}){
  const aster=actorFor(TEST_ACTORS[0],attacker),worldDoran=actorFor(TEST_ACTORS[1],defender),lyra=actorFor(TEST_ACTORS[2],attacker);
  const doran=synthetic?actorFor(TEST_ACTORS[1],defender,`Scene.arena.Token.doran.Actor.${TEST_ACTORS[1]._id}`):worldDoran;
  game.actors=collection([aster,worldDoran,lyra]);
- const combat={id:"arena",uuid:"Combat.arena",started:true,round:1,flags:{[ID]:{actionControl:{enabled:true,epoch:"round1"}}},combatants:collection([aster,doran,lyra].map((actor,index)=>({id:`combatant${index}`,actor})))};game.combat=combat;game.combats.set(combat.id,combat);
+ const combat={id:"arena",uuid:"Combat.arena",started:true,round:1,flags:{[ID]:{actionControl:{enabled:true,epoch:"round1"}}},combatants:collection([aster,doran,lyra].map((actor,index)=>({id:`combatant${index}`,actor})))};game.combat=combat;game.combats.set(combat.id,combat);documents.set(combat.uuid,combat);
  const componentDocs=collection(componentCatalog.map(source=>({...clone(source),id:source._id,uuid:`Compendium.${ID}.componentes-tecnicas.Item.${source._id}`,toObject:()=>clone(source)})));
  for(const component of componentDocs.values())documents.set(component.uuid,component);
  game.packs=new Map([[`${ID}.componentes-tecnicas`,{testUserPermission:()=>true,getIndex:async()=>({contents:componentCatalog}),getDocument:async id=>componentDocs.get(id)}]]);
@@ -118,10 +120,10 @@ test("ensaio Controle acompanha prazo/histórico e Sustentada recarrega uma vez,
  r.round(2);const sustained=r.lyra.items.get("demoSustain00001"),activation=await r.activate(sustained);assert.equal(activation.flags[ID].technique.success,true);
  game.user=r.gm;r.controls.answer={itemUuid:sustained.uuid,targetUuid:r.doran.uuid,maintenanceMode:"round",firstRound:2,rounds:null,reason:""};const record=await registerSustained(r.lyra);
  assert.equal(record.lastRound,3);assert.equal(r.lyra.system.resources.cosmo.value,ce-4);r.round(4);
- const rows=effectPanelContext(effectSheetContext(r.lyra));assert.equal(rows.pendingMaintenance,1);assert.equal(r.lyra.system.resources.cosmo.value,ce-4);
- const preview=sustainedPaymentPreview(r.lyra,record.id);await paySustained(r.lyra,record.id,{quick:true,expectedRound:preview.round,expectedState:preview.signature});assert.equal(r.lyra.system.resources.cosmo.value,ce-5);
- await assert.rejects(()=>paySustained(r.lyra,record.id,{quick:true,expectedRound:preview.round,expectedState:preview.signature}),/coberta/);
- r.controls.answer="";await endEffect(r.lyra,record.id);assert.equal(effectPanelContext(effectSheetContext(r.lyra)).history.length,1);assert.equal(r.doran.system.resources.health.value,health);assert.equal(r.doran.flags[ID].conditionEffects,undefined);assert.equal(r.rolls,3);assert.deepEqual(r.notices,[]);
+ const rows=effectPanelContext([...effectSheetContext(r.lyra),...ownedSustainSheetContext(r.lyra).rows]);assert.equal(rows.pendingMaintenance,1);assert.equal(r.lyra.system.resources.cosmo.value,ce-4);
+ const preview=sustainedPaymentPreview(r.lyra,record.id);const recharge=await paySustained(r.lyra,record.id,{quick:true,expectedRound:preview.round,expectedState:preview.signature});await r.coordinate(recharge,enqueueSustainPaymentRequest);assert.equal(recharge.flags[ID].sustainPaymentResponse.ok,true,JSON.stringify(recharge.flags[ID].sustainPaymentResponse));assert.equal(r.lyra.system.resources.cosmo.value,ce-5);
+ await assert.rejects(()=>paySustained(r.lyra,record.id,{quick:true,expectedRound:preview.round,expectedState:preview.signature}),/coberta|mudou/);
+ r.controls.answer="";await r.coordinate(await endEffect(r.lyra,record.id),enqueueSustainPaymentRequest);assert.equal(effectPanelContext([...effectSheetContext(r.lyra),...ownedSustainSheetContext(r.lyra).rows]).history.length,1);assert.equal(r.doran.system.resources.health.value,health);assert.equal(r.doran.flags[ID].conditionEffects,undefined);assert.equal(r.rolls,3);assert.deepEqual(r.notices,[]);
 });
 
 test("ensaio de resposta perdida recupera a técnica paga e segue até dano, sem repetir dados/CE/ações",async()=>{
@@ -207,12 +209,13 @@ for(const synthetic of [false,true])test(`ensaio em área acompanha resistência
 });
 
 
-test("painel usa prazo preciso e conserva aviso real quando o alvo da Sustentada some",async()=>{
+test("painel usa prazo pr\u00f3prio e coordenador recusa alvo Sustentada removido",async()=>{
  const r=rehearsal(),item=r.lyra.items.get("demoSustain00001");game.user=r.gm;
  r.controls.answer={itemUuid:item.uuid,targetUuid:r.doran.uuid,maintenanceMode:"round",firstRound:1,rounds:null,reason:""};const record=await registerSustained(r.lyra);r.round(3);
- let row=effectSheetContext(r.lyra).find(row=>row.id===record.id);assert.equal(row.displayState,"Recarga de 1 CE pendente · rodada 3");assert.equal(row.canPay,true);
- r.combat.combatants.delete("combatant1");const before=clone({resources:r.lyra.system.resources,flags:r.lyra.flags});row=effectSheetContext(r.lyra).find(row=>row.id===record.id);
- assert.match(row.displayState,/Alvo\/combatente indisponível/);assert.equal(row.canPay,false);assert.equal(row.quickSustain,null);assert.deepEqual({resources:r.lyra.system.resources,flags:r.lyra.flags},before);
+ let row=ownedSustainSheetContext(r.lyra).rows.find(row=>row.id===record.id);assert.match(row.displayState,/Recarga pendente/);assert.equal(row.canPay,true);
+ r.combat.combatants.delete("combatant1");const before=clone({resources:r.lyra.system.resources,flags:r.lyra.flags});row=ownedSustainSheetContext(r.lyra).rows.find(row=>row.id===record.id);
+ const m=await paySustainedFromSheet(r.lyra,record.id,{signature:row.paySignature,round:row.round});await r.coordinate(m,enqueueSustainPaymentRequest);
+ assert.equal(m.flags[ID].sustainPaymentResponse.ok,false);assert.deepEqual({resources:r.lyra.system.resources,flags:r.lyra.flags},before);
 });
 
 for(const synthetic of [false,true])test(`construir Sustentada + Quebrar → ativar → prazo e parcela no alvo (${synthetic?"sintético":"vinculado"})`,async()=>{

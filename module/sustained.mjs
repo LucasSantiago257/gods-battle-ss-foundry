@@ -1,14 +1,15 @@
+import {ownedSustainSheetContext,paySustainedFromSheet} from "./sustained-payment-ui.mjs";
 import {SYSTEM_ID} from "./config.mjs";
 import {actionHash} from "./action-rules.mjs";
 import {effectState,effectSourceState,effectRecords,encounterForEffect} from "./effect-rules.mjs";
-import {sustainedSource,sustainedDefinition,sustainedPaymentPlan,sustainedView} from "./sustained-rules.mjs";
+import {sustainedSource,sustainedDefinition} from "./sustained-rules.mjs";
 import {isPrimaryGM,runMasterOperation,assertNoTechniqueInterruption} from "./master-queue.mjs";
 import {optionalNote} from "./form-values.mjs";
 const keyOf=key=>{if(typeof key!=="string"||!/^[a-zA-Z0-9]{1,32}$/.test(key))throw Error("Registro de Sustentada inválido.");return key;};
 const flags=actor=>actor.flags?.[SYSTEM_ID]??{};
 const snapshot=(actor,key)=>({resources:structuredClone(actor.system.resources),record:structuredClone(effectRecords(actor)[key])});
 function available(actor,id=null){
- if(!isPrimaryGM()||actor?.type!=="knight"||!actor.isOwner)throw Error("Somente o mestre responsável pode registrar ou pagar Sustentada.");
+ if(!isPrimaryGM()||actor?.type!=="knight"||!actor.isOwner)throw Error("Somente o mestre responsável pode registrar Sustentada.");
  assertNoTechniqueInterruption(actor,{effectOperationId:id});
  if(flags(actor).levelOperation?.status==="prepared"||Object.values(flags(actor).damageOperations??{}).some(r=>["prepared","repair"].includes(r.status)))throw Error("Confira a operação interrompida de evolução/dano antes de continuar.");
 }
@@ -42,34 +43,17 @@ export async function registerSustained(actor){
   await actor.update({[`flags.${SYSTEM_ID}.persistentEffects.${id}`]:record});return record;
  });
 }
-const quickPaymentState=(actor,key,target,round)=>actionHash({effectId:key,payer:effectState(actor),target:effectState(target),round});
+// All new payments, including GM shortcuts, use authenticated requests.
 export function sustainedPaymentPreview(actor,key){
- available(actor);keyOf(key);const plan=sustainedPaymentPlan(actor,key,{useExtra:true,reason:""});
- if(!plan.target.isOwner)throw Error("O alvo não permite a conferência desta recarga.");
- return {round:plan.round,signature:quickPaymentState(actor,key,plan.target,plan.round),label:plan.payment.unlimited?`Registrar recarga ilimitada · rodada ${plan.round}`:`Pagar 1 CE ${plan.payment.fromExtra?"extra":"atual"} · rodada ${plan.round}`};
+ keyOf(key);const context=ownedSustainSheetContext(actor),row=context.rows.find(r=>r.id===key);
+ if(!row?.canPay)throw Error(row?.warning||context.warning||(row?.foreign?row.displayState:"Rodada coberta ou recarga indispon\u00edvel."));
+ return {round:row.round,signature:row.paySignature,label:row.payLabel};
 }
 export async function paySustained(actor,key,{quick=false,expectedRound=null,expectedState=null}={}){
- available(actor);keyOf(key);const preview=sustainedView(actor,effectRecords(actor)[key]??{}),baseline=effectState(actor),targetBaseline=effectState(preview.target);
- if(!preview.canPay)throw Error("Esta rodada já está coberta; retrocesso não repete a cobrança.");
- if(typeof quick!=="boolean"||quick&&(!Number.isSafeInteger(expectedRound)||expectedRound!==preview.context.round||typeof expectedState!=="string"||expectedState!==quickPaymentState(actor,key,preview.target,preview.context.round)))throw Error("A prévia da recarga mudou. Atualize a ficha antes de pagar o valor exibido.");
- const content=quick?null:await foundry.applications.handlebars.renderTemplate(`systems/${SYSTEM_ID}/templates/sustained-payment.hbs`,{name:preview.record.label,targetName:preview.record.sustain.targetName,payerName:actor.name,mode:preview.mode,isOnce:preview.mode==="once",round:preview.context.round,gap:preview.overdue?{first:preview.nextRound,last:preview.context.round-1}:null,current:actor.system.resources.cosmo.value,reserved:actor.system.resources.cosmoReserved,extra:actor.system.resources.cosmoExtra,unlimited:actor.system.resources.cosmo.unlimited});
- await guard(actor,baseline,null,preview.target,targetBaseline);
- const answer=quick?{useExtra:true,reason:""}:await foundry.applications.api.DialogV2.wait({window:{title:"Pagar recarga de Sustentada"},content,buttons:[{action:"pay",label:"Pagar 1 CE nesta rodada",default:true,callback:(_e,b)=>({useExtra:b.form.elements.useExtra.checked,reason:b.form.elements.reason.value})},{action:"cancel",label:"Cancelar",callback:()=>null}],rejectClose:false});
- if(!answer)return;
- return runMasterOperation(async()=>{
-  await guard(actor,baseline,null,preview.target,targetBaseline);const plan=sustainedPaymentPlan(actor,key,answer),id=keyOf(foundry.utils.randomID());if(flags(actor).effectOperations?.[id])throw Error("Identificador existente.");
-  const before=snapshot(actor,key),payment={operationId:id,round:plan.round,cost:1,mode:plan.record.sustain.mode,fromExtra:plan.payment.fromExtra,fromCurrent:plan.payment.fromCurrent,unlimited:plan.payment.unlimited,gap:plan.gap,reason:plan.reason,userId:game.user.id,time:Date.now()};
-  const afterRecord={...plan.record,sustain:{...plan.record.sustain,paidUntilRound:plan.round,payments:{...plan.record.sustain.payments,[id]:payment}}};
-  const afterResources={...before.resources,cosmo:{...before.resources.cosmo,value:plan.payment.updates["system.resources.cosmo.value"]??before.resources.cosmo.value},cosmoExtra:plan.payment.updates["system.resources.cosmoExtra"]??before.resources.cosmoExtra,cosmoOverload:plan.payment.updates["system.resources.cosmoOverload"]??before.resources.cosmoOverload};
-  const operation={kind:"sustainPayment",status:"prepared",actorUuid:actor.uuid,effectId:key,round:plan.round,cost:1,before,after:{resources:afterResources,record:afterRecord},userId:game.user.id,time:Date.now()};
-  const expectedFlags=structuredClone(actor.flags??{});expectedFlags[SYSTEM_ID]??={};expectedFlags[SYSTEM_ID].effectOperations??={};expectedFlags[SYSTEM_ID].effectOperations[id]=operation;
-  const expected=effectState({uuid:actor.uuid,system:actor.system,flags:expectedFlags});
-  await actor.update({[`flags.${SYSTEM_ID}.effectOperations.${id}`]:operation});
-  // Quando o alvo é o próprio pagador, a preparação também altera seu baseline.
-  await guard(actor,expected,id,plan.target,plan.target.uuid===actor.uuid?expected:targetBaseline);
-  if(actionHash(snapshot(actor,key))!==actionHash(before))throw Error("Recursos ou registro alterados antes da recarga.");
-  await actor.update({...plan.payment.updates,[`flags.${SYSTEM_ID}.persistentEffects.${key}`]:afterRecord,[`flags.${SYSTEM_ID}.effectOperations.${id}.status`]:"applied"});return payment;
- });
+ keyOf(key);if(typeof quick!=="boolean"||quick&&(!Number.isSafeInteger(expectedRound)||typeof expectedState!=="string"))throw Error("A pr\u00e9via da recarga mudou.");
+ if(quick)return paySustainedFromSheet(actor,key,{signature:expectedState,round:expectedRound});
+ const context=ownedSustainSheetContext(actor),row=context.rows.find(r=>r.id===key);if(!row?.canAdjust)throw Error(row?.warning||context.warning||(row?.foreign?row.displayState:"Rodada coberta ou recarga indispon\u00edvel."));
+ return paySustainedFromSheet(actor,key,{signature:row.dialogSignature,round:row.round,adjust:true});
 }
 export async function recoverSustained(actor,id){
  keyOf(id);if(!isPrimaryGM()||actor?.type!=="knight"||!actor.isOwner)throw Error("Somente o mestre responsável pode recuperar a recarga.");

@@ -185,12 +185,12 @@ console.log("Manifesto, JavaScript e templates verificados; prévia em dist/prev
 
 
 
-const sustainActor={...effectActor,type:"knight",flags:{"gods-battle-ss":{persistentEffects:{sustainDemo:{id:"sustainDemo",actorUuid:effectActor.uuid,combatUuid:"Combat.effects",combatantId:"effectMember",kind:"sustained",label:"Sustentada de exercício",source:{actorUuid:effectActor.uuid,name:"Sustentada de exercício",classification:"bronze"},page:"205/225",damage:0,firstRound:2,lastRound:3,status:"active",time:2,sustain:{cost:1,mode:"round",targetUuid:effectActor.uuid,targetName:effectActor.name,targetCombatantId:"effectMember",paidUntilRound:3,payments:{}}}}}}};
-game.user={...game.user,id:"previewGM"};game.users={activeGM:{id:"previewGM",active:true}};game.combat={uuid:"Combat.effects",started:true,round:4,combatants:{contents:[{id:"effectMember",actor:sustainActor}]}};game.combats={contents:[game.combat]};
+const sustainActor={...effectActor,type:"knight",flags:{"gods-battle-ss":{persistentEffects:{sustainDemo:{id:"sustainDemo",actorUuid:effectActor.uuid,combatUuid:"Combat.effects",combatantId:"effectMember",kind:"sustained",label:"Sustentada de exercício",source:{actorUuid:effectActor.uuid,itemUuid:`${effectActor.uuid}.Item.sustainDemo`,name:"Sustentada de exercício",classification:"bronze"},page:"205/225",damage:0,firstRound:2,lastRound:3,status:"active",time:2,sustain:{cost:1,mode:"round",targetUuid:effectActor.uuid,targetName:effectActor.name,targetCombatantId:"effectMember",paidUntilRound:3,payments:{}}}}}}};
+game.user={...game.user,id:"previewGM",isGM:true,active:true};game.users={activeGM:game.user,get:id=>id===game.user.id?game.user:null};game.combat={uuid:"Combat.effects",started:true,round:4,combatants:{contents:[{id:"effectMember",actor:sustainActor}]}};game.combats={contents:[game.combat]};
 const sustainContext=await new KnightSheet(sustainActor)._prepareContext({});for(const tab of Object.values(sustainContext.tabs))tab.cssClass=tab.id==="combat"?"active":"";
 const sustainSheet=templates["knight.hbs"](sustainContext);
-if(!sustainSheet.includes('data-action="paySustained"')||sustainSheet.includes('data-action="resolveEffect"'))throw Error("Ficha não distingue manutenção de dano.");
-sustainContext.persistentEffects[0].sustain.targetName=unsafe;if(templates["knight.hbs"](sustainContext).includes(unsafe))throw Error("Alvo da manutenção não escapado.");
+if(!sustainSheet.includes('data-action="payOwnedSustained"')||sustainSheet.includes('data-action="resolveEffect"'))throw Error("Ficha não distingue manutenção de dano.");
+sustainContext.persistentEffects[0].reason=unsafe;if(templates["knight.hbs"](sustainContext).includes(unsafe))throw Error("Notas da manutenção não escapadas.");
 await writeFile("dist/sustained-sheet-preview.html",`<!doctype html><html lang="pt-BR"><meta charset="utf-8"><style>${css}body{background:#07101e;color:#e6edfa;font-family:Segoe UI,sans-serif;padding:24px}.gods-battle{width:920px;height:1000px;margin:auto;overflow:hidden}*{box-sizing:border-box}</style><body><main class="gods-battle">${sustainSheet.replaceAll("assets/cosmos.svg",`data:image/svg+xml;base64,${Buffer.from(svg).toString("base64")}`)}</main></body></html>`);
 
 

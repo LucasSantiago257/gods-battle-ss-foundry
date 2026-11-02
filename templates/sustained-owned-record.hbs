@@ -10,5 +10,6 @@
     {{#if canOppose}}<button type="button" data-action="opposeSustained" data-effect="{{id}}">Resolver oposição</button>{{/if}}
   </div>
   {{#if history}}<details><summary>Pagamentos</summary>{{#each history}}<p>Rodada {{round}} · {{#if unlimited}}CE ilimitada{{else}}{{cost}} CE · {{fromCurrent}} atual / {{fromExtra}} extra{{/if}}{{#if gap}} · lacuna {{gap.first}}–{{gap.last}}{{/if}}{{#if reason}} · {{reason}}{{/if}}</p>{{/each}}</details>{{/if}}
+  {{#if oppositions}}<details><summary>Oposições</summary>{{#each oppositions}}<p>Rodada {{round}} · {{winnerLabel}} · {{payerTotal}} / {{targetTotal}}</p>{{/each}}</details>{{/if}}
   {{#if reason}}<details><summary>Notas</summary><p>{{reason}}</p></details>{{/if}}
 </details>

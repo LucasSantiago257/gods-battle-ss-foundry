@@ -1,3 +1,4 @@
+import {canOpposeSustained} from "./sustained-opposition.mjs";
 import {SYSTEM_ID} from "./config.mjs";
 import {actionHash} from "./action-rules.mjs";
 import {primaryGM,assertNoTechniqueInterruption} from "./master-queue.mjs";
@@ -53,6 +54,8 @@ export function ownedSustainSheetContext(actor){
     try{const p=payerSustainPreview(actor,id,{useExtra:true,reason:""});row.paySignature=p.signature;row.canPay=row.canAdjust;row.unlimited=p.payment.unlimited;row.payLabel=p.payment.unlimited?`Registrar recarga ilimitada \u00b7 rodada ${c.round}`:`Pagar 1 CE ${p.payment.fromExtra?"extra":"atual"} \u00b7 rodada ${c.round}`;}catch(e){row.warning=/insuficiente/.test(e.message)?"CE livre insuficiente.":e.message;}
    }
   }catch(e){row.warning=e.message;}
+  if(game.user.isGM)row.canOppose=free&&!waiting&&canOpposeSustained(actor,id);
+  row.oppositions=Object.values(r.sustain?.oppositions??{}).map(o=>({round:o.round,winnerLabel:{payer:"Usu\u00e1rio",target:"Alvo",tie:"Empate"}[o.winner]??"",payerTotal:o.payerTotal,targetTotal:o.targetTotal})).sort((a,b)=>b.round-a.round);
   rows.push(row);
  }
  for(const [id,op]of Object.entries(flags(actor).effectOperations??{}))if(op?.kind==="sustainPaymentOwned"&&op.status==="prepared")try{sustainPaymentKey(id);interruptions.push({id,canReview:online(),canComplete:online()&&complete(actor,op)});}catch{}
