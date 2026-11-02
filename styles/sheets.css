@@ -189,3 +189,9 @@
 .gods-battle .control-retry-dialog input,.gods-battle .control-retry-dialog select,.gods-battle .control-retry-dialog textarea{max-width:100%}
 
 .gods-battle.control-retry-dialog{background:#142035;color:#e6edfa;padding:.65rem;border-radius:.3rem}
+
+.message:has([data-gods-battle-internal-sustain-payment]),[data-gods-battle-internal-sustain-payment]{display:none!important}
+.gods-battle .sustained-payment-actions{display:flex;flex-wrap:wrap;gap:.35rem}
+.gods-battle .sustained-payment-actions button{white-space:normal;max-width:100%}
+.gods-battle.sustained-payment-dialog{background:#142035;color:#e6edfa;padding:.65rem;border-radius:.3rem}
+.gods-battle.sustained-payment-dialog input,.gods-battle.sustained-payment-dialog textarea{box-sizing:border-box;max-width:100%}
