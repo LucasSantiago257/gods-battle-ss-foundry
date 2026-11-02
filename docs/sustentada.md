@@ -1,5 +1,7 @@
 # Sustentada — duração e recarga assistidas
 
+**Desde0.67.0:** recarga/encerramento/recuperação pelo dono do pagador ou mestre, com coordenação automática privada e assinatura própria, sem acesso ao adversário oculto. [Fluxo atual e ensaio](recarga-dono.md). As seções0.20/0.47 abaixo documentam a evolução anterior; a restrição mestre-only e o guard financeiro do alvo foram substituídos no fluxo atual. Registro inicial/oposição e recuperadores legados conservados.
+
 Disponível desde0.20.0. Na ficha do usuário, em Combate → Efeitos com duração → Registrar Sustentada no pagador, escolha uma técnica pronta com efeito Sustentada e um alvo do encontro. Registre uma ativação já resolvida na mesa: não repete Asterismo, resistência ou pagamento inicial. Técnica e participante são conferidos novamente antes de gravar. Uma técnica tem um registro pagador ativo, com um alvo; múltiplos alvos continuam manuais.
 
 A rodada da ativação faz parte da duração inicial. Campo de duração vazio usa Bronze2, Prata3 ou Ouro4 rodadas (livro p.205); informe outra duração final quando a técnica ou a resistência a alterar. O registro pode ser feito durante essa fase ou na primeira rodada de manutenção. Flags anteriores, fichas antigas e catálogos conservam suas regras; não há migração automática de anotações para Sustentada.

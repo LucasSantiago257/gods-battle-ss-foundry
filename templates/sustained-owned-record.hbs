@@ -1,0 +1,15 @@
+<details class="calculation-ledger sustained-owned-record" data-sustained-owned data-effect-record data-effect-search="Sustentada {{classification}} {{modeLabel}}" data-effect-pending="{{#if maintenancePending}}true{{else}}false{{/if}}" {{#if canAdjust}}open{{/if}}>
+  <summary>Sustentada{{#if classification}} · {{classification}}{{/if}} · {{displayState}}</summary>
+  {{#if classification}}<p>1 CE · {{modeLabel}} · inicial {{firstRound}}–{{lastRound}}</p>{{/if}}
+  {{#if gap}}<p role="status">Lacuna: rodadas {{gap.first}}–{{gap.last}}</p>{{/if}}
+  {{#if warning}}<p role="status">{{warning}}</p>{{/if}}
+  <div class="sustained-payment-actions">
+    {{#if canPay}}<button type="button" data-action="payOwnedSustained" data-effect="{{id}}" data-round="{{round}}" data-signature="{{paySignature}}">{{payLabel}}</button>{{/if}}
+    {{#if canAdjust}}<button type="button" data-action="adjustOwnedSustained" data-effect="{{id}}" data-round="{{round}}" data-signature="{{dialogSignature}}">Ajustar recarga</button>{{/if}}
+    {{#if canEnd}}<button type="button" data-action="endOwnedSustained" data-effect="{{id}}" data-signature="{{signature}}">Encerrar Sustentada</button>{{/if}}
+    {{#if canOppose}}<button type="button" data-action="opposeSustained" data-effect="{{id}}">Resolver oposição</button>{{/if}}
+  </div>
+  {{#if history}}<details><summary>Pagamentos</summary>{{#each history}}<p>Rodada {{round}} · {{#if unlimited}}CE ilimitada{{else}}{{cost}} CE · {{fromCurrent}} atual / {{fromExtra}} extra{{/if}}{{#if gap}} · lacuna {{gap.first}}–{{gap.last}}{{/if}}{{#if reason}} · {{reason}}{{/if}}</p>{{/each}}</details>{{/if}}
+  {{#if oppositions}}<details><summary>Oposições</summary>{{#each oppositions}}<p>Rodada {{round}} · {{winnerLabel}} · {{payerTotal}} / {{targetTotal}}</p>{{/each}}</details>{{/if}}
+  {{#if reason}}<details><summary>Notas</summary><p>{{reason}}</p></details>{{/if}}
+</details>

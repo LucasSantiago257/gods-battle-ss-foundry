@@ -1,0 +1,8 @@
+<div class="gods-battle sustained-payment-dialog">
+<p>Rodada {{round}} · 1 CE · {{#if isOnce}}única até encerrar{{else}}por rodada{{/if}}</p>
+<p>{{#if unlimited}}CE ilimitada{{else}}CE atual {{current}} · reservada {{reserved}} · extra {{extra}}{{/if}}</p>
+{{#if gap}}<p role="status">Lacuna: rodadas {{gap.first}}–{{gap.last}}</p>{{/if}}
+<label><input type="checkbox" name="useExtra">Usar CE extra primeiro</label>
+<p data-sustain-payment-preview role="status" aria-live="polite"></p>
+<details><summary>Notas</summary><textarea name="reason" maxlength="2000" aria-label="Notas opcionais"></textarea></details>
+</div>

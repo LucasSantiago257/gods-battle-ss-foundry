@@ -1,3 +1,11 @@
+## 0.67.0 — Recarga de Sustentada pelo dono
+
+O pagador resolve a própria recarga no painel de efeitos: valores/prazo/perfil, Pagar direto, Ajustar preferência de CE extra, Encerrar, histórico e recuperação. Coordenação privada automática pelo mestre, sem aprovação humana ou acesso à ficha adversária oculta. Toda nova recarga, inclusive GM/atalhos anteriores, usa o mesmo runtime; registro inicial, oposição e recuperadores legados preservados.
+
+Custo1CE e perfis explícitos por rodada/único mantidos, sem cobrança automática/retroativa ou nova condição. Journals/intenção pela mensagem real e commit único evitam repetir débito; recuperação completa só parte ausente e recibos antigos não regravam ficha. Notas/oposições/ajustes tardios, reserva/ilimitada, PV/PVA/ações e catálogos preservados. Pagamento não prova sucesso, oposição ou continuidade na lacuna. [Uso, limites e ensaio](recarga-dono.md).
+
+Validação:1252 testes Linux completos,zero falhas/exclusões/cancelamentos,roundtrip Items/Actors,check e11packs888Items3Actors/pacotes.15cenários Edge isolados com templates/callbacks/hooks/runtime reais,teclado440px,privacidade/recuperação; capturas inspecionadas. Core hospedado13.350 e concorrência real continuam separados. Inclui a errata documental205/225 do PR81 sem alterar os assets0.66.0.
+
 ## 0.66.0 — Nova resistência de Controle pelo dono
 
 O próprio alvo agora inicia a tentativa genérica de Controle registrado: prévia de custo/PC/parada/saldos, ajustes opcionais, resultado público e escolha de encerrar/manter prazo em sucesso. O mestre coordena automaticamente por mensagens privadas, sem aprovação humana. Dono não precisa acessar a origem oculta; Atacar/Técnicas e catálogos preservados.
